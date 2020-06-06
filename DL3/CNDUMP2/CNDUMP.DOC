@@ -1,0 +1,211 @@
+
+
+                                 CNDUMP
+
+                      Conference Summary Utilities
+                     for ProDoor Compatible Systems
+
+               Public Domain Material by Samuel H. Smith
+
+                           The Tool Shop BBS
+                        (818) 891-1344 [v.32bis]
+                             P.O. Box 4808
+                        Panorama City, CA 91412
+
+
+This set of utility programs will read a specially formatted 33
+line/conference CNAMES file and produce a nicely formatted summary of
+available conference names.  Special support is present for ProDoor
+systems with multiple echo networks.
+
+I wrote this utility for my own use when it became increasingly
+difficuly to keep up-to-date summaries of available conferences on The
+Tool Shop BBS.  I am placing the program into the public domain in hopes
+that it will benefit other system operators.  Source code is included in
+case someone wants to make program changes or to enhance this to the
+point of being a 'full feature' utility instead of a hackers toolkit.
+
+
+                                PROGRAMS
+                                ========
+
+CNDUMP
+        This program reads the CNAMES from the current directory and
+        writes a conference summary to standard-output.
+
+CNMERGE
+        This program reads the output of CNDUMP, merges fragmented
+        networks into contiguous blocks, and writes a new conference
+        summary to standard-output.  Use this filter when you have
+        conferences scattered between different conferences.  This
+        filter also sorts conferences within each network according to
+        conference name.
+
+CNFMT
+        This program reads the output of either CNDUMP or CNMERGE,
+        formats the listing into 4 columns, and writes the result to
+        standard-output.
+
+CNINFO
+        This program is similar to CNDUMP with the addition of logic to
+        report the actual message counts in each conference, and to
+        track messages posted locally and those imported during net
+        mailruns.
+
+CNINFRPT
+        This program formats the output of CNINFO (optionally filtered
+        by CNMERGE) into a nicely formatted report of network activity.
+
+
+
+                   SPECIAL FORMATTING IN CNAMES FILE
+                   =================================
+
+The CNDUMP program needs to know what 'network' is associated with each
+conference.  Since no provision for this information is made in either
+the CONFINFO or the CNAMES file, I decided to create a new file called
+CNAMES.ID, which stored the network name for each conference.  The first
+line corresponds to the main board, the second to conference #1, and so
+on.
+
+The CNDUMP program skips conferences that have a 'Req. security if
+public' setting of 120.  These are generally not listed in the CNFN file
+anyway.
+
+The CNDUMP program normally outputs the conference number, a space, and
+the conference name.  If the 'Req. security if public' setting is non-0,
+the space is replaced with a '*' to indicate that the conference
+requires a special security level for access.
+
+
+                        TYPICAL USAGE OF CNDUMP
+                        =======================
+
+        CD \PCB\MAIN
+        CNDUMP | CNMERGE | CNFMT >CNFN.SUM
+
+
+                        SAMPLE OUTPUT OF CNDUMP
+                        =======================
+
+LOCAL AREAS:
+   0 Main Board       1*Boosters         2 Support          3 Adult
+
+ROSE NET:
+  40 RoseMail        41 RoseReader      42 UnixUseNet    
+
+SHARK NET:
+ 151 Agnostic       152 JesusSaves    
+
+LA NET:
+ 181 LAfilmVid      182 LAbuySell      183 LAchat         184 Multibase
+ 185 LAweather     
+
+LUCIFER NET:
+ 190*ByteBro        191*TheDen        
+
+THROB NET:
+ 200*THansi         201*THadultIss     202*THaskJudi      203*THconStory
+ 204*THdrRude       205*THfantasy      206*THfetishes     207*THgay
+ 208*THgeneral      209*THhates        210*THjokes        211*THjunkMeet
+ 212*THlesbian      215*THporn         216*THrobMail      217*THlimbaugh
+ 218*TH-SMBDDS      219*THsexHelp      220*THsexToys      221*THsingles
+ 222*THswingers     223*THsysops       224*THtransves     225*THviolets
+ 226*THwomen        227*THwritings     228*THshoppe       229*THsexTalk
+
+RF NET:
+ 240 RFhamRadio     241 RFpacket       242 RFoldRadio    
+
+PET NET:
+ 245 PEbirds        246 PEcats         247 PEdogs         248 PEfwFish
+ 249 PEswFish       250 PEpets        
+
+JOB NET:
+ 255 JNclMisc       256 JNclAdmin      257 JNclIntnat     258 JNclMulti
+ 259 JNclProMgt     260 JNclTech       261 JNfairness     262 JNintrview
+ 263 JNtips         264 JNfairs        266 JNcommon       267 JNresAdmin
+ 268 JNresProMg     269 JNresTech     
+
+MEDIA NET:
+ 275 MEactors       276 MEagents       277 MEbrTVop       278 MEbrChat
+ 279 MEbrSales      280 MEbrSoft       281 MEbuySell      282 MEcableTV
+ 283 MEdesktop      284 MEengineer     285 MEfreelanc     286 MEgossip
+ 287 MEgraphics     288 MEjobMart      289 MEmidi         290 MEmusician
+ 292 MEnewsRoom     293 MEvoiceOvr     294 MEproAudio     295 MEproFilm
+ 296 MEproPhoto     297 MEproRadio     298 MEproVideo     299 MEradProd
+ 300 MEradProg      301 MEsbe          302 MEtheater      303 MEunions
+ 304 MEwriters     
+
+
+                        TYPICAL USAGE OF CNINFO
+                        =======================
+
+        REM RUN THIS JUST *BEFORE* PERFORMING A NETWORK MAILRUN
+        REM RUN THIS JUST *BEFORE* PACKING MESSAGE BASES
+        CD \PCB\MAIN
+        CNINFO POST >NUL
+                .....
+        REM RUN THIS JUST *AFTER* PERFORMING A NETWORK MAILRUN
+        CD \PCB\MAIN
+        CNINFO NET | CNMERGE | CNINFRPT >CNFN.RPT
+
+        REM RUN THIS JUST *AFTER* PACKING MESSAGE BASES
+        CD \PCB\MAIN
+        CNINFO PACK | CNMERGE | CNINFRPT >CNFN.RPT
+
+
+                        SAMPLE OUTPUT OF CNINFO
+                        =======================
+
+LOCAL AREAS:
+    Conf    Conference     High Msg    Total    Message   Message
+      #        Name         Number   Messages    Posts    Imports
+   -----   -------------   --------  --------  --------  --------
+      0    Main Board         1833       263       263         0
+      1   *Boosters            824       250       250         0
+      2    Support            1065       256       256         0
+      3    Adult               453         9         9         0
+                                     --------  --------  --------
+           TOTALS FOR LOCAL AREAS:       778       778         0
+
+ROSE NET:
+    Conf    Conference     High Msg    Total    Message   Message
+      #        Name         Number   Messages    Posts    Imports
+   -----   -------------   --------  --------  --------  --------
+     40    RoseMail            541       254       254         0
+     41    RoseReader         1213       275       275         0
+     42    UnixUseNet          112       112       112         0
+                                     --------  --------  --------
+              TOTALS FOR ROSE NET:       641       641         0
+...
+
+              Overall Summary of Available Message Networks
+
+                     Total       Total      Message     Message
+        Networks  Conferences  Messages      Posts      Imports
+        --------  ----------  ----------  ----------  ----------
+             16         376       28465       28465           0
+
+
+
+                                SUPPORT
+                                =======
+
+_____________________________________________________________________________
+
+                                                    T h e   T o o l   S h o p
+Samuel H. Smith                                Specializing in Software Tools
+Sysop
+                                      P.O. Box 4808 þ Panorama City, CA 91412
+                                                       6 Nodes (818) 891-1344
+_____________________________________________________________________________
+
+
+Sorry, no time to document this any further!  Use at your own risk. This
+program is FREE and includes SOURCE CODE, so make sure someone hasn't
+added a bomb to my original logic!  Make backups!  Perhaps I will
+enhance this program and write a proper manual for it if there is any
+interest shown in it.
+
+                                                        -- Samuel Smith
+

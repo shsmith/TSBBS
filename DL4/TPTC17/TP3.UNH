@@ -1,0 +1,77 @@
+
+/* Unit header for: TP3.C -- Made by TPTC - Translate Pascal to C */
+
+#ifndef TP3_LOADED  /* prevent multiple loading */
+#define TP3_LOADED
+
+
+#ifdef IN_TP3  /* define globals here? */
+#define extern
+#endif
+
+extern void  mark(pointer      ptr);
+   
+extern void  release(pointer      ptr);
+
+   
+extern void  msdos(void *       reg);
+   
+extern void  intr(integer      fun,
+                  void *       reg);
+
+   
+extern integer wherex(void);
+   
+extern integer wherey(void);
+   
+extern boolean keypressed(void);
+
+   
+extern void  gotoxy(integer      x,
+                    integer      y);
+   
+extern void  window(void         x1,
+                    void         y1,
+                    void         x2,
+                    void         y2);
+   
+extern void  textcolor(integer      fg);
+   
+extern void  textbackground(integer      bg);
+   
+extern void  clrscr(void);
+   
+extern void  clreol(void);
+
+   
+extern pointer ptr(word         s,
+                 word         o);
+
+   
+extern void  blockread(file *       fd,
+                       void *       buf,
+                       word         blocks,
+                       word *       stat);
+   
+extern void  blockwrite(file *       fd,
+                        void *       buf,
+                        word         blocks,
+                        word *       stat);
+   
+extern integer filepos(file *       fd);
+   
+extern integer filesize(file *       fd);
+     /* anytype */ 
+extern integer sizeof(byte         rec);
+
+
+   
+      extern text         lst; 
+      extern text         con; 
+      extern text         kbd; 
+
+
+
+extern void  tp3_init(void);
+#undef extern
+#endif

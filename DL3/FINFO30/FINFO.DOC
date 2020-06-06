@@ -1,0 +1,59 @@
+
+Finfo - DOS filter to update file size/date info in a file
+        directory listing.
+
+Written:
+   2-26-87 S.H.Smith (rev. 10-20-88)
+
+Rewritten:
+   7-4-89  S.H.Smith (translated from Zortech C to Turbo Pascal)
+
+Public Domain Material.
+
+
+Usage:
+   finfo DIRECTORY <filelist >newlist
+
+Example:
+   finfo C:\DL1 <C:\PCB\GEN\DIR3 >DIR3.NEW
+
+
+Example batch file:
+   @echo off
+   if .%2 == . goto usage
+   if not exist %1 goto usage
+
+   finfo %2 <%1 >%TMP%\t
+   copy %TMP%\t %1
+   del %TMP%\t
+   bac c:\pcb\gen\dir* i:\gen
+   goto end
+
+   :usage
+   echo Usage:    ufdir FILE_LISTING FILE_DIRECTORY
+   echo Example:  ufdir c:\pcb\gen\dir1 c:\shsbox
+
+   :end
+
+
+Revision History
+----------------
+
+10-20-88 v1.5
+   Changed for compilation under Zortech C++.
+   Zortech's printf function tends to get quite confused when a %s parameter
+   contains certain characters.  Recoded to output descriptions character-by-
+   character.  Hopefully this will eliminate all possibility of descriptions
+   being lost due to garbage characters.
+
+01-03-88 v1.6
+   Fixed a bug that prevented stamping a file dated after 1-31-88.
+
+07-04-89 v2.0
+   Rewrite in Turbo Pascal.  Now about 1/2 the size and somewhat faster.
+   Added additional checks for invalid file dates.
+   Added a check for an optional (hh:mm) at beginning of description.
+
+01-04-91 v2.1
+   Changed to allow dates later than 12-31-90.
+

@@ -1,0 +1,36 @@
+TITLE
+Language selection expert
+
+GOALS
+language to use
+
+FACTS
+
+RULES
+
+IF
+   program size > 01000
+   program size < 10000
+   linking object modules = false
+   runtime subscript checking = true
+THEN
+   language to use = turbo pascal
+
+if
+   working for department of defense
+then
+   language to use = ada
+
+if
+   linking standard object modules
+   runtime subscript checking = false
+then
+   language to use = lattice c
+
+if
+   project is throw away
+   program size < 01000
+then
+   use basic
+END
+

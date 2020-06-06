@@ -1,0 +1,125 @@
+
+  ====== The Tool Shop === Include Library =========================
+
+  TOOL-INC.ARC contains a number of "include libraries" used by the Tool
+  Shop Library Tools.   These include-libraries are "building blocks"
+  that I use in most new programs that I write.
+
+
+  Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+
+  This is a component of the Tool Shop Library.
+  Do not distribute modified versions without my permission.
+  Do not remove or alter this notice or any other copyright notice.
+  If you use this in your own program you must distribute source code.
+  Do not use any of this in a commercial product.
+
+
+  This library is provided courtesy of:
+
+                          The Tool Shop BBS
+                      (602) 264-3969 (HST 9600)
+                      (602) 279-2673 (HAYES 9600)
+
+
+  Disclaimer
+  ----------
+
+  I cannot be responsible for any damages resulting from the use or mis-
+  use of this program!
+
+  If you have any questions, bugs, or suggestions, please contact me at
+  The Tool Shop,  (602) 279-2673.
+
+  Enjoy!     Samuel H. Smith
+
+
+
+          File types:   .INT - library interface sections
+                        .DCL - library declarations
+                        .INC - main library implementation
+
+   ADDSUB          C-like add and subtract macros
+   ANYSTRIN        General string declarations
+   ATOF            Ascii to floating point conversion
+   ATOI            Ascii to integer conversion
+   ATTACH          Attach a new handler to an interrupt vector
+   BAKFILE         Create a backup of a file
+   BIOSCOMM        BIOS based communication driver library
+   BORDER          Display window borders in many styles
+   BSORT           Generic binary sort
+   CENTER          Center a string
+   CHARBIT         Character font bit lookup
+   COPYTIME        Copy time/date from one file to another
+   DELAY           Milisecond delay while giving up time
+   DELSPACE        Delete spaces from a string
+   DOSCMD          Use undoc'd function to do quick dos calls
+   DOSIO           Dos low level i/o interface
+   DTOF            Double to float conversion
+   ERROR           General error handler
+   EXISTS          Does a file exist?
+   FILEDATE        Get file date/time as a real
+   FILESIZE        Get size of a file
+   FSIZE           Get file size
+   FTOA            Floating point to ascii conversion
+   GETENV          Get environment variables
+   GETFDAT0        Get file date, mm-dd-yy format
+   GETFDATE        Get file date as a string, yy-mm-dd format
+   GETFILE2        Expand wildcard file lists, small version
+   GETFILES        Expand filelists
+   GETKEY          Get key, maps extended keys into consts
+   GETTIME         Get time of day
+   GIVETIME        Give up extra time under doubledos
+   IBMCOM2         Interrupt com driver
+   INCDEC          Increment/decrement macros
+   INPUT           CTTY-compatible line input
+   INT2REAL        Unsigned integer to real conversion
+   INTRCOMM        Interrupt based communication driver library
+   INVIS           Is program invisible under doubledos?
+   ITOA            Integer to ascii conversion
+   ITOA2           Integer to ascii (no length limit) conv
+   ITOH            Integer to hex conversion
+   ITOU            Integer to unsigned real conversion
+   LJUST           Left-justify in writeln macro
+   LOCFILE         Locate file according to paths
+   LOCKS           Resource management
+   LONGJMP         C-like longjump error recovery facility
+   LOWCASE         Map string to lower case
+   LTOR            Long integer to real conversion
+   MDOSIO          Dos input/output library, small version
+   MOVEFILE        Move files, copy when needed
+   OPENSHAR        Open files with network file sharing
+   PATTERN         Unix style pattern matching (wildcards)
+   PLOTLIB         Graphics library
+   POLY            Polynomial interpolation in C and TPAS
+   POP2            Simplified pop-up window library
+   POPUP           Pop up windows/fast display
+   PRINTC          Fast interface to PRN device
+   PRNSTAT         Printer status
+   PULL            Simplified pull-down menu system
+   QUELIB          Fifo queue library (inline macros)
+   READBAS         Read BASIC comma-delimited data files
+   REGPACK         Register package declaration
+   REMPATH         Remove / manipulate filename paths
+   REPLSTR         String replacement
+   REVERSE         Reverse order of a string
+   RPNCALC         Rpn calculator
+   STAYRES         Tsr shell
+   STOF            Msbasic "Single" to Turbo "Float/real" conv.
+   STOLOWER        Map strings to lower case (inline)
+   STOUPPER        Map string toupper case
+   STOZ            String<-->zstring conversion
+   STRIPSPC        Strip spaces from strings
+   STRLIB          String macro library
+   STRUTIL         String utility macros
+   SUBPROC         Sub process library
+   SYSDATE         Get system date/time strings
+   SYSDATE0        Get system date
+   SYSDATE2        Get system date in mm-dd-yy format
+   SYSDATE3        Another way to get the system date
+   TOP             Top level menu handler (for PULL.arc)
+   TPEXEC          Execute subprocess
+   TREELIB         Tree display library
+   VARSTR          Variable allocation string library
+   WILDCARD        Wildcard filename matching
+

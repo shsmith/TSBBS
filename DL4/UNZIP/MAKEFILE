@@ -1,0 +1,11 @@
+# makefile for unzip
+
+CFLAGS = -DUNIX -O
+LFLAGS =
+
+OBJS = unzip.o crc32.o match.o memcpy.o
+
+unzip : $(OBJS)
+	cc -o $@ $(LFLAGS) $(OBJS)
+
+unzip.o : crc32.h

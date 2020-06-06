@@ -1,0 +1,1753 @@
+
+
+
+
+
+
+
+
+
+                                      Pro Logon
+
+
+                         Enhanced User Logon Control Program
+                                          by
+                                   Samuel H. Smith
+
+
+
+                               Version 1.2 of 03-31-91
+
+                          For use with PCBoard version 14.x
+
+
+
+               ProLogon is a communication program that runs "in front
+               of"  PCBoard to enhance  the user logon  process and to
+               allow direct access to DOOR programs after user logon.
+
+
+                    ProLogon puts YOU in control of your system!
+
+
+
+
+              Copyright 1990, 1991 Samuel H. Smith; All rights reserved.
+
+
+          ProLogon is NOT public domain software.  If you like and use this
+          program, I request  you register  it for $30  after a  reasonable
+          trial period (about 30-45 days).
+
+
+          ____________
+          PCBoard is a registered trademark of Clark Development Company.
+
+
+
+
+
+
+
+
+                                  TABLE OF CONTENTS
+
+               INTRODUCTION . . . . . . . . . . . . . . . . . . . . . .   3
+                    Program Features  . . . . . . . . . . . . . . . . .   3
+                    Unregistered Copies of ProLogon . . . . . . . . . .   6
+               DISCLAIMER . . . . . . . . . . . . . . . . . . . . . . .   6
+               INSTALLATION . . . . . . . . . . . . . . . . . . . . . .   7
+                    Example BOARD.BAT File  . . . . . . . . . . . . . .   7
+                    ProDoor-Compatible Extended User/Conference Files .   8
+                    ProLogon Without ProDoor  . . . . . . . . . . . . .   8
+                    Doors Menu  . . . . . . . . . . . . . . . . . . . .   9
+                    System Option . . . . . . . . . . . . . . . . . . .   9
+                    Environment Variables . . . . . . . . . . . . . .    10
+               PROLOGON CONFIGURATION FILE  . . . . . . . . . . . . .    11
+                      . . . . . . . . . . . . . . . . . . . . . . . .    11
+                    Configuration File Comments . . . . . . . . . . .    13
+                    Communication Driver  . . . . . . . . . . . . . .    13
+                    Option Keywords . . . . . . . . . . . . . . . . .    14
+                    Door Control Lines  . . . . . . . . . . . . . . .    16
+                    Forced Defaults . . . . . . . . . . . . . . . . .    16
+                    Preventing User Over-ride of Forced Default . . .    16
+                    Example Door Control Lines  . . . . . . . . . . .    17
+               GATEWAY TO PCBOARD (SYSTEM DOOR) . . . . . . . . . . .    18
+                    Example SYSDOOR. File . . . . . . . . . . . . . .    18
+                    Example $SYSTEM.BAT File (PCB14.2)  . . . . . . .    18
+                    Example $SYSTEM.BAT File (PCB14.5)  . . . . . . .    18
+                    Exit to DOS Option  . . . . . . . . . . . . . . .    18
+               SYSOP CONTROL PANEL  . . . . . . . . . . . . . . . . .    19
+                    Display Items . . . . . . . . . . . . . . . . . .    19
+                    Command Keys  . . . . . . . . . . . . . . . . . .    20
+                    Mode Toggle Keys  . . . . . . . . . . . . . . . .    21
+                    Caller Log Browser  . . . . . . . . . . . . . . .    22
+                    Fast Control Panel Screen Display . . . . . . . .    22
+                    Direct Screen Writing/Display Bleed-through . . .    22
+               USER COMMAND STACKING  . . . . . . . . . . . . . . . .    23
+                    Multi-word Last Names . . . . . . . . . . . . . .    23
+                    Quick Logon . . . . . . . . . . . . . . . . . . .    23
+                    Security Level Specific Menus and Defaults  . . .    24
+               NETWORK MAILER INTERFACE . . . . . . . . . . . . . . .    25
+               MODEM NOTES  . . . . . . . . . . . . . . . . . . . . .    26
+               SUPPORT  . . . . . . . . . . . . . . . . . . . . . . .    27
+               LICENSE  . . . . . . . . . . . . . . . . . . . . . . .    27
+               REVISION HISTORY . . . . . . . . . . . . . . . . . . .    27
+               INDEX  . . . . . . . . . . . . . . . . . . . . . . . .    28
+
+
+
+
+
+
+
+
+                                          2
+
+
+
+
+
+
+
+
+                                     INTRODUCTION
+
+          ProLogon  is  a communication  program  that runs  "in  front of"
+          PCBoard to enhance  the user  logon process and  to allow  direct
+          access to DOOR programs after user logon.  You might say ProLogon
+          is a "front door".
+
+          This  program is  an  enhancement for  PCBoard  systems -  not  a
+          replacement!   You  still  need a  valid  PCBoard system  to  use
+          ProLogon.
+
+
+          Program Features:
+
+          *    Script  friendly logon  answer  stacking.   All user  inputs
+               during the logon process may be stacked on a single line.
+
+          *    Enhanced sysop information display and program control
+
+          *    Can be used with all compatible door programs, like ProDoor,
+               QMail  or  TradeWars to  create  a  "dedicated" system  that
+               restricts other system features.
+
+          *    Displays user  level-specific door menus to  guide new users
+               through common registration sequences.
+
+          *    Performs full new-user registration functions.
+
+          *    Supports the "subscription" mode of operation.
+
+          *    Interfaces  with ProDoor's  extended  conference system  and
+               automatically registers users in extended conferences.
+
+          *    Full support for multi-node and networked systems.
+
+          *    Full sysop  control over  DOOR command defaults,  door menus
+               and door control files.  
+
+          *    Each  user  security level  can have  it's  own set  of door
+               defaults. 
+
+          *    Door  execution  can  be   optional  or  automatic  (forced)
+               according to user security level.
+
+          *    Interactive  Caller Log  Browser allows  you to  examine the
+               caller logs on all  active nodes while waiting for  incoming
+               phone calls.
+
+          *    Interactive Node  Monitor allows  continuous display  of all
+               the status of all nodes while monitoring for incoming calls.
+
+
+                                          3
+
+
+
+
+
+
+
+
+          *    Reports the  TRUE speed of the connection between high speed
+               modems, and not simply the COM port opening speed.  
+
+               PCBoard has always ignored the information provided by high-
+               speed modems, resulting in less accurate time estimates.
+
+          *    Extended caller  log entries.    ProLogon adds  valuable new
+               information to the caller log. 
+
+          *    High-speed  error  correcting  connections now  include  the
+               actual  modem  connect  type  message and  error  correction
+               status.
+
+          *    The new buffered NS16550AN  serial chips are fully supported
+               and  will  be automatically  enabled  when  available.   The
+               Control Panel display also indicates the type of serial chip
+               detected.
+
+          *    User security  levels are  recorded in  the  caller log  for
+               extended reporting.
+
+          *    Automatic support  for EGA/VGA screen  modes of 43  lines or
+               more. 
+
+          *    Sysop can  force immediate "answer" condition  to allow data
+               connection after voice communication on the same phone line.
+
+          *    Direct support for non-standard  COM port addressing, making
+               it possible to run more than 2 nodes on a single machine.
+
+          *    Network   mailer  interface   "hook"  allows   outside  echo
+               networking software to gain access during logon process.
+
+          *    Custom  prompts  and  alternate  language  translations  are
+               possible via  PROTRNS[.LNG] output  translation files.   For
+               additional   information   on   language  translation,   see
+               PROTRNS.DOC
+
+          *    Added  a  display of  the  file  'PROANS' immediately  after
+               answering  the   phone  and  before  asking   the  user  any
+               questions.  Use this for really important bulletins.
+
+          *    Added logic to re-initialize modem  after 10 minutes of idle
+               time; this prevents a  system going down if the  modem loses
+               it's settings during a period of inactivity.
+
+          *    Added  logic to  scan  actual bulletin  files for  "bulletin
+               updated since last call" message on joining a conference.
+
+          *    Changed  "door  # to  open" prompt  to  allow door  names in
+               addition to door numbers.
+
+                                          4
+
+
+
+
+
+
+
+
+          *    Changes in critical error handler to allow FATAL14 to handle
+               critical errors when loaded.
+
+          *    Implemented  F2 (lockout)  sysop key  to change  the current
+               user's security level to 0.
+
+          *    Implemented F6 (update) sysop key to activate an online user
+               record update.
+
+          *    When F8(dump user) button is pressed the file PRODUMP is now
+               displayed  instead of the  hardcoded 'Automatic disconnect!'
+               message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          5
+
+
+
+
+
+
+
+
+
+                               REGISTRATION REQUIREMENT
+
+          ProLogon is  a ShareWare  program that requires  registration for
+          continued operation.  When  you register, you will be  allowed to
+          download  the REGLON  program, which  will "brand"  ProLogon with
+          your own custom registration  information.  You must have  a copy
+          of PROLON.REG  in  each node  system directory  that ProLogon  is
+          running from (i.e. the file C:\PCB1\PROLON.REG must exist).
+
+
+                           Unregistered Copies of ProLogon
+
+          Unregistered copies of ProLogon are fully functional, but include
+          a reminder message that they are unregistered copies.  
+
+
+
+
+                                      DISCLAIMER
+
+               IN NO EVENT WILL  I BE LIABLE  TO YOU FOR ANY  DAMAGES,
+               INCLUDING  ANY  LOST  PROFITS, LOST  SAVINGS  OR  OTHER
+               INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF YOUR
+               USE OR INABILITY TO  USE THE PROGRAM, OR FOR  ANY CLAIM
+               BY ANY OTHER PARTY.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          6
+
+
+
+
+
+
+
+
+                                     INSTALLATION
+
+          ProLogon  works only  in conjunction  with PCBoard  version 14.x.
+          Before  attempting to  install  ProLogon you  must first  have an
+          installed and working PCBoard system.
+
+          To  install ProLogon, you must change your BOARD.BAT file to call
+          the new 'PROLON.EXE' command where you used  to call PCBOARD.EXE.
+          Here is an example of a working BOARD.BAT file:
+
+          Example BOARD.BAT File
+
+                 @echo off
+                 cd \pcb1
+                 if exist event.bat rename event.bat event.sys
+                 if exist remote.bat rename remote.bat remote.sys
+                 if exist door.bat del door.bat
+                 :if exist endpcb del endpcb        ---delete this line if present
+
+                 recycle >NUL                       ---this group of lines allows
+                 if errorlevel 1 goto runpcb        ---prodoor door "stacking"
+                 copy prodoor door.bat >nul
+                 door N
+                 :runpcb
+                 if exist $door.bat del $door.bat
+
+                 :pcboard                           ---delete this line
+
+                 set extuser=c:\prod\extuser        ---add these lines
+                 set confinfo=c:\prod\confinfo
+                 prolon prolon.cnf c:\pcb1
+
+                 if exist door.bat door
+                 if exist remote.bat remote
+                 if exist event.bat event
+                 if exist endpcb goto end
+                 board
+
+                 :end
+                 del endpcb                         ---add this line
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            7
+
+
+
+
+
+
+
+
+                 The suggested  changes in  BOARD.BAT will  cause  ProLogon to  be
+          executed in place of PCBOARD.EXE.
+
+          Copy  the ProLogon  distribution  files into  the PCBOARD  system
+          directory, where  ProLogon will be executed.   Remember, ProLogon
+          is running  in place of PCBOARD.EXE  and needs to be  in the same
+          directory.     See  the   section  on  configuration   files  for
+          information on how to run multiple nodes with a common directory.
+
+          It  is possible  to activate  the ALT-X  in spite  of the  use of
+          PCBSETUP's  "exit  to  dos after  each  call"  option.   To  take
+          advantage  of this feature you  must edit your  BOARD.BAT file to
+          move the statement
+               if exist endpcb del endpcb 
+          so  that it is  executed *only* after the  ":END" label and *not*
+          before loading prolon.exe.
+
+
+
+          ProDoor-Compatible Extended User/Conference Files
+
+          ProLogon  uses  a  ProDoor  compatible  Extended  User  File  and
+          Extended Conference System.   You need to include  SET statements
+          to  locate  the  EXTUSER  and  CONFINFO  files  in  your  ProDoor
+          directory.
+
+          When new  users are  registered,  they are  initially entered  as
+          members in  all "public" conferences  as defined in  the CONFINFO
+          file.
+
+
+          ProLogon Without ProDoor
+
+          If you  do not  use ProDoor  on your system,  you will  find that
+          ProLogon creates two files in the current  directory: EXTUSER and
+          CONFINFO.  The CONFINFO file is  a binary version of the standard
+          CNAMES  file.  Please delete  this file whenever  you edit CNAMES
+          through PCBSETUP.  Without extended conferences, there is no need
+          for the EXTUSER file, so it can be deleted to save disk space.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          8
+
+
+
+
+
+
+
+
+          Doors Menu
+
+          After  ProLogon  logs a  user into  the system,  it automatically
+          presents the 'DOOR' menu defined in the configuration file.  Each
+          user security level may have a different door menu file.
+
+          The prompt will also include the options:
+
+               (G)oodbye      Immediate logoff and hang up,
+               (S)ystem       PCBoard system gateway,
+               (Enter)='x'    A default  as  defined in  the  configuration
+                              file.
+
+          Since  you  can  define  a  specific  door  menu  for  ProLogon's
+          exclusive use, you  can add detailed  explanations for new  users
+          without cluttering  normal doors menu displays  for regular users
+          of your system.
+
+
+          System Option
+
+          The (S)ystem option runs a special door script  called 'SYSDOOR',
+          in which you may  install calls to PCBOARD.EXE for  normal system
+          functions, such as password change or script questionnaires.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          9
+
+
+
+
+
+
+
+
+          Environment Variables
+
+          ProLogon  recognizes the  following SET  commands when  placed in
+          your BOARD.BAT or AUTOEXEC.BAT files:
+
+          SET CONFINFO=C:\PROD\CONFINFO
+               This setting  allows ProLogon  to specify the  file location
+               for the  Pro-Door extended conference  definitions.  Without
+               this environment  variable setting ProLogon defaults  to the
+               file 'CONFINFO' in the current directory.
+
+          SET EXTUSER=C:\PROD\EXTUSER
+               This setting  allows ProLogon  to specify the  file location
+               for  the   ProDoor  extended   user  file.     Without  this
+               environment   variable  setting   ProLogon  uses   the  file
+               'EXTUSER' in the current directory.
+
+          SET PCB=/BIO
+               Specifies  that BIOS  calls  should be  used exclusively  to
+               udpate   the  screen.     This   disables  the   loading  of
+               PROPANEL.COM for quick screen displays.
+
+          SET OVCRT=ON
+               This  environment enables  a  special CRT  update mode  that
+               works best with TaskView or  OmniView systems.  NOTE: PLEASE
+               USE THIS  ENVIRONMENT VARIABLE IF YOU  GET "SCREEN BLEEDING"
+               OR "BACKGROUND LOCKUPS" ON MULTI-TASKING SYSTEMS.
+
+          SET CAPFILE=filename
+               This  setting controls the name of the file generated by the
+               ALT-F (file out) and SET PRODEBUG=ON functions.  The default
+               file name of DEBUGxx.OUT is changed to the specified name.
+
+          SET PRODEBUG=ON
+               Enables  total session logging  to the file  DEBUG.OUT.  Use
+               this to record door activity for later review.
+
+          SET PROTRNS=ON
+               Enables a special display  to assist in creation  of PROTRNS
+               output translation files.  When present, this causes ProDoor
+               to output all translatable  messages enclosed in {...} prior
+               to the actual translation.
+
+          SET COMBASE=nnnn
+               Sets the base I/O address (in DECIMAL) for non-standard  COM
+               ports.   Use this in conjunction with the COMIRQ environment
+               variable.
+
+          SET COMIRQ=n
+               Sets  the IRQ level for non-standard COM ports.  Use this in
+               conjunction with the COMBASE environment variable.
+
+                                          10
+
+
+
+
+
+
+
+
+                             PROLOGON CONFIGURATION FILE
+
+          The configuration file, PROLON.CNF, allows you to configure which
+          DOOR  menus are displayed according  to user security  level.  It
+          also gives you the power to control the "default" door entry, and
+          to force a particular door to execute without prompting the user.
+          Using the configuration file  you can also arrange for  PROLON to
+          immediately load PCBOARD.EXE or any specified door program. 
+
+
+                 ;
+                 ; PROLON.CNF - ProLogon 1.2 configuration file
+                 ;
+                 ; Com port driver - INTERRUPT or BIOS
+                 INTERRUPT
+                 ;
+                 ;
+                 ; Option Keywords
+                 ;
+                 CHAT_LEVEL 10           ;minimum security level to allow users to be
+                                         ;"available for chat" after initial logon.
+
+                 AUTO_REGISTER ON        ;set to OFF to prevent automatic "auto-scan"
+                                         ;registration for new users in all public conferences.
+
+                 MIN_BAUD 1200           ;lowest baud rate to allow into system
+
+                 AUTO_RESET_MINUTES 10   ;perform automatic modem reset after specified
+                                         ;idle time.  set to 9999 to disable auto reset.
+
+                 DAILY_TIME_LEVEL 100    ;exclude all security level 100 and higher
+                                         ;users from daily time limits.
+
+                 EXPIRE_DAYS 365         ;number of days before expiration for new users
+
+                 COMMON_DIR L:\PROD      ;common directory for display files
+                                         ;default is to use current directory
+
+                 DISPLAY_NEWS BOTH       ;DISPLAY_NEWS ON causes internal display of
+                                         ;conference news, but defeats the initial "scan
+                                         ;for personal mail" prompt.
+                                         ;DISPLAY_NEWS OFF causes prologon to trigger a
+                                         ;news display and personal mail scan when
+                                         ;ProDoor is first opened.
+                                         ;DISPLAY_NEWS BOTH causes internal display of
+                                         ;conference news, and also signals ProDoor to
+                                         ;perform the "personal mail" scan when first opened.
+
+                 FORCE_MONITOR OFF       ;FORCE_MONITOR ON causes ProLogon to stay in the
+                                         ;Node Monitor display instead of the normal
+                                         ;control panel.
+
+                                                                           11
+
+
+
+
+
+
+
+                 RING_COUNT 1            ;controls the number of telephone rings required
+                                         ;before the modem is commanded to answer the phone.
+
+                 COUNT_LOCAL ON          ;set to OFF to disable counting local logins
+                                         ;in the total system calls counter.
+
+                 MIN_PASSWORD 4          ;specifies mininum length of password for
+                                         ;new users.
+
+                 ;
+                 ;
+                 ; Door control lines:  Format of each door control line is:
+                 ;    LEVEL DOORMENU DOORLIST {*}INIT_DEFAULT {*}RET_DEFAULT
+                 ;
+                 ; Where:
+                 ;    LEVEL          is the user's security level for this control line
+                 ;
+                 ;    DOORMENU       is the full path and filename of the door menu
+                 ;    DOORLIST       is the full path and filename of the doors.dat file
+                 ;
+                 ;    INIT_DEFAULT   is the initial default door command after logon.
+                 ;                   begin with '*' to force this option without prompting.
+                 ;                   begin with '**' to force option and prevent user from
+                 ;                   over-riding with command stack.
+                 ;
+                 ;    RET_DEFAULT    is the default door command after return from a door.
+                 ;                   begin with '*' to force this option without prompting.
+                 ;                   begin with '**' to force option and prevent user from
+                 ;                   over-riding with command stack.
+                 ;
+                 ; If no matching security level is found, the LAST door control line will
+                 ; be used.  This allows you to have a "default" door system for most users,
+                 ; and additional special door control lines for specific levels.
+                 ;
+                 ; Examples:
+                 ;    50 c:\pcb\gen\doors c:\pcb\main\doors.dat *1 *G
+                 ;       This door control line applies to security level 50 users.
+                 ;       It displays the c:\pcb\gen\doors door menu, uses the
+                 ;       file c:\pcb\main\doors.dat to control actual doors,
+                 ;       forces the caller initially into door 1.  On return from
+                 ;       door 1, the 'G'oodbye command is forced.
+                 ;
+                 ;    2 L:\pcb\gen\doors2 L:\pcb\main\doors.dat **S 1
+                 ;       forces into system for scripts, disables user over-riding
+                 ;       's' option with command stack, later gives default of door 1
+
+
+                 ; new users - forces into door#15 for registration script, disables user
+                 ;             over-riding '15' option with command stack, later forces
+                 ;             caller offline if not upgraded by door 15.
+                 2 L:\pcb\gen\doors2 L:\pcb\main\doors.dat **15 *G
+
+
+                                                                           12
+
+
+
+
+
+
+
+                 ; sysop local login - force door 10, later default to door 1
+                 ;120 L:\pcb\gen\doors L:\pcb\main\doors.dat *10 1
+
+                 ; normal users - forces door 1 initially, then defaults to (g)oodbye
+                 ; (since this is the last door control line it applies to all other levels)
+                 10 L:\pcb\gen\doors L:\pcb\main\doors.dat *1 G
+
+
+          Configuration File Comments
+
+          Any  line beginning  with  ";" is  treated  as a  comment and  is
+          ignored by the program.   Use comments to explain  what different
+          configuration lines are doing for you.
+
+          Communication Driver
+
+          The  first  line  controls  the  communication  drivers  used  by
+          ProLogon.   Most systems  work best with  the 'INTERRUPT' driver.
+          However,  if   your  system  does  not   operate  correctly  with
+          interrupts, you may instead use normal BIOS calls for I/O, at the
+          expense of slower operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          13
+
+
+
+
+
+
+
+
+          Option Keywords
+
+          ProLogon  supports  a  number   of  optional  statements  in  the
+          configuration  file.  These  may appear in any  order.  You don't
+          need any of these in a simple installation of ProLogon.
+
+
+          DAILY_TIME_LEVEL <minlevel>
+               Exclude all security level  <minlevel> and higher users from
+               daily  time limits.  Default is to exclude SYSOP level users
+               (100 and higher).
+
+          EXPIRE_DAYS <days>
+               Number of days before expiration for new users.  The default
+               is 365 days.  EXPIRE_DAYS 0 causes the expiration date to be
+               disabled.
+
+          COMMON_DIR <directory>
+               Common directory for display  files.  The default is  to use
+               current directory.
+
+          DISPLAY_NEWS <ON><OFF><BOTH>
+               DISPLAY_NEWS ON causes internal  display of conference news,
+               but defeats the initial "scan for personal mail" prompt.
+
+               DISPLAY_NEWS OFF  causes prologon to trigger  a news display
+               and personal mail scan when ProDoor is first opened.
+
+               DISPLAY_NEWS  BOTH  causes  internal  display  of conference
+               news,  and also  signals  ProDoor to  perform the  "personal
+               mail" scan when first opened.
+
+          FORCE_MONITOR <ON><OFF>
+               FORCE_MONITOR ON causes ProLogon to stay in the Node Monitor
+               display instead of the normal control panel.
+
+          RING_COUNT <rings>
+               Controls the  number of telephone rings  required before the
+               modem is commanded to answer the phone.
+
+          CHAT_LEVEL <level>
+               Sets minimum security  level to allow users to be "available
+               for chat" after initial logon.
+
+          AUTO_REGISTER ON
+               Set to OFF to prevent automatic "auto-scan" registration for
+               new users in all public conferences.
+
+          MIN_BAUD <baud>
+               Sets the lowest baud rate to allow into system.
+
+
+                                          14
+
+
+
+
+
+
+
+          AUTO_RESET_MINUTES <minutes>
+               Perform  automatic modem  reset  after specified  idle time.
+               set to 9999 to disable auto reset.
+
+
+          COUNT_LOCAL ON
+               Set to OFF  to disable  counting local logins  in the  total
+               system calls counter.
+
+          MIN_PASSWORD 4
+               Specifies mininum length of password for new users.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          15
+
+
+
+
+
+
+
+
+          Door Control Lines
+
+          The remainder of  the configuration  file consists of  a list  of
+          "door control lines".   These lines control the routing  of users
+          into doors according to security level.  
+
+          Each door control line consists of 5 words separated by spaces or
+          commas.  The general format of a door control line is:
+
+                    LEVEL {*}DOORMENU DOORLIST {*}INIT_DEFAULT {*}RET_DEFAULT
+
+          Where:
+                    LEVEL               is  the  user's security  level for
+                                        this control line.
+
+                    DOORMENU       is  the full  path and  filename of  the
+                                   door menu.
+
+                    DOORLIST       is  the full  path and  filename  of the
+                                   doors.dat file.
+
+                    INIT_DEFAULT   is  the  initial  default  door  command
+                    after logon.
+
+                    RET_DEFAULT         is the default  door command  after
+                                        return from a door.
+
+          If no matching  security level  is found, the  LAST door  control
+          line will  be used.   This allows  you to have  a "default"  door
+          system for most users, and additional  special door control lines
+          for specific levels.
+
+
+          Forced Defaults
+
+          Both the Initial Default (INIT_DEFAULT) and the Return From  Door
+          Default (RET_DEFAULT)  parameters may begin with '*' to force the
+          command to immediately execute without prompting the user.
+
+
+          Preventing User Over-ride of Forced Default
+
+          To  prevent a  user  from over-riding  a  forced default  with  a
+          stacked door number, begin the parameter with '**'.
+
+
+
+
+
+
+
+
+                                          16
+
+
+
+
+
+
+
+
+          Example Door Control Lines:
+
+          50 C:\PCB\GEN\DOORS C:\PCB\MAIN\DOORS.DAT *1 *G 
+             - This door control line applies to security level 50 users.
+             - Displays the C:\PCB\GEN\DOORS door menu.
+             - Uses the file C:\PCB\MAIN\DOORS.DAT to control actual doors.
+             - Forces the caller initially into door 1.
+             - On return from door 1, the 'G'oodbye command is forced.
+
+          10 C:\PCB\GEN\DOORS C:\PCB\MAIN\DOORS.DAT 1 1
+             - This door control line applies to level 10 users.
+             - The default door is "1" at all times, and the  user is never
+               forced into a door.
+
+          20 C:\PCB\GEN\DOORS C:\PCB\MAIN\DOORS.DAT *S *S
+             - This control line initially passes  the user into the System
+               after logon.
+             - On return from any door it also returns to the system.
+
+          29 C:\PCB\GEN\DOORS C:\PCB\MAIN\DOORS.DAT **7 *G
+             - This control line forces the user into door #7  and logs the
+               user off on return from the door.  
+             - The  use of '**' prevents  the user from  stacking a request
+               for some other door during logon.
+
+           2 C:\PCB\GEN\DOORS C:\PCB\MAIN\DOORS.DAT **G
+             - This  control  ling  immediately  logs  off  any  caller  of
+               security level 2, without allowing any door access at all.
+
+
+          ProLogon  also  includes logic  to force  the  "door menu"  to be
+          displayed  if the  filename  is preceeded  with a  "*".   This is
+          useful when you are  forcing a caller  directly into a door,  but
+          still  want to  display  a predetermined  message.   Here  is  an
+          example of how I  use this feature to allow  non-registered users
+          to  leave a  COMMENT via  PROSCRIPT when  calling into  a private
+          node:
+
+          ; private node users are allowed to leave a comment to sysop
+                 2 *L:\PCB\GEN\CLOSED L:\pcb\main\doors.dat **18 *G
+                 10 *L:\PCB\GEN\CLOSED L:\pcb\main\doors.dat **18 *G
+                 50 *L:\PCB\GEN\CLOSED L:\pcb\main\doors.dat **18 *G
+
+          Door #18 calls  ProScript to allow the user to input 5 lines as a
+          message to sysop.
+
+
+
+
+
+
+
+                                          17
+
+
+
+
+
+
+
+
+                           GATEWAY TO PCBOARD (SYSTEM DOOR)
+
+          The (S)ystem option runs a special  door script called 'SYSDOOR',
+          in which you may  install calls to PCBOARD.EXE for  normal system
+          functions, such as password change or script questionnaires.
+
+          You  should not  place  a call  to  PCBOARD.EXE directly  in  the
+          'SYSDOOR' file, since this would cause PCBoard to be running from
+          'DOOR.BAT', which will prevent the use of other door programs.
+
+          My  SYSDOOR file contains  a single line  that calls up  a second
+          batch to run the bbs.
+
+          Example SYSDOOR. File
+
+          $system
+
+          The real  batch file  for the system  door is $SYSTEM.BAT.   This
+          file  cleans up  some files,  runs PCBOARD,  and then  checks for
+          special handling on exit.   Finally, it recycles ProLogon through
+          BOARD.BAT.    Notice that  the  supplied  $SYSTEM.BAT file  fully
+          supports the ability to  open further doors while in  the PCBoard
+          gateway.
+
+          Example $SYSTEM.BAT File (PCB14.2)
+
+          if exist door.bat del door.bat
+                 pcboard
+                 if exist door.bat door
+                 if exist remote.bat remote
+                 if exist event.bat event
+                 board
+
+
+          Example $SYSTEM.BAT File (PCB14.5)
+
+          if exist door.bat del door.bat
+          pcb145
+          if exist endpcb del endpcb
+          if exist door.bat door
+          if exist remote.bat remote
+          if exist event.bat event
+          board
+
+
+          Exit to DOS Option
+
+          To prevent the "System" from taking over when  a caller logs off,
+          you must enter  PCBSETUP and change  an option.  In  the "Options
+          __" screen enable the "Exit to DOS after each caller" flag.
+
+
+                                          18
+
+
+
+
+
+
+
+
+                                 SYSOP CONTROL PANEL
+
+          ProLogon  displays a sysop control  panel when it  is waiting for
+          calls.  This control panel provides the sysop with lots of useful
+          system information,  as well  as the ability  to control  several
+          features.
+
+
+          Display Items
+
+          DATE and TIME
+               Current date and time display.
+
+          TOTAL CALLS
+               Total number of calls received.
+
+          SYSTEM STATUS
+               Status of the system.  Can be any of these:
+                    System Available
+                    Resetting Modem
+                    Initializing Modem
+                    Going Off-Hook
+                    Ring Detected
+                    Waiting for Carrier
+                    Waiting for EVENT
+
+          NODE NUMBER
+               The current node number.
+
+          MODEM STATUS
+               The  last result code returned from the modem.  Usually "OK"
+               when system is available.  At other times you  may see other
+               modem  related messages.    Use these  messages to  diagnose
+               difficulties in modem control or compatibility.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          19
+
+
+
+
+
+
+
+
+          MODEM SPEED
+               This entry displays  the current modem speed  or caller baud
+               rate  setting.    When  an error  correcting  connection  is
+               recognized,  this  display changes  according  to  the modem
+               result code.
+
+               NOTE:     The modem speed reported is  the TRUE speed of the
+                         connection between the two modems, not simply  the
+                         COM  port opening  speed.   Most 9600  baud modems
+                         will  report in  a  speed of  9600.   PCBoard  has
+                         always reported the  COM port  speed for  anything
+                         over 4800 baud,  totally ignoring the  information
+                         provided by modem, and resulting in  less accurate
+                         time estimates.  This  difference has NO effect on
+                         the actual  speed of operation --  only the number
+                         seen on  the screen, and the  estimate times prior
+                         to download will be different.
+
+
+          UART TYPE
+               This  window  displays  the type  of  serial  chip that  was
+               detected by ProLogon.  The possible displays are:
+                    16450/8250     ;The usual unbuffered UART chip
+                    16550          ;Early versions of buffered UART chips
+                    16550AN        ;Late versions of buffered UART chips
+
+
+          CALLER LOG
+               This window provides  a display of the last few lines of the
+               caller log  so you know who  was last on the  system and how
+               they  disconnected. The time and date  display also give you
+               an idea  of how long the  system has been idle.   The (PgUp)
+               function  key  zooms this  window  to full  screen  to allow
+               browsing through the caller log while waiting for a call.
+
+
+
+          Command Keys
+
+          (A) ANSWER PHONE
+               This command causes a false "ring detected" condition, which
+               in most cases will cause the modem to pick up the line.  Use
+               this  after communicating via voice  to cause the  BBS to go
+               online without forcing the caller to redial.
+
+          (E) EXIT TO DOS, MODEM ON-HOOK
+               This command will exit to DOS without placing the modem off-
+               hook.
+
+          (L) LOCAL USER LOGON
+               This  command places the modem  off-hook and allows a normal
+
+                                          20
+
+
+
+
+
+
+
+               user logon through the local display.
+
+          (M) MONITOR NODE STATUS
+               This command causes  a continuous display  of the status  of
+               all  nodes  in  a  multi-node  system.    This display  will
+               automatically terminate when a call is received.
+
+          (S) SYSOP INTO SYSTEM
+               This  command places the  modem off-hook and  logs the sysop
+               into the system.
+
+          (X) EXIT TO DOS, MODEM OFF-HOOK
+               This  command  places  the  modem  off-hook  and  terminates
+               ProLogon.   It  also  creates a  special flag  file "ENDPCB"
+               which is used by the BOARD.BAT file to determine if a caller
+               is online of if you are dropping to dos.
+
+
+          Mode Toggle Keys
+
+          (F3) PRINTER        This  key toggles the  printing of caller log
+                              entries.
+
+          (F4) PAGER          This key toggles the sysop pager beep.
+
+          (F7) BEEPER         This key toggles all local sound off and on.
+
+          (F9) DISPLAY        This  key toggles the  local display  off and
+                              on. An  automatic 3 minute screen  blanker is
+                              built into ProLogon to prevent screen burning
+                              when waiting for a caller.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          21
+
+
+
+
+
+
+
+
+          Caller Log Browser
+
+          The  (PgUp)  function key  zooms the  caller  log window  to full
+          screen,  and allows full viewing of the current node's caller log
+          entries.
+
+          On  a color monitor, different  colors are used  to highlight and
+          differentiate between the various caller log entry types.
+
+          Within  the caller  log browser  the following function  keys are
+          active:
+                    (PgUp)         Scroll back 1 page
+                    (PgDn)         Scroll forward 1 page
+                    (Up)           Scroll back 1 line
+                    (Down)         Scroll forward 1 line
+                    (Left)         Browse next lower node's caller log
+                    (Right)        Browse next higher node's caller log
+                    (Escape)       Exit caller log browser.
+
+          The caller log browser is terminated automatically when the phone
+          rings.
+
+
+          Fast Control Panel Screen Display
+
+          ProLogon  normally uses only  ANSI codes  to control  the control
+          panel  screen display.   This  method of  screen update  is fully
+          compatible with all multi-tasking and time-share systems.
+
+          If  you are running in an environment that supports direct screen
+          writing, you can  boost ProLogon's  display speed.   To do  this,
+          place  a copy of the display module PROPANEL.COM into a directory
+          listed in your DOS "PATH".  
+
+
+          Direct Screen Writing/Display Bleed-through
+
+          IF YOU ARE  USING A MULTI-TASKING OR  TIME-SHARE ENVIRONMENT SUCH
+          AS  DOUBLEDOS OR DESQVIEW, PLEASE INSURE THAT YOU DO *NOT* HAVE A
+          COPY OF THE  FILE PROPANEL.COM IN ANY  DOS DIRECTORY.   THIS FILE
+          ENABLES DIRECT SCREEN WRITING WHEN PRESENT.
+
+
+
+
+
+
+
+
+
+
+
+                                          22
+
+
+
+
+
+
+
+
+                                USER COMMAND STACKING
+
+          At the "Do  you want  graphics: (Enter)=no?" prompt  you can  now
+          respond with any of the following formats:
+
+          N Q firstname lastname password doornumber
+               Bypass  welcome   message,  immediate  logon,   normal  news
+               display, automatic entry into specified door.
+
+          N Q firstname lastname password doornumber NS
+               Addition  of  "NS" causes  the  normal  news display  to  be
+               bypassed.
+
+          N Q
+               Bypass welcome display.
+
+          N Q NS
+               Bypass both welcome and normal news displays.
+
+          N QQ NS
+               Also bypass the "security level" opening message.
+
+          Logon stacking is also available at the "Select language" prompt.
+
+
+          Multi-word Last Names
+
+          Command-stacking checks are not  active at the LAST NAME  prompt.
+          This  makes  it possible  to  enter  multi-word last  names,  but
+          eliminates  the ability to stack the password after the last name
+          AT the last name prompt.   The password and door number may still
+          be stacked  at any of  the other prompts  (do you  want graphics,
+          first name, password).
+
+
+          Quick Logon
+
+          All "N Q" command stacks fall under the category of "quick logon"
+          and may be  disabled through  the "disable quick  logon" flag  in
+          PCBsetup.   You must  not disable quick  logons if you  want your
+          users to have this feature.
+
+
+
+
+
+
+
+
+
+
+
+                                          23
+
+
+
+
+
+
+
+
+          Security Level Specific Menus and Defaults
+
+          ProLogon has the ability to display  security level specific DOOR
+          menus.   See the Configuration  File section for  details on Door
+          Control  Lines, which give you the ability to specify door menus,
+          default door commands, and automatic "forced" door execution.
+
+
+          ProLogon includes an automatic  check for SECURITY LEVEL specific
+          display files  and menus.   All text file displays  now check for
+          the security level in the first three letters of the filename.
+
+          For example:
+               WARNINGG       default graphics expiration warning
+
+               015NINGG       graphics warning for security level 15
+
+               100NING.NOR    non-graphic  warning  for security  level 100
+                              and .NOR language
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          24
+
+
+
+
+
+
+
+
+                               NETWORK MAILER INTERFACE
+
+          ProLogon includes a  built-in network mailer  interface.  When  a
+          mailer  request  keyword  is  detected  at  the  initial  prompt,
+          ProLogon  immediately exits to DOS  and passes control  on to any
+          desired third-party mailer program.
+
+          At the "Do you want ANSI graphics" prompt, a response of
+               N MAILRUN
+          causes  the program will immediately exit to DOS.  The ERRORLEVEL
+          is set to  allow an  external mailer program  to process  netmail
+          functions.
+
+          The following ERRORLEVEL values are possible:
+               0    Normal exit, continue as usual.
+               1    Error  exit when  invalid  PCBOARD.SYS  is detected  on
+                    recycle.
+               2    MAILRUN detected with error correcting modem.
+               3    MAILRUN detected with non-error correcting modem.
+               99   Program or configuration error.
+
+          If you  do not  want this feature,  simply continue  to use  your
+          normal  BOARD.BAT logic; this will cause the board to immediately
+          recycle if a caller attempts to use this feature.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          25
+
+
+
+
+
+
+
+
+                                     MODEM NOTES
+
+          When  in use, the ProLogon  program is in  charge of initializing
+          the  modem, answering  calls,  and recognizing  all modem  result
+          codes.    This  poses   special  problems  and  opportunities  in
+          conjunction  with the many new  and unique modem  types that have
+          recently been introduced.
+
+          Although  I  have made  every  effort to  make  ProLogon function
+          properly   with  every  modem  type  known  to  me,  there  is  a
+          possibility that it  will not function properly  with your modem.
+          If you have trouble  getting proper connections, or  in resetting
+          of the modem, please consider the following points:
+
+          *    If you have modem-related difficulties, please add the 
+                         SET PRODEBUG=ON
+               statement to your BOARD.BAT file.   This causes ProLogon  to
+               capture the modem result codes into the file DEBUGxx.OUT.
+
+          *    When  calling  the  Tool  Shop  with  modem-related  problem
+               reports, please include  in your message  (or as an  upload)
+               the contents of this DEBUG file.   If you don't give me this
+               specific  information there may be  little I can  do to help
+               you.
+
+          The ProLogon  program is  fully compatible with  known high-speed
+          modem  types.  However, it's handling of these modems is slightly
+          different than that of PCBoard 14.2.  
+
+          *    The HST modem,  when configured  for 19200  and higher  port
+               speeds, is  "locked" at the  opening speed.   Please  verify
+               that  your PCBSETUP  modem  setting for  "locked at  opening
+               speed" is turned ON.
+
+          *    ProLogon attempts to make the BEST use of the modem's result
+               codes.    In most  cases the  TRUE  speed of  the connection
+               between  high speed modems will be reported - not simply the
+               COM port opening speed.  PCBoard has always reported the COM
+               port speed for anything over 4800 baud, totally ignoring the
+               information provided by modem.
+
+          *    This  difference  has NO  effect  on  the  actual  speed  of
+               operation -- only  the number  seen on the  screen, and  the
+               estimate times prior to download will be different.
+
+
+
+
+
+
+
+
+                                          26
+
+
+
+
+
+
+
+
+                                       SUPPORT
+
+          I work  very hard to  produce a  software package of  the highest
+          quality and functionality.  I try to look into all reported bugs,
+          and will  generally fix reported problems within  a few days.  If
+          you  have any questions, bugs,  or suggestions, please contact me
+          at
+                             Phone number         Modem type
+                            --------------    ---------------------
+                            (818) 891-3772    US Robotics HST 9600
+                            (818) 891-1344    Hayes-V series 9600
+                            (818) 891-6780    US Robotics 2400 (free line)
+
+
+                                       LICENSE
+
+          This  package is  NOT  public domain  software.   ProLogon  is  a
+          ShareWare   program  that  requires  registration  for  continued
+          operation.   When you register,  you will be  allowed to download
+          the REGLON  program, which will unlock  the demonstration, making
+          it the full commercial program.
+
+          DO NOT COPY OR DISTRIBUTE THE REGLON PROGRAM, OR ANY REGISTRATION
+          FILES CREATED BY THE REGLON PROGRAM.
+
+          You may use, copy and distribute the unregistered version freely,
+          but you MAY NOT RESELL the program.  A modest fee for copying may
+          be  charged, not to exceed  $3.00 exclusive of  the cost of disk,
+          mailer and postage.
+
+          If you like  and use this program, I request  you register it for
+          $30 after a reasonable trial period (about 30-45 days).  
+
+          Please see REGISTER.FRM  for additional registration information.
+
+
+          Send your registration check or money order to:
+
+                                   Samuel H. Smith
+                                  The Tool Shop BBS
+                                    P. O. Box 4808
+                             Panorama City, CA 91412-4808
+
+          Registered copies of ProLogon are commercial software and may not
+          be distributed in any form.
+
+                                   REVISION HISTORY
+
+                  See PROLON.NEW for the complete revision history.
+
+
+
+                                          27
+
+
+
+
+
+
+
+
+                                        INDEX
+
+          ansi  22, 25                       driver  11, 13
+          baud  11, 14, 20, 26               edit  8
+          beeper  21                         eliminates  23
+          binary  8                          enable  18
+          bios  10, 11, 13                   endpcb  7, 8, 18, 21
+          blanker  21                        enhanced  1, 3
+          board   7, 8, 10, 18, 21,          environment  10, 22
+                    25, 26                   error  4, 5, 20, 25
+          boost  22                          errorlevel  7, 25
+          bugs  27                           event  6, 7, 18, 19
+          burning  21                        example  7, 17, 18, 24
+          bypass  23                         exclusive  9, 27
+          carrier  19                        exe  7-9, 11, 18
+          cnames  8                          executed  8
+          command    3, 7,  12, 16,          extended  3, 4, 8, 10
+                    17, 20, 21, 23           extuser  7, 8, 10
+          commercial  27                     features  3, 19
+          common  3, 8, 11, 14               files   3, 4,  8, 10, 11,
+          communication   1,  3, 4,                    14, 18, 24, 27
+                    13                       forced  3, 12, 16, 17, 24
+          compatibility  19                  functions  3, 9,  10, 18,
+          compatible  3, 8, 22, 26                     25
+          conferences  3, 8, 11, 14          gateway  9, 18
+          configuration   8, 9, 11,          graphics  23-25
+                    13, 14, 16, 24,          install  7, 9, 18
+                    25                       interrupt  11, 13
+          confinfo  7, 8, 10                 introduction  3
+          control      1,   3,   4,          license  27
+                    11-14,  16, 17,          logoff  9
+                    19, 22, 24, 25           logon   1, 3,  4, 11, 12,
+          copyright  1                                 14, 16, 17, 20,
+          default  9-14, 16, 17, 24                    21, 23
+          defined  8, 9                      menu  9, 12, 16, 17
+          demonstration  27                  modem  4, 11, 12, 14, 15,
+          diagnose  19                                 19, 20, 21, 25,
+          difficulties  19, 26                         26, 27
+          directory  6, 8,  10, 11,          monitor  3,  11, 14,  21,
+                    14, 22                             22
+          disclaimer  6                      name  10, 23
+          display    3, 4,  10, 11,          network  4, 25
+                    1 4 ,     1 7 ,          node   3, 6, 11,  14, 17,
+                    19-24                              19, 21, 22
+          distribute  27                     note  10, 20
+          door      1,  3,   4,  7,          panel  4, 11, 14, 19, 22
+                    9-13,    16-18,          password  9, 12,  15, 18,
+                    23, 24                             23
+          doors      9,   12,   13,          pcb  10, 12, 13, 17
+                    16-18                    pcboard    1, 3,  4, 7-9,
+          dos  8, 18, 20-22, 25                        1 1 ,     1 8 ,
+
+                                          28
+
+
+
+
+
+
+
+                    20, 25, 26
+          pcbsetup  8, 18, 23, 26
+          printer  21
+          problems  26, 27
+          prodoor  3, 7, 8, 10, 11,
+                    14
+          prologon      1,  3,   4,
+                    6-11,  13,  14,
+                    17,  18-22, 24,
+                    25, 26, 27
+          prolon  6-8, 11, 27
+          prompt  4, 9, 11, 14, 23,
+                    25
+          propanel  10, 22
+          questionnaires  9, 18
+          recycle  7, 25
+          register  1,  6, 11,  14,
+                    27
+          reglon  6, 27
+          script  3, 9, 12, 18
+          security  3-5, 9, 11, 12,
+                    14, 16, 17, 23,
+                    24
+          speed  4, 20, 22, 26
+          status  3, 4, 19, 21
+          subscription  3
+          sysdoor  9, 18
+          sysop  3-5,  13, 14,  17,
+                    19, 21
+          system  1, 3, 4, 6-9, 11,
+                    12, 13-21
+          toggle  21
+          trademark  1
+          warning  24
+          welcome  23
+          window  20, 22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          29
+

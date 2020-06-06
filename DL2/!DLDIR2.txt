@@ -1,0 +1,353 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                         S.H.Smith-Library Source Code
+                         108 files using 500,042 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+TOOL-INC.ZIP   108586  07-29-93  Tool Shop include library.
+                               | Includes about a hundred little utilities tha
+                               | can be included in your Turbo Pascal programs
+                               | All source code. Source and TPU files for
+                               | several library units common to various Tool
+                               | Shop utility programs.  Includes buffered I/O
+                               | console input, full screen display/edit
+                               | handlers, DOS based memory allocation, error
+                               | trap and reportin unit, low level DOS file I/
+                               | functions unit, mini (bios based) CRT
+                               | replacement, text file sharing unit, quick
+                               | text file reading unit, general tools unit
+                               | (based on most of the TOOL-INC libraries),
+                               | interrupt driven communications unit, and
+                               | more.
+                               | Download Count: 91   Last Download: 03-20-97
+                               |
+TOOL-PAS.ZIP    92719  07-29-93  Tool Shop *.PAS tool sources
+                               | Download Count: 93   Last Download: 03-20-97
+                               |
+TOOL-USE.ZIP    72515  08-07-93  Tool Shop Library Units.
+                               | Download Count: 60   Last Download: 03-20-97
+                               |
+TOOLS.ZIP       15358  08-07-93  Top level TOOLS unit
+                               | Download Count: 32   Last Download: 07-23-95
+                               |
+ADDSUB.ZIP       1503  06-02-89  C-like add and subtract macros
+                               | Download Count: 4    Last Download: 11-18-94
+                               |
+ANSICOLR.ZIP     3427  01-15-91  Generate ANSI codes for major colors
+                               | Download Count: 16   Last Download: 07-23-95
+                               |
+ANYSTRIN.ZIP     1470  11-03-92  General string declarations
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+APPENDC.ZIP      1398  06-02-89  Append characters and strings
+                               | Download Count: 6    Last Download: 07-23-95
+                               |
+ATOF.ZIP         1408  06-02-89  Ascii to floating point conversion
+                               | Download Count: 31   Last Download: 02-10-96
+                               |
+ATOI.ZIP         1821  02-12-92  Ascii to integer conversion
+                               | Download Count: 30   Last Download: 03-24-95
+                               |
+ATTACH.ZIP       2687  03-01-89  Attach a new handler to an interrupt vector
+                               | Download Count: 7    Last Download: 09-14-94
+                               |
+BAKFILE.ZIP      1158  03-21-90  Create a backup of a file
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+BITMAP.ZIP       1564  01-15-91  Manipulate PCBoard 14 "BitMap" structures
+                               | Download Count: 6    Last Download: 07-07-96
+                               |
+BLINE.ZIP        1606  05-16-90  .
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+BORDER.ZIP       1815  03-01-89  Display window borders in many styles
+                               | Download Count: 7    Last Download: 11-03-95
+                               |
+BSORT.ZIP        1189  03-01-89  Generic binary sort
+                               | Download Count: 5    Last Download: 10-06-94
+                               |
+BUFIO.ZIP        3334  07-01-92  Buffered file unit
+                               | Download Count: 9    Last Download: 07-23-95
+                               |
+BUFTEST.ZIP      1561  07-04-89  Test bufio unit
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+BYTEFLAG.ZIP     1362  06-02-89  Manipulate flag bits within a byte variable
+                               | Download Count: 5    Last Download: 07-23-95
+                               |
+CAPSTR.ZIP       1035  07-08-89  .
+                               | Download Count: 3    Last Download: 10-31-94
+                               |
+CENTER.ZIP       1173  06-02-89  Center a string
+                               | Download Count: 9    Last Download: 09-14-94
+                               |
+CHARBIT.ZIP      1970  06-02-89  Character font bit lookup
+                               | Download Count: 3    Last Download: 07-07-96
+                               |
+CINPUT.ZIP      11019  12-12-92  Simple input handlers
+                               | Download Count: 6    Last Download: 11-18-94
+                               |
+COPYTIME.ZIP     1097  06-02-89  Copy time/date from one file to another
+                               | Download Count: 5    Last Download: 09-14-94
+                               |
+CRC16.ZIP        2236  06-02-89  Very fast 16 bit CRC calculation/MASM
+                               | Download Count: 14   Last Download: 11-18-94
+                               |
+CRC32.ZIP       10113  12-31-89  Very fast 32 bit CRC in MASM, C and Pascal
+                               | Download Count: 35   Last Download: 02-10-96
+                               |
+DELAY.ZIP        1344  06-02-89  Milisecond delay while giving up time
+                               | Download Count: 5    Last Download: 09-14-94
+                               |
+DELSPACE.ZIP     1299  05-19-90  Delete spaces from a string
+                               | Download Count: 7    Last Download: 01-20-95
+                               |
+DISKSPAC.ZIP     1511  01-23-90  Calculate disk free space
+                               | Download Count: 9    Last Download: 07-31-95
+                               |
+DISPEDIT.ZIP     6027  09-01-92  Display/Edit user interface unit
+                               | Download Count: 5    Last Download: 09-14-94
+                               |
+DISPLN.ZIP       2378  06-02-89  Display line
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+DOSIO.ZIP        2319  06-02-89  Dos low level i/o interface
+                               | Download Count: 9    Last Download: 05-09-95
+                               |
+DOSMEM.ZIP       2591  02-22-93  Allocate dynamic variables via DOS;saves heap
+                               | Download Count: 8    Last Download: 05-11-97
+                               |
+DTOF.ZIP         1954  06-02-89  Double to float conversion
+                               | Download Count: 19   Last Download: 09-14-94
+                               |
+ERRMSG.ZIP       1702  10-08-91  Get text for all TPAS 4.0 error messages
+                               | Download Count: 2    Last Download: 04-28-95
+                               |
+ERROR.ZIP        1027  06-02-89  General error handler
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+ERRTRAP.ZIP      2243  10-08-91  Unit traps errors and explains them
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+EXISTS.ZIP       1283  06-02-89  Does a file exist?
+                               | Download Count: 10   Last Download: 08-04-95
+                               |
+FILEDATE.ZIP     1305  06-02-89  Get file date/time as a real
+                               | Download Count: 5    Last Download: 03-16-96
+                               |
+FLAGS.ZIP        1492  06-02-89  Manipulate flag bits within a word variable
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+FTOA.ZIP         1210  06-02-89  Floating point to ascii conversion
+                               | Download Count: 22   Last Download: 02-10-96
+                               |
+GETENV.ZIP       1541  06-02-89  Get environment variables
+                               | Download Count: 10   Last Download: 02-29-96
+                               |
+GETFDAT0.ZIP     1386  06-02-89  Get file date, mm-dd-yy format
+                               | Download Count: 15   Last Download: 09-14-94
+                               |
+GETFDATE.ZIP     1299  06-02-89  Get file date as a string, yy-mm-dd format
+                               | Download Count: 14   Last Download: 09-14-94
+                               |
+GETFILE2.ZIP     1735  08-10-92  Expand wildcard file lists, small version
+                               | Download Count: 24   Last Download: 09-14-94
+                               |
+GETFILE3.ZIP     1924  08-10-92  Expand wildcard file lists, VARSTR version
+                               | Download Count: 27   Last Download: 09-14-94
+                               |
+GETFILES.ZIP     2177  06-02-89  Expand filelists
+                               | Download Count: 21   Last Download: 09-14-94
+                               |
+GETKEY.ZIP       1396  06-02-89  Get key, maps extended keys into consts
+                               | Download Count: 8    Last Download: 09-14-94
+                               |
+GETTIME.ZIP      1394  06-02-89  Get time of day
+                               | Download Count: 10   Last Download: 09-14-94
+                               |
+GIVETIME.ZIP     1978  11-08-92  Give up extra time under doubledos
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+HEAPMEM.ZIP      1265  06-02-89  Conventional heap version of dosmem
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+HELPME.ZIP       1900  03-01-89  Popup help unit
+                               | Download Count: 5    Last Download: 07-23-95
+                               |
+INCDEC.ZIP        787  03-01-89  Increment/decrement macros
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+INPUT.ZIP        1831  06-02-89  CTTY-compatible line input
+                               | Download Count: 6    Last Download: 09-14-94
+                               |
+INT2REAL.ZIP     1042  06-02-89  Unsigned integer to real conversion
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+INVIS.ZIP        1209  06-02-89  Is program invisible under doubledos?
+                               | Download Count: 1    Last Download: 09-14-94
+                               |
+ISWILD.ZIP       1246  06-02-89  Determine if a filespec contains wildcards
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+ITOA.ZIP         1115  06-02-89  Integer to ascii conversion
+                               | Download Count: 20   Last Download: 09-14-94
+                               |
+ITOA1.ZIP        1286  02-12-92  Integer to ascii (no length limit)
+                               | Download Count: 4    Last Download: 12-15-94
+                               |
+ITOA2.ZIP        1120  06-02-89  Integer to ascii (2 chars) conv
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+ITOH.ZIP         1541  05-28-90  Integer to hex conversion
+                               | Download Count: 27   Last Download: 03-23-96
+                               |
+ITOU.ZIP         1322  06-02-89  Integer to unsigned real conversion
+                               | Download Count: 21   Last Download: 11-04-94
+                               |
+KEYPRESS.ZIP     1129  06-02-89  Check for keypress without CRT unit
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+LJUST.ZIP        1292  06-02-89  Left-justify in writeln macro
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+LOCFILE.ZIP      1775  06-02-89  Locate file according to paths
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+LOCKS.ZIP        1443  03-01-89  Resource management
+                               | Download Count: 5    Last Download: 10-25-94
+                               |
+LONGJMP.ZIP      1198  03-01-89  C-like longjump error recovery facility
+                               | Download Count: 2    Last Download: 03-06-95
+                               |
+LTOR.ZIP         1471  07-29-93  Long integer to real conversion
+                               | Download Count: 23   Last Download: 11-04-94
+                               |
+MARKTIME.ZIP     1133  06-02-89  Mark current time of day in a variable
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+MDOSIO.ZIP       8911  02-22-93  Dos input/output library, small version
+                               | Download Count: 7    Last Download: 04-28-95
+                               |
+MINICRT.ZIP      5762  10-17-92  CRT unit replacement uses only BIOS calls
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+MINIDISP.ZIP     1131  06-02-89  Small/quick display function for TPAS 3.0
+                               | Download Count: 3    Last Download: 04-28-95
+                               |
+MOVEFILE.ZIP     2169  01-24-91  Move files, copy when needed
+                               | Download Count: 8    Last Download: 09-14-94
+                               |
+OPENSHAR.ZIP     5152  02-22-93  Open files with network file sharing
+                               | Download Count: 10   Last Download: 11-03-95
+                               |
+PATTERN.ZIP      2271  05-19-90  Unix style pattern matching (wildcards)
+                               | Download Count: 5    Last Download: 09-14-94
+                               |
+PLOTLIB.ZIP      3064  01-31-90  Graphics library
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+POP2.ZIP         2424  03-01-89  Simplified pop-up window library
+                               | Download Count: 5    Last Download: 11-03-95
+                               |
+POP3.ZIP         1784  03-01-89  Pop-up window library for tp4
+                               | Download Count: 6    Last Download: 11-03-95
+                               |
+POPUP.ZIP        3347  03-01-89  Pop up windows/fast display
+                               | Download Count: 9    Last Download: 11-03-95
+                               |
+PREPHELP.ZIP     2237  03-01-89  Prepare popup help
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+PRINTC.ZIP       1105  03-01-89  Fast interface to PRN device
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+PULL.ZIP         2863  10-18-89  Simplified pull-down menu system
+                               | Download Count: 11   Last Download: 03-21-95
+                               |
+QREAD.ZIP        2817  06-02-89  Quick readln
+                               | Download Count: 9    Last Download: 02-24-95
+                               |
+QTEST.ZIP        1435  06-02-89  Test qread unit
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+QUELIB.ZIP       1845  06-02-89  Fifo queue library (inline macros)
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+QWRITE.ZIP       1552  07-09-89  Quick write
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+READBAS.ZIP      3277  05-28-92  Read BASIC comma-delimited data files
+                               | Download Count: 6    Last Download: 08-29-96
+                               |
+REGPACK.ZIP       864  03-01-89  Register package declaration
+                               | Download Count: 2    Last Download: 04-11-95
+                               |
+REMPATH.ZIP      2107  05-27-90  Remove / manipulate filename paths
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+REPLSTR.ZIP      1351  02-25-90  String replacement
+                               | Download Count: 1    Last Download: 09-14-94
+                               |
+REVERSE.ZIP      1098  03-01-89  Reverse order of a string
+                               | Download Count: 1    Last Download: 09-14-94
+                               |
+RPNCALC.ZIP      2200  03-01-89  Rpn calculator
+                               | Download Count: 4    Last Download: 11-08-94
+                               |
+STOA.ZIP         1183  07-02-89  Single-float to ascii conversion
+                               | Download Count: 50   Last Download: 09-14-94
+                               |
+STOF.ZIP         1752  06-02-89  Msbasic "Single" to Turbo "Float/real" conv.
+                               | Download Count: 51   Last Download: 09-14-94
+                               |
+STOLOWER.ZIP     1438  06-02-89  Map strings to lower case (inline)
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+STOUPPER.ZIP     1495  03-02-91  Map string toupper case
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+STOZ.ZIP         1808  06-02-89  String<-->zstring conversion
+                               | Download Count: 51   Last Download: 09-14-94
+                               |
+STRIPSPC.ZIP     1230  05-19-90  Strip spaces from strings
+                               | Download Count: 4    Last Download: 12-31-94
+                               |
+STRLIB.ZIP       1301  06-02-89  String macro library
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+STRUTIL.ZIP      1331  06-02-89  String utility macros
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+SYSDATE.ZIP      1230  06-02-89  Get system date/time strings
+                               | Download Count: 3    Last Download: 09-14-94
+                               |
+SYSDATE0.ZIP     1388  06-02-89  Get system date
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+SYSDATE2.ZIP     1490  06-02-89  Get system date in mm-dd-yy format
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+SYSDATE3.ZIP     1201  06-02-89  Another way to get the system date
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+TOLOWER.ZIP      1094  06-02-89  Map string to lower case; MASM
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+TOP.ZIP          2188  03-01-89  Top level menu handler (for PULL.arc)
+                               | Download Count: 5    Last Download: 09-14-94
+                               |
+TRANSLAT.ZIP     1256  06-02-89  Translate characters in a string
+                               | Download Count: 4    Last Download: 09-14-94
+                               |
+TREELIB.ZIP      2579  06-02-89  Tree display library
+                               | Download Count: 2    Last Download: 02-10-95
+                               |
+VARSTR.ZIP       1721  11-21-91  Variable allocation string library
+                               | Download Count: 2    Last Download: 09-14-94
+                               |
+WILDCARD.ZIP     1488  01-24-91  Wildcard filename matching
+                               | Download Count: 7    Last Download: 05-01-97
+                               |

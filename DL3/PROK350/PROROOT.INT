@@ -1,0 +1,534 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+unit ProRoot;
+
+interface
+
+Uses
+   Dos,
+   Tools,
+   MdosIO,
+   BufIO,
+   ProData;
+
+var
+   setdebug:     boolean;     (* true if SET DEBUG=ON before calling *)
+   dbfd:         text;        (* debugging output file *)
+
+const
+   queue_size       = 3000;   {fixed size of all queues}
+   queue_high_water = 2700;   {maximum queue.count before blocking}
+   queue_low_water  = 2400;   {unblock queue at this point}
+
+type
+   queue_rec = record
+      next_in:  integer;
+      next_out: integer;
+      count:    integer;
+      data:     array[1..queue_size] of char;
+   end;
+
+type
+   readbas_bufrec = array[1..$2200] of char;
+
+var
+   curfd:               text;
+   readbas_name:        filenames;
+   readbas_count:       integer;
+
+const
+   readbas_comment:     char = '#';
+   readbas_buf:         ^readbas_bufrec = nil;
+
+procedure openfile(name: string65);
+function endfile: boolean;
+procedure closefile;
+
+procedure findlinenum(lnum: integer);
+
+procedure cleanline(var line: string);
+
+procedure getaline(var line: string;
+                  len:      integer);
+        {get any line}                  
+
+procedure getline(var line: string;
+                  len:      integer);
+        {get line, ignore comments}
+
+procedure getstr(var str: string;
+                 len:     integer);
+procedure getstrd(var str: string);
+procedure getint(var i: integer);
+procedure readint(var i: integer);
+procedure readword(var i: word);
+procedure readflag(var f: boolean);
+procedure vgetstr(var str: varstring);
+procedure vgetline(var str: varstring);
+procedure vgetstrd(var str: varstring);
+
+procedure skipstr;
+procedure skipline;
+procedure skiplines(n: integer);
+
+function code_colors(code:  string30): string30;
+function code_color(control: integer): string20;
+   {form an ansi color command}
+
+procedure load_color_constants(name: string65);
+   {load a new set of color constants}
+
+procedure position(x,y: byte);
+   {position cursor}
+
+procedure clear_screen;
+   {easee screen in current color}
+
+procedure clear_eol;
+   {clear to end of line}
+
+{color selection macros}
+function aRED:     string20;
+function aGREEN:   string20;
+function aYELLOW:  string20;
+function aBLUE:    string20;
+function aMAGENTA: string20;
+function aCYAN:    string20;
+function aWHITE:   string20;
+function aGRAY:    string20;
+
+procedure adRED(m: string);
+procedure adGREEN(m: string);
+procedure adYELLOW(m: string);
+procedure adBLUE(m: string);
+procedure adMAGENTA(m: string);
+procedure adCYAN(m: string);
+procedure adWHITE(m: string);
+procedure adGRAY(m: string);
+procedure default_color;
+
+function expand_xansi(xansi: string20): string30;
+
+{color selection constants}
+type
+   color_string = string12;
+
+{default colors}
+const
+   ansi_ccolor:  string30 = '';
+
+   ansi_colors:  array[0..8] of color_string =
+        ('0', '0;1;31', '0;1;32', '0;1;33', '0;1;34', '0;1;35',
+        '0;1;36', '0;1;37', '0');
+
+   ansi_default = 0;
+   ansi_red     = 1;
+   ansi_green   = 2;
+   ansi_yellow  = 3;
+   ansi_blue    = 4;
+   ansi_magenta = 5;
+   ansi_cyan    = 6;
+   ansi_white   = 7;
+   ansi_gray    = 8;
+
+   graphics:     boolean = false;  {is graphics mode active?}
+
+
+const
+   carrier_lost = #$E3;         (* code returned with carrier is lost *)
+
+   com_chan:     integer = 0;   (* current communication channel, 0=none *)
+
+   port_base:    integer = -1;  (* base port number for 8250 chip *)
+                                (* value = -1 until init is finished *)
+
+   port_irq:     integer = -1;  (* port irq number *)
+
+   old_vector:   pointer = nil; (* pointer to original com interrupt handler *)
+   
+   XOFF_char:    char = ^S;     (* XOFF character code *)
+
+   disable_cts_check: boolean = false; {false if RTS handshake is needed}
+
+   even_parity:   boolean = false; {strip parity?}
+
+var
+   port_intr:    integer;       (* interrupt number for 8250 chip *)
+   intr_mask:    integer;       (* interrupt controller initialization code *)
+
+   uart_type:    byte;          (* contents of UART identification register *)
+   prev_LCR:     byte;          (* previous LCR contents *)
+   prev_IER:     byte;          (* previous IER contents *)
+   prev_MCR:     byte;          (* previous MCR contents *)
+   prev_ICTL:    byte;          (* previous ICTL contents *)
+
+   xmit_active:  boolean;       (* is the transmitter active now?
+                                   (is a THRE interrupt expected?) *)
+
+   XOFF_active:  boolean;       (* has XOFF suspended transmit? *)
+
+   rxque:        queue_rec;     (* receive data queue *)
+   txque:        queue_rec;     (* transmit data queue *)
+
+   reg:          registers;     (* register package *)
+
+(*
+ * Uart register definitions
+ *
+ *)
+
+const
+   ICTL = $21;                  (* system interrupt controller i/o port *)
+
+   RBR = 0;  (* receive buffer register *)
+   THR = 0;  (* transmit holding register *)
+
+   DLM = 1;  (* divisor latch MSB *)
+   IER = 1;  (* interrupt enable register *)
+      IER_DAV     = $01;       (* data available interrupt *)
+      IER_THRE    = $02;       (* THR empty interrupt *)
+      IER_LSRC    = $04;       (* line status change interrupt *)
+      IER_MSR     = $08;       (* modem status interrupt *)
+
+
+   IIR = 2;  (* interrupt identification register *)
+      IIR_PENDING = $01;       (* low when interrupt pending *)
+
+      IIR_MASK    = $06;       (* mask for interrupt identification *)
+        IIR_MSR     = $00;       (* modem status change interrupt *)
+        IIR_THRE    = $02;       (* transmit holding reg empty interrupt *)
+        IIR_DAV     = $04;       (* data available interrupt *)
+        IIR_LSR     = $06;       (* line status change interrupt *)
+
+   FCR = 2;  (* FIFO control register *)
+      FCR_ENABLE_FIFO   = $C1;   (* write to port to enable FIFO *)
+      FCR_DISABLE_FIFO  = $00;   (* write to port to disable FIFO *)
+      FCR_16550         = $80;   (* bit set if chip is 16550 or 16550AN *)
+
+   LCR = 3;  (* line control register *)
+      LCR_5BITS   = $00;       (* 5 data bits *)
+      LCR_7BITS   = $02;       (* 7 data bits *)
+      LCR_8BITS   = $03;       (* 8 data bits *)
+
+      LCR_1STOP   = $00;       (* 1 stop bit *)
+      LCR_2STOP   = $04;       (* 2 stop bits *)
+
+      LCR_NPARITY = $00;       (* no parity *)
+      LCR_EPARITY = $38;       (* even parity *)
+
+      LCR_NOBREAK = $00;       (* break disabled *)
+      LCR_BREAK   = $40;       (* break enabled *)
+
+     {LCR_NORMAL  = $00;}      (* normal *)
+      LCR_ABDL    = $80;       (* address baud divisor latch *)
+
+
+   MCR = 4;  (* modem control register *)
+      MCR_DTR     = $01;       (* active DTR *)
+      MCR_RTS     = $02;       (* active RTS *)
+      MCR_OUT1    = $04;       (* enable OUT1 *)
+      MCR_OUT2    = $08;       (* enable OUT2 -- COM INTERRUPT ENABLE *)
+      MCR_LOOP    = $10;       (* loopback mode *)
+
+
+   LSR = 5;  (* line status register *)
+     LSR_DAV      = $01;       (* data available *)
+     LSR_OERR     = $02;       (* overrun error *)
+     LSR_PERR     = $04;       (* parity error *)
+     LSR_FERR     = $08;       (* framing error *)
+     LSR_BREAK    = $10;       (* break received *)
+     LSR_THRE     = $20;       (* THR empty *)
+     LSR_TSRE     = $40;       (* transmit shift register empty *)
+
+     LOERR_count:       integer = 0;    {overrun error count}
+     LPERR_count:       integer = 0;    {parity error count}
+     LFERR_count:       integer = 0;    {framing error count}
+     LBREAK_count:      integer = 0;    {break received count}
+
+
+   MSR = 6;  (* modem status register *)
+     MSR_DCTS     = $01;       (* delta CTS *)
+     MSR_DDSR     = $02;       (* delta DSR *)
+     MSR_DRING    = $04;       (* delta ring *)
+     MSR_DRLSD    = $08;       (* delta receive line signal detect *)
+     MSR_CTS      = $10;       (* clear to send *)
+     MSR_DSR      = $20;       (* data set ready *)
+     MSR_RING     = $40;       (* ring detect *)
+     MSR_RLSD     = $80;       (* receive line signal detect *)
+
+
+(* table of port base and interrupt vector for each COMn: value *)
+   LOCAL_COMn = 0;
+   MAX_COMn = 8;
+   COM_BASE_TABLE: ARRAY[1..MAX_COMn] OF WORD =
+        ($3F8,$2F8,$3E8,$2E8,0,0,$2E8,$3E8);
+   COM_IRQ_TABLE:  ARRAY[1..MAX_COMn] OF BYTE =
+        (4, 3, 4, 3, 0, 0, 5, 5);
+
+
+(* table of interrupt masks an interrupt vectors for each IRQ number *)
+   IRQ_MASK_TABLE: ARRAY[0..7] OF BYTE =
+        ($01,$02,$04,$08,$10,$20,$40,$80);
+   IRQ_VECT_TABLE: ARRAY[0..7] OF BYTE =
+        ($08,$09,$0A,$0B,$0C,$0D,$0E,$0F);
+
+
+procedure push_flags;
+   inline($9C);
+
+procedure pop_flags;
+   inline($9D);
+
+procedure disable_int;
+   inline($FA);
+
+procedure enable_int;
+   inline($FB);
+
+procedure io_delay;
+   inline($EB/$00);     {jmp $+2}
+
+procedure INTR_service_transmit;
+procedure INTR_poll_transmit;
+procedure INTR_service_receive;
+procedure INTR_check_interrupts;
+
+procedure cancel_xoff;
+procedure control_k;
+procedure INTR_lower_dtr;
+procedure INTR_raise_dtr;
+procedure INTR_select_port;
+procedure INTR_init_com;
+procedure INTR_uninit_com;
+procedure INTR_set_baud_rate(speed: word);
+function INTR_get_baud_rate: word;
+
+procedure INTR_flush_com;
+procedure INTR_transmit_data(s:    longstring);
+function  INTR_receive_ready: boolean;
+function  INTR_receive_data:  char;
+procedure verify_txque_space;
+
+procedure BIOS_poll_receive;
+function BIOS_carrier_present:  boolean;
+function BIOS_receive_ready: boolean;
+function BIOS_receive_data:  char;
+procedure BIOS_transmit_data(s:    longstring);
+procedure BIOS_init_com;
+procedure BIOS_uninit_com;
+procedure BIOS_flush_com;
+
+const
+   local:         boolean = true;  {local mode, no com port}
+   bios_comm:     boolean = true;  {use bios for com port i/o}
+
+function carrier_present:  boolean;
+function receive_ready: boolean;
+function receive_data:  char;
+procedure transmit_data(s:    longstring);
+procedure init_com;
+procedure flush_com;
+procedure lower_dtr;
+procedure raise_dtr;
+procedure uninit_com;
+
+procedure load_trans_table(name: dos_filename);
+procedure dispose_trans_table;
+procedure perform_translation(var line: string);
+
+const
+   def_extcount = 90;                   {default number of extended conferences}
+
+   extcount:    integer = def_extcount;
+
+   extsize:     word = def_extcount * sizeof(extuser_conf_rec) +
+                       sizeof(extuser_fixed_rec);
+
+   extusersize: word = (def_extcount + conf_limit) * sizeof(extuser_conf_rec) +
+                       sizeof(extuser_fixed_rec);
+
+
+procedure determine_extsize(fd: dos_handle);
+
+procedure read_extrec(fd:  dos_handle;
+                      recn: word;
+                      var extuser: extuser_rec);
+
+procedure load_extrec(var extuser: extuser_rec;
+                      var user:    pcb_user_rec);
+
+procedure write_extrec(fd:  dos_handle;
+                       recn: word;
+                       var extuser: extuser_rec);
+
+procedure save_extrec(var extuser: extuser_rec;
+                      var user:    pcb_user_rec);
+
+procedure error_handler;
+procedure install_error_handler;
+
+var
+   ExitSave: pointer;   {pointer to next exitproc in the chain}
+
+procedure load_conf(n: integer);
+
+procedure get_user_rec(var user: pcb_user_rec; recn: word);
+procedure get_user_info(var user: pcb_user_rec; var name: char25);
+procedure load_user_rec;
+procedure load_extuser;
+procedure put_user_rec(var user: pcb_user_rec; recn: word);
+procedure save_user_rec;
+procedure save_extuser;
+
+procedure read_pcbsys_file;
+procedure load_pcbsys_file;
+procedure save_pcbsys_file;
+procedure save_offline_pcbsys_file;
+
+procedure build_scratchnames;
+
+procedure load_cnames_file;
+procedure load_pcbdat_file;
+
+procedure high_ascii_filter(var c: char);
+
+function get_pcbtext(n: integer): anystring;
+
+procedure load_initial_command;
+function caller_count: longint;
+
+const
+   event_now = false;
+   event_possible = true;
+
+procedure fill_chars( var dest; 
+                      source:    anystring;
+                      size:      integer);
+procedure lfill_chars( var dest;
+                       source:    anystring;
+                       size:      integer);
+   {fill_chars with leading space on source}
+
+procedure save_name_list;
+procedure load_name_list;
+
+procedure save_pointers(name: filenames);
+procedure load_pointers(name: filenames);
+
+procedure prepare_word_wrap(var par: string; var pos: integer; len: integer);
+
+procedure print_text(s: anystring);
+procedure make_raw_log_entry(entry: string);
+procedure make_log_entry (entry: anystring; echo: boolean);
+
+function download_k_allowed: word;
+
+procedure get_infocount(path:       filenames;
+                        reclen:     longint;
+                        var count:  integer);
+
+procedure get_dirn(n:         integer;
+                   var name:  filenames;
+                   var descr: anystring);
+function dir_count: integer;
+
+function minutes_before_event: integer;
+function event_run_needed(possible: boolean): boolean;
+
+function time_used: integer;
+function minutes_left: integer;
+procedure check_time_left;
+procedure display_time(used: boolean);
+procedure display_time_left;
+procedure adjust_time_allowed(addseconds: longint);
+function trashcan_pwrd(par: string): boolean;
+
+var
+   current_line: string;
+        
+procedure pdisp (msg:  string);
+procedure pdispln(msg:  string);
+procedure _disp (msg:  string);
+procedure disp (msg:  string);
+procedure dispc( c: char );
+procedure displn(msg:  string);
+procedure newline;
+procedure spaces(n: byte);
+procedure space;
+procedure beep;
+procedure erase_prompt (len: integer);
+
+procedure popup_cmdline(prompt:      string80;
+                        defalt:      string80);
+
+procedure force_enter;
+procedure force_more;
+procedure wait_for_enter;
+function nomore: boolean;
+
+procedure get_cmdline_raw(prelength: integer);
+
+procedure no_hotkeys;
+procedure get_cmdline;  {get cmdline without hotkeys}
+procedure get_hcmdline; {get cmdline with hotkeys}
+
+procedure prompt_def(prompt: string80; default: string80);
+procedure get_def(prompt: string80; default: string80);
+procedure get_defn(prompt: string80; default: string80);
+procedure get_defnh(prompt: string80; default: string80);
+procedure get_defen(prompt: string80);
+procedure get_defyn(prompt: string80; default: boolean);
+procedure get_defyn_flag(prompt: string80; var flag: byte; bit: integer);
+procedure get_defbl(prompt: string80);
+
+procedure get_word(prompt: string80; var w: word);
+procedure get_int(prompt: string80; var n: byte);
+
+function key_ready: boolean;
+function get_key: char;
+function time_key(ms: integer): char;
+
+procedure drop_carrier;
+procedure force_offhook;
+
+procedure check_carrier_loss;
+
+procedure line_input(var line:  string;
+                     maxlen:    integer;
+                     echo:      boolean;
+                     autocr:    boolean);
+
+procedure input(var line:  string;
+                maxlen:    integer);
+
+procedure force_new_prompt;
+
+procedure get_chars(prompt: string;
+                    var dest;
+                    size: integer;
+                    echo: boolean);
+
+function scan_nextpar(var cmdline: string): string;
+procedure get_nextpar;
+procedure unget_par;
+
+procedure prepare_line(var zline: string);
+procedure prepare_protocol_table;
+procedure remove_variables(var line: string);
+procedure prepare_uline(var line: string);
+
+const
+   delete_variables: boolean = false;   {delete all $,@ macros}
+   disable_dispm:     boolean = false;  {disable $DISP macros}
+
+implementation

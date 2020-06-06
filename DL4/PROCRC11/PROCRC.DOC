@@ -1,0 +1,19 @@
+
+ProCRC: Quick CRC Checker v1.1 11-21-88  (C)1988 S.H.Smith
+
+This utility scans a list of files and verifies that
+none have been modified.
+
+Usage: ProCRC CRCLIST       ;check crcs against CRCLIST
+       ProCRC CRCLIST -u    ;update CRCLIST with current file crcs
+
+Example:
+  where *.exe >file.lst         ;build list of files
+  procrc file.lst -U >file.crc  ;add crcs to the list
+  procrc file.crc               ;check all crcs and report changes
+
+Batch files:
+  setup.bat             ;build file list and get initial crcs
+  update.bat            ;update crcs in file list after updating files
+  check.bat             ;verify all crcs and report differences
+

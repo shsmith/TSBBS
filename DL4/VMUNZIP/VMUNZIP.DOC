@@ -1,0 +1,253 @@
+
+
+
+
+
+
+          This is the read me file for VMUNZIP. VMUNZIP is based mainly on
+          the Turbo Pascal program UNZIP(tm) by Samuel H. Smith. The CRC
+          checking is based on that in the DEZIP package by R.P. Byrne. I
+          wish to give my thanks to these two people, especially for
+          releasing the source to their programs. Without their generosity
+          and willingness to share their effort, this program would not
+          have been possible.
+
+          VMUNZIP is designed to run on IBM's VM/CMS operating system. It
+          will unzip all files compatible with PKZIP(tm) release 0.92, as
+          of July, 1989. The program is written totally in IBM's VS Pascal
+          version 1.0 . Complete source code is included. It was written
+          and debugged on an HPO 4.2 system. However, it should be
+          executable on any version of VM, including VM/XA. Due to the
+          considerable differences in file structure and internal character
+          code between the IBM PC and the 370 mainframe, the files produced
+          by this program are generally not directly usable. A companion
+          program is therefore distributed along with VMUNZIP. It is APRINT
+          (for Ascii PRINT).
+
+          VMUNZIP assumes that you can somehow upload ZIP files from an IBM
+          PC to your VM/CMS system. This document does not attempt to
+          document this upload facility. My testing was done by using the
+          IBM file transfer facility generally called IND$FILE as well as
+          Relay/VM. When uploading the ZIP file to VM/CMS, you must be sure
+          that the CMS file type is PCZIP. You must also be sure that the
+          record format is fixed and that the lrecl is 1. VMUNZIP does not
+          validate this, but will fail with some sort of error message if
+          these conditions are not met. In addition, the file MUST reside
+          on your A disk. All extracted files are placed on the A disk. It
+          is your responsibility to make sure that sufficient free space
+          exists on your A disk.
+
+          Since the IBM PC does not have records in the VM/CMS sense, each
+          file extracted is given a record format of fixed and a record
+          length of 1. The the data in the extracted files are not
+          translated in any way. They remain as they were on the PC.
+          Therefore it is your responsibility to translate this data so
+          that it is in the form that you need. Since the main use that I
+          envision for this is in the uploading of printable data, I have
+          written a program which will read the extracted files written by
+          VMUNZIP , break it into records, translate it as best as possible
+          into EBCDIC and spool it to the CMS virtual printer. This is the
+          APRINT program.
+
+          Installation instructions. Please note that throughout this
+          discussion, I assume that you are fairly familiar with VM/CMS and
+          the various standard CMS command available. I also assume that
+          you are knowledgeable in the area of doing file uploads on your
+          system.
+
+             1.  On your PC, use an UNZIP type program to extract the files
+                 from the VMUNZIP.ZIP file. There are seven files in this
+                 archive. They are VMUNZIP.PAS, VMUNZIP.PMD, APRINT.BAL,
+
+
+
+
+
+
+                 APRINT.PMD, CHECK.EXC, UNZIP.DOC and VMUNZIP.DOC. Since
+                 this is the VMUNZIP.DOC file, you have probably already
+                 done this.
+
+             2.  Upload the files extracted in step 1. There are two types
+                 of files. VMUNZIP.PAS, APRINT.BAL, CHECK.EXC, UNZIP.DOC
+                 and VMUNZIP.DOC are pure printable files and may be
+                 uploaded using the your upload facility's ASCII to EBCDIC
+                 translation. The VMUNZIP.PMD and APRINT.PMD files are
+                 special. The are CMS MODULEs (executable programs) which
+                 have been packed with the standard CMS COPYFILE program.
+                 They must be uploaded so that they fixed length files with
+                 an lrecl of 1024. If this is not done properly, they will
+                 be unusable! An example session of how I did this follows:
+
+             3.  On the PC,  I logged on to the VM/CMS system at work. I
+                 was using an Attachmate 3278 coax emulator card along with
+                 the Attachmate software. I issued the following commands
+                 on the PC.
+
+                    a.  pkunzip vmunzip
+
+                    b.  send vmunzip.pas vmunzip pascal (ascii crlf
+
+                    c.  send vmunzip.doc vmunzip document(ascii crlf
+
+                    d.  send aprint.bal aprint assemble(ascii crlf
+
+                    e.  send check.exc check exec (ascii crlf
+
+                    f.  send unzip.doc unzip document(ascii crlf
+
+                    g.  send vmunzip.pmd vmunzip module(recfm f lrecl 1024
+
+                    h.  send aprint.pmd aprint module(recfm f lrecl 1024
+
+                 Once the files were on the mainframe, I switched to the
+                 mainframe session and issued the following CMS commands:
+
+                    a.  copy vmunzip module a(unpack
+
+                    b.  copy aprint module a(unpack
+
+                 That is all there is to the installation
+
+          Now that VMUNZIP is installed on your system, you will probably
+          want to use it. The first thing that you need to do is to upload
+          the ZIP file that contains the files that you want. You must
+          upload this file so that it goes onto your CMS A disk as having
+          fixed length records with a record length of 1. If you are using
+          the "send" command, the syntax is "SEND pcfile.ZIP cmsname PCZIP
+          A(RECFM F LRECL 1". Please note that the CMS file type MUST be
+          PCZIP! Also notice that the CMS file must reside on your A disk
+          or an extension of your A disk. Once you have gotten the file
+
+
+
+                                        - 2 -
+
+
+
+
+
+
+          onto your A disk, you can extract the members by entering
+          "VMUNZIP cmsname". This will create one or more output files,
+          again on your A disk. The output file names are as close to the
+          PC file names as is possible under VM/CMS. This means that the
+          path within the name, if any, is ignored. Also, any characters in
+          the PC file name or extension which are not valid in a CMS file
+          name are translated to pound signs. If the PC file extension is
+          blank, the CMS filetype becomes $EXTRACT. This is because the
+          filetype under CMS cannot be blank. You can only specify one
+          PCZIP file name. You can optionally enter an option. You do this
+          by entering "VMUNZIP cmsname ( option". Where "option" can be one
+          of the following: PROMPT - this is the default. It indicates that
+          you want to be prompted before VMUNZIP overwrites an existing
+          file. REPLACE - this indicates that you want VMUNZIP to extract
+          all files from the PCZIP file and simply overwrite any files that
+          may already be on you A disk without warning. BYPASS - this
+          indicates that you want VMUNZIP to not extract any files from the
+          PCZIP if a file of that name already exists. You will get a
+          message to the effect that the file was skipped.
+
+          As an example, suppose that you have uploaded a ZIP file to your
+          A disk with the CMS name of TEST PCZIP A. Further suppose that
+          this ZIP file contains three files whose PC-DOS names were, in
+          order, TEST1.DOC MYSTUFF.PAS and FOO.BAR. You issue the CMS
+          command "VMUNZIP TEST". When the command finishes, assuming no
+          errors, you will have three new files on your A disk. They will
+          be "TEST DOC A1", "MYSTUFF PAS A1" and "FOO BAR A1".
+
+          As previously mentioned, the data in the extracted files remains
+          exactly as it was on the PC. That is, there is no translation
+          from ASCII to EBCDIC. As is, this is probably not very useful.
+          That is why the APRINT program is also included. This is a simple
+          CMS program written in 370 assembler. It can read the extracted
+          files and do a fair job of translating the data into print
+          records. This program cannot handle any sort of fancy formatting.
+          It recognizes only three control characters. These are the CR
+          (0x0d), the LF (0x0a), and the FF (0x0c) characters. All other
+          control characters are translated to blanks. The maximum line
+          length allowed by this program is 132 characters + 1 carriage
+          control character. If a line exceeds this limit, it is broken up
+          into two or more lines with a maximum of 132 characters. The only
+          carriage control recognized is the FF character which is
+          translated to a skip to channel 1 code. A line is considered to
+          be all characters between any of the three recognized control
+          characters. Since the PC usually delimits lines with a CR/LF
+          pair, the code is written so that a LF after a CR is ignored.
+          However, multiple LFs in a row are translated to multiple print
+          lines. This program directs its output to the CMS virtual
+          printer. It issues a CLOSE PRT command before it starts writing
+          lines and after it finishes. There is no way to put data directly
+          to disk. However you can accomplish this by spooling your virtual
+          printer to your virtual reader (CP SP PRT *), then using either
+          the READ or DEPRINT command to read the file from your virtual
+          reader onto your A disk. The READ command should be used for
+
+
+
+                                        - 3 -
+
+
+
+
+
+
+          files which do not contain carriage information, such as source
+          code. The DEPRINT command should be used for files which does
+          contains carriage control information, such as documentation.
+
+          Going back to the previous example, support that you want the
+          data in "MYSTUFF PAS A1" on your A disk in the file named
+          MYSTUFF PASCAL A. You can do this as follows:
+
+             1.  sp prt close nocont
+
+             2.  sp prt *
+
+             3.  aprint mystuff pas a
+
+             4.  read mystuff pascal a
+
+          Note that I have assumed that your CMS reader was empty before
+          you started this. If this was not the case, you would need to
+          notice the spool file number issued in the VM message that you
+          should have gotten after the APRINT command completed. You would
+          then make that file the top file in your reader queue by using
+          the VM ORDER command.
+
+          If you had wanted to simply print the file to the VM system
+          printer, you could have simple used the "aprint" step above.
+
+          NOTICE - NOTICE - NOTICE - NOTICE - NOTICE
+
+          This code is distributed as is with no warranty expressed or
+          implied! You assume all liability for loss of data, system
+          outages, or any other problems. I have successfully been using
+          this code for about a month now with no problems, but I cannot
+          guarantee this for you. Also, remember that this code is based on
+          the 0.92 version of PKZIP. If you have any problems with this
+          code, you can contact me via CompuServe. My id is 72325,1075. I
+          will try to fix any bugs in the code on a time available basis.
+          However I cannot guarantee that bugs will be fixed. A bug in this
+          case is defined as the code not working as described in this
+          document. In order to do any type of debugging, I will need the
+          error message generated, along with any trace back information. I
+          will also need a copy of the ZIP file that caused the problem. I
+          will attempt to keep this code current with Phil Katz's PKZIP
+          program as well as any other ZIP program which has a large
+          following. However, to do this, I must have access to the
+          algorithms used by the compressor in question. The only reason
+          that I could "write" this program was due to the availability of
+          Pascal source from Mr. Smith. I am a decent programmer, but I am
+          NOT well versed in compression algorithms! Oh, yes, this code is
+          totally free. If you modify it or improve it, it would be nice
+          for you to share your changes. You got this code for free, please
+          be considerate and not charge others.
+
+
+
+
+
+
+                                        - 4 -
+

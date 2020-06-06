@@ -1,0 +1,20 @@
+HANDSHAKE
+c:\pcb\gen\blt12
+89.4
+1055
+0.10
+100
+The last winner was SYSOP, who won 26 minutes on 02-06-88 04:50.
+c:\pcb\gen\blt13
+
+--------------------------
+Configuration file format:
+
+line 1 = Driver type (HANDSHAKE, INTERRUPT, BIOS, PCBTRAP)
+line 2 = Lottery status bulletin filename
+line 3 = Number of minutes currently in the pot
+line 4 = Number of tickets sold so far
+line 5 = Fraction of time taken aside for sysop
+line 6 = Odds against winning (higher numbers give higher jackpots)
+line 7 = Information about the last winner
+line 8 = Lottery winner history bulletin filename

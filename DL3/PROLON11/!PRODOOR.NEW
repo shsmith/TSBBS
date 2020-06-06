@@ -1,0 +1,200 @@
+$NOMACS$
+
+History of ProDOOR changes (in reverse order)
+---------------------------------------------
+
+27-Jun-90
+   Official release of ProDoor 3.3.
+
+This version does not include a new manual, and is a direct replacement
+for version 3.2.  Please read !PRODOOR.NEW for details on exactly what's
+been changed.
+
+26-Jun-90
+   Corrected download byte ratio calculation (daily bytes were being
+   added twice)
+
+23-Jun-90
+   Combined logic of (t)hread/(z)ip searches so they will work together
+   better and provide more consistant displays.
+
+   Added new (PA)ge command in message reader and proedit to set the
+   page length.
+
+   The YA command was acting like R Y at the main command prompt.
+
+21-Jun-90
+   Background colors/flashing were not being cancelled when entering
+   a display in the 'default color' when the default intensity was set
+   to '1'.
+
+12-Jun-90
+   I forgot to remove some debug code which caused some ansi codes
+   to appear on local displays.
+
+   Upload protocols with "0 filespecs" required were not properly
+   prompting for filenames in advance (broken 2-jun-90).
+
+   Added logic to better handle download protocols which are configured
+   for "0 filespecs" required.
+
+11-Jun-90
+   Some @x codes were bleeding through when they appeared near the 128'th
+   position in the expanded line.
+
+07-Jun-90
+   Download limits of 32767k (unlimited) were not being handled properly
+   after a download.
+
+04-Jun-90
+   Recompiled without debug, stack and range check code.  I suspect that
+   the stack check code was actually causing some of the recent
+   problems.  Please let me know if this beta solves any problems.
+
+   If you still get fatal errors, please remember to tell me what was on
+   the screen when you got the error.  Thanks!
+
+03-Jun-90
+   Corrected occasional RANGE CHECK error 44e:4e5 when posting uploads.
+
+02-Jun-90
+   Corrected RANGE CHECK fatal error when entering an upload description
+   of exactly 255 characters.
+
+   Corrected handling of upload directory for users who are below the
+   minimum security level needed to post public uploads.
+
+   Added support for (undocumented) @X00 and @XFF macros.
+
+   Changed PRORATIO system to change file and kbyte limits according to
+   specified ratio instead of rejecting selected files.
+
+   New messages are:
+      Download K BYTE limit reduced from $5W$ to $6W$!
+      You are required to upload at least one K BYTE for each $3$ you download.
+      Download FILE limit reduced from $5W$ to $6W$!
+      You are required to upload at least one FILE for each $3$ you download.
+
+   Changed default free upload bytes to 100k instead of 100000.
+
+   The PRORATIO system was not always using the right default values for
+   free bytes and files.
+
+   Fixed a bug in the crt driver that caused a lockup on ESC[255D and other
+   codes that specify with out of range cursor positions.
+
+   Changed DOSMEM unit to ignore memory allocation errors returned by
+   DOS when the indicated available memory matches that being requested.
+
+   Disabled "more?" and carrier checks during upload duplication checks.
+   This should prevent posting of duplicate uploads when the caller
+   drops carrier before the uploads have been posted on the system.
+
+01-Jun-90
+   Change several WORD variables to LONGS in mail section.  This may
+   correct most of the RANGE CHECK fatal errors.  
+
+28-May-90
+   Corrected decoding of some of the @x macros that produced very long
+   ansi codes.
+
+   Commas were not being inserted correctly in early 28-may betas.
+
+   Increased maximum number of active download directories from 200 to
+   300.
+
+27-May-90
+   Corrected invalid filename checks to properly detect overlong
+   filenames and filenames containing too many dots.
+
+   Corrected action of autojoin when non-stop is in effect.
+
+   NS is now recognized as autojoin at a read mail prompt when there are
+   no more available messages in the current conference.
+
+26-May-90
+   Redefined ascii code 127 to function as ^G rather than ^H in visual
+   editor.
+
+   Corrected colors during command line input.
+
+   Corrected local non-graphic display to use the default colors instead
+   of white.
+
+   Changed visual edit to use entire screen in local mode, regardless of
+   the specified (P)age setting.
+
+   Corrected message entry to prevent corruption of message index when
+   (P)rotect command is used immediately following an aborted message
+   reply.
+
+   The (+) and (-) commands weren't working right following a two-letter
+   mail reading command (such as YA).
+
+   Added "/ $LASTMSGNO$" after display of current message number.
+
+   Added support for TO: @level@ and TO: @level-level@ security level
+   specific messages.
+
+   Added support for "unlimited" download bytes when download K limit
+   is set to 32767k.
+
+23-May-90
+   Corrected "automatic CR" during message subject entry.
+
+21-May-90
+   Corrected more ansi code display problems.  Ansi displays should
+   again be working correctly at all times.  All ansi decoding is now
+   internal-- you no longer need ANSI.SYS loaded for ProDoor/ProLogon
+   operation.
+
+   Changed (N)ew files scan to prevent setting the last-date-scanned to
+   a date in the future.
+
+20-May-90
+   Corrected some ansi color code displays.
+   Corrected some colors on the call waiting control panel.  I'm working
+   without a color monitor right now, so please keep me advised on colors
+   if they still don't look right.
+
+   Added '*' flagging of newer files in file listings.
+   The 'new files' function now updates the last-scanned date to that
+   of the newest file seen, rather than the current date.
+
+19-May-90
+   Removed support for PCBTRAP.
+   Rewrote screen handlers for quicker displays.
+   Note: the environment setting
+        SET OVCRT=ON
+   may be needed under DesqView and other windowing/timeshare systems to
+   prevent screen bleed-through or background lockups.
+
+18-May-90
+   Removed the debugging message "DISP_MACFILE:" which I forgot to
+   remove after some testing last week.
+
+17-May-90
+   Corrected a hardcoded limit that caused "earned K" values over 65535k to
+   rollover to 0.  The door now locks the number at 65535 (the highest value
+   that can be stored in the allocated space).
+
+   Corrected free download handler to properly handle files processed by
+   DSZ when the directory was specified as part of the wildcard in
+   PROFREE.
+
+15-May-90
+   Added logic to totally disable checks for the NS16550 buffered serial
+   chip.  Add the environment statement:
+        SET NO16550=ON
+   to force the code to act like ProDoor/ProKit 3.1 did.
+
+   The main menu display wasn't correctly being bypassed when a command
+   was stacked at a 'press enter to continue' prompt.
+
+14-May-90
+   Started work on ProDoor 3.3 alpha for full support of 14.5 file
+   formats.
+
+   Changed curconfh definition for compatibility with pcboard when
+   accessing conferences over #255.
+

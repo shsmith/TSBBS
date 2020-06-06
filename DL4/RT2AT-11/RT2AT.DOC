@@ -1,0 +1,64 @@
+                                                                02-Sep-87
+                            RT2AT and AT2RT
+                            ===============
+
+The program RT2AT will convert the CTRL, ALT and CAPS-LOCK keys on the 
+RT keyboard into an AT-like layout:
+                                                                               
+  ÚÄCAPS LOCKÄÄ¿                                                               
+  ³ now CTRL   ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÙ                                                               
+                                                                               
+  ÚÄSHIFTÄÄÄÄÄÄÄÄÄÄÄ¿                                                          
+  ³                 ³                                                          
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                                          
+
+  ÚÄCTRLÄÄÄÄÄÄ¿           ÚÄALTÄÄÄÄÄÄÄÄÄÄÄÄ¿                                   
+  ³ now ALT   ³           ³ now CAPS LOCK  ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÙ           ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                   
+
+                                                                               
+                                                                               
+The program AT2RT will convert the CTRL and ALT keys on the AT keyboard 
+into an RT-like layout:
+                                                                               
+  ÚÄCTRLÄÄÄÄÄÄ¿
+  ³ now ALT   ³ 
+  ÀÄÄÄÄÄÄÄÄÄÄÄÙ
+                                                                               
+      ÚÄSHIFTÄ¿
+      ³       ³
+      ÀÄÄÄÄÄÄÄÙ
+
+  ÚÄALTÄÄÄÄÄÄÄ¿
+  ³ now CTRL  ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÙ   
+
+
+This software is Public Domain;
+      USE AT YOUR OWN RISK;
+      DO NOT SELL!
+
+
+Revision history:
+
+   02-Sep-87 v1.0 Initial coding and release
+                  Distributed as RT2AT-10.ARC
+
+   03-Sep-87 v1.1 Corrected error in AT2RT (incorrect translation of
+                  alt key into caps-lock).
+                  Distributed as RT2AT-11.ARC
+
+
+
+Source code is included.
+Happy typing!
+
+
+This program is provided courtesy of:  
+
+      Samuel H. Smith 
+            and
+      The Tool Shop BBS
+      (602) 279-2673
+

@@ -1,0 +1,181 @@
+
+   ------------------------------------------------------------------------
+                   HIGH SPEED LINK DISTRIBUTION INFORMATION
+   ------------------------------------------------------------------------
+
+ This file contains a sample description for catalog, library, or BBS use,
+ requirements for commercial distributors, and other information.
+
+ Non-commercial distribution and shareware license information is included in
+ the REGISTER.FRM file.  Information on registering your copy of HIGH SPEED
+ LINK can be found in the REGISTER.FRM file.
+
+
+   ------------------------------------------------------------------------
+       EXAMPLE DESCRIPTIONS FOR CATALOGS, LIBRARIES, BBS SYSTEMS, ETC.
+   ------------------------------------------------------------------------
+
+ SHORT VERSION
+
+ DLP HS/Link Bi-directional Protocol.  Dynamic Link Protocol version of
+ HS/Link for use with ProComm Plus for Windows 2.0.  HS/Link is a high speed,
+ single and bi-directional file transfer protocol with many advanced features.
+ It is EASY to set up and runs very fast with all kinds of modems.
+
+
+ EXTENDED VERSION
+
+ HS/Link is a file transfer protocol driver capable of simultaneous "CHAT",
+ transmission of computer files, and reception of files, at high speeds.
+ HS/Link has built-in error correction and is easily installed in most
+ telecommunication programs and bulletin board systems.  Bidirectional file
+ transfer means that uploading and downloading of files can take place
+ simultaneously, thus reducing file transfer time up to 50% on many long
+ distance phone calls.
+
+ The HS/Link protocol is now used on thousands of bulletin board systems
+ worldwide, and is frequently used to transport large volumes of message
+ traffic in echo networks.
+
+
+   ------------------------------------------------------------------------
+                             SYSTEM REQUIREMENTS
+   ------------------------------------------------------------------------
+
+ Hardware: IBM PC or compatible computer.
+           Works with any type modem or direct connection at speeds up to
+           115200.  Supports NS16550AN buffered UART, if available.
+
+ Software: MS DOS versions 2.1 or later.
+           Works only with ProComm Plus For Windows Version 2.0.
+           Use the DOS version of HS/Link with DOS-based terminal programs.
+
+
+   ------------------------------------------------------------------------
+                  COMMERCIAL DISTRIBUTION LICENSE AGREEMENT
+   ------------------------------------------------------------------------
+
+ The terms below outline requirements for commercial distribution.  By
+ "commercial distribution" or "commerically distribute" we mean to distribute
+ for gain (such as, but not limited to, via traditional shareware catalogs,
+ trade shows, or rack vending).  This file will inform the potential
+ commercial distributor as to whether or not they have been automatically
+ granted such a license for their type of distribution (if not, special
+ written authorization is required).  Other important information is also
+ presented.
+
+ This is an agreement between you (either an individual or an entity) and THE
+ TOOL SHOP.  By commercially distributing copies of the shareware evaluation
+ version of HIGH SPEED LINK, you are agreeing to be bound by the terms of this
+ agreement.  If you do not agree to the terms of this agreement, you may not
+ distribute the shareware evaluation version of HIGH SPEED LINK.
+
+ 1) COPYRIGHT: The shareware evaluation version of HIGH SPEED LINK (hereafter,
+ "the SOFTWARE") is Copyright 1991-1994 by Samuel H. Smith and is protected by
+ United States copyright laws and international treaty provisions.  THE TOOL
+ SHOP, as exclusive publisher, is an authorized representative of the
+ copyright holder.  Except to the extent expressly licensed, the copyright
+ holder has and reserves the exclusive copyright and other right, title, and
+ interest to copy and distribute this software, and the right to use the
+ Trademarks "HS/Link" and "HIGH SPEED LINK" in connection with it.
+
+ 2) DISTRIBUTION VIA CATALOGS: Catalog vendors are automatically granted a
+ license to distribute the SOFTWARE via their catalog for a fee provided they
+ agree to abide by the following terms:
+
+   a) A copy of the first catalog or listing advertising the distribution of
+      the SOFTWARE will be sent to THE TOOL SHOP.
+
+   b) The catalog or listing must contain a statement to the effect that the
+      SOFTWARE is not free, and that additional payment to the
+      author/publisher is required after a stated evaluation period. (The
+      standard statement required by the Association of Shareware
+      Professionals is sufficient.)
+
+   c) Updated versions of the SOFTWARE sent to the distributor will be
+      reflected in what is distributed and advertised in the catalog or
+      listing as soon as possible.
+
+   d) Problems or complaints about the SOFTWARE will be reported to THE TOOL
+      SHOP.
+
+ 3) DISTRIBUTION VIA CD-ROM: CD-ROM vendors are automatically granted a
+ license to distribute the SOFTWARE via their CD-ROM for a fee provided they
+ agree to abide by the following terms:
+
+   a) The CD-ROM must contain a statement to the effect that the SOFTWARE is
+      not free, and that additional payment to the author/publisher is
+      required after a stated evaluation period. (The standard statement
+      required by the Association of Shareware Professionals is sufficient.)
+
+   b) Updated versions of the SOFTWARE sent to the distributor will be
+      reflected in what is distributed and advertised in the CD-ROM or listing
+      as soon as possible.
+
+   c) Problems or complaints about the SOFTWARE will be reported to THE TOOL
+      SHOP.
+
+ 4) ALL OTHER TYPES OF DISTRIBUTION: Distribution of the SOFTWARE using any
+ other method (for example: via rack vending methods, sale in a retail store,
+ sale at a trade show, as part of some more inclusive product or service,
+ rental or lease) requires special written authorization from THE TOOL SHOP,
+ which may be subject to special licensing terms.  No vendor, individual,
+ group, or entity has a license to distribute the SOFTWARE using any other
+ method without special written authorization from THE TOOL SHOP.  (NOTE: "as
+ part of some more inclusive product or service" does not refer to
+ distribution via any type of BBS or the practice by certain catalog vendors
+ of offering several programs on a single diskette or in a set of multiple
+ diskettes.)
+
+ 5) MODIFICATIONS: The SOFTWARE package may not be abridged or otherwise
+ modified in any way.  (NOTE: This does not refer to the addition of
+ installation, informational, or advertising files.)
+
+ 6) REVOCATION OF LICENSE: The license to distribute the SOFTWARE can be
+ revoked from any vendor, individual, group, or entity at any time for any
+ reason on 90 days advance written notice.
+
+ 7) DAMAGES: Distribution of the SOFTWARE without a license to do so is
+ explicitly prohibited.  Liquidated damages for unauthorized distribution
+ shall not be less than $2.00 (in U.S. funds) for each individual copy of the
+ SOFTWARE that is sold or transferred by the vendor, individual, group, or
+ entity without a license to do so.
+
+ 8) THIS PACKAGE (CONSISTING OF THE HIGH SPEED LINK SOFTWARE AND ASSOCIATED
+ FILES AND DOCUMENTATION) IS PROVIDED "AS IS" WITHOUT REPRESENTATION OR
+ WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING WITHOUT
+ LIMITATION, ANY REPRESENTATIONS OR ENDORSEMENTS REGARDING THE USE OF, THE
+ RESULTS OF, OR PERFORMANCE OF; ITS APPROPRIATENESS, ACCURACY, RELIABILITY, OR
+ CURRENTNESS.  THE ENTIRE RISK AS TO THE USE OF THIS PACKAGE IS ASSUMED BY THE
+ USER.  IN NO EVENT WILL THE TOOL SHOP BE LIABLE FOR ANY DAMAGES, DIRECT,
+ INDIRECT, INCIDENTAL, OR CONSEQUENTIAL, RESULTING FROM ANY DEFECT IN THE
+ PACKAGE, EVEN IF THE TOOL SHOP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGES.  ANY AND ALL USE OF THIS PACKAGE, FOR ANY PURPOSE, WITH NO REGARD TO
+ THE LEGALITY OF SUCH USE OR PURPOSE, IS THE COMPLETE AND SOLE RESPONSIBILITY
+ OF THE USER. Some states do not allow disclaimers of implied warranties or
+ the exclusion of consequential damages, so the above disclaimers and
+ exclusions may not apply to you.
+
+ 9) GOVERNING LAW: This agreement is governed by the laws of the State of
+ California.  Should any parts or parts of this agreement be deemed unlawful,
+ the remainder shall to continue to apply.
+
+
+ ------------------------------------------------------------------------
+                                CONTACTING US
+ ------------------------------------------------------------------------
+
+ If you have any questions or comments, please let us know...
+
+   Samuel H. Smith
+   The Tool Shop
+   P.O. Box 4808
+   Los Angeles, CA 91412-4808
+
+   Tel: (213) 851-9969
+   Fax: (213) 851-4691
+   BBS: (213) 851-2127
+   E-mail: shsmith@primenet.com
+
+ Thanks!
+

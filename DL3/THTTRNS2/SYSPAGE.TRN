@@ -1,0 +1,48 @@
+@X0FÄÄÄ@X03Ä@X09ÄÄÄÄ@X01ÄÄÄ @X0F[THP]
+@X08
+ SysPage v1.00a (11-5-92) - by SkaTeMasTer & Jurgen
+@X0FÄÄÄ@X03Ä@X09ÄÄÄÄ@X01ÄÄÄ @X0EWelcome to The Sysop Page Door @X01ÄÄÄ@X09ÄÄÄÄ@X03Ä@X0FÄÄÄ
+@X09$SYSOP$ is not here, is this an emergency? @X08[@X0FNo@X08]@X03 Ä¯ 
+@X0C$SYSOP$@X0E is not here, is this an @X0Cemergency? @X09[@X0FNo@X09]@X03 Ä¯ 
+@X0BEnter emergency password: 
+@X0EEnter @X0Cemergency @X0Epassword: 
+@X0EEnter a short chat reason: 
+@X0EEnter a short reason for @X0CChat@X0F: 
+@X0APaging $SYSOP$! @X0B(@X0E^K@X0C=@X0Eabort@X0B): @X09ş
+@X0EPaging @X0C$SYSOP$! @X0B(@X0E^K@X0C=@X0Eabort@X0B): @X09ş
+@X0CÄÄÍÍ Sorry, but $SYSOP$ isn't answering. ÍÍÄÄ
+@X0CÄÄÍÍ @X0ESorry, but @X0C$SYSOP$ @X0Eisn't answering. @X0CÍÍÄÄ
+@X09Do you want to leave him Feedback? @X08[@X0FYes@X08]@X03 Ä¯ @X0F
+@X0EDo you want to leave him Feedback? @X09[@X0FYes@X09]@X03 Ä¯ @X0F
+ùÄÍÍCHAT_FEEDBACKÍÍÄù    
+ùÄÍÍCHAT_FEEDBACKÍÍÄù
+$YELLOW$    Use Visual Editor:? $GREEN$(Enter)=no?
+@X01Ş@X09Û@X0Bİ@X0Eú@X0BFull Screen Editor@X07........ -@X0F¯
+$YELLOW$Abort message entry: $GREEN$(Enter)=no?
+@X8CAbort @X0Fmessage entry? @X0A(Enter)=no?
+  [1;30m¿[0m³[1;30mÚ    [0;31mThe SysOp is currently not avalible
+  [1;30m¿[0m³[1;30mÚ    [1;33mThe SysOp is currently not avalible
+[A[44C for a chat. If its[7C[1;30m¿[0m³[1;30mÚ
+[A[44C for a chat. If its[7C[1;30m¿[0m³[1;30mÚ
+  ³[0m³[1;30m³   [0;31msomething important, leave feedback and you
+  ³[0m³[1;30m³   [1;33msomething important, leave feedback and you
+[A[51Cr questions will   [1;30m³[0m³[1;30m³
+[A[51Cr questions will   [1;30m³[0m³[1;30m³
+  Ù[0mú[1;30mÀ   [0;31mbe regarded. Thank you.[39C[1;30mÙ[0mú
+  Ù[0mú[1;30mÀ   [1;33mbe Answered. Thank you.[39C[1;30mÙ[0mú
+[A[72C[1;30mÀ
+[A[72C[1;30mÀ
+$GRAY$³ Overtype Mode ³
+@X0E³ @X0DOvertype Mode@X0E ³
+$GRAY$ÚÄVisual EditorÄ¿
+@X0EÚÄ@X0FVisual Editor@X0EÄ¿
+$GRAY$³  Insert Mode  ³
+@X0E³@X09  Insert Mode@X0E  ³
+³ (Ctrl-Z)=Help ³
+@X0E³ @X09(@X0CCtrl-Z@X09)@X0E=@X0BHelp@X0E ³
+ÀÄ(Escape)=ExitÄÙ
+@X0EÀÄ@X09(@X0CEscape@X09)@X0E=@X0CSave@X0EÄÙ
+A)bort, C)ont, D)el, E)dit, I)ns, L)ist, O)rig, P)rot, Q)uote, S)ave, V)isual
+@X8CS@X09)ave,@X0CA@X09)@X0Ebort, C)ont, D)el, E)dit, I)ns, L)ist, O)rig, P)rot, Q)uote, V)isual
+$WHITE$Text entry aborted ...
+@X8CText entry aborted ...@X0F

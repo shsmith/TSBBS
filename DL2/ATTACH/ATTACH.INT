@@ -1,0 +1,74 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+type
+   longlink = record
+      ofs:  integer;
+      seg:  integer;
+   end;
+
+procedure DISABLE_INT;
+   inline($FA);
+   (* disable further processor interrupts *)
+
+procedure ENABLE_INT;
+   inline($FB);
+   (* enable processor interrupts *)
+
+procedure ENTER_INTERRUPT;
+   (* prologue for interrupt handlers *)
+   inline($90);
+
+procedure LINK_CALL(vec: longlink);
+   (* call the old handler through the *)      
+   (* specified link variable *)               
+   inline($2E/$FF/$1E{/>vec});       (* call far cs:oldvec *)
+
+procedure LINK_JMP(vec: longlink);
+   (* epilogue for interrupt handlers *)       
+   (* jumping to the old handler through *)    
+   (* the specified link variable *)           
+   inline($1F/          (* pop ds *)           
+          $07/          (* pop es *)           
+          $5E/          (* pop si *)           
+          $5F/          (* pop di *)           
+          $5A/          (* pop dx *)           
+          $59/          (* pop cx *)           
+          $5B/          (* pop bx *)           
+          $58/          (* pop ax *)           
+          $89/$EC/      (* mov sp,bp *)        
+          $5D/          (* pop bp *)           
+          $2E/$FF/$2E{/>vec});     (* jmp far cs:oldvec *)
+
+procedure EXIT_INTERRUPT;
+   (* epilogue for interrupt handlers *)       
+   (* does not call old handler at all *)      
+   inline($90);
+
+procedure get_handler(vector:      integer;     {vector number}
+                      var link:    longlink);   {cseg link to old handler}
+
+   (* get a pointer to the current handler for an interrupt vector *)
+
+procedure attach_handler(vector:      integer;     {vector number}
+                         handler:     integer;     {cseg ofs of new handler}
+                         var link:    longlink);   {cseg link to old handler}
+
+   (* attach an interrupt handler to the specified vector number;
+      handler is the cseg offset of the new handler; link will
+      contain a long pointer to the previous handler *)
+
+procedure remove_handler(vector:      integer;     {vector number}
+                         var link:    longlink);   {cseg link to old handler}
+
+   (* remove an interrupt handler and replace the old handler *)
+

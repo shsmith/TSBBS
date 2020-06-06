@@ -1,0 +1,617 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                           Util-Hard and Floppy Disk
+                        70 files using 4,569,300 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+1P200.ZIP       16664  08-16-94  1P200: OnePass, the *original* single pass
+                               | disk copier. Supports all removeable storage
+                               | including 2.88Mb floppies, flopticals, and
+                               | Bernoulli drives. Fast, simple, useful!
+                               | Version 2.00.
+                               | Download Count: 10   Last Download: 03-09-95
+                               |
+2M30.ZIP       256809  03-06-95  ---------------------------------------------
+                               | 2M 3.0  (C) 1993-1995 Ciriaco Garcia de Celis
+                               | ---------------------------------------------
+                               | 100% safely and 100% reliable formats to:
+                               | 3.5 DD  (720K):   984K / 1066K / 1176K 3.5 HD
+                               | (1.44M):  1804K / 1886K / 1972K 3.5 ED
+                               | (2.88M):  3608K / 3772K / 3944K 5.25 DD
+                               | (360K):   820K /  902K /  976K 5.25 HD
+                               | (1.2M):  1476K / 1558K / 1639K  in 100%
+                               | drives of 100% compatible systems.
+                               | Download Count: 45   Last Download: 02-23-96
+                               |
+4IDEDRV.ZIP     76524  12-24-94  (Win) Multiple Controller support for 4 IDE
+                               | drives. - 2 independent controllers can be
+                               | supported per instance of this driver. -
+                               | Multiple instances of the driver may be
+                               | loaded Improved Geometry Support and >1024
+                               | Cyl support - The driver will attempt to
+                               | determine drive geometry by the following
+                               | methods: -- Via command line switches -- Via
+                               | an IDENTIFY command issued to the drive --
+                               | Via the Fixed Drive Tables This driver will
+                               | support disks >1024 cylinders if indicated by
+                               | one of the above geometry sources. - The
+                               | driver can display the BIOS (Int 13),
+                               | IDENTIFY, Command Line geometries and the
+                               | Download Count: 24   Last Download: 05-01-97
+                               |
+BT108.ZIP        6504  01-25-94  BT108.ZIP Boot "thru" the floppy disk.
+                               | Modifys the boot sector of a floppy disk so
+                               | that it will boot from drive C if your
+                               | computer resets while the floppy disk is in
+                               | Download Count: 8    Last Download: 02-08-94
+                               |
+CARVE20A.ZIP    25683  04-17-95  Carve v2.0a 
+                               | -----------
+                               | Carve is  a simple little command line
+                               | utility that will split a  file into a
+                               | specified number of 'chunks', and join
+                               | them  back  together  again. Fast  and
+                               | reliable.     New     version,    many
+                               | improvements and  bug fixes since last
+                               | release. Freeware.
+                               | graemes@festival.ed.ac.uk
+                               | Download Count: 12   Last Download: 02-09-97
+                               |
+CHKERR13.ZIP    12016  12-27-94  Check Error v1.3 from Out Of My Mind Software
+                               | A MS-DOS 6 utility that will check your disk
+                               | drive for errors and then correct them.
+                               | Shareware Software. The registration is
+                               | $5.00. Very nice to use in your autoexec.bat
+                               | file for HD checking at boot. Much easier to
+                               | read and understand then a chkdsk.
+                               | Download Count: 12   Last Download: 07-28-96
+                               |
+CLONE210.ZIP    20103  03-23-94  CLONE v2.10 - Duplicates any capacity floppy
+                               | disk in a single pass. Can create multiple
+                               | target disks without rereading the source
+                               | disk, automatically formats unformatted
+                               | disks, optional read-back verify, disk ser-
+                               | ialization, progress indicator, and more.
+                               | Uses conventional memory, extended memory,
+                               | expanded memory, hard disk, or RAM disk for
+                               | saving the disk image. Freeware, by Eric
+                               | Tauck.
+                               | Download Count: 22   Last Download: 08-21-96
+                               |
+CLUS.ZIP         7318  01-03-95  Shows effect of various partition sizes on
+                               | existing hard disk. Helps determine optimum
+                               | partition/cluster size. hw
+                               | Download Count: 24   Last Download: 08-23-96
+                               |
+CMFLOP10.ZIP    17289  05-18-94  CMFloppy v1.0 <ASP> Floppy disk utility
+                               | program -- Copies, formats, views diskettes.
+                               | Requires hard drive, no other special sys
+                               | reqts. Menu-driven, easy-to- use. Shareware,
+                               | $10 registration.
+                               | Download Count: 10   Last Download: 07-17-94
+                               |
+COMDRI11.ZIP    10351  06-03-94  Allows a PC to share its disk drives with
+                               | another PC via the serial port and null modem
+                               | cable. Works on the background, allowing
+                               | system #1 to access system #2's disk drives
+                               | while system #2 is performing other tasks
+                               | (and visa versa). This process is "peer to
+                               | peer"; each system can access the other's
+                               | disk drives. To prevent potential File
+                               | Allocation Table (FAT) mishaps, the remote
+                               | drive in either case cannot be written to.
+                               | Download Count: 25   Last Download: 10-04-95
+                               |
+COPYQ321.ZIP   182489  05-26-95  COPYQM Version 3.21.  May, 1995
+                               | CopyQM is a diskette duplicating program
+                               | that, since its introduction in 1987,
+                               | has set the standard for PC duplication
+                               | software.  This program is by far
+                               | Sydex's most popular, though we do offer
+                               | a complete line of programs related to
+                               | diskette duplication and conversion.
+                               | Call us if you have a special need.
+                               | CopyQM reads a master diskette and
+                               | formats, writes and verifies duplicates
+                               | of the master diskette.  Copying can be
+                               | performed on up to six drives in a
+                               | single session; copies are written on
+                               | only one drive at a time. "No Hands"
+                               | operation is featured--after you've
+                               | started things, you needn't touch the
+                               | keyboard again; just insert diskettes in
+                               | Download Count: 19   Last Download: 09-24-96
+                               |
+CORE303.ZIP     21196  02-04-95  CoreTest hard disk performance test
+                               | Download Count: 40   Last Download: 01-18-96
+                               |
+CPYPLS21.ZIP     9638  06-18-94  Copy+ version 2.1 - Copy diskettes when
+                               | formats are different. Copy, move, renamE or
+                               | erase specifiEd files in a directory, entire
+                               | branch or diskette. Target need not be
+                               | formatted nor have files erased. Requires DOS
+                               | 3.2 or later. May be run from Windows. From
+                               | Gerald R. Brown. $10.00 (US)
+                               | Download Count: 17   Last Download: 03-21-96
+                               |
+CP_DRIVE.ZIP     1029  10-08-94  Info on Conner hard drives
+                               | Download Count: 22   Last Download: 10-04-95
+                               |
+CSAP421.ZIP     42301  02-25-94  Sort And Pack Directories - sorts directories
+                               | in any of three orders and writes out the
+                               | sorted directory. Also, CSAP provides the
+                               | optional ability to truncate directories,
+                               | i.e., return disk space not used by a
+                               | directory to the free disk space. FREE!
+                               | Download Count: 16   Last Download: 07-12-96
+                               |
+DCF494.ZIP     110464  03-01-95  DISK COPY FAST v4.94 beta: Powerful 1-pass
+                               | diskette duplicating utility. VERY fast.
+                               | =====> SUPPORT PS/2; SUPPORT DMF, XDF, <=====
+                               | =====> SELECTED FDFORMAT, MAC HD DISK. <=====
+                               | Command line or menu driven; Hot keys for
+                               | backup or multiple target; Mouse support;
+                               | Format diskcopy diskcomp all in 1 pass; Use
+                               | extended memory; Image file; On-line help;
+                               | Download Count: 19   Last Download: 07-16-95
+                               |
+DDCLEAN.ZIP     33937  09-04-94  Disk Drive Cleaner v1 <ASAD><ASP> - Rosenthal
+                               | Engeering. Cleans floppy disk drive R/W heads
+                               | safely & effectively, preventing data loss,
+                               | unreliable performance and errors due to
+                               | microscopic foreign particles, dirt, dust,
+                               | oxides and smoke that accumulates on heads.
+                               | Preventative maintenance takes only about
+                               | four minutes and requires no removal or
+                               | mechanical disassembly of drive hardware.
+                               | $16.50 which includes a special cleaning kit.
+                               | Download Count: 15   Last Download: 11-02-94
+                               |
+DF353.ZIP       64847  01-16-94  Diskette to File Image Utility v3.53: will
+                               | make an image of your 360K, 1.2MB and 1.44MB
+                               | diskettes (from its boot area forward) and
+                               | place it in a file on your hard disk;
+                               | diskette track/sector testing,
+                               | manual/automatic data compression program
+                               | execution and more.
+                               | Download Count: 6    Last Download: 05-30-96
+                               |
+DISKED29.ZIP   154101  05-22-95  DISKED v2.9 - The DISK EDitor. Sector level
+                               | disk editor. Recover lost data; edit files
+                               | at the sector level; edit BOOT sector; etc.
+                               | Full C source code available through CUG
+                               | volume #406B.  See the C Users Journal, May
+                               | 1994 for a review.
+                               | Download Count: 15   Last Download: 05-01-97
+                               |
+DISKLEFT.ZIP    46716  02-26-94  DISKLEFT v2.8 <ASP>. 1-screen disk profile of
+                               | all drives, correct to the byte. Smart about
+                               | many drive types: fixed, network, floppy
+                               | (including DRIVER), RAM, substituted,
+                               | unavailable, and unconfigured drives. Now
+                               | recognizes CD-ROM and DOS 6.20 DBLSPACE
+                               | compressed drives. Now with /MONITOR option
+                               | for multitasking/networks. A free product by
+                               | Paul Munoz-Colman, from FunStuff(tm)
+                               | Software, makers of Personal Calendar(tm).
+                               | Download Count: 26   Last Download: 05-20-96
+                               |
+DISKSAV3.ZIP    23805  11-09-94  FAT and BOOTSAVE V2.3 Maint Rel FAT and
+                               | BOOTSAVE are very powerful utilities, whose
+                               | purpose is to preserve a copy of your hard
+                               | drive's critical data areas. Do not be misled
+                               | by the small size of the utilities as they
+                               | were written in assembler for speed and
+                               | accuracy. BOOTSAVE will produce a backup of
+                               | the boot sector and FATSAVE will produce a
+                               | backup of the file allocation tables. These
+                               | could later be restored if the need arose.
+                               | Download Count: 19   Last Download: 10-28-95
+                               |
+DKCARE25.ZIP    29245  02-17-95  ÉÍÍÍÍÍÍÍÍÍÍµ DiskCare v2.5 ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+                               | º                                          º
+                               | ºDo you maintain your Disk & Hard Drives   º
+                               | ºCorrectly? Are you uncomfortable with DOS º
+                               | ºcommands and functions that relate to diskº
+                               | ºmaintenance? DISKCARE is a menu driven    º
+                               | ºprogram which performs all the disk       º
+                               | ºmaintenance features of DOS (CheckDisk,   º
+                               | ºScanDisk,Defragmenter). Up to 8 drives    º
+                               | º(A-H). Many improvments over other        º
+                               | Download Count: 19   Last Download: 10-28-95
+                               |
+DKPROT.ZIP      27463  04-30-94  DISKETTE PROTECTOR Version 1.03 <ASP> \
+                               | DISKETTE PROTECTOR allows you to encrypt your
+                               | entire diskette using the American Government
+                               | Data Encryption Standard (DES). DISKETTE
+                               | PROTECTOR automatically detects whether the
+                               | encrypt or decrypt operation is required.To
+                               | encrypt/decrypt a diskette: Insert the
+                               | diskette in the floppy drive, then type:
+                               | dktprot <DRIVENAME> <PASSWORD> From PIGAS
+                               | Inc. <ASP> $20.
+                               | Download Count: 19   Last Download: 12-22-95
+                               |
+DL48.ZIP        91062  02-24-94  ²±° DaLabeler v4.8 - Disk Labeler °±² You
+                               | always need to store files to a floppy. Use
+                               | DaLabeler to produce a fast, easy to read
+                               | label complete with comments for quick
+                               | Download Count: 10   Last Download: 05-26-97
+                               |
+DQWIK211.ZIP   131294  08-04-94  DiskQwik v2.11: Device Driver exclusively
+                               | designed for AT/IDE Hard Disk Drives that
+                               | activates the drive's MULTIPLE SECTOR BLOCK
+                               | TRANSFER MODE. Boost the drive's Data
+                               | Transfer Rate by 25% to 45% !! This version
+                               | now supports both drives, Windows compat, and
+                               | a block size of 1 for older drives. Includes
+                               | IDE Inquiry util and an excellent DTR test to
+                               | measure the results. Replaces v2.10. Req:
+                               | 286+CPU. Dustbowl Designs, Inc. (Date
+                               | 8/04/94) Shareware -AV
+                               | Download Count: 37   Last Download: 12-25-96
+                               |
+DRVSLACK.ZIP     8830  01-08-95  DriveSlack Version 1.00 (01.08.1995) Want to
+                               | know how much hard disk space you are wasting
+                               | because of large clusters? This program will
+                               | tell you! It will even show you how much you
+                               | could save or waste if you change your
+                               | cluster size/partition size!
+                               | Download Count: 27   Last Download: 05-28-96
+                               |
+DSKCPY20.ZIP    35742  10-14-94  Another fast diskcopy, this one's free.
+                               | Download Count: 9    Last Download: 11-13-94
+                               |
+DSKFAC22.ZIP    75881  12-01-94  Full-screen diskette storage and copying
+                               | utility. Features include storage of 1.44Mb,
+                               | 1.2Mb, 720Kb and 360Kb diskettes as images on
+                               | a hard disk which can then be duplicated at
+                               | the click of a mouse button, keyboard free
+                               | mass-production mode, label printing, data
+                               | compression (for registered users). It uses
+                               | persistent multiple resizable overlapping
+                               | windows to separate diskette images into
+                               | libraries or categories making it ideal for
+                               | those who have a large number of diskettes to
+                               | manage such as shareware/software
+                               | distributors. On-line context sensitive help
+                               | is provided. hw
+                               | Download Count: 11   Last Download: 12-29-94
+                               |
+DXP234.ZIP     188974  07-08-94  Disk eXPress V2.34. Disk eXPress creates hig
+                               | compressed diskette images for electronic
+                               | transmission. Freatures include advanced data
+                               | compression, data encryption, sector skew
+                               | optimization, diskette image conversion, sel
+                               | extracting diskette images, recognition of no
+                               | diskettes and more. 16/32-bit DOS and OS/2
+                               | executables included. Fully multi-threaded u
+                               | OS/2. Utility to extract OS/2 VMDISK images.
+                               | Requires DOS 3.2+, OS/2 1.2+.
+                               | Download Count: 15   Last Download: 01-28-95
+                               |
+EZDK401B.ZIP   131908  06-17-94  EZ-DisKlone v4.01b The natural extension of
+                               | DOS's DISKCOPY for one pass intelligent
+                               | copies of all DOS diskettes. Quick and easy
+                               | to use. Menu or command line driven. Only
+                               | $29.95 Contact: EZX @ 713-280-9900-VOC Box
+                               | 58177, Webster TX 77598-8177 USA
+                               | 713-280-0099-FAX 713-280-8180-BBS
+                               | Download Count: 16   Last Download: 01-02-96
+                               |
+EZSCSIUP.ZIP   123263  02-10-94  Update for ADAPTEC EZSCSI 2.x to update to
+                               | 3.x - from Adaptec BBS.
+                               | Download Count: 9    Last Download: 06-29-94
+                               |
+FE302.ZIP       20641  01-07-94  FastErase version 3.02, a fast and flexible
+                               | Erasing utility. this all new version
+                               | includes: Erase up to sixteen file specs in
+                               | one command, erase entire directory
+                               | structures, destroy files, select files on
+                               | date and time, exclude files on name or
+                               | attributes, and more! FREEWARE.
+                               | Download Count: 10   Last Download: 12-25-96
+                               |
+FILL501.ZIP     83687  01-11-95  FILL.EXE (5.01): Program designed to fill up
+                               | floppies with the maximum number of files
+                               | that will fit into them. "FILL *.BAS" will
+                               | copy *.BAS files onto a floppy, taking the
+                               | biggest files first. When it can't fit a
+                               | file, it will skip it and move the next one.
+                               | Download Count: 16   Last Download: 05-11-96
+                               |
+FINDIT.ZIP      10289  02-27-94  ÕÍ[ FINDIT v1.4 ]ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+                               | ³ "Find A File" DOS Utility - Very Fast ³
+                               | ÔÍÍÍÍÍÍÍÍÍÍÍÍ[ Buffalo Creek Software ]Í¾
+                               | Download Count: 10   Last Download: 05-28-96
+                               |
+FIPS12.ZIP     106429  11-10-94  Fips v. 1.2 is a program to split Dos
+                               | partitons non-destructively.
+                               | Download Count: 20   Last Download: 03-18-96
+                               |
+FIXFLOP.ZIP      2289  01-26-95  FixFlop - Extended Format Floppy Reader 1k
+                               | TSR which will allow your computer to read
+                               | disks with unusual formats, such as 5.25"
+                               | disks that are formatted to 720k capacity or
+                               | 3.5" disks formatted to more than 1.44M.
+                               | (c)1994 PsL. Downloaded from iC BBS!
+                               | Download Count: 21   Last Download: 05-20-96
+                               |
+FLPKIT10.ZIP    38913  07-19-94  Floppy disks and drives will be a necessity f
+                               | are 5 small utilities to help you get the mos
+                               | FLOPPARM - Speeds up drive operation by modif
+                               | FLOPTEST - Tests drive for proper operation.
+                               | check for every sector of a floppy disk.
+                               | FLOPSKEW - Determines optimal skewing for pro
+                               | findings of this program and FDFORMAT you can
+                               | and writing by 30% every time you use a flopp
+                               | is faster too. FLOPRPM - Checks a drive's
+                               | rotation speed fo FLOPINFO - Displays a
+                               | floppy disk's formattin Free software
+                               | uploaded by the author. William Luitje
+                               | luitje@m-Net.arbornet.org or luitje@m-net.ann
+                               | Download Count: 37   Last Download: 11-04-96
+                               |
+FM57.ZIP        97453  06-03-94  FormatMaster v5.7. CAU dialog control
+                               | operated floppy disk format utility. Handles
+                               | 5 1/4" or 3 1/2", single/dual capacity
+                               | drives. Transfer system files, volume label,
+                               | and/or serialnumber. Supports sequential
+                               | serial numbers using volume label. Creates
+                               | bootable non-system diskettes. Reinitialize
+                               | formatted disks with save/restore format
+                               | capability. Windows style INI file
+                               | configuratIon.
+                               | Download Count: 15   Last Download: 07-12-94
+                               |
+FMAT70.ZIP      25064  11-20-94  FMAT V7.0, A small does-it-all diskette
+                               | formatter, it's very fast, and has lots of
+                               | options, it allows 'maxi-formats', and
+                               | 'illegall' formats, allowing for example to
+                               | format a 1.2MB diskette as a 720KB, and lots
+                               | more... *FREEWARE*
+                               | Download Count: 26   Last Download: 11-02-96
+                               |
+FORMNU42.ZIP    80535  06-26-94  ÉÍÍÍÍÍÍÍ FORMENU 4.2 - FORmat MENU ÍÍÍÍÍÍÍ»
+                               | ºAutomatically detects your drive types and º
+                               | ºhelps you format diskettes fast and easy   º
+                               | ºvia a colorful, friendly menu.  Minimal    º
+                               | ºkeystrokes needed.  Useful to anyone that  º
+                               | ºuses a PC, especially novice PC users.     º
+                               | ºHighly recommended for LANs or where there º
+                               | ºare many PCs and a variety of users.  Can  º
+                               | ºuse special parameters for DOS 5 and above.º
+                               | ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+                               | Download Count: 9    Last Download: 05-28-96
+                               |
+FORMQ201.ZIP    92028  03-30-95  FORMATQM Version 2.01.  March, 1995
+                               | FormatQM is a diskette formatting program
+                               | first introduced in 1987.  It features
+                               | "no hands" operation, custom format
+                               | definitions, support for up to 12 drives
+                               | per session, multiple-pass formatting,
+                               | support for Apple Macintosh formats and
+                               | many, many other features.
+                               | FormatQM is a shareware product by Sydex,
+                               | Inc.  P.O. Box 5700, Eugene, OR 97405,
+                               | USA.  Phone (503) 683-6833.
+                               | Download Count: 13   Last Download: 02-29-96
+                               |
+FSP112.ZIP      15429  08-09-94  FSP (Free SPace), v1.12: DOS Multiple Hard
+                               | Disk Space Utilization Utility. Freeware (c)
+                               | 1994 [94/08/09] by DDA - Reign Ware. W/ .PAS
+                               | source. Faster, more accurate, more robust.
+                               | Download Count: 13   Last Download: 08-28-94
+                               |
+FUJI_DRV.ZIP     1043  10-08-94  tech info on Fuji hard drives.
+                               | Download Count: 11   Last Download: 10-04-95
+                               |
+HACK105.ZIP     65245  08-10-94  DISKHACK ver 1.05 new Irish product, a PCTOOL
+                               | /NORTON UTILITIES lookalike now with full
+                               | support for CD-ROM's and Network drives still
+                               | Hex,Dec,Oct Calculator,all standard features
+                               | improved,Change Drive,Chg Directory, File
+                               | Search, maps sector as FAT,Directory etc
+                               | Change bootup drive,Map boot sector,Edit any
+                               | File or Directory.Brilliant! Download now!
+                               | Download Count: 34   Last Download: 05-01-97
+                               |
+HDTST213.ZIP    10564  05-06-94  HDTest v2.13 for DOS tests the speed of your
+                               | hard disk subsystem. New in this version: *
+                               | Made sure the test records contain random
+                               | data, so that real-time data compression
+                               | software will not influence the test
+                               | favourably.
+                               | Download Count: 16   Last Download: 01-18-96
+                               |
+HIT120.ZIP       8868  06-18-94  Microsoft SmartDrive(tm) Disk Cache Performan
+                               | Evaluator Version 1.20 - Gives a percentage o
+                               | hit to misses for the Smartdrive Disk Cache
+                               | included with DOS 6.0. Supports Windows 3.1
+                               | Smartdrive as well.
+                               | Download Count: 15   Last Download: 07-28-96
+                               |
+HITS62.ZIP      34420  01-18-94  Hits62 - measures the success rate of the
+                               | SmartDrive disk caching software from the
+                               | command line. Requires DOS 6.2 and SmartDrive
+                               | 5.0.
+                               | Download Count: 16   Last Download: 10-28-95
+                               |
+IC19.ZIP       254038  08-08-94  InteliCat(tm) v1.9 - State of the art disk
+                               | cataloging program. InteliCat can import DIZ
+                               | files, has on-line context sensitive help,
+                               | supports a mouse, multi- line comments, user
+                               | defined reports, multi-level sorting, regular
+                               | expression searching, and multi-level
+                               | selection of specific records. See what's new
+                               | in disk cataloging technology. Shareware
+                               | $25.00.
+                               | Download Count: 17   Last Download: 12-15-95
+                               |
+IDE-FAQ.ZIP     12389  11-01-94  All types of info and definitions related to
+                               | IDE hard drives!
+                               | Download Count: 28   Last Download: 07-30-96
+                               |
+IDEID30.ZIP     30700  03-08-94  IDE Identify v3.0: Returns info on all IDE
+                               | hard drives attached to your (286+) system.
+                               | Shows head, cylinder, and sector counts for
+                               | CMOS setup parameters. Drive only needs to be
+                               | hooked-up, does not need to be prepaired.
+                               | (Date 03/08/94) Req: 286+CPU. Freeware from
+                               | Micro House International. -AV
+                               | Download Count: 57   Last Download: 07-16-97
+                               |
+IDEINF10.ZIP    30887  08-03-94  Tries to tell all about all IDE drives,
+                               | including ATA-2 stuff. Searches for primary
+                               | and 3 secondary addresses for IDE adapters.
+                               | Date 7/94
+                               | Download Count: 42   Last Download: 06-06-96
+                               |
+IDENT34.ZIP     15866  07-03-94  Identify v3.4 shows IDE drive characteristics
+                               | for Master/slave hds by Sean Dykstra
+                               | Download Count: 27   Last Download: 06-20-96
+                               |
+LEV_CAT1.ZIP     7161  02-25-94  Do you have a small hard disk, and store all
+                               | files on floppy disks? Is it hard for you to
+                               | remember sometimes what disk contains what?
+                               | Well then this is a program just for you.
+                               | -=ðLEV's Disk Catalogerð=- makes keeping
+                               | tracks of your disks easier than reading a
+                               | book.
+                               | Download Count: 6    Last Download: 05-22-95
+                               |
+MAXT_DRV.ZIP     1159  10-08-94  tech info on Maxtor hard drives.
+                               | Download Count: 22   Last Download: 01-15-97
+                               |
+NGRA1.ZIP       15862  10-08-94  Misc hard drive information text file from
+                               | Western Digital bbs.
+                               | Download Count: 24   Last Download: 01-02-96
+                               |
+NO_IDLE.ZIP      7414  12-15-94  Disables entry into IDLE mode. Many of
+                               | today's newer ATA interface drives have
+                               | automatic energy savings modes implemented by
+                               | default. The drive's typically are designed
+                               | to go into an Idle mode which reduces power
+                               | consumption and parks the drive heads after a
+                               | defined period of inactivity. If the
+                               | inactivity period continues to another
+                               | defined interval, the disC drive will further
+                               | reduce its power consumption by spinning down
+                               | the platters and entering Standby mode. When
+                               | the drives are Idle or in Standby, any
+                               | subsequent disc I/O will "wake them up" and
+                               | enter Active Mode. This requires a modest
+                               | Download Count: 17   Last Download: 01-04-95
+                               |
+PDB001.ZIP      40001  03-09-94  Disk Benchmark Test.
+                               | Download Count: 11   Last Download: 01-18-96
+                               |
+PRESZ112.ZIP    64090  05-22-95  ÄÄÄÍThe Partition Resizer v. 1.1.2ÍÄÄÄ
+                               | ³  This is the first full featured   ³
+                               | ³partition handling program. It moves³ 
+                               | ³   and resizes any DOS partition,   ³
+                               | ³  without deleting the data. Works  ³
+                               | ³     with all hard disks, 8086+     ³
+                               | ÄÄÄÍÍÍÍÍÍÍ(c) Zeleps 1994-95ÍÍÍÍÍÍÍÄÄÄ
+                               | Download Count: 31   Last Download: 12-25-96
+                               |
+QBENCH.ZIP     156286  01-30-94  QBench, v1.3 -The DOS hard disk benchmark
+                               | from Quantum Corporation which measures data
+                               | access time and data transfer rate.
+                               | Download Count: 19   Last Download: 12-22-95
+                               |
+QCOPY340.ZIP    93670  03-16-94  --------------- QUIKCOPY v3.40 --------------
+                               | -                                           -
+                               | - Quick file and diskette copier for DOS.   -
+                               | - Now supports truly-wild wild-cards!       -
+                               | - QUIKCOPY is now much faster, especially   -
+                               | - when copying and moving files.            -
+                               | - Copying of diskettes faster, especially   -
+                               | - when accessing hardware directly.         -
+                               | - Maximal diskette filling now supports     -
+                               | - subdirectories within subdirectories.     -
+                               | - Overwrite checking and copy-prompting     -
+                               | - added.                                    -
+                               | - Splits large files across multiple        -
+                               | - diskettes.                                -
+                               | - Documentation totally rewritten.          -
+                               | -                                           -
+                               | - There isn't enough space to list all      -
+                               | - QUIKCOPY's features here! View the file   -
+                               | - FEATURES.LST (in this archive) for more.  -
+                               | -                                           -
+                               | -------- Another great utility from ---------
+                               | --------------- RJS Software ----------------
+                               | Download Count: 29   Last Download: 02-04-97
+                               |
+REPLCT12.ZIP   481477  03-09-95  Replicator v1.22 <ASP> - Diskette Database! 
+                               | Replicator is a disk image utility designed 
+                               | to create images of diskettes and catalog 
+                               | them in a database. Includes optional 
+                               | compression to reduce the image size. Store 
+                               | up to 10 description lines and a complete 
+                               | list of files contained on the original disk 
+                               | for each disk image in the database. Modify 
+                               | database entries at any time. Includes easy 
+                               | push button interface & network support.
+                               | Download Count: 4    Last Download: 09-18-95
+                               |
+SAFEPART.ZIP    85427  02-25-94  Non-destructive splitting of harddisk
+                               | partitions. (No formatting necessary to
+                               | re-partition.)
+                               | Download Count: 21   Last Download: 12-25-96
+                               |
+SAFPAK20.ZIP    68998  03-01-95  SAFEPACK v2.0 Disk Defragmenter Mar 95 <ASP>
+                               | Data on the disk should be immune to
+                               | interruptions from any cause during
+                               | defragmentation. Files and directories may be
+                               | sorted into almost any order, and many other
+                               | optimizations are possible. All free disk
+                               | space is left as a single area so a large
+                               | Windows swap file may be created. May be run
+                               | in unattended mode. OS/2 supported
+                               | Shareware:- 9 UK pounds (credit cards taken).
+                               | Download Count: 17   Last Download: 04-04-95
+                               |
+SCSIIN12.ZIP    26851  02-04-95  SCSI Inspector v1.2 - A general purpose ASPI
+                               | block viewing utility. It is useful to people
+                               | who need to inspect the contents of a disk at
+                               | the block level.
+                               | Download Count: 10   Last Download: 03-16-96
+                               |
+SCSIUTIL.ZIP   411927  08-24-94  utilities for scsi peripherals
+                               | Download Count: 17   Last Download: 04-20-96
+                               |
+SEAGTDRV.ZIP     2003  10-08-94  tech info on Seagate hard drives.
+                               | Download Count: 15   Last Download: 07-28-96
+                               |
+SPCUSE.ZIP      13775  03-11-95  SpaceUsed 2.0. Hard disk info utility. This
+                               | version gives a whole new look to SU, and
+                               | offers slightly swifter execution. Req. 286+,
+                               | HD or FD. Programmed by Paul Sufka.
+                               | Download Count: 10   Last Download: 04-12-95
+                               |
+SPINDN12.ZIP    13331  08-23-94  SPINDOWN v1.2 Spin down your IDE disk
+                               | drive(s) if it has not been accessed for a
+                               | period of time. Like a screen- saver for
+                               | disks!
+                               | Download Count: 21   Last Download: 05-23-96
+                               |
+VEXD110.ZIP     28942  04-15-94  E144 formats your 1.44MB diskettes so that yo
+                               | additional 52.5KB storage space. Turning your
+                               | a 1.51MB disk. E720 turns your 720KB diskette
+                               | diskette. It does this in a way so that you d
+                               | ability to use DOS commands and utilities wit
+                               | Freeware by Mark Vitt
+                               | Download Count: 14   Last Download: 12-25-96
+                               |
+WASTENOT.ZIP    30703  12-25-94  Find wasted space on hard disk. Should be run
+                               | before you go out and sink dollars into a
+                               | "big" hard disk (say, 1 Gig) only to come
+                               | home and let MSDOS whack away 30 percent of
+                               | it for no reason. hw
+                               | Download Count: 22   Last Download: 02-02-95
+                               |

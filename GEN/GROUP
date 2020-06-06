@@ -1,0 +1,22 @@
+@X0FWelcome to PCBoard Group Chat@X07
+
+In Group Chat, there many channels available so that more than one chat may
+take place at any given time.  When you join Group Chat you must decide which
+'@X0Cchannel@X07' you wish to participate in.  You can join an on-going discussion,
+or use the CALL command to invite others to a new topic on an unused channel.
+
+People can read what you type as you type it.  However, only one person has
+the "focus".  The "focus" is used so that only one person can be typing while
+others, if they *do* type, do not interrupt.  However, you *may* type ahead!
+PCBoard will allow up to one line of text while waiting for the focus.
+
+If you use Split Screen mode, you may then type as much as you want prior to
+hitting ENTER.  It is recommended that you use the NOECHO command so that when
+you do hit ENTER the keystrokes will not be sent back to you.  NOECHO also
+removes the one line limit in case you don't get the focus right away.
+CAUTION:  In split screen mode, the only way to access commands is to press
+ESC, type the command letters and *then* press the ENTER key.  If you press
+ESC and then press ENTER to send the ESC the command prompt will accept your
+ENTER key as a cancel for command mode.  Example:  press ESC, type MENU, then
+press the ENTER key.
+

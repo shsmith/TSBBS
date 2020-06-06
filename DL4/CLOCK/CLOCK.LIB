@@ -1,0 +1,24 @@
+
+
+-----------------------------------------------------------
+--                                                       --
+--                 System Clock Access                   --
+--                Package Specification                  --
+--                 19-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+
+package CLOCK is
+
+   type TIME is record
+      hours:    integer;
+      minutes:  integer;
+      seconds:  integer;
+   end record;
+
+   function GET_TIME return TIME;
+      -- get the current time of day
+
+end clock;
+

@@ -1,0 +1,87 @@
+
+Automatic Investment Management          (aim.c by David McCourt)
+=================================================================
+
+AIM  is based on the book,  "How to make $1,000,000 in the  Stock
+Market"  by Robert Lichello.  It is recommended that,  before you
+use this program, you obtain a copy of this book. It is available
+in  paperback  (Signet # 451-E9461).  The program  establishes  a
+control  amount  to  monitor the progress of each issue  in  your
+portfolio.  When  the value excedes the control amount by a given
+percentage, the program will recommend that you sell a portion of
+the  issue.  Conversely,  when the value falls below the  control
+amount,  the program recommends an amount to add to the issue. In
+other words,  the program directs you to buy low - sell high. AIM
+does  not  pick  stocks;  it  only monitors  the  ones  you  have
+selected. The aim calculations should be done on a monthly basis.
+
+Original Investment
+===================
+The  original investment is defined as the amount that you  start
+with in the Automatic Investment Management Program.  This amount
+is to be divided equally between stocks and a money market fund.
+
+Re-invest Dividends
+===================
+When  dividends are paid,  the price will usually drop to reflect
+the pay out.  Therefore,  only the price and shares are adjusted.
+No changes are made to the control amount.
+
+Additional Investments
+======================
+Additional    investments   are   treated   like   the   original
+investment.  Divide  the  amount  in half and put one  half  into
+stocks  and  the  other half into your  money  market  fund.  The
+control  amount  is increased by  the amount added to  the  stock
+plus an additional 10%.
+
+Aim Sell
+========
+When  AIM recommends that you sell a given dollar amount,  it  is
+taking  profit from your investment and placing it safely away in
+your money market account to remain until the market cycles lower
+and AIM tells you to buy. Control is not adjusted.
+
+Aim Buy
+========
+When  AIM  recommends that you buy a  given  dollar  amount,  the
+market  is  going  in to a lower cycle and you should  begin  the
+accumulation phase of your investment program.  AIM will increase
+you control amount by 50% of your new investment.
+
+Note: Mutual funds may be used instead of individual stocks.
+
+
+
+
+
+How to start
+============
+
+1. Decide on initial amount to be invested in the program.
+
+2.  Divide  the amount equally between stocks and a money  market
+fund.
+
+3. Select stocks and funds to be used.
+
+4.  Enter using Original purchase menu selection on main menu and
+Money Market menu.
+
+5.  Add  dividends received as stock using main menu  option.  If
+dividends  are  received  as cash,  deposit in money  fund  using
+interest received selection as well as any interest received from
+the Money market fund.
+
+6. Monthly update the portfolio with current prices.
+
+7.  Buy  or  sell  as  directed by the  program  in  the  amounts
+specified.
+
+8.  The  program automatically eliminates all transactions  under
+$100.  You  may  wish to set a higher limit  to  avoid  excessive
+transaction  cost  or  to  comply  with  a  mutual  fund  minimum
+transaction amount.
+
+
+

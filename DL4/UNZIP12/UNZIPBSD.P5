@@ -1,0 +1,29 @@
+*** patchlevel.h.orig	Thu Jun  1 16:21:31 1989
+--- patchlevel.h	Thu Jun  1 16:16:44 1989
+***************
+*** 1 ****
+! #define PATCH 4
+--- 1 ----
+! #define PATCH 5
+*** unzipbsd.c.orig	Thu Jun  1 16:09:19 1989
+--- unzipbsd.c	Thu Jun  1 16:29:51 1989
+***************
+*** 1183,1190 ****
+  		}
+  	}
+  
+! 	strcpy(zipfn,argv[optind]);
+! 	if (strlen(zipfn) == 0)
+  		long_help();
+  
+  	/* .ZIP default if none provided by user */
+--- 1183,1191 ----
+  		}
+  	}
+  
+! 	if (argv[optind] != NULL)
+! 		strcpy(zipfn,argv[optind]);
+! 	else
+  		long_help();
+  
+  	/* .ZIP default if none provided by user */

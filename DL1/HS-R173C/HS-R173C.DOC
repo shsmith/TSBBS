@@ -1,0 +1,124 @@
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                      IN RBBS-PC VERSION 17.3C
+
+     Please refer to the RBBS-PC documentation for detailed information on
+     installation of external protocols.  This information was tested with
+     HS/Link betas posted on 12/04/91 and RBBS-PC v17.4/0912.
+
+     The following installation steps should work for most folks:
+     RBBS-PC uses a template file called PROTO.DEF for passing parameters
+     to external protocols.  This template file can either call a BATCH
+     file or pass parameters directly to the protocol engine.  Using either
+     method ( BATCH or the direct passing of parameters directly to the
+     engine will work.
+
+     BATCH files are not needed with RBBS-PC's external protocol management
+     template ( PROTO.DEF ).
+
+SETTING UP HS/Link:
+
+      1.) RBBS-PC's proto.def template file consists two lines for each
+          Protocol.  The first line of the entry for a provides the
+          information to the remote user for selecting the protocol to use
+          when requesting to transfer a file.
+      2.) The second line are the actual parameters passed between RBBS-PC
+          and the protocol.  The send parameters are begin after RBBS-PC
+          reads its own instructions.
+
+          BELOW is the actual PROTO.DEF entry cut and pasted from a working
+          PROTO.DEF file. If you wish you can cut and paste this line into
+          your own PROTO.DEF file:
+
+      "H) HS/Link ...................[98% Eff.]
+      "20,D,8,,B,4096,,0.98,,4=E=A,"C:\RBBS\XFER\HSLINK.EXE -@ -NF -HX -NU -P[PORT#] -b[BAUD] -S4096 [FILE]","C:\RBBS\XFER\HSLINK.EXE -@ -NF -HX -UC:\UPLOAD -P[PORT#] -b[BAUD] -S4096"
+
+          (Note: the second line has no carriage returns but the parameters
+            are broken up by commas and QUOTE Marks.)
+
+    a. The first Quote ( by the H ) to the second quote sectors off
+             the menu selection.
+    b. Following the quote are the parameters passed to RBBS-PC. Read
+        the RBBS-PC documentation for more detail on these parameters.
+
+    c. RBBS-PC'S parameters for SENDing a file with HS/Link:
+
+       "C:\RBBS\XFER\HSLINK.EXE -@ -NF -HX -NU -P[PORT#] -b[BAUD] -S4096 [FILE]"
+       -@ runs HS/Link without accessing the HSLINK.CFG file
+
+       -NF turns off the graphics screen ( though nice, I'm not around to
+           watch and enjoy it so am not putting the screen to work.
+
+       -HX turns of the Xon/XOFF feature.  If using an error correcting
+           modem such as a USR HST or DS this feature is not needed if you do
+           not use an error correction modem leave this switch out.
+
+       -NU Blocks uploads as RBBS-PC is not designed to handle simultaneous
+           file transfers.
+
+       -P[PORT#] tells HS/Link which port to use.
+
+       -b[BAUD] passes the modem speed to HS/Link. HS/Link autodetects the
+                speed but I like to keep it in there as I run a fossil driver
+                and error correcting modem that takes care of all that
+                adjustment.  Church Chatters opens and locks its ports
+                at 19200
+
+       -S4096 passes the buffer size to HS/Link.  May require experimentation.
+                You may want to go to a smaller buffer if you are not
+                using the NS16550AFN chips.
+       [FILE] this is self explanitory.  The most important thing to your
+              valued user!
+
+
+         These parameters will pass the information to send a file to the
+         remote user.  RBBS is not designed to accept two way transfers tho
+         there is a group of us testing an interface to take care of both
+         batch uploading and two way transfers.  This utility however, is not
+         part of the officially released RBBS-PC code.  Documentation on
+         handling HS/Link with external utilities will be packaged with those
+         utilities.
+
+    d. RBBS-PC parameters to RECIEVE a file with HS/Link:
+
+      "C:\RBBS\XFER\HSLINK.EXE -@ -NF -HX -UC:\UPLOAD -P[PORT#] -b[BAUD] -S4096"
+       The only different parameters in this string are:
+
+       -UC:\UPLOAD names the subdirectory you want to receive files to.
+
+       -NU we do not want to block uploads here.
+   This setup should work with any version of RBBS-PC using the PROTO.DEf
+   protocol template file.
+
+
+              Tom Hansen
+              Church Chatters (tm) BBS
+              (402)593-8863 USR HST 14.4K - Public Node  24hrs.
+              (402)592-9266 USR HST 14.4k - Contributers Node
+
+******************************************************************************
+
+     The following message was released on the Relay International
+          Mail Exchanger in the RBBS conference by DAN SHORE:
+
+        Announcing a new Feature/Interface for RBBS:
+
+                1.  BATCH UPLOADING with DSZ Protocols
+                2.  HS/Link Interface
+
+      These New Features are currently in Beta Testing at the
+      following "DGS Systems Group" BBS's, and is expected to be
+      released to the general public in the next couple of weeks.
+
+            THE SHORELINE BBS     (301) 946-2771  HST
+            CHURCH CHATTERS BBS   (402) 593-8863  HST
+            THE ELUSIVE DIAMOND   (703) 323-6423  HST
+                                  (703) 323-1782  HST
+            THE WORLD OF GREYHAWK (410) 461-9943  Dual
+                                  (410) 465-3891  Dual
+***************************************************************************
+
+
+   RBBS-PC is not designed to handle BATCH uploads. Though  not part of the
+   officially released RBBS-PC the above mentioned package but should further
+   enhance the use of HS/Link with RBBS when it is released. It will handle
+   HS/Link among many other protocols.

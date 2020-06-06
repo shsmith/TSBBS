@@ -1,0 +1,79 @@
+Using the High Speed Link transfer protocol with Celerity BBS.
+
+by Fatal Error of MODular Madness (512)219-8045       11/24/1991
+
+HS/Link is a new bidirectional transfer protocol like Bimodem. Neat
+thing about HS/Link is that it doesn't have all those "features" that
+many sysops have complained about in the past when asked to install
+BiModem. HS/Link is a plain straight forward protocol no different than
+DSZ in function. It has no frills like chat, or the infamous File
+Requests. It basically sends the files contained in a xferlist file, and
+receives whatever the other person wanted to upload. No changes in the
+transfer can be made after it is started. Therefore it is perfect for a
+BBS.
+
+Ok, enough about HS/Link. Now, to talk about Celerity. Celerity, like
+many BBS softwares around is designed for one-way transfers only. It
+cannot deal with the confusion of a two way transfer. So, that would
+make HS/Link unusable, right? Wrong. I have come up with a scheme that
+will trick Celerity into doing two-way transfers. It impliments the
+little BIDIR.EXE file I've included in this ZIP.
+
+Basically how it works is this. The user adds the files he wants to
+download with the plus key. Then he enters batch transfers so he can
+begin the transfer. But, instead of selecting a real protocol, he will
+select a pseudo-protocol named "DL batch Bidirectionally". That protocol
+will actually call my little program which will save the transfer list,
+and tell celerity the transfer was successful. This will charge the
+user for the files, and give all the appropriate logging and credits.
+Next the user will do a batch upload and upload whatever he chooses, and
+select the HS/Link protocol from the list. When he begins his HS/Link
+upload, the BBS will automatically start sending the files that were
+previously tagged for batch download. When finished all the uploads will
+be credited and added online, the user will have the files he wanted,
+and he will be charged for that download.
+
+Well, setting it up isn't as hard as you may think. First unzip the HS/Link
+file I included in this zip (or any newer version you may now have) into
+your celerity directory (or wherever you keep DSZ). Configure it to your
+liking using it's configuration program. Then copy my BIDIR.EXE file to
+that same place. Now, run PROTED, and add two new protocols:
+
+For Batch Downloads add: LETTER       : B
+                         DESCRIPTION  : DL batch Bidirectionally
+                         PROGRAM      : BIDIR.EXE
+                         COMMAND LINE : %3 C:\CELERITY\BIDIR.LST %4
+   (Make the Letter/Description/Path whatever... Just an example.)
+
+For Batch Uploads add:   LETTER       : H
+                         DESCRIPTION  : HS/Link
+                         PROGRAM      : HSLINK.EXE
+                         COMMAND LINE : @C:\CELERITY\BIDIR.LST
+The above command line is the path to your BIDIR.LST. It will be found
+at the same path you entered for the first protocol. This path can be
+anything you choose.
+
+Also, add a command in your main Celerity batch file to delete the
+BIDIR.LST after the caller hangs up. This will prevent another user from
+getting HS/Link to resend the files that were in the queue. I recommend
+that you place the command just before you run Celerity.
+   Example: ...
+            ...
+            DEL C:\CELERITY\BIDIR.LST
+            CELERITY
+            ...
+            ...
+
+That should do it for the setup... Now you may want to give your users
+some news explaining how to operate this protocol. (Since it is somewhat
+confusing to use.)
+
+If you have any questions, or would like to try it out, just call my
+board (top of file). I have it installed. Hopefully, in the meantime
+Celerity will get it's own BiDirectional support.
+
+
+
+Fatal Error
+
+

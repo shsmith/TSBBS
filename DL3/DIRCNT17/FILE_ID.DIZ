@@ -1,0 +1,10 @@
+DirCount - PCB/ProDoor File DIR Header Util.
+A quick and simple utility to keep up-to-date
+headers in your file DIR listings. Includes
+DirSum to summarize multiple conference file
+areas, DirOv to produce an overview of file
+areas in a single conference, and COL to
+format DirOv output into multiple columns.
+With full pascal source code.
+Version 1.7 now handles totals > 2gig.
+Public Domain Material by Samuel H. Smith.

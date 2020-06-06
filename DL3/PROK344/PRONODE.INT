@@ -1,0 +1,107 @@
+function node_mapsize: word;
+   {returns size of the usernet.xxx "bitmaps" used to encode node attention
+    and node up/down status}
+
+function node_pos(node: integer): longint;
+   {returns the lseek position within usernet.xxx to access a specified node's
+    usernet record. unet_header must be initialized before calling this}
+
+procedure set_node_up(fd: dos_handle; node: integer; state: boolean);
+   {alters the node up/down status bit in usernet.xxx file}
+
+procedure set_node_info(newcode: char;
+                        name: anystring;
+                        city: anystring;
+                        operation: anystring);
+   {sets all variable information in the current node's usernet.xxx entry.
+    newcode may be any of the node_* code constants defined below}
+
+procedure set_node_status(newcode: char);
+   {changes the node status code in usernet.xxx.  leaves name and city
+    alone but blanks operation if previously set}
+
+procedure set_node_operation(operation: anystring);
+   {changes the node operation message in usernet.xxx.  leaves status, name
+    and city alone{
+
+function node_idle_time(node: integer): anystring;
+   {returns a text formatted "xxx min" idle time since a caller log entry
+    was made for the specified node}
+
+procedure touch_caller_log;
+   {change the last-modification date of this node's CALLER log file.  resets
+    this node's "idle time" to 0}
+
+procedure node_status_display;
+   {prints the standard "node status" display}
+
+procedure live_chat;
+   {activates a "live chat" mode}
+
+procedure node_chat;
+   {currently handles the "chat u" / "chat a" commands to set chat
+    available/unavailable status.  If par='CHAT' will activate the
+    live_chat procedure above}
+
+procedure check_chat_request;
+   {called during input() procedure to check if another node wants to
+    chat with this node.  displays a message from PROREQ if needed}
+
+const
+  chat_poll: boolean = true;    {true if polling for chat}
+
+  {some of the status codes that can be passed to set_node_status}
+  node_no_caller        = ' ';
+  node_available        = 'A';
+  node_in_door          = 'D';
+  node_entering_msg     = 'E';
+  node_group_chat       = 'G';
+  node_logoff_pending   = 'L';
+  node_chatting         = 'N';
+  node_logging_on       = 'O';
+  node_paging_sysop     = 'P';
+  node_sysop_chat       = 'C';
+  node_chat_request     = 'R';
+  node_transfer         = 'T';
+  node_unavailable      = 'U';
+  node_dropping_2dos    = 'X';
+  node_going_down       = #0;  {not a standard code}
+  node_prev_code:  char = #255;
+
+type
+   stat_msg_rec = record
+      code: char;
+      msg:  string20;
+   end;
+
+const
+   max_node_stat = 20;
+
+   node_stat_text: array[1..max_node_stat] of stat_msg_rec = (
+                 (code: ' '; msg: 'No caller online'),
+                 (code: 'A'; msg: 'Available for Chat'),
+                 (code: 'B'; msg: 'Remote Drop to DOS'),
+                 (code: 'C'; msg: 'Chatting with Sysop'),
+                 (code: 'D'; msg: 'Running a DOOR'),
+                 (code: 'E'; msg: 'Entering a Message'),
+                 (code: 'G'; msg: 'Group Chat'),
+                 (code: 'L'; msg: 'Auto Logoff Pending'),
+                 (code: 'M'; msg: 'Broadcast Message'),
+                 (code: 'N'; msg: 'Chatting with Node#'),
+                 (code: 'O'; msg: 'Logging Into System'),
+                 (code: 'P'; msg: 'Paging the Sysop'),
+                 (code: 'R'; msg: 'Chat Request Sent'),
+                 (code: 'S'; msg: 'Answering Script'),
+                 (code: 'T'; msg: 'Transfering a File'),
+                 (code: 'U'; msg: 'Unavailable for Chat'),
+                 (code: 'W'; msg: 'Waiting for Node#'),
+                 (code: 'X'; msg: 'Drop to DOS Pending'),
+                 (code: 'Y'; msg: 'No caller this node'),
+                 (code:  #0; msg: 'Node unavailable'));
+
+var
+   unet_header:   usernet_header_rec;
+   {must be read from head of usernet.xxx before calling node_mapsize o
+    or node_pos above}
+
+

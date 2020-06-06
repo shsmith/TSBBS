@@ -1,0 +1,9 @@
+@X0C
+PCBoard has been unable to detect the presence of ANSI capabilities on your
+system.  If you do indeed have ANSI enabled, ignore this warning.
+@X0A
+If ANSI is unavailable to you, then it is recommended that you either:
+  1) use a split screen mode on your side, or
+  2) avoid typing ahead while other users are typing
+
+

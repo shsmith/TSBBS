@@ -1,0 +1,26 @@
+
+DOSMON - DOS Activity Monitor               21-Jan-88 S.H.Smith
+                                            Public domain material
+
+'DOSMON' is a small resident utility that monitors DOS service activity.
+It intercepts the DOS service interrupt and displays information about
+dos activity on the screen.
+
+The display format is: 
+   cccc:iiiiXnn
+
+Where
+   cccc    is the caller's code segment
+   iiii    is the callers IP
+   X       is a rotating graphic
+   nn      is the dos function number
+
+
+DOSMON does not interfere with DOS functions in any way.
+The overhead for DOSMON is about 3% for programs that use
+a lot of DOS functions.
+
+Direct screen writing is used to minimize overhead; some snow may be seen
+on older CGA adapters.
+
+Use at your own risk!

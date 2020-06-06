@@ -1,0 +1,260 @@
+
+HS/Link Revision History (in reverse order)
+-------------------------------------------
+
+NOTE: THIS IS A BETA TEST VERSION!  THE CURRENT RELEASE VERSION IS 1.12!
+
+04-Oct-92
+   Posted as public beta 1.13C4 under filename HS113C4.ZIP.
+
+   Added logic to prevent internal transmit queue overflows when using
+   large blocks and very high effective speed settings.
+
+   Some earlier betas would not enable file buffering after the first
+   or second file in a batch.
+
+03-Oct-92
+   Internal changes to correct operation with the internal Intel
+   Satisfaxion Modem/400E.
+
+   The -FTn option now controls not only the receive fifo threshold, but
+   also the number of characters pre-queued for transmit per THRE
+   interrupt service.
+
+01-Oct-92
+   Reduced NS16550 transmit preque from 8 bytes to 4 bytes to reduce
+   overhead of queueing transmit bytes (during which no receive bytes
+   can be processed).
+
+   Added new -N! (do not force remote to use local settings) option to
+   override any previous -! option in either the command line or a
+   configuration file.
+
+   Note: When running HS/Link in Windows Enhanced mode and you are
+   getting COM Overrun errors, you may need to add the following
+   statement in the [386Enh] section of your SYSTEM.INI file:
+        COM1BUFFER=8192         ;if you are using COM1, or
+        COM2BUFFER=8192         ;if you are using COM2
+
+30-Sep-92
+   Added new -FTn option to control NS16550 Fifo Threshold.  Possible
+   values are -FT1, -FT4, -FT8, -FT14.  Higher thresholds reduce
+   interrupt overhead but increase the chances of a receiver OVERRUN
+   error under multi-taskers such as Desqview and Windows.
+   The default is now -FT1.  Betas B8 through C2 had a default of -FT8,
+   which caused overruns on some machines.
+
+   Added logic to detect failure of flow control to suspend flow in slow
+   handshake mode prior to disk activity.  When flow continues for 3
+   seconds after flow control is asserted, the message
+        Warning: Flow control failure!  Slow handshake disabled.
+   will be displayed and the -HS option will be disengaged for the rest
+   of the session.
+
+29-Sep-92
+   Added internal logic to cancel a link when the same error is reported
+   ten times in sequence.
+
+   The HS/Link program and installation tips files are now available via
+   FTP at simtel20.army.mil in PD1:<MSDOS.MODEM> !!!
+
+28-Sep-92
+   Posted as public beta 1.13C2 under filename HS113C2.ZIP.
+
+25-Sep-92
+   Recompiled under Borland C++ 3.1 compiler.
+
+23-Sep-92
+   Changed combined thruput calculation to original calculation method.
+
+   Added new -NG option to block Control-G (BEEP) characters in chat
+   mode. This keeps remote callers from beeping your speaker during a
+   file transfer.
+
+19-Sep-92
+   Posted as public beta 1.13C0 under filename HS113C0.ZIP.
+
+18-Sep-92
+   Removed some profiling and/or debugging code which caused strange
+   failures on some machines.
+
+   Added -FL option to usage help messages.
+
+14-Sep-92
+   Posted as public beta 1.13B8 under filename HS113B8.ZIP.
+
+13-Sep-92
+   Internal changes in terminal mode.
+
+   When an outgoing file was aborted, the reason for the abort was often
+   not being printed on the screen.
+
+   Corrected RTS handshake on receive buffer overflow.
+
+   Optimized NS16550A buffering logic to greatly reduce interrupt overhead.
+
+   Changed transfer abort logic to exit more quickly if ^X is typed 6 or
+   more times.  Otherwise HSLINK will wait for remote data flow to stop
+   before releasing control.
+
+   Changes in batch status window calculation to base time estimate on
+   the direction with the most estimated TIME remaining rather than the
+   batch with the most BYTES remaining to transfer.  This should prevent
+   the estimates from jumping around as much.
+
+12-Sep-92
+   Posted as public beta 1.13B6 under filename HS113B6.ZIP.
+
+   Some non-public beta B5's did not check the HSLINK.EXE directory for
+   the HSLINK.CFG file.
+
+11-Sep-92
+   Added a mini terminal feature.  If you include -T in the hslink command
+   line, you will be placed into a simple terminal emulation prior to starting
+   the transfer.
+
+10-Sep-92
+   Internal changes to reduce memory requirements by about 10k compared
+   to earlier versions.  Hslink works best with about 103000 bytes of
+   ram, but will now work successfully with at little as 78000 bytes.
+
+   Added additional logic to insure proper operation under marginal
+   memory conditions.
+
+   Added reporting of additional memory requirements when there is
+   enough ram to load hslink but not enough for it to run properly.
+
+   Changes to prevent spurious word-wraps in CHAT mode.
+
+   The new CHAT mode is now a "registered" feature.  If you are running
+   an unregistered copy of hslink, you will not be able to INITIATE a
+   chat, but you can chat with the remote if the remote is registered
+   and initiates the chat.
+
+   To initiate a CHAT, just start typing... the chat windows will
+   automatically pop up.  If the remote is using 1.13à or newer you will
+   have a two-way chat.  Press ESCAPE to close the chat windows.
+
+   Implemented proper RTS handshake in addition to XON/XOFF when receive
+   buffer nears overflow.
+
+04-Sep-92
+   Posted as a public beta under filename HS113B4.ZIP.
+
+02-Sep-92
+   Added new -NK (do not keep aborted downloads) option to override any
+   previous -K option in either the command line or a configuration
+   file.
+
+31-Aug-92
+   More internal changes to help with systems that do not always respect
+   the high order bit.  This may help XON/XOFF handshake via PC Pursuit.
+
+   Some non-public betas posted today did not work.
+
+   Some non-public betas posted today gave a false 'bad ready crc'
+   during the initial handshake process.
+
+   Added logic to give priority to the lower serial numbered copy when
+   two registered copies attempt to use the -! option.  This may save
+   transfers that would otherwise fail due to conflicting setting
+   overrides.
+
+30-Aug-92
+   More changes to solve PC Pursuit problems.
+
+27-Aug-92
+   Internal changes.  Some versions posted on 27-Aug did not correctly
+   handshake with the remote prior to starting file transmission.
+
+   Posted as a public beta under filename HS113B2.ZIP.
+
+25-Aug-92
+   Posted as a public beta under filename HS113A1.ZIP.
+
+19-Aug-92
+   Internal changes to protect the CR-@-CR sequence used by PC Pursuit to
+   escape to a command mode.  This version identifies itself as 1.13à1.
+
+18-Jul-92
+   Internal changes to guard the codes 0x91 and 0x93 when XON/XOFF
+   handshake is enabled.  This change was required because some common
+   FOSSIL drivers accept these codes as alternates for the normal 0x11
+   and 0x13 XON/XOFF codes.
+
+17-Jul-92
+   The alphas were sometimes using directvideo while loading the
+   config file- this has been correct.
+
+16-Jul-92
+   More changes in batch status calculations.
+
+   The FOSSIL version of HS/Link is now ready for alpha testing.
+   See FHSLINK.EXE and FHSLINK.DOC for details.
+
+13-Jul-92
+   11-jul and 12-jul alphas send HS* <esc> ^B ... instead of HS* ^B ...
+   during the initial handshake, preventing some auto-download detectors
+   from working.
+
+   Added a very simple "chat" function which is automatically activated
+   when you begin typing at the keyboard.  Press ESCAPE to restore the
+   normal settings window display.  (this is an experimental feature
+   which may not make it into the next planned bugfix-release).
+
+11-Jul-92
+   Changes to possibly eliminate all remaining false "exit code 2"
+   conditions following a successful transfer.
+
+10-Jul-92
+   Added logic to automatically reduce 'window' size when flow control
+   appears to be failing.
+
+09-Jul-92
+   The batch status bargraph was not working in 8-jul alphas.
+
+08-Jul-92
+   Additional changes in batch status window to give best estimate of
+   time remaining during bidirectional transfers.  Time estimate is now
+   based on the channel with the most bytes remaining to transfer rather
+   than the most total bytes to transfer.
+
+06-Jul-92
+   Corrected HSCONFIG to set MONO default colors only when a new
+   configuration file is being created.
+
+05-Jul-92
+   Correction in batch status totals when files are skipped in the
+   incoming files window.
+
+   Correction of batch time estimate to reflect only the time remaining
+   in the larger of the send or receive batches.
+
+14-May-92
+   Version 1.11 didn't solve the problem for some slow machines.
+   Additional changes in 1.12 seem to cover all the bases.
+
+   Posted version 1.12 as hslk112.zip for testing.
+
+14-May-92
+   Version 1.10 will sometimes return errorlevel 2 after successfully
+   receiving files and when no outgoing files are active.  Version 1.11
+   corrects this.
+
+   Posted version 1.11 as hslk111.zip for testing.
+
+13-May-92
+   Official release of HS/Link 1.10 as HSLINK11.ZIP.
+   See WHATSNEW.110 for a complete list of changes between version 1.0
+   and version 1.1.
+
+14-Jan-92
+   Official release of HS/Link 1.00 as HSLINK10.ZIP.
+
+17-Oct-91
+   Initial posting of HS/Link beta as HSLK10B.ZIP.
+
+July-87
+   Initial protocol design and prototype development began but was never
+   made functional enough for public testing.
+

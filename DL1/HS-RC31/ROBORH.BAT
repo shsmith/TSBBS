@@ -1,0 +1,2 @@
+HSLINK -P%1 -B%2 -UC:\FILES
+

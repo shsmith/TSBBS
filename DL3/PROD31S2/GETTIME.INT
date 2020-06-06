@@ -1,0 +1,4 @@
+function get_time: real;
+function lget_time: longint;
+function lget_ms: longint;
+function get_mins: integer;

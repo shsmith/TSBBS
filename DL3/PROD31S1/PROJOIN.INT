@@ -1,0 +1,3 @@
+procedure display_conference_news;
+function lookup_conference_number(name: string10): integer;
+procedure join_conference;

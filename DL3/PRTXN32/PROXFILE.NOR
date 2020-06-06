@@ -1,0 +1,9 @@
+; PROXFILE - ProDoor command translation definition for FILE LISTINGS prompt
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+;  0,VIEW,VX
+10,S,V        ;se p† fil, view zip
+10,L,R        ;liste filliste, relist

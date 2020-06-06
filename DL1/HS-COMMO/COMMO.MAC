@@ -1,0 +1,199 @@
+                                 ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  PgDn for more macros           ³ Macro File ³           PgDn for more macros
+                                 ÀÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  1)  A program indicated to the right of a macro must be in your DOS path.
+
+  2)  Move Selector Bar to desired entry, press [Enter].
+
+
+  ASCII Upload macro, press Alt-A
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:ala} {ascii %uldir\} {}             ASCII Upload with upload path
+
+
+  Macro to review capture file, press Shift-F8
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:sf8} {exec LIST %_cap /e} {}  (aka Scrollback using no RAM)       LIST.COM
+
+
+  Simple login macro, press F2
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:nf2} {send Fred|~~Brucker|~~~~%_pas|} {}       RBBS, PCBoard, Auntie, etc.
+
+
+  Macro to list download directory, press Alt-F10
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:af0} {exec-w dir %dldir /w} {}                 Download directory
+
+
+  Macro to login to a PCBoard (put "pcb" in Dialing Directory macro field)
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:pcb} {capture y,c:\commo\pcb.cap} {asci ,}
+         {setlook 60,hng}
+         {lookfor graphics} {send y|}
+         {setlook 60,hng,6,n|}
+         {lookfor first name?} {send Fred Brucker|~%_pas|}  Í your name here
+         {lookfor Main Board Command?} {}
+  {:hng} {hangup y} {stop}
+
+
+  CompuServe login macro
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:cis} {setlook 45,hng,2,^c} {send ^c} {capt y,c:\commo\cis.cap} {asci ,:}
+         {lookfor User ID:} {send 71021,356|}
+         {setl 20,hng} {lookfor Password:} {send %_pas|} {}
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» upproto
+ º                                                                            º
+ º                          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                          º
+ º                          ³ Upload Protocol Menu ³                          º 
+ º                          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                          º
+ º                                                                            º
+ º       IMPORTANT:  Be sure you have installed the indicated program         º
+ º                   before you try to use any external protocol.             º
+ º                                                                            º
+ º                                                                            º
+ º                   Xmodem-1K  (old Ymodem)      Internal                    º {goto px1s} {:pgu} {macro upproto}
+ º                   Xmodem                       Internal                    º {goto px2s}
+ º                                                                            º
+ º                   Zmodem batch            using DSZ.COM                    º {goto pzbs}
+ º                   Ymodem batch            using DSZ.COM                    º {goto pybs}
+ º                   Ymodem-G batch          using DSZ.COM                    º {goto pygs}
+ º                   MPt batch               using MPT.EXE                    º {goto pmps}
+ º                   CompuServe B, B+     using OZBEXT.EXE                    º {goto pcbs}
+ º                   HS/Link              using HSLINK.EXE                    º {goto hsul}
+ º                                                                            º
+ º                                                                  Macros -> º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» dnproto
+ º                                                                            º
+ º                         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                         º
+ º                         ³ Download Protocol Menu ³                         º
+ º                         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                         º
+ º                                                                            º
+ º       IMPORTANT:  Be sure you have installed the indicated program         º
+ º                   before you try to use any external protocol.             º
+ º                                                                            º
+ º                                                                            º
+ º                   Xmodem CRC  (or 1k/old Ymodem)  Internal                 º {goto px1r} {:pgd} {macro dnproto}
+ º                   Xmodem csum                     Internal                 º {goto px2r}
+ º                                                                            º
+ º                   Zmodem batch            using DSZ.COM                    º {goto pzbr}
+ º                   Ymodem batch            using DSZ.COM                    º {goto pybr}
+ º                   Ymodem-G batch          using DSZ.COM                    º {goto pygr}
+ º                   MPt batch               using MPT.EXE                    º {goto pmpr}
+ º                   CompuServe B, B+     using OZBEXT.EXE                    º {goto pcbr}
+ º                   HS/Link              using HSLINK.EXE                    º {goto hslink}
+ º                                                                            º
+ º                                                                  Macros -> º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+ Macros used for DOWNLOADING (receiving)                      Program required
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ X CRC     {:px1r} {call gfnd} {rxmo %file} {}
+ X csum    {:px2r} {call gfnd} {rxmo-c0 %file} {}
+
+ Z batch   {:zmodem} {:pzbr} {exec DSZ port %_por rz -mr %dldir} {}    DSZ.COM
+ Y batch   {:pybr}   {exec DSZ port %_por rb %dldir} {}                DSZ.COM
+ Y-G       {:pygr}   {exec DSZ port %_por rb -g %dldir} {}             DSZ.COM
+
+ MPt  {:mpt} {:pmpr} {exec MPT P%_por S%_spe r %dldir\} {}             MPT.EXE
+ CIS BPlus   {:pcbr} {exec OZBEXT /c%_por /f%dldir /n} {}           OZBEXT.EXE
+
+ HS/Link   {:hslink}  {exec HSLINK -p%_por -u%dldir} {}             HSLINK.EXE
+
+ {:gfnd} {setv file,%dldir\} {input file,Enter a filename to DOWNLOAD}
+         {ifex %file,,gf_y} {input %yn,File exists, overwrite? [Y/n]}
+         {comp yn} {ifco gf_y} {comp yn,y} {ifco gf_y} {}
+         {:gf_y} {return}
+
+ Macros used for UPLOADING (sending)                          Program required
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ X-1K     {:px1s} {call gfnu} {sxmo-k %file} {}
+ X        {:px2s} {call gfnu} {sxmo %file} {}
+
+ Z batch  {:pzbs} {call gfnu} {exec DSZ port %_por sz -mr %file} {}    DSZ.COM
+ Y batch  {:pybs} {call gfnu} {exec DSZ port %_por sb -k %file} {}     DSZ.COM
+ Y-G      {:pygs} {call gfnu} {exec DSZ port %_por sb -g -k %file} {}  DSZ.COM
+
+ MPt   {:pmps} {call gfnu} {exec MPT P%_por S%_spe s %file} {}         MPT.EXE
+ CIS BPlus     {:pcbs}    {exec OZBEXT /c%_por /f%uldir /n} {}      OZBEXT.EXE
+
+ HS/Link  {:hsul} {call gfnu} {exec HSLINK -p%_por %file} {}        HSLINK.EXE
+
+ {:gfnu} {setv file,%uldir\} {input file,Enter a filename to UPLOAD} {return}
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ» utilmenu
+ º                                                                            º
+ º                            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿                          º
+ º                            ³ Macro Utility Menu ³                          º
+ º                            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                          º
+ º                                                                            º
+ º                                                                            º
+ º                                                                            º
+ º                            Edit an External File                           º {goto uext} {:alu} {macro utilmenu}
+ º                                                                            º
+ º                            Run a Macro                                     º {goto urun}
+ º                                                                            º
+ º                            Run MOSTHOST (Host Mode, install first)         º {goto uhost}
+ º                                                                            º
+ º                            View/Edit/Install MOSTHOST                      º {goto vhost}
+ º                                                                            º
+ º                                                                            º
+ º                                                                            º
+ º                                                                            º
+ º                                                                            º
+ º                                                                  Macros -> º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+  Macros for Utility Menu
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:urun}  {input runmac,Macro to run} {goto %runmac} {}
+  {:uext}  {input temp,Filename to edit}
+  {:uedit} {edit %temp} {macro} {}
+  {:uhost} {macl mosthost.mac,bbs}
+  {:vhost} {setv temp,%_hom%mosthost.mac} {goto uedit}
+
+
+                    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                    Full Screen Editor Key Support
+                    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  The following keys are used by full screen editors such as Visual Editor in
+  ProDoor, PCBoard's full screen editor, ANSIED in RBBS and others.  They may
+  be changed to suit your own needs (all keys do not work with all editors --
+  capture the editor help info on the BBS).  See Appendix D in COMMO.DOC for
+  details on character representation.
+
+  Note that the left arrow function (^S) is also the XOFF character. This may
+  cause a problem on some systems.  If pressing the left arrow seems to hang
+  the remote, press Ctrl-Q and change the "lfa" macro to:
+
+         {send ^[[D} {}  or  {send ^@K} {}
+
+  PgUp and PgDn are normally used for uploading and downloading.  To use them
+  for editing, change the key-labels in the menus above (press F6 in the
+  Internal Editor to see them).
+
+  Macro                   Key             Function
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {:hom} {send ^W} {}     Home            Start of line
+  {:end} {send ^P} {}     End             End of line
+  {:pgu} {send ^R} {}     PgUp            Page up
+  {:pgd} {send ^C} {}     PgDn            Page down
+
+  {:upa} {send ^E} {}     Up Arrow        Cursor up
+  {:dna} {send ^X} {}     Down Arrow      Cursor down
+  {:lfa} {send ^S} {}     Left Arrow      Cursor left
+  {:rta} {send ^D} {}     Right Arrow     Cursor right
+
+  {:cla} {send ^A} {}     ^Left Arrow     Word left
+  {:cra} {send ^F} {}     ^Right Arrow    Word right
+
+  {:ins} {send ^V} {}     Insert          Toggle insert mode
+  {:del} {send ^G} {}     Delete          Delete character
+  {:cnd} {send ^K} {}     ^End            Delete to end of line
+

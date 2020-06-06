@@ -1,0 +1,150 @@
+
+               EZSpell - An easy to use spelling checker.
+
+                         Version 1.4, 04-31-89
+                       Written by Samuel H. Smith
+
+          Copyright (C) 1989 Samuel H. Smith;  ALL RIGHTS RESERVED
+  
+                        This program is supported by:
+  
+                          The Tool Shop BBS
+                          Panorama City, CA
+                          (818) 891-6780 (FREE LINE)
+                          (818) 891-1344 (V32BIS 14400)
+                          (818) 891-3772 (HST 9600)
+
+   This program may be copied freely, provided it is never sold or
+   otherwise used for profit.  
+
+
+
+OVERVIEW
+   EZSpell will scan a document and make a list of all unique words that
+   it contains.  It will then compare these words to the contents of
+   it's dictionary file, EZSPELL.DCT.  You will then be given a list of
+   all words that were not found in the dictionary.  You can decide if
+   you want to add words to the dictionary, or change them in your
+   document.  EZSpell will show you the unknown words in the actual
+   context of your document.  Your document is then updated as needed.
+   The dictionary is also updated if needed.
+
+
+FILES
+   EZS.EXE         The EZSpell program.
+   EZSPELL.DCT     The dictionary.
+   EZSPELL.DOC     The documentation for EZSpell.
+   EZCLEAN.EXE     A utility for cleaning out the dictionary.
+
+
+INSTRUCTIONS
+   To run EZSpell, you must have this disk in your currently logged
+   drive. EZSpell looks for the dictionary file, EZSPELL.DCT first in
+   the current directory, and then in all of the search PATHs. To check
+   spelling in the file C:FOO.TXT, you would type:
+
+      EZS C:\DIR\FOO.TXT
+
+   EZSpell will read through your file, giving you a count of how many
+   lines and words that is has examined. After the whole document has
+   been scanned, it begins to read the dictionary. While reading the
+   dictionary you will be given a count of how many dictionary words
+   have been scanned, and how many words were "unknown".
+
+
+   After the dictionary scanning is completed, you will be allowed to
+   "review" the list of unknown words. You will be given these possible
+   actions:
+
+     ADD
+         This word will be added to the dictionary.
+
+      CORRECT
+         Change the spelling of this word.  You will be asked to enter
+         the corrected spelling for this word.  EZSpell will go through
+         your document and change the spelling for you.  
+
+      MARK
+         The word is marked so that you can manually correct it. This
+         may be useful when you are not sure of how the word was used,
+         and need to do more than a simple spelling change.  This is the
+         only option that some spelling  checkers  give  you.  A marked
+         word will show up in your document with brackets around it,
+         like this: [incerrect].
+
+      IGNORE
+         Just ignore this word.  Don't add it to the dictionary, and
+         don't change it in your document.  
+
+      LAST
+         This option jumps to the last unknown word.  Use this if you
+         prefer to go backwards through the wordlist with the [PREVIOUS]
+         command, or if you want to ignore all of the remaining unknown
+         words.
+
+      NEXT
+         This option will display the next context in which this word
+         is used in the document.
+
+      PREVIOUS
+         This option lets you back-up in case you change your mind about 
+         what to do with a word.  Very handy!  
+
+
+   You select the action you want by pressing the first letter of the
+   action name.  
+
+   Once you have gone through all of the words, EZSpell will update your 
+   document.  As the file is updated, you will be given a display
+   showing the number of lines processed.  Any changes made in your
+   document will also be shown, as they are made.  EZSpell saves the
+   original version of your file so you can "un-correct" it, if needed.
+
+   After your document has been updated, new words will be added to the
+   dictionary file.  EZSpell saves a copy of the original dictionary
+   file.  This might come in handy if you run out of disk space.  
+
+
+LIMITATIONS
+   EZSpell probably won't work on files that contain funny control
+   characters or other non-ascii characters (like WordStar files).
+   Please convert these files into ascii before you use EZSpell.
+
+   EZSpell always keeps backups of your original document and dictionary
+   files.  If you run out of disk space while updating a file, the
+   program will be aborted.  It is then up to you to rename the backup
+   file to restore the original data.
+
+   EZSpell can work on any size document, limited only by how much
+   memory you have.  It takes about 100 bytes of memory for each unique
+   word in the document.  
+
+   There is no limit to dictionary size.   Words and lines can not be
+   longer than 40 characters.  Lines can not be longer than 255
+   characters.
+
+
+REVISIONS
+   19-oct-85 v1.0
+        Initial release.
+
+   20-oct-85 v1.0a
+        Better word-review and bigger dictionary.
+
+   21-oct-85 v1.1
+        Improved displays.
+        Searches paths for dictionary.
+
+   28-dec-85 v1.2
+        Added check for repeated words.
+        Fixed "mark" bug.
+
+   19-jan-89 v1.3
+        Three years later!
+        Recompiled with Turbo Pascal 5.0.
+
+   21-apr-89 v1.4
+        Added context display during word review.
+        Better memory management.
+        Speed improvements.
+

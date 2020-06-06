@@ -1,0 +1,41 @@
+
+
+TAR - "Tape" ARchive:
+
+This program will maintain a sequential access archive file that can be
+used for library storage, tape storage or file transfer.
+It is optimized to buffer and minimize writes to the archive
+file so that slow devices will have reduced seeking.
+
+Patterned after the unix "tar" utility.
+
+Author:  Samuel H. Smith,  3-jan-86 v1.0
+
+This program may be freely copied, provided it is never sold
+or otherwise used for profit.
+
+
+
+Usage:  tar FUNCTION TARFILE {FILE,FILE}
+
+where FUNCTION is one of:
+            C       to create an archive file
+            T       to list table of contents
+            X       to extract from an archive file
+
+TARFILE is the filename of the of the TAR archive file to use
+
+{FILE} is one or more wildcard file specifications.
+"-f" will cause file list to be piped from standard input.
+
+
+Examples:
+
+   tar c paslib *.pas,*.inc       ;creates paslib.tar
+
+   tar t file.t                   ;lists contents of TAR file.t
+
+   tar x paslib                   ;extract all files from paslib
+
+   chkdsk/v c: | tar d:backup -f  ;put all files on c: into d:backup.tar
+

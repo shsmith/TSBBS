@@ -1,0 +1,81 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * MiniCrt - version of Borland's CRT unit that understands and interprets
+ * most ANSI codes.  When OVCRT environment variable exists, the unit
+ * does not do direct video, allowing operation under window managers
+ * and non-standard display environments.
+ *
+ *)
+
+unit MiniCrt;
+
+interface
+
+   uses DOS, Crt;
+
+   function KeyPressed: Boolean;
+   function ReadKey: Char;
+
+   procedure Window(X1,Y1,X2,Y2: Byte);  {only partial support}
+   procedure SetScrollPoint(Y2: Byte);
+   procedure FullScreen;
+
+   procedure GotoXY(X,Y: Integer);
+   procedure BiosGotoxy(x,y: byte);
+   procedure HideCursor;
+
+   function WhereX: Byte;
+   function WhereY: Byte;
+
+   procedure ClrScr;
+   procedure ClrEol;
+
+   procedure NormalVideo;
+   procedure LowVideo;
+   procedure ReverseVideo;
+   procedure BlinkVideo;
+   procedure SaveColor;
+   procedure RestoreColor;
+
+   procedure AnsiAttributes;
+   procedure InterpretAnsi(action: char);
+
+   {$F+} function ConFlush(var F: TextRec): integer; {$F-}
+   {$F+} function ConOutput(var F: TextRec): integer; {$F-}
+   {$F+} function ConOpen(var F: TextRec): Integer; {$F-}
+
+   const
+      scroll_line:   byte = 23;
+      directVideo:   boolean = true;
+      ansi_xtab:     array[0..7] of byte = (0,4,2,6,1,5,3,7);
+      ansi_savex:    byte = 1;
+      ansi_savey:    byte = 1;
+      ansi_pending:  boolean = false;
+      max_ansi_stack = 10;
+
+      cursor_moved:  boolean = false;
+
+   var
+      ansi_fg:       byte;
+      ansi_bg:       byte;
+      ansi_stack:    array[1..max_ansi_stack] of byte;
+      ansi_depth:    integer;
+      ansi_val:      byte;
+      ansi_digits:   boolean;
+      ansi_pcolor:   word;
+
+      crtout:        text;  {output through CRT unit}
+      stdout:        text;  {output through dos for ANSI compatibility}
+
+implementation

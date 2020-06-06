@@ -1,0 +1,17 @@
+
+                           ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                           º RoseNet Message Areas º
+                           ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+
+RoseNet provides the means for informal BBS systems to provide true person to
+person communication.  But, RoseNet is far more than that. It provides the
+ability to connect seamlessly with other world-wide nets such a Internet. The
+Rosenet routed private mail and Internet gateway features require the use of
+RoseMail/RoseReader.
+
+    Name        #                         Description
+ ------------  ---  -----------------------------------------------------
+ RoseMail       40 ùRoseNet: Author support for the RoseMail DOOR.
+ RoseReader     41 ùRoseNet: Author support for the RoseReader program.
+ UnixUseNet     42 ùRoseNet: UseNet information and help with the Usenet Gateway.
+

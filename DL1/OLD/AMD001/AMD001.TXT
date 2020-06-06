@@ -1,0 +1,75 @@
+
+
+
+                       PROPOSED DISTRIBUTOR AGREEMENT
+
+        This agreement is made between Samuel H. Smith ("Developer") and
+        Arthur Mol ("Distributor"), and sets forth the terms and
+        conditions pursuant to which Developer provides and Distributor
+        accepts certain reproduction and resale rights for the software
+        program, created and written by Developer, known as HSLINK version
+        1.0 operating under the MS-DOS and PC-DOS operating systems
+        ("Program").
+
+        Developer hereby grants, and Distributor hereby accepts a
+        nonexclusive, nontransferable, worldwide right to market, promote,
+        reproduce and sell copies of Program.  Distributor agrees that
+        each copy of Program sold will include a unique serial number
+        ("License") obtained from Developer.
+
+        Distributor agrees to request blocks of 20 or more Licenses, up to
+        a total of 10000 Licenses, in writing, and Developer agrees to
+        promptly deliver the requested Licenses to Distributor.  In
+        exchange, Distributor agrees to pay all of Distributor's expenses
+        of reproduction, packaging and marketing, and to pay to Developer
+        royalties of $7.50, or 40% of sale price, whichever is greater,
+        for each License which is sold by Distributor ("Royalties").
+
+        Distributor agrees to hold Royalties in trust and to safeguard
+        same in a reasonable manner, until disbursement to Developer.
+        Disbursement of Royalties may occur at regular intervals as deemed
+        to be convenient by Developer and Distributor, but must occur at
+        least once during each calendar month.
+
+        There will be no demands for compensation of individual time or
+        expense or effort or reimbursement to Developer or Distributor
+        except by mutual agreement in writing.
+
+        Distributor may suggest, in writing, changes to be made in
+        Program, and Developer agrees to consider such changes, and to
+        make a good faith effort to satisfy the needs of Distributor, and
+        to correct any reported errors in Program.  Developer retains all
+        rights to set specifications for Program, including operational
+        features which are directly visible to the user.
+
+        This Letter of Agreement contains the whole, complete and only
+        agreed contractual commitments by and between Developer and
+        Distributor.
+
+        Understanding that in any close working relationship, there can
+        occur in the normal course of business a desire to extend agreed
+        contracts to include additional understandings, or projects, for
+        combined endeavors and commitments, those extensions must occur in
+        writing and be exchanged and signed by both Developer and
+        Distributor in order to be valid.
+
+
+        In agreement to this contract and with full intent to abide by the
+        terms set forth in this agreement, we do agree and pledge, and
+        will honor the full spirit of this understanding, as it is
+        written.
+
+
+
+    To all these things I do so agree:
+
+    ___________________________________      Date: ______/______/______
+
+    Samuel H. Smith
+
+
+    To all these things I do so agree:
+
+    ___________________________________      Date: ______/______/______
+
+    Arthur Mol

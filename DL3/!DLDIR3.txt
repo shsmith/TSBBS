@@ -1,0 +1,472 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                      S.H.Smith-ProDoor/Logon & PCB Utils
+                        79 files using 4,848,405 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+BEEPER11.ZIP     5561  02-16-93  Resident background BEEP handler.
+                               | Replaces your BIOS beep with a beep that does
+                               | not slow down programs that are running.
+                               | Also lets you change the beep sound.
+                               | FREEWARE including ASM source code.
+                               | Updated to limit to 10 pending beeps.
+                               | Good for multi-node BBS operators.
+                               | Download Count: 79   Last Download: 10-28-95
+                               |
+CAL14S24.ZIP    65309  10-29-92  Caller log analyzer for ProDoor v14s24 PCB 14
+                               | Modified version of Warren Lauzon's excellent
+                               | caller log analyzer. Adds SUBTITLE and PEAK
+                               | AUTO options.
+                               | Download Count: 27   Last Download: 03-30-95
+                               |
+CNDUMP2.ZIP     29906  02-04-94  Conference Summary Utilities
+                               | for ProDoor Compatible Systems.
+                               | Produces 1 or 4 column summary of
+                               | conferences by echo network,
+                               | as well as an overall report of
+                               | echo network activity.
+                               | Public Domain Material by Samuel H. Smith
+                               | Includes source code.
+                               | Download Count: 20   Last Download: 03-19-96
+                               |
+DATEACT2.ZIP    16560  02-07-94  PCBoard activity report by date/bargraph
+                               | Includes hourly, weekly and daily graphs.
+                               | With pascal source code.
+                               | Download Count: 61   Last Download: 03-19-96
+                               |
+DBMAIL10.ZIP    67227  10-22-92  Downloads By Mail DOOR
+                               | This DOOR implements a simple downloads-by-
+                               | mail system with automatic paperwork and disk
+                               | generation through the HS/OAS.
+                               | Download Count: 7    Last Download: 04-16-95
+                               |
+DIRC10.ZIP       5583  10-26-92  Directory conversion utility I use to build m
+                               | TOOLSHOP.EXE and TOOLSORT.EXE sorted file
+                               | listing. Includes TPAS source code.
+                               | Download Count: 42   Last Download: 03-19-96
+                               |
+DIRCNT17.ZIP    30160  12-15-93  DirCount - PCB/ProDoor File DIR Header Util.
+                               | A quick and simple utility to keep up-to-date
+                               | headers in your file DIR listings. Includes
+                               | DirSum to summarize multiple conference file
+                               | areas, DirOv to produce an overview of file
+                               | areas in a single conference, and COL to
+                               | format DirOv output into multiple columns.
+                               | With full pascal source code.
+                               | Version .7 now handles totals > 2gig.
+                               | Public Domain Material by Samuel H. Smith.
+                               | Download Count: 51   Last Download: 08-03-97
+                               |
+DLCNT12.ZIP     23039  02-15-94  PCBoard/ProDoor File Download Counter 1.2
+                               | ---------------------------------------------
+                               | Analyze the PCBoard DOWNLOAD.TXT log file and
+                               | update your DIR listing files to include the
+                               | number of times each file has been downloaded
+                               | Compatible with DOWNLOAD.TXT files trimmed by
+                               | TRIMDL15.ZIP.
+                               | Version 1.2 increases file limits and fixes
+                               | wildcards outside the current directory.
+                               | ---------------------------------------------
+                               | Freeware by Samuel H. Smith and The Tool Shop
+                               | Includes Pascal Source Code.
+                               | Download Count: 36   Last Download: 08-30-96
+                               |
+DLCNT14.ZIP     23366  05-18-94  FAST PCBoard/ProDoor File Download Counter 1.
+                               | ---------------------------------------------
+                               | Analyze the PCBoard DOWNLOAD.TXT log file and
+                               | update your DIR listing files to include the
+                               | number of times each file has been downloaded
+                               | Compatible with DOWNLOAD.TXT files trimmed by
+                               | TRIMDL15.ZIP.
+                               | Version 1.4 also indicates files with zero
+                               | downloads to help identify unpopular files.
+                               | ---------------------------------------------
+                               | Freeware by Samuel H. Smith and The Tool Shop
+                               | Includes Pascal Source Code.
+                               | New Tool Shop Phone Number: (213) 851-2127!
+                               | Download Count: 27   Last Download: 03-19-96
+                               |
+DLFIND12.ZIP     8901  10-05-92  Locate files using DLPATH.  Can be used by
+                               | ProDoor to check for upload .EXT duplication.
+                               | Download Count: 25   Last Download: 01-06-95
+                               |
+EBANK12.ZIP     49831  09-26-92  EarnBank - Bank unlimited Earned-K bytes
+                               | Breaks the 65meg earned k limitation of
+                               | prodoor.  Includes source code - FREEWARE!
+                               | Download Count: 27   Last Download: 03-19-96
+                               |
+EXTADJ11.ZIP    20807  04-03-90  Extended User File Size Adjustment
+                               | A small utility that allows you to adjust the
+                               | number of extended conferences allocated in
+                               | the ProDoor Extended User file. Now supports
+                               | up to 2000 extended conferences.
+                               | Download Count: 12   Last Download: 10-27-94
+                               |
+FILLSYS.ZIP     22956  01-09-93  Fillsys - Convert Prodoor's .sys to Pcboard's
+                               | .sys for use with PCBFV.
+                               | Download Count: 28   Last Download: 10-27-94
+                               |
+FINFO30.ZIP      8157  03-11-92  Upd. DIR listing with latest sizes/dates
+                               | A small utility that can be used by BBS
+                               | operators to automatically update a directory
+                               | listing with the actual file dates and sizes.
+                               | Source. Now updates optional (hh:mm) file tim
+                               | stamps.
+                               | Download Count: 23   Last Download: 03-19-96
+                               |
+GETCSPD.ZIP      6761  01-19-91  Get Connect Speed from PCBOARD.SYS
+                               | Small utility for PCB 14.x reads PCBOARD.SYS
+                               | and sets ERRORLEVEL according to the current
+                               | caller's connect speed.  With source code.
+                               | Download Count: 22   Last Download: 03-19-96
+                               |
+HSTRESET.ZIP    15790  03-23-92  Place modem offhook from DOS
+                               | Now supports non-standard com ports
+                               | Download Count: 27   Last Download: 07-27-97
+                               |
+IMPORTGE.ZIP    29308  02-13-89  UNARCM converted for GEnie imports
+                               | Pascal source needed to import captured
+                               | message texts into a PCBoard message base.
+                               | Download Count: 4    Last Download: 03-19-96
+                               |
+NOULBY10.ZIP     5070  04-08-90  Remove those "uploaded by:" lines from
+                               | Download Count: 19   Last Download: 07-14-95
+                               |
+PCBCLV14.ZIP    11556  07-17-88  PCBoard 12-14 Quick Caller Log Viewer
+                               | Quick viewing of caller log with filtering of
+                               | unimportant entries. Updated for PCBoard 12.0
+                               | Supports multi-node file sharing.  Full TPAS
+                               | source code.
+                               | Download Count: 11   Last Download: 03-19-96
+                               |
+PCBLUP12.ZIP    17275  09-05-88  PCBoard 14.0 Local "Upload" utility     v1.2
+                               | Sysop utility adds local files to "upload"
+                               | directory and updates all PCBoard files
+                               | accordingly.   Updated for PCB 14.0. Now
+                               | supports multi-line descriptions.  Uploads ar
+                               | Download Count: 14   Last Download: 10-27-94
+                               |
+PCBQA10.ZIP     13461  05-24-87  Reports PCBoard ANSWER files in tabular form
+                               | Download Count: 7    Last Download: 02-19-94
+                               |
+PROBNK17.ZIP    48764  04-20-90  Savings Bank door - Save time
+                               | Download Count: 21   Last Download: 02-29-96
+                               |
+PROBTA15.ZIP    58166  12-18-93  ProBeta, BETA file download DOOR for use with
+                               | ProLogon's AUTO_LOGON_MENU system.
+                               | Download Count: 29   Last Download: 06-12-95
+                               |
+PROCMD10.ZIP    22139  02-19-94  ProCmd: PCBoard 15.x CMD.LST file editor.
+                               | This is a little utility program to let you
+                               | edit PCBoard's CMD.LST files from a DOS
+                               | prompt without walking through all the menus
+                               | of PCBSETUP. SourceWare from Samuel H. Smith
+                               | Download Count: 41   Last Download: 06-17-96
+                               |
+PROD31S1.ZIP   231704  10-08-89  ProDoor 3.1 Release Source Code 1/3    RELEAS
+                               | Download Count: 41   Last Download: 11-01-95
+                               |
+PROD31S2.ZIP   108807  10-08-89  ProDoor 3.1 source code
+                               | Download Count: 38   Last Download: 11-01-95
+                               |
+PROD31S3.ZIP   161258  10-08-89  ProDoor 3.1 source code
+                               | Complete Source Code for ProDoor 3.1.
+                               | Includes all supporting files, documentation,
+                               | batch files, etc.  This is also the source fo
+                               | ProKit, ProEdit, ProSM, ProXZip, ProXtra,
+                               | ProEcho and ProNS.  For TPAS 5.5.
+                               | Download Count: 51   Last Download: 12-28-95
+                               |
+PROD31WP.ZIP    41256  10-05-89  WordPerfect 5.0 format docs for ProDoor 3.1
+                               | Use this to print a nicer looking ProDoor
+                               | manual Use this to get an extra 40-50k of RAM
+                               | in shelled archive functions Please check tha
+                               | you are running the latest version.
+                               | Download Count: 5    Last Download: 01-12-95
+                               |
+PROD344.ZIP    166153  12-03-92  Upgrade ProDoor 3.4 to 3.44
+                               | Download Count: 42   Last Download: 01-12-95
+                               |
+PROD344O.ZIP   114959  12-03-92  Upgrade ProDoor 3.4 OVERLAY to 3.44
+                               | Overlay version of PROD343.ZIP
+                               | Download Count: 16   Last Download: 07-12-94
+                               |
+PROD34OV.ZIP    99071  07-14-91  ProDoor 3.42 overlay
+                               | Download Count: 2    Last Download: 06-21-94
+                               |
+PROD34WP.ZIP    58771  04-01-91  ProDoor WordPerfect documentation
+                               | Documentation for ProDoor 3.4 in
+                               | WordPerfect 5.1 format
+                               | Download Count: 22   Last Download: 01-12-95
+                               |
+PROD352.ZIP    250433  03-05-93  ProDoor and ProLogon update version 3.52
+                               | (non-overlay version)
+                               | Download Count: 56   Last Download: 06-12-95
+                               |
+PROD352O.ZIP   256796  03-05-93  ProDoor/ProLogon v3.52 Overlay Update
+                               | New versions of ProDoor and ProLogon
+                               | from Pat Forbes.
+                               | Download Count: 43   Last Download: 06-19-96
+                               |
+PRODMARK.ZIP    61051  10-11-92  Run MarkMail in ProDoor.
+                               | ProDoor/Prologon Sysops only.
+                               | This simple text file explains
+                               | how to get it to work.
+                               | Download Count: 8    Last Download: 01-06-95
+                               |
+PRODOR34.ZIP   230861  07-14-91  ProDoor Release Version 3.42
+                               | Official release; new features and more.
+                               | Download Count: 62   Last Download: 02-19-96
+                               |
+PROE344.ZIP     89269  11-18-92  ProEdit Release Version 3.44
+                               | Sysop/local version of ProDoor for mail
+                               | functions. Adds the PR and CAP commands
+                               | of ProDoor 3.44.
+                               | Download Count: 37   Last Download: 02-09-96
+                               |
+PROECHO.ZIP      9622  03-13-92  ProEcho module for non-standard COM ports
+                               | PROECHO.EXE is larger than PROECHO.COM but
+                               | supports non-standard COM ports.
+                               | Download Count: 19   Last Download: 11-22-95
+                               |
+PROEDT34.ZIP    86317  07-30-92  ProEdit Release Version 3.4
+                               | Sysop/local version of ProDoor for mail
+                               | functions
+                               | Download Count: 13   Last Download: 08-07-94
+                               |
+PROF344.ZIP     10366  01-23-92  Advanced Batch files and stuff for ProDoor
+                               | 3.44...  Includes great PROUTEST and PROUT1
+                               | with LOT's of descriptions.
+                               | Download Count: 17   Last Download: 01-12-95
+                               |
+PROHELP1.ZIP    11566  01-08-92  The best help menu for ProDoor 3.xx
+                               | Download Count: 8    Last Download: 03-30-95
+                               |
+PROK344.ZIP    300721  11-22-92  (22:18) ProKit version 3.44
+                               | Door developer kit for PCB 14.0-14.5 and
+                               | Turbo Pascal 6.0
+                               | Download Count: 32   Last Download: 07-23-94
+                               |
+PROK345.ZIP    309589  01-20-93  ProKit libraries recompiled with TP7
+                               | Download Count: 28   Last Download: 03-27-95
+                               |
+PROK350.ZIP    305540  02-22-94  ProKit version 3.50 Door developer kit for
+                               | PCB 14.0-14.5 and Turbo Pascal 7.0 Updated to
+                               | prevent corruption of PCB 15.x format
+                               | USERNET.XXX files.
+                               | Download CounT: 29   Last Download: 10-16-94
+                               | Download Count: 35   Last Download: 07-23-95
+                               |
+PROKIT34.ZIP   239499  04-01-91  ProKit Release Version 3.4
+                               | Door developer kit for PCB 14.0-14.5
+                               | and Turbo Pascal 6.0
+                               | Download Count: 11   Last Download: 07-14-95
+                               |
+PROL12B1.ZIP   114794  12-08-92  (23:11) ProLogon 1.2 BETA files
+                               | ProLogon 1.2 works better with PCBoard 14.5a
+                               | and no longer requires the VALPCB operation.
+                               | Many new features.
+                               | Download Count: 65   Last Download: 06-19-96
+                               |
+PROLIB27.ZIP    20377  07-07-88  Updated PROLIB and LIBDEF files for CD-ROM
+                               | Files needed to enable the 'LIB' function in
+                               | ProDoor 2.7.  This function allows users to
+                               | Access a CD-ROMs full of disk images.
+                               | Download Count: 6    Last Download: 07-14-95
+                               |
+PROLON11.ZIP   125227  06-28-90  ProLogon 1.1 Enhanced Logon Control Program
+                               | ProLogon is a communication program that runs
+                               | "in front of" PCBoard to enhance the user
+                               | logon process and to allow direct access to
+                               | DOOR programs after user logon.
+                               | Download Count: 26   Last Download: 06-12-95
+                               |
+PROLOT19.ZIP    39275  04-08-90  Lottery door - Instant winners
+                               | Download Count: 12   Last Download: 05-09-95
+                               |
+PROMSG14.ZIP    78318  11-11-92  ProMessage door now allows comment to sysop.
+                               | Use with Prologon's AUTO_LOGON_MENU system.
+                               | Download Count: 12   Last Download: 06-12-95
+                               |
+PRONS.ZIP        5671  11-01-91  PRONS module for ProDoor 3.4 and HSLINK
+                               | modified to freeze only the top 2 lines,
+                               | allowing HSLINK to operate in
+                               | full screen mode.
+                               | Download Count: 20   Last Download: 12-28-95
+                               |
+PROPCK30.ZIP    31060  03-15-91  PCB 14.x Quickly PACK message files
+                               | Adds /Sfilename option to save purged message
+                               | texts. Expands message size limits for pcb14.
+                               | and ProDoor 3.4
+                               | Download Count: 16   Last Download: 01-09-94
+                               |
+PROPCK31.ZIP    54311  02-20-94  Quickly PACK PCB 14.x message files Version
+                               | 3.1 handles message numbers>5 digits and is
+                               | now FREEWARE. Includes source code.
+                               | Download Count: 12   Last Download: 10-26-95
+                               |
+PROPCKSC.ZIP    55138  03-15-91  ProPack 3.0 source code
+                               | Download Count: 17   Last Download: 03-19-96
+                               |
+PROSCR12.ZIP    71793  11-11-92  ProScript Script Questionnaire DOOR
+                               | Process script questionnaires through doors.
+                               | Use with ProLogon. Now includes source code.
+                               | Download Count: 25   Last Download: 03-19-96
+                               |
+PROSTAT.ZIP      2465  01-15-91  STATS.TXT and PROXMAIN to give you a new
+                               | prodoor 3.4.  Courtesy of Shawn Azhadi.
+                               | Download Count: 5    Last Download: 07-14-95
+                               |
+PROTRNS4.ZIP     5416  11-01-92  ProTrans rev. 4 for ProDoor 3.44 10/18+
+                               | The most comPlete traNslation file for
+                               | ProDoor system.  Replaces many standard
+                               | commands with friendly & colorful
+                               | responses.  FREE of charge for all
+                               | PRODOOR users.
+                               | Download Count: 9    Last Download: 01-06-95
+                               |
+PROTXT10.ZIP    15698  02-20-94  ProTxt is an alternate editor for PCBoard's
+                               | PCBTEXT files.  It allows you to simul-
+                               | taneously view and/or edit two different
+                               | PCBTEXT files.  ProTxt works more like a
+                               | traditional "text editor" - i.e. it allows
+                               | you to see a whole screenful of prompts at
+                               | once instead of just one at a time.
+                               | -------------------------------------------
+                               | SourceWare from Samuel H. Smith.
+                               | Download Count: 41   Last Download: 03-19-96
+                               |
+PROUTULP.ZIP    15240  05-15-92  The Toolkit BBS's PROUT---.BAT files
+                               | for use with 4DOS or NDOS and the ULP
+                               | file dup/test utility. ***FREEWARE***
+                               | Download Count: 5    Last Download: 04-09-94
+                               |
+PROWHO20.ZIP    58679  04-27-92  'Who uploaded that file?' & text search door
+                               | Download Count: 16   Last Download: 07-02-95
+                               |
+PROXLIST.ZIP     2117  12-20-91  Sample Batch files for user with ProDoor
+                               | 3.44's new "EXEC" function from the sysop of
+                               | The Bard's Lair
+                               | Download Count: 12   Last Download: 04-18-95
+                               |
+PRTXN32.ZIP     28482  05-17-90  Norwegian translation files for Prodor 3.2
+                               | Download Count: 1    Last Download: 01-06-95
+                               |
+RBBPRO11.ZIP    30994  04-02-88  RBBS 15.1C interface for ProDoor,
+                               | Preliminary version of an interface for
+                               | ProDoor operation on an RBBS 15.1C system.
+                               | Includes TPAS source.  PRODOR25.ZIP is also
+                               | required.
+                               | Download Count: 7    Last Download: 10-25-94
+                               |
+RECYCLE.ZIP      7181  06-10-91  ProDoor 'stacked door' utility.  v1.1. Allows
+                               | subdoors to return to ProDoor instead of the
+                               | main board. Now works in local mode; smaller.
+                               | TPAS source.
+                               | Download Count: 26   Last Download: 03-19-96
+                               |
+RECYCLE3.ZIP     6310  06-10-91  Recycle 3 - fixed problem with DOOR.BAT
+                               | containing enviroment strings
+                               | Download Count: 13   Last Download: 03-30-95
+                               |
+RERECYCL.ZIP     7727  07-29-89  Modified RECYCLE sets errorlevel to allow
+                               | utilities to determine if a caller is online
+                               | or not.  With source.
+                               | Download Count: 8    Last Download: 03-19-96
+                               |
+REWARD12.ZIP    22938  03-13-92  Reward your top uploaders with a special
+                               | security level.  Handles multiple levels and
+                               | multiple config files. Now properly handles
+                               | 'expired' users.
+                               | Download Count: 11   Last Download: 05-11-95
+                               |
+RNDWEL10.ZIP     5698  03-26-92  RAndoMly select different WELCOME screens
+                               | Designed for PCBoard systems, but can be used
+                               | for many applications that require random
+                               | selection from a list of possible display or
+                               | data files.  Includes source code.
+                               | Download Count: 29   Last Download: 03-19-96
+                               |
+TB1-ECR.ZIP     50106  04-18-93  ƒƒ‹‹‹‹‹‹‹‹‹ƒƒƒƒ‹‹‹‹‹‹ƒƒƒƒ‹‹‹‹‹‹‹‹ƒƒƒ
+                               | TimeBack v1.0 Release for PRODOOR v3.44+
+                               | gives time back after use of HSLink
+                               | Written by: Party Animal
+                               | Download Count: 8    Last Download: 11-12-93
+                               |
+TESTFILE.ZIP     2309  03-02-89  File type checker used by ProDoor 3.0
+                               | Download Count: 6    Last Download: 10-24-93
+                               |
+THTTRNS2.ZIP    74222  08-21-93  ProTrns for ProDoor 3.5+ & Prolon 1.3+ from
+                               | <<THT>> Almost Complete Protrns as of this
+                               | Date. Also includes Color ProDoor Help files
+                               | and some interesting "DISP-" commands.
+                               | Download Count: 14   Last Download: 04-19-94
+                               |
+TOPUSR19.ZIP    21259  04-03-90  Top users and cities report
+                               | Download Count: 12   Last Download: 07-22-94
+                               |
+TPA1020.ZIP     20973  09-23-93  ÷ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ∑
+                               | ∫  ProTPA V1.0 - A ProDoor Utility ! ∫
+                               | ”ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒΩ
+                               | Version 1.0·20 09/23/93 (shs)
+                               | USERS.SYS support for ProDoor BBS
+                               | Systems. Will create USERS.SYS files
+                               | for both TPA and NON-TPA doors. Will
+                               | also read USERS.SYS data and update
+                               | ALL system files including EXTUSER,
+                               | USERS, USERS.INF.    Works with ALL
+                               | versions of ProDoor and ProLogon.
+                               | PCB14.5 Compatible, You do NOT need
+                               | PCB anymore to create USERS.SYS!
+                               | Written by THE PRODOOR EXPRESS (PDX)
+                               | DEVELOPMENT TEAM !!
+                               | ·20 Possibly corrects the "julian
+                               | date" and "expired user" bug.
+                               | Download Count: 15   Last Download: 05-14-95
+                               |
+TPUSYS11.ZIP     5899  10-16-90  Turbo Pascal 6.0 unit to read/write the
+                               | PCBoard USERS.SYS file. It does NOT derive
+                               | that file from PCBoard data files, and so it
+                               | will need to use a pre-existing USERS.SYS.
+                               | Download Count: 11   Last Download: 09-26-95
+                               |
+TRIMDL15.ZIP    23372  02-02-94  Trim PCBoard DOWNLOAD.TXT file by combining
+                               | multiple entries for each unique file, and
+                               | by removing entries for files that are no
+                               | longer present on the system.  Keeps accurate
+                               | long term upload and download count records
+                               | without letteing DOWNLOAD.TXT get too large.
+                               | Download Count: 23   Last Download: 10-25-95
+                               |
+TRIMDL16.ZIP    52389  08-01-94  Trim PCBoard DOWNLOAD.TXT file by combining
+                               | multiple entries for each unique file, and
+                               | by removing entries for fileS that are no
+                               | longer present on the system.  Keeps accurate
+                               | long term upload and download count records
+                               | without letteing DOWNLOAD.TXT get too large.
+                               | Includes DPMI16BI.OVL.  Requires 286+.
+                               | Download Count: 12   Last Download: 10-25-95
+                               |
+TRMLOG12.ZIP     9835  10-03-87  PCBoard EVENT to trim caller log to N days
+                               | Includes Turbo-C source.  v1.2 - now WORKS
+                               | with PCBoard 12.0-14.0 formats.
+                               | Download Count: 8    Last Download: 03-19-96
+                               |
+ULMON10.ZIP     10330  01-07-88  Automatic Upload Space Monitor.    1.0b
+                               | This utility will automatically purge old
+                               | files from your upload directory to keep your
+                               | system from running out of space.  Can be use
+                               | in EVENT.SYS or interactively.  Includes TPAS
+                               | source.  Works with PCB 12-14
+                               | Download Count: 8    Last Download: 03-30-95
+                               |
+UNARCM10.ZIP    23540  10-06-88  Merge ProDoor ZIPM packet into system
+                               | A small utility to post messages on your bbs
+                               | from one of ProDoor's ARCM mail packets.  A
+                               | minimal echo system. Now supports captures
+                               | from PCB 12.1, PCB 14.0, RBBS 16 and OPUS!
+                               | Download Count: 5    Last Download: 01-12-95
+                               |

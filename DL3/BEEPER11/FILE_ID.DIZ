@@ -1,0 +1,7 @@
+Resident background BEEP handler.
+Replaces your BIOS beep with a beep that does
+not slow down programs that are running.
+Also lets you change the beep sound.
+FREEWARE including ASM source code.
+Updated to limit to 10 pending beeps.
+Good for multi-node BBS operators.

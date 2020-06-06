@@ -1,0 +1,4 @@
+
+procedure get_upload_description(prompt: string80;
+                                 var desc: string);
+

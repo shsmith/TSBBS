@@ -1,0 +1,342 @@
+
+
+                            T o p    U s e r s
+
+                               TOPUSR19.ZIP
+                    For use with PCBoard Version 14.x
+                          Version 1.9, 04-03-90
+
+
+                      This program is supported by:
+
+                            The Tool Shop BBS
+                               Phoenix, AZ
+                          (602) 279-2673 (Hayes-V)
+                          (602) 264-3969 (HST)
+
+                   Copyright 1987, 1990 Samuel H. Smith
+
+
+
+Top Users is a user status report generator for PCBoard 14.0-14.2 (or
+other USER file compatible versions).
+
+It generates a report of the Top Uploaders and Downloaders on your
+system, as well as a report of the Top Cities.  It can also generate
+a report of users who aren't reading messages.
+
+
+Usage:
+   topusr USERFILE REPORTFILE [USERCOUNT MINCALLS [MAXLEVEL]] [REPORTS]
+
+Where:
+   USERFILE   is your PCBoard user file.  Usually C:\PCB\MAIN\USERS
+
+   REPORTFILE is the output report file.  I use C:\PCB\GEN\BLT5 to update
+              my "Top Users" bulletin file.
+
+   USERCOUNT  specifies how many top Uploaders and Downloaders are to be
+              reported.  The default is 20.  The maximum is 100.
+
+   MINCALLS   specifies the minimum number of calls that a city must have
+              before it is included in the Top Cities report. The
+              default is 5.  There is no maximum.  At most, 1500 cities
+              can be reported; additional cities are skipped.
+
+   MAXLEVEL   specifies the highest security level to be included in
+              the report.  The default is 99.
+
+   REPORTS    specifies the reports to be generated and the order in which
+              they are to appear.  Valid report codes are:
+                 A - Top Uploaders and Downloaders
+                 B - Most active users
+                 C - Callers who don't read mail
+                 D - Most active cities
+                 E - Security level analysis report
+                 F - Sorted listing of cities
+              The default is 'ABCED', which will generate all reports.
+
+Examples:
+   topusr \pcb\main\caller \pcb\gen\blt5 20 10
+   topusr \pcb\main\caller \pcb\gen\blt5
+   topusr \pcb\main\caller \pcb\gen\blt5 20 10 49
+   topusr \pcb\main\caller \pcb\gen\blt5 20 10 49 ABCEDF
+
+
+SAMPLE OUTPUT
+=============
+
+                         Top Users and Cities Report
+             Generated 06-10-89 09:44 by Top Users v1.8, 06-10-89
+
+        Top   5 uploaders                         Top   5 downloaders
+User Name                 U/L  D/L        User Name                 U/L  D/L
+------------------------  ---  ---        ------------------------  ---  ---
+JACK DAUGHERTY            484  924        MEMORY TURNER              10 2469
+TONY LOUCHHEIM            219   37        GORDON ANDERSON             2 1804
+JEFF BACON                118  193        RAY WALTZ                   9 1166
+MARK RAPP                 114  675        JOHN MOODY                  2 1043
+SCOTT PAZUR               107  169        JACK DAUGHERTY            484  924
+
+
+                              5 most active callers
+User Name                City                       Calls   U/L    D/L   Confs
+-----------------------  -------------------------  -----  -----  -----  -----
+MARK RAPP                VERONA NJ                   642    114    675     11
+JIM KEY                  GERMANTOWN TN               500     12    483      4
+MEMORY TURNER            MT PROSPECT                 419     10   2469      4
+JASON CROSBY             PHOENIX AZ                  408     55    184     13
+GORDON ANDERSON          SAN CARLOS CA               399      2   1804      6
+
+
+                        5 callers who read the least mail
+User Name                City                       Calls   U/L    D/L   Confs
+-----------------------  -------------------------  -----  -----  -----  -----
+LORCA HANNS              SAN FRANCISCO CA             80      3     82      0
+LEO WELLS                GLENDALE AZ                  70      6    131      0
+KAZ FURUKAWA             CARROLLTON TX                61      2    128      0
+LARRY MICHALEC           SAN DIEGO CA                 52     17     56      0
+TROY CRANFORD            AMARILLO TX                  51      3     86      0
+
+
+                        Security level analysis
+            Security Level   Users   Calls    U/L     D/L 
+            --------------   -----   -----   -----   -----
+                   0             2       2       0       0
+                   2           226     449      13     399
+                   4            17     413      11     990
+                   5            14     373      12     856
+                  10          1852   18411    3171   24810
+                  49            12     757       3    2092
+                  50          1247   20444    2486   38641
+                  60            71     460       3     590
+                  70           158   10373    1511   27134
+                  75             6     197       8     357
+                  80             5     179      16     288
+                 120             1     163       0       0
+
+
+                     Top 5 cities by number of calls
+        City                       Users  Calls   U/L    D/L 
+        -------------------------  -----  -----  -----  -----
+        PHOENIX AZ                   493   8652   1234  10237
+        TEMPE AZ                     146   2630    502   4042
+        GLENDALE AZ                   91   1776    233   2411
+        SCOTTSDALE AZ                 94   1674    394   1517
+        MESA AZ                      174   1554    289   2540
+
+
+                     94 cities with at least 100 calls
+        City                       Users  Calls   U/L    D/L 
+        -------------------------  -----  -----  -----  -----
+        AMARILLO TX                    6    620     70   1791
+        ANCHORAGE AK                   5    126      0    497
+        ANNISTON AL                    1    128      4    143
+        APACHE JUNCTION AZ             3    100     72    159
+        ARLINGTON TX                   1    165      8    404
+        ATLANTA GA                    24    382     30    808
+        BALTIMORE MD                   5    182     12    229
+        BERKELEY CA                    3    163      4    222
+        BETHESDA MD                    4    174      9    307
+        BETHLEHEM PA                   2    243     81     45
+        BOARDMAN OH                    2    109      4    340
+        BRADENTON FL                   1    154      3    400
+        BROOKLYN NY                   12    186     25    434
+        BUFFALO NY                     5    160     29    337
+        CANTON MI                      3    246    493    959
+        CHANDLER AZ                   59    778     79    903
+        CHICAGO IL                    14    135     45    261
+        CINCINNATI OH                  7    119      8    238
+        COLUMBIA MD                    2    144      6     15
+        COLUMBUS OH                    7    108      0    185
+        COSTA MESA CA                  4    156      2    277
+        COTATI CA                      1    161      6    298
+        DALLAS TX                     12    163     13    349
+        DEL MAR CA                     2    116     12    169
+        DUBLIN CA                      3    149     27    164
+        EASTCHESTER NY                 1    280      3    313
+        ENGLISHTOWN NJ                 1    145    107    169
+        FALLS CHURCH VA                6    125     10    145
+        FORT LAUDERDALE FL             1    102      9    361
+        FORT WALTON BEACH FL           1    120      2   1043
+        GERMANTOWN TN                  1    500     12    483
+        GLENDALE AZ                   91   1776    233   2411
+        HOUSTON TX                    23    366     21    862
+        INDIANAPOLIS IN               16    292     18   1113
+        INN ON THE PARK BBS AZ         1    182     10    290
+        ISSAQUAH WA                    1    211     32    257
+        JACKSONVILLE FL               17    280     36    937
+        KNOXVILLE TN                   4    109     12     75
+        LAGUNA HILLS CA                2    117      6    812
+        LAKELAND FL                    3    175      2    245
+        LAS VEGAS NV                  10    141     23    299
+        LONG BEACH CA                  8    174     27    265
+        LUBBOCK TX                     3    137     38    102
+        MCHENRY IL                     2    108      0    198
+        MCLEAN VA                      6    287     24    327
+        MEMPHIS TN                     4    105     12     93
+        MESA AZ                      174   1554    289   2540
+        MIDWEST CITY OK                1    324     15    349
+        MISSOULA MT                    4    136     19    155
+        MONTGOMERY IL                  1    101      4    166
+        MT PROSPECT                    1    419     10   2469
+        NAPLES FL                      2    132     38    363
+        NEW YORK NY                   36    591     44   1190
+        NORCROSS GA                   10    128      5    203
+        OREM UT                        4    110     12    245
+        ORLANDO FL                    17    332     29    907
+        OSLO NORWAY                   12    303      6    704
+        PALO ALTO CA                   3    129     41    458
+        PARADISE VALLEY AZ             8    352    156    645
+        PATCHOGUE NY                   1    207      9   1166
+        PEORIA AZ                     20    108     27    119
+        PHOENIX AZ                   493   8652   1234  10237
+        PHX AZ                        10    148     29     71
+        PIKEVILLE KY                   2    126      8    168
+        PITTSBURGH PA                  7    329     16    706
+        POMEROY OH                     1    104      5    253
+        PORTAGE IN                     3    142      5    270
+        RIVERSIDE CA                   6    162      4    268
+        ROCHESTER NY                   6    180     54    257
+        SALT LAKE CITY UT             11    262     29    516
+        SAN ANTONIO TX                18    261      6    365
+        SAN CARLOS CA                  1    399      2   1804
+        SAN DIEGO CA                  30    955     79   1873
+        SAN FRANCISCO CA              10    252     40    602
+        SAN JOSE CA                   22    174     16    274
+        SCOTTSDALE AZ                 94   1674    394   1517
+        SEAL BEACH CA                  2    111     13    378
+        SEATTLE WA                    11    157     40    194
+        SINGAPORE                     11    202      0    375
+        SOUTHFIELD MI                  1    113     28    164
+        SPRINGFIELD VA                 4    204     44    644
+        SUMMERVILLE SC                 3    116      1    196
+        SUN CITY WEST AZ               3    204    113    626
+        TEMPE AZ                     146   2630    502   4042
+        TORONTO ONTARIO CANADA         9    108      2    218
+        TUCSON AZ                     18    164     13    285
+        TUJUNGA CA                     1    239     30    491
+        VA BEACH VA                   10    177     19    558
+        VERONA NJ                      1    642    114    675
+        VIRGINIA BEACH VA              8    136     28    259
+        WASHINGTON DC                 17    607     60    694
+        WICHITA KS                    11    179     36    504
+        WILLIAMS AFB AZ                7    197     13    325
+        WINCHESTER KY                  1    128     16    399
+
+Generated by Top Users v1.8, 06-10-89
+Courtesy of:  S.H.Smith  and  The Tool Shop, (602) 279-2673
+
+LICENSE
+=======
+
+   SourceWare: What is it?
+   -----------------------
+
+   SourceWare is my name for a unique concept in user supported
+   software.
+
+   Programs distributed under the SourceWare concept always include
+   complete source code.
+
+   This package can be freely distributed so long as it is not modified
+   or sold for profit.  If you find that this program is valuable,  you
+   can send me a donation for what you think it is worth.  I suggest
+   about $10.
+
+   Send your contributions to:
+      S. H. Smith
+      5119 N. 11 ave 332
+      Phoenix, Az 85013
+
+
+   Why SourceWare?
+   ---------------
+
+   Why do I include source code?  Why isn't the donation manditory?  The
+   value of good software should be self-evident. The source code is the
+   key to complete understanding of a program.  You can read it to find
+   out how things are done.  You can also change it to suit your needs,
+   so long as you do not distribute the modified version without my
+   consent.
+
+
+   Copyright
+   ---------
+
+   If you modify this program, I would appreciate a copy of the new
+   source code.   I am holding the copyright on the source code, so
+   please don't delete my name from the program files or from the
+   documentation.
+
+
+
+DISCLAIMER
+==========
+
+I cannot be responsible for any damages resulting from the use or mis-
+use of this program!
+
+
+
+
+REVISION HISTORY
+================
+
+   04-Oct-87   1.0    Initial coding.  I wrote it because my other user
+                      reports stopped working on PCBoard 12.0.
+
+   24-Nov-87   1.1    Fixed a bug in top uploaders/downloaders report
+                      when there were not enough uploaders or
+                      downloaders to fill the specified number of slots.
+
+   08-Dec-87   1.2    The sysop user record#1 is now excluded from the
+                      report.  An additional optional parameter allows
+                      you to exclude all users above a specified
+                      security level from the report.
+
+   11-May-88   1.3    Updated for TPAS 4.0 compiler.  Changed counters
+                      to long integers to eliminate overflows on very
+                      active systems.
+                      
+   03-Jun-88   1.4    Corrected some bugs in tabulation of top uploaders
+                      and downloaders.  Rewrote city sort and added
+                      buffering. Now runs more than twice as fast as
+                      before.   Thanks to Roger Holm for sending up the
+                      suggested bugfixes.
+
+               1.5    Updated for PCBoard 14.0 format user file.
+
+   09-Sep-88   1.6    Added report of users that don't read mail.
+                      Added report-list/order command line parameter.
+
+
+   04-Feb-89   1.7    Added new security level analysis report.
+
+   10-Jun-89   1.8    Added sorted listing of cities report.
+
+    3-Apr-90   1.9    Expanded CITY table to 4000 unique cities and
+                      corrected error in sorting with keys > 32000.
+
+
+SUPPORT
+=======
+
+   I work very hard to produce a software package of the highest quality
+   and functionality.  I try to look into all reported bugs, and will
+   generally fix reported problems within a few days.
+
+   Since this is user supported software under the SourceWare concept,
+   I don't expect you to contribute if you don't like it or if it
+   doesn't meet your needs.
+
+   If you have any questions, bugs, or suggestions, please contact me
+   at:
+       The Tool Shop BBS
+        (602) 279-2673
+
+   The latest version is always available for downloading.
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.
+

@@ -1,0 +1,15 @@
+%U:\PCB\GEN\BRDM
+@MORE@
+@CLS@
+@X17ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿@X07
+@X17³ @X1BDate: @X1A@SYSDATE@       @X1F    S y s O p   C o m m a n d s            @X1BTime: @X1A@SYSTIME@ @X17³@X07
+@X17³@X13ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú@X17³@X07
+@X17³ @X1F(@X1C1@X1F) List/Print Caller's Log           (@X1C9@X1F)  Exit to DOS from Remote          @X17³@X07
+@X17³ @X1F(@X1C2@X1F) List/Print User's Log             (@X1C10@X1F) Perform DOS Function             @X17³@X07
+@X17³ @X1F(@X1C3@X1F) Pack/Renumber Messages            (@X1C11@X1F) View Other Node Users            @X17³@X07
+@X17³ @X1F(@X1C4@X1F) Recover a Killed Message          (@X1C12@X1F) Logoff Alternate Node            @X17³@X07
+@X17³ @X1F(@X1C5@X1F) List Message Headers              (@X1C13@X1F) View Alternate Node Caller Log   @X17³@X07
+@X17³ @X1F(@X1C6@X1F) View any System File              (@X1C14@X1F) Drop Alternate Node to DOS       @X17³@X07
+@X17³ @X1F(@X1C7@X1F) User Maintenance                  (@X1C15@X1F) Recycle A Node                   @X17³@X07
+@X17³ @X1F(@X1C8@X1F) Pack the User's File                                                    @X17³@X07
+@X17ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ@X07

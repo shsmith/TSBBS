@@ -1,0 +1,20 @@
+procedure set_node_status(newcode: char);
+procedure node_status_display;
+procedure node_chat;
+procedure check_chat_request;
+
+const
+  node_available        = 'A';
+  node_unavailable      = 'U';
+  node_in_door          = 'D';
+  node_entering_msg     = 'E';
+  node_transfer         = 'T';
+  node_group_chat       = 'G';
+  node_logoff_pending   = 'L';
+  node_dropping_2dos    = 'X';
+  node_no_caller        = ' ';
+  node_chat_request     = 'R';
+  node_going_down       = '@';  {not a standard code}
+
+  chat_poll: boolean = true;    {true if polling for chat}
+

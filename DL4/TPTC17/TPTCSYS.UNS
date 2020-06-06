@@ -1,0 +1,229 @@
+TPTC UNIT SYMBOL FILE 1.0
+MAXINT
+maxint
+INTEGER
+4 0 7 -1 0
+BYTE
+byte
+INTEGER
+5 0 255 -1 0
+SHORTINT
+shortint
+INTEGER
+5 0 0 -1 0
+POINTER
+pointer
+CHAR
+1 0 0 -1 0
+SETREC
+setrec
+POINTER
+5 0 0 -1 0
+FNAME
+fname
+STRING
+6 1 0 -1 1
+TEXT
+text
+-
+13 0 0 -1 0
+OUTPUT
+output
+TEXT
+6 0 0 -1 0
+INPUT
+input
+TEXT
+6 0 0 -1 0
+PARAMCOUNT
+paramcount
+INTEGER
+6 0 0 -1 0
+IORESULT
+ioresult
+INTEGER
+6 0 0 -1 0
+TPTC_ARGV
+tptc_argv
+POINTER
+1 0 0 -1 0
+DSEG
+dseg
+INTEGER
+6 0 0 -1 0
+SSEG
+sseg
+INTEGER
+6 0 0 -1 0
+CSEG
+cseg
+INTEGER
+6 0 0 -1 0
+SIN
+sin
+REAL
+2 0 0 1 0
+COS
+cos
+REAL
+2 0 0 1 0
+TAN
+tan
+REAL
+2 0 0 1 0
+SQR
+sqr
+REAL
+2 0 0 1 0
+SQRT
+sqrt
+REAL
+2 0 0 1 0
+TRUNC
+trunc
+LONGINT
+2 0 0 1 0
+ROUND
+round
+REAL
+2 0 0 1 0
+INT
+dint
+REAL
+2 0 0 1 0
+PRED
+pred
+INTEGER
+2 0 0 1 0
+SUCC
+succ
+INTEGER
+2 0 0 1 0
+ORD
+ord
+INTEGER
+2 0 0 1 0
+HI
+hi
+INTEGER
+2 0 0 1 0
+LO
+lo
+INTEGER
+2 0 0 1 0
+INC
+inc
+VOID
+2 0 0 1 1
+DEC
+dec
+VOID
+2 0 0 1 1
+MEMAVAIL
+memavail
+LONGINT
+2 0 0 0 0
+MAXAVAIL
+maxavail
+LONGINT
+2 0 0 0 0
+DISPOSE
+dispose
+VOID
+2 0 0 1 0
+FREEMEM
+pfreemem
+VOID
+2 0 0 2 0
+PARAMSTR
+paramstr
+STRING
+2 0 0 1 0
+UPCASE
+upcase
+CHAR
+2 0 0 1 0
+DELETE
+delete
+VOID
+2 0 0 3 0
+COPY
+copy
+STRING
+2 0 0 3 0
+VAL
+val
+VOID
+2 0 0 3 6
+MOVE
+move
+VOID
+2 0 0 3 0
+FILLCHAR
+fillchar
+VOID
+2 0 0 3 0
+LENGTH
+length
+INTEGER
+2 0 0 1 0
+EOF
+eof
+BOOLEAN
+2 0 0 1 1
+FLUSH
+flush
+VOID
+2 0 0 1 1
+CLOSE
+close
+VOID
+2 0 0 1 1
+ASSIGN
+assign
+VOID
+2 0 0 2 1
+RESET
+reset
+VOID
+2 0 0 1 1
+REWRITE
+rewrite
+VOID
+2 0 0 1 1
+APPEND
+append
+VOID
+2 0 0 1 1
+SETTEXTBUF
+settextbuf
+VOID
+2 0 0 3 1
+SEEK
+seek
+VOID
+2 0 0 2 1
+SEEKEOF
+seekeof
+BOOLEAN
+2 0 0 1 1
+INSET
+inset
+BOOLEAN
+2 0 0 2 0
+SPOS
+spos
+INTEGER
+2 0 0 2 0
+CPOS
+cpos
+INTEGER
+2 0 0 2 0
+CTOS
+ctos
+STRING
+2 0 0 1 0
+TPTCSYS_INIT
+tptcsys_init
+VOID
+16 0 0 2 0

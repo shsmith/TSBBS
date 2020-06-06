@@ -1,0 +1,21 @@
+                             
+                                Run MarkMail on
+                                ProLogon/Prodoor
+
+While running MarkMail on a Prodoor system, I have encountered a problem
+with the screen-writes while selecting the conferences in MarkMail.  It
+took me about 6 hours before I figured it out that it wasn't the door, or
+the dos, but instead it was the pcboard.sys file.   Prodoor writes and uses
+128 byte pcboard.sys and MarkMail needs the 143 byte file.  In order to get
+it to work, I used the file SYS145.EXE and made the 143 byte pcboard.sys.
+This made it able to work without making a call to pcboard.exe to obtain the
+143 byte pcboard.sys.
+My MMAIL batch file shows how I did it, inserting the SYS145.EXE,
+and also shows that I use Greg Grimshaws version of CALUSE10.ZIP.
+I like to thank both Greg and whoever wrote the SYS145.ZIP file.
+
+If there are any mistakes to this txt file or my MMAIL batch file feel free
+to change it.  So far I have found it works good on my system.
+
+Mark Onstad
+

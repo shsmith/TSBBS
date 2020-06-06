@@ -1,0 +1,641 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                         S.H.Smith-All Other Programs
+                        175 files using 2,928,621 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+A3.ZIP          44856  09-18-86  YACC grammar and scanner for ADA
+                               | Download Count: 0
+                               |
+ADAYACC.ZIP     88246  09-25-86  Working YACC grammar and scanner for ADA
+                               | Download Count: 0
+                               |
+ADIRS.ZIP        2338  05-29-86  Reports all directories on a disk
+                               | Download Count: 3    Last Download: 07-25-95
+                               |
+AFILES.ZIP       2398  11-29-88  Reports all files in all directories on disk
+                               | Download Count: 3    Last Download: 07-25-95
+                               |
+AIM.ZIP         34171  02-23-87  Automatic Investment Management / C
+                               | Download Count: 3    Last Download: 03-20-97
+                               |
+ALLDIRS.ZIP      3898  08-14-89  Lists all directories on hard disk
+                               | Download Count: 2    Last Download: 02-26-94
+                               |
+ANSTOTXT.ZIP     1593  05-24-87  Convert ANSI into plain text (used here)
+                               | Download Count: 7    Last Download: 08-10-94
+                               |
+APLUNZIP.ZIP    69562  09-10-92  Apple //gs port of unzip
+                               | Download Count: 0
+                               |
+ARC.ZIP          1907  02-17-87  Front-end for PKARC looks like old ARC.EXE /
+                               | Download Count: 4    Last Download: 01-29-95
+                               |
+ARCH_UNZ.ARC    63240  08-10-90  Acorn Archimedes port of UNzip 3.00. Source
+                               | & executables, PC format ARC (set filetype
+                               | of 'unzip' to FF8 (absolute) to run)
+                               | Download Count: 1    Last Download: 02-03-94
+                               |
+ARCTV30.ZIP     43635  01-24-91  ARC text-view cmd for PCBVIEW/ProDoor
+                               | Updated to include all new ZIPTV features.
+                               | Download Count: 16   Last Download: 01-12-95
+                               |
+ASCII.ZIP        1049  04-26-92  Prints a table of ascii chars on screen
+                               | Download Count: 3    Last Download: 06-03-93
+                               |
+ASCTOTXT.ZIP     1313  05-09-87  Convert line drawing ascii to text
+                               | Download Count: 4    Last Download: 06-05-94
+                               |
+ASKLINE.ZIP      1589  04-21-87  Ask for an input line and send to stdout
+                               | Download Count: 3    Last Download: 02-29-96
+                               |
+ASKYN.ZIP        1433  02-09-87  Ask yes/no question and set errorlevel / C s
+                               | Download Count: 0
+                               |
+BAKCHK10.ZIP     8884  07-29-89  Backup Check 1.0 - Reports amount of data
+                               | (files/bytes) not backed up on multiple
+                               | disk drives.  With source.
+                               | Download Count: 1    Last Download: 11-18-94
+                               |
+BALANCE.ZIP      2218  05-26-87  Balance files on two parallel dev. systems
+                               | Download Count: 0
+                               |
+BITOPS.ZIP       2167  08-15-86  J/ADA Bit operator package
+                               | Download Count: 0
+                               |
+CALC.ZIP         1979  08-21-87  RPN calculator (needs rpn.inc)
+                               | Download Count: 1    Last Download: 11-08-94
+                               |
+CAM10.ZIP       16628  09-08-87  Camelion Language: mimics other languages
+                               | Download Count: 0
+                               |
+CLOCK.ZIP        1516  08-19-86  J/ADA System clock package
+                               | Download Count: 4    Last Download: 04-24-94
+                               |
+CMTTOSUM.ZIP     1922  12-04-85  Convert pascal comments into subsystem summa
+                               | Download Count: 1    Last Download: 08-02-94
+                               |
+COL.ZIP          1377  09-07-87  Filter formats output in 3 columns
+                               | Download Count: 1    Last Download: 09-11-95
+                               |
+COMMENTS.ZIP     4532  12-11-86  Extract all comments from pascal source
+                               | Download Count: 3    Last Download: 06-14-96
+                               |
+COMPOSE.ZIP     45564  11-22-86  Compose and playback 3 voice music / TPAS
+                               | Download Count: 5    Last Download: 01-11-94
+                               |
+CONV.ZIP         2453  08-19-86  J/ADA Type conversion package
+                               | Download Count: 0
+                               |
+CPIO.ZIP         8599  11-22-87  Unix-style multiple file copy / C src
+                               | Download Count: 0
+                               |
+CRFPRN.ZIP       1447  09-16-85  Print pascal cross-reference (needs MCRF)
+                               | Download Count: 0
+                               |
+CSIP.ZIP         3840  12-28-91  Continuous SS:SP CS:IP display.  ASM src.
+                               | Download Count: 1    Last Download: 07-21-94
+                               |
+CUNIQUE.ZIP      1448  05-26-87  Count unique and duplicate lines (filter)
+                               | Download Count: 2    Last Download: 09-11-95
+                               |
+D6801.ZIP       59015  12-31-86  Compiler for 6801, 8080, 6502
+                               | Download Count: 1    Last Download: 02-10-96
+                               |
+DERMON11.ZIP    11031  04-30-90  Disk Error Monitor utility
+                               | TSR utility to monitor disk activity and
+                               | record last 50 errors in memory for later
+                               | reporting.  Catches errors that DOS silently
+                               | corrects. Includes MASM source code.  V1.1 no
+                               | longer needs to be loaded "last".
+                               | Download Count: 12   Last Download: 02-19-97
+                               |
+DETAB.ZIP        1021  02-11-86  Remove tabs from a file
+                               | Download Count: 0
+                               |
+DFA13.ZIP       23723  11-21-86  DOS File Accelerator and Monitor         v1.
+                               | Download Count: 3    Last Download: 08-05-94
+                               |
+DOCTOPAS.ZIP     1332  11-13-86  Convert text into pascal writeln's
+                               | Download Count: 7    Last Download: 12-03-96
+                               |
+DOSMON.ZIP       3786  01-21-88  DOS Activity Monitor; MASM source        v2
+                               | Download Count: 3    Last Download: 10-25-94
+                               |
+DTST20.ZIP      20077  05-06-90  Disk Test 2.0-- Measures time to read each
+                               | cluster on disk and reports "slow" blocks
+                               | which are likely to be marginal. With C sourc
+                               | code.  Now works with >32MEG partitions.
+                               | Download Count: 10   Last Download: 06-19-96
+                               |
+ESS.ZIP         29969  10-16-85  Expert System Shell / TPAS source
+                               | Download
+                               | Download Count: 6    Last Download: 07-18-96
+                               |
+EZSPEL14.ZIP    57191  10-24-92  EZ-Spell.  Updated spelling checker.
+                               | Now displays unknown words in the context the
+                               | were found.
+                               | Download Count: 11   Last Download: 02-07-95
+                               |
+FATAL14.ZIP     21517  05-05-90  Replacement for Abort/Retry/Ignore
+                               | Has shorter automatic retry delays, handles
+                               | nested COMMAND.COM, and includes new option t
+                               | zero error counters.
+                               | Download Count: 13   Last Download: 04-08-95
+                               |
+FATAL205.ZIP    24524  05-12-92  Modified version of automatic retry on
+                               | fatal errors.   Has automatic abort/reboot.
+                               | Download Count: 26   Last Download: 01-11-97
+                               |
+FCAT.ZIP         1779  09-05-87  Concatenate files to stdout
+                               | Download Count: 2    Last Download: 08-02-94
+                               |
+FILES.ZIP        1233  04-12-87  Send a list of files to stdout
+                               | Download Count: 3    Last Download: 01-05-94
+                               |
+FIXDIR.ZIP       7874  02-17-94  Remove various automatic entries from
+                               | PCBoard DIR listing files.
+                               | Freeware from Samuel Smith with source code.
+                               | Download Count: 12   Last Download: 03-19-96
+                               |
+FIXZIP10.ZIP    27420  08-07-93  Fix truncated .ZIP files
+                               | Reconstructs the "central directory" in a
+                               | truncated ZIP file so you can unzip the good
+                               | part.  With source code.
+                               | Download Count: 25   Last Download: 06-14-96
+                               |
+FMAP.ZIP         2434  01-26-87  Finds source for any address with .MAP file
+                               | Download Count: 2    Last Download: 03-19-96
+                               |
+FMT05.ZIP        1703  04-09-86  Format 6805 assembly listings
+                               | Download Count: 0
+                               |
+FNAME.ZIP        1545  02-27-87  Filters out fnames fm program outputs / C sr
+                               | Download Count: 0
+                               |
+FPR.ZIP          3615  06-06-92  Unix-style file print utility
+                               | Download Count: 0
+                               |
+FSIZES.ZIP       1225  07-11-87  Filter reports sizes of files
+                               | Download Count: 0
+                               |
+GMAKE.ZIP        2278  03-27-86  General make facility / TPAS source
+                               | Download Count: 4    Last Download: 03-19-96
+                               |
+GMREP.ZIP       11096  02-26-94  Global multiple search/replace; handy
+                               | Download Count: 12   Last Download: 07-18-96
+                               |
+GRAPHICS.ZIP     4001  03-08-87  Graphics library for datalight C
+                               | Download Count: 8    Last Download: 07-07-96
+                               |
+HEART.ZIP       13368  09-03-86  Heart rate/recovery monitor / TPAS source
+                               | Download Count: 3    Last Download: 02-10-96
+                               |
+INDENT.ZIP       1248  10-17-85  Indentation filter
+                               | Download Count: 1    Last Download: 12-07-94
+                               |
+INF.ZIP          8462  10-09-85  Simple inference engine / TPAS source
+                               | Download Count: 3    Last Download: 03-19-96
+                               |
+INTERP.ZIP       1764  08-15-86  J/ADA Interpolation package
+                               | Download Count: 0
+                               |
+IOMON.ZIP        4820  05-19-86  Displays a letter in the corner of your
+                               | screen indicating the type of disk activity
+                               | Download Count: 5    Last Download: 10-16-96
+                               |
+JMAKE.ZIP       11860  08-15-86  J/ADA Make facility
+                               | Download Count: 0
+                               |
+JOBBER.ZIP       1901  08-14-86  Job scheduler (partial)
+                               | Download Count: 2    Last Download: 05-13-94
+                               |
+JQUELIB.ZIP      2900  08-05-86  J/ADA Queue package
+                               | Download Count: 0
+                               |
+JSTRLIB.ZIP      1586  03-24-86  J/ADA String package
+                               | Download Count: 0
+                               |
+KEYBOOST.ZIP     2171  08-15-86  Speed up keyboard, adds keyclick
+                               | Download Count: 3    Last Download: 07-17-94
+                               |
+KEYCODE.ZIP      1225  08-05-87  Display key codes for funkeys
+                               | Download Count: 1    Last Download: 11-19-93
+                               |
+LITERALS.ZIP     1952  10-11-85  Extract all literals from a pascal source
+                               | Download Count: 3    Last Download: 03-19-96
+                               |
+LOC.ZIP          3311  06-12-86  Locate strings in a group of files
+                               | Download Count: 4    Last Download: 09-05-94
+                               |
+LOCPRN.ZIP       3295  09-25-85  Locate string and print rest of file
+                               | Download Count: 1    Last Download: 02-12-93
+                               |
+LONGOPS.ZIP      3774  08-20-86  J/ADA Long operators package
+                               | Download Count: 0
+                               |
+LS.ZIP          22235  10-19-93  Unix-style directory lister / TPAS source
+                               | Download Count: 5    Last Download: 10-25-94
+                               |
+LZHTV12.ZIP     36417  01-24-91  LZH text-view cmd for PCBVIEW/ProDoor
+                               | Updated to include all new ZIPTV features.
+                               | Download Count: 17   Last Download: 01-12-95
+                               |
+MAKEGEN.ZIP      2642  12-09-87  Generate Makefile for a group of .C files
+                               | Download Count: 4    Last Download: 04-27-95
+                               |
+MAPSIZE.ZIP      1471  07-16-87  Filter MAP files to see size of each object
+                               | Download Count: 0
+                               |
+MCRF.ZIP         5040  08-14-86  Generate CRF data for CRFPRN and PH
+                               | Download Count: 0
+                               |
+MERGE.ZIP        1316  05-26-87  Merge two sorted lists into one
+                               | Download Count: 2    Last Download: 02-07-95
+                               |
+MON.ZIP         18861  04-18-87  Interrupt activity monitors / MASM
+                               | Download Count: 4    Last Download: 02-07-95
+                               |
+MONMEM.ZIP       1594  11-18-86  Monitor a memory location
+                               | Download Count: 5    Last Download: 03-01-97
+                               |
+MRENAME.ZIP      1155  03-05-86  Multiple file rename filter
+                               | Download Count: 0
+                               |
+NCAT.ZIP         2643  09-26-85  Combine files, add original fname to each li
+                               | Download Count: 0
+                               |
+NETCPY40.ZIP    20715  07-29-93  Network compatible file copy command
+                               | Download Count: 7    Last Download: 04-06-95
+                               |
+NETCPY50.ZIP    48609  04-06-95  CP 5.0 - unix-like file copy utility * Can
+                               | copy open-shared files on a network * Can
+                               | accept multiple wildcards to copy * Can
+                               | accept listfiles Freeware from Samuel H.
+                               | Smith
+                               | Download Count: 19   Last Download: 11-03-95
+                               |
+NETMON10.ZIP    10576  11-14-93  NETMON - Network I/O MonItor
+                               | This program is a TSR that provides a
+                               | running display of network I/O activity.
+                               | Should work with all NETBIOS type networks
+                               | using interrupt 5C.
+                               | Sourceware from Samuel H. Smith.
+                               | Download Count: 23   Last Download: 11-03-95
+                               |
+NOBSC.ZIP        1410  01-12-87  Filter out backspc/overprint in MAN pgs / C
+                               | Download Count: 1    Last Download: 07-02-94
+                               |
+NOCMT.ZIP        1075  12-03-86  Remove comments from ASMGEN output, TPAS
+                               | Download Count: 0
+                               |
+NOCMTC.ZIP       1828  01-12-87  Filter out comments from ASMGEN output / C s
+                               | Download Count: 0
+                               |
+OUT18.ZIP       57340  06-02-89  Outline processor / TPAS source files    v1.
+                               | Download Count: 5    Last Download: 03-19-96
+                               |
+OUT18COM.ZIP    44542  11-08-92  Outline processor / COM files and more sourc
+                               | Download Count: 1    Last Download: 09-09-93
+                               |
+OV.ZIP           1365  10-17-85  Converts overprint into backspaces
+                               | Download Count: 0
+                               |
+PAGE.ZIP         1507  09-05-85  Format a file into pages
+                               | Download Count: 0
+                               |
+PAGES.ZIP        1566  12-05-86  Extract a range of pages from a doc
+                               | Download Count: 0
+                               |
+PASS.ZIP          925  09-20-87  Filter passes in to out; eg sort <x |pass >x
+                               | Download Count: 2    Last Download: 08-09-94
+                               |
+PCASUSP.ZIP      1418  12-25-91  SUSPEND and RESUME for use with PC Anywhere
+                               | Download Count: 0
+                               |
+PCRF.ZIP         5107  09-09-85  Pascal crossreference
+                               | Download Count: 1    Last Download: 12-08-93
+                               |
+PERMUTE.ZIP      1382  08-20-87  Permute all combinations of a list
+                               | Download Count: 0
+                               |
+PH.ZIP           2918  09-05-85  Procedure heirarchy generator
+                               | Download Count: 0
+                               |
+PMAKE.ZIP        4148  03-24-87  Pascal Make facility / TPAS source
+                               | Download Count: 5    Last Download: 03-19-96
+                               |
+PORTOPS.ZIP      1898  08-15-86  J/ADA I/O port package
+                               | Download Count: 0
+                               |
+PP.ZIP           6604  01-02-86  Pascal pretty-print filter
+                               | Download Count: 0
+                               |
+PPAGE.ZIP        1612  12-05-86  Print file with pages
+                               | Download Count: 1    Last Download: 01-20-93
+                               |
+PROCRC11.ZIP    14747  06-02-89  Quick CRC checker.  Detects file corruption.
+                               | Use this utility in your AUTOEXEC to check al
+                               | critical files for unexpected alterations.
+                               | Can be used as an early-warning measure
+                               | against hard disk failure or virus infection.
+                               | Includes source code.
+                               | Download Count: 7    Last Download: 03-19-96
+                               |
+PROF.ZIP         1277  04-01-87  Profile data format filter
+                               | Download Count: 0
+                               |
+PROP.ZIP        14216  11-13-86  Proportional spaced printing / TPAS source
+                               | Download Count: 4    Last Download: 03-01-97
+                               |
+PROXTRA.ZIP      8350  05-15-89  ProXTRA module for extracting member
+                               | files between .ARC files.
+                               | Download Count: 4    Last Download: 10-24-93
+                               |
+PROXZIP.ZIP     12052  05-12-90  ProXZIP module for extracting member
+                               | files between .ZIP files.
+                               | Download Count: 7    Last Download: 12-19-93
+                               |
+PSTRINGS.ZIP     4278  04-07-87  Filter passes all strings from a TPAS source
+                               | Download Count: 7    Last Download: 03-19-96
+                               |
+PSTYLE.ZIP       4542  12-04-85  Pascal style analysis program
+                               | Download Count: 2    Last Download: 02-07-95
+                               |
+PXG11.ZIP       10109  10-06-85  Pascal Expert Generator / TPAS source
+                               | Download Count: 7    Last Download: 07-18-96
+                               |
+QED.ZIP          5681  10-08-85  Quick/dirty editor
+                               | Download Count: 5    Last Download: 02-07-95
+                               |
+QSORT.ZIP        1536  09-16-85  DOS sort replacement; uses db toolbox
+                               | Download Count: 3    Last Download: 06-22-94
+                               |
+REMOVE.ZIP       1268  11-29-91  Filter removes lines with a string
+                               | Download Count: 3    Last Download: 09-11-95
+                               |
+RESCUE.ZIP       9169  08-26-87  Rescue text lost in RAM
+                               | Download Count: 2    Last Download: 01-01-95
+                               |
+RJOB10.ZIP      20684  03-08-88  Remote/network job executive.
+                               | Download Count: 1    Last Download: 02-07-95
+                               |
+RM.ZIP           1051  02-10-87  Unix-style file remover / C src
+                               | Download Count: 0
+                               |
+ROF.ZIP          1094  09-03-86  Small RUNOFF subset
+                               | Download Count: 0
+                               |
+RT2AT-11.ZIP     5706  09-03-87  Convert RT(101) kbd into AT and vice versa!
+                               | Download Count: 0
+                               |
+RUN6801.ZIP     25841  12-31-86  6801 interpreter, use with D6801
+                               | Download Count: 0
+                               |
+SCP.ZIP          3274  11-16-87  Slow Copy. Used to copy to floppy under TV
+                               | Download Count: 1    Last Download: 03-28-93
+                               |
+SCREENOP.ZIP     4790  08-15-86  J/ADA Screen package
+                               | Download Count: 1    Last Download: 10-16-96
+                               |
+SIDE.ZIP         3555  01-06-86  Sideways print filter
+                               | Download Count: 5    Last Download: 10-20-95
+                               |
+SIDEPRN.ZIP     17843  11-03-92  Sideways printer with .COM file - works
+                               | Download Count: 7    Last Download: 10-20-95
+                               |
+SITV10.ZIP       7103  07-11-89  Preliminary verbose lister for Macintosh
+                               | "StuffIt" format archives.  I need more
+                               | information to finish it.
+                               | Download Count: 1    Last Download: 05-31-95
+                               |
+SIZES.ZIP        1289  05-26-87  Filter looks up file sizes
+                               | Download Count: 1    Last Download: 09-11-95
+                               |
+SLEEP.ZIP         952  02-13-87  Delay for a while
+                               | Download Count: 1    Last Download: 06-26-94
+                               |
+SMON.ZIP         4670  01-27-88  Disk Seek monitor display.               v1.
+                               | Download Count: 3    Last Download: 11-18-94
+                               |
+SPEED.ZIP       11411  09-30-86  System speed benchmark / 6 tests / C src
+                               | Download Count: 14   Last Download: 07-11-97
+                               |
+STP.ZIP         38663  04-18-91  Smalltalk to Turbo Pascal translator / TPAS
+                               | Download Count: 4    Last Download: 02-07-95
+                               |
+ST_UNZIP.ZIP    27532  03-30-89  Atari ST version of UNZIP11 with C source.
+                               | Download Count: 0
+                               |
+ST_UZSRC.ZIP    37467  04-28-90  ST_UNZIP v2.72 "C" source.
+                               | Download Count: 1    Last Download: 06-14-96
+                               |
+SYSACT13.ZIP    37217  03-06-92  Unix like System activity monitor        v1.3
+                               | Download Count: 3    Last Download: 07-05-95
+                               |
+TAR.ZIP         19970  07-24-87  Unix like "Tape" Archive manager / TPAS
+                               | Download Count: 17   Last Download: 01-24-96
+                               |
+TASKING.ZIP     12025  08-19-86  J/ADA Multi-taSking package
+                               | Download Count: 0
+                               |
+TIMEPAUS.ZIP     8989  08-28-87  Timed pause, use in AUTOEXEC, etc.
+                               | Download Count: 1    Last Download: 12-09-95
+                               |
+TM20.ZIP         7598  08-05-93  Quickie replacement for Norton's TM command.
+                               | With source code.
+                               | Now includes /P option to prompt for a
+                               | message, with timeout.  Handy to ask for
+                               | reboot reason in autoexec.bat, for example.
+                               | Download Count: 33   Last Download: 08-17-95
+                               |
+TOLOW.ZIP        1627  06-02-89  Filter maps text to lower case
+                               | Download Count: 0
+                               |
+TOUPPER.ZIP      3377  09-06-87  Filter maps text to upper case
+                               | Download Count: 0
+                               |
+TOZIP.ZIP       12138  02-11-89  Arc to Zip converter used by ProDoor 3.0
+                               | Download Count: 2    Last Download: 01-12-95
+                               |
+TPL1-10.ZIP     23640  10-13-89  Threaded Programming Language/I
+                               | This is a FORTH-like language with a C flavor
+                               | and portable C source code.  Written back in
+                               | 1983 and just recently revived from a box of
+                               | my old CP/M disks I found in a closet.
+                               | Download Count: 2    Last Download: 03-18-94
+                               |
+TPTC17.ZIP      70033  03-01-89  Pascal to C translator.  Last public
+                               | Download Count: 30   Last Download: 03-05-96
+                               |
+TPTC17SC.ZIP    70601  01-25-92  Full Source Code for TPTC.  SourceWare.  v1.
+                               | Download Count: 22   Last Download: 03-19-96
+                               |
+TPTC17TC.ZIP    36779  10-17-92  A number of Test Cases for TPTC.         v1.
+                               | Turbo Pascal to C Translator.  Full TPAS 4.0
+                               | syntax is now supported (including units).
+                               | New translations  for 'interface',
+                               | 'implementation', 'uses', and 'with'
+                               | statements.  Variant-record expressions are
+                               | now translated.  Generates optimized string
+                               | manipulation.
+                               | Download Count: 19   Last Download: 03-05-96
+                               |
+TSHELL12.ZIP    59414  10-15-87  Turbo Pascal preprocessor shell          v1.
+                               | Adds #define, #ifdef, #include and more to
+                               | Turbo Pascal environment. Helps manage large
+                               | and complex programs.   Version 1.2 is 5*
+                               | faster, supports NESTED include files, adds
+                               | parameters to macros, allows multiple line
+                               | macros and more.  Includes TSPLIT, TPMAKE and
+                               | PEDIGREE.  Used in the development of most of
+                               | the Tool Shop tools.
+                               | Download Count: 4    Last Download: 05-24-95
+                               |
+TSHELLSC.ZIP    48118  04-18-91  Full source code for TSHELL12!
+                               | Download Count: 5    Last Download: 03-19-96
+                               |
+TVUTIL.ZIP      17219  09-13-87  Some utilities for TaskView 1.5
+                               | Includes SETNAME and VSCRON commands.
+                               | Download Count: 0
+                               |
+TXTTOPAS.ZIP     1349  01-01-80  Filter converts text to pascal
+                               | Download Count: 2    Last Download: 02-07-95
+                               |
+UNBUND.ZIP       8405  10-16-87  Un-bundles unix .bundle files.  TC source.
+                               | Updated to handle some 'shar' formats used
+                               | in NETHACK and SM_TALK.
+                               | Download Count: 2    Last Download: 06-30-96
+                               |
+UNIQUE.ZIP       1380  05-26-87  Filter passes only unique lines
+                               | Download Count: 2    Last Download: 09-11-95
+                               |
+UNIXZIP.ZIP     26301  05-25-89  Your source complied under Interactive Unix
+                               | version 5.3.2
+                               | Download Count: 3    Last Download: 11-19-93
+                               |
+UNZ-OS2.ZIP     71167  08-16-89  UNZIP 1.2 Ported to OS/2, with C source
+                               | Download Count: 1    Last Download: 04-20-94
+                               |
+UNZAPLMP.ZIP    99931  09-10-92  V2.0 unzip port to the Apple //gs
+                               | Download Count: 0
+                               |
+UNZIP-A.ZIP     27933  12-11-90  Troubled Unzip program.  Should use several
+                               | disk
+                               | Download Count: 0
+                               |
+UNZIP.ZIP       23971  03-18-90  Unzip files under Unix. With source
+                               | Download Count: 0
+                               |
+UNZIP092.SIT    86016  08-21-89  Mac- dearchives PKZIP 0.92 files
+                               | Download Count: 1    Last Download: 07-18-94
+                               |
+UNZIP101.SIT    98432  09-13-89  Mac- dearchives PKZIP 1.01 files
+                               | Download Count: 1    Last Download: 07-18-94
+                               |
+UNZIP12.ZIP    119927  09-10-92  Zipfile UN-ZIP utility with source code
+                               | This is intended to be a starter kit for
+                               | porting UNZIP to non-ibm systems.  Includes
+                               | source code in both C and Pascal. With full
+                               | CRC checking and is over twice as fast as
+                               | before. Supports file formats through PKZ092 
+                               | Does NOT support PKZ101. Includes source code
+                               | for OS2, Xenix/386, VAX, Atari ST, and Apple
+                               | systems.
+                               | Download Count: 2    Last Download: 06-14-96
+                               |
+UNZIP20.ZIP     51070  09-10-92  Zipfile UN-ZIP utility with source code
+                               | This is intended to be a starter kit for
+                               | porting UNZIP to non-ibm systems.  Includes
+                               | source code in both C and Pascal. Now support
+                               | PKZ101 format "implode" compression format.
+                               | Download Count: 5    Last Download: 05-01-97
+                               |
+UNZIP20A.ZIP    23652  12-14-89  "Universal" DOS/UNIX unzip, add'tl features
+                               | Download Count: 2    Last Download: 01-11-95
+                               |
+UNZIP21.ZIP     47339  11-18-92  Zipfile UN-ZIP utility with source code
+                               | Updated to allow long file comments and to
+                               | include my new phone numbers and address.
+                               | Download Count: 11   Last Download: 05-01-97
+                               |
+UNZIP211.ZIP    23455  04-09-89  My improved Unix/MSC version - please look!
+                               | Download Count: 2    Last Download: 02-04-94
+                               |
+UNZIP30.ZIP     40427  05-03-90  version 3.0 of a portable unix unzipper
+                               | Download Count: 6    Last Download: 10-22-94
+                               |
+UNZIPAPL.ZIP    36242  09-10-92  unzip ported to the Apple gs APW shell
+                               | Download Count: 0
+                               |
+UNZIPBSD.P5       591  06-02-89  Patch#5 for unzip. Fix NULL referance.
+                               | Download Count: 0
+                               |
+UNZ_UNIX.ZIP    28345  09-17-89  Generic UnZip
+                               | Download Count: 1    Last Download: 11-19-93
+                               |
+UPDSUM.ZIP       1515  12-04-85  Update subsystem summary headers
+                               | Download Count: 0
+                               |
+UZIP201A.ZOO    48308  10-09-89  Port of your UNZIP to allow it to be used on
+                               | UN*X systems, from Pat Myrto. Please keep in
+                               | .ZOO format so that the file may unpack
+                               | correctly on systems other than MSDOS.
+                               | Download Count: 0
+                               |
+VECTMAP.ZIP      6355  11-10-88  Prints a commented map of interrupt vectors
+                               | Download Count: 2    Last Download: 08-27-94
+                               |
+VISIBLE.ZIP      1107  10-29-85  Filter converts junk into visible strings
+                               | Download Count: 3    Last Download: 04-14-97
+                               |
+VISTREE.ZIP     10086  11-29-88  Visual directory tree / TPAS source
+                               | Download Count: 1    Last Download: 10-25-94
+                               |
+VMUNZIP.ZIP     67648  08-05-89  VM/CMS version of UNZIP by Samuel Smith.
+                               | Assumes good knowledge of vm/cms.
+                               | Full pascal source and executable included.
+                               | Please feedback to John Mckown on compuserve
+                               | id 72325,1705
+                               | Download Count: 0
+                               |
+VUNZIP.ZIP      14676  02-01-90  UNZIP utility ported for VAX/VMS systems
+                               | Download Count: 1    Last Download: 01-15-94
+                               |
+WC.ZIP           1229  10-17-85  Word counter filter
+                               | Download Count: 3    Last Download: 10-30-94
+                               |
+WHAT.ZIP         1621  07-10-89  Shows what commands are on PATH
+                               | Download Count: 2    Last Download: 02-19-96
+                               |
+WRAP.ZIP         1273  07-16-87  Column wrap filter
+                               | Download Count: 4    Last Download: 09-11-95
+                               |
+ZIPDS12.ZIP     10640  01-03-91  Quick Zipfile Date Stamper
+                               | This utility can be used to QUICKLY update th
+                               | date/time stamp on a bunch of zipfiles.  It
+                               | aLso Checks for
+                               | does not verify the CRC, but still catches
+                               | about 80% of all bad zipfiles.)   Includes
+                               | TPAS source.  Modified to enhance ProDoor's
+                               | "Upload Testing" function.
+                               | Download Count: 10   Last Download: 03-11-97
+                               |
+ZIPLNK10.ZIP    10112  09-20-91  ZipLink 1.0 simplified menu shell for use
+                               | with ZIP15.ZIP to work like LapLink.  NEW!
+                               | Download Count: 5    Last Download: 02-01-97
+                               |
+ZIPTV21.ZIP     42439  01-24-91  ZIP text-view cmd for PCBVIEW/ProDoor
+                               | Uses ZIP Text-View functions of ProDoor. Adds
+                               | -M option to limit amount of text viewing
+                               | allowed. Corrects local operation under
+                               | PCBOARD.EXE. Better error checking to prevent
+                               | lockups with truncated ZIP files.
+                               | Download Count: 36   Last Download: 01-12-95
+                               |
+ZIPV13.ZIP       8037  07-14-89  Zipfile verbose lister
+                               | Download Count: 3    Last Download: 08-02-94
+                               |

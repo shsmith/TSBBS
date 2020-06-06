@@ -1,0 +1,5 @@
+   Sam, Don and Paul modified recycle, again, to fix the way it's looking
+   for COPY in the door file on a specific line.  Theirs looks for it
+   anywhere in there.  It's yours, post it if you like!
+
+Don and Lana

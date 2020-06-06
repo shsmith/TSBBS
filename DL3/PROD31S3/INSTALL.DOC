@@ -1,0 +1,316 @@
+
+                       ProDoor Automatic Installation
+
+The INSTALL program will automatically install ProDoor in most standard
+PCBoard systems.   It will add to your PCBoard files and will customize
+the ProDoor setup files.
+
+WHAT TO DO
+==========
+
+1. Make a "TEMP" directory to work from.  All files will start here
+   and will be copied into thier final locations.
+
+2. Extract these archives into the TEMP directory:
+      PRODOR31.ZIP   (The main DOOR program and supporting files)
+      PKZ102.EXE     (Zipfile utilities)
+      DSZ0525.ZIP    (Ymodem, Zmodem) or newer
+      ZIPTV20.ZIP    (Zipfile text viewer)
+      WXFR0417.ZIP   (Window Xmodem)   \___
+      PCKERM21.ZIP   (Super Kermit)    /   optional protocol drivers
+
+3. Type 'INSTALL' and answer the questions.
+
+THAT'S ALL THERE IS TO IT!!!
+
+
+NOTES:
+
+1. Review 'PRODOOR.DOC' if you are running a network or if you want  to
+   customize your installation.  This tells you how to edit the default
+   configuration files.
+
+2. Run PRINTDOC.BAT to print out the complete documentation for ProDoor.
+   Run FILEDOC.BAT to file the complete documentation in PRODOOR.MAN for
+   BBS posting or online browsing.
+
+3. The file INSTALL.LOG is a record of the installation dialog.
+   PLEASE INCLUDE A COPY OF THIS FILE WITH ANY PROBLEM REPORTS.
+
+4. Use CONFIG.BAT to configure ProDoor and update PROD.CNF.
+
+5. When reporting problems, *PLEASE* INCLUDE THE FOLLOWING FILES:
+          INSTALL.LOG,
+          PROD.CNF,
+          PCBOARD.DAT,
+          CNAMES.
+    o  Describe the EXACT error message or problem.
+    o  Give instructions for how to reproduce the problem.
+    o  Report the date and time on the original PRODOOR.EXE file.
+
+6. See PROBLEM.DOC for information on reporting installation problems
+    and program bugs.
+
+
+DISCLAIMER
+==========
+I cannot be responsible for any damages resulting from the use or mis-
+use of this program!    
+
+If you have any questions, bugs, or suggestions, please contact me at
+The Tool Shop,  (602) 279-2673.   The latest version is always
+available for downloading.
+
+Enjoy!     Samuel H. Smith,  Sysop of The Tool Shop.
+
+SAMPLE SESSION
+==============
+
+----------------------------------------------------------
+             Automatic Installation Procedure
+----------------------------------------------------------
+
+This program will automatically install ProDoor in most standard
+PCBoard systems.   It will add to your PCBoard files and will
+customize the ProDoor setup files.
+
+Before running this program, you should EXTRACT the following archives
+into the current directory (NOT your final ProDoor directory!).
+   PRODOR31.ZIP   (The main DOOR program and supporting files)
+   PKZ102.EXE     (Archive utilities)
+   DSZ0525.ZIP    (Ymodem, Zmodem)
+   WXFR0417.ZIP   (Window Xmodem)   \___
+   PCKERM21.ZIP   (Super Kermit)    /   optional protocol drivers
+
+----------------------------------------------------------
+        Type ^C at any time to abort this program
+----------------------------------------------------------
+
+What is your PCBoard system directory:
+  (Enter)='C:\PCB'? L:\PCB2
+
+Install ProDoor as what door number:
+  (Enter)='1'? 1
+
+Where will ProDoor files be stored:
+  (Enter)='L:\PROD'? L:\PROD
+
+
+Specify SUBDIRECTORIES on a RAMDISK if one is available...
+
+Where will UPLOADS/DOWNLOADS be routed:
+  (Enter)='L:\PLAY'? K:\PLAY
+
+
+Where will SCRATCH.ZIP be routed:
+  (Enter)='L:\SCR'? K:\SCR
+
+
+----------------------------------------------------------
+
+ProDoor routes invalid uploads to a special "holding" directory.
+
+Where will HELD/DUPLICATE uploads be stored:
+  (Enter)='L:\HOLD'? L:\PCB\HOLD
+
+Where will HELD/DUPLICATE uploads be listed:
+  (Enter)='L:\PCB\GEN\DIR99'? L:\PCB\ADMIN\HELD
+
+Create directory L:\PCB\HOLD
+
+----------------------------------------------------------
+
+Here is your current PATH setting:
+   K:\;C:\DOS;C:\BIN;C:\LANTASTI;L:\BATCH;M:\BIN;M:\BIN1;M:\BIN2;M:\TP;M:\TD;M:\TC;M:\TASM
+
+The protocol driver .EXE and .COM files directory 
+*MUST* be
+included in your PATH setting.
+
+Where are your utility .EXE and .COM files stored:
+  (Enter)='K:\'? M:\BIN
+
+----------------------------------------------------------
+
+Add standard ProDoor entries to PCBoard system files now? (y/n) Y
+
+Checking your L:\PCB\MAIN\DOORS.DAT file:
+   Already has "PRODOOR" ... nothing changed.
+
+Checking your L:\PCB\GEN\DOORS file:
+   Already has "PRODOOR" ... nothing changed.
+
+Checking your L:\PCB\GEN\DOORSG file:
+   Already has "PRODOOR" ... nothing changed.
+
+----------------------------------------------------------
+
+PCBoard will not allow a default protocol that is not listed in
+PCBPROT.DAT.  In a standard ProDoor installation, you will replace
+this file with one that lists all the protocols but says "Door 1 only".
+
+Install the default PCBPROT.DAT file now? (y/n) Y
+
+Customizing PCBPROT.INS into PCBPROT.DAT for your system...
+
+PCBPROT.DAT  copied to L:\PCB2\PCBPROT.DAT
+
+
+PCBoard generates the error message "Missing SHELL file" when a user attempts
+to use a ProDoor protocol from PCBoard.  This is normal.  If you wish, you
+can use MKPCBTXT.EXE to change the message to "Protocol not available".
+
+----------------------------------------------------------
+
+Install standard ProDoor files now? (y/n) Y
+
+Create directory L:\PROD
+
+Customizing PRODOOR.INS into PRODOOR for your system...
+
+Customizing PROD.INS into PROD.CNF for your system...
+
+Customizing CONFIG.INS into CONFIG.BAT for your system...
+
+
+PRODOOR  copied to L:\PCB2\PRODOOR
+
+PROARCM  copied to L:\PROD\PROARCM
+
+PROCHAT  copied to L:\PROD\PROCHAT
+
+PROCLOS  copied to L:\PROD\PROCLOS
+
+PRODUMP  copied to L:\PROD\PRODUMP
+
+PROENTR  copied to L:\PROD\PROENTR
+
+PROFREE  copied to L:\PROD\PROFREE
+
+PROHELP  copied to L:\PROD\PROHELP
+
+PROMAIL  copied to L:\PROD\PROMAIL
+
+PROMENU  copied to L:\PROD\PROMENU
+
+PROMENUG  copied to L:\PROD\PROMENUG
+
+PRONEW  copied to L:\PROD\PRONEW
+
+PRONEWG  copied to L:\PROD\PRONEWG
+
+PROREAD  copied to L:\PROD\PROREAD
+
+PROREADG  copied to L:\PROD\PROREADG
+
+PROSTRT  copied to L:\PROD\PROSTRT
+
+PROUSER  copied to L:\PROD\PROUSER
+
+PROVIS  copied to L:\PROD\PROVIS
+
+CONFIG.BAT  copied to L:\PROD\CONFIG.BAT
+
+PRO-P.BAT  copied to L:\PROD\PRO-P.BAT
+
+PRO-R.BAT  copied to L:\PROD\PRO-R.BAT
+
+PRO-T.BAT  copied to L:\PROD\PRO-T.BAT
+
+PRO-V.BAT  copied to L:\PROD\PRO-V.BAT
+
+PRO-X.BAT  copied to L:\PROD\PRO-X.BAT
+
+PROARCM.BAT  copied to L:\PROD\PROARCM.BAT
+
+PROUTEST.BAT  copied to L:\PROD\PROUTEST.BAT
+
+PROD.CNF  copied to L:\PROD\PROD.CNF
+
+CHKPATH.EXE  copied to L:\PROD\CHKPATH.EXE
+
+PRODOOR.EXE  copied to L:\PROD\PRODOOR.EXE
+
+PROECHO.COM  copied to L:\PROD\PROECHO.COM
+
+PRONS.COM  copied to L:\PROD\PRONS.COM
+
+PROSM.EXE  copied to L:\PROD\PROSM.EXE
+
+----------------------------------------------------------
+
+Install Utility / Driver .COM and .EXE files now? (y/n) Y
+
+DSZ.COM (already present)
+
+PCKERMIT.EXE (already present)
+
+WXFER.COM (already present)
+
+ZIPTV.EXE (already present)
+
+ARCTV.EXE (already present)
+
+LZHTV.EXE (already present)
+
+ZIPDS.EXE (already present)
+
+PROXTRA.EXE (already present)
+
+PROXZIP.EXE (already present)
+
+----------------------------------------------------------
+
+Do you want CD-ROM support? (y/n) N
+----------------------------------------------------------
+
+Install any additional "nodes"? (y/n) Y
+
+What is the PCBoard system directory for this node:
+  (Enter)='L:\PCB2'? L:\PCB1
+
+What command is used to recycle this node:
+  (Enter)='BOARD'? BOARD
+
+
+Customizing PRODOOR.INS into PRODOOR for your system...
+
+PRODOOR  copied to L:\PCB1\PRODOOR
+
+
+----------------------------------------------------------
+
+Install any additional "nodes"? (y/n) Y
+
+What is the PCBoard system directory for this node:
+  (Enter)='L:\PCB1'? L:\PCB3
+
+What command is used to recycle this node:
+  (Enter)='BOARD'? BOARD
+
+
+Customizing PRODOOR.INS into PRODOOR for your system...
+
+PRODOOR  copied to L:\PCB3\PRODOOR
+
+
+----------------------------------------------------------
+
+Install any additional "nodes"? (y/n) N
+
+----------------------------------------------------------
+                 Installation Complete!
+----------------------------------------------------------
+
+NOTES:
+ 1. The file INSTALL.LOG is a record of the installation dialog.
+
+ 2. Use CONFIG.BAT to configure ProDoor and update PROD.CNF.
+
+ 3. When reporting problems, PLEASE INCLUDE THE FOLLOWING FILES:
+          INSTALL.LOG, PROD.CNF, PCBOARD.DAT, CNAMES.
+    o  Describe the EXACT error message or problem.
+    o  Give instructions for how to reproduce the problem.
+    o  Report the date and time on the original PRODOOR.EXE file.
+
+

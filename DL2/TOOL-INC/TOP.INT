@@ -1,0 +1,14 @@
+(*
+ * top - utility library for simple "pull-down" windows
+ *        uses functions in popup.inc (3-1-89)
+ *
+ *)
+
+const
+   top_pulled:  boolean = false;
+   top_entry:   integer = 0;
+
+procedure top_menu(topx,topy:   integer);
+   {top level pulldown window processor; display the top level window
+    and process pulldowns related to it}
+

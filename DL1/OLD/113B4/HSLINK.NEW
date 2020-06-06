@@ -1,0 +1,126 @@
+
+HS/Link Revision History (in reverse order)
+-------------------------------------------
+
+NOTE: THIS IS A BETA TEST VERSION!  THE CURRENT RELEASE VERSION IS 1.12!
+
+04-Sep-92
+   Released as a public beta under filename HS113B4.ZIP.
+
+02-Sep-92
+   Added new -NK (do not keep aborted downloads) option to override any
+   previous -K option in either the command line or a configuration
+   file.
+
+31-Aug-92
+   More internal changes to help with systems that do not always respect
+   the high order bit.  This may help XON/XOFF handshake via PC Pursuit.
+
+   Some non-public betas posted today did not work.
+
+   Some non-public betas posted today gave a false 'bad ready crc'
+   during the initial handshake process.
+
+   Added logic to give priority to the lower serial numbered copy when
+   two registered copies attempt to use the -! option.  This may save
+   transfers that would otherwise fail due to conflicting setting
+   overrides.
+
+30-Aug-92
+   More changes to solve PC Pursuit problems.
+
+27-Aug-92
+   Internal changes.  Some versions posted on 27-Aug did not correctly
+   handshake with the remote prior to starting file transmission.
+
+   Released as a public beta under filename HS113B2.ZIP.
+
+25-Aug-92
+   Released as a public beta under filename HS113A1.ZIP.
+
+19-Aug-92
+   Internal changes to protect the CR-@-CR sequence used by PC Pursuit to
+   escape to a command mode.  This version identifies itself as 1.13à1.
+
+18-Jul-92
+   Internal changes to guard the codes 0x91 and 0x93 when XON/XOFF
+   handshake is enabled.  This change was required because some common
+   FOSSIL drivers accept these codes as alternates for the normal 0x11
+   and 0x13 XON/XOFF codes.
+
+17-Jul-92
+   The alphas were sometimes using directvideo while loading the
+   config file- this has been correct.
+
+16-Jul-92
+   More changes in batch status calculations.
+
+   The FOSSIL version of HS/Link is now ready for alpha testing.
+   See FHSLINK.EXE and FHSLINK.DOC for details.
+
+13-Jul-92
+   11-jul and 12-jul alphas send HS* <esc> ^B ... instead of HS* ^B ...
+   during the initial handshake, preventing some auto-download detectors
+   from working.
+
+   Added a very simple "chat" function which is automatically activated
+   when you begin typing at the keyboard.  Press ESCAPE to restore the
+   normal settings window display.  (this is an experimental feature
+   which may not make it into the next planned bugfix-release).
+
+11-Jul-92
+   Changes to possibly eliminate all remaining false "exit code 2"
+   conditions following a successful transfer.
+
+10-Jul-92
+   Added logic to automatically reduce 'window' size when flow control
+   appears to be failing.
+
+09-Jul-92
+   The batch status bargraph was not working in 8-jul alphas.
+
+08-Jul-92
+   Additional changes in batch status window to give best estimate of
+   time remaining during bidirectional transfers.  Time estimate is now
+   based on the channel with the most bytes remaining to transfer rather
+   than the most total bytes to transfer.
+
+06-Jul-92
+   Corrected HSCONFIG to set MONO default colors only when a new
+   configuration file is being created.
+
+05-Jul-92
+   Correction in batch status totals when files are skipped in the
+   incoming files window.
+
+   Correction of batch time estimate to reflect only the time remaining
+   in the larger of the send or receive batches.
+
+14-May-92
+   Version 1.11 didn't solve the problem for some slow machines.
+   Additional changes in 1.12 seem to cover all the bases.
+
+   Posted version 1.12 as hslk112.zip for testing.
+
+14-May-92
+   Version 1.10 will sometimes return errorlevel 2 after successfully
+   receiving files and when no outgoing files are active.  Version 1.11
+   corrects this.
+
+   Posted version 1.11 as hslk111.zip for testing.
+
+13-May-92
+   Official release of HS/Link 1.10 as HSLINK11.ZIP.
+   See WHATSNEW.110 for a complete list of changes between version 1.0
+   and version 1.1.
+
+14-Jan-92
+   Official release of HS/Link 1.00 as HSLINK10.ZIP.
+
+17-Oct-91
+   Initial posting of HS/Link beta as HSLK10B.ZIP.
+
+July-87
+   Initial protocol design and prototype development began but was never
+   made functional enough for public testing.
+

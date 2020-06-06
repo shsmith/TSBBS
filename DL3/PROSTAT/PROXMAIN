@@ -1,0 +1,16 @@
+; PROXMAIN - ProDoor command translation definition for MAIN command prompt
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+0,S,DOOR        ;translate "S" into "DOOR 15" for all user levels
+0,LIB,?         ;disable this command
+0,UPGRADE,DOOR 13
+0,HELP,DISP-M:\PROD\PROHELP     ;display 'PROHELP' file when 'HELP'
+                                ;command is used.
+0,WHO,NODE                      ;list who's on the system
+0,WH,NODE
+0,SELECT,J A                    ;select conferences
+0,SE,J A
+0,V,DISP-U:\PCB\GEN\STATS.TXT

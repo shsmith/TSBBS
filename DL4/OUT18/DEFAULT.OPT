@@ -1,0 +1,10 @@
+{options for OUTLINE v1.2}
+60    {max number of lines to print on a page}
+20    {min number of lines on a page}
+4     {spaces of indentation for each level of nesting}
+77    {right margin for reformatted print file outputs}
+-     {character used to underline section titles}
+1     {should paragraphs of text be reformatted?  1=yes, 0=no}
+1     {should output be divided into pages?  1=yes, 0=no}
+2     {text mode code:  2=bw80, 3=c80}
+

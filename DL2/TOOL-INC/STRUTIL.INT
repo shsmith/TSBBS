@@ -1,0 +1,5 @@
+function len(var s: longstring): integer; 
+procedure concat_char(var s: longstring; c: char);
+procedure concat_str(var s: longstring; var s2: longstring);
+function lastchar(var s: longstring): char;
+procedure copy_str(var s: longstring; var s2: longstring);

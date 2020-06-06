@@ -1,0 +1,22 @@
+CC       BAT       88   3-15-89   3:30p ms-dos batch to compile with turbo c
+CRC32    C       8412   3-15-89   3:27p ms-dos crc-32 calculation
+CRC32    H        158   3-15-89   3:26p ms-dos crc-32 header
+MDOSIO   PAS     8950   3-05-89  11:01a ms-dos i/o library for turbo pascal
+PRODEF   INC      329   3-08-89   4:40p pascal 'options' include
+UNZ      PAS    20661   3-13-89   7:14p unzip source for turbo pascal 5
+UNZIP    C      23267   3-15-89   3:22p unzip source for turbo c 2.0
+UNZIP    DOC     2957   3-15-89   1:18p documentation for unzip
+UNZIP    EXE    15552   3-15-89   3:30p ms-dos exec file for unzip
+UNZIP    VAX    21906   4-01-89   9:21p vax ported unzip source code
+UNZIP    UNX    17294   4-01-89   9:23p unix ported unzip source code
+ATUNZIP  DOC     4732   3-30-89  10:45p atari unzip documentation
+ATUNZIP  PRG    21747   3-30-89  10:45p atari ported unzip source code
+ATCRC32  C       9735   3-30-89  10:45p atari ported crc-32 calculation
+ATCRC32  H        138   3-30-89  10:45p atari ported crc-32 header
+ATUNZIP  C      25600   3-30-89  10:45p atari ported unzip source code
+GSCRC32  C       8576   4-29-89   8:59p apple //gs ported crc-32 source
+GSCRC32  H        256   4-29-89   8:54p apple //gs ported crc-32 header
+GSLOCAL  H        512   4-29-89   8:55p apple //gs machine local header
+GSUNZIP  C      26373   4-30-89   7:46a apple //gs ported unzip source
+GSUNZIP  DOC     2671   4-30-89   7:49a apple //gs implementation nodes
+UNZIPBSD SHA    38528   4-18-89   9:08a unix 'shar' format port to unix

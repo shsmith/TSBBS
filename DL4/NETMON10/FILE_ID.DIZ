@@ -1,0 +1,6 @@
+NETMON - Network I/O Monitor
+This program is a TSR that provides a
+running display of network I/O activity.
+Should work with all NETBIOS type networks
+using interrupt 5C.
+Sourceware from Samuel H. Smith.

@@ -1,0 +1,200 @@
+
+  ==========================================================================
+                    SUMMARY OF WHAT'S NEW IN VERSION 1.1
+  ==========================================================================
+
+     HS/Link version 1.1 corrects all known problems in version 1.0 and
+     adds a number of new features and options.
+
+     HS/Link version 1.1 is a direct replacement for version 1.0 and
+     does not require any change in command line options or
+     configuration options.  There are a number of NEW options you may
+     want to take a look at.
+
+     The most important new feature in version 1.1 is the "batch status"
+     display, which now gives a running summary of total bytes
+     transferred and estimated time remaining for the transfer.
+
+     The following options have been added or enhanced:
+
+      -CB     Controls color of bargraph displays.
+
+      -FC     Forces CTS handshake to remain in effect, even when the
+              handshake hardware appears to be inactive.
+
+      -FL     Directs log file to specified filename as an alternative
+              to using the DSZLOG environment variable.
+
+      -N5     Disable 16550 buffering logic.  Needed when the UART
+              appears to be a 16550-type chip, but does not correctly
+              implement hardware buffering.
+
+      -NO     Check specified directories or filenames for
+              duplication with incoming files.
+
+      -PB     Option now allows non-standard com base addresses to be
+              entered in hex as well as decimal.
+
+      -PI     Option now allows high IRQ values 8-15.
+
+
+
+  ==========================================================================
+                  DETAILED LIST OF CHANGES IN VERSION 1.1
+  ==========================================================================
+
+     Added -CB option to control color of bargraph displays.
+
+     Added -FC option to force CTS handshake to remain in effect, even
+     if it CTS is not active initially.  This may be required if you are
+     SURE you need CTS handshake, but when CTS is occasionally dropped
+     by the modem just as HS/Link loads.
+
+     Added -LFlogfile option to allow DSZLOG log file pathname to be
+     specified from a config file when use of the DSZLOG environment
+     variable is not desired.
+
+     Added -N5 option to disable the NS16550AN buffering logic, which
+     causes problems on some early flawed versions of the 16550 chip.
+
+     Added a new BATCH STATUS display, which shows total bytes expected
+     and completed, as well as estimated time remaining for the batch.
+
+     Added a new ERRORLEVEL 10 exit to indicate that carrier was lost
+     during the initial handshake with the remote.
+
+     Added a new ERRORLEVEL 11 exit to indicate when the link was
+     aborted due to CTS handshake lockup.  This condition can occur with
+     some error correcting modems when line conditions are too poor for
+     continued data transmission.
+
+     Added a prefix to the original "ready" signature, making it less
+     likely that hs/link auto upload or auto download will falsely
+     trigger.  The new signatures are:
+          HS*^BR
+     and
+          HS*^BQ
+     The 'HS*' prefix has been added.
+
+     Added expected incoming and outgoing file counts in -NF display mode.
+
+     Added logic in HSCONFIG to create the default HSLINK.CFG file in
+     the same directory as HSLINK.EXE instead of in the current
+     directory.
+
+     Added logic to allow HS/Link operation when DoorWay is active.
+
+     Added logic to allow ^Z eof marking in FILELIST files.
+
+     Added logic to allow hex values to be specified for -PB and most
+     other integer command line options.  Option format is:
+          -PBdecimal
+          -PB$hex
+          -PB0xhex
+     for example, -PB1000 means the same thing as -PB$3E8.
+
+     Added logic to allow simple filenames as well as directory names in
+     the upload duplication check file.  This allows quicker duplication
+     checking over networks or CD-ROMS.
+
+     Added logic to automatically cancel a link after repeated ACK
+     timeout errors.
+
+     Added logic to correctly handle the interrupt controller PIC
+     register on exit when running on some multi-tasking systems.
+
+     Added logic to give registered copies of hslink priority over
+     unregistered copies when both sides of the link are using the -!
+     (take priority) option.   Behavior in this situation used to be
+     undefined.
+
+     Added logic to ignore lines in -NO files that contain x:/....
+     rather than x:\...., making it possible to use the same BLDLIST
+     outputs in both hslink and prodoor systems.
+
+     Added logic to leave NS16550 buffering enabled if it was found to
+     already be enabled on program entry.
+
+     Added logic to prevent block character devices (such as CON, NUL,
+     CLOCK$, PRN, etc.) as transfer filenames.
+
+     Added logic to prevent upload duplication prior to bidirectional
+     transfers.  Without this feature, duplicate uploads will be
+     completely received before the duplication is detected by the BBS.
+     To enable this feature, use the option:
+        -NOdirlist
+     where 'dirlist' specifies the full pathname of a file containing
+     one directory spec per line.  Each specified directory will then be
+     checked for duplication with incoming files.  For example, PCBoard
+     systems may use the option:
+        -NOC:\PCB\GEN\DLPATH.LST
+     to prevent upload duplication.  Use a program like MKDLIST.ZIP to
+     create file lists for use with the -NO option.  This logic will
+     check over 40000 files for duplicates in under 5 seconds on a
+     386/20 machine.
+
+     Added logic to reset the current transmit file when a file read
+     error occurs.
+
+     Added new DSZLOG codes to distinguish between transmit errors and
+     receive errors. The new DSZLOG codes used are:
+          'H'=file received from remote
+          'h'=file transmitted to remote
+          'E'=file receive was aborted
+          'e'=file transmit was aborted (used to be 'E')
+          'L'=lost carrier during file receive
+          'l'=lost carrier during file transmit (used to be 'L')
+
+     Added some logic to check for systems not using SHARE.
+
+     Added support for -I, -N5, -NM and -NO options in HSCONFIG.
+
+     Added support for high IRQ vectors (8-15) on AT class machines.
+
+     Changed CPS calculation to properly account for skipped data during
+     file transfer crash recovery.
+
+     Changed CPS calculations to prevent numeric overflow at around 11megs.
+
+     Changed DSZLOG entries to always include spaces with files over 1meg.
+
+     Changed HSCONFIG to allow nonstandard base addresses in HEX.
+
+     Changed HSLINK.EXE and HSCONFIG.EXE to search for HSLINK.CFG the
+     following logic:
+          1) search the current directory,
+          2) search the directory where HSLINK.EXE is located
+          3) search the PATH directories
+
+     Changed crash recovery message in transmit window from "Seek to
+     block" to "Crash recovery at block".
+
+     Changed logic to include bargraphs even in unregistered copies of
+     HS/Link, making unregistered copies fully functional.
+
+     Changed settings display to say "COMx" rather than "COM1" when non-
+     standard com port settings are being used.
+
+     Corrected dropped characters during transmit with some internal
+     modems. Thanks to Mark Talley and William Elliott for helping to
+     track down this bug.
+
+     Corrected final CPS calculation in outgoing files window when crash
+     recovery is in effect.
+
+     Corrections to prevent endless "ACK timeout" errors under some
+     conditions.
+
+     Corrections to prevent occasional '... was incomplete!' condition
+     in the last file of a batch.
+
+     Major documentation updates.
+
+     Patched Borland's runtime library to prevent loss of interrupts
+     during direct video screen updating.  This may eliminate the need
+     for the -NV option in cases where overrun errors occur during
+     screen updates.
+
+     Removed supurflous "Please use -O with -R" message when files are
+     rejected via -NO lists and user has requested -R.
+

@@ -1,0 +1,41 @@
+                           Information from
+                         The Old Ranch House 
+                             Tooele, Utah
+                            (801) 882-3526
+                          By Edward Schneider
+
+
+This is the setup we use for Maximus 2.00
+
+Place the following line ir your Autoexec.Bat file.
+
+------------ Cut Here -------------
+
+SET DSZLOG=C:\MAX\DSZLOG.LOG
+
+------------ Cut Here -------------
+
+The following information goes into your Protocol.Ctl file.
+
+-------------------- Cut Here --------------------------------------
+
+Protocol HS/Link
+         Type            Batch
+;        Type            Errorlevel
+         Type            Bi
+;        Type            Opus
+
+         LogFile         C:\MAX\DSZLOG.LOG
+         ControlFile     C:\MAX\HSLINK.CTL
+         DownloadCmd     HSLINK.EXE -E%W -P%P -U%V @C:\MAX\HSLINK.CTL
+         UploadCmd       HSLINK.EXE -E%W -P%P -U%V
+         DownloadString  %s
+         UploadString
+         DownloadKeyword " h "
+         UploadKeyword   " H "
+         FilenameWord    10
+         DescriptWord    0
+End Protocol
+
+-------------------- Cut Here --------------------------------------
+

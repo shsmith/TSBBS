@@ -1,0 +1,58 @@
+
+-----------------------------------------------------------
+--                                                       --
+--                 I/O Port Operations                   --
+--                    Package Body                       --
+--                 28-Jul-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+--@ with SCREENOP; use SCREENOP;
+
+package body PORTOPS is
+
+   port_number: PORT_ADDRESS;
+   port_data:   byte;
+      -- static variables for communication with inline assembly language
+
+
+   function READ (port: in PORT_ADDRESS) return integer is
+      -- read from an input/output port and return the
+      -- 8 bit data as an integer
+   begin
+      port_number := port;
+      asm 16#168b#,port_number'address;   -- mov dx,[port_address]
+      asm 16#ec#;                         -- in al,dx
+      asm 16#a2#,port_data'address;       -- mov [port_data],al
+
+--@ POSITION_CURSOR(1,25);
+--@ put("PORTOPS.READ port="); put_hex(integer(port));
+--@ put(" data="); put_hex(port_data); new_line;
+
+      return integer(port_data);
+   end READ;
+
+
+   procedure WRITE (port: in PORT_ADDRESS;
+                    data: in integer) is
+      -- write 8 bits of data to the specified input/output port
+   begin
+      port_number := port;
+      port_data := byte(data);
+
+--@ POSITION_CURSOR(1,25);
+--@ put("PORTOPS.WRITE port="); put_hex(integer(port));
+--@ put(" data="); put_hex(port_data); new_line;
+
+      asm 16#168b#,port_number'address;   -- mov dx,[port_address]
+      asm 16#a0#,port_data'address;       -- mov al,[port_data]
+      asm 16#ee#;                         -- out dx,al
+   end WRITE;
+
+
+end PORTOPS;
+
+

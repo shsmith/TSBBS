@@ -1,0 +1,7 @@
+HS/Link external protocol driver RELEASE 1.00
+Compiled: 6:17 pm, Tuesday, January 14, 1992 
+HS/Link is a new high speed, full streaming,
+bi-directional batch file transfer protocol
+with advanced full-streaming-error-correction
+and dynamic-code-substitution.
+It is easy to use and runs very fast.

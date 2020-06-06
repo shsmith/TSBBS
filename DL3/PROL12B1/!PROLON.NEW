@@ -1,0 +1,547 @@
+$NOMACS$
+
+ProLogon Revision History (reverse order)
+-----------------------------------------
+
+08-Dec-92
+   Some 08-Dec postings would incorrectly say "Name in use on another
+   node" following a new user registration.
+
+   The logic to prevent callers simultaneously logging into multiple
+   nodes was not working.
+
+23-Nov-92
+   Security levels were not being logged for "special service" logons.
+
+11-Nov-92
+   Added new /LOCAL command line option and new
+        FORCE_LOCAL ON
+   option keyword to allow a node to be configured to immediately go to
+   the "local logon" process instead of the call waiting screen.
+
+09-Nov-92
+   the "Ring Detected" usernet message was not being cleared if no
+   connection is actually established.
+
+07-Nov-92
+   Added new
+        IDLE_MESSAGE <message text>
+   option keyword to allow you to define a 25 character message to be
+   shown in USERNET.XXX when this node is idle and waiting for a call.
+
+05-Nov-92
+   Changed logic to honor 'lock port at initial speed' even when the modem
+   returns both the 'CARRIER xxx' and 'CONNECT xxx' result codes.
+
+03-Nov-92
+   Changed USERNET.DAT handlers to drop support for old format and to
+   add support for the new format used by recent pcboard releases.  You
+   must update or replace all other door programs that use the old
+   format usernet file.
+
+01-Nov-92
+   Changed logic to allow zeros as well as spaces in USERS file to
+   indicate a new EXTUSER record needs to be allocated.  This may solve
+   a problem with "new" versions of 14.5a...
+
+29-Oct-92
+   Corrected runtime error 201 @ 0e89:00bb which was called by a funny
+   "minutes used" value being logged to the caller log.
+
+   Added logic to capture Supra-style caller ID information and to log
+   it to the caller log.
+
+   Added logic to honor the "warning days prior to expiration" setting
+   in pcbsetup.  Older code always used a 1 month warning.
+
+28-Jul-92
+   Internal changes to prevent loss of display-OFF toggle during system
+   event.
+
+27-Jul-92
+   More changes to prevent false events.
+
+07-Jul-92
+   Added support for $$LOGON.BAT file during logon.
+
+01-Jul-92
+   Internal change in bufio unit to prevent endless DOS error [6]
+   retries while reading buffered files.
+
+30-Jun-92
+   Added some checks to prevent strangeness when carrier is dropped
+   during the new user display.
+
+   Added logic to drop carrier before exiting prolon.exe due to
+   excessive input errors.
+
+19-Jun-92
+   Added support for $$LOGOFF.BAT file during logoff.
+
+27-May-92
+   Added an optional second parameter to the MONITOR_COM keyword to
+   specify forced door number to access when the monitored com port
+   activity is detected.  This allows normal local logons as well as
+   automatic remote logons via the MONITOR_COM system.
+
+   Please see PROLON.CNF for information on the new 'special services'
+   menu and how to set it up.
+
+21-May-92
+   Added error checking in 'special service #' prompt to repeat prompt
+   if an invalid response is provided.
+
+06-May-92
+   Default local graphics mode was not being preserved on local
+   selection of special services.
+
+16-Apr-92
+   Ansi detection was leaving '[ansi detect]' on the screen but should
+   have erased it on successful detection.
+
+15-Apr-92
+   Added new
+        AUTO_LOGON_MENU ONLY
+   option to prevent normal logons via prologon, restricting users to
+   only the AUTO_LOGON menu functions.  Use
+        AUTO_LOGON_MENU ON
+   to provide the special services menu and still allow access to the
+   normal bbs functions.  See the sample PROLON2.CNF file for further
+   details.
+
+   Added new environment variables
+        SET PCBSPEED=xxxxxx
+        SET PCBERR=yyy
+   where xxxxx is the actual user connect speed, and yyy is blank for
+   non-error correcting connections or /ERR for error correcting
+   connections.
+
+14-Apr-92
+   Added new
+        AUTO_LOGON_MENU ON
+   option to cause a menu of auto logon keywords to be presented prior
+   to the normal GRAPHICS or LANGUAGE prompt.
+
+   Added new
+        DETECT_ANSI ON
+   option to cause automatic ANSI detection to be used to provide the
+   default for the 'do you want GRAPHICS' prompt.
+
+09-Apr-92
+   Added support for up to 10 different AUTO_LOGON keywrods.
+
+07-Feb-92
+   The AUTO_LOGON keyword was not being recognized at the "Do you want
+   graphics" or the "language" prompt.
+
+04-Feb-92
+   Added a new option keyword
+        AUTO_LOGON key logon
+   which will check for user input of 'key' and will then act as though
+   the user had entered 'logon' string.  This makes it possible to
+   activate special facilities with single word logons, bypassing the
+   normal user name/password/new user process for things such as mailers
+   or online ordering programs.
+
+   Added support for single name user option in pcbsetup.
+
+24-Dec-91
+   Corrected display of WARNING message with certain of expiration dates
+   near the year's end.
+
+18-Sep-91
+   Added a new option keyword
+        MONITOR_COM n
+   where n is 1 for COM1 and 2 for COM2.  If present, this causes
+   ProLogon to monitor an alternate COM port (which MUST be different
+   than the one used for communication by this node), and if characters
+   are received, it will automatically generate the 'S'ysop-into-system
+   function.  This can be used to automatically drop out of prologon
+   when a LapLink-type connection is requested through a second com
+   port.  Note that for this feature to work, you must initialize the
+   monitored COM port prior to entry into ProLogon.
+
+12-Sep-91
+   Corrected the DOOR prompt to allow doornames beginning with S to be
+   handled properly; they were being routed to the system door instead.
+
+11-Sep-91
+   Added a new option keyword
+        SYSTEM_LEVEL n
+   where n specifies the minimum security level required to access the
+   (S)ystem option in the prolon door menu.
+
+10-Jul-91
+   Added a test to prevent attempted expansion of @x variables when the
+   two characters following @x are not proper hex digits.  This should
+   prevent unexpected expansion of character sequences that are not
+   really valid @x codes.
+
+08-May-91
+   Corrected OPEN DOOR command to correctly select a door by name when
+   the door name has numbers in it.
+
+   Added command line passing to door files.
+
+   Added logic to insert the following lines prior to executing a door:
+      SET PCBDOOR=open door command parameters
+      SET PCBDRIVE=C:
+      SET PCBDIR=C:\PCB3
+      SET PCBDAT=C:\PCB3\PCBOARD.DAT
+      SET PCBNODE=3
+      SET PCBPORT=1
+   for compatibility with recent pcb145+ betas.
+
+   Corrected an error in DOOR logic that totally prevented opening doors
+   that are flagged to require pcboard 14.5 USER.SYS or DOOR.SYS files.
+
+20-Apr-91
+   Some display lines were being split in the middle of @X sequences
+   at about character 200 in the expanded text.  This has been changed
+   to split at 250, fixing some displays that were not processed correctly.
+
+11-Apr-91
+   A "More" prompt was sometimes happening in ANSI displays when the
+   cursor is on the last line of the specified page size.
+
+   When processing PROPROGM outside program menus, some statements other
+   than program headers were being matched as menu selections.
+
+   Added new option keyword for PROLON.CNF files:
+        IGNORE_COM_ERR ON
+   which if present, causes ProLogon to ignore ?BREAK and ?OVERRUN error
+   conditions.  This option may be needed with some fax/modem boards.
+
+08-Apr-91
+   The message "opening door (SYSDOOR)" was being printed twice.
+
+02-Apr-91
+   Changed F4(find) function in extended conference configuration to
+   initially clear the conference name.
+
+   Added "node paging sysop" and "user logging on" status codes for
+   USERNET.DAT.
+
+26-Mar-91
+   Added logic to search for PROLON.REG file in the specified
+   "COMMON_DIR" directory rather than the current directory.  Please
+   note that if you are using the COMMON_DIR option in PROLON.CNF you
+   will need to move your PROLON.REG files to the specified directory to
+   prevent the "[UNREGISTERED]" message being displayed.
+
+   Changed language prompt to say
+        Enter=none
+   Rather than
+        0=none, Enter='1'
+   which should be a bit less confusing.
+
+20-Mar-91
+   Corrected occasional extraneous "More?" prompt.
+
+13-Mar-91
+   Corrected an error in passing of current conference number to
+   PCBOARD 14.5 when processing a 143-byte format PCBOARD.SYS file.
+
+   Added a check to prevent entry to the initial door when the user's
+   daily time limit is already exceeded.
+
+   Added
+        SET PROTRNS=ON
+   environment setting to assist in development of PROTRNS files.  When
+   present, the program will output all translatable messages surrounded
+   in {...}.  These can be used to determine changes or additions that
+   are possible in the PROTRNS files.
+
+09-Mar-91
+   Changes in "more" logic to prevent unwanted "more" prompts in
+   some non-graphic displays (broken 2-mar-91).
+
+   Added new
+        CHAT_LEVEL n
+   option to PROLON.CNF to allow specification of minimum security level
+   needed to become "available for chat" on initial login.
+
+08-Mar-91
+   Changed F6(update) function to allow password editing without entry
+   of original password or display of new password.
+
+05-Mar-91
+   Corrected processing of "door directory" entry in DOORS.LST files.
+
+02-Mar-91
+   The PROBAUD file was being accessed from the current directory
+   instead of the "common" directory, as it should have been.
+
+   Corrected translations that resulted in over 240 characters being
+   output. Removed extraneous "more" prompts during some ansi displays.
+
+   Changes in "Going off-hook" procedure to time out if the modem does
+   not return an "OK" result code after 10 seconds. The "Going off-hook"
+   procedure was broken in some early 2-mar-91 betas.
+
+   The (S)ystem option has been broken in betas since 28-Feb-91.
+
+   Added new
+        AUTO_REGISTER ON/OFF
+   configuration file option to control automatic registration of new
+   users for auto-scan in public conferences.  The default is OFF, meaning
+   that new users will _not_ automatically auto-scan public conferences.
+   When turned ON, this feature enables auto-scan flags in all public
+   conferences when a new user is entered into the system.
+
+   Added a check for
+        EXPIRE_DAYS 0
+   in PROLON.CNF to allow new users to be entered into the system
+   with an expiration date of 00-00-00, effectively disabling the
+   expiration date.
+
+01-Mar-91
+   Changed format of PROBAUD file to allow more flexible specification
+   of modem result codes vs true connect speeds.  The new format uses
+   two lines per entry.  The first line is the complete CONNECT
+   statement from the modem, including any protocol codes.  The second
+   line is the actual expected bps for this connect type.  The sample
+   PROBAUD file includes only a brief example of the format-- please add
+   actual statements to this file for your modem type.
+
+28-Feb-91
+   Added logic to properly handle the "door directory" entry in pcb145
+   format doors.lst files.
+
+   Added logic to cause prologon to refuse to open doors requiring
+   USER.SYS or DOOR.SYS files.
+
+19-Feb-91
+   Added logic to limit reprompts on new password entry when
+   verification fails.
+
+   Corrected message when new password is "too easy to guess".
+
+28-Jan-91
+   Corrected processing of PROBAUD file which caused program to hang
+   if an actual baud rate was not found in the PROBAUD data file.
+
+   Corrected "password is too easy to guess" message wording.
+
+   Conference "scan" flags are no longer automatically set for new users
+   into the system.
+
+23-Jan-91
+   Added a new data file PROBAUD.  If present, this file specifies
+   alternate connect speeds for each reported baud rate for error
+   correcting modems.
+
+22-Jan-91
+   Added logic to create new PCBOARD.SYS files in the original 128 byte
+   format when _not_ running under pcboard 14.5.
+
+   Corrected password entry/change logic to check that user names are
+   not used as passwords.
+
+21-Jan-91
+   New users were not being added correctly in 19-Jan betas running
+   under pcb145 (reported as error 1102).
+
+   New users weren't being asked for preferences for visual editor
+   and screen clearing as they should have been.
+
+19-Jan-91
+   Corrected a bug that caused WRITE FAILURE when creating new
+   PCBOARD.SYS files on systems with fewer than 40 conferences.
+
+   Added new file, PROPCAN, which works like TCAN for new user
+   passwords. New users will not be allowed to define passwords that are
+   listed in the PROPCAN file.
+
+17-Jan-91
+   Changed new user default for "Use visual editor" to yes.
+
+   Deleted 'MAILRUN' logic, which is now obsolete.
+
+   Corrected mailer interface to properly drop to dos on carrier
+   loss during user login.
+
+16-Jan-91
+   Changed F6(update user record) function to disable user display
+   of record changes.
+
+   Debugging of mailer interface.
+
+15-Jan-91
+   Added a new configuration file option:
+        MIN_PASSWORD n  ;specifies that new user passwords must be
+                        ;at least n characters long.
+
+   Added logic to reject new user passwords that are part of the
+   username.
+
+14-Jan-91
+   Added the following prompts to new user registration:
+        Disable Visual Editor Prompt (yes/no)
+        Visual Editor Default (yes/no)
+        Clear Screen Between Messages (yes/no)
+
+04-Jan-91
+   Added a front-end mailer interface.  To activate this feature,
+   append the following options to the PROLON command line:
+   /c:SPEED specifies the actual CONNECT speed (eg. 1200, 2400 or 19200)
+   /err if an error correcting connection is active.
+
+14-Dec-90
+   Added logic to ignore extra characters in a password entry.
+
+06-Oct-90
+   Initial posting of ProLogon 1.2 beta.
+   Removed the requirement for use of VALPCB.EXE in un-registered
+   copies, and removed validation of PCBOARD.EXE during REGLON
+   processing.
+
+27-Jun-90
+   Official release of ProLogon 1.1.
+
+Please repeat any reports of serious bugs in this beta.  I want to
+freeze and soon release ProLogon 1.1, so your input is appreciated.
+
+21-Jun-90
+   Background colors/flashing were not being cancelled when entering
+   a display in the 'default color' when the default intensity was set
+   to '1'.
+
+19-Jun-90
+   Carrier was not being dropped when a caller attempted a baud rate
+   below MIN_BAUD.
+
+   Added support for @EVENT@ macro (returning time of next event).
+
+07-Jun-90
+   The Control Panel now adds a line of stars to the end of the caller
+   log file if the file ends with some other entry type.
+
+30-May-90
+   Changes in new crt driver to allow ansi codes that attempt bizarre
+   cursor positioning (such as move-left-255-spaces).
+
+   The caller log browser now hilights "Opened door" entries in red.
+
+28-May-90
+   Corrected endless loop resulting from lost carrier while waiting
+   for the "connect" status from the modem (broken 24-may).
+
+27-May-90
+   Some control panel commands didn't display correctly when issued
+   during a screen blank.
+
+25-May-90
+   The (L)ocal login function was broken in the 24-may beta.
+
+   Increased stack allocation (stack was exhausted in the caller log
+   browser and possibly other functions).
+
+   Corrected an error in the caller log browser with VGA display modes
+   having over 43 text lines.
+
+   Local function keys were left disabled after using the (P)rogram menu
+   function.
+
+   Corrected local non-graphic display to use the default colors instead
+   of white.
+
+
+24-May-90
+   Added new (P) Program Menu function from the Control Panel.  When
+   present, the file PROPROGM is your Program Menu definition file.  See
+   the sample PROPROGM file for an example of the file format.
+
+   There is a new version of PROPANEL.COM which includes the new option.
+   Recent prologon betas are much quicker without PROPANEL.COM so you
+   might consider just deleting the old version and not putting in a new
+   one at all.
+
+23-May-90
+   Corrected the bogus conference number display on the status line
+   prior to entry of the user's password.
+
+22-May-90
+   Added the ability to stack a door password after the door name.
+
+   Added logic to allow a time range prefix in front of door control lines
+   in the PROLON.CNF file.  This allows you to force or restrict doors by
+   time range and security level.  If any door control line has a time
+   range in the form
+        HH:MM-HH:MM
+   before the security level, the line will be ignored at all times
+   outside the specified time range, and will be active within the time
+   range.  Door control lines not starting with a time range are active
+   at all times.
+
+21-May-90
+   Corrected various problems in ANSI codes and screen display colors.
+
+20-May-90
+   After a bit of tinkering I have decoded most of the USER.INF file
+   format.  This beta should add USER.INF records correctly, even when
+   you have other applications installed in it.
+
+   I've also included a little utility that decodes your USER.INF file
+   and reports what it finds-- this tests my logic in decoding the
+   format.
+
+19-May-90
+   Removed support for PCBTRAP.
+   Rewrote screen handlers for quicker displays.
+   Note: the environment setting
+        SET OVCRT=ON
+   may be needed under DesqView and other windowing/timeshare systems.
+
+18-May-90
+   ProLogon was writing out the USER.INF pointer in the wrong format.  I
+   had to GUESS the format since it isn't documented.  This beta should
+   do it right.  If you ran a previous ProLogon beta with PCB 14.5 you
+   need to run PCBSM's "Create user info file" function again to clean
+   things up.
+
+   NOTE: please do not add any "third party" programs to your USER.INF
+   program if you intend to use this beta of ProLogon.  I haven't yet
+   figured out how this information is recorded and it surely will cause
+   problems.  This will clear up as soon as Clark releases file formats
+   or I manage to reverse engineer the files generated by 145 beta codes.
+
+14-May-90
+   Changed curconfh definition for compatibility with pcboard when
+   accessing conferences over #255.
+
+   Added code to create dummy USER.INF records when running under PCB
+   14.5.  I still don't know what the file format is, so everything but
+   the name is initially zeroed out.
+
+   Corrected @Xhh handler to allow unlimited line lengths while displaying
+   text files.
+
+12-May-90
+   Removed 'bulletins updated since last call:' message if the specified
+   BLT.LST file does not exist.
+
+   Added support for @Xhh color macros.
+
+   Changed door routing logic to ignore extra entries in door definition
+   lines. This allows ProLogon to use 14.5 format DOORS.LST files.
+
+   Changed logic to ignore extra entries PWRD definition lines. This
+   allows ProLogon to use 14.5 format PWRD files.
+
+   Added low level logic to retry failed read operations RETRY_COUNT
+   times; this may solve some READ FAILURE problems under networked
+   systems.
+
+
+07-May-90
+   Added new AUTO_RESET_MINUTES option keyword to control (and/or
+   disable) the automatic-modem-reset-when-idle function.
+
+   Added a check to disable the F6(update user) function when there is
+   not a valid user online.
+
+30-Apr-90
+   Corrected password prompt for new users after the second verification
+   entry fails to match the first entry.
+

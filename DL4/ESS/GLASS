@@ -1,0 +1,271 @@
+goal is type.glass
+
+legalanswers are yes no *
+
+if etched is yes
+and emblem is yes
+and rose.in.emblem is yes
+then type.glass is rose.point
+
+question etched is "Is the glass etched? (versus pressed)"
+
+question emblem is "Does the glass bear an emblem?"
+
+question rose.in.emblem is "Is there a rose in the emblem?"
+
+if etched is yes
+and emblem is yes
+and cupid is yes
+then type.glass is cupid
+
+question cupid is "Is there a cupid figure in the emblem?"
+
+if etched is yes
+and emblem is yes
+and rose.in.emblem is no
+then type.glass is cherokee.rose
+
+if etched is yes
+and emblem is no
+and pineapple is yes
+then type.glass is plantation
+
+question pineapple is "Are there images of pineapples in the glass?"
+
+if etched is yes
+and emblem is no
+and large.rose is yes
+then type.glass is rose
+
+question large.rose is "Are there large roses in the glass?"
+
+if etched is yes
+and emblem is no
+and orchid is yes
+then type.glass is orchid
+
+question orchid is "Are there orchids in the glass?"
+
+if etched is yes
+and emblem is no
+and fuchsia is yes
+then type.glass is fuchsia
+
+question fuchsia is 
+"Are there Fuchsia, or hanging flowers with stems in them, in the glass?"
+
+if etched is yes
+and emblem is no
+then type.glass is apple.blossom
+
+if etched is no
+and geometric is yes
+and rays is no
+and square is yes
+then type.glass is block.optic
+
+question geometric is "Is there a geometric pattern in the glass?"
+
+question rays is 
+"Are there 'rays' starting in the center of the piece moving toward the edge?"
+
+question square is "Does the glass have a square pattern?"
+
+if etched is no
+and geometric is yes
+and rays is no
+and pretzel is yes
+then type.glass is pretzel
+
+question pretzel is "Does the glass have a laced pattern?"
+
+if etched is no
+and geometric is yes
+and rays is no
+then type.glass is carribean
+
+if etched is no
+and geometric is yes
+and rays is yes
+and bead.block is yes
+then type.glass is beaded.block
+
+question bead.block is 
+"Does the glass have squares with beads connecting the squares?"
+
+if etched is no
+and geometric is yes
+and rays is yes
+and bubble is yes
+then type.glass is bubble
+
+question bubble is 
+"Does the glass look as if it were made of many bubbled peices glued together?"
+
+if etched is no 
+and geometric is yes
+and rays is yes
+and cube is yes
+then type.glass is cube
+
+question cube is "Does the glass have a cubed pattern?"
+
+if etched is no
+and geometric is yes
+and rays is yes
+and lace.edge is yes
+then type.glass is lace.edge
+
+question lace.edge is 
+"Does the piece have a flat rim with holes, giving a lacey apperance?"
+
+if etched is no
+and geometric is yes
+and rays is yes
+and moonstone is yes
+then type.glass is moonstone
+
+question moonstone is "Is the glass beaded with a white edge?"
+
+if etched is no
+and geometric is yes
+and rays is yes
+and waterford is yes
+then type.glass is waterford
+
+question waterford is "Does the glass have a laced pattern?"
+
+if etched is no
+and geometric is yes
+and rays is yes
+then type.glass is miss.america
+
+if etched is no
+and plain is yes
+and rays is yes
+and ruby is yes
+then type.glass is royal.ruby
+
+question plain is "Is the glass basically without a pattern?"
+
+question ruby is "Is the piece a deep ruby red in color?"
+
+if etched is no
+and plain is yes
+and rays is yes
+then type.glass is forest.green
+
+if etched is no
+and plain is yes
+and rays is no
+and candlewick is yes
+then type.glass is candlewick
+
+question candlewick is "Does the glass have balls around the rim?"
+
+if etched is no
+and plain is yes
+and rays is no
+and lariat is yes
+then type.glass is lariat
+
+question lariat is "Does the piece have a looped rim?"
+
+if etched is no
+and plain is yes
+and rays is no
+and empress is yes
+then type.glass is empress
+
+question empress is "Does the rim look as though there are knotches?"
+
+if etched is no
+and plain is yes
+and rays is no
+and octagon is yes
+then type.glass is octagon
+
+question octagon is "Is the glass eight sided?"
+
+if etched is no
+and plain is yes
+and rays is no
+and decagon is yes
+then type.glass is decagon
+
+question decagon is "Is the glass ten sided?"
+
+if etched is no
+and plain is yes
+and rays is no
+then type.glass is fairfax
+
+if etched is no
+and plain is no
+and rays is yes
+and iris is yes
+then type.glass is iris
+
+question iris is "Does the glass have iris flowers?"
+
+if etched is no
+and plain is no
+and rays is yes
+and alice is yes
+then type.glass is alice
+
+question alice is "Are there small flowers only around the rim of the piece?"
+
+if etched is no
+and plain is no
+and rays is yes
+then type.glass is mayfair
+
+if etched is no
+and plain is no
+and rays is no
+and avocado is yes
+then type.glass is avocado
+
+question avocado is 
+"Are there two avocado plants present (looks like two pears)?"
+
+if etched is no
+and plain is no
+and rays is no
+and cherry.blossom is yes
+then type.glass is cherry.blossom
+
+question cherry.blossom is "Are there small cherries in the pattern?"
+
+if etched is no
+and plain is no
+and rays is no
+and fire.king is yes
+then type.glass is fire.king.oven.glass
+
+question fire.king is "Are flowers missing from the pattern?"
+
+if etched is no
+and plain is no
+and rays is no
+and sunflower is yes
+then type.glass is sunflower
+
+question sunflower is "Are there sunflowers in the pattern?"
+
+if etched is no
+and plain is no
+and rays is no
+and sharon is yes
+then type.glass is sharon(cabbage.rose)
+
+question sharon is "Are there six 'spokes' in the piece?"
+
+if etched is no
+and plain is no
+and rays is no
+then type.glass is dogwood
+
+answer is "The type of glass you have is " type.glass
+

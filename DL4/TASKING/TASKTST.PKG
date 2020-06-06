@@ -1,0 +1,288 @@
+
+--
+-- TASKTST - Tasking package test driver
+--
+-- Author: S.H.Smith, 30-Mar-86
+--
+
+with TASKING,
+     TASKCTL,
+     SCREENOP,
+     CLOCK,
+     STRLIB;
+
+procedure TASKTST is
+
+ use TASKING,
+     TASKCTL,
+     SCREENOP,
+     CLOCK,
+     STRLIB;
+
+
+   aborted: boolean := false;   -- true when program is to be aborted
+
+   suspender_id,
+   timedisp_id,
+   typer_id:     TASK_ID;
+                         -- these id variables keep track of the processes
+                         -- so they can be KILLed/SUSPENDed if needed
+
+   num_crawlers: constant := 6;
+
+   crawlers: array(1..num_crawlers) of TASK_ID;
+                         -- keeping track of a number of crawlers
+
+   x_base: integer := 1;
+                         -- STARTing x location for next crawler
+
+
+
+   --
+   -- crawler will crawl around on the screen, leaving a trail
+   -- of various characters.
+   --
+
+   procedure crawler is
+      x,y:   integer;
+      x0:    integer;
+      dir:   integer;
+      maxx:  constant := 9;
+      maxy:  constant := 8;
+      trail: character;
+      blips: integer;
+
+   begin
+      blips := 0;
+      x0 := x_base;
+      x_base := x_base + maxx + 3;
+
+      x := 1;
+      y := 1;
+      dir := 1;
+      trail := '@';
+
+      loop
+         case dir is
+            when 1 =>   if x < maxx then
+                           x := x + 1;
+                        else
+                           dir := 2;
+                        end if;
+
+            when 2 =>   if y < maxy then
+                           y := y + 1;
+                        else
+                           dir := 3;
+                        end if;
+
+            when 3 =>   if x > 1 then
+                           x := x - 1;
+                        else
+                           dir := 4;
+                        end if;
+
+            when others =>
+                        if y > 1 then
+                           y := y - 1;
+                        else
+                           dir := 1;
+                        end if;
+         end case;
+
+         position_cursor(x+x0, y);
+         put(trail);
+
+         trail := character'val(character'pos(trail)+1);
+         if trail > '~' then
+            trail := '@';
+         end if;
+
+         pragma arithcheck(off);
+         blips := blips + 1;
+         pragma arithcheck(on);
+
+         if (blips mod 100) = 0 then
+            position_cursor(x0+2,4);
+            put(blips);
+         end if;
+
+         GIVE_UP_TIME;
+      end loop;
+
+   end crawler;
+
+
+
+   --
+   -- suspender will SUSPEND and RESUME execution of the crawler
+   -- when it feels like it.
+   --
+
+   procedure suspender is
+      ticks:  integer;
+      crawl:  integer;
+      rand:   integer;
+
+   begin
+      ticks := 0;
+      crawl := 1;
+      position_cursor(1,14);
+      put("Suspender status:");
+
+      loop
+         pragma arithcheck(off);
+         ticks := ticks + 1;
+         rand := (ticks * 3377) mod 100;
+         pragma arithcheck(on);
+
+         case rand is
+            when 40..89 => if crawl < num_crawlers then
+                              crawl := crawl + 1;
+                           else
+                              crawl := 1;
+                           end if;
+
+            when 90..95 => position_cursor(10,15);
+                           put("crawler ");
+                           put(crawl);
+                           put(" suspended");
+                           SUSPEND(crawlers(crawl));
+
+            when 97..98 => position_cursor(10,15);
+                           put("crawler ");
+                           put(crawl);
+                           put(" resumes  ");
+                           RESUME(crawlers(crawl));
+
+            when others => null;
+
+         end case;
+
+         GIVE_UP_TIME;
+      end loop;
+
+   end suspender;
+
+
+   --
+   -- timedisp will display the time of day on the screen.
+   --
+   procedure timedisp is
+      now: time;
+   begin
+
+      position_cursor(1,10);
+      put("Time of day:      :  :  ");
+        -- 12345678901234567890123456789
+        -- 0        1         2
+        --             1   2   3
+
+      loop
+         now := get_time;
+         position_cursor(21,10); put(now.seconds);
+         position_cursor(17,10); put(now.minutes); put(':');
+         position_cursor(13,10); put(now.hours);   put(':');
+         GIVE_UP_TIME;
+      end loop;
+
+   end timedisp;
+
+
+   --
+   -- typer will exho what you type to the screen
+   --
+   procedure typer is
+      x,y: integer;
+      c:   character;
+   begin
+      x := 40;
+      y := 12;
+      position_cursor(35,11);
+      put("Typer:  (type some keys, ESC to abort)");
+
+      position_cursor(x,y);
+      put("_");
+
+      loop
+         if not key_pressed then
+            GIVE_UP_TIME;
+         else
+            get(c);
+            position_cursor(x,y);
+            if c in ' '..'~' then
+               put(c);
+            elsif c = ASCII.ESC then
+               aborted := true;
+            else
+               put("?");
+            end if;
+
+            x := x + 1;
+            if x > 79 then
+               x := 40;
+               y := y + 1;
+               if y > 20 then
+                  y := 12;
+               end if;
+            end if;
+
+            position_cursor(x,y);
+            put("_");
+
+         end if;
+      end loop;
+
+
+   end typer;
+
+
+
+begin
+   clear_screen;
+   position_cursor(1,20);
+
+give_up_time;  -- should give an error
+
+   put_line ("**** START tasks:");
+   START (suspender'address, "suspender", 1,10, suspender_id);
+   START (timedisp'address,  "clock",     2,90, timedisp_id);
+   START (typer'address,     "typer",     1,10, typer_id);
+
+   for i in 1..num_crawlers loop
+      START (crawler'address, "crawler",   1, i, crawlers(i));
+   end loop;
+
+   put_line ("**** Execute tasks:");
+   for i in 1..30000 loop
+      for j in 1..10 loop
+         EXECUTE_TASK;
+      end loop;
+      exit when aborted;
+   end loop;
+
+   position_cursor (1,22);
+   put_line ("**** KILL tasks:");
+   KILL (suspender_id);
+   KILL (timedisp_id);
+   KILL (typer_id);
+   for i in 1..num_crawlers loop
+      KILL (crawlers(i));
+   end loop;
+
+   EXECUTE_TASK;
+      -- this should cause a no-active-tasks fault
+
+   put_line ("?there must be some active tasks (there shouldn't)");
+   for i in 1..100 loop
+      EXECUTE_TASK;
+   end loop;
+
+exception
+   when no_active_tasks =>  put_line("no active tasks");
+   when invalid_task    =>  put_line("invalid task");
+   when too_many_tasks  =>  put_line("too many tasks");
+
+end TASKTST;
+
+

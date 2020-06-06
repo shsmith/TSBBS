@@ -1,0 +1,55 @@
+;
+; PROPROGM - Outside Program Menu for ProLogon 1.1 beta
+;
+;  format is:
+;    menu_letter, offhook y/n, menu description
+;    command line 1
+;    command line 2...
+;    command to reload BOARD.BAT
+;    /          ;ends command list
+;
+;  All normal @ and $ macros are available in command lines.
+;
+
+; call up prodoor config program
+C,Y,ProDoor Configuration Program
+CD \PROD
+CALL CONFIG
+CD \PCB
+BOARD
+/
+
+; call up prodoor config program
+E,Y,ProEdit (snoop mode)
+CD \PROD
+PROEDIT C:\PCB -R -U -C -X -Q
+CD \PCB
+BOARD
+/
+
+;call up pcbfiler
+F,Y,PCB Filer
+PCBFILER
+BOARD
+/
+
+;call up pcbsetup
+S,Y,PCB Setup
+PCBSETUP
+BOARD
+/
+
+;call up pcbsm
+M,Y,PCB System Manager
+PCBSM
+BOARD
+/
+
+;call up TELIX, leave phone onhook
+T,N,Telix (phone on-hook)
+CD \TELIX
+TELIX
+CD \PCB
+BOARD
+/
+

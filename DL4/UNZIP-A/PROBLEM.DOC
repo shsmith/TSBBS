@@ -1,0 +1,49 @@
+Problem: Unzipping a zipfile spread across 1 or more diskettes.
+
+  We have developed a program to breakup a zipfile over a number of
+diskettes in the event that it is too large to fit onto one.
+The program to do this is breakup.exe.  At the beginning of each
+disk is a header giving pertinent information about the parts of the
+zipfile on that particular disk.
+  Our problem is in the unzipping of these diskettes.  The unzip
+program developed to do this is a modified version of a unzip program
+written in turbo C by Samual Smith to unpack one disk.  Our modified unzip
+program unpacks each file as it comes across them and takes care of the
+situation where a file has been split across disks.
+  When our unzip program runs on a network it is able to completely
+unzip a zipfile containing any number of compressed files.  When run
+on a stand-alone, it can't create any more than 13 unpacked files.
+This situation has us puzzeled.  If anyone has any suggestions, please
+contact us.
+
+Drew L. Anderson           Neil Wilson
+215 N. 17 street           215 N. 17 street
+Omaha, NE 68102            Omaha, NE 68102
+phone - (402) 221-4454     phone - (402) 221-4545
+
+INSTRUCTIONS IN THE USE OF ZIPPING AND UNZIPPING.
+-------------------------------------------------
+
+1. Breaking up a file
+
+   Rename unzip.exe to install.exe
+
+   Breakup.exe <filename>.zip [ L : H ]  L=low density disk
+   copies install.exe to first disk.     H=high density disk
+
+2. Unzipping file
+
+   Install <files to look for> defaults to *.* (all)
+
+
+3. compiling and linking unzip program
+   There should be a .bat file called cc.bat which performs
+   compilation and linking.
+
+   cc.bat:
+    tcc -B -y -mc -c -f- crc32.c
+    tcc -O -Z -G -M -y -mc -f- %1 unzip crc32.obj
+
+ 4. To use unzip.c, type a:install [file series to look for, eg. 023*.wp]
+    Wherever you are currently is where the files will be unpacked and
+    written.  Unzip.exe (Install.exe) will only work from drive a:

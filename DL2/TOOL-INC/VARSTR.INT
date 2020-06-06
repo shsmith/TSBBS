@@ -1,0 +1,13 @@
+
+type
+   varstring = ^string;
+
+procedure releasestr( var str:  varstring);
+   (* release the memory used by a varstring variable.  variable MUST
+      be pre-allocated or the program may crash!!! *)
+
+procedure savestr( var tostr: varstring;
+                   from:      string);
+   (* save a regular string in a varstring; new allocation of varstring *)
+
+

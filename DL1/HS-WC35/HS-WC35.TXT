@@ -1,0 +1,46 @@
+                    ----------------------------------------
+Here is the proper setup to use with Wildcat 3.50 (released 6/15/92) to
+allow bidirectional file transfers. This same batch file also works
+with Wildcat's Tomcat QWK mail door to allow bidirectional mail
+transfers. The batch file will work for both Desqview systems (which I
+run -- 5 nodes) and non-DV systems, and with any comm port address or
+IRQ since it picks up that information from the environment variables
+that Wildcat uses. Alternately, -PB and -PI can be replaced with simply
+-P%2 if using standard comm addresses and IRQs.
+
+The same batch file can be used for both the Wildcat upload and
+download batch files, as specified in wildcat, or you can use seperate
+batch files if you prefer:
+
+SH.BAT, placed in the Wildcat home directory.
+
+@echo off
+HSLINK -PB%WCBASEID% -PI%WCIRQID% -E%4 -I2 -HS -NV %5
+       |<----- or -P%2 -------->|              | |
+                          Remove if not DV---> |-|
+
+The Wildcat 3.50 Makewild setup:
+
+ษออออออออออหออออออออออออออออออออออออออออออออออออออออออออออออออออออออห
+บ 06-21-92 บ              External Protocol Definition              บ
+ศออออออออออสออออออออออออออออออออออออออออออออออออออออออออออออออออออออส
+
+           Ltr      Name           Up .BAT        Down .BAT     Batch
+            ฤ   ฤฤฤฤฤฤฤฤฤฤฤฤ     ฤฤฤฤฤฤฤฤฤฤฤฤ    ฤฤฤฤฤฤฤฤฤฤฤฤ     ฤ
+            H   HSLink           SH.BAT          SH.BAT           Y
+
+---------------------------------------------------------------------
+
+You MUST also have the following line in your environment for EACH
+node so that the DSZ.LOG file winds up in the right place:
+
+SET DSZLOG=drive\path\nodeworkdirectory\DSZ.LOG
+
+For example: SET DSZLOG=C:\WC30\WCWORK\NODE1\DSZ.LOG
+
+--------------------------------------------------------------------
+
+        Regards,
+        Tom Tcimpidis
+        Sysop, The MOG-UR'S EMS
+        818-366-1238/8929/6442

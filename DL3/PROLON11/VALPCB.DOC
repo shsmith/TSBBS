@@ -1,0 +1,16 @@
+
+        The new VALPCB program validates that you have a valid copy
+        of PCBOARD.EXE on your system.  This is required for operation
+        of ProLogon version 1.0.
+
+        Run this program from your ProLogon directory.
+        It creates the file PROLON.REG, which must be in the current
+        directory whenever PROLON.EXE is executed.
+
+        When you register your copy of ProLogon you will be allowed to
+        download the REGLON program, which removes the "[UNREGISTERED]"
+        message and allows you insert your own custom registration
+        message into the door.
+
+                                                    -- Sam
+                                                       2/6/90

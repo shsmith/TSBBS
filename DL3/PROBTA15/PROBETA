@@ -1,0 +1,12 @@
+echo off
+rem. Prodoor door script for BETA door
+
+u:
+cd \pcb\door
+probeta probeta.cnf %PCBDRIVE%%PCBDIR%
+
+%PCBDRIVE%
+cd %PCBDIR%
+if exist event.bat event
+
+board

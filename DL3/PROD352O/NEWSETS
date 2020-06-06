@@ -1,0 +1,49 @@
+ ----- TEN New SETS for PRODOOR 3.51   (two more since 3.5) ------------
+
+  NOTE:  Upper and Lower case is NOT important BUT, the SPACING IS !!
+         There is NO SPACE between the "=" signs and the values!!
+
+         They [should] be in your BOARDx.BAT file or your AUTOEXEC
+         file.  Put them where-ever you want.
+
+  LAST:  If you are satisfied with the DEFAULTS, you DO NOT need ANY
+         of them EXCEPT for the FIRST one (location of usage file).
+         This can be ANY file, ANY path, but it MUST be the same for
+         EACH node if you want to monitor SYSTEM usage for ALL Nodes.
+
+  Need MORE info ??  Run the INSTALL program and VIEW the HELP files
+ ------------------------------------------------------------------------
+
+  Name and location of file to monitor BBS usage
+    SET usage_file=c:\prostats.dat
+
+  Whether or not to show the word FLOW while in ProDOOR.
+    SET show_flow=OFF
+
+  Security required to see your Idle Time.
+    SET see_idle=100
+
+  Security required to see 1st line in QQ Msg Scan.
+    SET see_msgline=100
+
+  Security level to be able to override duplicate uploads.
+    SET upload_dups=100
+
+  Force STRICT interpetation of commands.  If on, will also dump
+  caller if they make more than 10 command line errors.
+    SET strict_commands=ON
+
+  Show caller error msg on "bad command".  if OFF, show nothing
+    SET show_errors=ON
+
+  Logs usage of "bad commands" to caller log.  If OFF, do Nothing
+    SET log_command_errors=ON
+
+  More SECURITY on the DISP- function.
+    SET max_disp_loc=30           ; ignore any DISP- past column 30
+
+  Save MISSING upload file descriptions in whatever DIRx (UPLOADS)
+  file they would have gone if the U/L were successful.
+    SET save_missing_desc=ON      ; no more lost upload descriptions
+
+

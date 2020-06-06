@@ -1,0 +1,7 @@
+echo off
+rem pcboard door script for PRO SCRIPT door for SCRIPT #3
+cd \pcb\door
+proscrip proscr3.cnf c:\pcb
+cd \pcb
+if exist event.bat event
+board

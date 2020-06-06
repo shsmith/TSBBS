@@ -1,0 +1,37 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+const
+   com_chan:      integer = 0;
+   local:         boolean = true;  {local mode, no com port}
+   bios_comm:     boolean = true;  {use bios for com port i/o}
+   bios_echo:     boolean = true;  {echo com port to screen in bios mode?}
+
+
+function carrier_present:  boolean;
+
+function receive_ready: boolean;
+
+function receive_data:  char;
+
+procedure transmit_data(s:    longstring);
+
+procedure init_com;
+
+procedure flush_com;
+
+procedure lower_dtr;
+
+procedure raise_dtr;
+
+procedure uninit_com;
+

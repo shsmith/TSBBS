@@ -1,0 +1,75 @@
+@X09---------------------------------------------------
+
+@X0E  Help is available on the following Join Conference topics:@X03
+
+       @X09[@X0E+@X09]@X03 Plus      @X09[@X0EA@X09]@X03 Abandon   @X09[@X0EN@X09]@X03 New
+       @X09[@X0E-@X09]@X03 Minus     @X09[@X0EL@X09]@X03 Locate    @X09[@X0ES@X09]@X03 Status
+       @X09[@X0E#@X09]@X03 Number    @X09[@X0EM@X09]@X03 Main      @X09[@X0EY@X09]@X03 Your
+    
+           @X09[@X0ESummary@X09]@X03     @X09[@X0EExamples@X09]@X03
+
+Enter text inside the Square Brackets ie: M for help on MAIN
+
+
+
+~
+:?
+@X03Please type one of the indicated topics for additional help.
+Press @X09<@X0CENTER@X09>@X03 alone to exit the help system.
+~~
+:+
+:-
+@X09(@X0C+@X09)@X03     Advance to next higher conference number.
+@X09(@X0C-@X09)@X03     Go back to next lower conference number.
+~~
+:#
+        You may specify any conference number.
+        Full conference names can also be used to select conferences.
+~~
+:A
+@X09(@X0CA@X09)@X03uto-join configuration update
+~~
+:L
+@X09(@X0CL@X09)@X03ocate conference by keywords
+~~
+:M
+@X09(@X0CM@X09)@X03ain board
+~~
+:N
+@X09(@X0CN@X09)@X03ew message status
+~~
+:S
+@X09(@X0CS@X09)@X03tatus of all conferences
+~~
+:Y
+@X09(@X0CY@X09)@X03our mail.  Scan for conferences with new mail for you
+~~
+:EXAMPLES
+@X0EJoin command examples:@X03
+
+   J M         ;main board
+   J;+         ;join next available conference
+   J;6         ;join conference 6
+   J TOOLS     ;join tools conference
+   J L LANG    ;locate conferences with 'LANG' in the description
+   J;2;Q       ;quick join, bypassing conference news
+   J S         ;status of all conferences
+   J S +       ;status of conferences after current one
+   J A 20      ;configure autoscan starting with conference 20
+
+~~
+:SUMMARY
+@X03The Join command allows you to switch to a different conference.  You
+may specify either a conference number or a conference name.
+
+These subfunctions are available:
+   @X09(@X0CA@X09)@X03uto-join configuration update
+   @X09(@X0CL@X09)@X03ocate conference by keywords
+   @X09(@X0CM@X09)@X03ain board
+   @X09(@X0CN@X09)@X03ew message status
+   @X09(@X0CS@X09)@X03tatus of all conferences
+   @X09(@X0CY@X09)@X03our mail.  Scan for conferences with new mail for you
+   @X09(@X0C+@X09)@X03next higher conference
+   @X09(@X0C-@X09)@X03next lower conference
+~~
+

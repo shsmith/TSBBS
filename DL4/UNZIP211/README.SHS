@@ -1,0 +1,37 @@
+To:	Samuel H. Smith
+	The Tool Shop BBS
+	(602) 264-3969 (HST 9600)
+	(602) 279-2673 (HAYES 9600)
+
+From:	George M. Sipe
+	537 Lakeshore Drive
+	Berkeley Lake, GA  30136-3035
+
+	(404) 447-4731 (voice)
+
+Subj:	Unzip Version 1.2, 03-15-89
+
+I have made some significant improvements to Unzip in order to increase
+portability, to run under Unix, and to compile on PC's under MicroSoft
+C.
+
+My changes among other things, perform such feats as AUTOMATICALLY
+adjusting operation for any byte-ordering (if HIGH_LOW is defined)
+and handling C compilers which do not pack structures on 2 byte
+boundaries (i.e. move 'longint's to the next 4 byte boundary - this
+is a common, and frequently unstoppable, optimization).
+
+The files herein are:
+
+	crc32.c		minor changes
+	crc32.h		minor changes
+	readme.shs	this file
+	unzip.c		major improvements
+	unzip.dif	'context diff' between 1.2 and mine (1.2.1)
+
+You are free to include these improvements in future Unzip distributions
+under your own copyright - but please give me attribution for my work.
+
+Regards,
+
+George

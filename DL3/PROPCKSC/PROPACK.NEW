@@ -1,0 +1,137 @@
+
+                 ProPack REVISION HISTORY (reverse order)
+                 ========================================
+
+03-15-91 v3.0
+   Added /Sfname option to save the text of purged messages in a
+   specified text file.
+
+   Added logic to clear the "LOCKED" flag in message headers, if
+   present.  This corrects a compatibility problem with some netmail
+   programs.
+
+01-15-91 v2.9
+   Increased message size limits to 255 lines and 80 columns.
+
+06-10-90 v2.8
+   Increased stack allocation by 2k for improved stability under networks.
+   Corrected a range check condition when a .CRC file grows to exceed 32k.
+
+04-03-90 v2.7 BETA
+   When a line following "---" has a "*" in position 2, it is treated
+   as the first TAGLINE as well as being detected as a VIA line.  This
+   may fix some of the strangeness caused by the /T option.
+
+01-23-90 v2.7 BETA
+   ProPack was crashing when packing a renumbered conference; an error
+   message is now generated to handle this.
+
+   An error check was added to detect 0-byte index files.
+
+01-01-90 v2.7 BETA
+   Corrected "3 minute delay" to work correctly after detecting a fatal
+   error during execution.
+
+   Added an additional check for taglines starting with "þ".
+
+06-26-89 v2.6a
+   Corrected a bug in /E that caused some messages *without* "---" in them
+   to be flagged as duplicate.
+
+06-24-89 v2.6
+   Added /K option to automatically delete .BAK files after packing.
+   Added /X option to display text with tear/via/tag markers for debugging.
+   Improved detection of taglines with various new netmail utilities.
+   Increased tagline processing speed up to 20%.
+
+05-01-89 v2.5
+   Added additional error checking for memory shortage, index file
+   overflow, crc file overflow, and message lines overflow.
+   The /W option was not working.
+   The /H option was not working.
+
+03-24-89 v2.4
+   Duplicate messages were being counted twice in status display.
+   Added /E option to exclude tag-lines and via-lines from message
+   duplication checks.
+
+03-21-89 v2.3
+   Version 2.2 broke the /T and /D options.  Added /W option to keep
+   PCRelay:'s two-line taglines intact.  Added /I option to remove IBM
+   and high-ascii codes from messages.  Changed from 16 bit crc to 32
+   bit crc.  This should virtually eliminate the possibility of two
+   different messages being judged as "duplicate".
+
+03-17-89 v2.2
+   Added /H option to control resetting of high-message-number.  Use of
+   this option has the potential of causing messages to be missed, since
+   it makes it possible for a single message number to be re-used by new
+   messages.  Added code to keep calculated message CRC's in a data
+   file.  This new xxxxx.CRC file will further speed message packing by
+   eliminating the need to calculate CRCs and check taglines on messages
+   that have been processed in a prior ProPack run.
+
+03-04-89 v2.1
+   Added code to erase the aborted *.NEW file when a pack fails.  This
+   prevents leaving your system disk nearly full during your system
+   event processing.  Added a check in /T for some new tagline formats.
+   Added code to update 'high message number' when the last message(s)
+   on file are purged.  Forward 'refer#'s are now cleared.
+
+02-25-89 v2.0
+   Deleted /0 option.  Changed /1 option to /T -- please update your
+   batch files.  Added /Nxxx option to delete messages older than xxx
+   days.
+
+02-14-89 v1.9
+   Added /V, /0, and /1 options to control "* Via" and "* Origin" lines
+   in your message base.  These options slow down the operation quite a
+   bit, but they are still a lot faster than PCBPACK.  Use of the /0 or
+   /1 option also allows /D to detect messages that differ only by the
+   number of taglines.  Corrected the message numbers reported when /L
+   is used.  Spaces are no longer required between multiple options.
+
+01-17-89 v1.8
+   Added additional checking for invalid messages to prevent runtime
+   error 207 on corrupt files.
+
+01-05-89 v1.7
+   Added additional checking to detect disk-full conditions.  Added /L
+   option to list duplicate message numbers as they are deleted.
+
+12-03-88 v1.6
+   Added a check for invalid message headers to prevent lockup on some
+   kinds of message base corruption.  Should now be able to fix some
+   broken message files.
+
+10-09-88 v1.5
+   Corrected an error in /D duplicate message handler that would
+   sometimes incorrectly flag the last message as duplicate.  More
+   changes in refer# handler.
+
+09-17-88 v1.4
+   Improved error handling (.NDX file is left unchanged if there is
+   trouble installing the new message file).  Added /U switch to
+   preserve UnReceived+Private messages, regardless of other options in
+   effect.  Moved program signon/copyright notice to usage message to
+   reduce clutter in normal program displays.  Forward-pointing refer#'s
+   are no longer cleared.  Packing status is now sent to the screen even
+   when propack output is redirected to a log file.
+
+07-09-88 v1.3
+   Updated for PCBoard 14.0 message file format.
+   DO NOT USE THIS PROGRAM ON PCBOARD 12.1 MESSAGE FILES!
+
+06-01-88 v1.2
+   Added /R switch to purge RECEIVED+PRIVATE messages.  Private messages
+   are now excluded from the /D duplication test.  Improved explanation
+   message when the index is too large for ProPack.
+
+05-27-88 v1.1
+   Added /D switch to automatically delete duplicate messages during the
+   pack process.  Obsolete refer#'s are now cleared.  Initial SourceWare
+   release.
+
+05-22-88 v1.0
+   Initial coding and release as PROPCK10.
+

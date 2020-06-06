@@ -1,0 +1,1 @@
+procedure stoupper(var st: string);

@@ -1,0 +1,6 @@
+echo off
+rem pcboard door script for XFILE SEARCH door program based on ProWho
+cd \pcb\door
+prowho xfile.cnf c:\pcb
+cd \pcb
+board

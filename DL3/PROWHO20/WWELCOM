@@ -1,0 +1,7 @@
+
+Hello $FIRST$.  Welcome to the "WHO UPLOADED THAT FILE?" door!
+
+This door will scan the system download/upload log and list all entries
+that mention a specific name.
+
+

@@ -1,0 +1,7 @@
+function getflag(flag: byte; bitval: byte): boolean;
+   {return true/false for specified is set}
+procedure setflag(var flag: byte; bitval: byte; value: boolean);
+   {set the specified bit in a flagbyte}
+function toggleflag(var flag: byte; bitval: byte): boolean;
+   {toggle the specified bit and return new setting}
+

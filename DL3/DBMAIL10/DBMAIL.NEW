@@ -1,0 +1,31 @@
+ProKit Downloads-by-mail Facility Revision History (reverse order)
+------------------------------------------------------------------
+
+18-Aug-92
+   Changes in DBMAIL.EXE and DBMxxxx.BAT to allow operation under DOS
+   version 5.0.  The file FORMAT.IN (found in the HSOAS) must be
+   available during disk formatting.  This change is required because
+   DOS 5 no longer allows ( and ) to appear in volume labels, and also
+   because the new version of FORMAT.COM no longer recognizes the
+   /SELECT option.
+
+23-May-92
+   Added logic to identify credit card types even though they are
+   not listed as those allowed.
+
+   Added logic to detect card numbers starting with '36' as JCB instead
+   of American Express.  I'm not sure what '36' really indicates, but
+   these numbers seem to clear as one of visa/mastercard/diners/
+   discover/ or jcb.
+
+22-Mar-92
+   Added a default file extention according to PCBOARD.DAT settings.
+
+06-Mar-92
+   Internal changes to remove the 50 file limit per wildcard.  The new
+   limits are 2000 files total and 200 files per directory with
+   wildcards.
+
+04-Mar-92
+   Initial design and coding.
+

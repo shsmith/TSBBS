@@ -1,0 +1,70 @@
+
+                     BEEPER - Resident BEEP Handler
+
+          Copyright 1992 Samuel H. Smith; All rights reserved.
+
+  This FREEWARE package can be freely distributed so long as it is not
+  modified or sold for profit.
+
+  This program is a TSR that traps bios BEEP signals and converts them
+  background beeps with a command-line controlled frequency.  This
+  useful if your machine's BIOS gives you a tiresome slow beep, or if
+  you have multiple machines and would like each to have its own
+  distinctive beep tone.
+
+  Usage:
+        BEEPER n
+
+  where
+        n       indicates the beep tone and may be a number between 0
+                and 9.
+
+  Examples:
+        BEEPER 1
+        BEEPER %PCBNODE%
+
+
+                                Support
+
+                     The author can be reached at:
+
+     Samuel H. Smith                 The Tool Shop BBS
+     P.O. Box 4808                   (818) 891-6780 (HAYES 9600) - Free node
+     Panorama City, CA 91412         (818) 891-3772 (HST 9600)
+                                     (818) 891-1344 (Four lines V.32Bis)
+
+
+                               Copyright
+
+  If you modify this program,  I would appreciate a copy of the new
+  source code.  I am holding the copyright on the source code,  so
+  please don't delete my name from the program files or from the
+  documentation.
+
+                               DISCLAIMER
+
+  I make no warranty of any kind, express or implied, including without
+  limitation, any warranties of merchantability and/or fitness for a
+  particular purpose.  I shall not be liable for any damages, whether
+  direct, indirect, special or consequential arising from a failure of
+  this program to operate in the manner desired by the user.  I shall
+  not be liable for any damage to data or property which may be caused
+  directly or indirectly by the use of this program.
+
+  IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+  LOST PROFITS,  LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+  DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR
+  FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+                            Revision History
+
+  12-12-92
+     Initial release as BEEPER10.ZIP.
+
+  02-16-93
+     Added logic to limit the number of pending beeps to 10, which helps
+     in cases where a BBS can quickly generate dozens of beeps due to
+     line noise of user input.
+     Released as BEEPER11.ZIP.
+

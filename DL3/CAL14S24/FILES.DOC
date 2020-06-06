@@ -1,0 +1,53 @@
+
+---------------------------------------------- Calls program and documentation
+
+FILES    DOC     2708   8-02-89   5:23p   This list of files
+CALLS    CNF     1483   8-02-89   2:25p   Sample config file
+CALLS    DOC    15964   8-02-89   3:07p   Program Documentation
+CALLS    EXE    49152   8-02-89   3:19p   CALLS main program
+
+
+-----------------------------------  Source code (not required for operation)
+
+ANSICRT  PAS     1927   3-12-89   7:13a   ANSI based CRT unit (source)
+CALLS    PAS    65926   8-02-89   3:19p   CALLS main source code
+QREAD    ASM     4451  11-22-88   3:10p   Quick file i/o source
+QREAD    PAS      609  11-20-88   6:24a   Quick file i/o source
+STOUPPER INC     1098  12-01-88           Map to upper case source
+
+
+================================= SAMPLE3.ZIP =============================
+
+------------------------------------- Sample config files for a 3 node system
+
+CALLS1   CNF     1331   8-02-89   4:53p   Node 1 main config file
+CALLS1D  CNF     1375   8-02-89   5:02p   Node 1 daily config file
+CALLS1U  CNF     1331   8-02-89   4:54p   Node 1 event update config
+CALLS1Y  CNF     1376   8-02-89   5:16p   Node 1 yesterday config file
+CALLS2   CNF     1331   8-02-89   4:53p   Node 2 main config file
+CALLS2D  CNF     1375   8-02-89   5:02p   Node 2 daily config file
+CALLS2U  CNF     1331   8-02-89   4:54p   Node 2 event update config
+CALLS2Y  CNF     1376   8-02-89   5:16p   Node 2 yesterday config file
+CALLS3   CNF     1331   8-02-89   4:53p   Node 3 main config file
+CALLS3D  CNF     1375   8-02-89   5:02p   Node 3 daily config file
+CALLS3U  CNF     1331   8-02-89   4:54p   Node 3 event update config
+CALLS3Y  CNF     1376   8-02-89   5:16p   Node 3 yesterday config file
+CALLSA   CNF     1331   8-02-89   4:53p   All Nodes main config file
+CALLSAD  CNF     1375   8-02-89   5:02p   All Nodes daily config file
+CALLSAY  CNF     1376   8-02-89   5:16p   All Nodes yesterday config file
+
+
+------------------------------------------------------- Sample batch files
+
+REPORTS  BAT     1135   8-02-89   5:12p   Event BATCH to do reports
+NEWCALLS BAT      305   8-02-89   5:11p   Generate new history files
+TODAY    BAT      116   8-02-89   5:15p   Check today's activity
+TODAY1   BAT      116   8-02-89   5:14p   Check today's Node-1 activity
+TODAY2   BAT      116   8-02-89   5:13p   Check today's Node-2 activity
+TODAY3   BAT      116   8-02-89   5:13p   Check today's Node-3 activity
+YESTER   BAT      126   8-02-89   5:15p   Check yesterday's activity
+YESTER1  BAT      126   8-02-89   5:14p   Check yesterday's Node-1 activity
+YESTER2  BAT      126   8-02-89   5:14p   Check yesterday's Node-2 activity
+YESTER3  BAT      126   8-02-89   5:12p   Check yesterday's Node-3 activity
+
+

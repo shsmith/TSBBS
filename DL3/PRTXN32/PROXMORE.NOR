@@ -1,0 +1,14 @@
+; PROXMORE - ProDoor command translation for MORE?
+;            and PRESS ENTER TO CONTINUE prompts.
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+;  0,HELP,DISP-M:\PROD\PROHELP     ;display 'PROHELP' file when 'HELP'
+;                                  ;command is used.
+10,J,Y        ;svare ja p† yes prompt
+10,UT,NS      ;uten stopp, non-stop
+10,L,G        ;ha det, goodbye ved filetransfer
+10,M,F        ;merke fil, flag
+      

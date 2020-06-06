@@ -1,0 +1,43 @@
+
+                        ADJUST EXTENDED USER FILE          12-28-88
+                        =========================
+
+ProDoor automatically initialized the extended user file, EXTUSER, for
+up to 90 extended conferences.  The EXTADJ.EXE program allows you to
+adjust the number of conferences allocated in the user file.
+
+ProDoor supports any number of extended conferences between 0 and 215.
+A setting of 0 gives the 40 standard message areas, while a setting of
+215 gives 255 total message areas.
+
+The EXTADJ program uses the EXTUSER environment variable to determine
+the full filename of the extended user file.  If the EXTUSER environment
+is not set the program will access 'EXTUSER' in the default directory.
+
+After running the original extended user file will be saved with the
+last character of the filename changed to '&'.  You can delete this
+backup file once you are sure the conversion was successful.
+
+
+Here is a typical display:
+
+      Extended User File:  Extended Conference Allocation Adjustment
+      Copyright 1988 Samuel H. Smith
+
+         90 extended conferences in file.
+        569 bytes per user record.
+        469 user records in file.
+
+      File is currently allocated for 90 extended conferences.
+      Enter new number of extended conferences in file: 20
+
+         20 extended conferences in new file.
+        219 bytes per user record.
+
+      Conversion completed.
+
+In this example the number of extended conferences is reduced from the
+standard 90 to a more economical 20, taking less than half the disk
+space of the original file.
+
+

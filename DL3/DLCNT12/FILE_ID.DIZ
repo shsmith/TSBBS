@@ -1,0 +1,12 @@
+PCBoard/ProDoor File Download Counter 1.2
+----------------------------------------------
+Analyze the PCBoard DOWNLOAD.TXT log file and
+update your DIR listing files to include the
+number of times each file has been downloaded.
+Compatible with DOWNLOAD.TXT files trimmed by
+TRIMDL15.ZIP.
+Version 1.2 increases file limits and fixes
+wildcards outside the current directory.
+----------------------------------------------
+Freeware by Samuel H. Smith and The Tool Shop.
+Includes Pascal Source Code.

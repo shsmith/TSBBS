@@ -1,0 +1,22 @@
+Syntax:  MV2CALL SOURCE.FIL CALLER
+         SOURCE.FIL is the file that will be copied from
+         CALLER is a 64 character/line file holding a PCB style caller log
+
+Mv2Call is a program that copies a file to the caller log.  After the
+copying, the file is deleted.  Two version exist in the archive:
+   MV2CALL.EXE--process lines that are greater than 62 character of text
+     into multiple lines to copy to the CALLER file.
+   MV2CALL.COM--truncates lines that are greater than 62 charters long
+Install the version that you need.  The EXE is obviously larger but so
+what... if you need the feature.
+
+Another Freebie compliment of the Toolkit BBS's sysop, Ken Prevo
+   The latest copy of this file and other ToolKit Utilities are available:
+     219-696-3415 HST Dual Standard
+
+Stop on by.
+
+Sysop accounts available to sysops who qualify:
+   1. Listed on National list
+   2. 9600 baud or better (use HSLINK if 2400 and maintain ratio)
+   3. At least 1 public node.

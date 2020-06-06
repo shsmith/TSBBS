@@ -1,0 +1,38 @@
+
+-----------------------------------------------------------
+--                                                       --
+--              Bitwise Ligical Operators                --
+--                Package Specification                  --
+--                 28-Jul-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+
+package BITOPS is
+
+   function BIT_AND (a,b: integer) return integer;
+      -- return the bitwise AND of two integers
+
+   function BIT_OR (a,b: integer) return integer;
+      -- return the bitwise OR of two integers
+
+   function SHIFT_LEFT (a: integer; bits: integer) return integer;
+      -- return a value shifted left by the specified number of bits
+
+   function SHIFT_RIGHT (a: integer; bits: integer) return integer;
+      -- return a value shifted right by the specified number of bits
+
+   function BIT_SET (data: integer;
+                     bits: integer) return boolean;
+      -- return true if the specified bits are all set
+
+   function BIT_CLEAR (data: integer;
+                       bits: integer) return boolean;
+      -- return true if the specified bits are all clear
+
+   BIT_VALUE: array (0..15) of integer;
+      -- array of bit values according to bit position
+
+end BITOPS;
+
+

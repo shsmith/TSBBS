@@ -1,0 +1,250 @@
+                        SAMPLE LICENSE AGREEMENT
+
+THIS AGREEMENT is made 
+
+BETWEEN:
+		Samuel H. Smith doing business as The Tool Shop
+		8808 Moonbeam Ave
+		Panorama City
+		California USA 91401
+		(hereinafter called "Developer"); 
+AND:
+                ___________________________________________
+                ___________________________________________
+                ___________________________________________
+                (hereinafter called "Customer");
+
+entered into this ____________ day of __________. 199___.
+
+
+LICENSED PROGRAM PRODUCTS
+
+In consideration of royalty payments by Customer to Developer as
+outlined in Appendix A of this agreement, developer hereby grants to
+Customer, and Customer accepts, on the terms and conditions herein, a
+non-exclusive, non-assignable license to use, as described below, object
+files, technical information and certain source to the products and
+related materials, generally known as HS/LINK DEVELOPER KIT version 1.1;
+hereinafter called "HDK".
+
+
+TERM AND USE
+
+This license authorizes Customer for a period of 99 years, to:
+
+1)      integrate HDK into programs owned by Customer and to distribute
+        HDK as an integral component of any program owned by Customer to
+        customers, agents or distributors of Customer programs, whereby
+        Customer agrees that distribution of HDK shall be limited to
+        binary executable files only and that source, proprietary trade
+        secret information, know-how, methods and specifications for HDK
+        shall specifically not be distributed beyond Customer; and
+
+2)      copy the HDK machine readable code, to provide sufficient backup
+        in support of the above use for distribution as an integral
+        component of any program owned by Customer. Customer may not
+        copy HDK for any reason except as indicated above; and
+
+3)      use any trademark of HS/LINK and HDK only in conjunction with
+        HDK as integrated into programs owned by Customer.
+
+
+UPDATE POLICY
+
+Whereas Developer may from time to time modify or enhance HDK, Customer
+shall have the option to License such enhancements or versions under
+terms mutually agreed upon by both parties.
+
+
+RESTRICTIONS ON TRANSFER
+
+Customer shall be authorized to sub-license copies of executable program
+code for HDK for the purpose of distributing HDK as an integral part of
+programs by Customer.  Customer shall not distribute HDK without a
+dependant Customer program.
+
+
+COPYRIGHT AND CONFIDENTIALITY
+
+Whereas Customer and Developer have agreed to exchange proprietary and
+confidential property, both parties agree to hold in strictest
+confidence all materials and information provided, to refrain from
+disclosing any such information acknowledged to be the property of the
+other party to a third party, to use this data or information only in
+the performance of this agreement and to release it only to those
+individuals requiring such information in the furtherance of the
+objectives of this agreement.  The parti es acknowledge that the
+provisions of this Agreement are necessary to protect the
+confidentiality, value, and secrecy of such proprietary and confidential
+property.
+
+Both parties obligation with respect to Copyright and Confidentiality
+shall survive any termination or expiration of this agreement.
+
+
+REPRESENTATIONS, WARRANTIES AND INDEMNITIES
+
+Developer represents and warrants that HDK licensed herein to Customer,
+shall not infringe upon nor violate any third parties' patent,
+copyright, trademark, proprietary rights or trade secrets and that
+Developer has a right to enter into this Agreement.
+
+Developer makes no warranty or representation, either express or
+implied, with respect to the quality, performance, merchantability, or
+fitness for a particular purpose of HDK.  Developer will not be liable
+for direct, indirect, special, incidental, or consequential damages
+arising out of the use of or inability to use HDK.  In any case,
+Developer's liability under this section shall not exceed the amount of
+royalties paid by Customer to Developer.
+
+
+SOURCE AVAILABILITY CONDITIONS
+
+Customer agrees to the following conditions:
+
+1)      HDK and HDK source code provided under this agreement is subject
+        to the understanding that it conveys no transfer of ownership of
+        HDK to Customer and that all copyright or ownership of HDK shall
+        remain with Developer.
+
+2)      Any HDK source code, proprietary trade secret information,
+        know-how, methods and specifications, provided under this
+        agreement is for Customer's use only and can not be provided by
+        Customer to any customer of Customer or any third party.  All
+        access to HDK must be restricted to employees of Customer or to
+        third parties or consultants who have signed a confidentiality
+        agreement with Customer.
+
+
+PAYMENT AND RECORDING
+
+Customer agrees to hold royalties and to safeguard same in a reasonable
+manner until disbursement to Developer.  Disbursement of royalties may
+occur at regular intervals as deemed to be convenient by Developer and
+Customer, but must occur at least once during each annual calendar
+quarter.
+
+Customer shall keep and maintain, in accordance with standard and
+accepted accounting policies and procedures, records with reference to
+royalties.  When requested by Developer, such records shall be open at
+reasonable times and at reasonable intervals for Developer, through an
+independent, third party Certified Public Accountant or its equivalent,
+to inspect such records for the purpose of verifying compliance with the
+provisions of this Agreement.  Inspection of the records shall be done
+during normal busi ness hours and in such a manner as to avoid
+disruption of the business of Customer.
+
+
+NOT A JOINT VENTURE
+
+Nothing contained in this Agreement shall be deemed or construed as
+creating a joint venture or partnership between Customer and Developer.
+No party is by virtue of this Agreement authorized as an agent, employee
+or legal representative of any other party.  Except as specifically set
+forth herein, no party shall have power to control the activities and
+operations of the other and their status is, and at all times will
+continue to be, that of independent contractors.  Further, no party
+shall have any power o r authority to bind or commit the other under
+this agreement.
+
+
+GENERAL PROVISIONS
+
+The parties agree that this Agreement shall constitute the complete and
+exclusive statement of the Agreement between them and supersedes all
+proposals, oral or written, and all other communications between them
+relating to the subject matter of this Agreement.
+
+No agreement changing, modifying, amending, extending, superseding,
+discharging, or terminating this Agreement or any provisions herein
+shall be valid unless it is in writing and is dated and signed by duly
+authorized representatives of the party or parties to be charged.
+
+The provisions of this Agreement are severable, and in the event that
+any provisions of this Agreement shall be held to be invalid, illegal or
+unenforceable, the validity, legality, and enforceability of the
+remaining provisions shall not in any way be effected or impaired
+thereby.
+
+Failure of any of the parties to enforce any of the provisions of this
+Agreement or any rights with respect thereto or failure to exercise any
+election provided for herein, shall in no way be considered a waiver of
+such provisions, rights, or elections or in any way to effect the
+validity of this Agreement.  No term or provision of this Agreement
+shall be deemed waived and no breach excused, unless such waiver or
+consent shall be in writing and signed by the party claimed to have
+waived or consented.  Any c onsent by any party to, or waiver of, a
+breach by the other, whether expressed or implied, shall not constitute
+a consent to, waiver of, or excuse for any other different or substitute
+breach.
+
+This Agreement is entered into and shall be governed by and construed in
+accordance with the laws of the State of California, except that
+questions affecting the construction and effect of any copyright or
+trademark shall be determined by the law of the country in which the
+copyright or trademark right was granted.  By the execution of this
+Agreement, both parties agree to be subject to the jurisdiction of the
+Federal and State courts of the State of California with respect to this
+Agreement.
+
+If either party brings an action to enforce any provision of this
+Agreement, the prevailing party in said action shall be entitled to
+court costs and reasonable attorneys fees.
+
+Headings used in this Agreement are for reference purposes only and
+shall not be deemed a part of this Agreement.
+
+The signatories hereto personally warrant (i) that they have the right
+and power to enter into this Agreement, to grant the rights granted
+hereunder, and (ii) that upon the execution of this Agreement, it shall
+constitute a valid, binding and enforceable agreement of the parties.
+
+IN WITNESS WHEREOF, the parties hereto have caused this Agreement to be
+duly executed as of the date first mentioned above.
+
+
+AGREED TO:                                ACCEPTED BY:
+
+CUSTOMER                                  DEVELOPER
+
+By:     ________________________          By:     _________________________
+
+Title:  ________________________          Title:  _________________________
+
+Date:   ________________________          Date:   _________________________
+
+
+______________________________            _______________________________
+Authorized Signature                      Authorized Signature
+
+                               APPENDIX A
+
+                            ROYALTY PAYMENTS
+
+
+
+	Option 1:
+
+          For each copy of HDK distributed by Customer as an integral
+          part of a Customer program:
+                                                         $____ US
+
+
+
+
+	Option 2:
+
+          Lump sum prepayment for the first 2000 copies of HDK distributed
+          by Customer as an integral part of a Customer program:
+                                                     $________ US
+
+          For each additional copy of HDK distributed by Customer as an
+          integral part of a Customer program:
+                                                         $____ US
+
+
+
+
+
+	Option: __________	Initial: __________
+

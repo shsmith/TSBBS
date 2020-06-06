@@ -1,0 +1,3 @@
+procedure delete_spaces(var line: string);
+procedure delete_trailing_spaces(var line: string);
+procedure delete_leading_spaces(var line: string);

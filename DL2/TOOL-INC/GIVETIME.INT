@@ -1,0 +1,7 @@
+procedure determine_tasker;     {determine what multi-tasker is active, if any}
+procedure give_up_time;         {give up unused time under doubledos}
+const
+   tasker:  (taskview,                  {taskview/omniview/topview/desqview}
+             doubledos,                 {doubledos}
+             notasker,                  {single task}
+             unknown) = unknown;        {before first call}

@@ -1,0 +1,40 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+type
+   status_formats = (normal_format, help_format, pgup_format, pgdn_format);
+
+procedure update_status_display (format:  status_formats);
+   {display current status information on the last 2 lines of the screen}
+
+procedure init_status_display;
+   {prepare the screen for status displays}
+
+procedure transfer_status_display;
+   {prepare the status display area for execution of a protocol driver}
+
+procedure delete_status_display;
+   {completely remove status display from the screen}
+
+procedure shell_to_dos;
+   {allow the sysop to drop to DOS for a moment}
+
+procedure toggle(var v: char2);
+   {toggle a variable and update status display accordingly}
+
+procedure dispatch_function_key(c: char);
+   {sysop function key dispatch}
+
+procedure process_function_keys;
+   {read next local function code and dispatch it}
+
+

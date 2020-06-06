@@ -1,0 +1,3 @@
+procedure display_conference_status(func: char);
+   {display status of all conferences; optionally exclude those
+    with no new messages in them}

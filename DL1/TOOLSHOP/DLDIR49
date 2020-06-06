@@ -1,0 +1,603 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                             Util-File Management
+                        86 files using 9,262,084 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+13DUTILS.ZIP   119400  07-24-94  ∞∞∞∞∞∞∞∞∞∞±±≤€ Deric's Utils €≤±±∞∞∞∞∞∞∞∞∞∞∞
+                               | ∞∞∞∞∞∞∞±≤€ MAJOR UPDATE vers 1.3 €≤±∞∞∞∞∞∞∞∞
+                               | ∞ CopyALL, MoveALL, SuperDel, and Encrypt. ∞
+                               | ∞  Deric's utility programs gives you the  ∞
+                               | ∞ power to easily copy/move/delete entire  ∞
+                               | ∞    directories with all their files!     ∞
+                               | ∞   A HUGE step up from the standard DOS   ∞
+                               | ∞  programs that come with your operating  ∞
+                               | ∞ system. All programs are EXTREMELY FAST, ∞
+                               | ∞      powerfull, and easy to use.         ∞
+                               | ∞∞∞∞∞∞∞±≤€ CGA+ & 286+ required. €≤±∞∞∞∞∞∞∞∞
+2DAYV116.ZIP    44113  02-05-94  2Day (C) 1988-1993 - locates files by date,
+                               | and shows (selectively) Hidden, ReadOnly, and
+                               | System attributes not normally seen on 'DIR'
+                               | listings. Ever wonder what files have been
+                               | updated today, or whether a package modified
+                               | one of your files? Locate files by specific
+                               | date (070989EQ for example), or all files in
+                               | hidden status (010180HO <- Hidden Only.
+                               | Shareware product, $25 to license your copy.
+                               | the Online Writer BBS - (818) 249-0845  V1.16
+4FILE320.ZIP   109236  01-06-95  4FILES v3.20, A MULTI-PURPOSE FILE MANAGER
+                               | recommended by PC-Computing magazine, 9/94.
+                               | Combines fast disk navigation with complete
+                               | file management, program launching, and 4DOS
+                               | & NDOS compatible file annotation. Puts your
+                               | favorite utilities and apps at your finger
+                               | tips. Sort the directory any way you like.
+                               | On-the-fly reconfiguration. Nice interface.
+                               | For DOS, Windows, OS/2, and DV. <ASP>
+                               | shareware, $30 w/ printed manual.
+ALL14E.ZIP     108036  12-01-94  ALL in 1 v1.4E - Intelligent File Manager for
+                               | DOS. Convenient, Smart! Fine screen display
+                               | and color. Very fast to move file in a drive.
+                               | Very easy to use. Handle with file and
+                               | directory. Associated file execution. Not a
+                               | software to have ever existed. Shareware.
+ALLMYFIL.ZIP    13931  07-28-94  Directory listing of all your current files
+                               | for whatever drives you have. ALL MY FILES
+                               | taps the power of the DOS DIR command, which,
+                               | combined with the '>' (redirection) symbol,
+                               | can produce a text file of all your programs,
+                               | etc. Want a sorted listing of all files on
+                               | Drive A? What kind of sorting would you like?
+                               | Alphabetical? Time and Date? Size? Ascending?
+                               | Descending? ALL MY FILES provides a much
+                               | needed level of abstraction between you and
+                               | the DOS prompt. So, if you want a master list
+                               | of all files on Drive H sorted according to
+                               | size (from smallest to largest or vice
+                               | versa), just pick that option
+AMAXX41.ZIP    320102  08-23-94  Menu & File Management Program for DOS. This
+                               | program includes LHA Compression built in,
+                               | Also supports PKZip Compression if PKZip is
+                               | in your path.6 Screen Savers, Encrypt Files,
+                               | Printer Control from within the File Manager,
+                               | Password Protect Menus, Popup Calendar &
+                               | Calculator, Supports up to 50 Menu Screens.
+                               | WHEREIS Fast File Search Full Documentation
+                               | Included.
+AMOS111.ZIP     80824  01-27-94  ⁄ƒƒƒƒƒƒƒƒƒƒƒ˙  A˙M˙O˙S v1.11  ˙ƒƒƒƒƒƒƒƒƒƒƒƒø
+                               | ≥  AMOS is a DOS-program for OS/2 users!   ≥
+                               | ≥  It gives easy access to HPFS-formatted  ≥
+                               | ≥  drives from native DOS. It will read,   ≥
+                               | ≥  write, copy, edit, del, md, rd, type,   ≥
+                               | ≥  and much, much more... No need for an   ≥
+                               | ≥  OS/2 Service installation anymore!!     ≥
+                               | ¿ƒƒƒ˙ Release date: 27th January 1994 ˙ƒƒƒƒŸ
+                               | A -=> You wish to install a patch for OS/2.
+                               | M -=> You have made an error in OS/2's
+                               | O     CONFIG.SYS... No more "Please correct
+                               | S     the error and restart the system".
+                               | A -=> You accidentialy deleted an important
+                               | M     HPFS-partition using FDISK.
+ASH005A.ZIP    342975  02-06-94  The Accutek Shell v0.05alpha A _COMPLETE_ DOS
+                               | file manager with copy, tree functions, an
+                               | archive (ZIP/ARJ/etc) front end and much
+                               | more. Shareware.
+ATCOMP16.ZIP    23500  04-04-95  Matches up two files, displaying them side by
+                               | side, and displaying the similarities and
+                               | differences between them.  Equal lines are
+                               | marked by an equal sign on both sides of the
+                               | screen; discrepancies in similar but unequal
+                               | lines are highlighted; and lines which exist
+                               | in one file and which have no corresponding
+                               | counterpart in the other file are displayed
+                               | as such.                                hw
+ATTR100.ZIP     17838  01-23-94  ATTR is a utility designed to replace the DOS
+                               | ATTRIB command. You get all of the features
+                               | of ATTRIB plus the ability to have more than
+                               | one filename on the same command line,
+                               | exclude files, include files with certain
+                               | attributes, and more. The best feature is
+                               | that it works on DOS 2 or higher. The nearest
+                               | version of ATTRIB in features is only
+                               | available in DOS 5+. Shareware by Thomas
+                               | Dyas.
+AUZCRM11.ZIP    50600  05-26-95  Auz Cremate File Deletion Utility A deletion 
+                               | utility that deletes files more fully that 
+                               | other file deletion utilities 
+                               | First released version
+BAKILL12.ZIP    37519  05-18-95  * BAK-KILL v1.2 is a DOS based utility that
+                               | will search a specific drive and delete BAK
+                               | files (backup files).
+                               | * Will NOT delete "system" BACKUP files!
+                               | * Creates a LOG file to show ALL activity!
+                               | * Great for getting rid of unwanted files
+                               | before tape backups!  Saves time!
+                               | * Now supports command line options for 
+                               | automated events!
+                               | FREEWARE Utility From COMPUTER ONE BBS!
+                               | (818)763-9006 oR (88)763-0678
+BFIND501.ZIP    62868  01-11-95  BFIND.EXE (5.01): Allows Boolean-type FIND
+                               | requests. For example, find any line with one
+                               | string OR another.
+CCOPY105.ZIP    63094  01-10-95  Controlled Copy 1.05 Advanced DOS file copier
+                               | with free space checking and progress
+                               | indicators. Flexible and powerful command
+                               | line options, and faster copying speed.
+                               | Everything you need in one package.
+CD740D.ZIP     188066  03-26-94  CATDISK/D v7.40 - Disk Catalog System By Rick
+                               | Hillier - A DPMI-compliant version of the
+                               | CATDISK program itself.  Runs in protected
+                               | mode to use extended memory. Has higher
+                               | capacity to facilitate CD-ROMS and large hard
+                               | drives. You need the standard version for
+                               | documentation and other utilities (avail. as
+                               | CDISK740.*)
+CDSKA810.ZIP   454648  11-14-94  Disk Catalog System/CATDISK V8.10 <ASP> (1/3)
+                               | From Rick Hillier. The most significant
+                               | upgrade in CATDISK's long history! Tracks
+                               | what's on each disk in your file collection.
+                               | New interface w/pull down menus, pop-up
+                               | windows, online help, mouse support, more!
+                               | Now supports file categories, multi-line file
+                               | comments, archives and FILE_ID.DIZ comments.
+                               | CDSKB810.ZIP and CDSKC810.ZIP also required.
+                               | Shareware. Base Registration Fee = $29.00
+CDSKB810.ZIP   136036  11-14-94  Disk Catalog System/CATDISK V8.10 <ASP> (2/3)
+                               | From Rick Hillier. Bonus utilities automate
+                               | offloading files to floppies, eliminating
+                               | duplicate files/redundant versions of
+                               | programs, general file cleanup operations and
+                               | retrieval of offloaded files back to "live"
+                               | storage. These utilities are built right into
+                               | the main program for total integration.
+                               | CDSKA810.ZIP and CDSKC810.ZIP also required.
+                               | Shareware. Base Registration Fee = $29.00
+CDUP33.ZIP     223600  06-01-94  Colorado Utilities Duplicate File Manager
+                               | CUDUP reads any size diskette or hard drive,
+                               | optionally includes archives, selects dup
+                               | files based on filename. Dups can be printed,
+                               | viewed in ASCII or HEX and/or deleted
+                               | Supports EGA/VGA. Unlimited capacity, plus
+                               | many advanced features. Phone, CIS and BBS
+                               | support.
+CF536Q.ZIP     178979  03-31-94  CMFiler File Manager v5.36q <ASP> - Highly
+                               | versatile disk and file manager with side-
+                               | by-side split screen format for display of
+                               | dir lists or disk tree structures. Full suite
+                               | of dir/file services, plus built-in editor,
+                               | floppy filler, formatter and copier, menued
+                               | program launcher, notepad for file
+                               | desriptions. Small, fast, easy-to-use command
+                               | syntax, mouse and 43/50-line VGA support.
+                               | Great for laptops.
+COMEBK.ZIP     255891  03-14-94  COMEBACK v3.0 <ASP> - The best undelete in th
+                               | world. ComeBack will recover with 100%
+                               | accuracy any of the last 1000 files you have
+                               | deleted or even OVERWRITTEN! No other program
+                               | in the world does that. No need to worry
+                               | about piecing together fragmented file.
+                               | Recovering lost data is easy with the
+                               | mouse/hot key user interface which incluDes
+                               | context sensitive help.
+CWHERE.ZIP     100745  02-20-94  Prerelease version of Colorado Utilities
+                               | Where (CW). It is a super fast file find
+                               | program which will search a hard drive in
+                               | seconds and locate all files which match an
+                               | input file mask. The files are then presented
+                               | for inspection. You can view any file by
+                               | placing the highlight over the one you want
+                               | to view and hitting Enter. If the file is
+                               | binary you can view it in hex by hitting Ctrl
+                               | H.
+DAB140.ZIP      22481  01-19-94  Delete file(s) with "excepTion(s)". Designed
+                               | to supplement DOS's delete command. Many
+                               | times I've run into a situation where I
+                               | wanted to delete everything in a directory
+                               | EXCEPT one or two files. This is impossible
+                               | to accomplish with DOS's delete command.
+                               | Several ways around this problem are
+                               | certainly possible, but all are relatively
+                               | clumsy. So, the solution was DAB.
+DEAD123.ZIP    232408  08-29-94  DEADWOOD v1.23 is a file manager that identi-
+                               | fies unused files. It has two parts: a pair
+                               | of small (19k total), well-behaved TSR's that
+                               | track file use (DOS and Windows), and a file
+                               | management interface. Files are displayed
+                               | with codes indicating that the file was
+                               | Created, Executed, Opened for read/write,
+                               | Searched for by name, &/or Searched for by
+                               | wildcards. The number of accesses and time/
+                               | date of last access are displayed.
+DEL110.ZIP      65031  05-15-95  DELETE 1.10 -- Enhanced file delete!
+                               | Options include prompt before delete,
+                               | overwrite & delete, recursive delete
+                               | of files & directories, override file
+                               | attributes, and more than one file
+                               | specification on the command line.
+                               | Share ware registration $15.00.
+DELBAK14.ZIP   110438  12-17-94  DelBaks Version 1.4 Deletes backup files
+                               | disk-wide. Select the file masks you wish to
+                               | delete and the directories to be excluded.
+                               | Dialog language options: english/german.
+                               | Uploaded by the author.
+DIRCO505.ZIP   100916  05-21-95  DIRCOMP.EXE (5.05):  Updates files in
+                               | one subdirectory based on files in
+                               | another subdirectory.  Similar to DOS'
+                               | REPLACE commands in some ways but also
+                               | removes unused files and can report what
+                               | it's doing.
+DIRTO503.ZIP   130608  03-20-95  DIRTOTAL.EXE (5.03):  Prepares report showing
+                               | files in subdirectory or drive. Allows some
+                               | restriction requests (show only files with
+                               | date greater than a certain value).
+DIRTOT15.ZIP    36908  07-24-94  DIRTOT Directory Totals V1.5 DIRTOT provides
+                               | a new view of your hard disk, the total space
+                               | used by entire subdirectory trees. The
+                               | customizable report format lets you list
+                               | actual space used or by clusters, latest
+                               | date, files needing backup, and 10 other
+                               | statistics for each directory. Includes
+                               | multiple sort orders, selectable number
+                               | formats, and more. Supports very large
+                               | drives. From Quincunx Software.
+DIRTREE.ZIP     21984  03-24-94  Directory Tree of any disk
+DIRU.ZIP         1350  09-01-94  Diru.com was written to get around the
+                               | problem of corrupt or confusing file names.
+DLXDR251.ZIP    27617  03-18-95  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                               | -=-=-=-=-=-=-=-=-=-=-=-=-=-= Program:
+                               | Deluxe Dir        Ver. 2.51
+                               |    3, March 95  Author:      Oren Souroujon
+                               | < LISOURO@weizmann.weizmann.ac.il >
+                               | Description:  A directory lister, (DIR
+                               | command replacement), with 3 columns that
+                               | still include file sizes. DDIR has a flexible
+                               | sort, highlights executables and archives,
+                               | has HEBREW FILENAME SUPPORT, better
+DM603.ZIP      398593  09-09-94  Disk manager v6.03 for WESTERN DIGITAL (techn
+DOSVUE_4.ZIP   266508  02-18-95  DOSview -Powerful File Manager. Like Norton
+                               | Commander, but more powerful. Works great
+                               | with Windows too. Two file panels, Built-in
+                               | editors/viewers, XCopy, YMove, Tree, Wipe,
+                               | File Find, Branch Totals - more than 60
+                               | commands in all. Small, takes only 4K,
+                               | network sharable. Administrators, you need
+                               | this utility. Shareware.
+DT124.ZIP       11899  08-09-94  DT v1.24, DOS util: file date/time stamper.
+                               | Freeware (c) 1994 [94/08/09] by DDA - Reign
+                               | Ware. W/ Pascal soUrce. Fixed and optimized.
+                               | (Formerly REDATE!)
+DWAST100.ZIP    13809  02-24-95  DiskWaste v1.00 - DOS Utility: Display disk
+                               | space wasted by small files. Very basic, yet
+                               | informative. Freeware (c) 1995 [95/02/24] by
+                               | DDA - Reign Ware. W/ Pascal source.
+EBAK43.ZIP     192272  03-19-95  EASY BACKUP VERSION 4.3  - Compressed Backup
+                               | Disk Maker - Easy Backup makes compressed
+                               | self-restoring backups. It backs up sub
+                               | directories automatically and has an archive
+                               | option which will remove the backed up
+                               | directory structure from hard disk. Backup
+                               | parameters are stored in a data file so that
+                               | subsequent backups can be menu selected EASY
+                               | SOFTWARE Reg. $25
+EDDY7W.ZIP     252567  12-27-94  EDDY v.7w <ASP> "EDit DirectorY"- Do ANYTHING
+EDIR133.ZIP     36160  07-18-94  EDIR is just like DIR, only it does one thing
+                               | more : for every file EDIR RECOGNIZES it
+                               | gives a short description! EDIR recognizes
+                               | GIF,PCX,JPG,EXE,WAV,MID,
+                               | 669,ARJ,ZIP,LZH,MTM,PCK,RAS,ROL,SQZ,TPU,
+ELFTR323.ZIP   213502  02-24-95  Packs 100's of extremely FAST file, directory
+                               | and program management utilities in an
+                               | easy-to-use package. Works with over 16,000
+                               | files across 26 disks as if they were in
+                               | place! View, print, copy, move, rename, tag,
+                               | sort, change attributes, change time/date,
+                               | erase, graft, find, attach notes, check disk
+                               | space on all disks or memory at once, create
+                               | user-defined programmable menus, shell to
+                               | DOS, run programs from EXE, COM, BAT, BTM or
+EQTREE.ZIP      31554  01-18-94  A program to synchronize two directory trees.
+EZCOMO.ZIP      51612  01-18-95  EZCOMO V1.0 file manager will allow the user
+                               | to easily copy or move files with a few
+                               | clicks of the mouse button or by use of the
+                               | keyboard.
+FBUDDY31.ZIP   248807  09-18-94  FileBUDDY v3.15 - A simple but unique file
+                               | viewer that lets you view and manipulate
+                               | ASCII, DBF, ARC, ARJ, LZH, PAK, ZIP, BIF,
+                               | BMP, GIF, JPEG, PCX, TARGA, and TIF files.
+                               | Archive support includes archiving,
+                               | extracting, and deleting files. Image
+                               | support includes processing, cropping,
+                               | saving across formats, "slide-show" viewing,
+                               | and printing to HP LaserJet/DeskJet, Epson
+                               | 24-pin dot-matrix, or compatible printers.
+FGREP181.ZIP    28237  07-06-94  Finds strings of characters in ASCII text
+                               | files, and arbitrary sequences of bytes in
+                               | other files. String search capabilities are
+                               | not extensive (no regular expressions), but
+                               | FGREP is small and very, very fast. FGREP is
+                               | intended to replace the FIND filter with
+                               | something faster and
+                               | FGREP386.COM is a version of FGREP.COM that
+                               | requires an 80386 or better. It should be
+                               | slightly faster than FGREP.COM (don't expect
+                               | anything spectacular). If you have an 80386 a
+                               | higher CPU, just erase FGREP.COM and rename
+                               | FGREP386.COM to FGREP.COM.
+FILE20.ZIP      48302  07-15-94  FILE 2.0, advanced file recognizer FILE
+                               | knows: 14 EXE compressors, 7 compilers, 6 DOS
+                               | extenders, 9 COM compressors, 12 image and
+                               | movie formats (w/ resolution and colors), 14
+                               | archive types, 25 sound module and sample
+                               | formats, several source codes, and it can
+                               | auto-kill tons of BBS ads and intros. NEW!
+                               | you can add your own BBS ads !
+FILED370.ZIP    19688  01-23-94  FILEDUMP 3.70 Browse/View, Print, Search
+                               | Extract records. Allows viewing any MS-DOS
+                               | file in ASCII, HEX, or EBCDIC. Will handle
+                               | large files up to 1GB and records up to 14000
+                               | characters. Instant Access to any dBase
+                               | compatible database. You can even create your
+                               | own database subset.
+                               | Shareware from World Wide Enterprises,
+                               | 13084 Townsend Road, Phila. PA 19154-1001
+FILEZ18.ZIP     57135  06-30-94  FILEZ works like a text editor except that
+                               | binary data can be viewe d and modified as
+                               | easily as text. Features variable record
+                               | size, p rint record and file, cut and paste,
+                               | string and pattern search and replace,
+                               | on-line help.
+FMAN430.ZIP     79824  01-01-94  FILE_MAN v4.30 r01/01/94 MicroMetric <ASP>:
+                               | Menu driven disk file manager utility; single
+                               | file/groups quickly marked, acted upon; copy,
+                               | move, spawn, append, erase, rename, change
+FMAV30.ZIP     166843  03-14-95  FILE MAVEN 3.0 File Manager/Transfer Utility
+                               | * Dual dir/pull down menus/50-line support *
+                               | LapLink-style file transfers via cable *
+                               | ZIP/LHA/ARJ compressed file support *
+                               | ASCII/hex file viewer and new text editor *
+                               | File search, split/join, date stamping *
+                               | Blowfish encryption and secure file wipe *
+                               | Context sensitive, hypertext help system *
+                               | Directory Maven tree scanning/quick chdir *
+                               | And much more!  <ASP> Shareware $35 reg.
+GLEDIT43.ZIP    84208  05-18-95  Globally search for, and optionally replace,
+                               | a string of characters in all selected files
+                               | a directory or directory tree.  If you have
+                               | used any text search utilities, you know the
+                               | power of being able to search all .BAT files
+                               | in your BATCH directory when you move some
+                               | applications to a new disk volume.  You are
+                               | able to tell immediately which batch files
+                               | need to be modified.  GLEDIT takes it a step
+                               | further in letting you also specify the
+                               | string that is to replace the search string
+                               | and does the update of the file for you. hw
+GZAP_152.ZIP     9973  11-09-94  Totally erase a file. GZap writes "nuls" over
+                               | the FileName.Ext, then deletes the file. You
+                               | can use a utility to UN-DELETE the file, but
+                               | you'll find nothing there but (Hex) 00s. hw
+HE.ZIP          54591  06-08-94  HEXEDIT 1.3 <ASP> Edit binary files in a HEX
+                               | byte format- HexEdit is a full featured
+                               | binary or text file editor. Edit HEX bytes or
+                               | toggle to character mode to edit text. All
+                               | non-printable characters are displayed. Many
+                               | standard editing features are available as
+                               | well as an ASCII character set window.
+                               | Engineering DUVAL-SOFT
+K9FINDIT.ZIP    23817  04-03-94  FAST file locator. Will search ALL harddrives
+                               | and ALL subdirectories on them for a file, or
+                               | matching files. DOS-style [* NEW *] wildcards
+                               | built in. Also searches hidden directories
+                               | too! Written in a combination of HEAVY
+                               | assembly (fast) code and little basic, I can
+                               | go through my entire 85 meg drive and several
+                               | hundred files in JUST a few seconds!!!! NO
+                               | KIDDING!!!
+KDR402.ZIP      29218  04-18-94  KillDir 4.02 04/18/94 KILLDIR is a utility
+                               | that will make eliminating a directory and
+                               | all of it's contents a lot easier. KILLDIR
+                               | will remove all files and file types
+                               | including hidden or system files. Shareware
+                               | registration forms and manual included. From
+MFDU10.ZIP      49092  05-18-95  Six small, efficient DOS utils that offer
+                               | more powerful and convenient management of
+                               | files and directories than standard MSDOS
+                               | commands, including: * find files by name,
+                               | time/date, attributes, or size * display a
+                               | full range of file and directory information
+                               | * change file or directory names, attributes,
+                               | or time/date * compare directory contents,
+                               | showing different files and versions * copy,
+                               | move, back up (archive), and delete files
+                               | efficiently * quickly find, move to, or
+                               | create directories * easy user customization
+                               | of default options.                     hw
+MRFIX10.ZIP     57944  07-16-94  TSR File Manager. In addition to
+                               | copy/move/etc., the
+                               | tree and uncommon diskette formatting
+                               | feature, MRFIX allows you to create long
+                               | notes for each file, like those stick-on
+                               | memos that are scattered around every office.
+                               | All this is just one key away because MRFIX
+                               | is a TSR. MRFIX can communicate with your
+                               | other programs by sending them the file's
+                               | path and name that you select, just as if you
+                               | typed it, except for the spelling mistakes.
+                               | hw
+NUKE.ZIP         3102  01-18-95  NUKE.COM will delete all files in a directory
+                               | and all of it's subdirectories, regardless of
+                               | file attributes (read-only, hidden, system)
+PGP26.ZIP      263728  06-02-94  Pretty Good Privacy ver 2.6 - RSA public-key
+                               | encryption freeware for MSDOS, protects
+                               | E-mail.  Lets you communicate securely with
+                               | people you've never met, with no secure
+                               | channels needed for prior exchange of keys.
+                               | This version of PGP uses a version of RSAREF
+                               | provided to MIT by RSA Data Security for use
+                               | in PGP. This version is legal within the U.S.
+                               | [THIS COPY IS DIRECT FROM THE OFFICIAL FTP
+                               | DISTRIBUTION SITE, NET-DIST.MIT.EDU]
+PGP262.ZIP     283404  10-22-94  PGP (Pretty Good Privacy) ver. 2.6.2 for DOS.
+                               | Obtained from net-dist.mit.edu on 10-24-94.
+                               | Public Key Encryption.
+PGP262O2.ZIP   272680  12-01-94  Pretty Good Privacy 2.6.2 for OS/2.
+                               | Non-M.I.T. release. From the Sprawl BBS,
+                               | (818) 342-5127.
+PGP26A2B.ZIP   265997  08-21-94  PGP 2.6a for OS2. Bug fix, issue date of
+                               | 08-21-94. This is *NOT* an official PGP from
+                               | Phil Zimmermann, but is signed by "Rebellious
+                               | Gorilla."
+PGP26AB.ZIP    254668  08-21-94  PGP 2.6a for DOS. Bug-fix, issue date
+                               | 08-21-94. This is *NOT* an official PGP from
+                               | Phil Zimmermann, but is signed by "Rebellious
+                               | Gorilla."
+PGP26BUG.ZIP     5706  09-16-94  Report of bug in PGP 2.6 by co-author of
+                               | program.
+PGP26FIX.ZIP     7838  05-25-94  A couple of fixes for problems in PGP 2.6.
+                               | Most are source code changes only useful on
+                               | UNIX machines.
+PGP26I.ZIP     257940  10-16-94  Obtained by FTP from:
+                               | ftp.dsi.unimi.it/pub/security/crypt/PGP/.
+                               | FROM README FILE: PGP 2.6.i is not an
+                               | official PGP version. This precompiled
+                               | DOS-version of 2.6.i differs from MIT PGP
+                               | 2.6.1 in, inter alia, that it uses PRZ's
+                               | MPILIB instead of RSAREF. It also: (1)
+                               | circumvents the "legal kludge"; and (2) fixes
+                               | a bug in verifying clearsigned messages.
+PGP26U_D.ZIP   217503  08-20-94  PGP 2.6ui - International. It will mimic
+                               | operation of 2.6, but will also let you have
+                               | bigger keys if you want. Not for use in Zone
+                               | 1.
+PGPBGTST.ZIP     6769  09-30-94  Signed messages that check whether or not
+                               | your copy of PGP has the infamous "clearsig"
+                               | bug, where PGP will report a good signature
+                               | on an altered message.
+PGPFAQ6.ZIP     58658  02-06-94  PGP Frequently Asked Questions from Internet
+                               | vol. 6.
+PGPFIX.ZIP       1460  08-22-94  Simple .bat file to "patch" Pretty Good
+                               | Privacy 2.3a so that it retains compatibility
+                               | with 2.6 post Sept. 1, 1994. The patched
+                               | program is also still compatible with shell
+                               | programs designed to run 2.3a such as
+                               | AutoPGP.
+PGPFTP.ZIP       4994  09-07-94  List of FTP sites in the U.S. and Great
+                               | Britain where one can obtain PGP (Pretty Good
+                               | Privacy) program.
+PGPMNU13.ZIP    46849  05-02-94  PGPMENU FOR PGP. CALLS TEXT EDITOR. CUSTOMIZE
+                               | YOUR OWN COLOR CONFIGURATION WITH 44 CHOICES
+PGPMNU30.ZIP    54084  10-25-94  PGPMENU 3.0 - FREE - for all versions of PGP
+                               | - cursor operated DOS menu with new "comment"
+                               | feature. Call your text editor from the menu.
+                               | Custom design your own color configurations.
+                               | Includes explanation of the mathematics of
+                               | public key encryption and the RSA algorithm.
+PGPSH32A.ZIP   134942  09-05-94  PGPShell version 3.2a - July 1994 A front-end
+                               | shell for use with Phil Zimmermann's Pretty
+                               | Good Privacy (PGP) public-key encryption
+                               | program. A menu interface, mouse driver, fast
+                               | tools for analyzing your public key ring, and
+                               | intuitive prompts, make encryption tasks easy
+                               | and (dare I say) fun.
+PGPTALK.ZIP    153461  08-15-94  PGP Talk Version 2.0. Downloaded from
+                               | Compuserve. Supposedly obtained from the
+                               | Internet.
+PGP_MJ.ZIP       9620  06-15-94  WHERE TO GET THE PRETTY GOOD PRIVACY PROGRAM
+                               | (PGP) (Last modified: 13 June 1994 by Mike
+                               | Johnson). Includes table of latest versions,
+                               | legal restrictions, sources in US and Canada,
+                               | sources outside US and Canada.
+RCDEL262.ZIP    24737  08-26-94  ’ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕ∏
+                               | ≥ -== Directory DELete 2.62 ==- ≥
+                               | ∆ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕµ
+                               | ≥ Deletes entire directory trees,   ≥
+                               | ≥ but is faster, more powerful and  ≥
+                               | ≥ more flexible than "deltree".     ≥
+                               | ‘ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕæ
+RZSPLT21.ZIP    31357  03-09-95  = RZSPLIT v2.1 = Finally a utility to split
+                               | ANY type of file to make them fit on a
+                               | floppy. Much FASTER, and Delete option added.
+                               | Now can read/write from floppy directly. -
+                               | freeware - by R. Zino - 3/09/95
+SFT10.ZIP       20668  08-16-94  SuperFileTool v1.0 - Finds Files on any drive
+                               | including netware  networks and CD-ROMs.
+                               | Search   for   files by name, wildcards,
+                               | attributes  and/or  range of file size. ALSO,
+                               |  allows you to DELETE, COPY or MOVE files
+                               | found. Very fast and flexible.     -->
+                               | FREEWARE <--
+SHRED.ZIP       11518  12-12-94  SHRED destroys sensitive or secret files so
+                               | they can't be recovered by overwriting the
+                               | files you specify with zeros.
+ST330E.ZIP      20597  11-05-94  Display directory tree in various formats.
+TOSCOPY.ZIP    481336  11-16-32  TOS copy utility. Graphical disk copy program
+                               | with sound blaster support.
+VIEW_CTF.ZIP    14285  09-06-94  VIEW v1.0 - Colored Text Format File Viewer
+                               | *******************************************
+                               | View is a utility that allows you to make
+                               | colorful help, readme, or other text-based
+                               | files that are distributed in shareware/freew
+                               | programs. Using extended characters in the
+                               | standard ASCII character set, you can make yo
+                               | text files more readable and interesting WITH
+                               | having to use ANSI.SYS. With this version of
+                               | View (1.0), you can change text foreground &
+                               | background colors, pause and wait for a keypr
+                               | clear the screen, and make characters blink.
+VOLUME11.ZIP    17807  07-02-94  VOLUME cuts large files into pieces small
+                               | enough to store on removable media and then
+                               | recomposes the file from the media.
+WIPEDEL_.ZIP    49489  08-04-94   WIPEDELETE ƒEasy way to remove files from
+                               | your hard drive.  Deletes according to
+                               | Department of Defense standard 520.22-M.
+                               | You will never see that file again!
+                               | ⁄ƒƒƒÕÕÕÕÕÕÕÕÕÕÕ[ WIPEDEL! ]ÕÕÕÕÕÕÕÕÕÕÕÕƒƒƒø
+                               | ≥1) NORTON(TM) interface 2) file detection≥
+                               | ≥3) Easy exit 4) Smart return 5) efficient≥
+                               | ¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒŸ
+WIZ32A.ZIP      77568  02-24-95  Lightning fast, multi-disk file finder. Full
+                               | wildcards--better that DOS's. Scans multiple
+                               | disks, and within archives. Can quality files
+                               | by size, date, class -- executable, archive.
+                               | Find duplicate files-works good on gigabyte+
+                               | disks. Approx 5 times FASTER than any other
+                               | whereis program.  Works with DUBLSPACE,
+                               | CD-ROMs and on networks, incl. Novell &
+                               | Lantastic.
+WIZ33.ZIP       77617  05-14-95  Lightning fast, multi-disk file finder.
+                               | Full wildcards--better that DOS's.
+                               | Scans multiple disks, and within archives.
+                               | Can quality files by size, date, class -- 
+                               | executable, archive.
+                               | Find duplicate files-works good on gigabyte+
+                               | disks.
+                               | Approx 5 times FASTER than any other whereis
+                               | program.  Works with DUBLSPACE, CD-ROMs and
+                               | on networks, incl. Novell & Lantastic.
+WRISIT34.ZIP    23805  10-27-94  …ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª
+                               | ∫            WHERE-IS-IT?               ∫
+                               | ∫     Fast File Finder/Manipulator      ∫
+                               | ∫            Version 3.4                ∫
+                               | ∫                                       ∫
+                               | ∫ Added different log file name with    ∫
+                               | ∫ /L<filename> switch. Delete found     ∫
+                               | ∫ files. Change dirs, etc. Super fast.  ∫
+                               | ∫ Registration $15.00                   ∫
+                               | »ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕº
+
+      
+                               | Jim Olsen - SUPERWARE. <ASP> <ASAD>
+                               | HardTrack is small, easy to use and FAST!
+                               | diskette labels, more++.
+                               | Schofield of the Sprawal BBS (818) 342-5127.
+                               | scan from a FLOPPY for Software Audits.
+                               | context sensitive help, macro procedures,
+                   
+                               | Report option reads the scan file or a
+                               | current drive scan to report changes.
+                       
+                               | - Please register!
+                               | Stay out of the DARK, Get Hardtrack! Reg $22.

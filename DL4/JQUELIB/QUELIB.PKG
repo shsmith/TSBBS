@@ -1,0 +1,188 @@
+
+-----------------------------------------------------------
+--                                                       --
+--       quelib.lib - Queue and stack manipulation       --
+--                                                       --
+--             Author: S.H.Smith, 10-Apr-86              --
+--                                                       --
+-----------------------------------------------------------
+
+package body quelib is
+
+
+-----------------------------------------------------------
+--                                                       --
+--            Queue creation and destruction             --
+--                                                       --
+-----------------------------------------------------------
+
+   procedure create(que:  out queue_type;
+                    name: in  string) is
+      -- create a new queue
+   begin
+      que := new queue_rec;
+      que.name := name;
+      que.first := null;
+      que.last := null;
+      que.count := 0;
+   end create;
+
+
+   procedure destroy(que: in out queue_type) is
+      -- dispose of a queue and all of it's entries
+
+      trash: queue_data_type;
+
+   begin
+      while que.count > 0 loop
+         trash := get_top(que);    -- throw away each entry in queue
+      end loop;
+
+      dispose(que);                -- throw away the queue
+      que := null;
+   end destroy;
+
+
+
+-----------------------------------------------------------
+--                                                       --
+--                Misc queue manipulation                --
+--                                                       --
+-----------------------------------------------------------
+
+   function entries(que: in queue_type) return integer is
+      -- return count of active entries in queue
+   begin
+      return que.count;
+   end entries;
+
+
+   procedure sort(que: in queue_type) is
+      -- sort the entries in a queue according to the
+      -- value of the queue data entries.
+      -- this is a simple bubble sort.
+
+      swapped:  boolean;
+      e:        queue_entry;
+      temp:     queue_data_type;
+
+   begin
+      if que.count > 1 then         -- need at least 2 entries to sort
+         loop
+            swapped := false;       -- make multiple passes through the que
+            e := que.first;
+
+            while (e.next /= null) loop
+
+               if e.next.data > e.data then
+                  temp := e.data;         -- out of order, swap entries
+                  e.data := e.next.data;
+                  e.next.data := temp;
+                  swapped := true;
+               end if;
+
+               e := e.next;
+            end loop;
+
+            exit when not swapped;  -- end of sort when no more swaps
+         end loop;
+
+      end if;
+
+   end sort;
+
+
+
+-----------------------------------------------------------
+--                                                       --
+--                     Enque functions                   --
+--                                                       --
+-----------------------------------------------------------
+
+   procedure add_top(que:  in queue_type;
+                     data: in queue_data_type) is
+
+      -- add a new entry at the top of a queue
+
+      new_entry:  queue_entry;
+
+   begin
+      new_entry := new queue_entry_rec;
+      new_entry.next := que.first;
+      new_entry.prior := null;
+      new_entry.data := data;
+      que.first.prior := new_entry;
+      que.first := new_entry;
+      que.count := que.count + 1;
+   end add_top;
+
+
+   procedure add_bottom(que:  in queue_type;
+                        data: in queue_data_type) is
+
+      -- add a new entry at the bottom of a queue
+
+      new_entry:  queue_entry;
+
+   begin
+      new_entry := new queue_entry_rec;
+      new_entry.prior := que.last;
+      new_entry.next := null;
+      new_entry.data := data;
+      que.last.next := new_entry;
+      que.last := new_entry;
+      que.count := que.count + 1;
+   end add_bottom;
+
+
+
+-----------------------------------------------------------
+--                                                       --
+--                    Deque functions                    --
+--                                                       --
+-----------------------------------------------------------
+
+   function get_top(que: in queue_type) return queue_data_type is
+      -- dequeue the top entry from a queue
+
+      found_entry:  queue_entry;
+      data:         queue_data_type;
+
+   begin
+      if que.count = 0 then
+         raise empty_queue;
+      else
+         found_entry := que.first;
+         que.first := found_entry.next;
+         que.first.prior := null;
+         que.count := que.count - 1;
+         data := found_entry.data;
+         dispose(found_entry);
+         return data;
+      end if;
+   end get_top;
+
+
+   function get_bottom(que: in queue_type) return queue_data_type is
+      -- dequeue the bottom entry from a queue
+
+      found_entry:  queue_entry;
+      data:         queue_data_type;
+
+   begin
+      if que.count = 0 then
+         raise empty_queue;
+      else
+         found_entry := que.last;
+         que.last := found_entry.prior;
+         que.last.next := null;
+         que.count := que.count - 1;
+         data := found_entry.data;
+         dispose(found_entry);
+         return data;
+      end if;
+   end get_bottom;
+
+end quelib;
+
+

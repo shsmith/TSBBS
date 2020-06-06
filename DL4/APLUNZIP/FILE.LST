@@ -1,0 +1,20 @@
+CC.BAT      		BAT file unchanged
+CRC32.C       		CRC32 ported to APW
+CRC32.H       		Header file for CRC32.C
+CRC32.ROO    		Rename to crc32.root
+LOCAL.H      		APW local definitions for UNZIP
+UNZIP.C      		Source for UNZIP ported to APW
+UNZIP.ROO    		Rename to unzip.root
+UNZIP           	APW executable
+MDOSIO.PAS     		Pascal file unchanged
+PRODEF.INC     		Pascal file unchanged
+UNZ.PAS    		Pascal file unchanged
+UNZIP.DOC    		DOC file unchanged
+STRIP.C      		Source for the STRIP program
+STRIP.ROO    		Rename to strip.root
+SETARGV.ROO    		Rename to setargv.root
+STRIP           	APW executable
+MAKEFILE        	For use with DEMCO Electronics' MAKE program
+UNZIP.NOT    		Notes for APW port
+FILE.LST    		This list
+

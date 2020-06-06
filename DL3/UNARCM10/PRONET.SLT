@@ -1,0 +1,239 @@
+
+//
+// ProNet script
+// s.h.smith, 24-sep-88
+//
+
+//
+// customize these constants
+//
+
+str name [] = "Samuel Smith",             // put your name here
+ password[] = "password",                 // your password on host
+ direntry[] = "3",                        // dialing irectory entry for host
+ prodoor [] = "open 1",                   // cmd to open prodoor
+ conflist[] = "A",                        // conferences to ARCM or A for all
+ workdir [] = "C:\TMP\";                  // where the packets will go
+
+
+//
+// don't change anything else
+//
+
+str buf[16];                    // used by the filefind function;
+int stat;                       // what state is the script in?;
+
+int t_command,
+    t_continue,
+    t_firstname,
+    t_graphics,     // track expected strings;
+    t_lastread,
+    t_pcommand,
+    t_process,
+    t_password,
+    t_ready,
+    t_NOCARRIER;
+
+int dialtry;
+
+
+main ()
+  {
+   set_terminal ("ANSI-BBS");                //use ANSI-BBS emulation
+   _down_dir = workdir;                      //set directories to QMAIL
+   _up_dir = workdir;                        //while script runs;
+    dialtry = 1;
+
+    while (1)
+     {
+      if (redial(direntry,100,0))             //dial the host
+        session();                            //get the job done
+      else                                    //returns if carrier lost
+
+      if (dialtry < 10)
+        dos("tm /log 'Could not connect with host - will retry' >>qnet.err");
+
+      else
+       {
+         dos("tm /log 'Could not connect with host - session aborted' >>qnet.err");
+         exittelix(1,1);
+       }
+
+       dialtry = dialtry + 1;
+     }
+ }
+
+
+
+//
+// perform the mail transfer session
+// login, join conference (if needed), enter door, download, logoff
+//
+// exits telix ONLY if the session was successful.
+// returns to calling procedure (for another try) if the session
+// failed due to carrier loss or timeout
+//
+
+session()
+{
+        if (!redial(direntry, 100, 0)) {        // dial host 100 times
+		dos("tm /log 'Could not connect with host' >>pronet.err");
+                return;
+	}
+
+        // track the prompts that are expected from PCBoard
+        t_graphics = track("graphics (Enter)=no?", 1);
+        t_firstname = track("first name?", 1);
+        t_password = track("Password", 1);
+	t_lastread = track("'Last Read' (Enter)=yes?", 1);
+	t_continue = track("to continue?", 1);
+	t_command = track("Command?", 1);
+	t_NOCARRIER = track("NO CARRIER", 1);
+
+        stat = 0;               // make sure NO string is being tracked;
+        while (1) {             // loop until ready to enter prodoor;
+                terminal();     // process all characters received;
+
+                stat = track_hit(0);    // see which track (if any) was hit;
+                if (stat == t_graphics) // question about graphics;
+                        cputs("n q ns^M");
+
+                else if (stat == t_firstname) { // request for user name;
+                        cputs(name);    // send name;
+			cputs("^M");
+		}
+
+                else if (stat == t_password) {  // request for password;
+			cputs(password);
+			cputs("^M");
+		}
+
+                else if (stat == t_lastread)    // request for scanning
+                                                // messages;
+                        cputs("n^M");   // don't scan them;
+
+                else if (stat == t_continue)    // request for continuing;
+                        cputs("^M");    // why not? why else are we here?;
+
+                else if (stat == t_command) {   // request for Main Board
+                                                // Command;
+			cputs(prodoor);
+			cputs("^M");
+                        break;  // now we're done with Main Board;
+		}
+
+                else if (stat == t_NOCARRIER) { // carrier lost
+			dos("tm /log 'Carrier lost during login with host' >>pronet.err");
+                        return;
+		}
+	}
+
+
+//
+// ProDoor has been activated
+// perform the ARCM and download.
+//
+
+	track_free(0);
+	t_process = track("Processing your request.", 1);
+	t_ready = track(" ready!", 1);
+        t_pcommand = track("] Command?", 1);
+	t_NOCARRIER = track("NO CARRIER", 1);
+
+        stat = 0;               // make sure NO string is being tracked;
+        while (1) {             // loop until ARCM started
+                terminal();     // again, process all characters received;
+
+                stat = track_hit(0);    // see which track (if any) was hit;
+
+                if (stat == t_pcommand) {       // request for ProDoor
+                                                // command;
+                        cputs("ARQM "); // start ARCM run on specified
+                                        // conferences
+			cputs(conflist);
+                        cputs(" NS^M");
+			break;
+		}
+
+                else if (stat == t_NOCARRIER) { // carrier lost
+			dos("tm /log 'Carrier lost during ProDoor startup' >>pronet.err");
+                        return;
+		}
+	}
+
+//
+// ARCM has been executed - wait for it to complete
+//
+        stat = 0;               // make sure NO string is being tracked;
+        while (1) {             // loop until packet is ready
+                terminal();     // again, process all characters received;
+
+                stat = track_hit(0);    // see which track (if any) was hit;
+
+                if (stat == t_process)  // ARCM has new mail, processing it
+			break;
+
+                else if (stat == t_pcommand) {  // no mail available,
+                        cputs("G^M");   // logoff
+			waitfor("Minutes Used:", 30);
+			dos("tm /log 'No new mail' >>pronet.err");
+                        exittelix(1, 1);
+		}
+
+                else if (stat == t_NOCARRIER) { // carrier lost
+			dos("tm /log 'Carrier lost during ProDoor startup' >>pronet.err");
+                        return;
+		}
+	}
+
+
+//
+// ARCM found some mail - it is processing now
+//
+        stat = 0;               // make sure NO string is being tracked;
+        while (1) {             // loop until packet is ready
+                terminal();     // again, process all characters received;
+
+                stat = track_hit(0);    // see which track (if any) was hit;
+
+                if (stat == t_pcommand) {       // finished processing mail
+                                                // ready for D/L
+                        cputs("D Z S^M");
+		}
+
+                else if (stat == t_ready) {     // Zmodem transfer is ready
+                                                // to start;
+                        if (receive('Z', "") < 0)       // not needed
+                                                        // autodownload is set;
+				dos("tm /log 'Download failed!' >>pronet.err");
+			break;
+		}
+
+                else if (stat == t_NOCARRIER) { // carrier lost
+			dos("tm /log 'Carrier lost during ProDoor startup' >>pronet.err");
+                        return;
+		}
+	}
+
+//
+// Download is completed, log off
+//
+        stat = 0;               // make sure NO string is being tracked;
+        while (1) {             // loop until packet is ready
+                terminal();     // again, process all characters received;
+
+                stat = track_hit(0);    // see which track (if any) was hit;
+
+		if (stat == t_pcommand) {
+                        cputs("G^M");   // logoff
+			waitfor("Minutes Used:", 30);
+			exittelix(0, 1);
+		}
+
+                else if (stat == t_NOCARRIER) { // carrier lost
+			dos("tm /log 'Carrier lost during ProDoor startup' >>pronet.err");
+                        return;
+		}
+	}
+}
+

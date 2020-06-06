@@ -1,0 +1,60 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * PCB ProDOOR sysop control panel handlers (3-1-89)
+ *
+ *)
+
+(*
+ * control function codes
+ *
+ *)
+       
+const
+   fun_idle    = '0';      {set_function function codes}
+   fun_batchdl = '1';
+   fun_batchul = '2';
+   fun_private = '3';
+   fun_reply   = '4';
+   fun_textview= '5';
+   fun_arcview = '5';
+   fun_xtract  = '6';
+   fun_chat    = '7';
+   fun_arcmail = '8';
+   fun_lib     = '9';
+   fun_rearc   = ':';
+   fun_test    = ';';
+   fun_confreg = '<';
+   fun_unkill  = '=';   {all sysop functions in mail reader}
+   fun_sysop   = fun_unkill;
+   fun_nodechat= '>';
+   fun_door    = '[';
+   
+
+procedure adjust_timing;
+   (* adjust time-left based on current function crediting *)
+
+procedure set_function(func: char);
+   (* select this function for current time and bytecount crediting *)
+
+function check_level(func:     char): boolean;       {function letter}
+   (* verify access level for a function, select this function for
+      current time and bytecount crediting *)
+
+function verify_level(func:     char): boolean;       {function letter}
+   (* verify access level for a function, select this function for
+      current time and bytecount crediting, warning if not allowed *)
+
+{procedure control_dump;}
+   (* dump the contents of the sysop control table *)
+

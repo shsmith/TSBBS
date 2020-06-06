@@ -1,0 +1,678 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                              Util-DOS Utilities
+                        119 files using 8,719,184 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+$1UTIL21.ZIP    64297  02-09-93  The $1 Utilities V2.1 2-9-93. Nine DOS
+                               | utilities and 22 pages of documentation
+                               | INTERNAL - add new commands to DOS, MOVE -
+                               | move files, RENDIR - rename dirs RES -
+                               | display tsr's, RDEL - recursive file delete,
+                               | STAMP - change file date, VIEW - view ascii
+                               | files, CAPS turn caps key on / off, NUM -
+                               | turn off numlock key Developed by ImagiSOFT,
+                               | Inc. <ASP> Registration: $1 Each
+4D50B.ZIP       28839  11-30-93  4DOS 5.0a to 5.0b documentation patch
+4DHPATB.ZIP     10758  02-12-94  4DOS 5.0 help text documentation patch
+4DOS55A.ZIP    249475  10-12-94  4DOS 5.5 <ASP> - The award-winning
+                               | COMMAND.COM replacement for MS-DOS, PC-DOS,
+                               | DR DOS, and OS/2, with command enhancements,
+                               | over 50 new commands, many other features.
+                               | Part A, see 4DOS55B.ZIP for part B. For
+                               | optional reference manual see JP4REF.ZIP.
+                               | Shareware, $49 full registration. 10-12-94
+                               | release A.
+4DOS55B.ZIP    255657  10-12-94  4DOS 5.5 <ASP> - The award-winning
+                               | COMMAND.COM replacement for MS-DOS, PC-DOS,
+                               | DR DOS, and OS/2 with command enhancements,
+                               | over 50 new commands, many other features.
+                               | Part B, see 4DOS50A.ZIP for part A. For
+                               | optional reference manual see JP4REF.ZIP.
+                               | Shareware, $49 full registration. 10-12-94
+                               | release A.
+4DOSTAG1.ZIP     2486  07-05-93  This is a text file that describes how to use
+                               | 4DOS as a batch tagger for uploading to BBSs.
+                               | Simple to implement. This is what I use to
+                               | upload many files to virtually every BBS I
+                               | frequent. I forgot to include one alias in
+                               | the previous upload of the text file.
+4DTAG12.ZIP      6809  03-08-94  New version of 4DOS batch file upload tagger.
+                               | Many new improvements over previous versions.
+4D_LOAD.ZIP     15083  08-01-93  4DOS loader. A simple but very usefull
+                               | procedure to start a 4DOS shell. Includes
+                               | 4DOS.PIF for Windows.
+4FD.ZIP         10597  05-17-93  Find files on any disc drive by searching
+                               | 4DOS file descriptions. Any combination of
+                               | floppy and/or hard discs can be searched.
+                               | Files are found based on their 4DOS file
+                               | descriptions.
+4HIST.ZIP       13386  09-08-93  4HIST- Free 4DOS utility: command history
+                               | duplicate entry deleter v1.00, 09/08/93. (c)
+                               | 1993 by David Daniel Anderson - Reign Ware.
+                               | 4HIST removes all superfluous lines from the
+                               | current 4DOS command history list. W/ PASCAL
+                               | source. Supercedes HISTU.BTM, and can be used
+                               | for other purposes.
+4UTILS84.ZIP   151863  01-03-95  Free utilities for 4DOS/NDOS. Includes: 1)
+                               | 4DESC 1.74 Full-screen 4DOS file description
+                               | editor with mouse support and cut and paste
+                               | capability. Scrollable editing of
+                               | 200-character descriptions. Calls file
+                               | viewer, editor or DOS shell. 2) 4FF 1.83
+                               | 4DOS-aware file finder. Looks inside .ZIP,
+                               | .ARJ, and .LZH files. Displays descriptions
+                               | of found files. IncLudes Turbo Pascal 7.0
+                               | source code.
+A1-2.ZIP       217519  03-05-95  A1 DOS Utilities series 2 by Eric Rodda - A
+                               | very useful and powerful collection of
+                               | utilities to enhance DOS batch files, make
+                               | menus, and much much more.  Includes special
+                               | effects, mouse support, and other
+                               | hard-to-find functions.  Written in assembler
+                               | for maximum speed.
+ACD221.ZIP      53788  05-23-93  ACD (Another Change Directory) version 2.21
+                               | makes changing directories much easier,
+                               | especially when you have a lrge harddisk with
+                               | lots of different partitions or are hooked on
+                               | a network drive. FREEWARE. This program is
+                               | similar to LCD and NCD.
+ADDTOIT1.ZIP     3359  11-07-93  Add to your path statement.
+ARGUS161.ZIP    46098  05-09-95  Logs essential system activities of DOS into
+                               | a text file.  - works complete in the
+                               | background (without screen output).  This
+                               | might be usefully if a program hangs up with
+                               | 'unexplicable' messages (e.g.  'Out of
+                               | Memory', 'File not found' and so on).
+                               | Sometime it is already interesting, which
+                               | interrupts are 'corrupted'.             hw
+ASU800.ZIP     894236  05-15-95  Atec software utilities. About 30 Dos based
+                               | utilites to replace MS-dos based couterparts.
+                               | Adds many features and options to standarddos
+                               | commands. Beta Version.
+BCMD20.ZIP     109143  11-05-94  Better Commands 2.0 for MS-DOS and DR DOS.
+                               | Powerful DOS replacement commands and many
+                               | new commands. Coexists with DOS for total
+                               | compatibility with existing software. Useful
+                               | addition to 4DOS, too. By Tom Hanlin.
+BLK213.ZIP      17544  09-06-93  BootLock 2.13 09/06/93 BootLock allows you to
+                               | lock out the use of [CTRL][ALT][DEL],
+                               | [CTRL]C, and/or [CTRL][BREAK]. New version
+                               | can be loaded as a Device Driver or TSR. You
+                               | can also define a "user defined" key to lock
+                               | out. BootLock can be unloaded and Loaded into
+                               | Hi Memory. Shareware registration form and
+                               | manual included. From Foley Hi-Tech Systems
+                               | (ASP).
+BOOTCPU2.ZIP    23349  07-05-94  Boots cpu warm, cold, plus new features
+BOOTLOCK.ZIP    18064  04-18-94  BootLock 4.01 04/18/94 BootLock allows you to
+                               | lock out the uSe of [CTRL][ALT][DEL],
+                               | [CTRL]C, and/or [CTRL][BREAK]. New version
+                               | can be loaded as a Device Driver or TSR. You
+                               | can also define a "user defined" key to lock
+                               | out. BootLock can be unloaded and Loaded into
+                               | Hi Memory. Shareware registration form and
+                               | manual included. From Foley Hi-Tech Systems
+                               | (ASP).
+CC106DOS.ZIP    67278  03-12-95  Controlled Copy 1.06
+                               | Advanced DOS file copier with free
+                               | space checking and progress indicators.
+                               | Flexible and powerful command line
+                               | options - the most versatile file
+                               | copier ever made! Look for the OS/2
+                               | version in file CC106OS2.ZIP.
+CD.ZIP           4739  01-31-93  4DOS aliases
+CDPATH12.ZIP    18871  08-07-93  Program to generate CDPATH environmental
+                               | variable used by 4DOS CD command. Also, a
+                               | simple Change Directory program similar to CD
+                               | in 4DOS, but will also change to directories
+                               | specified with only a partial name. Freeware.
+CHKPATH.ZIP      1535  12-08-93  Check Path - checks your DOS path for invalid
+                               | entries. Includes Pascal source code.
+CHKSTACK.ZIP    26677  01-09-95  ChkStacks analyzes DOS's use of the interrupt
+                               | stacks allocated by the STACKS=n,m statement
+                               | in CONFIG.SYS. It does so in a non
+                               | destructive fashion: it just looks at the
+                               | contents of the memoRy that DOS has allocated
+                               | and then reports on its findings including
+                               | whether any of them have been corrupted, how
+                               | many have actually been used and number of
+                               | bytes used by the longest stack that has been
+                               | used. Based on this information, it may make
+                               | a suggestion to change your stacks statement
+                               | to save memory for other programs.
+CLRV311.ZIP    105801  04-18-95  Color View - Color Directory Viewer to 
+                               | replace the dos "dir" command. View your 
+                               | directories in color by assigning colors to 
+                               | extensions, directories, attributes and more.
+                               | Up to 30 extensions and 10 wildcard names can
+                               | be defined. Sort by filename, extension, date
+                               | and size. Many options! Comes with an easy to
+                               | use configuration program. Released 04/14/95
+                               | Additions/Bug Fixes
+CNFG543.ZIP     85408  08-02-94  Menu driven file manager that organizes
+                               | multiple versions of the DOS CONFIG.SYS and
+                               | AUTOEXEC.BAT files. The program allows
+                               | creation of a menu of up to 25 different
+                               | configurations which consist of a menu entry,
+                               | and its associated path and files. On
+                               | startup, the program compares the present
+                               | CONFIG.SYS and AUTOEXEC.BAT files to those
+                               | listed in the users menu and indicates which
+                               | of those configurations is presently
+                               | installed (if any). If the user wishes to
+                               | change to different system configuration, he
+                               | can select it from the menu, install it and
+                               | if desired, reboot the PC from the program to
+COLRDIR2.ZIP    21567  05-22-93  Nice DOS Color coded directory/file usage you
+                               | determine statistics listed to screen
+CONFIX.ZIP      11117  02-03-94  From PC Mag: Device driver that lets you
+                               | issue commands such as PAUSE or CLS early in
+                               | the boot process.  CONFIX's commands aid you
+                               | in locating and fixing errors in your
+                               | CONFIG.SYS file.  The CONFIX commands fall
+                               | into four main groups: batch language,
+                               | display, lock-key state, and memory access.
+                               | The batch commands (PAUSE, ECHO, REM, and
+                               | PRINTSCR) let you pause the boot process to
+                               | give you time to read the on-screen messages,
+CRIT131A.ZIP    14192  10-22-93  Critical Error Handler V1.31a - Intercepts
+                               | The Abort/retry/fail/ignore And Gives Preset
+                               | Response Patterns And/or Reboots System For
+                               | Unattended Recovery.
+CTV127.ZIP      27284  02-06-94  The Controller v1.27: script-driven TSR (32k)
+                               | which can be used to run DOS programs w/its
+                               | universal macro language; will read the
+                               | screen or watch the time to trigger the start
+                               | or end of a process
+DDEL200.ZIP     10081  04-05-99  Delete a directory, including subdirecTory
+                               | hidden and read-only files. Can also be used
+                               | to quickly empty a floppy disk of all files
+                               | and make it reusable again. hw
+DDIR98A.ZIP     56656  11-02-94  *** DDIR 9.8a *** Directory lister, flags
+                               | system, hidden and read-only files;
+                               | highlights new files; shows DOS file size,
+                               | true file size and file "dead space". Full
+                               | sort/resort. Delete/copy files, interface to
+                               | text and graphics file viewers and 8 user
+                               | defined functions. Print list. Pack/unpack
+                               | files. Fully customizable.
+DDUT408.ZIP     51012  03-27-95  The BEST Replacement For DOS's 'DIR' Command!
+                               | - FULLY FUNCTIONAL Shareware!
+                               | - Featured In The July 1994 Issue Of Compute
+                               |   Magazine!
+                               | - Shows Files In 1, 2, 3, 4, Or 6 Columns,
+                               |   In Left/Right Or Up/Down Order!
+                               | - Sorted By Name, Extension, Size, Or Date In
+                               |   Ascending Or Descending Order!
+                               | - Multiple Date/Time Formats!
+                               | - Support For OS/2 & DESQview!
+                               | - Configurable Colors For Each File Type!
+                               | - TONS Of Options!
+DELX130.ZIP     16116  06-05-94  DELETE-X v1.30 The Best Deletion Utility
+                               | Available For DOS. 1000% Better Than The Old
+                               | DOS Del Command. Allows Exclude/Verify
+                               | Deletes. Delete Files Older/Newer/Bigger/
+                               | Smaller Than A Specified Amount. Lets You
+                               | Delete Files That Are
+                               | Hidden/Read-Only/System. Only $10.00 To
+                               | Register! Check It Out!
+DIRS100.ZIP     44715  02-21-94  DIRS.COM v1.00 - Sorted Directory Listing w/
+                               | color for VGA/SVGA. Copies, Moves, Deletes,
+                               | from directory listing with just a couple of
+                               | keystrokes. Also Change Attribs, Rename Files
+                               | & Direcs, Step to Next Direc, Edit Files,
+                               | List w/LIST.COM, Zip/UnZip w/PKZIP, Print
+                               | Files, Execute Programs, all from Directory
+                               | Listing. Batch perform own functions directly
+                               | from listing. Written entirely in assembly.
+DIRSIZEB.ZIP    30144  01-13-95  Directory listing for DOS. This utility is
+                               | great when it comes to keep track of the
+                               | directories on large hard drives or CD ROM.
+DIVEFIX2.ZIP    10162  03-26-94  Overcome DOS divide overflow error w/this!
+DMAV11.ZIP      26955  07-26-94  DIRECTORY MAVEN v1.1 - Change Dir Program.
+                               | Combines the best features of Ledbetter's LCD
+                               | and Norton's NCD programs. Quickly change to
+                               | any directory on any drive from the DOS
+                               | command line or view the directory trees of
+                               | all your drives. DOS Utility finalist in PC
+                               | Mag's 1994 Shareware Awards. Ver 1.1 adds
+                               | 43/50 line/monochrome support, command line
+                               | scanning, and forced drive search. $0
+                               | Shareware (Freeware). <ASP>
+DMC35.ZIP       75361  11-29-93  shareware version of DMC memory management
+                               | utilities Files: 7 Oldest: 11/26/93 Newest:
+                               | 11/29/93
+DOS6.ZIP       666936  03-31-93  Dos 6 utilities and apps the MS forgot
+DOS62SP.ZIP    749255  12-09-93  Microsoft's release of MS-DOS 6.2
+                               | Supplemental Utilities.
+DOS62UP.ZIP     39233  01-04-94  DOS 6.2 Update version 1.3 by Steven Woas.
+                               | This manual and tutorial show the new DOS 6.2
+                               | changes. It also shows how you can get the
+                               | DOS 6.2 Step-Up for free. This work was
+                               | written as a supplement to the book, Learning
+                               | DOS for the Complete Novice, 2nd Edition,
+                               | published by Celestial Press. The shareware
+                               | registration fee is $5.00. (ASP
+DOS6WARN.ZIP    33454  06-30-93  Checks dos 6.0 compressed disks for dangerous
+                               | conditions which may cause corrptn
+DOSEDIT.ZIP     49394  12-30-94  MicroSoft Editor new version [1/1] This is a
+                               | new EDIT for the DOS. this one is Awsome it
+                               | can load text larger than 1 megabyte and also
+                               | features Split windows editting. Be sure to
+                               | Upgrade your old version. Copy all the files
+                               | and delete your EDIT.COM...
+DOSUTL21.ZIP    64915  07-09-94  6th Sense DOS 6 Utilities v2.1 <ASP> -
+                               | "Front-ends" for DOS 6 FORMAT and DIR
+                               | commands. Menu-driven, adv. features.
+                               | Supports environment variables, undocumented
+                               | features, more. Supports all features of
+                               | these two commands with simple to use menu
+                               | commands. Can help you make these switch
+                               | selections permanent through use of
+                               | environment variables and batch files.
+DOS_HELP.ZIP   187575  11-07-93  help file for dos 1.0 through dos 5.0
+DPD21SW.ZIP     48549  03-02-95  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                               | ³    DOS PROMPT DESIGNER VERSION 2.1    ³
+                               | ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                               | ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                               | ³ Great shareware utility to design and ³
+                               | ³ save your own colorful DOS prompts.   ³
+                               | ³ A few changes since v2.0 but no major ³
+                               | ³ changes.  FREE REGISTRATION FOR users ³
+                               | ³ who have registered a previous vers.  ³
+                               | ³ $10 for NEW registrations.            ³
+                               | ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+DRVLOAD.ZIP     18444  10-12-93  DRVLOAD.COM (VERSION 1.0) First Published in
+                               | Magazine November 9, 1993 (Utilities). Instal
+                               | MS-DOS device drivers from the DOS command pr
+                               | eliminating the need to edit the CONFIG.SYS f
+                               | to include device= statements and then reboot
+DSTIME11.ZIP    15732  12-18-93  Leave hardware clock in Standard Time all
+                               | year long while adjusting the DOS clock for
+                               | DST each time you turn on or boot your
+                               | computer. DSTIME also takes into
+                               | consideration any logical future change in
+                               | DST by letting you change the settings used
+                               | by the program. DSTIME takes advantage of the
+                               | fact that most IBM-compatibles have both a
+                               | hardware clock and a separate clock kept by
+                               | the operating system (DOS).
+ECHOB300.ZIP    10332  04-28-95  EchoBlok for DOS 6's CONFIG.SYS menu system.
+                               | It prints on screen just the parts of a
+                               | CONFIG.SYS file that would be operative under
+                               | a given menu choice.  You might use it in a
+                               | DOS boot-up screen, it may help in debugging
+                               | a complex CONFIG.SYS, and it will generate a
+                               | simple menuless temporary CONFIG.SYS file,
+                               | when you have an over-imperious installation
+                               | program to deal with.                    hw
+EDITPATH.ZIP    47436  07-24-94  °±² EditPath ²±° ¯ The easy way to edit your
+                               | DOS path. Editor/batch file maker in one! You
+                               | can delete certain portions of your path and
+                               | insert some. Will make a batch file to
+                               | activate the new path & also backs up your
+                               | old path. Useful for people with multiple
+                               | configurations.ð by TTW SW $4
+EDIT_11.ZIP     94028  01-29-94  EdIt! v1.1 -- A fast, windowed, mouseable
+                               | replacement for DOS's EDIT command. Ideal for
+                               | BAT and text files under 64k, especially on
+                               | networks: no more walking around to update
+                               | users' files! Program size is less than 76k.
+                               | Features: open multiple files (with wild-
+                               | cards!) and preset groups of files, wordwrap,
+                               | LANtastic support, desktop save & restore,
+                               | mono colors option, variable right margin &
+                               | tabs and more. By Steve Yates, $20.
+EMAN110.ZIP     33833  01-01-94  ENVI_MAN v1.10 r01/01/94 MicroMetric <ASP>:
+                               | An Environment utility: small assembly
+                               | language routine with optional display of
+                               | environment strings & data such as location,
+                               | size & space available of the Master env.;
+                               | batch file environment space test provides
+                               | graceful exit if there is not enough.
+EVENTR13.ZIP    70501  06-06-93  EVENT REMINDER v1.3 Will remind you of events
+                               | such as birthdays and anniversaries from ten
+                               | days before, automatically, whenever you turn
+                               | on your computer. Freeware.
+EXE2BIN.ZIP      6954  06-23-93  Exe2bin.EXE For DOS 6.0 - Not Distributed
+                               | With DOS 6 Upgrade
+FDUPL101.ZIP    11895  09-15-94  FDUPLINS v1.01 - DOS utility: eliminates
+                               | non-unique lines from a SORTED text file.
+                               | Only one instance of each line is retained.
+                               | Freeware (c) 1994 [94/09/15] by DDA - Reign
+                               | Ware. W/ Pascal source. More robust, faster.
+FFIND35.ZIP     24480  10-24-93  Newest File Find Utility - Locate files on
+                               | your hard drive or network volumes easily
+FIL2DATE.ZIP    33554  01-12-94  DiskFileName to DateFileName DiskFileName to
+                               | DateFileName is a small utility which will
+                               | rename the disk file you name to the date
+                               | your computer has stored in the CMOS. It is
+                               | useful for both SysOps and everday computer
+                               | users. It would rename LTR2TOM.DOC to a new
+                               | file name 011194.HIS (providing the date was
+                               | 01/11/94. Produced and distributed by TBB
+                               | Computer Ministries The Home of ChristNet
+                               | Christian Fellowship Network. Four Nodes -
+                               | 714 457-1019/1020/1021/1022 Release Date:
+                               | January 12, 1994 Randy Tincher - SysOp/NetHub
+                               | Host
+FILECOMP.ZIP    12757  04-15-95  DOS command-line utility to compare two files
+                               | byte-by-byte.  Returns a DOS errorlevel value
+                               | depending on what it finds: 0 files match 1
+                               | files do not match 11 can't open first file
+                               | specified 12 can't open second file 13 can't
+                               | open either file 20 no filenames specified on
+                               | command line 21 only one filename specified
+                               | on command line 99 unknown error
+FIXCLOCK.ZIP    34864  05-18-95  Adjust the clock rate of the computer system
+                               | real-time clock, to speed-up or slow-down
+                               | clocks that are not running accurately.
+                               | FIXCLOCK is designed for computer systems
+                               | whose master, battery-operated clocks can be
+                               | reset by means of MS-DOS function calls.  hw
+FMTFIX62.ZIP     5881  03-16-94  Fixes slow formatting bug in DOS 6.2
+                               | with ASM source.
+FNDATION.ZIP    68237  11-07-93  Some interesting Dos utilities and TSR's
+FORK33.ZIP       4529  04-01-94  Fork 3.3 - A DOS utility which allows you to
+                               | redirect standard output to multiple devices
+FREMEM21.ZIP    38455  01-16-95  FreeMem v2.1 - Gives you a graphical display
+                               | of memory/disk/system statistics for your
+                               | computer system.
+GO2.ZIP        188257  04-18-93  GO! v2.20 -- Make installation FAST and EASY
+                               | with GO! Used by major shareware vendors such
+                               | as Austin ProSoft, BonWare, KelStar, PC-SIG,
+                               | PD Select, Soft A'ware, Spearwood and many
+                               | others. Recommended by the Share- ware
+                               | Marketing System News. If you distri- bute
+                               | your software or data on diskettes, you need
+                               | GO! Your users will love it, because
+                               | installation will be a snap! Just tell them
+                               | "Put the diskette in the drive and type GO!"
+                               | Everything after that is simple.
+GO200.ZIP       19024  11-15-94  Enhanced version of the DOS CD command. You
+                               | can use GO any time you would normally use
+                               | CD. GO does have two
+                               | command: GO can move you to a directory on
+                               | another drive... If you type CD A:\TEST from
+                               | drive C:, DOS just changes the current
+                               | directory on drive A: to \TEST and leaves you
+                               | on drive C:. GO will change to drive A: in
+                               | the directory A:\TEST. hw
+GO312.ZIP       64717  04-04-94  GO! v3.12 - "The way CHDIR should have been
+                               | written." Searches for directories matching
+                               | command line argument on all logged drives &
+                               | automatically goes there. For example, to go
+                               | to a directory named H:\WIN\WORD\DOCS\QUOTES
+                               | instead of having to type two commands, an H:
+                               | then CD \WIN\WORD\DOCS\QUOTES, you only need
+                               | type GO QUOTES. "Desqview aware" and MORE !
+                               | Author: Steve Ryckman - SHAREWARE ($5 reg)
+GX_PS101.ZIP    44719  02-14-95  G is a quick alternative to DOS's CD command.
+                               | You can configure abbreviations for your most
+                               | frequently needed directories then jump there
+                               | with a few keystrokes. Why type in a long DOS
+                               | command when a short one will do? Created by
+                               | Pinnacle Software, developers of the Sapphire
+                               | bulletin board system. For voice support call
+                               | 514-345-9578. Or dial in to our free download
+                               | BBS at 514-345-8654 (any baud rate, downloads
+                               | available on your first call).
+HAVE11.ZIP      31319  12-13-93  Have v1.10: displays information about your
+                               | system including DOS/mouse version, number of
+                               | buttons on mouse, device drivers loaded and
+                               | amount of free memory.
+HIDEV31.ZIP      5646  02-08-95  Hide v3.1       -*>Red Dragon Software<*-    
+                               | Easy to use batch program that hides files 
+                               | in a given dos directory.  New version now 
+                               | will let you hide data files in use!
+                               | *SHAREWARE*  Worth the Download!
+HONTO211.ZIP    32936  04-25-95  HONTO v2.11: The BEST directory lister
+                               | availible.  HONTO not only displays
+                               | extra information, such as image sizes,
+                               | but HONTO colors its display, based on
+                               | the file's content, NOT its extension.
+                               | A must download!               01/08/95
+HOP10.ZIP       29627  09-29-93  HOP 1.0 This is a simplified directory
+                               | changer that replaces the DOS CD command.
+                               | Works the same as CD, but you do not have to
+                               | use any of those darn "/" backslashes. Also
+                               | has a few added features and built in help
+                               | (as if you need it). A very simple little
+                               | program , but time-saving. Fully functional
+                               | and not crippled in any way! * From Maritime
+HOTDIR73.ZIP    74941  07-01-93  HotDIR Plus is a color sorted directory
+                               | utility. Displays directories in color.
+                               | Options to sort your files in many different
+                               | ways, and list them left to right or up and
+                               | down, plus in 1, 2, 4, or 6 column format.
+                               | Files will "pop out" at you. hw
+HOWFAST.ZIP     49871  01-08-94  CPU Speed & System Test Utility v2.01
+INCOMAND.ZIP   342250  03-21-93  InCommand - Command line utilities for DOS
+                               | Keep the DOS you know. Add the power your
+                               | need! Utilities work like DOS commands, only
+                               | easier. NO new environment to lear. Be more
+                               | productive in minutes. Online help for both
+                               | DOS and InCommand. <ASP>.
+JP4REF.ZIP     239313  11-30-93  4DOS for Windows NT reference manual
+KLINE101.ZIP    13590  09-02-94  KLine v1.01 - DOS Utility: KLine kills all
+                               | lines in a text file which contain a user-
+                               | specified string. Fixed. Freeware (c) 1994
+                               | [94/09/02] by DDA - Reign Ware. w/.PAS src.
+LASTBOOT.ZIP     2769  06-05-94  Tells when your computer was last booted.
+LINESOUT.ZIP     4358  01-24-95  Simple program to remove blank lines from
+                               | most text files.  No frills, just a small
+                               | tool to do one small job.
+LNDMPR10.ZIP    38613  03-05-94  **** Line Dumper v1.0 - Major Revision ****
+                               | Trim CALLER logs or ANY ASCII file of lines
+                               | containing up to 100 definable strings. KEEP
+                               | any of those lines if they follow with any of
+                               | 100 strings. Option for no screen output for
+                               | event mode processing. Does NOT mangle
+                               | original file so it's safe! More error
+                               | checking built in now.
+LOAD222.ZIP     39264  06-01-94  DOS command-line driver loader and unloader
+                               | for MS-DOS/PC-DOS versions 2 through 6 (not
+                               | DR-DOS, OS/2, or NT). Options: loading into
+                               | UMB, setting minimum UMB address, unloading
+                               | loaded drivers, DOS version deceiving. (It is
+                               | compatible with DoubleSpace or Stacker.)
+                               | *Program information: UnZIP and enter READ.
+LOOPR146.ZIP    38614  05-30-93  Looper v. 1.46 allows the user to execute the
+                               | same DOS command or program many times. It is
+                               | especially useful in printing or copying to
+                               | file many copies of the same DOS text file.
+                               | Registration is only $6.00 SMSnet
+MC125.ZIP       17033  12-28-94  No more rebooting using floppy diskettes! If
+                               | you have DooM, EnoiD, or games that requires
+                               | different AUTOEXEC.BAT & CONFIG.SYS this is a
+                               | MUST DOWNLOAD! MConfig let you reboot with
+                               | different AUTOEXEC.BAT & CONFIG.SYS, do clean
+                               | boot, run a program and then reboot...all
+                               | within your hard drive. Best of all, it's a
+                               | FREEWARE!!!! Don't let the floppy disk slow
+                               | your games down!
+MCP_100.ZIP      3016  01-15-94  Multi-Color Prompt for 4DOS/4OS2 v1.0 By
+                               | Aaron Tiensivu [01/15/94] Not your normal
+                               | C:\> prompt! Distributed under the MailWare
+                               | concept.
+MDIR_V10.ZIP    25394  03-21-95  -----------------------------------------
+                               | Mike's Directory Fast ver. 1.0 Fast, color
+                               | coded, sorted directory lister for DOS.  Many
+                               | options. Supports listings of subdirectories,
+                               | paging in many text modes, and multicolumn
+                               | displays.
+MLTIBOOT.ZIP     1523  06-27-93  An Example of MSDOS 6.0 Menu boot-up
+MSD6TXT.ZIP     25680  03-10-93  MSDOS 6.0 SETUP Reference Notes when
+                               | requested to look in manual for explanation.
+MSDOS6.ZIP       7813  03-30-93  Quarterdeck's comments re: dos 6
+MSORT112.ZIP    48339  01-21-95  MSORT112: Master Sort Program, DOS. Faster
+                               | and more powerful than DOS sort. Can sort
+                               | files of almost unlimited length. Version
+                               | 1.12. By Martin Katz, Ph.D. Many options.
+                               | Fully functional shareware (no nag).  Well
+                               | behaved for DOS windows in MS-Wind. or
+                               | IBM-OS/2. 12/26/94
+OPENFIL4.ZIP     5827  08-26-94  OPENFILES v4 -- DOS utility to show list of
+                               | open files
+PAGINATE.ZIP    11519  07-14-93  PAGINATE- Free DOS utility: text file
+PATHM30.ZIP     73932  03-22-93   Path Master 2.8 The Ultimate path utility!
+                               | Choose your path from a menu, configure 20
+                               | paths, add a directory, delete one, and use
+                               | your MOUSE. Forget all that typing or
+                               | stretching your environment for a long path.
+PATHWIZ.ZIP     25186  11-10-94  PathWiz will add or subtract directories in
+                               | your path. When you tell PathWiz to add a
+                               | directory to your path, it first checks to
+                               | see if it is already there.  PathWiz also
+                               | increases the usable size of your path to 512
+                               | bytes! (DOS normally gives you 127).
+PCHEK20.ZIP      7348  01-22-93  PaulChek version 2.0. This is a replacement
+                               | CHKDSK that I wrote because I hate how dull
+                               | CHKDSK is. IBM-PC & Compatibles. Does just
+                               | about everything that CHKDSK does that you
+                               | really need. This version has some
+                               | improvements over version 1.0 and a few new
+                               | things. Written by: Paul Hirsch; 1/22/93.
+PD331.ZIP       43215  02-05-93  Pick a directory utility
+QC11.ZIP         8223  05-22-94  quick change-directory utility lets you
+                               | change to a directory by name even if you
+                               | forget where it is
+QDIR130.ZIP    134060  09-02-93  QuickDir V1.3 <ASP> Clever Dos/Archive Mgr. A
+                               | MUST HAVE for maintaining hard drive and LAN.
+                               | Over 50 DOS Functions. 3 pgms in 1. 1) A DOS
+                               | Manager that's Sensible and Smart! HD Tree is
+                               | displayed instantly. 2) An Easy Archive Mgr.
+                               | Just press 'X' or 'V' twice to extract or
+                               | view. 3) Find Duplicate, Archive, Temp or Any
+                               | file. Copy / Delete found files. New: Config
+                               | Dir Tree, XMS/Disk Swap, More. Reg $29. Jim
+                               | Olsen SUPERWARE <ASP> <ASAD>.
+QSRT101.ZIP     30859  04-19-95  Filter to sort text.  Designed to replace DOS
+                               | and OS/2 Slow sORT.  Features: - Full
+                               | downward compatibility to DOS or OS/2 SORT
+                               | command.  - Line size up to 65519 characters.
+                               | - File size (almost) unlimited.  - Sort by
+                               | multiple tag fields, ascending or descending.
+                               | - Specify order of characters yourself; code
+                               | pages supported.  Fast ASCII sort option.  -
+                               | Sort fixed-size lines or lines separated by
+                               | something other than the usual CR,LF.  - Dual
+RAMDISKS.ZIP   292341  01-20-93  ReSizeable RAMDisk 1.30 for even >32M of XMS.
+                               | Copyright (c) 1992 Marko Kohtala. Released
+                               | Jan 18, 1992. SRDISK is a small virtual disk
+                               | device driver and controller capable of using
+                               | over 32M of XMS (2.0) MemoRy. The disk can be
+                               | disabled and it's size can be changed without
+                               | rebooting.
+RCDIR101.ZIP    75496  11-20-94  Deluxe DIR V10.1 - Replaces command.com "DIR"
+                               | command. More switches, faster and more
+                               | powerful than dir. Uses colors to show
+                               | file-type and uses Unix style extended
+                               | wildcards NEW: Colors user- definable - View
+                               | ZIP/ARJ/LZH files
+RDUP104.ZIP     15341  06-13-94  RDUP, v1.04: DOS utility: delete duplicate
+                               | lines across multiple files. Freeware, (c)
+                               | 1994 [94/06/13] by DDA - Reign Ware. RDUP
+                               | requires a SORT program (RPSRT102.zip is
+                               | recommended & free). W/ Pascal source.
+REBOOT.ZIP        760  03-21-94  Small program that reboots computer
+REL10B.ZIP       9501  03-14-93  "RELOCATE" files to another directory. (1.0b)
+                               | This program saves you time by eliminating
+                               | the "copy" + "del" sequence, and combining
+                               | them into one step. Program lists files as
+                               | they are relocated. If duplicate files are
+                               | found in the target directory, Relocate will
+                               | prompt you to overwrite. (This means that you
+                               | won't accidentally write over important
+                               | data.) Freeware.
+RMDIR!!.ZIP      9128  06-01-94  RemoveDir ! - quietly removes a directory
+                               | without DOS messages. FREE*BUT*WARE ¯TTW<í>
+                               | ÚÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍ RemoveDir! ÍÍÍÍÍÍÍÍÍÍÍÄÄÄ¿
+SECHO20.ZIP     16845  08-24-94  ************** SECHO v2.0 *************
+                               | ...Special ECHO for the IBM machines.
+                               | ----------------------------------------
+                               | Secho is a replacment for the DOS echo
+                               | command, but Secho supports MANY
+                               | formatting, color, and variable commands
+                               | within each line to be echoed.
+                               | Great Utility!!
+SIFT10.ZIP      13940  06-27-93  SIFT v1.0 <ASP> - The ULTIMATE DOS filter!
+                               | SIFT is an advanced replacement for the DOS
+                               | FIND filter. Many more options for manip-
+                               | ulating command output.
+SOSTB.ZIP      215259  05-19-93  Solid Oak Software's DOS Tool Box. 76 utils
+                               | for batch file enhancement, command line
+                               | operations, PC and network administration,
+                               | process automation, and more. Literally 100's
+                               | of uses and functions. Many of the included
+                               | utilities have never been offered before in
+                               | any package. A must have for any serious
+SUPRBOOT.ZIP     5654  06-07-94  SuprBoot - allows you to boot the computer
+                               | from drive A, B, or C by holding down a
+                               | series of specified keys during initial
+                               | booting. You will then be prompted for a
+                               | drive letter to continue booting from.
+TOPSEC.ZIP       2943  04-23-94  Top Secret V1.0 ~~~~~~~~~~~~~~~ Dos utility
+                               | to change the attributes of a directory.
+                               | Hidden -> Unhidden Unhidden <- Hidden
+TOTRE.ZIP       22199  05-09-93  TOTRE Utilities are two very handy programS.
+                               | TO.EXE is simply the fastest and best
+                               | directory changer around. FTREE.EXE goes
+                               | beyond your typical tree program. It displays
+                               | the space used in each directory and
+                               | subdirectory. Fully Functional ASP Sharware.
+TRUEDIR.ZIP     18195  09-21-94  TrueDir - is an enhanced version of the
+                               | familiar DOS Tree program. It gives you the
+                               | total files size under each subdirectory in
+                               | the directory tree. Description Copyright
+                               | 1994 PsL
+USE_UNUS.ZIP    10024  01-29-95  Add and remove directories from your path,
+                               | without retyping the entire path. USE will
+                               | add a directory to the PATH; UNUSE removes a
+                               | directory.
+VD60.ZIP        29925  04-10-95    Ville's ChDir Utility 6.0
+                               | A directory changing utility for
+                               | changing both directory and drive.
+                               | The best MS-DOS directory changer
+                               | ever made. Absolutely FREE! This
+                               | version adds lots of features and
+                               | performs better than ever.
+VERS11.ZIP      11476  01-18-93  TSR to allow different versions of DOS to run
+                               | on a system (2.1 and Newer)
+VIPER311.ZIP    34596  03-04-93  Viper - the Visual DOS Command Line Editor
+                               | remembers keystrokes you type at the DOS
+                               | prompt and by pressing the up or down arrow
+                               | key (or the left mouse button if you have a
+                               | mouse), Viper pops up a visual window to
+                               | allow you to view, edit and select these
+                               | previous DOS commands for re-execution.
+                               | You'll also find many other features and
+                               | other capabilities. By Freshour Software.
+WHEN01.ZIP      26887  04-17-95  Delay util driven by the system clock to
+                               | start events at a specific time, regardless
+                               | of when it's invoked.  For example, I have a
+                               | BBS that makes mail runs at the top of the
+                               | hour.  When I used a standard delay program,
+                               | it started at the end of the previous mail
+                               | run.  Because it always delayed things a set
+                               | number of minutes after it started, the time
+                               | between mail runs depended on how long they
+                               | took to proCess  In contrast, by using the
+XDOS0993.ZIP   895056  09-07-93  ExtraDOS Toolbox 09/93 Release A collection
+                               | of over 50 DOS utilities. Includes TurboBAT,
+                               | SpeedRAM, Tidy, CleanUp and many more. All
+                               | utilities work with DOS 6.0. Shareware
+                               | registration form and manual included. From
+                               | Foley Hi-Tech Systems (ASP).
+ZNDEL20.ZIP     15579  08-18-94  ZNDEL NEW! V 2.0 Exclusive-Delete utility
+                               | Deletes all files in the current directory
+                               | except archives and files specified on the
+                               | command line. Includes Turbo Pascal source.
+                               | With safety checks & saveable configuration.
+                               | Very convenient for cleaning up after
+                               | de-archiving, e.g. in download directories.
+                               | Freeware by G. Palmer and E. de Neve.

@@ -1,0 +1,252 @@
+
+
+                             Upload Reward
+                       Reward your Top Uploaders
+
+                   For use with PCBoard Version 14.x
+
+                              REWARD12.ZIP
+                         Version 1.2, 03-13-92
+
+                     This program is supported by:
+                           The Tool Shop BBS
+                           Panorama City, CA
+                          (818) 891-6780 (Free Line)
+                          (818) 891-3772 (HST)
+                          (818) 891-1340 (Hayes-V)
+
+                  Copyright 1989-1992 Samuel H. Smith
+
+
+
+Upload Reward is a utility program to generate a bulletin of your best
+uploaders, and optionally assign them to special security levels.
+
+Features:
+
+        *       Can reward users in multiple security levels and later
+                return them to the original levels
+
+        *       Correctly handles expired users, automatically updating
+                the expired user levels rather than un-expired levels.
+
+        *       Full sysop control over report header and footer text
+
+        *       Generates detailed execution log
+
+        *       Network compatible (I still recommend running the update
+                only when all nodes are offline)
+
+        *       Uses advanced buffering for quick execution
+
+        *       Multiple configuration files may be used.  Use this in
+                conjunction with multiple events to vary rewards
+                according to "prime time" or other criteria you
+                determine.
+
+
+Usage:
+   reward CONFIGFILE
+
+Where:
+   CONFIGFILE specifies the configuration file to be used.
+
+
+Sample configuration file: REWARD.CNF
+=====================================
+
+   REWARD.HDR
+   REWARD.TLR
+   \PCB\GEN\BLT99
+   REWARD.LOG
+   \PCB\MAIN\USERS
+   40
+   4
+   10 11
+   50 51
+   60 61
+   70 71
+
+   ----------------------------------
+   Reward Configuration File Format:
+
+   line 1 = Report header text file name (NUL if none)
+
+   line 2 = Report trailer text file name (NUL if none)
+
+   line 3 = Report bulletin output file name (NUL if none)
+
+   line 4 = Reward activity log output file name (NUL if none)
+
+   line 5 = Full pathname of USERS file
+
+   line 6 = Number of users to reward
+
+   line 7 = Number of security level table entries
+
+   line 8 = First security table entry
+
+   Security table entries are in the format
+      NORMAL BONUS
+   where
+      NORMAL is the normal user level and
+      BONUS is the level assigned to reward a top uploader.
+
+SAMPLE OUTPUT
+=============
+                   The Tool Shop's BEST UPLOADERS
+
+  User Name               Calling From             Last On   # of UL's  Level
+  _________               ____________             ________  _________  _____
+
+  JACK DAUGHERTY          CANTON, MI               03-06-92     2013      71
+  ED LUCAS                HOUSTON, TX              03-05-92      844      71
+  JOHN MESKEW             NORTH HOLLYWOOD CALIF.   03-12-92      269      11
+  PAT SHEA                BETHLEHEM, PA            01-09-92      232      71
+  CHARLES BURDSAL         WICHITA, KS              03-12-92      156      71
+  RICHARD SAEKS           HINSDALE, IL             03-03-92      154      11
+  DOUG HAIRE              JACKSONVILLE, FL         03-13-92      142      71
+  MARK RAPP               VERONA, NJ               03-12-92      142      71
+  JEFF BACON              TEMPE, AZ                03-01-92      141      11
+  DANIEL WALKER           CHICAGO, IL              03-12-92      129      11
+  LARRY OTTERSBACH        TEMPE, AZ                02-15-92      125      71
+  CALVIN CURTINDOLPH      CHICAGO, IL              02-08-92      118      71
+  GLENN ALLEN             APACHE JUNCTION, AZ      03-02-92      114      71
+  DAVID QUINTIERI         SCOTTSDALE, AZ           04-13-91      109      71
+  RON FAIRCLOTH           TEMPE, AZ                03-04-92      107      11
+  ERNEST HINTZ            SAN MATEO, CA            02-29-92      106      73
+  MIKE ZED                LONG BEACH, CA           03-04-92      104      71
+  HERBERT WOLFF           TEMPE, AZ                07-01-91      102      51
+  WALTER DEWITT           GLENDALE, AZ             03-12-92      102      11
+  STEVE SCOGGINS          GLENDALE, AZ             06-16-91      100      51
+  FRED SOHN               PHOENIX AZ               02-29-92       93      71
+  STEPHEN MINTZ           PHOENIX,AZ               02-28-92       93      51
+  RON HERRING             GRAY, TN                 03-04-92       91      71
+  RUDY SOLIS              SYLMAR, CA               03-12-92       85      73
+  TIM MOELLER             OAK RIDGE, TN            04-26-91       82      11
+  JOHN FEDOR              PHOENIX, AZ              03-10-92       78      71
+  LYNN NASH               POMONA CA                03-07-92       77      11
+  DANIEL MADURA           SAN DIEGO, CA            03-07-92       70      11
+  NORM HENKE              CLEVELAND, OH            02-15-92       69      71
+  WES BRZOZOWSKI          ENDICOTT, NY             03-08-92       69      11
+  DAVE LARDNER            LOUISVILLE, KY           03-04-92       69      11
+  BILL WALSH              ALEXANDRIA, VA.          03-09-92       65      71
+  JEFF SABATINI           BETHESDA, MD             03-08-92       65      51
+  DAVE COOPER             MESA, AZ                 03-01-92       63      11
+  ED RALEIGH              GLENDALE, AZ             03-07-92       62      71
+  JIM MIDDLETON           GLENDALE,AZ              01-05-92       61      11
+  DAVE NAVARRO            BROOKLYN, NY             03-11-92       60      71
+  WARREN SANASAC          SPRINGFIELD, VA          01-15-92       60      71
+  LUKE OWENS              LOS ANGELES, CA          12-25-91       59      51
+  GORDON GREENBLATT       PHOENIX AZ               07-09-91       57      11
+  JOSEPH SHEPPARD         TUJUNGA, CA              02-16-92       54      71
+  DAVID PETERSON          ST. CLOUD, MN            02-13-92       53      11
+  KEITH OSTERHOUT         TAHLEQUAH, OK            03-04-92       52      11
+  GARY BOUCHARD           ST. AUGUSTINE, FLORIDA   03-11-92       50      71
+  JOHN BINTZ              DAVIS, CA                12-31-91       50      51
+  DWIGHT RINGDAHL         CHICAGO, IL              02-13-92       50      51
+  GEORGE LYKOS            PHX, AZ                  01-24-92       50      11
+
+           As a reward for uploading, these users have been granted
+           access to all Tool Shop nodes:
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics 2400
+                  (818) 891-1344    Hayes-V series 9600
+                  (818) 891-6780    US Robotics HST 9600
+
+LICENSE
+=======
+
+   SourceWare: What is it?
+   -----------------------
+
+   SourceWare is my name for a unique concept in user supported
+   software.
+
+   Programs distributed under the SourceWare concept always include
+   complete source code.
+
+   This package can be freely distributed so long as it is not modified
+   or sold for profit.  If you find that this program is valuable,  you
+   can send me a donation for what you think it is worth.  I suggest
+   about $10.
+
+   Send your contributions to:
+      Samuel H. Smith
+      P.O. Box 4808
+      Panorama City CA 91412-4808
+
+
+   Why SourceWare?
+   ---------------
+
+   Why do I include source code?  Why isn't the donation manditory?  The
+   value of good software should be self-evident. The source code is the
+   key to complete understanding of a program.  You can read it to find
+   out how things are done.  You can also change it to suit your needs,
+   so long as you do not distribute the modified version without my
+   consent.
+
+
+   Copyright
+   ---------
+
+   If you modify this program, I would appreciate a copy of the new
+   source code.   I am holding the copyright on the source code, so
+   please don't delete my name from the program files or from the
+   documentation.
+
+
+
+DISCLAIMER
+==========
+
+I cannot be responsible for any damages resulting from the use or misuse
+of this program!
+
+IN NO EVENT WILL I BE  LIABLE TO  YOU FOR  ANY DAMAGES, INCLUDING  ANY
+LOST  PROFITS,  LOST  SAVINGS  OR OTHER INCIDENTAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF YOUR USE OR  INABILITY TO  USE THE PROGRAM, OR
+FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+
+REVISION HISTORY
+================
+
+   13-Mar-92   1.2    Added user level to report.
+
+   05-Mar-92   1.1    Added logic to check and update the "expired"
+                      security level on users who are "expired"
+                      according to the expiration date field of the user
+                      record.  Also removed the need for a "sorting"
+                      procedure for much quicker execution.
+
+   17-Sep-89   1.0    Initial coding.  I wrote it because I wanted to
+                      allow my best uploaders to access the
+                      "subscription" lines of the Tool Shop BBS.  I
+                      couldn't find any other utility with the
+                      flexibility I needed.
+
+SUPPORT
+=======
+
+   I work very hard to produce a software package of the highest quality
+   and functionality.  I try to look into all reported bugs, and will
+   generally fix reported problems within a few days.
+
+   Since this is user supported software under the SourceWare concept, I
+   don't expect you to contribute if you don't like it or if it doesn't
+   meet your needs.
+
+   If you have any questions, bugs, or suggestions, please contact me
+   at:
+       The Tool Shop BBS
+        (818) 891-6780
+
+   The latest version is always available for downloading.
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.
+

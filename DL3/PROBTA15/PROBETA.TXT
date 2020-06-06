@@ -1,0 +1,8 @@
+    This service allows you to download the current RELEASE version of
+    HS/Link, HS/Link install instructions, recent HS/Link BETA test
+    versions, as well as the Tool Shop's Master File Catalog.
+
+    This is a FREE service.  No pre-registration or subscription is
+    required for this service, even on the high-speed SUBSCRIBER lines of
+    The Tool Shop!
+

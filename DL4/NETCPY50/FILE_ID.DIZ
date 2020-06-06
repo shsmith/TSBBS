@@ -1,0 +1,5 @@
+CP 5.0 - unix-like file copy utility
+ * Can copy open-shared files on a network
+ * Can accept multiple wildcards to copy
+ * Can accept listfiles
+Freeware from Samuel H. Smith

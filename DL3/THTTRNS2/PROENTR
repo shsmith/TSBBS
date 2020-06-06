@@ -1,0 +1,95 @@
+@X09---------------------------------------------------
+
+@X0EHelp is available on the following Message Entry topics:@X03
+
+
+@X09[@X0EA@X09]@X03 Abort        @X09[@X0EE@X09]@X03 Edit        @X09[@X0EL@X09]@X03 List      @X09[@X0ES@X09]@X03 Save
+@X09[@X0EC@X09]@X03 Continue     @X09[@X0EF@X09]@X03 Find *      @X09[@X0EO@X09]@X03 Original  @X09[@X0EV@X09]@X03 Visual
+@X09[@X0ED@X09]@X03 Delete       @X09[@X0EI@X09]@X03 Insert      @X09[@X0EQ@X09]@X03 Quote
+
+              @X09[@X0ESummary@X09]@X03       @X09[@X0EExamples@X09]@X03
+
+Enter in the text inside the square brackets ie: F for FIND
+
+~
+:?
+@X03Please type one of the indicated topics for additional help.
+Press @X09<@X0FENTER@X09>@X03 alone to exit the help system.
+~~
+:A
+@X09(@X0CA@X09)@X03bort     Throw away the message and return to reading messages. 
+~~
+:C
+@X09(@X0CC@X09)@X03ontinue  Continue message text input from where you left off.
+~~
+:D
+@X09(@X0CD@X09)@X03elete    Allows you to delete a line from the message. 
+~~
+:E
+@X09(@X0CE@X09)@X03dit      Allows you to change the contents of a line without starting 
+            over.  You specify edits in the form: 
+               OLD;NEW
+            and the first time OLD is seen in the selected line, it will 
+            be changed into NEW. 
+~~
+:F
+@X09(@X0CF@X09)@X03ind      Find and display information about the receiver of the
+            current message.  @X09(@X0CSysop only@X09)@X03
+~~
+:I
+@X09(@X0CI@X09)@X03nsert    Allows you to put a new line between two existing lines.
+~~
+:L
+@X09(@X0CL@X09)@X03ist      List the message as it has been entered.  This also gives 
+            you the line numbers as needed for the @X09(@X0CD@X09)@X03elete, @X09(@X0CI@X09)@X03nsert 
+            and @X09(@X0CE@X09)@X03dit functions. 
+~~
+:O
+@X09(@X0CO@X09)@X03riginal  Lets you review the text of the original message you were
+            reading or replying to.  You are also able to QUOTE from
+            the original message with this function.
+~~
+:Q
+@X09(@X0CQ@X09)@X03uote     Allows you to quote lines @X09(@X0Cby line number@X09)@X03 from the original
+            message.
+~~
+:S
+@X09(@X0CS@X09)@X03ave      Saves the message on disk and returns you to reading 
+            messages. 
+~~
+:V
+@X09(@X0CV@X09)@X03isual    Activates the full-screen visual editor.  You must be able
+            to accept ANSI codes to use this function.
+~~
+:SUMMARY
+@X0ESummary of ProDoor Message Entry Commands
+@X09-----------------------------------------
+
+@X09(@X0CA@X09)@X03bort     Throw away the message and return to reading messages. 
+@X09(@X0CC@X09)@X03ontinue  Continue message text input from where you left off.
+@X09(@X0CD@X09)@X03elete    Allows you to delete a line from the message. 
+@X09(@X0CE@X09)@X03dit      Allows you to change the contents of a line.
+@X09(@X0CF@X09)@X03ind      Find information about the receiver of the current message.
+@X09(@X0CI@X09)@X03nsert    Allows you to put a new line between two existing lines.
+@X09(@X0CL@X09)@X03ist      List the message as it has been entered.
+@X09(@X0CO@X09)@X03riginal  Lets you review the text of the original message.
+@X09(@X0CQ@X09)@X03uote     Allows you to quote lines from the original message.
+@X09(@X0CS@X09)@X03ave      Saves the message on disk.
+@X09(@X0CV@X09)@X03isual    Activates the full-screen visual editor.
+~~
+:EXAMPLES
+@X0EExamples of ProDoor Message Entry Commands
+@X09------------------------------------------@X03
+
+   E 10         ;edit line 10.
+
+   D 10         ;delete line 10.
+
+   I 10         ;insert a line before line 10.
+
+   Q 8 4        ;quote original message starting at line 8 for 4 lines.
+
+   S K          ;save the new message and kill the original.
+
+   S +          ;save the new message and advance to the next one.
+~~

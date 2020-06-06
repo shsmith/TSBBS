@@ -1,0 +1,51 @@
+
+                          DLFIND 1.2 (10/5/92)
+                     Copyright 1992 Samuel H. Smith
+
+     Finds filespecs using PCBoard style DLPATH.LST directory list.
+
+
+Usage: dlfind [-e] FILESPEC ... FILESPEC
+Specify one or more wildcard filespecs on the command line.
+
+-E option specifies that FILESPEC.* should be checked, regardless of the
+actual .EXT specified.
+
+On exit, ERRORLEVEL is set to the number of matches.
+
+Please execute the command:
+   SET DLPATH=[full drive, directory and filename of your DLPATH.LST file]
+before using DLFIND.  For example:
+   SET DLPATH=C:\PCB\DLPATH.LST
+   DLFIND PKZ110.*
+
+I recommend you place the SET DLPATH statement in your AUTOEXEC file so you can
+later use DLFIND at any time you wish.
+
+You can use DLFIND to easily locate a file in any of your BBS download
+directories.  All matching files are written to standard output.
+
+You can use DLFIND to find duplicates with alternate file .EXT
+extentions.  For example,
+        DLFIND -E FILE.ZIP
+        IF ERRORLEVEL 1 ECHO DUPLICATION FOUND!
+This will report "DUPLICATION FOUND" if FILE.ARJ, FILE.GIF, etc, are
+present in a download directory.
+
+The DLPATH.LST file is a simple text file with each line containing one
+full directory specification.  For example:
+
+V:\BOOST\
+U:\DL4\
+U:\DL3\
+U:\DL2\
+U:\DL1\
+J:\UPLOAD\
+
+
+                            REVISION HISTORY
+
+10/4/92 Version 1.2
+     Added logic to strip a drive:\path from the filespec.  Otherwise no
+     matches were ever reported when using under ProDoor's PROUT1.BAT
+     example files.

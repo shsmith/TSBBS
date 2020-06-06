@@ -1,0 +1,27 @@
+
+History of ProKit changes (in reverse order)
+--------------------------------------------
+
+21-Nov-92
+   ProDoor's new internal live chat mode is now available to prokit
+   doors via the 'live_chat' procedure call.
+
+11-Nov-92
+   Enabled file flagging logic at "More" prompts when allow_flagging is
+   set to true.  Results of flagging are stored in the string variable
+   pending_flags.
+
+01-Jul-92
+   Internal change in bufio unit to prevent endless DOS error [6]
+   retries while reading buffered files.
+
+17-Jun-92
+   Added
+        default_comment_subject: string40
+   variable in proenter unit.  This determines the default subject for
+   comment message entry.
+
+   Output translations were not being performed.  The logic to perform
+   output translations via pdispln and pdisp calls is not available.
+   Note that displn and disp do NOT translate.
+

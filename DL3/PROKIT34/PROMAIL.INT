@@ -1,0 +1,55 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * PCB ProDOOR ProMail unit - message base handler (3-1-89)
+ *
+ *)
+
+unit ProMail;
+
+interface
+
+   uses Tools, BufIO, ProData;
+
+function sysopfun_allowed: boolean;
+function message_allowed: boolean;
+function meets_criteria: boolean;
+
+procedure display_header;
+procedure display_text;
+procedure display_loaded_message;
+procedure get_text;
+procedure load_message(killed: boolean);
+procedure save_message_header;
+procedure set_lastread;
+procedure set_read_flag;
+
+procedure decode_status;
+procedure advance;
+procedure get_index(killed: boolean);
+procedure check_message(killed: boolean);
+function select_conference(conf: word): boolean;
+procedure display_conference_info;
+procedure open_conference;
+procedure reopen_messagebase;
+procedure close_conference;
+procedure alloc_mail;
+procedure free_mail;
+
+procedure start_search;
+procedure mid_search_status;
+procedure end_search_status(yours: boolean; found: boolean);
+
+function locate_next_personal {(par: string2)}: boolean;
+
+implementation

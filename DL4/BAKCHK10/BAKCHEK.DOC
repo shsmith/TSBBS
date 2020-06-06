@@ -1,0 +1,47 @@
+
+                              BACKUP CHECK
+                              ------------
+
+                   Copyright (C) 1989 Samuel H. Smith
+
+This utility program scans a list of disk drives and generates a report
+listing the file storage and percentage of files that have been modified
+since the last backup.  It works by checking the DOS "archive" bit,
+which is manipulated by most backup utilities.
+
+Usage:
+        bakchek d e f g ... [>outfile]
+
+Sample output:
+
+                File Storage                           Byte Storage
+Drive    Total    Modified   Percent        Total        Modified    Percent
+-----  --------- ---------- ---------   ------------- ------------- ---------
+  L:      1,478        416    28.1 %      26,263,701    13,879,204    52.8 %
+  M:        646        218    33.7 %      29,044,979     6,132,801    21.1 %
+  N:        310         84    27.1 %      18,793,126     5,925,169    31.5 %
+  O:        680          2     0.3 %      22,380,755             5     0.0 %
+  P:        337          2     0.6 %      10,862,261             5     0.0 %
+  Q:        372          1     0.3 %      24,604,187             0     0.0 %
+  R:        630          1     0.2 %      19,333,521             0     0.0 %
+  S:        666        664    99.7 %       7,863,203     7,860,701   100.0 %
+  U:        200        123    61.5 %       6,050,523     1,781,875    29.4 %
+=====  ========= ========== =========   ============= ============= =========
+  9       5,319      1,511    28.4 %     165,196,256    35,579,760    21.5 %
+
+
+                               DISCLAIMER
+                               ==========
+
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR
+     FOR ANY CLAIM BY ANY OTHER PARTY.
+
+     THIS IS FREEWARE.  NO CHARGE.  SOURCE INCLUDED.  COPYRIGHT APPLIES.
+
+
+Revision History
+----------------
+   29-Jul-89 v1.0  Initial coding and release
+

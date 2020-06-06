@@ -1,0 +1,4 @@
+{$i r:\tinc\ltor.dcl}
+function ltor(long: long_int): real;
+procedure rtol(r: real;
+               var long: long_int);

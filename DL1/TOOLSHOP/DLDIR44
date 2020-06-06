@@ -1,0 +1,132 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                             Util-CD-ROM Utilities
+                        21 files using 2,085,697 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+ACDC120.ZIP     28977  01-08-94  ษอออออออออออออออออออออออออออออออออออออป
+                               | บ Audio Compact Disc Controller v1.20 บ
+                               | บ                                     บ
+                               | บ A resident audio CD player for dos. บ
+                               | บ With full background control, you   บ
+                               | บ can play your favorite tracks while บ
+                               | บ running almost any other program.   บ
+                               | บ Features like your hi-fi CD player, บ
+                               | บ including skip, scan, repeat, intro บ
+                               | บ scan, random play, 6 different time บ
+                               | บ displays, volume control with mute, บ
+                               | บ numeric keypad, eject disc, program บ
+                               | บ and status display, scroll bar etc. บ
+                               | บ Mouse and multiple CD-ROM support.  บ
+ACDKIT10.ZIP    87984  12-04-94  AUDIO CD TOOLBOX lets you add Music CD audio
+                               | capability to your QuickBASIC, PDS7, and
+                               | VB/DOS applications.  Play individual audio
+                               | tracks, entire cd's, specific portions down
+                               | to 1/75 of second, adjust volume, eject/lock
+                               | cd tray, and more.  Retrieve complete,
+                               | location and playtime information about
+                               | individual audio tracks or entire cd.
+                               | Includes SoundBlaster (not required) control
+                               | code also.  Much more.  <ASP>
+AT160FD.ZIP    287352  01-10-95  nes cd drivers
+BCDP22.ZIP      65808  02-23-95  Bob's CD Player v2.2 <ASP> - is a program to
+                               | control your computer's CD-ROM drive when
+                               | playing audio CDs. BCDP provides familiar
+                               | tape deck style controls for your CD-ROM
+                               | drive. BCDP's window is small with the look
+                               | of an audio component. Features: repeat play,
+                               | auto play, and shuffle play. Requires Windows
+                               | and CD-ROM drive. From Bob's Software.
+CDBNCH.ZIP     120184  05-28-95  CD Bench V1.00. This program checks the
+                               | data transfer rate of your CD ROM drive
+                               | at different CPU usage levels. When
+                               | being run, it creates an file named
+                               | CDBENCH.TXT in your current directory.
+                               | CDBENCH has been written using the
+                               | WATCOM compiler (V10.0) and the DOS4/GW
+                               | extender (V1.97 professional). It
+                               | simulates an CPU usage level while
+                               | reading from your CD ROM drive. This is
+                               | done by using the timer IRQ which has
+                               | been reprogrammed for this. By Martin
+                               | Hoffesommer.
+CDB_10.ZIP     176483  06-29-94  Benchmark Analizer for CD-ROM-Drives
+                               | English/German//Englisch/Deutsch All Rights
+                               | Reserved (c)1987-94 by: DesignerTeam
+                               | Rolle&Schild (tm)
+CDINDEX.ZIP    146868  08-06-94  CD-ROM Drive Performance Testing Utility CD
+                               | INDEX 1.0 (CDI) - Measures performance of
+                               | CD-ROM drives based on seek time and data
+                               | transfer rate for any specific ROM drive/
+                               | computer/test disc combination. Shows effect
+                               | of changes such as clock speed, buss speed,
+                               | ROM drivers, DOS, and more.
+CDLANX.ZIP       3124  10-22-93  This program simulates Microsoft CD Rom
+                               | Extensions when accessing a CD ROM over a
+                               | network, allowing some picky applications to
+                               | recognize the network CD as a local CD.
+CDLDOS.ZIP      22555  07-29-93  An interesting replacement for MSCDEX
+                               | smaller, faster and cacheable
+CDM30.ZIP       95112  07-17-94  ออออออออออออออออออออออออออออออออออออออออออออ
+                               | Compact Disc MASTER v3.0 - full featured,
+                               | DOS based controller for playing audio CDs
+                               | on most CDROM drives. Special features are
+CDPRO30.ZIP    692035  12-19-94  CD-ROM PRO: Librarian/File Manager for CD-ROM
+                               | Collections version 3.0 (Dec. 94). Find,
+                               | view, copy, unarchive, install and/or run
+                               | files; find duplication between CD-ROMs,
+                               | files on hard drives/floppies, and filelists.
+                               | Many useful reports and utilities. Supports
+                               | both single and multi-CD players, single and
+                               | multi-line descriptions. *SHAREWARE* Written
+                               | by a PCBoard Sysop, with special options for
+                               | PCBoard CD-ROM setup.
+CDQCK111.ZIP   140337  03-15-95  CD-QUICK Cache v1.11 <ASP> Now smaller and
+                               | even faster! This program will dramatically
+                               | improve the performance of your CD-ROM drive
+                               | by storing frequently read data in fast XMS
+                               | memory. Uses advanced caching techniques to
+                               | insure top performance. Includes CDTEST to
+                               | measure your CD-ROM drive's performance and
+                               | the Windows' QUICKMON program to show cache
+                               | statistics in real time. INSTALL program
+                               | makes setup easy. For DOS/WIN. Shareware $29
+CDSHARE3.ZIP    49615  10-27-93  Share CD-ROM over NETBIOS networks
+CDTRAX10.ZIP    42012  01-16-95  ๐CDTRAX๐ v1.0s plays your favorite music CD's
+                               | in your CDROM drive with easy to use music
+                               | track controls. Exit while music plays and
+                               | run other programs. Register and get the TSR
+                               | version: Extended memory/Dual Hot-keys/more.
+                               | Requires a CDROM & DOS 3x. Your PC will play
+                               | your favorite "Real" music while you crunch
+                               | numbers or search a database. Check it out.
+DEVLOD18.ZIP     3499  07-18-93  DEVLOAD loads DOS Device Drivers from the
+                               | command line. Character and Block device
+                               | drivers are supported. Useful for CDROM and
+                               | scanner drivers which can now be installed
+                               | only on the occasions when needed. Upgraded
+                               | for MS-DOS6 support.
+DRIVELST.ZIP     2311  10-15-94  list of cd drives tested with PAS 16 sound
+                               | cards.
+MSCDEX22.ZIP    14626  10-04-93  CD-ROM driver for DOS. Date 3-10-93 VersioN
+                               | number 2.22 Used to operate a CD-ROM drive.
+NCR.EXE         39952  06-14-94  Newest CD-ROM drivers for the MediaVision
+                               | MV5000 multimedia upgrade kit.
+ROMPR135.ZIP    51894  10-30-93  ROMProc v1.35 - CD-ROM Download Processor
+                               | Perfect for any BBS system running CD-ROM
+                               | drives or LANs!  Performs complete download
+                               | process of copying files to a specified area,
+                               | commenting them, transferring with the
+                               | appropriate protocol, cleaning up and
+                               | returning to the BBS. Detects archive format,
+                               | including SFX and SDN archives.  Generates
+                               | online process status.  Supports drive
+                               | locking.  Shareware, not crippled!
+SBCD.ZIP        12936  08-21-93  new driver for CL's new cadiless CD rom
+T7G_PAS.ZIP      2033  10-04-93  If you plan on buying The 7th Guest CD game
+                               | from Virgin Games and you own a Media Vision
+                               | Pro Audio card read this. Note on a conflict
+                               | with Windows 3.1 also.

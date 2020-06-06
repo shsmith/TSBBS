@@ -1,0 +1,81 @@
+                      
+ 
+            USING PROCOMM PLUS/WINDOWS WITH EXTERNAL HS/LINK
+ 
+                                  
+     HS/Link can be installed in PROWIN only if your modem can be
+     programmed to disregard the DTR signal.  For most popular modems,
+     this can be done by adding &D0 to your dialing prefix.  For
+     example, you should change the dialing prefix from
+        ATDT
+     to
+        AT&D0DT
+     Without this change, you will lose carrier when you bring up
+     HS/Link from inside PROWIN.
+
+     Installation: 
+
+     Please refer to the PROWIN manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work for most folks:
+
+     Copy the provided HS-D.BAT and HS-U.BAT files, as well as
+     HSLINK.EXE into your PROCOMM directory, or into a directory
+     included in your search PATH.
+
+     Please edit HS-D.BAT and HS-U.BAT to make sure they specify the
+     correct values for your COM PORT, PORT SPEED and DOWNLOAD
+     DIRECTORY.  The defaults are COM1, 2400 and C:\DOWNLOAD.  Please
+     note that in this environment, you MUST use the -Bxxxx option to
+     specify the COM port speed as HSLINK will not be able to determine
+     it automatically under Windows.
+
+     Most folks won't need to put anything else on the HSLINK command
+     line, but there are a number of optional parameters you can read
+     about in HSLINK.DOC and HSLINK.NEW.
+
+     Next you need to install the HS/LINK protocol into PROWIN as a set
+     of two "metakeys".
+
+     Create a metakey to run the program HS-D.BAT and title the key
+     "HS/Link Download".   Create another metakey to run the program
+     HS-U.BAT and title the key "HS/Link Upload".
+
+     To download with HS/LINK, first you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, use the mouse to
+     click the "HS/Link Download" metakey.
+
+     If you want to also upload to the BBS while downloading, you simply
+     click the "HS/Link Upload" metakey instead of "HS/Link Download".
+     You will then be routed to the POINT AND SHOOT utility, COMMOPNS,
+     which allows you to flag the files to be uploaded.  When you ESCAPE
+     from POINT AND SHOOT, the transfer will begin.
+
+     COMMOPNS is a POINT-AND-SHOOT utility written by by Shad Muegge and
+     Marcos Della.  It can be obtained from PNS52.ZIP or newer. COMMOPNS
+     is shareware (registration $10) - Please register it if you use it.
+
+I hope these instructions help, but remember, I can't take
+responsibility for anydamages resulting from these instructions.  If you
+get stuck, it always helps to read the DOC files that come with PROWIN
+and with HSLINK.  If all else fails, call up the tool shop and ask for
+help on the main board.  Either I will help you, or somebody else will
+know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    v.32bis 14400           Contributors only
+  (818) 891-6780    Hayes-V 9600            Free to all
+

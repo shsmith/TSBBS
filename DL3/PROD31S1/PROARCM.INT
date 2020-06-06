@@ -1,0 +1,2 @@
+procedure capture_conference(n: integer);
+procedure capture_new_mail;

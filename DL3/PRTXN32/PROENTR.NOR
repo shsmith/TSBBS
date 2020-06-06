@@ -1,0 +1,52 @@
+
+Her er kommandoene du kan bruke for † editere og lagre en melding du  
+nettopp har skrevet.
+
+Disse kommandoene er tilgjengelig.
+
+(A)bryt       Avbryte melding  som du holder p† † skrive.
+
+(C)Fortsett   Fortsette † skrive melding der du sluttet.
+
+(D)Slett      Slett en linje fra meldingen.
+
+(E)ditere     Med denne kan du endre en linje med tekst som du allerede  
+              har skrevet, du gj›r det p† formen: 
+               GAMMEL;NY 
+              hvor GAMMEL f›rst finnes p† den aktuelle linje, vil den 
+              bli endret til NY.
+
+(H)jelp eller (?) viser denne hjelpe teksten.
+
+(I)nsett      Med denne kan du sette inn en ny linje mellom to andre.
+
+(L)iste       Vise hele meldingen som er skrevet. Her ser du ogs†     
+              linjenummerene som du trenger for (D)Slett, (I)nsett,
+              og (E)ditere funksjonene.
+
+(O)riginal    Lar deg se p† teksten i original meldingen du leser eller
+              svarer p†.  Du kan ogs† QUOTE tekst fra original meldingen
+              med denne funksjonen.
+
+(S)Lagre      Lagrer meldingen du har skrevet til disk og fortsetter med
+              † lese meldinger.
+
+(V)isuell     Aktiverer FULL SKJERMS EDITOREN. Ditt program m† akseptere
+              ANSI koder for † kunne bruke denne funksjonen.
+
+
+Kommandoer kan angis fortl›pende
+---------------------------------
+
+   E 10         ;editerer linje 10.
+
+   D 10         ;sletter linje 10.
+
+   I 10         ;setter inn en linje foran linje 10.
+
+   Q 8 4        ;quote original melding fra linje 8 med 4 linjer.
+
+   S K          ;lagrer en ny melding og sletter originalen.
+
+   S +          ;lagrer en ny melding og fortsetter med † lese neste.
+

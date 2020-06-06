@@ -1,0 +1,40 @@
+
+-----------------------------------------------------------
+--                                                       --
+--               Long Integer Operations                 --
+--                Package Specification                  --
+--                 19-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+
+package LONGOPS is
+
+   -- long integer data type
+   type LONG_INTEGER is
+      record
+         loword:   integer;
+         hiword:   integer;
+      end record;
+
+   -- conversions
+   function CONVERT(l: LONG_INTEGER) return float;
+   function CONVERT(i: integer) return LONG_INTEGER;
+   function CONVERT(f: float) return LONG_INTEGER;
+
+   -- math operators
+   function "+"(l,m: LONG_INTEGER) return LONG_INTEGER;
+   function "-"(l,m: LONG_INTEGER) return LONG_INTEGER;
+   function "*"(l,m: LONG_INTEGER) return LONG_INTEGER;
+   function "/"(l,m: LONG_INTEGER) return LONG_INTEGER;
+
+   -- relational operators
+   function "="(l,m: LONG_INTEGER) return boolean;
+   function ">"(l,m: LONG_INTEGER) return boolean;
+   function "<"(l,m: LONG_INTEGER) return boolean;
+   function "<="(l,m: LONG_INTEGER) return boolean;
+   function ">="(l,m: LONG_INTEGER) return boolean;
+
+end LONGOPS;
+
+

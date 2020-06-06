@@ -1,0 +1,10 @@
+
+==== From the Tool Shop's Toolbox ============
+
+TPTC17.ARC      87574  05-03-88  Translate Pascal to C.  Exe+DOC files.   v1.7b
+TPTC17SC.ARC    87870  05-03-88  Full Source Code for TPTC.  SourceWare.  v1.7b
+   Turbo Pascal to C Translator.  Full TPAS 4.0 syntax is now supported
+   (including units).  New translations  for 'interface',
+   'implementation', 'uses', and 'with' statements.  Variant-record
+   expressions are now translated.  Generates optimized string manipulation.
+

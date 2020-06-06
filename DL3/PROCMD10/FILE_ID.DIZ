@@ -1,0 +1,5 @@
+ProCmd: PCBoard 15.x CMD.LST file editor.
+This is a little utility program to let you
+edit PCBoard's CMD.LST files from a DOS
+prompt without walking through all the menus
+of PCBSETUP. SourceWare from Samuel H. Smith

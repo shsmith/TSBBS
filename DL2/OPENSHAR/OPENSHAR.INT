@@ -1,0 +1,30 @@
+
+const
+   retry_count        = 10;
+   default_mode       = 2;
+
+   allow_read         = 0;
+   allow_write        = 1;
+   allow_update       = 2;
+
+   deny_all           = 16;
+   deny_write         = 32;
+   deny_read          = 48;
+   deny_nothing       = 64;
+
+   share_read         = 64;  {shorthand for allow_read+deny_nothing}
+   share_update       = 66;  {shorthand for allow_update+deny_nothing}
+
+var
+   open_try_count:  integer;
+   open_file_name:  string[64];
+
+
+procedure reset_textshare (name:         anystring;
+                           var fd:       text;
+                           mode:         byte;
+                           var okstatus: boolean);
+
+procedure share_append (name:         anystring;
+                        var fd:       text);
+

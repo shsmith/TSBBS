@@ -1,0 +1,900 @@
+@CLS@
+ @X1E @BOARDNAME@      @X1BProDoor OnLine @X1FHelp!!  @X1EFor Node (@X1C$NODE$@X1E)               
+@X01 ษอออออออออออออออหออออออออออออออออออหออออออออออออออออออหอออออออออออออออออออป
+@X01 บ@X07               @X01บ                  @X01บ                  @X01บ                   @X01บ
+@X01 บ@X0EMail @X0DCommands  @X01บ @X0CFile @X0DCommands    @X01บ  @X0DMisc.           @X01บ @X0DMisc.             @X01บ
+@X01 วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+@X01 บ@X09[@X0EC@X09]@X0BComment     @X01บ@X09[@X0EL@X09]@X0BLocate         @X01บ@X09[@X0EB@X09]@X0BBulletin       @X01บ@X09[@X0ECHAT@X09]@X0B With Nodes  @X01บ
+@X01 บ@X09[@X0EE@X09]@X0BEnter       @X01บ@X09[@X0EF@X09]@X0BFiles          @X01บ@X09[@X0EDOOR@X09]@X0B Open       @X01บ@X09[@X0EH@X09]@X0BHelp            @X01บ
+@X01 บ@X09[@X0EQ@X09]@X0BQuick       @X01บ@X09[@X0EU@X09]@X0B Upload        @X01บ@X09[@X0EG@X09]@X0BGoodbye        @X01บ@X09[@X0EHO@X09]@X0BHotKeys        @X01บ
+@X01 บ@X09[@X0EY@X09]@X0BYours       @X01บ@X09[@X0ED@X09]@X0BDown/Ld        @X01บ@X09[@X0EM@X09]@X0BMode           @X01บ@X09[@X0ENEWS@X09]@X0BNews Display @X01บ
+@X01 บ@X09[@X0ER@X09]@X0BRead        @X01บ@X09[@X0EFV@X09]@X0B View         @X01บ@X09[@X0ENODE@X09]@X0B Node Stats @X01บ@X09[@X0EO@X09]@X0BOperator Page   @X01บ
+@X01 บ@X09[@X0EYA@X09]@X0BY/all      @X01บ@X09[@X0ETEST@X09]@X0B Test       @X01บ@X09[@X0EOPEN@X09]@X0B DOOR       @X01บ@X09[@X0EP@X09]@X0BPage Length     @X01บ
+@X01 บ@X09[@X0EREPLY@X09]@X0B Message@X01บ@X09[@X0ET@X09]@X0B Protocols     @X01บ@X09[@X0EJ@X09]@X0BJoin           @X01บ@X09[@X0ESCAN@X09]@X0B Auto Scan   @X01บ
+@X01 บ@X09[@X0EZIPM@X09]@X0B ZipMail@X09 @X01บ@X09[@X0EREPACK@X09]@X0B          @X01บ@X09[@X0EW@X09]@X0BWrite          @X01บ@X09[@X0EX@X09]@X0BXpert           @X01บ
+@X01 บ@X09[@X0EQQ@X09]@X0B Quicker   @X01บ@X09[@X0EN@X09]@X0BNew            @X01บ@X09[@X0EA@X09]@X0BAbandon        @X09@X01บ@X09[@X0EQU@X09]@X0BQuit           @X01บ
+@X01 บ@X07               @X01บ@X09[@X0EZ@X09]@X0B Zip           @X01บ@X09[@X0EV@X09]@X0BView Settings  @X01บ                   @X01บ
+@X01 บ@X07               @X01บ@X09[@X0ELIB@X09]@X0BCD Rom       @X01บ                  @X01บ                   @X01บ
+@X01 ฬอออออออออออออออสออออออออออออออออออสออออออออออออออออออสอออออออออออออออออออน
+@X01 บ@X09[@X0EEXAMPLES@X09]@X0B Example of commands  @X09[@X0ESUMMARY@X09]@X0B Command Summary                @X01บ
+@X01 บ@X0EEnter in the TEXT inside the Square Brackets...ie: open for help on OPEN @X01บ
+@X01 บ@X07 @X0EPress @X09<@X0BENTER@X09>@X0E alone to exit the help system.                            @X01บ
+@X01 ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+~
+~~
+
+:A
+@CLS@
+
+@X09<@X0EA@X09>@X03bandon   Abandon @X0E(@X0Cexit@X0E)@X03 the current conference and return to the
+            Main Board.
+
+            Since each conference has a separate File and Directory
+            structure, Message Base, and possibly Bulletins, using
+            this command defaults all of these to the Main Board.
+
+            If you frequent several conferences, it is not necessary
+            to @X09<@X0EA@X09>@X03bandon each one.  You may @X09<@X0EJ@X09>@X03oin one conference
+            from within another one.  This is easier to remember if
+            you think of the Main Board as Conference 0, the default
+            conference @X0E(@X0Cwhich it is!@X0E)@X03  No, you cannot @X09<@X0EA@X09>@X03bandon the
+            Main Board ฤฤ please refer to the @X09<@X0EG@X09>@X03oodbye command.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EJ@X09>@X03oin Conference
+
+~~
+
+:B
+@CLS@
+
+@X09<@X0EB@X09@X09>@X03ulletin  Bulletin listings.  This describes @X0E(@X0Cor lists@X0E)@X03 the available
+            system bulletins, and optionally displays one of them.
+
+            Syntax:  B        - Displays a list of available bulletins.
+                     B 1      - Displays bulletin 1 on your screen.
+
+            Each conference may have a unique set of bulletin listings.
+            If a conference Does have unique bulletins, they are only
+              viewable from within that particular conference.
+            If a conference Does Not have unique bulletins @X0E(@X0Cor if you
+              are not currently in a conference@X0E)@X03, the bulletins of the
+              Main Board are listed and/or displayed.
+
+            If entering the @X09<@X0EB@X09>@X03 command alone, the next prompt asks you
+            to enter a bulletin # to view.  You may also @X09<@X0ER@X09>@X03elist those
+            available or exit the bulletin system by pressing @X09<@X0EEnter@X09>@X03.
+
+~~
+
+:C
+@CLS@
+
+@X09<@X0EC@X09@X09>@X03@X03omment   Comment to the Sysop.  This allows you to send a private
+            mail message @X0E(@X0Cup to 99 lines@X0E)@X03 to the Sysop.  As this is
+            a private message, it may only be viewed by the Sysop.
+
+            This command is very similar to entering a mail message.
+            Messages are entered via the full-screen Visual Editor.
+            Visual Editor Help is available by pressing @X09<@X0ECTRL@X09>@X03+@X09<@X0EZ@X09>@X03.
+            To exit the Visual Editor, simply press the @X09<@X0EESC@X09>@X03 key.
+            Upon exiting the Visual Editor, two available options
+            are:
+
+              @X09<@X0ES@X09>@X03ave  the Message   @X0E(@X0Cthis is the typical response@X0E)@X03
+              @X09<@X0EA@X09>@X03bort the Message   @X0E(@X0Cmail message is not saved@X0E)@X03
+
+
+Subtopics:  @X09<@X0EA@X09@X09>@X03@X0B - Advanced_Topic
+
+~
+
+:C A
+@CLS@
+@X03
+Advanced_Topic - Entering Message Files via ASCII Upload.
+
+            If you have a lengthy message, you are a poor typist, or
+            you pay exorbitant long distant fees, you can type up the
+            Message File offline and enter it via ASCII Upload.
+
+            To do this, enter the @X09<@X0EC@X09>@X03omment command and message subject.
+            After entering the Visual Editor, simply execute an ASCII
+            Upload with your Telecomm package @X0E(@X0C@X09<@X0EPgUp@X09>@X03 if using Telix.@X0E)@X03
+            Exit the Visual Editor via @X09<@X0EESC@X09>@X03 and @X09<@X0ES@X09>@X03ave the Message.
+
+            NOTES:  You may not use a Word Processor @X0E(@X0CWord Perfect,
+                    etc.@X0E)@X03 to Type the Message File.  You MUST use a
+                    standard ASCII Text Editor @X0E(@X0CI recommend Qedit.@X0E)@X03
+                    Also, be sure to place the file in your Upload
+                    Directory as configured in your TeleComm Package.
+~~
+:CD
+:LIB
+:ROM
+@CLS@
+@X0E(@X0CCD@X0E)@X03 ROM    This command allows you to access the CD ROM drive.  The
+@X0E(@X0CLIB@X0E)@X03       disk is identified as PC SIG @X0E(@X0CSpecial Interest Group@X0E)@X03
+@X0E(@X0CROM@X0E)@X03       version 9.0 which contains over 31,000 public domain &
+            shareware programs.
+
+            Example:
+               CD
+               CD 1234
+
+            If the command CD is initiated all by itself, you will be
+            prompted by a list of the CD ROM files & description of the
+            files.  At any point, you can discontinue the listing &
+            extract any number of the disk library which you like.
+
+            If the second example @X0E(@X0CCD ####@X0E)@X03 is used, you will NOT be
+            prompted with the description of files, yet the file will
+            be extracted normally.
+ @WAIT@
+ @CLS@
+@X03
+            There are 3 stages the LIBRARY file will go through:
+
+               1 - Getting Extracted
+               2 - Checked for Virus & Trojans
+               3 - Stamped with Authenticity verification
+
+            The extracted file will be stored in a TEMPORARY file
+            called CD-#### where #### is the number of the requested
+            library.  This file will be erased, after your logoff from
+            the BBS.
+
+~~
+:CHAT
+@CLS@
+
+@X09<@X0ECHAT@X09>@X03      This runs the ProDoor LIVE CHAT Door @X0E(@X0Cprogram.@X0E)@X03  This allows
+            you to CHAT with other users of this system.  Chatting on
+            this system requires a minimum security level of 50.
+
+@X09<@X0ECHAT U@X09>@X03   Makes you unavailable for chat requests by other nodes.
+
+@X09<@X0ECHAT A@X09>@X03  Makes you available for chat requests by other nodes.
+            NOTE: Since the default is "available for chat", you will
+                  never need to enter CHAT-YES unless you previously
+                  made yourself "unavailable for chat" via CHAT-NO.
+
+
+
+ALSO SEE =@X09>@X03 For more detailed info on LIVE CHAT and Chatting in
+            general, please read Bulletin 7 of the Main Board.
+
+~~
+:D
+@CLS@
+
+@X09<@X0ED@X09>@X03ownload  Downloading transfers file@X0E(@X0Cs@X0E)@X03 from the BBS System to your
+            computer system.
+
+            If you wish to download several files, I suggest entering
+            @X09<@X0ED@X09>@X03 with no parameters.  If you just wish to download one or
+            two files, you may pass the file names and "stack" either
+            file command @X09<@X0ES@X09>@X03tart or command @X09<@X0EG@X09>@X03oodbye to immediately
+            begin the transfer.  If you use @X09<@X0ES@X09>@X03 or @X09<@X0EG@X09>@X03 in this manner,
+            the system uses Zmodem as the file tranfer protocol.
+
+            If not otherwise entered, a .ZIP file extension is assumed.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0ET@X09>@X03able of protocols   @X0E(@X0Cavailable file transfer protocols@X0E)@X03
+            @X09<@X0EFL@X09>@X03ag files           @X0E(@X0CFLag files to download later@X0E)@X03
+
+Subtopics:  @X09<@X0EA@X09>@X03 Examples
+
+~
+:D A
+@CLS@
+@X03
+Download Examples:
+
+
+            D                  - Prompt for all download information
+            D file S           - Start immediate transfer of "file.zip"
+            D file1 file2 G    - Immediate transfer of "file1.zip" and
+                                 "file2.zip", @X09<@X0EG@X09>@X03oodbye upon completion
+            D Z ALLFILES       - Download "Allfiles.Zip" using Zmodem
+
+~~
+:E
+@CLS@
+
+@X09<@X0EE@X09>@X03nter     Enter a new mail message, either public or private.
+
+            The system prompts you for the recipient of the message.
+            If you specify a user's name, you have the option to make
+            the message private @X0E(@X0Conly may be read by the recipient.@X0E)@X03
+            If you wish to leave a public message, you may specify
+            "ALL" as the intended recipient of the message.
+            In either case, the system also prompts you to enter the
+            'subject' @X0E(@X0Cor title@X0E)@X03 of the mail message.
+
+            PLEASE REMEMBER that each conference has a separate message
+            base.  Place each mail message in the appropriate conference.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EC@X09>@X03omment to Sysop     @X0E(@X0Cprivate message to the Sysop@X0E)@X03
+            @X09<@X0EJ;S@X09>@X03                  @X0E(@X0Csearch conferences for your mail@X0E)@X03
+            @X09<@X0ER@X09>@X03ead Mail Messages   @X0E(@X0Cto read public mail@X0E)@X03
+            @X09<@X0EY@X09>@X03our Mail            @X0E(@X0Cto read mail addressed to you@X0E)@X03
+~~
+:F
+@CLS@
+@X09<@X0FF@X09>@X03Bile      File directory listings.  This is identical to the DOS DIR
+            command except that you specify the BBS Directory using the
+            appropriate directory number.  To see a list of available
+            directories, simply enter @X09<@X0EF@X09>@X03 and they will be displayed.
+
+            Besides the Main Board, EACH Conference has a separate
+            directory and file system.  Actually, VERY FEW FILES are
+            stored in the Directories of the Main Board.  You must
+            @X09<@X0EJ@X09>@X03oin the conference to see its @X09<@X0EF@X09>@X03ile directory listings.
+
+            All files displayed are available for you to download.
+            Please also use the @X09<@X0EF@X09>@X03 command to avoid file duplication
+            prior to uploading a file.  To best utilize your time on
+            the system, it's a good idea to make a list of the files
+            you desire.  After you are done with your other activities,
+            download them specifying @X09<@X0EG@X09>@X03 for Goodbye after download.
+
+ALSO SEE =@X09>@X03 @X09<@X0EF;V@X09>@X03              @X0E(@X0Cto view contents of ZIP files@X0E)@X03
+            @X09<@X0EN@X09>@X03ew Files        @X0E(@X0Cto see only newly added files@X0E)@X03
+            @X09<@X0EL@X09>@X03ocate File      @X0E(@X0Cto find a particular file name@X0E)@X03
+            @X09<@X0EZ@X09>@X03ippy Search     @X0E(@X0Cto do a keyword search for files@X0E)@X03
+~~
+:FL
+:FLAG
+@CLS@
+
+@X09<@X0EFL@X09>@X03ag      Flag file@X0E(@X0Cs@X0E)@X03 for later download.  This allows you to Flag
+            the files you wish to download as you encounter them.  This
+            saves enormous time and also preserves our forests.  All
+            Flagged Files are automatically selected when entering @X09<@X0ED@X09>@X03.
+            Wild cards are allowed and an extension of .Zip is assumed.
+
+            Syntax:  FL fname      to FLag file "fname.zip"
+                     FL U fname    to UN-FLag a file "fname.zip"
+                     FL U *        to UN-FLag all flagged files
+                     FL *          to FLag ALL files.  NO, you can't
+                                   download them all, but "nice try."
+
+            NOTE:  You lose your Flag List when executing any of:
+                   @X09<@X0EU@X09>@X03pload, @X09<@X0EZIPM@X09>@X03, @X09<@X0ETEST@X09>@X03, @X09<@X0EREPACK@X09>@X03, @X09<@X0EG@X09>@X03oodbye.
+
+ALSO SEE =@X09>@X03 @X09<@X0EF@X09>@X03ile Directory    @X0E(@X0Cto view directory & file listings@X0E)@X03
+            @X09<@X0EL@X09>@X03ocate File       @X0E(@X0Cto find a particular file name@X0E)@X03
+            @X09<@X0EN@X09>@X03ew Files         @X0E(@X0Cto view only newly added files@X0E)@X03
+            @X09<@X0EZ@X09>@X03ippy Search      @X0E(@X0Cto do a keyword search for files@X0E)@X03
+~~
+:G
+:G;Q
+:G Q
+@CLS@
+
+@X09<@X0EG@X09>@X03oodbye   Goodbye to The COM2: BBS.  This terminates your session
+            without further ado @X0E(@X0Clogoff.@X0E)@X03  Also known as "Later On",
+            "Catch Ya Later", "C Ya", "Bye Bye", "Ciao", etc., etc..
+
+            Syntax:  G        - Goodbye @X0E(@X0Ctypical response@X0E)@X03
+                     G Q      - Goodbye Quickly @X0E(@X0Cbypass final screen@X0E)@X03
+
+            The @X09<@X0EG@X09>@X03oodbye command may also be selected @X0E(@X0Cor stacked@X0E)@X03
+            during an @X09<@X0EU@X09>@X03pload or @X09<@X0ED@X09>@X03ownload operation to automatically
+            log you off after the file transfer completes.  This means
+            you get radiated less @X0E(@X0Cwatching those exciting file xfers@X0E)@X03
+            and you save much, much more @X0E(@X0Con your phone bill.@X0E)@X03
+
+~~
+:?
+:H
+@CLS@
+
+@X09<@X0EH@X09>@X03elp      Activates ProDoor's online command-based help system.
+@X09<@X0E?@X09>@X03         You may also use @X09<@X0E?@X09>@X03 to accomplish this same feat ฤฤ
+            @X09<@X0EH@X09>@X03 and @X09<@X0E?@X09>@X03 are command synonyms.
+
+            Syntax:  H           @X0E(@X0Cdisplay help screen for cmd help@X0E)@X03
+                     ?           @X0E(@X0Cdisplay help screen for cmd help@X0E)@X03
+
+                     H D         @X0E(@X0Cdisplay help for the @X09<@X0ED@X09>@X03ownload cmd@X0E)@X03
+                     ? D         @X0E(@X0Cdisplay help for the @X09<@X0ED@X09>@X03ownload cmd@X0E)@X03
+                     H Download  @X0E(@X0Cdisplay help for the @X09<@X0ED@X09>@X03ownload cmd@X0E)@X03
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EAlt@X09>@X03@X09<@X0ECtrl@X09>@X03@X09<@X0EDel@X09>@X03    @X0E(@X0Cfor standard BBS intelligence test@X0E)@X03
+
+~~
+:HO
+@CLS@
+@X09<@X0EHO@X09>@X03tkeys   Enable the HOtkey function for command input.  This provides
+            instant response for most commands @X0E(@X0Cno @X09<@X0EENTER@X09>@X03 key needed.@X0E)@X03
+
+            This is one of those features that you either "Love" or
+            you "Hate."  The Sysop "HATES" it.  If you aren't familiar
+            with ProDoor commands, I highly recommend NOT enabling the
+            HOtkey feature.  If you are HOT on this feature, a good
+            time to enable it is after you feel comfortable in @X09<@X0EX@X09>@X03pert
+            mode @X0E(@X0Cno main menu displayed.@X0E)@X03  For this reason, I have
+            restricted its use to security level 50 and above.
+
+     NOTES: Some commands do not function properly in this mode.  Trying
+              to enter @X09<@X0ECHAT-NO@X09>@X03 dumps you right into the @X09<@X0ECHAT@X09>@X03 channel
+              and @X09<@X0EFL@X09>@X03ag Files gives you a @X09<@X0EF@X09>@X03ile Directory.  Cool, huh?
+            In HOtkey mode you should use ";" @X0E(@X0Cnot SPACE@X0E)@X03 to "stack" any
+              ProDoor commands such as "J;S".  This is due to the fact
+              that the Spacebar functions just like the @X09<@X0EENTER@X09>@X03 key.
+            AND, be careful with that @X09<@X0EG@X09>@X03 key!  You HAVE been warned!
+
+
+ALSO SEE =@X09>@X03 HOT_2_TROT         @X09<@X0Egrin@X09>@X03
+
+~~
+:J
+@CLS@
+
+@X09<@X0EJ@X09>@X03oin      Allows you to enter an available conference.  Each conference
+            has a separate file & directory structure, mail message base,
+            and possibly, bulletin listings.  This is definitely one of
+            the Most Important Commands ฤฤ please become familiar with it.
+
+            These @X09<@X0EJ@X09>@X03oin subfunctions are available:
+
+               @X0E(@X0CA@X0E)@X03uto-join configuration update
+               @X0E(@X0CL@X0E)@X03ocate conference by keywords
+               @X0E(@X0CM@X0E)@X03ain board
+               @X0E(@X0CN@X0E)@X03ew message status
+               @X0E(@X0CS@X0E)@X03tatus of all conferences
+               @X0E(@X0C+@X0E)@X03next higher conference
+               @X0E(@X0C-@X0E)@X03next lower conference
+
+
+Subtopics: @X09<@X0EA@X09>@X03 Examples
+
+~
+:J A
+@CLS@
+@X03
+Join command examples:
+
+
+   J           - Join, showing a list of available conferences
+   J;+         - join next available conference
+   J;2         - join conference 2
+   J GRAPHICS  - join the Graphics conference
+   J L GAMES   - locate conferences with "GAMES" in the description
+   J;2;Q       - quick join, bypassing conference news
+   J S         - status of all conferences
+   J S +       - status of conferences after current one
+   J A 2       - configure autoscan starting with conference 2
+
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EA@X09>@X03bandon Conference    @X0E(@X0Cexit & return to the Main Board@X0E)@X03
+            @X09<@X0EJ;S@X09>@X03                   @X0E(@X0Csearch conferences for your mail@X0E)@X03
+
+~~
+:J;S
+@CLS@
+
+@X09<@X0EJ;S@X09>@X03       Subcommand of Join command which provides Status of each
+            conference.
+
+            This Command/Subcommand is most useful to search all
+            conferences for your personal mail @X0E(@X0Caddressed to you.@X0E)@X03
+
+~~
+:L
+@CLS@
+
+@X09<@X0EL@X09>@X03ocate    Locate files @X0E(@X0Cby name@X0E)@X03.  This command allows you to search
+            the file directories for matching file names.  Please note
+            that the search is contained to the current conference @X0E(@X0Cor
+            the main board.@X0E)@X03  Embedded Wild Cards are fully supported.
+
+            Syntax:  L Allbulls   - Locate file Allbulls.Zip
+                     L LZ*        - Locate Zip files starting with "LZ"
+                     L PK*.*      - Locate all files starting with "PK"
+
+            The search keyword may also be of the forms:
+
+                     first part .AND. second part
+                     first part .OR. second part
+
+ALSO SEE =@X09>@X03 @X09<@X0EF@X09>@X03ile Directory    @X0E(@X0Cto view directory & file listings@X0E)@X03
+            @X09<@X0EFL@X09>@X03ag Files        @X0E(@X0Cto flag files for later download@X0E)@X03
+            @X09<@X0EN@X09>@X03ew Files         @X0E(@X0Cto view only newly added files@X0E)@X03
+            @X09<@X0EZ@X09>@X03ippy Search      @X0E(@X0Cto do a keyword search for files@X0E)@X03
+
+~~
+:M
+@CLS@
+
+@X09<@X0EM@X09>@X03ode      This toggles the Graphics display mode either On or Off.
+            The Graphics display requires support of standard IBM @X0E(@X0CANSI@X0E)@X03
+            Color Graphics.  The use of Graphics Mode greatly enhances
+            the use of any BBS system since important words, phrases,
+            commands, file names, etc., are emphasized with color.
+            Besides, Sysops spend a great deal of time colorizing their
+            BBS for both ease-of-use and your enjoyment.
+
+            The Graphics Mode is also selectable each time you log onto
+            the BBS.  It is the first question you are asked at logon.
+
+            If you are calling at 2400 baud, you may wish to either
+            disable Graphics Mode or obtain a faster modem.
+
+~~
+:N
+@CLS@
+@X09<@X0EN@X09>@X03ew file  Search for New Files based on date.  This searches for New
+            files in the directories of the current conference or the
+            main board @X0E(@X0Cif you are not currently in a conference.@X0E)@X03
+
+            When entering the @X09<@X0EN@X09>@X03 command, the system provides the
+            date of your last logon.  You may of course, override the
+            system-supplied date.  The date field form is MMDDYY.
+
+            Some examples are:
+
+              N                 - prompt for all command information
+              N 3 4             - files since last logon in dir's 3 & 4
+              N A               - files since last logon in all dir's
+              N 103091 1 2      - files since 10/31/91 in dir's 1 & 2
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EF@X09>@X03ile Directory    @X0E(@X0Cto view directory & file listings@X0E)@X03
+            @X09<@X0EFL@X09>@X03ag Files        @X0E(@X0Cto flag files for later download@X0E)@X03
+            @X09<@X0EL@X09>@X03ocate File       @X0E(@X0Cto search for specific file names@X0E)@X03
+            @X09<@X0EZ@X09>@X03ippy Search      @X0E(@X0Cto do a keyword search for files@X0E)@X03
+~~
+:NEWS
+@CLS@
+
+@X09<@X0ENEWS@X09>@X03      Displays the Conference News Message.  On this system, each
+            Conference News Message is used to explain the specific
+            purpose and scope of the conference.
+
+            Since intended as "News", each conference News Message is
+            displayed only the first time you enter a conference for
+            a given system @X0E(@X0Clogon@X0E)@X03 session.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EF@X09>@X03ile Directory    @X0E(@X0Cto view directory & file listings@X0E)@X03
+            @X09<@X0EB@X09>@X03ulletins         @X0E(@X0Cfor bulletin listing and display@X0E)@X03
+
+~~
+:NODE
+@CLS@
+
+@X09<@X0ENODE@X09>@X03      Displays a list of the system nodes, the callers who are
+            using other nodes @X0E(@X0Cif any@X0E)@X03, and each caller's status.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0ECHAT@X09>@X03       @X0E(@X0Cto Chat with users on other nodes@X0E)@X03
+
+~~
+:O
+@CLS@
+
+@X0E(@X0CO@X0E)@X03perator  This command allows you to "page" the Sysop of the BBS.
+
+            Since the Sysop is a "busy guy" as well as a "night owl",
+            he is rarely on the BBS during "normal" hours.  If you
+            don't see him via the Node Command, it is futile to page.
+            Please leave a @X09<@X0EC@X09>@X03omment to the Sysop.
+
+            Actually, this command has been superseded by the Chat
+            feature of ProDoor.  The "old" method of chatting was
+            quite archaic, most cumbersome, and VERY slooooow.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EC@X09>@X03omment to Sysop    @X0E(@X0Cprivate message to the Sysop@X0E)@X03
+            @X09<@X0ECHAT@X09>@X03                @X0E(@X0Cto Chat with users on other nodes@X0E)@X03
+            @X09<@X0ENODE@X09>@X03                @X0E(@X0Cto see who is on other BBS nodes@X0E)@X03
+
+~~
+:OPEN
+:DOOR
+@CLS@
+
+@X09<@X0EDOOR@X09>@X03
+@X09<@X0EOPEN@X09>@X03      Either of these commands allow you to OPEN other DOORS
+            @X0E(@X0Cprograms@X0E)@X03 of this BBS.  These two commands are synonyms
+            and are therefore interchangable.
+
+            You may specify either a door number or a door name as
+            a parameter.  If you specify neither, a list of available
+            Doors is displayed.
+
+            Upon logon to this BBS, you automatically Open Door 1.
+            Door 1 is allocated to ProDoor.
+
+            Live Chat is another Door of this BBS, however it is
+            accessed using the CHAT command due to its popularity.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0ECHAT@X09>@X03                @X0E(@X0Cto Chat with users on other nodes@X0E)@X03
+
+~~
+:P
+@CLS@
+
+@X09<@X0EP@X09>@X03age      This command is used to set the Number of Lines per Page.
+            This allows you to modify the page length (the number of
+            lines displayed on your monitor before stopping with a
+            "More:" prompt.
+
+            Setting the Page length to 0 disables all more prompting.
+            In other words, you MUST be an Evelyn Wood graduate.
+
+            The default for this parameter on this BBS is 23.
+
+~~
+:Q
+:QQ
+@CLS@
+
+@X09<@X0EQ@X09>@X03uick     Displays a Quick summary of the mail messages which are
+            available for reading.  This includes both the message
+            "header" and the first 72 characters of message text.
+
+@X09<@X0EQQ@X09>@X03uicker  Displays a Quicker summary of the mail messages which are
+            available for reading @X0E(@X0Cdisplays only the message header.@X0E)@X03
+
+            These commands have nothing to do with the speed messages
+            are displayed ฤฤ this is based solely upon your modem.
+            If you wish to "capture" or "log" some messages, examine
+            the @X09<@X0ENS@X09>@X03 Non-Stop feature, BUT be careful to select a
+            reasonable range or you may find yourself very short on
+            disk space and very long on phone bill.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0ER@X09>@X03ead Mail Messages   @X0E(@X0Cto read public mail@X0E)@X03
+            @X09<@X0EY@X09>@X03our Mail            @X0E(@X0Cto read mail addressed to you@X0E)@X03
+            @X09<@X0EZIPM@X09>@X03 ZIP Mail        @X0E(@X0Cto Zip your mail for download@X0E)@X03
+~~
+:QU
+@CLS@
+
+@X09<@X0EQU@X09>@X03it      QUits the current door and return you to the BBS.
+
+~~
+:R
+@CLS@
+
+@X09<@X0ER@X09>@X03ead      Read and reply to mail messages.  This command allows you
+            to read mail messages in the Current Conference or Main
+            Board @X0E(@X0Cif you are not in a conference.@X0E)@X03  Additional Help
+            is available at the Mail Command Prompt.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EQ@X09>@X03uick Scan Mail      @X0E(@X0Cto quickly scan mail messages@X0E)@X03
+            @X09<@X0ER@X09>@X03ead Mail Messages   @X0E(@X0Cto read public mail@X0E)@X03
+            @X09<@X0EY@X09>@X03our Mail            @X0E(@X0Cto read mail addressed to you@X0E)@X03
+            @X09<@X0EZIPM@X09>@X03 ZIP Mail        @X0E(@X0Cto Zip your mail for download@X0E)@X03
+~~
+:REPACK
+@CLS@
+
+@X09<@X0EREPACK@X09>@X03    Repacks the Zip File into an alternate compressed file
+            format.  The "new" file is stored in the file $SCRATCH$.
+            Since files are stored in Zip Format, you really should
+            download the latest version of PKZIP from Directory 1 of
+            the Main Board.  This saves you both time and money.
+
+            You can specify an alternate compression format:
+
+              REPACK TPC14 LZH       - convert TPC14.Zip to .LZH
+              REPACK PRODOR30 ZOO    - convert PRODOR30.Zip to .ZOO
+
+~~
+:REPLY
+@CLS@
+
+@X09<@X0EREPLY@X09>@X03     This command allows you to Reply to a mail message directly
+            from the command line.  This is useful when you download
+            your mail using ZIPM and read the messages offline.  Upon
+            next logon, you can Reply to any messages you received
+            without having to read them again.
+
+            You may pass the mail message number you wish to respond
+            to as a parameter.
+
+
+ALSO SEE =@X09>@X03 @X09<@X0ER@X09>@X03ead Mail Messages   @X0E(@X0Cto read public mail@X0E)@X03
+            @X09<@X0EY@X09>@X03our Mail            @X0E(@X0Cto read mail addressed to you@X0E)@X03
+            @X09<@X0EZIPM@X09>@X03 ZIP Mail        @X0E(@X0Cto Zip your mail for download@X0E)@X03
+
+~~
+:SCAN
+@CLS@
+
+@X09<@X0ES@X09>@X03can      Toggles auto-join and ZIPM access to the current conference.
+
+~~
+:T
+@CLS@
+
+@X09<@X0ET@X09>@X03able     Table of protocols.  This command displays the Table of
+            Protocols available for use on this BBS.  Among other
+            parameters, an extremely accurate efficiency estimate is
+            provided for each file transfer protocol.
+
+            This table is used for all file transfer operations both
+            to and from this BBS.
+
+ALSO SEE =@X09>@X03 @X09<@X0ED@X09>@X03ownload        @X0E(@X0Cto download files from this BBS@X0E)@X03
+            @X09<@X0EU@X09>@X03pload          @X0E(@X0Cto upload files to this BBS@X0E)@X03
+
+            Uploading Info    Please read Bulletin 4 of the Main Board
+
+~~
+:TEST
+@CLS@
+@X09<@X0ETEST@X09>@X03      Test the validity of a ZIP file.  This command invokes a
+            "test" function which verifies that a zipfile is both
+            intact and virus-free.
+
+            A file extension of .ZIP is assumed.
+
+            NOTE: All files uploaded to this BBS are automatically
+                  tested and scanned for viruses, however this is
+                  available if you wish to be "extra-safe."
+
+~~
+:U
+@CLS@
+
+@X09<@X0EU@X09>@X03pload    Uploading transfers file@X0E(@X0Cs@X0E)@X03 from your computer system to
+            the BBS System.  Uploading is one of the ONLY things not
+            available on your first call ฤฤ this requires a minimum
+            security level of 50.
+
+            Refer to the @X09<@X0ED@X09>@X03ownload command help for a discussion on
+            stacking @X09<@X0EG@X09>@X03oodbye command and detailed file examples ฤฤ
+            these are also applicable to Uploading files.
+
+            A file extension of .ZIP is both Assumed and Required!
+
+
+ALSO SEE =@X09>@X03 @X09<@X0ED@X09>@X03ownload files       @X0E(@X0Cdownloading and detailed examples@X0E)@X03
+            @X09<@X0ET@X09>@X03able of protocols   @X0E(@X0Cavailable file transfer protocols@X0E)@X03
+~~
+:V
+@CLS@
+
+@X09<@X0EV@X09>@X03iew      View user profile.  This command displays your detailed
+            user information.  This information is maintained by the
+            BBS.  This includes info such as the the number of times
+            you've logged on, your security level, number of downloads
+            and uploads, and total download bytes available.
+
+ALSO SEE =@X09>@X03 @X09<@X0EW@X09>@X03rite User Info     @X0E(@X0Cto change Password and other info@X0E)@X03
+
+~~
+:F;V
+:FV
+:F V
+@CLS@
+
+@X09<@X0EF;V@X09>@X03iew    View/extract Zip file contents.  This command allows you to
+file view   View the contents of Zip files on this BBS and optionally,
+            to list Zip-embedded .DOC and Readme files online.  You may
+            also "extract" select portions of a Zip file for downloading.
+            Any "extracted" file are placed into file $SCRATCH$ for you.
+
+            This is an extremely powerful command which will save you
+            a great deal of time @X0E(@X0Cboth online & download.@X0E)@X03  I urge you
+            to experiment and become familiar with it.  You'll like it!
+
+
+ALSO SEE =@X09> @X0E(@X0Cquicker view of zip file contents@X0E)@X03
+
+~~
+:W
+@CLS@
+
+@X09<@X0EW@X09>@X03rite     Write user database information.  This command allows you
+            to change information such as your password, phone numbers,
+            location, etc..
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EV@X09>@X03iew User Info       @X0E(@X0Cto display misc. user information@X0E)@X03
+
+~~
+:X
+@CLS@
+
+@X09<@X0EX@X09>@X03pert     This command toggles Xpert mode either On or Off.
+
+            Expert mode ON merely means that the Main Menu is not
+            displayed after each command or command sequence.  This
+            is a preferred mode of operation @X0E(@X0Cespecially for 2400
+            baud callers@X0E)@X03 merely because it saves you time.
+
+            Expert mode is one of the parameters which is saved for
+            each user, therefore if you logged off in Xpert Mode, you
+            will enter the system in Xpert mode upon your next logon.
+
+            Don't panic if you find yourself in Xpert Mode.  Simply
+            enter @X09<@X0EX@X09>@X03 again or @X09<@X0E?@X09>@X03 and the Main Menu will appear.
+
+~~
+:Y
+:YA
+:Y;A
+:Y A
+@CLS@
+
+@X0E(@X0CY@X0E)@X03our      Your mail.  This command searches for Mail Messages which
+            are addresses to you in the current conference or the main
+            board @X0E(@X0Cif you are not in a conference.@X0E)@X03
+
+@X0E(@X0CYA@X0E)@X03        Your & All mail.  This is the same as the @X09<@X0EY@X09>@X03 command but
+            also searches for mail messages addressed to "All" @X0E(@X0Cpublic
+            mail.@X0E)@X03
+
+
+ALSO SEE =@X09>@X03 @X09<@X0EJ;S@X09>@X03                  @X0E(@X0Csearch conferences for your mail@X0E)@X03
+            @X09<@X0ER@X09>@X03ead Mail Messages   @X0E(@X0Cto read public mail messages@X0E)@X03
+            @X09<@X0EZIPM@X09>@X03 ZIP Mail        @X0E(@X0Cto Zip your mail for download@X0E)@X03
+
+~~
+:Z
+@CLS@
+@X0E(@X0CZ@X0E)@X03ippy     Zippy search.  This command performs a Keyword search of
+            the File Directories.  This allows you to search both the
+            file names and the file descriptions with just one command.
+
+            Just like the @X09<@X0EF@X09>@X03, @X09<@X0ED@X09>@X03, and other file-oriented commands,
+            this performs a Zippy search of the file directories for
+            either the Current Conference or the Main Board @X0E(@X0Cif you are
+            not currently in a conference.@X0E)@X03
+
+            This is a very powerful command which can save you a great
+            deal of time.  Please also use it to help avoid uploading
+            duplicate files to this BBS.  Experiment with this command
+            and become familiar with it.  You will use it constantly.
+@WAIT@
+@CLS@
+@X03
+
+            As an example, from within the Graphics Conference:
+
+              Z               - provide prompts for all information
+              Z DOS 1         - display all files pertaining to DOS
+                                in the BBS's directory #1
+              Z DISK A        - display all files pertaining to DISK
+                                in "A"ll directories of this conference.
+
+            The search keyword may also be of the forms:
+                                first part .AND. second part
+                                first part .OR. second part
+
+            valid commands:
+
+                                Z microsoft .AND. dos
+                                Z ibm .OR. microsoft
+
+
+
+~~
+:ZIPM
+@CLS@
+
+@X0E(@X0CZIPM@X0E)@X03      ZIP Mail.  This command captures up to 400 new messages,
+            Zipping them into a file $SCRATCH$ for you to download.
+            This command may be used to capture Mail Messages in the
+            Current Conference or you may specify the conference@X0E(@X0Cs@X0E)@X03.
+
+            Some Examples:
+
+              ZIPM           - Zip new mail in current conference
+              ZIPM N         - list new mail by conference before Zip
+              ZIPM IMAGING   - Zip new mail in the IMAGING Conference
+              ZIPM A         - Zip new mail in "A"ll conferences
+
+           Use the @X0E(@X0CL@X0E)@X03ast-read command to reset your message pointers.
+           Use the @X0E(@X0CJ A@X0E)@X03uto-config or @X0E(@X0CSC@X0E)@X03an commands to select the
+             conferences you wish to capture mail from when entering
+             the @X0E(@X0CZIPM A@X0E)@X03ll command.
+
+~~
+:SUMMARY
+@CLS@
+ProDoor Main Menu Command Summary
+---------------------------------
+
+@X0E(@X0CA@X0E)@X03bandon conference, return to main message area.
+@X0E(@X0CB@X0E)@X03ulletin listings.
+@X0E(@X0CC@X0E)@X03omment to sysop.
+@X0E(@X0CD@X0E)@X03ownload files.
+@X0E(@X0CE@X0E)@X03nter a message.
+@X0E(@X0CF@X0E)@X03ile directory listings.
+@X0E(@X0CFL@X0E)@X03ag file for later download.
+@X0E(@X0CF V@X0E)@X03iew/extract zipfiles.
+@X0E(@X0CG@X0E)@X03oodbye, logoff.
+@X0E(@X0CHO@X0E)@X03tkey mode.  Enable instant response on most commands.
+@X0E(@X0CJ@X0E)@X03oin a conference, enter new message and file areas.
+@X0E(@X0CJ A@X0E)@X03uto-join configuration update.
+@X0E(@X0CJ L@X0E)@X03ocate conferences by keyword.
+@X0E(@X0CJ N@X0E)@X03ew messages in all conferences.
+@X0E(@X0CJ S@X0E)@X03tatus of all conferences.
+@X0E(@X0CJ Y@X0E)@X03our mail.  Scan for conferences with new mail addressed to you.
+@X0E(@X0CJ +@X0E)@X03join next higher conference.
+@X0E(@X0CJ -@X0E)@X03join next lower conference.
+@X0E(@X0CLIB@X0E)@X03rary request @X0E(@X0Caccess CD-ROM@X0E)@X03.
+@X0E(@X0CL@X0E)@X03ocate files @X0E(@X0Cby name@X0E)@X03.
+@X0E(@X0CM@X0E)@X03ode @X0E(@X0Cgraphics on/off@X0E)@X03.
+@X0E(@X0CN@X0E)@X03ew files @X0E(@X0Cby date@X0E)@X03.
+@X0E(@X0CNODE@X0E)@X03 status display.
+@X0E(@X0CNEWS@X0E)@X03 repeat news message for main board or conference.
+@X0E(@X0CO@X0E)@X03perator page.
+@X0E(@X0COPEN@X0E)@X03 another door.
+@X0E(@X0CP@X0E)@X03age length.
+@X0E(@X0CQ@X0E)@X03uick mail scan.
+@X0E(@X0CQQ@X0E)@X03uicker mail scan.
+@X0E(@X0CQU@X0E)@X03it to PCBoard.
+@X0E(@X0CR@X0E)@X03ead and reply-to messages.
+@X0E(@X0CREPACK@X0E)@X03 zipfile with maximum compression.
+@X0E(@X0CREPLY@X0E)@X03 to specific messages.
+@X0E(@X0CS@X0E)@X03can.  Toggle auto-join and @X0E(@X0Czipm a@X0E)@X03.
+@X0E(@X0CT@X0E)@X03able of protocols.
+@X0E(@X0CTEST@X0E)@X03 zipfile validity.
+@X0E(@X0CU@X0E)@X03pload a file.
+@X0E(@X0CV@X0E)@X03iew user profile.
+@X0E(@X0CW@X0E)@X03rite user database information.  Change password and other stuff.
+@X0E(@X0CX@X0E)@X03pert mode.
+@X0E(@X0CY@X0E)@X03our mail.
+@X0E(@X0CYA@X0E)@X03 your mail or mail to "all".
+@X0E(@X0CZ@X0E)@X03ippy DIR Scan @X0E(@X0Cby subject@X0E)@X03.
+@X0E(@X0CZIPM@X0E)@X03  Compress new messages for download.
+
+~~
+:EXAMPLES
+@CLS@
+@X0EProDoor Command Examples
+@X09------------------------
+@X03
+   D Z file1 file2           ;download with @X0E(@X0CZ@X0E)@X03modem protocol
+
+   D file S                  ;immediately @X0E(@X0Cs@X0E)@X03tart download of files
+
+   D file1 file2 G           ;immediately start d/l of files, @X0E(@X0Cg@X0E)@X03oodbye at end
+
+   F 1 2 3 NS                ;non-stop listing of file directories 1 2 and 3.
+
+   B;3;11;NS                 ;non-stop listing of bulletins 3 and 11.
+
+   J M                       ;main board
+
+   J;6                       ;join conference 6
+
+   J TOOLS                   ;join tools conference
+
+   J L LANG                  ;locate conferences with 'LANG' in the description.
+
+   L *PCB* 1 2               ;locate files with 'PCB' in the filename in
+                              file areas 1 and 2.
+
+   N 120188 U NS             ;non-stop listing of files newer than
+                              12/01/88 in the upload directory.
+
+   N;S;A                     ;new files @X0E(@X0Cs@X0E)@X03ince last time on in all file areas.
+
+   DOOR;3                    ;switch to DOOR number 3
+
+   R 2000+ NS                ;non-stop reading forward from msg 2000.
+
+   F;V;file                  ;verbose listing of component files within
+                              file.ZIP.  Prompts for text view and
+                              extract.
+
+   ZIPM A                    ;zip new mail in all conferences.
+
+~
+

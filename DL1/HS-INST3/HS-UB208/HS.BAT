@@ -1,0 +1,2 @@
+rem HSLINK DOWNLOAD UNDER ULTRABBS 2.08
+hslink -p%1 -hs @%3 -uC:\UBBS\BATCH

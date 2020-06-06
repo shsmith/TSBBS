@@ -1,0 +1,37 @@
+;
+; PRORATIO - ProDoor upload/download ratio control file for ProDoor 3.4
+;
+; Line format:
+;    LEVEL  FILERATIO BYTERATIO FREEFILES FREEBYTES
+;
+; If not specified, FREEFILES defaults to 1 and FREEBYTES defaults to 100000
+;
+;
+; Examples:
+;   70  5.5 0   ;level 70 users may download 5.5 files for each file uploaded
+
+;   60  0 250   ;level 60 users may download 250 bytes for each byte uploaded
+
+;   99  0 0     ;level 99 users are excluded from all ratios
+
+;   80  40 10   ;level 80 users may download 40 files for each file uploaded,
+                ;up to 10 bytes downloaded for each byte uploaded.
+
+;   40  10 0 5 0
+                ;level 40 requires a file upload for each 10 downloads,
+                ;and users are initially credited with 5 free uploads (allowing
+                ;50 free download files before uploading is required)
+
+
+;
+; Any number of security levels may be specified.  If no matching level
+; is found, the last level listed in the file is used as the default.
+;
+
+10 60 0         ;normal users
+11 60 0
+50 60 0
+51 60 0
+60 60 0
+
+70 9000 9000          ;boosters and all other users

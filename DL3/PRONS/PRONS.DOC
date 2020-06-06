@@ -1,0 +1,47 @@
+
+ ProNS  - Keep the top half of the screen from scrolling away.
+          Used by ProDOOR during file transfers.
+
+Copyright (C) 1988-1991 Samuel H. Smith; ALL RIGHTS RESERVED
+
+                        The Tool Shop BBS
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    Hayes-V series 9600
+                  (818) 891-6780    US Robotics 2400 (free line)
+
+
+The first time you run ProNS, it becomes resident and freezes the top
+half of the screen.   From then on, any program that writes to the screen
+via DOS or BIOS or ANSI will be restricted to the bottom of the screen.
+
+The second time you run ProNS, it will be removed from memory, restoring
+the screen to normal.
+
+ProNS was originally written for use by ProDOOR, but can be used in other
+applications where the screen needs to be protected from scrolling.
+
+This program works under TaskView and other environments that do
+not pass DOS or ANSI outputs to BIOS.
+
+
+Revision History
+----------------
+
+7-14-88
+        Changed tick counting logic to check BIOS tick counter.  This will
+prevent the clock from running slow due to "lost" clock interrupts (as
+happens under DesqView and other multi taskers).
+
+1-20-89
+        Deleted the com port and timer monitoring logic.  ProNS now has
+the single function of keeping the top of the screen from scrolling away.
+
+7-18-89
+        Updated to automatically detect 43 line screen modes and manage
+the screen accordingly.
+
+11-1-91
+        Updated to freeze only the top 2 lines of the display, making it
+        possible to use full-screen protocols more easily.

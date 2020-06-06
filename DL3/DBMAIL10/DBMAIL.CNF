@@ -1,0 +1,58 @@
+INTERRUPT
+12456
+THE TOOL SHOP
+THE TOOL SHOP
+THE TOOL SHOP
+THE TOOL SHOP
+THE TOOL SHOP
+the State of California
+7.25
+Los Angeles County
+1.0
+U:\PCB\ORDER\ORDER.LOG
+DBMAIL.INT
+DBMAIL.SEL
+DBMAIL.BIL
+DBMAIL.FIN
+2
+360  2  4.00 10.00 2.00 5.25" low density floppy disk (360k)
+1200 1  5.00 10.00 2.00 5.25" high density floppy disk (1.2meg)
+720  1 10.00 00.00 2.00 3.5" low density floppy disk (720k)
+1440 1 14.00 00.00 2.00 3.5" high density floppy disk (1.44meg)
+
+------------------------------------------------------------
+ProKit Downloads By Mail DBMAIL.CNF file format:
+
+Line 1: INTERRUPT
+Line 2: List of accepted credit card types
+             (list of digits: 1=jcb 2=carte blanche 3=amex 4=visa 5=mc 6=discover)
+Line 3: The company name for (placed in $4$ for display purposes) for
+        the first entry in the credit card type list.
+        The company names for each additional entry in card type list
+Line 4: The state name for in-state tax
+Line 5: The % tax rate for in-state orders (0=removes this prompt if no
+        state tax is collected)
+Line 6: The local/county name for local tax
+Line 7: Additional % tax for local orders (0=removes this prompt if
+        no local tax is collected)
+Line 8: Output filename for record of pending orders.  This file
+        receives the text of all completed orders.
+
+Line 9: Filename of introductory messages before "continue yes/no"
+Line 10: Filename of billing/ordering instructions
+Line 11: Filename of instructions displayed prior to file selection
+Line 12: Filename of final message after placing an order
+
+Line 13: Number disk formats available
+Line 14: First disk format.  Each disk format is defined in the following
+format:   AAAA BBBB CCCC DDDD EEEE FFFF
+where
+   AAAA is the number of K bytes per disk
+   BBBB is the cluster size for this disk type in K bytes
+   CCCC is the basic charge per disk
+   DDDD is the additional charge per megabyte
+   EEEE is the additional charge per disk for overseas shipment
+   FFFF ... the rest of the line is a description of the disk format
+
+Repeat line 14 for each additional disk format available.
+

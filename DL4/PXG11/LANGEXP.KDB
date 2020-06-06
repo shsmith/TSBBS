@@ -1,0 +1,18 @@
+Programming Language Selection Expert
+Q:Are you writing a large (>1000 line) program?
+YQ:Are you a subcontractor working for the Department of Defense?
+ YC:Use ADA
+ NQ:Will you be linking to standard object modules?
+  YQ:Do you want runtime subscript and subrange checking?
+   YC:Use Microsoft Pascal
+   NC:Use Lattice C
+  NQ:Is you application <10,000 lines?
+   YQ:Is this a business or accounting type application?
+    YC:Use Cobol
+    NC:Use Turbo Pascal
+   NC:Use Microsoft Pascal
+NQ:Is the program a resident DOS extension?
+ YC:Use Assembly Language
+ NQ:Are you writing a knowledge-based expert system?
+  YC:Use the Pascal Expert Generator
+  NC:Use Basic

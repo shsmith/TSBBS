@@ -1,0 +1,49 @@
+
+
+-----------------------------------------------------------
+--                                                       --
+--                Linear Interpolation                   --
+--                    Package Body                       --
+--                 05-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);  pragma warning(on);
+
+
+package body INTERP is
+
+   function LINEAR_INTERPOLATION (value:     in integer;
+                                  value_min: in integer;
+                                  value_max: in integer;
+                                  to_min:    in float;
+                                  to_max:    in float) return float is
+      -- perform a linear interpolation on value between value-min and
+      -- value-max returning a corresponding value between to-min and
+      -- to-max.   Integer inputs and floating point outputs.
+   begin
+
+      return float(value - value_min) /
+             float(value_max - value_min) * (to_max - to_min)
+                                          + to_min;
+   end LINEAR_INTERPOLATION;
+
+
+
+   function LINEAR_INTERPOLATION (value:     in float;
+                                  value_min: in float;
+                                  value_max: in float;
+                                  to_min:    in integer;
+                                  to_max:    in integer) return integer is
+      -- perform a linear interpolation on value between value-min and
+      -- value-max returning a corresponding value between to-min and
+      -- to-max.   Floating point inputs and integer output.
+   begin
+
+      return integer ((value - value_min) / (value_max - value_min) *
+                      float(to_max - to_min)) + to_min;
+   end LINEAR_INTERPOLATION;
+
+end INTERP;
+

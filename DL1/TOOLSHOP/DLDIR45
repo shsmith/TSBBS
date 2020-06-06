@@ -1,0 +1,222 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                             Util-Batch Utilities
+                        32 files using 1,241,031 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+ABATVW2.ZIP    183560  08-24-94  Batch File Utility Set to create Personal or
+                               | Custom GUI interFaces. Provides Menus,
+                               | Message windows, Scrolling text messages,
+                               | Drawing functions, System information, Screen
+                               | Clearing, and a whole range of general
+                               | utilities. Gives your batch files a custom
+                               | application appearance, with stunning visual
+                               | effects. Returns Errorlevel codes and writes
+                               | to the system environment. Includes eight
+                               | programs with tutorials and demo's. hw
+APPT130.ZIP     30887  01-18-94  SETERROR v1.0 Errorlevel utility. To assist
+                               | the batch file programmer. Sets the DOS
+                               | errorlevel to that specified on command-line.
+                               | Free for personal use.
+ASK11C.ZIP      15201  03-08-94  ASK v1.1c, ask questions in batch files, get
+                               | one-char resp. W/optional timeout. w/TASM src
+ASK_DOS.ZIP     14413  04-06-94  DOS Batch Enhancer with source assembler
+                               | code. Demonstrates techniques in writing TSR
+                               | programs
+BRKPOINT.ZIP     5462  06-01-94  Break Point - allows you to interrupt a batch
+                               | file. This is useful for fast computers which
+                               | do not allow users to interrupt batch files
+BUTIL_BT.ZIP    39033  12-02-94  Batchfile utilities that enhance appearance
+                               | and productivity of your batch- files.
+                               | Beta-test Release... * Poz.exe Replacement
+                               | for the Dos "pause" command, with extra
+                               | features including: Optional timed pause,
+                               | optional sounds, anD a built in "help"
+                               | feature. * PGet.exe & For use in batch files
+                               | to switch to directory containing * PPut.exe
+                               | program to launch, then automatically
+                               | switching back to whatever directory you
+CARRIER.ZIP     24423  11-13-94  Carrier will detect the carrier on your modem
+                               | and set the DOS ERRORLEVEL accordingly. Handy
+                               | utility for sysops and for developers writing
+                               | programs that must check the modem connection
+                               | before proceeding. Works on any serial port,
+                               | from COM1 to COM4. Another helpful shareware
+                               | utility from Pinnacle Software, developers of
+                               | the Sapphire BBS. For info, dial 514-345-9578
+                               | or dial up our free files BBS at 514-345-8654
+                               | (any baud rate, downloads on first call).
+CHAIN.ZIP       22120  01-27-95  chain.zip -- A DOS program to help with
+                               | chaining. Obtained via ftp from
+                               | soda.berkeley.edu:/pub/cypherpunks/remailer
+                               | on 1-25-95.
+CHOOSE21.ZIP    30830  01-09-94  CHOOSE v2.1 <ASP> - Simple, yet powerful,
+                               | means of menu controlled branching within
+                               | AUTOEXEC or other BATCH files. Unlimited
+                               | cascading/nesting. A menu selection causes a
+                               | branch in the batch flow to perform needed
+                               | DOS commands as well as present other menus
+                               | with more choices and more branches. IBM-PC,
+                               | DOS 2 (runs between applications). Keywords:
+                               | MENU, BATCH, AUTOEXEC, ERRORLEVEL, SYSTEM
+                               | ADMINISTRATION, & VISUAL IMPAIRMENT.
+DATCHK11.ZIP    30652  02-10-95  DATECHEK is a batch file utility which checks
+                               | the current date against that specified, and
+                               | if they match, carry out the specified
+                               | instructions once for that dAy, or
+                               | optionally, every day. DATECHEK can be added
+                               | to your AUTOEXEC.BAT to print a schedule or
+                               | list of items from a text file, begin the
+                               | backup program of your choice, call any
+                               | program or batch file to perform cleanup,
+                               | etc. The possiblities are limited only to
+                               | your imagination.
+DATETST.ZIP      4723  09-16-94  Returns errorlevel for day, date, or year.
+                               | For batch processing.
+DAY010.ZIP      32762  05-09-95  DAY is a Freeware utility that is good
+                               | for use in batch files and/or BBS system
+                               | maintenance events that only take place
+                               | on certain days of the week. DAY accepts
+                               | a command line argument of a day name,
+                               | and exits with an errorlevel 2 if the
+                               | system date returns the corresponding
+                               | day of the week.
+DOSVAR20.ZIP    96930  12-11-94  DosVar 2.00: String-handling for batch files.
+                               | Now you can manipulate variables in BAT files
+                               | to obtain left and right substrings. You can
+                               | perform justification or strip leading zeros.
+                               | Published by Pinnacle Software. Call our free
+                               | files BBS at 514-345-8654. Open 24 hours per
+                               | day. 19200 bps. Download on your first call.
+ENQR-25.ZIP      8190  11-09-94  Enquire 2.5 is a powerful DOS utility that
+                               | allows batch files to be interactive. Ask
+                               | users Yes or No questions, Menu selections or
+                               | input environment variables. Use return codes
+                               | to determine actions. (RhizomeWare)
+EXC38.ZIP       73645  12-27-94  No description available
+EXCR10A.ZIP     53413  08-03-94  EXC Script Recoder Users of the EXC script
+                               | processor can now record scripts with EXCR,
+                               | the EXC Script Recorder. Run EXCR just as you
+                               | would EXC and your keystrokes and timing are
+                               | recorded in a modifiable script for playback
+                               | with EXC. hw
+FDATE.ZIP       76403  05-21-95  FDATE v8.9a batch-file date manipulation
+                               | utility to do everything you need to do
+                               | with dates in batch files: put the date
+                               | of your choice (in the format of your
+                               | choice) into an environment variable;
+                               | regular & date arithmetic; string
+                               | handling; get user input in a batch
+                               | file; English, French, Spanish, German
+                               | output.  V8.9 adds capability to justify
+                               | output, output absolute month. Freeware.
+GET27.ZIP      118738  06-15-95  GET.EXE Bob Stephan's Batch Enhancer provides
+                               | Environment and ErrorLevel services for DOS 
+                               | BATch files. Full manual included. New 
+                               | features described in GET27NEW.DOC include 
+                               | International Dates, mixed case variable 
+                               | names, sound bytes, test for write protected 
+                               | diskettes, compare file dates, find boot 
+                               | drive, special compressed date format, true 
+                               | file names, logical math functions. and much 
+                               | more. No nags, no crippling, no delays.
+                               | New features added
+HOLDN214.ZIP    44000  08-16-94  HOLDON Version 2.14 is a variable delay
+                               | program for batch files. HOLDON has five
+                               | different ranges. Milliseconds, eighteenths
+                               | of a second, seconds, minutes and hours.
+                               | These delays are totally independent of the
+                               | CPU speed. A delay time message is also
+                               | included. Registration is only $6.00
+                               | ***Toolshop***
+INPUTX32.ZIP    40408  03-01-94  INPUT v3.13 <ASP>-Adv. ASK.COM replacement
+                               | Allows you to ask questions and receive input
+                               | in .BATs. Full color, many options for
+                               | returning input. Returns errorlevel, sets an
+                               | environment variable, or execute a program
+                               | directly. NEW: editable input fields,
+                               | key-press list, more. The ultimate
+                               | interactive utility for DOS batch files. FAR
+                               | superior to DOS 6.0's CHOICE.
+INTVL197.ZIP    60454  08-16-94  INTERVAL v. 1.97 is a program which will run
+                               | a DOS command or program once during a user
+                               | defined period of time. INTERVAL will keep
+                               | logs on activity and is batch file friendly.
+                               | INTERVAL can also set an errorlevel to
+                               | indicate its completion status. Registration
+                               | is only $10.00. ***Toolshop***
+INWIN.ZIP       20882  08-15-94  INWIN v1.0 - Senses whether Windows 3.x is
+                               | active and sets the DOS Errorlevel
+                               | accordingly then displays results. Includes
+                               | sample batch routine. By Wayne Lindimore.
+ISMOUSE.ZIP      2062  09-24-94  Test from within a batch program whether
+                               | there is a mouse installed Returns ErrorLevel
+                               | 1 or 0 by W. Curtiss Priest, CITS (ASM
+                               | included)
+JOB100.ZIP      16320  08-15-94  Jobber - is a utility that will execute batch
+                               | files based on time or on a physical flag
+                               | file on the disk. It will also create an
+                               | audit trail of files passing through a
+                               | certain directory and prune shared
+                               | directories down to a specified size.
+NOW_THEN.ZIP    14599  06-18-95  º           Now & Then v1.0           º
+                               | º A useful utility used to run other  º
+                               | º   commands one time during a user   º
+                               | º          specified period.          º
+                               | º      Released January 11, 1995      º
+                               | ÇÄÄ FreeWare  by Computer Solutions ÄÄ¶
+ONCEADAY.ZIP    26596  11-24-94  Allows a batch file (or portion thereof) to
+                               | run just once a day. It's useful when you
+                               | want something to take place only once each
+                               | calendar day, even if the original batch file
+                               | is called numerous times during the day. When
+                               | run the first time during a given day,
+                               | ONCEADAY will return a DOS ERRORLEVEL of 3.
+                               | Each time it is run thereafter, it will
+                               | return an errorlevel of 0 - until the date
+                               | changes. Then it will return an ERRORLEVEL of
+                               | 3 again, the first time it's run on that
+                               | date.
+PBOOTV12.ZIP    13267  01-12-94  PauseBoot v1.2 Allows the ability to abort
+                               | loading of any application, including BBS
+                               | software. Handy utility so you don't have to
+                               | wait for something to load and then quit the
+                               | program manually. Use it in your BBS batch
+                               | file to choose between loading the BBS and
+                               | going straight to your operating system.
+                               | Option to display an ANSI display file
+                               | instead of PauseBoot's normal output!
+QUITDV.ZIP       1032  07-09-94  Quits DESQview from a batch files as long as
+                               | there are no applications open that have
+                               | "Allow Close Window Command" set to N on the
+                               | second page of the Change a Program Menu. hw
+SDLAY10.ZIP     16632  07-17-94  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                               | ³ ShockWave DELAY Creator v1.00.      ³°
+                               | ³ Creates delays on the PC between the³°
+                               | ³ execution of programs in .BAT files ³°
+                               | ³ Delays up to an entire day long!    ³°
+                               | ³ FREE!  No registration required!    ³°
+                               | ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ°
+                               | °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+SETER.ZIP       43429  08-16-94  SetEr v. 1.48 is a program which will allow
+                               | the user to set an errorlevel from the
+                               | command line or a batch file. Registration is
+                               | only $6.00. ***Toolshop***
+TBT324.ZIP      51638  11-15-94  TurboBAT Batch File Compiler 3.24 08/17/94
+                               | TurboBAT Creates a .COM program file from a
+                               | DOS batch file. Eliminates the need to
+                               | distribute batch files with source code.
+                               | Registered useRs do not need to pay royalties
+                               | on programs created with TurboBAT. Shareware
+                               | registration forms and manual included. From
+                               | Foley Hi-Tech Systems (ASP). $19.95
+WHOA130.ZIP     28327  11-11-94  Batch File Delay/Abort Enhancement.
+                               | User-defined delay, and text is displayed to
+                               | show progress through batch file. Color,
+                               | sound, and mouse support. User may Abort to
+                               | DOS at any time. W/ sample batch file and
+                               | docs. $6 Shareware fm Hottips!
+               

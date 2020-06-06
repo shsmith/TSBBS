@@ -1,0 +1,48 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+unit ProUtil2;
+
+interface
+
+Uses
+   Dos,
+   Tools,
+   MdosIO,
+   BufIO,
+   ProData;
+
+procedure copy_file(source,dest: string65);
+   (* copy a file from one place to another *)
+
+procedure move_file(source,dest: string65);
+   (* move a file from one place to another;  quickly rename if
+      possible, otherwise copy and delete.  touches file to make
+      file-date = date moved or copied *)
+
+procedure execute(command: string);
+
+procedure build_download_list;
+
+procedure load_config_file;
+
+function verify_access(fname:      anystring;           {function name}
+                       flevel:     integer;             {minimum level}
+                       fpassword:  anystring;           {password if any}
+                       fmessage:   anystring)           {failure message}
+                          : boolean;
+
+function file_allowed(path:       anystring;    {name to verify}
+                      secfile:    filenames)    {fsec/upsec name}
+                         : boolean;
+
+implementation

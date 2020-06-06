@@ -1,0 +1,367 @@
+                        ş  WHAT IS U'NI-net?  ş
+
+Thanks for downloading this information file concerning U'NI-net, the
+network for users.
+
+The purpose of this document is to let you know a little bit more about
+the fastest growing, best managed network to date.
+
+
+PURPOSE:
+-------
+
+        U'NI (Pronounced "You and I") has one simple goal: promote the
+        exchange of information between people for people.  As a
+        distributor of electronic mail, we focus our efforts on the
+        users eliminating almost all of the political infrastructure
+        that can be found in any other national network. This focusing
+        allows quality, current information to be distributed quickly
+        to everyone.
+
+
+ACTIONS:
+-------
+
+        To get the latest quality information requires the right
+        connections. Boy do we sure have them. We are supported in
+        several conferences by people who have actual experience in
+        the products they are talking about. Our connections are
+        bolstered by our cross echoing agreement with Smartnet. This
+        cross echo allows us to offer the user and sysop a political,
+        trouble free network without sacrificing product support from
+        companies like Hayes, PKWare, Quarterdeck, and US Robotics.
+
+        Our connections also count on our users. Many of our users are
+        working professionals in the computer industry that offer
+        experiences, advice, and tips that cannot be found anywhere
+        for any price.
+
+
+USERS AND SYSOPS:
+----------------
+
+        Diverse. That's our goal. We want to find users that know
+        something from Alchemey to Zymurgy and are willing to share
+        it. The network exists for users to help each other, not for
+        sysops.
+
+        In sysops we look for someone who wants to be involved in a
+        ground floor opportunity. This opportunity will turn into a
+        path filled with golden tidbits of knowledge and fun. Since we
+        are new, there is a plethora of opportunities to help shape
+        and determine the route of the network.
+
+GUIDELINES:
+----------
+
+        "What, no rules," you ask? We believe that rules are outdated
+        forms of control on the highway of information. They are so
+        final. We prefer guidelines that can be modified and are
+        malleable so that sysops and users can work within the
+        confines to create a better network. These are the network
+        usage guidelines. For Sysop specific guidelines, please see
+        the sysop application form.
+
+        1)      Aliases that are obvious are not permitted. Real
+                sounding aliases are allowed if the local sysop
+                approves. Dynamite Dan would not be allowed, where Dan
+                Smith would be.
+
+        2)      These conferences must be carried by every BBS: UNI-NET
+                (Sysops and Hosts Conference), NETUSERS (User
+                Comments Conference). CHITCHAT (General conference
+                for the purpose of continuity) is strongly
+                recommended.  If your system will be providing
+                any conference hosts, then UNI-HOST will be
+                required.
+
+        3)      Abusive or offensive language (profanity and
+                non-profanity included), name calling, personal
+                attacks and other such forms of verbal combat are not
+                allowed.
+
+        4)      Conference hosts facilitate the flow of conferences. If
+                a user believes that there is a problem, we encourage
+                that user to address it in the NETUSERS conference.
+
+        5)      ANSI codes are only permitted in the designated ANSI Art
+                conference.
+
+FORCES:
+------
+
+        The driving forces behind the network have many years of
+        telecommunicating experience between them. They are dedicated
+        to providing a consistent, user driven network:
+
+        Jim Fouch is the sysop of Sleepy Hollow BBS. Jim serves as the
+        Western United States Hub, which is right up his alley seeing
+        that he was the co-originator of the first national network,
+        PCB Echo.
+
+        Joseph Sheppard actively supports The Ledge PC Board in Lake
+        View Terrace, California. As the International host, Joe has
+        managed to successfully recruit several key members. Best
+        known for his Shareware programs, he consistently knows what
+        today's sysop needs in running a BBS.
+
+
+NETWORK DIAGRAM:
+---------------
+
+                      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                      ³   International Host    ³
+                      ³         U'NI-net        ³
+                      ÀÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                                  ³
+                                  ³
+       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ÚÄÄÄÄÁÄÄÄÄÄ¿  ÚÄÄÄÄÁÄÄÄÄÄ¿             ÚÄÄÄÄÄÁÄÄÄÄÄ¿    ÚÄÄÄÄÁÄÄÄÄÄ¿
+  ³ West Hub ³  ³Cntrl Hub ³             ³MidWest Hub³    ³ East Hub ³
+  ³   U'NI   ³  ³   U'NI   ³             ³    U'NI   ³    ³   U'NI   ³
+  ÀÄÄÄÄÒÄÄÄÄÄÙ  ÀÄÄÄÄÒÄÄÄÄÄÙ             ÀÄÄÄÄÄÒÄÄÄÄÄÙ    ÀÄÄÄÄÒÄÄÄÄÄÙ
+       º             º                         º               º
+       º             º                         º               º
+  ÚÄÄÄÄĞÄÄÄÄÄ¿  ÚÄÄÄÄĞÄÄÄÄÄ¿             ÚÄÄÄÄÄĞÄÄÄÄÄ¿    ÚÄÄÄÄĞÄÄÄÄÄ¿
+  ³   Node   ³  ³   Node   ³             ³   Node    ³    ³   Node   ³
+  ³   U'NI   ³  ³   U'NI   ³             ³   U'NI    ³    ³   U'NI   ³
+  ÀÄÄÄÄÄÄÄÄÄÄÙ  ÀÄÄÄÄÄÄÄÄÄÄÙ             ÀÄÄÄÄÄÄÄÄÄÄÄÙ    ÀÄÄÄÄÄÄÄÄÄÄÙ
+
+
+                           SYSOP INFORMATION
+
+So, you say you're ready to join our family? Great! This step is a
+very important one for you and your users. A professional, dependable
+network for you and an information packed network for your users.
+
+Before we get some information from you, we need to let you know about
+some guidelines we have.
+
+GUIDELINES:
+-----------
+
+        1)      Normally, your BBS must have been up and running for
+                at least six months, though special exceptions are
+                made, so contact us.
+
+        2)      Nodes must make daily mail transfers to their Hub.
+                This eliminates old, dry mail. Exceptions can be made
+                for special cases.
+
+        3)      A QWK/REP compatible mail package must be supported on
+                your BBS for network mail transfers.
+
+        4)      Have fun!
+
+NETWORK ADMINISTRATION:
+----------------------
+
+        Since the network is being started by sysops with experience
+        with other networks, you will see that the administration is a
+        compilation of what works best.
+
+        U'NI-net is administered by a group consisting of the official
+        Hubs, the Recorder and the International Host. The
+        International Host sysop may make day to day decisions
+        regarding general operation, and emergencies. However,
+        decisions regarding the direction of the network are referred
+        to the hub systems, who in turn refer the matter for
+        discussion to the local Sysops they service. The hub systems
+        report back to the host with the outcome of the discussions
+        with their local sysops, and decisions are made based on what
+        the majority of connecting sysops indicate.
+
+        In the event a hub becomes unavailable, the area Sysops elect a
+        new hub from their group.  In the event that a decision cannot
+        be reached by the area Sysops, the host may appoint the new hub.
+
+
+CONFERENCE HOSTS:
+----------------
+
+        Any caller may volunteer to host a U'NI-net conference.  The
+        most important duty of a host is to keep his or her conference
+        friendly and on-topic.  Official conference hosts must be
+        registered in the private UNI-HOST conference.  This is
+        where Hosts can come to find solutions to problems
+        encountered in hosting.
+
+        U'NI-net is simply a distributor of electronic mail, so it is
+        not the job of the host to act in an editorial capacity.
+        Rather, he or she simply welcomes new people to the conference
+        and assists in keeping it on track.
+
+        U'NI-net hosts are regarded by other callers as the "good
+        guy", however, from time to time a caller may behave in a
+        manner that the host feels is counter productive to the
+        conference.  Hosts are asked to stay clear of disputes with
+        callers.  If a caller doesn't respond favorably to a friendly
+        request, then the host should contact the Sysop of the BBS the
+        caller is using.
+
+        BBS names can be found in the message tagline.  Sysop names
+        can be found in UNIBBS.LST which is distributed with this
+        file. All U'NI-net Sysops and hosts have access to the UNI-NET
+        administration conference.  This is a private conference where
+        the host can contact the Sysop and request that the problem be
+        worked out privately.  We find that callers respond to the
+        local Sysop quite well, and this keeps boring debates about
+        how a situation is being handled out of the conference.
+
+        If the problem continues after contacting the Sysop, the Host
+        may make a formal request that the caller be suspended from
+        the conference for a period not to exceed 30 days for the
+        first offense.  If there is a second offense, the host may
+        request a permanent suspension.  Network Sysops are obligated
+        to honor the request of a host.
+
+        There is no set term of duty for a host.  The appointment may
+        be cancelled by the U'NI-net administration.  Hosts are asked
+        to give reasonable notice to the network before resigning.
+        Suggestions for replacement are greatly appreciated.
+
+
+Proposing New Conferences for the Network:
+------------------------------------------
+
+        If a U'NI-net member system would like to have a new
+        Conference added to the network the net Sysop should follow
+        this procedure:
+
+        Post a message in the UNI-net Administration Conference to
+        suggest the new Conference.  Please use a SUBJECT: NEW
+        CONFERENCE <Proposed Name>.  This will make it easier for
+        others to follow the thread.  A brief description of the
+        contents and limits of the subject matter should be included
+        in the proposal if this is not obvious from the Proposed Name.
+        The U'NI-net Administration conference is the ONLY conference
+        this message should be sent to.  Please do not bombard a large
+        list of conferences with material about a proposed conference.
+        The decision is in the hands of the U'NI-net Sysops, and the
+        UNI-NET Administration Conference is the place to find them.
+
+        If the member system finds six (6) other interested U'NI-net
+        member systems and a candidate for a Host for the Conference
+        within fourteen (14) days he should post a message to the
+        U'NI-net Conference Chairman indicating the names of the
+        interested members, the name of the proposed Host, and a brief
+        description that will fit in the following format:
+
+        Conf_Name     : Conference Description......................
+
+        Maximum number of characters for Conference Name: 12
+        Maximum number of characters for Conference Description: 43
+
+        The Conference Chairman may at his discretion immediately add
+        the proposed new Conference.  He may also consult with the
+        U'NI-net Hubs for their advice and opinions about adding the
+        proposed new Conference.  He may decide not to add the
+        proposed new Conference if he decides doing so would not be in
+        the best interest of the network and its members.
+
+        Notes: (1) U'NI-net is interested in adding new and
+        interesting conferences and members are encouraged to suggest
+        them.  (2) The requirement of (6) six systems willing to carry
+        a new conference may be increased to a higher number depending
+        on the size of the network and possible other factors.  (3)
+        Consideration should be given to the qualifications of the
+        proposed Conference Host - Please see "Duties of Conference
+        Hosts" elsewhere in this document.  (4) The current Conference
+        Chairman is International Host, Joseph Sheppard.
+
+CHANGES:
+--------
+
+        The above guidelines are always open to discussion and
+        drafting whenever necessary. The stress is always put on
+        making the network easier to administer, not stuck in
+        bureaucracy.
+
+        Upload your application as a C)omment to one of the following
+        BBS':
+
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³            U'NI-net International Echo Net HUBS List               ³
+³        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ             ³
+³ BBS Name                   Area                     BBS Number     ³
+³ Location                   Served                   Sysop          ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ Channel 8250               AL,GA,FL,SC,MS,TN        (205) 744-8546 ³
+³ Birmingham, Alabama        VA,NC,WV,KY,MD,DE,DC     Randy Hilliard ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ French Connection, The     WA,OR,ID,MT,WY,SD,AK     (206) 771-1730 ³
+³ Edmonds, Washington                                   Klaus Lamort ³
+³ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ³
+³ Richware Shareware         IL,IN,OH,MI,WI,IA,MN     (708) 697-1606 ³
+³ Elgin, Illinois                                     Rich Dougherty ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ Sleepy Hollow BBS          *CA,NV,UT,AZ,NM,CO,TX    (310) 859-9334 ³
+³ Beverly Hills, Calif       NY,NJ,PA,HI,ME,NH,VT,         Jim Fouch ³
+³                            MA,CT,RI                                ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ The Ledge PCBoard          Areas not on List,       (818) 896-4015 ³
+³ Lake View Terrace, Calif   or Product Support      Joseph Sheppard ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ War on Virus               Southeast Asia and      (66-2) 255-5981 ³
+³ Bangkok, Thailand          Pacific Islands             Alan Dawson ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+* The California Counties of Los Angeles and Orange are closed to
+  new members until further notice.
+
+                ş U'NI-net MEMBERSHIP APPLICATION FORM ş
+                  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                  ³     Please Upload to a HUB       ³
+                  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Your Name: __________________________________________________________
+
+BBS Name: ___________________________________________________________
+
+BBS Software and Version: ___________________________________________
+
+BBS Public Phone Number: ____________________________________________
+
+BBS City (Location): ________________________  Number of Nodes: _____
+
+Modem Types and Speed Supported: ____________________________________
+
+Length of Time Your BBS Has Been Operating: _________________________
+
+Are You A Member of Another Network? If so, Which One: ______________
+
+Do You have any Special Skills: _____________________________________
+
+(Information below is CONFIDENTIAL):
+
+Your Address: ________________________________________________________
+
+Your City/State/ZIP: _________________________________________________
+
+Voice Phone Number: __________________________ Your Age: _____________
+
+"I have read the enclosed Hub and Node agreements and will fully
+comply to them as a member of U'NI-net. I understand that failure to
+follow these guidelines may end my relationship with U'NI-net. I
+further understand that any charges for transferring mail may be the
+responsibility of myself."
+
+Your Name: _____________________________   Date: ____________________
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  IMPORTANT: Please PRE-REGISTER the Sysop of the hub you will by    ³
+³  applying to on your BBS.  This will speed up the verification      ³
+³  process.                                                           ³
+³                                                                     ³
+³  First Name of Hub-Sysop you are Applying To........ ______________ ³
+³                                                                     ³
+³  Last Name of Hub-Sysop you are Applying To......... ______________ ³
+³                                                                     ³
+³  Password for Hub-Sysop you are Applying to to use.. ______________ ³
+³                                                                     ³
+³  Telephone Number the Hub-Sysop should call into.... ______________ ³
+³  (Please give the least-busy phone number)                          ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+

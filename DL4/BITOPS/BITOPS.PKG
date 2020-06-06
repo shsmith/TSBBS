@@ -1,0 +1,111 @@
+
+-----------------------------------------------------------
+--                                                       --
+--              Bitwise Ligical Operators                --
+--                    Package Body                       --
+--                 28-Jul-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+
+package body BITOPS is
+
+   P1, P2, RESULT: integer;
+      -- static variables for communication with inline assembly language
+
+
+   function BIT_AND (a,b: integer) return integer is
+      -- return the bitwise AND of two integers
+   begin
+      P1 := a;
+      P2 := b;
+      asm 16#a1#,P1'address;        -- mov ax,[P1]
+      asm 16#1e8b#,P2'address;      -- mov bx,[P2]
+      asm 16#d821#;                 -- and ax,bx
+      asm 16#a3#,RESULT'address;    -- mov [RESULT],ax
+      return RESULT;
+   end BIT_AND;
+
+
+   function BIT_OR (a,b: integer) return integer is
+      -- return the bitwise OR of two integers
+   begin
+      P1 := a;
+      P2 := b;
+      asm 16#a1#,P1'address;        -- mov ax,[P1]
+      asm 16#1e8b#,P2'address;      -- mov bx,[P2]
+      asm 16#d809#;                 -- or ax,bx
+      asm 16#a3#,RESULT'address;    -- mov [RESULT],ax
+      return RESULT;
+   end BIT_OR;
+
+
+   function SHIFT_LEFT (a: integer; bits: integer) return integer is
+      -- return a value shifted left by the specified number of bits
+   begin
+      P1 := a;
+      P2 := bits;
+      asm 16#a1#,P1'address;        -- mov ax,[P1]
+      asm 16#e8b#,P2'address;       -- mov cx,[P2]
+      asm 16#e0d3#;                 -- shl ax,cl
+      asm 16#a3#,RESULT'address;    -- mov [RESULT],ax
+      return RESULT;
+   end SHIFT_LEFT;
+
+
+   function SHIFT_RIGHT (a: integer; bits: integer) return integer is
+      -- return a value shifted right by the specified number of bits
+   begin
+      P1 := a;
+      P2 := bits;
+      asm 16#a1#,P1'address;        -- mov ax,[P1]
+      asm 16#e8b#,P2'address;       -- mov cx,[P2]
+      asm 16#e8d3#;                 -- shr ax,cl
+      asm 16#a3#,RESULT'address;    -- mov [RESULT],ax
+      return RESULT;
+   end SHIFT_RIGHT;
+
+
+
+   function BIT_SET (data: integer;
+                     bits: integer) return boolean is
+      -- return true if the specified bits are all set
+   begin
+      return (BIT_AND (data,bits) = bits);
+   end BIT_SET;
+
+
+
+   function BIT_CLEAR (data: integer;
+                       bits: integer) return boolean is
+      -- return true if the specified bits are all clear
+   begin
+      return (BIT_AND (data,bits) = 0);
+   end BIT_CLEAR;
+
+
+begin
+
+   BIT_VALUE(00) := 2#0000_0000_0000_0001#;
+   BIT_VALUE(01) := 2#0000_0000_0000_0010#;
+   BIT_VALUE(02) := 2#0000_0000_0000_0100#;
+   BIT_VALUE(03) := 2#0000_0000_0000_1000#;
+   BIT_VALUE(04) := 2#0000_0000_0001_0000#;
+   BIT_VALUE(05) := 2#0000_0000_0010_0000#;
+   BIT_VALUE(06) := 2#0000_0000_0100_0000#;
+   BIT_VALUE(07) := 2#0000_0000_1000_0000#;
+   BIT_VALUE(08) := 2#0000_0001_0000_0000#;
+   BIT_VALUE(09) := 2#0000_0010_0000_0000#;
+   BIT_VALUE(10) := 2#0000_0100_0000_0000#;
+   BIT_VALUE(11) := 2#0000_1000_0000_0000#;
+   BIT_VALUE(12) := 2#0001_0000_0000_0000#;
+   BIT_VALUE(13) := 2#0010_0000_0000_0000#;
+   BIT_VALUE(14) := 2#0100_0000_0000_0000#;
+   BIT_VALUE(15) := 2#1000_0000_0000_0000#;
+
+end BITOPS;
+
+

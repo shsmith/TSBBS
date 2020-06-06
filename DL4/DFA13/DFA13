@@ -1,0 +1,11 @@
+
+dfa13.obj:   dfa13.asm
+   MASM dfa13,dfa13,dfa13,dfa13/z/t
+
+dfa13.com:   dfa13.obj
+   LINK dfa13;
+   EXE2BIN dfa13 dfa13.com
+   DEL dfa13.exe
+   DEL dfa13.obj
+
+

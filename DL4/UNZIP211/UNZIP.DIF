@@ -1,0 +1,1749 @@
+*** ounzip.c	Sun Apr  9 14:08:08 1989
+--- unzip.c	Sun Apr  9 14:08:48 1989
+***************
+*** 1,4
+- 
+  /*
+   * Copyright 1989 Samuel H. Smith;  All rights reserved
+   *
+
+--- 1,3 -----
+  /*
+   * Copyright 1989 Samuel H. Smith;  All rights reserved
+   *
+***************
+*** 13,19
+   * UnZip - A simple zipfile extract utility
+   *
+   * To compile:
+!  *      tcc -B -O -Z -G -mc unzip.c        ;turbo C 2.0, compact model
+   *
+   */
+  
+
+--- 12,20 -----
+   * UnZip - A simple zipfile extract utility
+   *
+   * To compile:
+!  *      tcc -B -O -Z -G -mc unzip.c	;turbo C 2.0, compact model
+!  *	cl /O /AC /G0 /W3 -c unzip.	;msc 5.1, compact model
+!  *	cc -O -DOLDC -Dunix {-DHIGH_LOW} {-DSHORTC} -c unzip.c	;unix pcc
+   *
+   * Port to MSC and Unix by George M. Sipe
+   *
+***************
+*** 15,20
+   * To compile:
+   *      tcc -B -O -Z -G -mc unzip.c        ;turbo C 2.0, compact model
+   *
+   */
+  
+  #define VERSION  "UnZip:  Zipfile Extract v1.2 of 03-15-89;  (C) 1989 Samuel H. Smith"
+
+--- 16,23 -----
+   *	cl /O /AC /G0 /W3 -c unzip.	;msc 5.1, compact model
+   *	cc -O -DOLDC -Dunix {-DHIGH_LOW} {-DSHORTC} -c unzip.c	;unix pcc
+   *
++  * Port to MSC and Unix by George M. Sipe
++  *
+   */
+  
+  #define VERSION  \
+***************
+*** 17,23
+   *
+   */
+  
+! #define VERSION  "UnZip:  Zipfile Extract v1.2 of 03-15-89;  (C) 1989 Samuel H. Smith"
+  
+  typedef unsigned char byte;	/* code assumes UNSIGNED bytes */
+  typedef long longint;
+
+--- 20,27 -----
+   *
+   */
+  
+! #define VERSION  \
+! 	"UnZip:  Zipfile Extract v1.2.1 of 03-15-89;  (C) 1989 Samuel H. Smith"
+  
+  #ifdef	SHORTC
+  #define	filename		fn
+***************
+*** 19,24
+  
+  #define VERSION  "UnZip:  Zipfile Extract v1.2 of 03-15-89;  (C) 1989 Samuel H. Smith"
+  
+  typedef unsigned char byte;	/* code assumes UNSIGNED bytes */
+  typedef long longint;
+  typedef unsigned word;
+
+--- 23,44 -----
+  #define VERSION  \
+  	"UnZip:  Zipfile Extract v1.2.1 of 03-15-89;  (C) 1989 Samuel H. Smith"
+  
++ #ifdef	SHORTC
++ #define	filename		fn
++ #define	process_headers		proc_hdrs
++ #define	extract_zipfile		ext_zip
++ #define	hsize_array_byte	hsz_a_byte
++ #define	number_disk_with_start_central_directory ndwsc
++ #define	last_mod_file_date	mod_fdate
++ #define	process_end_central_dir	pecdir
++ #define	total_entries_central_dir tecdir
++ #define	version_made_by		v_made_by
++ #define	maxcodemax		mx_cd_mx
++ #define	follower		flwr
++ #define	process_central_file_header pcfhdr
++ #define	compressed_size		cmpr_sz
++ #endif	/* SHORTC */
++ 
+  typedef unsigned char byte;	/* code assumes UNSIGNED bytes */
+  typedef long longint;		/* sizeof must be 4 bytes */
+  typedef unsigned short word;	/* sizeof must be 2 bytes */
+***************
+*** 20,27
+  #define VERSION  "UnZip:  Zipfile Extract v1.2 of 03-15-89;  (C) 1989 Samuel H. Smith"
+  
+  typedef unsigned char byte;	/* code assumes UNSIGNED bytes */
+! typedef long longint;
+! typedef unsigned word;
+  typedef char boolean;
+  
+  #define STRSIZ 256
+
+--- 40,47 -----
+  #endif	/* SHORTC */
+  
+  typedef unsigned char byte;	/* code assumes UNSIGNED bytes */
+! typedef long longint;		/* sizeof must be 4 bytes */
+! typedef unsigned short word;	/* sizeof must be 2 bytes */
+  typedef char boolean;
+  
+  #define STRSIZ 256
+***************
+*** 29,34
+  #include <stdio.h>
+   /* this is your standard header for all C compiles */
+  
+  #include <stdlib.h>
+   /* this include defines various standard library prototypes */
+  
+
+--- 49,55 -----
+  #include <stdio.h>
+   /* this is your standard header for all C compiles */
+  
++ #ifndef	OLDC
+  #include <stdlib.h>
+   /* this include defines various standard library prototypes */
+  #define	VOIDARG	void		/* function definitions support (void) */
+***************
+*** 31,36
+  
+  #include <stdlib.h>
+   /* this include defines various standard library prototypes */
+  
+  
+  /*
+
+--- 52,62 -----
+  #ifndef	OLDC
+  #include <stdlib.h>
+   /* this include defines various standard library prototypes */
++ #define	VOIDARG	void		/* function definitions support (void) */
++ #else
++ #include <ctype.h>
++ #define	VOIDARG			/* function definitions support () only */
++ #endif	/* OLDC */
+  
+  
+  /*
+***************
+*** 93,98
+  
+  typedef struct end_central_dir_record {
+  	word number_this_disk;
+  	word number_disk_with_start_central_directory;
+  	word total_entries_central_dir_on_this_disk;
+  	word total_entries_central_dir;
+
+--- 119,128 -----
+  
+  typedef struct end_central_dir_record {
+  	word number_this_disk;
++ #ifndef	TURBOC
++ 	word num_disk_with_start_cent_dir;
++ 	word tot_ents_cent_dir_on_this_disk;
++ #else
+  	word number_disk_with_start_central_directory;
+  	word total_entries_central_dir_on_this_disk;
+  #endif	/* TURBOC */
+***************
+*** 95,100
+  	word number_this_disk;
+  	word number_disk_with_start_central_directory;
+  	word total_entries_central_dir_on_this_disk;
+  	word total_entries_central_dir;
+  	longint size_central_directory;
+  	longint offset_start_central_directory;
+
+--- 125,131 -----
+  #else
+  	word number_disk_with_start_central_directory;
+  	word total_entries_central_dir_on_this_disk;
++ #endif	/* TURBOC */
+  	word total_entries_central_dir;
+  	longint size_central_directory;
+  	longint offset_start_central_directory;
+***************
+*** 122,127
+  char zipfn[STRSIZ];
+  local_file_header lrec;
+  
+  
+  /* ----------------------------------------------------------- */
+  /*
+
+--- 153,162 -----
+  char zipfn[STRSIZ];
+  local_file_header lrec;
+  
++ #ifdef	HIGH_LOW
++ int w0, w1;			/* word translation indices */
++ int li0, li1, li2, li3;		/* long int translation indices */
++ #endif	/* HIGH_LOW */
+  
+  
+  /* ----------------------------------------------------------- */
+***************
+*** 123,128
+  local_file_header lrec;
+  
+  
+  /* ----------------------------------------------------------- */
+  /*
+   * output stream variables
+
+--- 158,164 -----
+  int li0, li1, li2, li3;		/* long int translation indices */
+  #endif	/* HIGH_LOW */
+  
++ 
+  /* ----------------------------------------------------------- */
+  /*
+   * output stream variables
+***************
+*** 184,189
+  #include <string.h>
+   /* this include defines strcpy, strcmp, etc. */
+  
+  #include <io.h>
+   /*
+    * this include file defines
+
+--- 220,256 -----
+  #include <string.h>
+   /* this include defines strcpy, strcmp, etc. */
+  
++ #ifndef	TURBOC
++ #include <sys/types.h>
++  /*
++   * this include file defines
++   *		dev_t (* device type *)
++   * as used in the sys/utime.h and sys/stat.h header files below
++   */
++ 
++ #ifndef	OLDC
++ #include <sys/utime.h>
++  /*
++   * this include file defines
++   *		struct utimbuf (* utime buffer structure *)
++   *		utime()        (* utime function *)
++   * as used in the set_file_time() function defined below
++   */
++ #endif	/* !OLDC */
++ #endif	/* !TURBOC */
++ 
++ #ifndef	TURBOC
++ #include <time.h>
++ struct ftime {
++ 	unsigned ft_tsec: 5;	/* two seconds */
++ 	unsigned ft_min: 6;	/* minutes */
++ 	unsigned ft_hour: 5;	/* hours */
++ 	unsigned ft_day: 5;	/* days */
++ 	unsigned ft_month: 4;	/* months */
++ 	unsigned ft_year: 7;	/* years  - 1980 */
++ };
++ #endif	/* TURBOC */
++ #ifndef	OLDC
+  #include <io.h>
+  #else
+  #include <sys/file.h>
+***************
+*** 185,190
+   /* this include defines strcpy, strcmp, etc. */
+  
+  #include <io.h>
+   /*
+    * this include file defines
+    *             struct ftime ...        (* file time/date stamp info *)
+
+--- 252,265 -----
+  #endif	/* TURBOC */
+  #ifndef	OLDC
+  #include <io.h>
++ #else
++ #include <sys/file.h>
++ #ifdef	L_SET
++ #define	SEEK_SET	L_SET
++ #else
++ #define	SEEK_SET	0
++ #endif	/* L_SET */
++ #endif	/* OLDC */
+   /*
+    * this include file defines
+    *             struct ftime ...        (* file time/date stamp info *)
+***************
+*** 195,200
+    */
+  
+  #include <fcntl.h>
+   /*
+    * this include file defines
+    *             #define O_BINARY 0x8000  (* no cr-lf translation *)
+
+--- 270,278 -----
+    */
+  
+  #include <fcntl.h>
++ #ifndef	O_BINARY
++ #define	O_BINARY	0
++ #endif	/* O_BINARY */
+   /*
+    * this include file defines
+    *             #define O_BINARY 0x8000  (* no cr-lf translation *)
+***************
+*** 209,215
+    * as used in the creat() standard function
+    */
+  
+! #undef HIGH_LOW
+   /*
+    * change 'undef' to 'define' if your machine stores high order bytes in
+    * lower addresses.
+
+--- 287,293 -----
+    * as used in the creat() standard function
+    */
+  
+! /* #undef HIGH_LOW - define externally */
+   /*
+    * change 'undef' to 'define' if your machine stores high order bytes in
+    * lower addresses.
+***************
+*** 215,221
+    * lower addresses.
+    */
+  
+! void set_file_time(void)
+   /*
+    * set the output file date/time stamp according to information from the
+    * zipfile directory record for this file 
+
+--- 293,299 -----
+    * lower addresses.
+    */
+  
+! void set_file_time(VOIDARG)
+   /*
+    * set the output file date/time stamp according to information from the
+    * zipfile directory record for this file 
+***************
+*** 233,239
+  	 * set output file date and time - this is optional and can be
+  	 * deleted if your compiler does not easily support setftime() 
+  	 */
+! 
+  	td.zt.ztime = lrec.last_mod_file_time;
+  	td.zt.zdate = lrec.last_mod_file_date;
+  
+
+--- 311,317 -----
+  	 * set output file date and time - this is optional and can be
+  	 * deleted if your compiler does not easily support setftime() 
+  	 */
+! #ifdef	TURBOC
+  	td.zt.ztime = lrec.last_mod_file_time;
+  	td.zt.zdate = lrec.last_mod_file_date;
+  
+***************
+*** 238,243
+  	td.zt.zdate = lrec.last_mod_file_date;
+  
+  	setftime(outfd, &td.ft);
+  }
+  
+  
+
+--- 316,367 -----
+  	td.zt.zdate = lrec.last_mod_file_date;
+  
+  	setftime(outfd, &td.ft);
++ #else
++ 
++ #define leap(y)	 (((y) % 4 == 0 && (y) % 100 != 0) || (y) % 400 == 0)
++ #define nleap(y) (((y) - 1969) / 4 - ((y) - 1901) / 100 + ((y) - 1601) / 400)
++ 
++ 	static char month_lengths[] =
++ 		{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
++ 	int day_of_year, year;
++ #ifndef	OLDC
++ 	struct utimbuf times;
++ #else
++ 	struct utimbuf {
++ 		time_t actime;		/* file accessed time */
++ 		time_t modtime;		/* file updated time */
++ 	} times;
++ #endif	/* OLDC */
++ 
++ 	/*
++ 	 * this is the standard Unix implementation (also fully
++ 	 * compatible with MSC)
++ 	 */
++ 
++ 	close(outfd);
++ 	td.zt.ztime = lrec.last_mod_file_time;
++ 	td.zt.zdate = lrec.last_mod_file_date;
++ 	year = td.ft.ft_year + 1980;
++ 	if (td.ft.ft_month < 1 || td.ft.ft_month > 12 || td.ft.ft_day < 1
++ 		|| td.ft.ft_day > month_lengths[td.ft.ft_month-1]
++ 		&& !(td.ft.ft_month == 2 && td.ft.ft_day == 29 && leap (year))
++ 		|| td.ft.ft_hour > 23 || td.ft.ft_min > 59 ||
++ 		td.ft.ft_tsec*2 > 59)
++ 		return;
++ 	day_of_year = td.ft.ft_day - 1;
++ 	if (td.ft.ft_month > 2 && leap(year)) ++day_of_year;
++ 	while (--td.ft.ft_month > 0)
++ 		day_of_year += month_lengths[td.ft.ft_month - 1];
++ 	times.modtime = (86400 * (long)(day_of_year + 365 * (year - 1970) 
++ 		+ nleap (year)) + 3600 * (td.ft.ft_hour-1) + 60 * td.ft.ft_min
++ 		+ td.ft.ft_tsec*2);
++ #ifdef	HAVE_TZ
++ 	tzset();
++ 	times.modtime += timezone;
++ #endif	/* HAVE_TZ */
++ 	times.actime = times.modtime;
++ 	utime(filename, &times);
++ #endif	/* !TURBOC */
+  }
+  
+  
+***************
+*** 241,247
+  }
+  
+  
+! int create_output_file(void)
+   /* return non-0 if creat failed */
+  {
+  	/* create the output file with READ and WRITE permissions */
+
+--- 365,371 -----
+  }
+  
+  
+! int create_output_file(VOIDARG)
+   /* return non-0 if creat failed */
+  {
+  	/* create the output file with READ and WRITE permissions */
+***************
+*** 245,251
+   /* return non-0 if creat failed */
+  {
+  	/* create the output file with READ and WRITE permissions */
+! 	outfd = creat(filename, S_IWRITE | S_IREAD);
+  	if (outfd < 1) {
+  		printf("Can't create output: %s\n", filename);
+  		return 1;
+
+--- 369,376 -----
+   /* return non-0 if creat failed */
+  {
+  	/* create the output file with READ and WRITE permissions */
+! 	outfd = creat(filename, S_IWRITE | S_IREAD | S_IREAD >> 3
+! 			| S_IREAD >> 6);
+  	if (outfd < 1) {
+  		printf("Can't create output: %s\n", filename);
+  		return 1;
+***************
+*** 259,264
+  	outfd = open(filename, O_RDWR | O_BINARY);
+  
+  	/* write a single byte at EOF to pre-allocate the file */
+          lseek(outfd, lrec.uncompressed_size - 1L, SEEK_SET);
+  	write(outfd, "?", 1);
+  	lseek(outfd, 0L, SEEK_SET);
+
+--- 384,392 -----
+  	outfd = open(filename, O_RDWR | O_BINARY);
+  
+  	/* write a single byte at EOF to pre-allocate the file */
++ #ifdef	tx
++ 	fsetsize(outfd, lrec.uncompressed_size);
++ #endif	/* tx */
+          lseek(outfd, lrec.uncompressed_size - 1L, SEEK_SET);
+  	write(outfd, "?", 1);
+  	lseek(outfd, 0L, SEEK_SET);
+***************
+*** 266,272
+  }
+  
+  
+! int open_input_file(void)
+   /* return non-0 if creat failed */
+  {
+  	/*
+
+--- 394,400 -----
+  }
+  
+  
+! int open_input_file(VOIDARG)
+   /* return non-0 if creat failed */
+  {
+  	/*
+***************
+*** 285,290
+  
+  #ifdef HIGH_LOW
+  
+  void swap_bytes(word *wordp)
+   /* convert intel style 'short int' variable to host format */
+  {
+
+--- 413,419 -----
+  
+  #ifdef HIGH_LOW
+  
++ #ifndef	OLDC
+  void swap_bytes(word *wordp)
+  #else
+  void swap_bytes(wordp)
+***************
+*** 286,291
+  #ifdef HIGH_LOW
+  
+  void swap_bytes(word *wordp)
+   /* convert intel style 'short int' variable to host format */
+  {
+  	char *charp = (char *) wordp;
+
+--- 415,424 -----
+  
+  #ifndef	OLDC
+  void swap_bytes(word *wordp)
++ #else
++ void swap_bytes(wordp)
++ word *wordp;
++ #endif	/* OLDC */
+   /* convert intel style 'short int' variable to host format */
+  {
+  	char *charp = (char *) wordp;
+***************
+*** 289,295
+   /* convert intel style 'short int' variable to host format */
+  {
+  	char *charp = (char *) wordp;
+! 	char temp;
+  
+  	temp = charp[0];
+  	charp[0] = charp[1];
+
+--- 422,428 -----
+   /* convert intel style 'short int' variable to host format */
+  {
+  	char *charp = (char *) wordp;
+! 	char temp[2];
+  
+  	temp[0] = charp[w0];
+  	temp[1] = charp[w1];
+***************
+*** 291,299
+  	char *charp = (char *) wordp;
+  	char temp;
+  
+! 	temp = charp[0];
+! 	charp[0] = charp[1];
+! 	charp[1] = temp;
+  }
+  
+  void swap_lbytes(longint *longp)
+
+--- 424,433 -----
+  	char *charp = (char *) wordp;
+  	char temp[2];
+  
+! 	temp[0] = charp[w0];
+! 	temp[1] = charp[w1];
+! 	charp[0] = temp[0];
+! 	charp[1] = temp[1];
+  }
+  
+  #ifndef	OLDC
+***************
+*** 296,301
+  	charp[1] = temp;
+  }
+  
+  void swap_lbytes(longint *longp)
+   /* convert intel style 'long' variable to host format */
+  {
+
+--- 430,436 -----
+  	charp[1] = temp[1];
+  }
+  
++ #ifndef	OLDC
+  void swap_lbytes(longint *longp)
+  #else
+  void swap_lbytes(longp)
+***************
+*** 297,302
+  }
+  
+  void swap_lbytes(longint *longp)
+   /* convert intel style 'long' variable to host format */
+  {
+  	char *charp = (char *) longp;
+
+--- 432,441 -----
+  
+  #ifndef	OLDC
+  void swap_lbytes(longint *longp)
++ #else
++ void swap_lbytes(longp)
++ longint *longp;
++ #endif	/* OLDC */
+   /* convert intel style 'long' variable to host format */
+  {
+  	char *charp = (char *) longp;
+***************
+*** 302,312
+  	char *charp = (char *) longp;
+  	char temp[4];
+  
+! 	temp[3] = charp[0];
+! 	temp[2] = charp[1];
+! 	temp[1] = charp[2];
+! 	temp[0] = charp[3];
+! 
+  	charp[0] = temp[0];
+  	charp[1] = temp[1];
+  	charp[2] = temp[2];
+
+--- 441,450 -----
+  	char *charp = (char *) longp;
+  	char temp[4];
+  
+! 	temp[0] = charp[li0];
+! 	temp[1] = charp[li1];
+! 	temp[2] = charp[li2];
+! 	temp[3] = charp[li3];
+  	charp[0] = temp[0];
+  	charp[1] = temp[1];
+  	charp[2] = temp[2];
+***************
+*** 313,319
+  	charp[3] = temp[3];
+  }
+  
+! #endif
+  
+  
+  
+
+--- 451,457 -----
+  	charp[3] = temp[3];
+  }
+  
+! #endif	/* HIGH_LOW */
+  
+  
+  
+***************
+*** 319,325
+  
+  /* ============================================================= */
+  
+! int FillBuffer(void)
+   /* fill input buffer if possible */
+  {
+  	int readsize;
+
+--- 457,463 -----
+  
+  /* ============================================================= */
+  
+! int FillBuffer(VOIDARG)
+   /* fill input buffer if possible */
+  {
+  	int readsize;
+***************
+*** 338,343
+  	return incnt--;
+  }
+  
+  int ReadByte(unsigned *x)
+   /* read a byte; return 8 if byte available, 0 if not */
+  {
+
+--- 476,482 -----
+  	return incnt--;
+  }
+  
++ #ifndef	OLDC
+  int ReadByte(unsigned *x)
+  #else
+  int ReadByte(x)
+***************
+*** 339,344
+  }
+  
+  int ReadByte(unsigned *x)
+   /* read a byte; return 8 if byte available, 0 if not */
+  {
+  	if (incnt-- == 0)
+
+--- 478,487 -----
+  
+  #ifndef	OLDC
+  int ReadByte(unsigned *x)
++ #else
++ int ReadByte(x)
++ unsigned *x;
++ #endif	/* OLDC */
+   /* read a byte; return 8 if byte available, 0 if not */
+  {
+  	if (incnt-- == 0)
+***************
+*** 359,364
+          };
+  
+  
+  int FillBitBuffer(register int bits)
+  {
+  	/* get the bits that are left and read the next word */
+
+--- 502,508 -----
+          };
+  
+  
++ #ifndef	OLDC
+  int FillBitBuffer(register int bits)
+  #else
+  int FillBitBuffer(bits)
+***************
+*** 360,365
+  
+  
+  int FillBitBuffer(register int bits)
+  {
+  	/* get the bits that are left and read the next word */
+  	unsigned temp;
+
+--- 504,514 -----
+  
+  #ifndef	OLDC
+  int FillBitBuffer(register int bits)
++ #else
++ int FillBitBuffer(bits)
++ register int bits;
++ #endif	/* OLDC */
++  /* read a byte; return 8 if byte available, 0 if not */
+  {
+  	/* get the bits that are left and read the next word */
+  	unsigned temp;
+***************
+*** 381,387
+          return result;
+  }
+  
+! #define READBIT(nbits,zdest) { if (nbits <= bits_left) { zdest = (int)(bitbuf & mask_bits[nbits]); bitbuf >>= nbits; bits_left -= nbits; } else zdest = FillBitBuffer(nbits);}
+  
+  /*
+   * macro READBIT(nbits,zdest)
+
+--- 530,540 -----
+          return result;
+  }
+  
+! #define READBIT(nbits,zdest,ztype) \
+! 	{ if (nbits <= bits_left) \
+! 		{ zdest = ztype(bitbuf & mask_bits[nbits]); \
+! 		bitbuf >>= nbits; bits_left -= nbits; } \
+! 	else zdest = ztype(FillBitBuffer(nbits));}
+  
+  /*
+   * macro READBIT(nbits,zdest,ztype)
+***************
+*** 384,390
+  #define READBIT(nbits,zdest) { if (nbits <= bits_left) { zdest = (int)(bitbuf & mask_bits[nbits]); bitbuf >>= nbits; bits_left -= nbits; } else zdest = FillBitBuffer(nbits);}
+  
+  /*
+!  * macro READBIT(nbits,zdest)
+   *  {
+   *      if (nbits <= bits_left) {
+   *          zdest = (int)(bitbuf & mask_bits[nbits]);
+
+--- 537,543 -----
+  	else zdest = ztype(FillBitBuffer(nbits));}
+  
+  /*
+!  * macro READBIT(nbits,zdest,ztype)
+   *  {
+   *      if (nbits <= bits_left) {
+   *          zdest = ztype(bitbuf & mask_bits[nbits]);
+***************
+*** 387,393
+   * macro READBIT(nbits,zdest)
+   *  {
+   *      if (nbits <= bits_left) {
+!  *          zdest = (int)(bitbuf & mask_bits[nbits]);
+   *          bitbuf >>= nbits;
+   *          bits_left -= nbits;
+   *      } else
+
+--- 540,546 -----
+   * macro READBIT(nbits,zdest,ztype)
+   *  {
+   *      if (nbits <= bits_left) {
+!  *          zdest = ztype(bitbuf & mask_bits[nbits]);
+   *          bitbuf >>= nbits;
+   *          bits_left -= nbits;
+   *      } else
+***************
+*** 391,397
+   *          bitbuf >>= nbits;
+   *          bits_left -= nbits;
+   *      } else
+!  *          zdest = FillBitBuffer(nbits);
+   *  }
+   *
+   */
+
+--- 544,550 -----
+   *          bitbuf >>= nbits;
+   *          bits_left -= nbits;
+   *      } else
+!  *          zdest = ztype(FillBitBuffer(nbits));
+   *  }
+   *
+   */
+***************
+*** 404,410
+  
+  /* ------------------------------------------------------------- */
+  
+! void FlushOutput(void)
+   /* flush contents of output buffer */
+  {
+  	UpdateCRC(outbuf, outcnt);
+
+--- 557,563 -----
+  
+  /* ------------------------------------------------------------- */
+  
+! void FlushOutput(VOIDARG)
+   /* flush contents of output buffer */
+  {
+  	UpdateCRC(outbuf, outcnt);
+***************
+*** 429,435
+  
+  /* ----------------------------------------------------------- */
+  
+! void LoadFollowers(void)
+  {
+          register int x;
+          register int i;
+
+--- 582,588 -----
+  
+  /* ----------------------------------------------------------- */
+  
+! void LoadFollowers(VOIDARG)
+  {
+          register int x;
+          register int i;
+***************
+*** 435,441
+          register int i;
+  
+  	for (x = 255; x >= 0; x--) {
+!                 READBIT(6,Slen[x]);
+  		for (i = 0; i < Slen[x]; i++) {
+                          READBIT(8,followers[x][i]);
+  		}
+
+--- 588,594 -----
+          register int i;
+  
+  	for (x = 255; x >= 0; x--) {
+!                 READBIT(6,Slen[x],(byte));
+  		for (i = 0; i < Slen[x]; i++) {
+                          READBIT(8,followers[x][i],(byte));
+  		}
+***************
+*** 437,443
+  	for (x = 255; x >= 0; x--) {
+                  READBIT(6,Slen[x]);
+  		for (i = 0; i < Slen[x]; i++) {
+!                         READBIT(8,followers[x][i]);
+  		}
+  	}
+  }
+
+--- 590,596 -----
+  	for (x = 255; x >= 0; x--) {
+                  READBIT(6,Slen[x],(byte));
+  		for (i = 0; i < Slen[x]; i++) {
+!                         READBIT(8,followers[x][i],(byte));
+  		}
+  	}
+  }
+***************
+*** 475,481
+  
+  /* ----------------------------------------------------------- */
+  
+! void unReduce(void)
+   /* expand probablisticly reduced data */
+  {
+          register int lchar;
+
+--- 628,634 -----
+  
+  /* ----------------------------------------------------------- */
+  
+! void unReduce(VOIDARG)
+   /* expand probablisticly reduced data */
+  {
+          register int lchar;
+***************
+*** 491,497
+  
+          while (((outpos + outcnt) < lrec.uncompressed_size) && (!zipeof)) {
+  		if (Slen[lchar] == 0)
+!                         READBIT(8,nchar)      /* ; */
+                  else
+  		{
+                          READBIT(1,nchar);
+
+--- 644,650 -----
+  
+          while (((outpos + outcnt) < lrec.uncompressed_size) && (!zipeof)) {
+  		if (Slen[lchar] == 0)
+!                         READBIT(8,nchar,(int))      /* ; */
+                  else
+  		{
+                          READBIT(1,nchar,(int));
+***************
+*** 494,500
+                          READBIT(8,nchar)      /* ; */
+                  else
+  		{
+!                         READBIT(1,nchar);
+                          if (nchar != 0)
+                                  READBIT(8,nchar)      /* ; */
+                          else
+
+--- 647,653 -----
+                          READBIT(8,nchar,(int))      /* ; */
+                  else
+  		{
+!                         READBIT(1,nchar,(int));
+                          if (nchar != 0)
+                                  READBIT(8,nchar,(int))      /* ; */
+                          else
+***************
+*** 496,502
+  		{
+                          READBIT(1,nchar);
+                          if (nchar != 0)
+!                                 READBIT(8,nchar)      /* ; */
+                          else
+  			{
+                                  int follower;
+
+--- 649,655 -----
+  		{
+                          READBIT(1,nchar,(int));
+                          if (nchar != 0)
+!                                 READBIT(8,nchar,(int))      /* ; */
+                          else
+  			{
+                                  int follower;
+***************
+*** 501,507
+  			{
+                                  int follower;
+                                  int bitsneeded = B_table[Slen[lchar]];
+!                                 READBIT(bitsneeded,follower);
+                                  nchar = followers[lchar][follower];
+  			}
+  		}
+
+--- 654,660 -----
+  			{
+                                  int follower;
+                                  int bitsneeded = B_table[Slen[lchar]];
+!                                 READBIT(bitsneeded,follower,(int));
+                                  nchar = followers[lchar][follower];
+  			}
+  		}
+***************
+*** 511,517
+  
+  		case 0:
+                          if (nchar != DLE)
+!                                 OUTB(nchar) /*;*/
+  			else
+  				ExState = 1;
+  			break;
+
+--- 664,670 -----
+  
+  		case 0:
+                          if (nchar != DLE)
+!                                 OUTB((byte) nchar) /*;*/
+  			else
+  				ExState = 1;
+  			break;
+***************
+*** 588,594
+   *
+   */
+  
+! void partial_clear(void)
+  {
+          register int pr;
+          register int cd;
+
+--- 741,747 -----
+   *
+   */
+  
+! void partial_clear(VOIDARG)
+  {
+          register int pr;
+          register int cd;
+***************
+*** 619,625
+  
+  /* ------------------------------------------------------------- */
+  
+! void unShrink(void)
+  {
+          #define  GetCode(dest) READBIT(codesize,dest)
+  
+
+--- 772,778 -----
+  
+  /* ------------------------------------------------------------- */
+  
+! void unShrink(VOIDARG)
+  {
+  #define  GetCode(dest) READBIT(codesize,dest,(int))
+  
+***************
+*** 621,627
+  
+  void unShrink(void)
+  {
+!         #define  GetCode(dest) READBIT(codesize,dest)
+  
+  	register int code;
+  	register int stackp;
+
+--- 774,780 -----
+  
+  void unShrink(VOIDARG)
+  {
+! #define  GetCode(dest) READBIT(codesize,dest,(int))
+  
+  	register int code;
+  	register int stackp;
+***************
+*** 643,649
+  
+  	for (code = 255; code >= 0; code--) {
+  		prefix_of[code] = 0;
+! 		suffix_of[code] = code;
+  	}
+  
+  	GetCode(oldcode);
+
+--- 796,802 -----
+  
+  	for (code = 255; code >= 0; code--) {
+  		prefix_of[code] = 0;
+! 		suffix_of[code] = (byte) code;
+  	}
+  
+  	GetCode(oldcode);
+***************
+*** 651,657
+  		return;
+  	finchar = oldcode;
+  
+!         OUTB(finchar);
+  
+          stackp = hsize;
+  
+
+--- 804,810 -----
+  		return;
+  	finchar = oldcode;
+  
+!         OUTB((byte) finchar);
+  
+          stackp = hsize;
+  
+***************
+*** 687,693
+  		/* special case for KwKwK string */
+  		incode = code;
+  		if (prefix_of[code] == -1) {
+!                         stack[--stackp] = finchar;
+  			code = oldcode;
+  		}
+  
+
+--- 840,846 -----
+  		/* special case for KwKwK string */
+  		incode = code;
+  		if (prefix_of[code] == -1) {
+!                         stack[--stackp] = (byte) finchar;
+  			code = oldcode;
+  		}
+  
+***************
+*** 699,705
+  		}
+  
+  		finchar = suffix_of[code];
+!                 stack[--stackp] = finchar;
+  
+  
+                  /* and put them out in forward order, block copy */
+
+--- 852,858 -----
+  		}
+  
+  		finchar = suffix_of[code];
+!                 stack[--stackp] = (byte) finchar;
+  
+  
+                  /* and put them out in forward order, block copy */
+***************
+*** 719,725
+  		code = free_ent;
+  		if (code < maxcodemax) {
+  			prefix_of[code] = oldcode;
+! 			suffix_of[code] = finchar;
+  
+  			do
+  				code++;
+
+--- 872,878 -----
+  		code = free_ent;
+  		if (code < maxcodemax) {
+  			prefix_of[code] = oldcode;
+! 			suffix_of[code] = (byte) finchar;
+  
+  			do
+  				code++;
+***************
+*** 737,743
+  
+  /* ---------------------------------------------------------- */
+  
+! void extract_member(void)
+  {
+  	unsigned b;
+  
+
+--- 890,896 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! void extract_member(VOIDARG)
+  {
+  	unsigned b;
+  
+***************
+*** 761,767
+  		{
+  			printf(" Extracting: %-12s ", filename);
+  			while (ReadByte(&b))
+! 				OUTB(b);
+  		}
+  		break;
+  
+
+--- 914,920 -----
+  		{
+  			printf(" Extracting: %-12s ", filename);
+  			while (ReadByte(&b))
+! 				OUTB((byte) b);
+  		}
+  		break;
+  
+***************
+*** 806,813
+  
+  /* ---------------------------------------------------------- */
+  
+! void get_string(int len,
+!                 char *s)
+  {
+  	read(zipfd, s, len);
+  	s[len] = 0;
+
+--- 959,972 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! #ifndef	OLDC
+! void get_string(int len, char *s)
+! #else
+! void get_string(len, s)
+! int len;
+! char *s;
+! #endif	/* OLDC */
+!  /* read a byte; return 8 if byte available, 0 if not */
+  {
+  	read(zipfd, s, len);
+  	s[len] = 0;
+***************
+*** 816,822
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_local_file_header(void)
+  {
+  	read(zipfd, &lrec, sizeof(lrec));
+  
+
+--- 975,981 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_local_file_header(VOIDARG)
+  {
+  	if ((long) &lrec.crc32 ==
+  			(long) &lrec.last_mod_file_date
+***************
+*** 818,824
+  
+  void process_local_file_header(void)
+  {
+! 	read(zipfd, &lrec, sizeof(lrec));
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&lrec.filename_length);
+
+--- 977,996 -----
+  
+  void process_local_file_header(VOIDARG)
+  {
+! 	if ((long) &lrec.crc32 ==
+! 			(long) &lrec.last_mod_file_date
+! 			+ sizeof(lrec.last_mod_file_date))
+! 		read(zipfd, (char *) &lrec, sizeof(lrec));
+! 	else {
+! 		read(zipfd, (char *) &lrec, (unsigned)
+! 			((long) &lrec.last_mod_file_date
+! 			+ sizeof(lrec.last_mod_file_date)
+! 			- (long) &lrec));
+! 		read(zipfd, (char *) &lrec.crc32, (unsigned)
+! 			((long) &lrec.extra_field_length
+! 			+ sizeof(lrec.extra_field_length)
+! 			- (long) &lrec.crc32));
+! 	}
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&lrec.version_needed_to_extract);
+***************
+*** 821,828
+  	read(zipfd, &lrec, sizeof(lrec));
+  
+  #ifdef HIGH_LOW
+! 	swap_bytes(&lrec.filename_length);
+! 	swap_bytes(&lrec.extra_field_length);
+  	swap_lbytes(&lrec.compressed_size);
+  	swap_lbytes(&lrec.uncompressed_size);
+  	swap_bytes(&lrec.compression_method);
+
+--- 993,1004 -----
+  	}
+  
+  #ifdef HIGH_LOW
+! 	swap_bytes(&lrec.version_needed_to_extract);
+! 	swap_bytes(&lrec.general_purpose_bit_flag);
+! 	swap_bytes(&lrec.compression_method);
+! 	swap_bytes(&lrec.last_mod_file_time);
+! 	swap_bytes(&lrec.last_mod_file_date);
+! 	swap_lbytes(&lrec.crc32);
+  	swap_lbytes(&lrec.compressed_size);
+  	swap_lbytes(&lrec.uncompressed_size);
+  	swap_bytes(&lrec.filename_length);
+***************
+*** 825,832
+  	swap_bytes(&lrec.extra_field_length);
+  	swap_lbytes(&lrec.compressed_size);
+  	swap_lbytes(&lrec.uncompressed_size);
+! 	swap_bytes(&lrec.compression_method);
+! #endif
+  
+  	get_string(lrec.filename_length, filename);
+  	get_string(lrec.extra_field_length, extra);
+
+--- 1001,1009 -----
+  	swap_lbytes(&lrec.crc32);
+  	swap_lbytes(&lrec.compressed_size);
+  	swap_lbytes(&lrec.uncompressed_size);
+! 	swap_bytes(&lrec.filename_length);
+! 	swap_bytes(&lrec.extra_field_length);
+! #endif	/* HIGH_LOW */
+  
+  	get_string(lrec.filename_length, filename);
+  	get_string(lrec.extra_field_length, extra);
+***************
+*** 830,835
+  
+  	get_string(lrec.filename_length, filename);
+  	get_string(lrec.extra_field_length, extra);
+  	extract_member();
+  }
+  
+
+--- 1007,1019 -----
+  
+  	get_string(lrec.filename_length, filename);
+  	get_string(lrec.extra_field_length, extra);
++ #ifdef	unix
++ 	{
++ 		char *cp;
++ 		for (cp = filename; *cp; ++cp)
++ 			if (isupper(*cp)) *cp = tolower(*cp);
++ 	}
++ #endif	/* unix */
+  	extract_member();
+  }
+  
+***************
+*** 836,842
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_central_file_header(void)
+  {
+  	central_directory_file_header rec;
+  	char filename[STRSIZ];
+
+--- 1020,1026 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_central_file_header(VOIDARG)
+  {
+  	central_directory_file_header rec;
+  	char filename[STRSIZ];
+***************
+*** 843,849
+  	char extra[STRSIZ];
+  	char comment[STRSIZ];
+  
+! 	read(zipfd, &rec, sizeof(rec));
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.filename_length);
+
+--- 1027,1046 -----
+  	char extra[STRSIZ];
+  	char comment[STRSIZ];
+  
+! 	if ((long) &rec.external_file_attributes ==
+! 			(long) &rec.internal_file_attributes
+! 			+ sizeof(rec.internal_file_attributes))
+! 		read(zipfd, (char *) &rec, sizeof(rec));
+! 	else {
+! 		read(zipfd, (char *) &rec, (unsigned)
+! 			((long) &rec.internal_file_attributes
+! 			+ sizeof(rec.internal_file_attributes)
+! 			- (long) &rec));
+! 		read(zipfd, (char *) &rec.external_file_attributes, (unsigned)
+! 			((long) &rec.relative_offset_local_header
+! 			+ sizeof(rec.relative_offset_local_header)
+! 			- (long) &rec.external_file_attributes));
+! 	}
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.version_made_by);
+***************
+*** 846,851
+  	read(zipfd, &rec, sizeof(rec));
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.filename_length);
+  	swap_bytes(&rec.extra_field_length);
+  	swap_bytes(&rec.file_comment_length);
+
+--- 1043,1057 -----
+  	}
+  
+  #ifdef HIGH_LOW
++ 	swap_bytes(&rec.version_made_by);
++ 	swap_bytes(&rec.version_needed_to_extract);
++ 	swap_bytes(&rec.general_purpose_bit_flag);
++ 	swap_bytes(&rec.compression_method);
++ 	swap_bytes(&rec.last_mod_file_time);
++ 	swap_bytes(&rec.last_mod_file_date);
++ 	swap_lbytes(&rec.crc32);
++ 	swap_lbytes(&rec.compressed_size);
++ 	swap_lbytes(&rec.uncompressed_size);
+  	swap_bytes(&rec.filename_length);
+  	swap_bytes(&rec.extra_field_length);
+  	swap_bytes(&rec.file_comment_length);
+***************
+*** 849,855
+  	swap_bytes(&rec.filename_length);
+  	swap_bytes(&rec.extra_field_length);
+  	swap_bytes(&rec.file_comment_length);
+! #endif
+  
+          get_string(rec.filename_length, filename);
+  	get_string(rec.extra_field_length, extra);
+
+--- 1055,1065 -----
+  	swap_bytes(&rec.filename_length);
+  	swap_bytes(&rec.extra_field_length);
+  	swap_bytes(&rec.file_comment_length);
+! 	swap_bytes(&rec.disk_number_start);
+! 	swap_bytes(&rec.internal_file_attributes);
+! 	swap_lbytes(&rec.external_file_attributes);
+! 	swap_lbytes(&rec.relative_offset_local_header);
+! #endif	/* HIGH_LOW */
+  
+          get_string(rec.filename_length, filename);
+  	get_string(rec.extra_field_length, extra);
+***************
+*** 854,859
+          get_string(rec.filename_length, filename);
+  	get_string(rec.extra_field_length, extra);
+  	get_string(rec.file_comment_length, comment);
+  }
+  
+  
+
+--- 1064,1076 -----
+          get_string(rec.filename_length, filename);
+  	get_string(rec.extra_field_length, extra);
+  	get_string(rec.file_comment_length, comment);
++ #ifdef	unix
++ 	{
++ 		char *cp;
++ 		for (cp = filename; *cp; ++cp)
++ 			if (isupper(*cp)) *cp = tolower(*cp);
++ 	}
++ #endif	/* unix */
+  }
+  
+  
+***************
+*** 859,865
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_end_central_dir(void)
+  {
+  	end_central_dir_record rec;
+  	char comment[STRSIZ];
+
+--- 1076,1082 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_end_central_dir(VOIDARG)
+  {
+  	end_central_dir_record rec;
+  	char comment[STRSIZ];
+***************
+*** 864,870
+  	end_central_dir_record rec;
+  	char comment[STRSIZ];
+  
+! 	read(zipfd, &rec, sizeof(rec));
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.zipfile_comment_length);
+
+--- 1081,1087 -----
+  	end_central_dir_record rec;
+  	char comment[STRSIZ];
+  
+! 	read(zipfd, (char *) &rec, sizeof(rec));
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.number_this_disk);
+***************
+*** 867,872
+  	read(zipfd, &rec, sizeof(rec));
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.zipfile_comment_length);
+  #endif
+  
+
+--- 1084,1100 -----
+  	read(zipfd, (char *) &rec, sizeof(rec));
+  
+  #ifdef HIGH_LOW
++ 	swap_bytes(&rec.number_this_disk);
++ #ifndef	TURBOC
++ 	swap_bytes(&rec.num_disk_with_start_cent_dir);
++ 	swap_bytes(&rec.tot_ents_cent_dir_on_this_disk);
++ #else
++ 	swap_bytes(&rec.number_disk_with_start_central_directory);
++ 	swap_bytes(&rec.total_entries_central_dir_on_this_disk);
++ #endif	/* TURBOC */
++ 	swap_bytes(&rec.total_entries_central_dir);
++ 	swap_lbytes(&rec.size_central_directory);
++ 	swap_lbytes(&rec.offset_start_central_directory);
+  	swap_bytes(&rec.zipfile_comment_length);
+  #endif	/* HIGH_LOW */
+  
+***************
+*** 868,874
+  
+  #ifdef HIGH_LOW
+  	swap_bytes(&rec.zipfile_comment_length);
+! #endif
+  
+  	get_string(rec.zipfile_comment_length, comment);
+  }
+
+--- 1096,1102 -----
+  	swap_lbytes(&rec.size_central_directory);
+  	swap_lbytes(&rec.offset_start_central_directory);
+  	swap_bytes(&rec.zipfile_comment_length);
+! #endif	/* HIGH_LOW */
+  
+  	get_string(rec.zipfile_comment_length, comment);
+  }
+***************
+*** 876,882
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_headers(void)
+  {
+  	longint sig;
+  
+
+--- 1104,1110 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! void process_headers(VOIDARG)
+  {
+  	longint sig;
+  
+***************
+*** 881,887
+  	longint sig;
+  
+  	while (1) {
+! 		if (read(zipfd, &sig, sizeof(sig)) != sizeof(sig))
+  			return;
+  
+  #ifdef HIGH_LOW
+
+--- 1109,1115 -----
+  	longint sig;
+  
+  	while (1) {
+! 		if (read(zipfd, (char *) &sig, sizeof(sig)) != sizeof(sig))
+  			return;
+  
+  #ifdef HIGH_LOW
+***************
+*** 886,892
+  
+  #ifdef HIGH_LOW
+  		swap_lbytes(&sig);
+! #endif
+  
+                  if (sig == LOCAL_FILE_HEADER_SIGNATURE)
+  			process_local_file_header();
+
+--- 1114,1120 -----
+  
+  #ifdef HIGH_LOW
+  		swap_lbytes(&sig);
+! #endif	/* HIGH_LOW */
+  
+                  if (sig == LOCAL_FILE_HEADER_SIGNATURE)
+  			process_local_file_header();
+***************
+*** 897,903
+  			return;
+  		}
+                  else {
+! 			printf("Invalid Zipfile Header\n");
+  			return;
+  		}
+  	}
+
+--- 1125,1131 -----
+  			return;
+  		}
+                  else {
+! 			printf("Invalid Zipfile Header (0x%.8lx)\n", sig);
+  			return;
+  		}
+  	}
+***************
+*** 907,913
+  
+  /* ---------------------------------------------------------- */
+  
+! void extract_zipfile(void)
+  {
+  	/*
+  	 * open the zipfile for reading and in BINARY mode to prevent cr/lf
+
+--- 1135,1141 -----
+  
+  /* ---------------------------------------------------------- */
+  
+! void extract_zipfile(VOIDARG)
+  {
+  	/*
+  	 * open the zipfile for reading and in BINARY mode to prevent cr/lf
+***************
+*** 917,922
+  	if (open_input_file())
+  		exit(1);
+  
+  	process_headers();
+  
+  	close(zipfd);
+
+--- 1145,1192 -----
+  	if (open_input_file())
+  		exit(1);
+  
++ #ifdef HIGH_LOW
++ 	{
++ 		word w_sig;
++ 		longint li_sig;
++ 		char *bp, *bp0 = (char *)&li_sig, *bp3 = ((char *)&li_sig)+3;
++ 
++ 		if (read(zipfd, (char *) &w_sig, 2) == 2)
++ 			if (w_sig == (LOCAL_FILE_HEADER_SIGNATURE & 0xffff)) {
++ 				w0 = 0;
++ 				w1 = 1;
++ 			} else {
++ 				w0 = 1;
++ 				w1 = 0;
++ 			}
++ 		lseek(zipfd, 0L, SEEK_SET);
++ 		if (read(zipfd, (char *) &li_sig, 4) == 4)
++ 			if (li_sig == LOCAL_FILE_HEADER_SIGNATURE) {
++ 				li0 = 0;
++ 				li1 = 1;
++ 				li2 = 2;
++ 				li3 = 3;
++ 			} else {
++ 				li0 = li1 = li2 = li3 = 0;
++ 				for (bp = bp0; bp < bp3; ++bp, ++li0)
++ 					if (*bp < 0x4b && !(*bp & 0x01))
++ 						break;
++ 				for (bp = bp0; bp < bp3; ++bp, ++li1)
++ 					if (*bp < 0x4b && (*bp & 0x01))
++ 						break;
++ 				for (bp = bp0; bp < bp3; ++bp, ++li2)
++ 					if (*bp == ((LOCAL_FILE_HEADER_SIGNATURE
++ 							>> 8) & 0xffL))
++ 						break;
++ 				for (bp = bp0; bp < bp3; ++bp, ++li3)
++ 					if (*bp == (LOCAL_FILE_HEADER_SIGNATURE
++ 							& 0xffL))
++ 						break;
++ 			}
++ 		lseek(zipfd, 0L, SEEK_SET);
++ 	}
++ #endif	/* HIGH_LOW */
++ 
+  	process_headers();
+  
+  	close(zipfd);
+***************
+*** 929,934
+   *
+   */
+  
+  void main(int argc, char **argv)
+  {
+  	if (argc != 2) {
+
+--- 1199,1205 -----
+   *
+   */
+  
++ #ifndef	OLDC
+  void main(int argc, char **argv)
+  #else
+  void main(argc, argv)
+***************
+*** 930,935
+   */
+  
+  void main(int argc, char **argv)
+  {
+  	if (argc != 2) {
+                  printf("\n%s\nCourtesy of:  S.H.Smith  and  The Tool Shop BBS,  (602) 279-2673.\n\n",VERSION);
+
+--- 1201,1212 -----
+  
+  #ifndef	OLDC
+  void main(int argc, char **argv)
++ #else
++ void main(argc, argv)
++ int argc;
++ char **argv;
++ #endif	/* OLDC */
++  /* read a byte; return 8 if byte available, 0 if not */
+  {
+  	if (argc != 2) {
+                  printf("\n%s\nCourtesy of:  S.H.Smith  and  The Tool Shop BBS,  (602) 279-2673.\n\n",VERSION);
+***************
+*** 952,958
+  	/* .ZIP default if none provided by user */
+  	strcpy(zipfn, argv[1]);
+  	if (strchr(zipfn, '.') == NULL)
+! 		strcat(zipfn, ".ZIP");
+  
+          /* allocate i/o buffers */
+  	inbuf = (byte *) (malloc(INBUFSIZ));
+
+--- 1229,1235 -----
+  	/* .ZIP default if none provided by user */
+  	strcpy(zipfn, argv[1]);
+  	if (strchr(zipfn, '.') == NULL)
+! 		strcat(zipfn, ".zip");
+  
+          /* allocate i/o buffers */
+  	inbuf = (byte *) (malloc(INBUFSIZ));

@@ -1,0 +1,138 @@
+; ProDoor 3.4 configuration file
+; Use PROSM.EXE to edit this file.
+INTERRUPT
+spare
+10
+{play}
+{hold}
+{holdlist}
+200
+TOOLM
+{scratch}
+TOOLS
+PRO-R $N$ $TIME$ $R$
+PRO-V $R$
+PRO-X $R$
+PRO-T $R$
+PRO-P $R$
+has errors!
+Y
+N
+N
+N
+Y
+30
+spare
+spare
+spare
+spare
+spare
+spare
+spare
+;
+2 1.5 1.0
+2 1.0 1.0
+2 -0.5 -5.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 0.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+110 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 0.5 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+99 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 -0.5 -5.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+2 1.0 1.0
+;
+; %efficiency, Code, ErrorFree, Direction, Maxfiles, Title ; Command line
+90 Z 0 T 50 Zmodem Batch
+dsz port $N$ ha bo pB4096 sz $@$
+;
+85 P 0 T 50 Zmodem Batch (PCP)
+dsz port $N$ ha bo pB4096 z pb1 sz -w $@$
+;
+90 R 0 T 1 Zmodem Resume Aborted D/L
+dsz port $N$ ha bo pB4096 sz -rr $@$
+;
+88 Y 0 T 50 Ymodem Batch
+dsz port $N$ pB4096 sb -k $@$
+;
+88 O 0 T 1 Xmodem-1K (Old Ymodem)
+dsz port $N$ pB4096 sx -k
+;
+80 C 0 T 1 Slow Xmodem/CRC
+dsz port $N$ pB4096 sx
+;
+60 K 0 T 50 Slow Kermit Batch
+pckermit -C -L COM$N$ -B $B$ -M 31 -P N -S *.*
+;
+88 W 0 T 1 Window Xmodem
+wxfer -C port $N$ speed $B$ -S
+;
+95 F 1 T 1 Qmodem-1K-G (Full flow)
+dsz port $N$ ha bo pB4096 sx -k -g
+;
+95 G 1 T 50 Ymodem-G (registered dsz only)
+dsz port $N$ ha bo pB4096 sb -k -g $@$
+;
+90 Z 0 R 0 Zmodem Batch
+dsz port $N$ pB4096 rz -p $PLAY$
+;
+88 Y 0 R 0 Ymodem Batch
+dsz port $N$ pB4096 rb -k -p $PLAY$
+;
+88 O 0 R 1 Xmodem-1K (Old Ymodem)
+dsz port $N$ pB4096 rx -c -k
+;
+80 C 0 R 1 Slow Xmodem/CRC
+dsz port $N$ pB4096 rx -c
+;
+60 K 0 R 0 Slow Kermit Batch
+pckermit -C -L COM$N$ -B $B$ -M 31 -P n -R
+;
+88 W 0 R 1 Window Xmodem
+wxfer -C port $N$ speed $B$ -R
+;
+95 F 1 R 1 Xmodem-1k-G (full flow)
+dsz port $N$ pB4096 rx -c -k -g
+;
+95 G 1 R 0 Ymodem-G (registered DSZ only)
+dsz port $N$ pB4096 rb -g -p $PLAY$
+;
+95 M 0 T 50 MobyTurbo Zmodem
+dsz port $N$ sz -m $@$
+;
+95 M 0 R 0 MobyTurbo Zmodem
+dsz port $N$ rz -m $PLAY$
+;

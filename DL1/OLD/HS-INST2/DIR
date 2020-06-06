@@ -1,0 +1,77 @@
+
+HS-INST.ZIP     84887  09-02-92  Instructions for HS/Link installation in
+                               | a variety of COMM and BBS programs.  This
+                               | information works with HS112.ZIP.
+
+HS-145.ZIP       2342  11-22-91  Install HS/Link in PCBOARD 14.5 (11/90)
+                               | (also download HS112.ZIP or newer)
+HS-145A.ZIP      2275  10-30-91  Install HS/Link in PCBOARD 14.5a (10/30/91)
+                               | (also download HS112.ZIP or newer)
+HS-AU512.ZIP     1358  01-17-92  Install HS/Link in AUNTIE 5.12
+                               | (also download HS112.ZIP or newer)
+HS-BOY40.ZIP     1646  11-26-91  Install HS/Link in BOYAN 4.01
+                               | (also download HS112.ZIP or newer)
+HS-BOY50.ZIP     1616  11-26-91  Install HS/Link in BOYAN 5.0
+                               | (also download HS112.ZIP or newer)
+HS-COMMO.ZIP     6595  10-23-91  Install HS/Link protocol in {COMMO}
+                               | (also download HS112.ZIP or newer)
+HS-GAP51.ZIP     5047  01-16-92  Install HS/Link in GAP BBS 5.1
+                               | (also download HS112.ZIP or newer)
+HS-GT15.ZIP      1870  10-27-91  Install HS/Link in GT POWER 15.50
+                               | (also download HS112.ZIP or newer)
+HS-MKML.ZIP      1156  12-12-91  Install HS/Link in MarkMail under GAP bbs
+                               | (also download HS112.ZIP or newer)
+HS-PB117.ZIP     1818  11-19-91  Install HS/Link protocol in PROBOARD 1.17
+                               | (also download HS112.ZIP or newer)
+HS-PCPTD.ZIP     1918  10-23-91  Install HS/Link protocol in PROCOMM PLUS/TD
+                               | (also download HS112.ZIP or newer)
+HS-PROD.ZIP       627  10-30-91  Install HS/Link in ProDoor 3.43
+                               | (also download HS112.ZIP or newer)
+HS-PROW.ZIP      2784  09-02-92  Install HS/Link in ProComm Plus/WINDOWS
+                               | (also download HS112.ZIP or newer
+                               |  and PNS52.ZIP or newer)
+HS-QMOD.ZIP      2059  10-25-91  Install HS/Link in Qmodem 4.3
+                               | (also download HS112.ZIP or newer)
+HS-R173C.ZIP     2543  12-05-91  Install HS/Link in RBBS-PC 17.3C
+                               | (also download HS112.ZIP or newer)
+HS-RA110.ZIP     1882  12-12-91  Install HS/Link in Remote Access 1.10
+                               | (also download HS112.ZIP or newer)
+HS-RA111.ZIP     2196  03-23-92  Install HS/Link in Remote Access 1.12
+                               | (also download HS112.ZIP or newer)
+HS-RA.ZIP         638  01-07-92  Install HS/Link in Remote Access
+                               | (also download HS112.ZIP or newer)
+HS-RC31.ZIP       800  11-09-91  Install HS/Link in RoboComm 3.1
+                               | (also download HS112.ZIP or newer)
+HS-RYBBS.ZIP     1369  01-21-92  Install HS/Link in Rybbs
+                               | (also download HS112.ZIP or newer)
+HS-S1154.ZIP     1025  01-21-92  Install HS/Link in SuperBBS 1.15 Gamma4
+                               | (also download HS112.ZIP or newer)
+HS-SF30.ZIP      2714  11-19-91  Install HS/Link in Spitfire 3.0
+                               | (also download HS112.ZIP or newer)
+HS-SLBBS.ZIP     2969  11-14-91  Install HS/Link in SearchLight BBS
+                               | (also download HS112.ZIP or newer)
+HS-TELIX.ZIP     1963  10-23-91  Install HS/Link protocol in TELIX
+                               | (also download HS112.ZIP or newer)
+HS-TMATE.ZIP     2189  10-26-91  Install HS/Link in TeleMate
+                               | (also download HS112.ZIP or newer)
+HS-UB208.ZIP     1763  11-21-91  Install HS/Link in UltraBBS 2.08
+                               | (also download HS112.ZIP or newer)
+HS-VBB54.ZIP     1763  01-25-92  Install HS/Link in Virtual BBS 5.40
+                               | (also download HS112.ZIP or newer)
+HS-WAF.ZIP       1029  12-14-91  Install HS/Link in Waffle
+                               | (also download HS112.ZIP or newer)
+HS-WC215.ZIP     2696  11-29-91  Install HS/Link in Wildcat! version 2.15
+                               | (also download HS112.ZIP or newer)
+HS-WC301.ZIP     2439  03-31-92  Install HS/Link in Wildcat! version 3.01
+                               | (also download HS112.ZIP or newer)
+HS-WWIV.ZIP      1672  01-27-92  Install HS/Link in WWIV version 4.20
+                               | (also download HS112.ZIP or newer)
+
+MKDLIST.ZIP      5825  02-24-92  MKDLIST utility to speed HS/Link duplication
+                               | checking on CD-ROM and large network systems.
+
+BEW2LST.ZIP      3682  01-27-92  Convert Qmodem BEW file to a file list
+                               | needed for HS/Link bidirectional uploads.
+
+DLOG2LST.ZIP     4678  02-06-92  Filter converts DSZLOG information to a
+                               | list of incoming or outgoing file names.

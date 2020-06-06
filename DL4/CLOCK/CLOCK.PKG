@@ -1,0 +1,31 @@
+
+
+-----------------------------------------------------------
+--                                                       --
+--                 System Clock Access                   --
+--                    Package Bosy                       --
+--                 19-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+
+package body CLOCK is
+
+   now: TIME;
+      -- declare a static time record for ASM interface
+
+
+   function GET_TIME return TIME is
+      -- get the current time of day - STUBBED
+   begin
+      now.hours   := 1;
+      now.minutes := 2;
+      now.seconds := 3;
+      return now;
+   end GET_TIME;
+
+end clock;
+

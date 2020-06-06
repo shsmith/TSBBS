@@ -1,0 +1,45 @@
+
+				HELP TO INSTALL
+                                    HSLINK
+			IN THE SUPERBBS FROM AKI ANTMAN
+
+
+Used version from SBBS: 1.15 Gamma4
+
+In the used version the SBBS has a bug to use external protocols with a
+CTL-File.  When later the bug is fixed (SBBS writes mismatch in the
+beginning of the CTL-File) you can use the CTL-Option.
+
+First add the following variable to your enviroment:
+SET DSZLOG=<SBBSPATH>\LOG.OUT (Or a other name for your log).
+
+In the SBBS setup put in the external protocol setup the following lines:
+
+Activated		: Yes
+Name			: HS/LINK 1.0
+Key			: H
+Batch			: Yes
+Protocol type		: BIMODEM
+Log style		: DSZ
+Download command	: <SBBSPATH>\HSLINK.EXE %1
+Upload command		: <SBBSPATH>\HSLINK.EXE %1
+	Note:
+        When you have problems with Errors change the line to:
+        HSLINK.EXE -hs %1
+Log file name		: LOG.OUT (The name from the DSZLOG-Variable)
+Effic			: 98
+
+When you use a upload path you can easy setup this with HSCONFIG.EXE.
+You must not put the upload path in the command line.
+
+That's all folks and HSLINK will works now! Easy, or ??? Many thanks to
+Samuel H. Smith for this fast, error free and easy to use Filetransfer
+protocol!!!
+For Sam: Sorry for the wakeup call :-)...
+
+Frank Maroke
+SysOp - BMS ONLINE, Offenbach, Germany FRG
+Phone: ++49-69-881121
+Fido:  2:247/64
+
+We give support in germany for HSLINK!!!

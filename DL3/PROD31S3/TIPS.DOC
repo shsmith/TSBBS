@@ -1,0 +1,75 @@
+
+ProKit Door Writing Tips                                (C) 1988 S.H.Smith
+------------------------                                ProKit 2.8, 8/4/88
+
++  Do all output with DISP, DISPLN and NEWLINE functions.
+
++  Do NOT use Borland's CRT unit.  The CRT unit will lock up in some
+   multi-task systems, and does not communicate.
+
++  Use one of the provided input functions to read from the user
+      GET_CMDLINE   - for command lines
+      INPUT         - for lines with length limits
+      GET_KEY       - for single characters (no echo)
+
++  Use the supplied functions to select one of the seven basic colors
+      RED, GREEN, BLUE, CYAN, MAGENTA, WHITE, GRAY.
+   These can be used at any time (even in non-graphic mode).
+
++  Use these functions ONLY when in GRAPHICS mode:
+      POSITION(x,y);
+      CLEAR_SCREEN;
+      CLEAR_EOL;
+
++  Check the GRAPHICS flag before sending any ANSI codes to the user;
+   some users won't accept ansi codes.
+
++  Check the DUMP_USER flag in all major program loops.  This flag is set
+   if the user hangs up, his time runs out, or if the sysop wants to dump
+   the caller out of the door.
+
++  Always call UNINIT before calling HALT to terminate a door program.  
+   Otherwise the dangling interrupt handlers will crash the system.
+
++  The first line of a ProKit config files must be the com driver type.
+   This can be one of:
+      INTERRUPT         ;the best, fastest
+      BIOS              ;if interrupts fail to work
+      PCBTRAP           ;BIOS with special screen management for PCBTRAP.
+   Your door program is free to re-open the config file and read additional
+   information from it.
+
++  ProKit based doors can be tested with a special "local sysop" mode of
+   operation.  In this mode, you need not load PCBoard to run the door.
+   This option is selected by adding 'LOCAL' to the end of the door
+   command line.  For example:
+      prokit prokit.cnf \pcb2 LOCAL
+   will run the ProKit demo door in sysop-local mode directly from DOS.
+
++  The standard DOOR script for ProKit doors has this format:
+      echo off
+      cd \pro
+      prokit prokit.cnf c:\pcb2
+      cd \pcb2
+      if exist event.bat event               <<<--- take note
+      board
+   Notice line 5.  This line will start your timed event if needed.  Any
+   door that can logoff a user (during carrier loss or with goodbye) has
+   the possibility of starting the event.
+
++  The F5 (shell to DOS) function will only work if you leave enough 
+   free ram for a new copy of COMMAND.COM to be loaded.  To do this, you
+   need to include this directive in your main program:
+      {$M 12000,40000,40000}  {Stack, minheap, maxheap}
+   Adjust the values to your needs, but limit the MAXHEAP setting to the
+   smallest value that is needed.  This leaves the rest of memory available
+   for the shell.
+
++  Take a look at the sample door - PROKIT.PAS - it has examples of how
+   to use many of ProKit's features.
+
++  Call the function load_cnames_file during your door initialization if
+   you are going to access the conf_info data structure.  This is no
+   longer automatically loaded, speeding up doors that have no interest
+   in this data.
+

@@ -1,0 +1,6 @@
+function strval (i: integer): string2;
+function system_dd: string2;
+function system_mm: string2;
+function system_yy: string2;
+function system_date: string8;   {format: mm-dd-yy}
+function system_time: string8;   {format: hh:mm}

@@ -1,0 +1,10 @@
+
+GETCSPEED - Get connect speed from PCBOARD.SYS
+Copyright 1991 Samuel H. Smith; all rights reserved.
+
+This utility program reads PCBOARD.SYS in the current directory and
+exits with ERRORLEVEL set to the connect speed.  You can then use the
+standard IF ERRORLEVEL statements to branch according to the caller's
+current connect speed.
+
+

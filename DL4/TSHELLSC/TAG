@@ -1,0 +1,4 @@
+
+const example_tag: string[80]
+   = #0'@(#)CURRENT_FILE LAST_UPDATE Example program 1.0'#0;
+

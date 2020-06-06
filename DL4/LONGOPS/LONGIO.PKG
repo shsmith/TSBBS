@@ -1,0 +1,27 @@
+
+-- s.h.smith, 22-mar-86
+
+
+package body longio is
+
+   use longops;
+
+   procedure put (n: long_integer; w: integer) is
+   begin
+      text_io.put(long_to_float(n),w,0,0);
+   end put;
+
+   procedure put (n: long_integer) is
+   begin
+      put(n,10);
+   end put;
+
+   procedure put (f: text_io.file_type;
+                  n: long_integer) is
+   begin
+      text_io.put(f,long_to_float(n),10,0,0);
+   end put;
+
+end longio;
+
+

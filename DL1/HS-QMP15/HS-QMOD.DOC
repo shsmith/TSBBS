@@ -1,0 +1,75 @@
+ 
+               USING QMODEM/PRO 1.5 WITH EXTERNAL HS/LINK
+ 
+                                  
+     Installation: 
+
+     Please refer to the QMODEM PRO manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work for most folks:
+
+     Copy the provided HS-D.BAT and HS-U.BAT files, as well as
+     HSLINK.EXE into your QMOPRO directory, or into a directory included
+     in your search PATH.
+
+     You can edit HS-D.BAT and HS-U.BAT to include options on the HSLINK
+     command line, but most folks won't need to change anything.  If you
+     want to experiment, there are a number of optional parameters you
+     can read about in HSLINK.DOC and HSLINK.NEW.  The first thing you
+     might want to do is add a -Udrive:\path statement to direct your
+     downloads to your download directory, instead of having them placed
+     into the current directory.
+
+     Next you need to install the HS/LINK protocol into the QMODEM PRO
+     protocol menu.
+
+     Load up QMPRO and press ALT-Z C to get into the CONFIGURE menu.
+     Then cursor down to the PROTOCOLS selection, press ENTER and then E
+     to define external protocols.  In this screen, you press A to Add
+     HS/Link as an external protocol.
+
+     Set the "Select Character" to "H".
+     Set the "Protocol Name" to "HS/Link".
+     Set the "Upload BAT" to "HS-U.BAT".
+     Set the "Download BAT" to "HS-D.BAT".
+     Set the "Batch Download" to "Y".
+     Set the "Batch Upload" to "Y".
+     Set the "Download Autostart" to "HS*^BR".
+
+     Then press OK to get out of this screen ESCAPE a few times to exit
+     the setup menu.
+
+     To download with HS/LINK, first you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, QMPRO will
+     automatically detect HS/Link and launch it for you.
+
+     If you want to also upload to the BBS while downloading, you simply
+     STOP SHORT of pressing the final ENTER key to begin a download, and
+     instead press the PGUP key, select HS/LINK from the menu, click
+     BATCH ENTRY and list the upload filenames you want to have
+     transmitted and click UPLOAD.
+
+I hope these instructions help, but remember, I can't take
+responsibility for any damages resulting from these instructions.  If
+you get stuck, it always helps to read the DOC files that come with
+QMPRO and with HSLINK.  If all else fails, call up the tool shop and ask
+for help on the main board.  Either I will help you, or somebody else
+will know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    v.32bis 14400           Contributors only
+  (818) 891-6780    v.32bis 14400           Free to all
+

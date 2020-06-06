@@ -1,0 +1,80 @@
+
+DLP HS/Link Revision History (in reverse order)
+-----------------------------------------------
+
+24-Sep-93
+   Corrected the initial string output to begin with CR.  I got some
+   language-translation message codes mixed up, which caused
+   bidirectional transfers to often fail.
+
+19-Jul-93
+   Posted as public beta 1.14B6 under filename HSD114B6.ZIP (english
+   version) and HSD114G6.ZIP (german version).
+
+   Special thanks to Martin Thommen of CommNET communications for his
+   assistance in the German translation.
+
+17-Jul-93
+   Corrected a formatting error in the incoming and outgoing filename
+   banner displays (broken in beta B4).
+
+   More complete translation of screen displays in german version.
+
+12-Jul-93
+   Posted as public beta 1.14B4 under filename HSD114B4.ZIP.
+
+   Created partial German language version of HSLINK.DLP.  This will be
+   posted as HSD114G4.ZIP.
+
+03-Jul-93
+   Possible correction of occasional registration failures.
+
+   Added an information screen when registration is successful.
+
+16-Jun-93
+   Internal changes (elimination of some unused code and movement of
+   more text from code segment to resources).
+
+   Changed the 'not allowed to overwrite existing file' message to
+   always include the pathname of the duplicate file.
+
+15-Jun-93
+   Posted as public beta 1.14B2 under filename HSD114B2.ZIP.
+
+   The "REGISTER" screen now accepts DLP HS/Link activation codes. Sorry, but
+   DOS HS/Link registrations are NOT valid for the Windows DLP version.
+
+   You can now use the "Advanced settings" in ProWin setup to set HSLINK.DLP
+   settings in HSLINK.INI.  The HSLINK.CFG file is no longer used.
+
+   Added a [Registration] section to the HSLINK.INI file to allow the serial
+   number, customer name and company name to be stored.
+
+   Added logic to honor the "display GIF during download" option in ProWin.
+
+   Added logic to pass the correct filename to the GIF viewer.
+
+   Changed unregistered copies to virtually eliminate the shareware reminder
+   screen during the first 30 days of use.  This makes it possible to
+   evaluate the shareware version in unattended "host" mode without getting
+   stuck in a reminder screen.
+
+   Corrected the "CANCEL" button logic to prevent possibly getting stuck
+   sending repeated cancel messages to the remote unit.
+
+   Corrected the sample HOST.WAS to properly handle HSLINK.DLP protocol.
+
+   The registration reminder screen is now automatically closed after 30
+   seconds.
+
+18-May-93
+   Posted as public beta 1.14B0 under filename HSD114B0.ZIP.
+
+   Multiple outgoing files are now properly supported.
+
+   Added a check for overflowing COMM buffers and a warning message when the
+   buffer needs to be set larger.
+
+   Rewrote displays to eliminate use of Borland Custom Controls as problems
+   resulted from missing or incorrect BWCC.DLL files.
+

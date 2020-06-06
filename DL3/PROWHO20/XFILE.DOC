@@ -1,0 +1,15 @@
+
+ProWho - Another DOOR for "ProKit"
+----------------------------------
+
+Welcome to the "XFILE SEARCH" door!
+
+Note that this is a generic "text search" door, and it can be applied to
+just about any text file.  For example, you could customize the messages
+and use it to search a master file cross-listing (such as XFILES) to find
+which boards have a specific file.
+
+The sample file XFILE.DOC is only a small portion of Cliff Peterson's
+Phoenix area file cross reference.  If you want the whole listing, please
+download XFIL1287.ARC (or newer).
+

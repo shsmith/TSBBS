@@ -1,0 +1,71 @@
+                      
+ 
+                   USING QMODEM 4.3 WITH EXTERNAL HS/LINK
+ 
+                                  
+     Installation: 
+
+     Please refer to the QMODEM manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work for most folks:
+
+     Copy the provided HS-D.BAT and HS-U.BAT files, as well as
+     HSLINK.EXE into your QMODEM directory, or into a directory included
+     in your search PATH.
+
+     You can edit HS-D.BAT and HS-U.BAT to include options on the HSLINK
+     command line, but most folks won't need to change anything.  If you
+     want to experiment, there are a number of optional parameters you
+     can read about in HSLINK.DOC and HSLINK.NEW.  The first thing you
+     might want to do is add a -Udrive:\path statement to direct your
+     downloads to your download directory, instead of having them placed
+     into the current directory.
+
+     Next you need to install the HS/LINK protocol into the QMODEM
+     protocol menu.
+
+     Load up QMODEM and press ALT-N to get into the CONFIGURE menu.  Then
+     cursor over to the PROTOCOLS selection and press ENTER.  In this
+     screen, you press 0 (1, or 2 if you already have other external
+     protocols configured).
+     Set the "Select Character" to "H".
+     Set the "Protocol" to "HS/Link".
+     Set the "Upload BAT" to "HS-U.BAT".
+     Set the "Download BAT" to "HS-D.BAT".
+     Set "Download Filename Prompt" to "N".
+     Then press ESCAPE to get out of this screen and cursor over to EXIT
+     and choose "WRITE CHANGES TO DISK" and press ENTER to save your
+     changes.
+
+     To download with HS/LINK, first you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, you press the PGDN
+     key and press "H" to select the HS/LINK protocol from the menu.
+
+     If you want to also upload to the BBS while downloading, you simply
+     press the PGUP key instead of PGDN, select HS/LINK from the menu,
+     and list the upload filenames you want to have transmitted.
+
+I hope these instructions help, but remember, I can't take
+responsibility for anydamages resulting from these instructions.  If you
+get stuck, it always helps to read the DOC files that come with QMODEM
+and with HSLINK.  If all else fails, call up the tool shop and ask for
+help on the main board.  Either I will help you, or somebody else will
+know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    Hayes-V series 9600     Contributors only
+  (818) 891-6780    US Robotics 2400        Free to all
+

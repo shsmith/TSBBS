@@ -1,0 +1,227 @@
+
+                               EXTUSER.DOC
+
+           The ProDoor Extended Conference and User File System
+                          Last Updated: 3/11/90
+
+                      Copyright 1990 Samuel H. Smith
+
+
+  I am releasing file layout information to make it possible for other
+  utility and door authors to create utilities that are compatible with
+  ProDoor's extended conference system.
+  
+
+
+CONFINFO FILE
+-------------
+
+The conference information file is a random-access binary file.  Each
+record defines a message area.  The first record defines the "Main
+Board", the next record defines "Conference 1" and so on up to
+"Conference 255".  The size of this file determines the number of active
+conferences.  A dead record in this file is indicated by the conf_name
+field being a null string.
+
+ProDoor versions 3-10-90 and later support up to 2040 records in the
+CONFINFO file.
+
+
+{bit values in conf_flags}
+conf_scan_blts    = 1;     {qmail include blts?}
+conf_scan_files   = 2;     {qmail scan new files?}
+
+pcbconf_rec = record
+   conf_name:                string[10];     {conference name}
+   conf_private_ul:          boolean;        {make all uploads private?}
+
+   conf_private_mail:        byte;           {make all mail private?
+                                                no=0 yes=1 all_public=2}
+
+   conf_echo_mail:           byte;           {allow echo mail?
+                                                no=0 yes=1 all_echo=2}
+
+   conf_addsec:              integer;        {added security}
+   conf_addtime:             integer;        {added minutes}
+   conf_msgblocks:           integer;        {index blocks; 1024 msgs each}
+   conf_msgfile:             string[31];     {message base pathname}
+   conf_public_uplist:       string[31];     {public uploads listings}
+   conf_updir:               string[31];     {public upload dir}
+   conf_private_uplist:      string[31];     {private uploads listings}
+   conf_private_updir:       string[31];     {private uploads dir}
+   conf_newsfile:            string[31];     {conference news pathname}
+   conf_doormenu:            string[31];     {door menu pathname}
+   conf_doorinfo:            string[31];     {door info data pathname}
+   conf_bltmenu:             string[31];     {bulletin menu pathname}
+   conf_bltinfo:             string[31];     {bulletin info pathname}
+   conf_minsec:              byte;           {minimum security to join
+                                              if conference is non-public}
+   conf_maxsec:              byte;           {maximum security to join
+                                              if conference is non-public}
+   conf_dirmenu:             string[31];     {file area menu pathname}
+   conf_dirinfo:             string[31];     {file area info pathname}
+   conf_spare2:              integer;        {undefined}
+   conf_dlinfo:              string[31];     {download path info pathname}
+   conf_public:              boolean;        {is this conference public?}
+   conf_packopt:             string[15];     {propack command line options}
+   conf_flags:               byte;           {Qmail flag bits}
+   conf_spare3:              byte;           {spare flag bits}
+   conf_msgs_read:           single;         {messages downloaded/read}
+   conf_msgs_entered:        single;         {messages uploaded/entered}
+   conf_spare4:              char6;          {unallocated}
+end;
+
+
+EXTUSER FILE
+------------
+
+The extended user information file is a random-access binary file which
+records information about each ProDoor user.  This file contains
+extended conference registration, scanning preferences and last-read
+pointers.
+
+The file format is variable and depends on the maximum number of
+conferences to be allocated.  As of 3-10-90 prodoor and prokit versions
+allow 2000 external conferences, giving a total of 2040 message areas.
+Use the 'EXTADJ' utility found in EXTADJ11.ZIP to allocate additional
+conferences, up to a limit of 2040.
+
+A special entry in the PCBoard USERS file is used as a record-number
+pointer into this file, eliminating the need for time-consuming searches
+when accessing this file.
+
+const
+   max_conf = 39;               {highest standard conference number}
+   min_econf = max_conf+1;      {lowest extended conference number}
+   max_econf = 2000+min_econf;  {highest extended conference number}
+
+   {bit values in conf[n].ext_flags}
+   ext_scan       = 1;           {are we scanning this conf?}
+   ext_dly        = 2;           {download only your own messages}
+   ext_qnet       = 4;           {qnet status}
+   ext_sysop      = 8;           {sysop status}
+   ext_joined     = 16;          {have we joined today?}
+   ext_ro         = 32;          {read/only status}
+   ext_priv       = 64;          {uploads private??}
+   ext_member     = 128;         {are a member of this conf?}
+
+type      (* layout of extended user information file *)
+   (* fixed portion of extended user record *)
+   extuser_fixed_rec = record
+      extcount: byte;         {number of extended conferences in first rec}
+      extcounth:byte;         {high byte of extcount if < $20}
+      spare0:   char3;        {unallocated spares}
+      name:     char25;       {user name}
+      spare1:   char;         {unallocated spare}
+      lastdate: char8;        {last date of access mm-dd-yy}
+      spare2:   char40;       {unallocated spares}
+      spare3:   char40;       {used by qmail}
+   end;
+
+   (* variable portion of extended user record *)
+   extuser_conf_rec = record
+      flags:    byte;         {flag bits}
+      lastread: single;       {last message read}
+   end;
+
+   extuser_rec = record
+      fixed:   extuser_fixed_rec;      {fixed user info}
+
+      conf:    array[0..max_econf]     {extended conference info}
+               of extuser_conf_rec;
+   end;
+
+
+The first byte of the first record in this file specifies the value of
+'extcount', which is the maximum number of extended conferences that are
+allowed by the file size.  ProDoor will recognize values between 0 and
+2000, but will always create files with a setting of 90. I may allow
+configuration of this value in a future version.
+
+For compatibility with previous versions, the high byte of extcount,
+'extcounth' is ignored if it contains a value over 31.
+
+Each user record in this file is stored in two parts.  The 'fixed'
+information and the 'conference' information.  The standard procedure
+for accessing this file is to
+
+     1. seek to the start of the desired user record
+
+     2. read the fixed information
+
+     3. read the required portion of the variable size conference
+        table.
+
+For convenience, ProDoor (and the associated libraries) build an image
+of the standard 40 message areas so that application programs can
+uniformly access all conferences, regardless of if they are standard or
+extended.
+
+Note that any program accessing this file must compare the 'lastdate'
+field with the current date.  If the dates are different, the program
+must set all 'ext_joined' flags to false and update 'lastdate'.  This
+insures that "added minutes" for joining a conference are awarded only
+once per day.
+
+NOTE: when any program creates a new EXTUSER record for a user, the
+"flag_init" bit MUST be cleared in the user.flags variable.  Otherwise,
+the new record will not be recognized by ProDoor.
+
+
+USERS FILE
+----------
+
+ProDoor and ProKit now allow conference numbers up to 2040.  To do this,
+a second byte is needed for the current conference number.  The variable
+USER.CURCONFH contains the high 8 bits of the conference number.  It is
+taken from the 'reserved' byte at position 390 in the PCBoard 14.2 USERS
+file.  For compatibility with other software, any value of USER.CURCONFH
+greater than 31 will be ignored.  This results in a theoretical limit of
+8191 total conferences.
+
+ProDoor modifies the PCBoard 14.2 USERS file to include a special
+'extrarec' entry that is used as a record-number pointer into the
+EXTUSER file, eliminating the need for time-consuming searches.
+
+The 'extrarec' variable is an unsigned integer and is stored at position
+391 in the user record.  The first 390 bytes are skipped. The value of
+'extrarec' is 0 for the first record in the EXTUSER file, 1 for the next
+record, and so on.
+
+When accessing this file, PCBoard will initially have two spaces in this
+file position.  ProDoor automatically verifies that this pointer is
+correct, and will scan the EXTUSER file to locate a "lost" extended user
+record when the indicated record has a different name. This scan is
+required if the sysop deletes the EXTUSER file, since the new file will
+be rebuilt in a different order than the original file.  Any other
+program that accesses this file must ensure that the EXTUSER record
+indicated by the USER record pointer is in fact the correct record.
+
+NOTE: when any program creates a new EXTUSER record for a user, the
+"flag_init" bit MUST be cleared in the user.flags variable.  Otherwise,
+the new record will not be recognized by ProDoor.
+
+ProDoor allocates several other variables in the 'undefined' area of the
+PCBoard USER file record.  These variables are documented only to
+prevent other door and utility authors from inadvertently using them for
+another purpose.
+
+  File
+Position      Name        Type         Use
+
+  390      curconfh:      byte;      High 8 bits of curconf if < $20
+  391      extrarec:      word;      Record number in EXTUSER file
+  393      flags:         byte;      ProDoor's flag bits
+  394      mailconf:      byte;      Conf.# where mail is waiting
+  395      scratchnum:    byte;      Scratch file number
+  396      dooruse:       byte;      Times in prodoor, up to 255
+  397      earned_k:      word;      Earned KBytes
+  399                     char2      used by qmail??
+
+Bit definitions in user.flags byte:
+   flag_hasmail = $01    ;user has mail waiting?
+   flag_expert  = $02    ;is user an expert?
+   flag_hotkeys = $04    ;does user want hotkeys?
+   flag_init    = $20    ;must be cleared for extuser record to be recognized
+
+

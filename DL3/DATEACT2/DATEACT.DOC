@@ -1,0 +1,221 @@
+
+
+                                 DateAct
+                               DATACT21.ZIP
+                    For use with PCBoard Version 14.x
+                          Version 2.1, 02-07-94
+
+
+                      This program is supported by:
+
+                            The Tool Shop BBS
+
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    v.32bis 14400
+                  (818) 891-6780    v.32bis 14400 (free line)
+
+
+                      Copyright 1993 Samuel H. Smith
+
+
+DATEACT is a small program that scans one or more CALLER log files, and
+produces a summary of system utilization by date and day of week.  This
+is useful to determine trends in system activity, and to find "peak" or
+"slow" days of the week.
+
+Usage:
+
+        DATEACT  output_file  input_file1 ... input_file#
+
+Where
+        output_file     specifies the destination file for the generated
+                        report.  Any existing file by this name will be
+                        over-written.
+
+        input_filex     The first CALLER log file to report.  Multiple
+                        caller log files may be specified, and each will
+                        be considered as a "node" for the calculation of
+                        system utilization percentages.
+
+Example:
+   dateact c:\pcb\gen\blt22 c:\pcb\main\caller1 c:\pcb\main\caller2 c:\pcb\main\caller3
+
+This example generates BLT22 and scans the three caller log files
+specified.
+
+
+SAMPLE OUTPUT
+=============
+
+Hourly System Activity Summary
+For 6 Nodes
+
+   Hour    %                 Relative Utilization
+   ----  -----  --------------------------------------------------
+     0     30   þþþþþþþþþþþþþþþ+    +    Å    +    +    +    +    ´
+     1     24   þþþþþþþþþþþþ   +    +    Å    +    +    +    +    ´
+     2     14   þþþþþþþ   +    +    +    Å    +    +    +    +    ´
+     3      8   þþþþ +    +    +    +    Å    +    +    +    +    ´
+     4     16   þþþþþþþþ  +    +    +    Å    +    +    +    +    ´
+     5     18   þþþþþþþþþ +    +    +    Å    +    +    +    +    ´
+     6     21   þþþþþþþþþþù    +    +    Å    +    +    +    +    ´
+     7     28   þþþþþþþþþþþþþþ +    +    Å    +    +    +    +    ´
+     8     27   þþþþþþþþþþþþþù +    +    Å    +    +    +    +    ´
+     9     26   þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+    10     29   þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+    11     26   þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+    12     29   þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+    13     28   þþþþþþþþþþþþþþ +    +    Å    +    +    +    +    ´
+    14     29   þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+    15     29   þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+    16     28   þþþþþþþþþþþþþþ +    +    Å    +    +    +    +    ´
+    17     35   þþþþþþþþþþþþþþþþþù  +    Å    +    +    +    +    ´
+    18     33   þþþþþþþþþþþþþþþþù   +    Å    +    +    +    +    ´
+    19     39   þþþþþþþþþþþþþþþþþþþù+    Å    +    +    +    +    ´
+    20     39   þþþþþþþþþþþþþþþþþþþù+    Å    +    +    +    +    ´
+    21     40   þþþþþþþþþþþþþþþþþþþþ+    Å    +    +    +    +    ´
+    22     30   þþþþþþþþþþþþþþþ+    +    Å    +    +    +    +    ´
+    23     26   þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+
+Weekly System Activity Summary
+For 6 Nodes
+
+       Date Range          %               Relative Utilization
+   --------------------  -----  --------------------------------------------------
+    9/12/93 to  9/16/93     19  þþþþþþþþþù+    +    +    Å    +    +    +    +    ´
+    9/ 5/93 to  9/11/93     29  þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+    8/29/93 to  9/ 4/93     29  þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+    8/22/93 to  8/28/93     30  þþþþþþþþþþþþþþþ+    +    Å    +    +    +    +    ´
+
+Daily System Activity Summary
+For 6 Nodes
+
+   Day   Date      %                Relative Utilization
+   --- --------  -----  --------------------------------------------------
+   Thu  9/16/93      3  þù   +    +    +    +    Å    +    +    +    +    ´
+   Wed  9/15/93     30  þþþþþþþþþþþþþþþ+    +    Å    +    +    +    +    ´
+   Tue  9/14/93     28  þþþþþþþþþþþþþþ +    +    Å    +    +    +    +    ´
+   Mon  9/13/93     16  þþþþþþþþ  +    +    +    Å    +    +    +    +    ´
+
+   Sun  9/12/93     19  þþþþþþþþþù+    +    +    Å    +    +    +    +    ´
+   Sat  9/11/93     32  þþþþþþþþþþþþþþþþ    +    Å    +    +    +    +    ´
+   Fri  9/10/93     26  þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+   Thu  9/ 9/93     23  þþþþþþþþþþþù   +    +    Å    +    +    +    +    ´
+   Wed  9/ 8/93     27  þþþþþþþþþþþþþù +    +    Å    +    +    +    +    ´
+   Tue  9/ 7/93     28  þþþþþþþþþþþþþþ +    +    Å    +    +    +    +    ´
+   Mon  9/ 6/93     33  þþþþþþþþþþþþþþþþù   +    Å    +    +    +    +    ´
+
+   Sun  9/ 5/93     32  þþþþþþþþþþþþþþþþ    +    Å    +    +    +    +    ´
+   Sat  9/ 4/93     39  þþþþþþþþþþþþþþþþþþþù+    Å    +    +    +    +    ´
+   Fri  9/ 3/93     28  þþþþþþþþþþþþþþ +    +    Å    +    +    +    +    ´
+   Thu  9/ 2/93     26  þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+   Wed  9/ 1/93     25  þþþþþþþþþþþþù  +    +    Å    +    +    +    +    ´
+   Tue  8/31/93     26  þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+   Mon  8/30/93     26  þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+
+   Sun  8/29/93     29  þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+   Sat  8/28/93     36  þþþþþþþþþþþþþþþþþþ  +    Å    +    +    +    +    ´
+   Fri  8/27/93     26  þþþþþþþþþþþþþ  +    +    Å    +    +    +    +    ´
+   Thu  8/26/93     29  þþþþþþþþþþþþþþù+    +    Å    +    +    +    +    ´
+   Wed  8/25/93     25  þþþþþþþþþþþþù  +    +    Å    +    +    +    +    ´
+   Tue  8/24/93     30  þþþþþþþþþþþþþþþ+    +    Å    +    +    +    +    ´
+   Mon  8/23/93     30  þþþþþþþþþþþþþþþ+    +    Å    +    +    +    +    ´
+
+   Sun  8/22/93     37  þþþþþþþþþþþþþþþþþþù +    Å    +    +    +    +    ´
+
+Report made by DATEACT 2.0 (9-16-93) Copyright 1993 Samuel H. Smith
+
+
+LICENSE
+=======
+
+   SourceWare: What is it?
+   -----------------------
+
+   SourceWare is my name for a unique concept in user supported
+   software.
+
+   Programs distributed under the SourceWare concept always include
+   complete source code.
+
+   This package can be freely distributed so long as it is not modified
+   or sold for profit.  If you find that this program is valuable,  you
+   can send me a donation for what you think it is worth.  I suggest
+   about $10.
+
+   Send your contributions to:
+         Samuel H. Smith
+         The Tool Shop
+         P. O. Box 4808
+         Panorama City, CA 91412-4808
+
+
+   Why SourceWare?
+   ---------------
+
+   Why do I include source code?  Why isn't the donation manditory?  The
+   value of good software should be self-evident. The source code is the
+   key to complete understanding of a program.  You can read it to find
+   out how things are done.  You can also change it to suit your needs,
+   so long as you do not distribute the modified version without my
+   consent.
+
+
+   Copyright
+   ---------
+
+   If you modify this program, I would appreciate a copy of the new
+   source code.   I am holding the copyright on the source code, so
+   please don't delete my name from the program files or from the
+   documentation.
+
+
+
+DISCLAIMER
+==========
+
+I cannot be responsible for any damages resulting from the use or mis-
+use of this program!
+
+
+
+
+REVISION HISTORY
+================
+   07-Feb-94   2.1    Corrected file statements to open caller logs in shared
+                      mode, to allow reporting without shutting down the board.
+
+   16-Sep-93   2.0    Added Hourly and Weekly reports.
+
+   20-Apr-91   1.0    Initial coding.  I wrote it because I wanted to
+                      see if there was a trend in system utilization
+                      on the Tool Shop bbs.
+
+SUPPORT
+=======
+
+   I work very hard to produce a software package of the highest quality
+   and functionality.  I try to look into all reported bugs, and will
+   generally fix reported problems within a few days.
+
+   Since this is user supported software under the SourceWare concept,
+   I don't expect you to contribute if you don't like it or if it
+   doesn't meet your needs.
+
+   If you have any questions, bugs, or suggestions, please contact me
+   at:
+       The Tool Shop BBS
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    v.32bis 14400
+                  (818) 891-6780    v.32bis 14400 (free line)
+
+
+   The latest version is always available for downloading.
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.
+

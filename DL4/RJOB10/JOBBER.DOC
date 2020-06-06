@@ -1,0 +1,140 @@
+
+                               RJOB10.ARC
+                          Remote Job Executive
+                               29-Feb-88
+
+               Remote Command Execution for True Networks
+
+                        (C) 1988 Samuel H. Smith
+
+                              The Tool Shop
+                             (602) 279-2673
+
+
+
+'RJOB10.ARC' implements a 'remote job execution' facility.  This means 
+that you can start a program on the 386-20 cpu while you are running a 
+different program on one of the other nodes on the net.  The 'program' 
+in this case would consist of a single 'copy' command to move a file 
+from the CD or WORK (local to the JOBBER machine) to a network 
+directory. 
+
+This utility is very general; you can use it to run ANY program that does 
+not need user intervention.  You can even request multiple programs to 
+be run as time allows, while you go off and do other things... true 
+MULTI-processing. 
+
+
+Installation
+------------
+
+The JOBRES.EXE program should be started on the machine with the CD or
+WORM attached.  JOBRES will patiently sit back and wait for another CPU
+to give it a job to do.   The config file JOBBER.CNF controls what 
+directory is used for the 'job queue' (list of waiting jobs).   It also 
+allows you to assign "logical names" to physical devices on the JOBBER 
+CPU.  So, you can access the second CD as CD2: from any machine on the
+net.
+
+The REX.EXE program is called from any other CPU to Remote EXecute a 
+program or command.  REX is used when ever you want to ask the JOBBER 
+cpu to execute a copy command, or a tape backup, or just about anything 
+else.   REX also uses the JOBBER.CNF file to specify the 'job queue' 
+directory.  You can specify the REX confix file with the SET command:
+   SET JOBBER=c:\dir\jobber.cnf
+
+Once you have 'jobber' running, you can request a CD file with a command 
+like this: 
+   rex copy CD2:\sub1\file.arc m:\myfile
+
+I will document this in more detail, but I hope you're getting the idea 
+of what this is.  We can build a "shell" around these programs to make 
+the multi-processing look more friendly to the end user.  Also, specific 
+"hooks" can be added to prodoor to make the LIB or similar function work 
+with this facility. 
+
+
+Sample configuration file:
+-------------------------
+
+   ;
+   ; jobber.cnf - remote job executive configuration file
+   ;
+
+   ;--job queue directory - this network directory will be used for
+   ;--passing all job requests;  best performance if on a ramdisk.
+   ;--directory must not have any other files in it!
+   j:\jobque
+
+   ;--delay between job polls, clock ticks (approx 18 per second)
+   10
+
+   ;--jobber name replacement table
+   ;
+   ; This is a table of macro replacements.  These macros are expanded as jobs are
+   ; executed.  This facility allows you to assign logical names to physical
+   ; devices, programs, directories, etc.
+   ;
+   ROM1:=e:
+   ROM2:=f:
+   WORM:=g:
+
+   ;
+   ; Example job requests:
+   ;    rex copy WORM:\dl5\moon.arc m:\tmp
+   ;       -- copies the file g:\dl5\moon.arc into network directory m:\tmp
+   ;       -- for remote access.
+   ;
+
+  
+                                 DISCLAIMER
+                                 ==========
+  
+     I make no warranty of any kind, express or implied, including
+     without limitation, any warranties of merchantability and/or
+     fitness for a particular purpose.  I shall not be liable for any
+     damages, whether direct, indirect, special or consequential
+     arising from a failure of this program to operate in the manner
+     desired by the user.  I shall not be liable for any damage to data
+     or property which may be caused directly or indirectly by the use
+     of this program.
+  
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM,
+     OR FOR ANY CLAIM BY ANY OTHER PARTY.
+  
+  
+                                   SUPPORT
+                                   =======
+  
+  
+     I work very hard to produce a software package of the highest quality
+     and functionality.  I try to look into all reported bugs, and will
+     generally fix reported problems within a few days.
+  
+  
+     If you have any questions, bugs, or suggestions, please contact me
+     at:
+         The Tool Shop BBS
+         (602) 279-2673
+  
+  
+  
+     Enjoy!     Samuel H. Smith
+                Author and Sysop of The Tool Shop.
+  
+  
+
+                               RELEASE HISTORY
+                               ===============
+25-Feb-88 1.0
+   Initial coding of JOBBER and REX.
+
+26-Feb-88 1.02
+   Changed low-level keyboard driver to allow CTTY type input redirection.
+
+29-Feb-88 1.03
+   Rewrote JOBBER.EXE as a resident background program; renamed to
+   JOBRES.EXE.  Now requires TSR.EXE to be loaded first.
+

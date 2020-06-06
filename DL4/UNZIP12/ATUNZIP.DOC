@@ -1,0 +1,127 @@
+  
+                                   ST_UnZip
+  
+                           Version 1.2, 03-30-89
+  
+                           Zipfile Extract Utility
+  
+          Copyright (C) 1989 Samuel H. Smith;  ALL RIGHTS RESERVED
+  		  
+  		  Atari ST Adaptation (inline crc routine, and executable)
+  		  (C) 1989 Darin Wayrynen
+  
+'UnZip' is a small Zipfile extract utility.   It is written to be as
+small and portable as possible -- ideal as a starting point for handling
+.ZIP files in non-IBM/Atari ST environments.
+
+Source code is provided in C.  If you port this program to a 
+non-IBM/Atari ST system, we would appreciate a copy of the ported 
+source and exec files.
+
+
+Usage
+-----
+desktop:
+   drive:\path\filename[.zip]
+   
+shell:
+   unzip drive:\path\filename[.zip]
+   
+Atari ST note: Unzip will place unzipped files into the current directory
+ (usually into the folder you ran unzip from).  To run from the desktop,
+ rename unzip.prg to unzip.ttp and enter zip file name into the Tos Takes
+ Parameters box after clicking on unzip.ttp.  It would be best to create a
+ new directory on your hard drive, or a blank floppy disk, and then copy
+ unzip.ttp to it before running the program, otherwise the unziped files 
+ will be mixed in with all the files in the current directory.
+ When running it from a shell, you can change your current directory to a
+ blank directory, and then specify the full pathname for unzip and the zip
+ file on the command line (or just 'unzip drive:\path\filename[.zip] if
+ your shell support directory hashing like Gulam does).
+ 
+ If any interest is shown in the program, a gem based shell will be written
+ to support unzip. 
+
+
+Revision history
+----------------
+
+3-3-89 (Samuel)
+   Initial alpha test release.
+
+3-5-89 (Samuel)
+   First fully operational release.  Does not implement CRC verification,
+   but should correctly unzip all compression methods.
+
+3-6-89 (Samuel)
+   Corrected end-of-file detection in both shrink and reduce expanders.
+   Resulting files should now always have the correct size.  Added ".ZIP"
+   default to unzip.c to match calling conventions of unz.pas.
+
+3-8-89 (Samuel)
+   Moved machine and operating-system specific code to a block starting
+   around line 180.  Added code to swap bytes on host machines that
+   store the high order bytes in lower address locations than the low
+   order bytes.
+
+3-15-89 (Samuel)
+   Added CRC checking in UNZIP.C.  Speeded operation by about 150%.
+
+   I'm spending my time on the C version now and don't plan to do any
+   further work on the pascal.  If you're using the pascal version
+   please contact me.
+ 
+3-30-89 (Darin)
+   Custom 68000 assembly routine written for 32 bit CRC calculation,
+   enlarged buffer support, and slight changes made to improve 
+   execution speed on the Atari ST.  I'll be spending my time re-writing
+   most of the time consuming routines into assembly, and making equivelent
+   changes to the ST source as Samuel updates the IBM source.
+   
+LICENSE
+=======
+
+You may copy and distribute this program freely, provided that:
+    1)   No fee is charged for such copying and distribution, and
+    2)   It is distributed ONLY in its original, unmodified state.
+
+If you wish to distribute a modified version of this program, you MUST
+include the source code.
+
+68000 assembly code for CRC calculations cannot be used in any program
+where source is not included.  Contact either Samuel or Darin on the
+Tool Shop bbs if interested in commercial applications using the 
+assembly code.
+
+If you modify this program, we would appreciate a copy of the new source
+code.  Samuel is holding the copyright on the source code, so please don't
+delete his name from the program files or from the documentation.
+
+
+SUPPORT
+=======
+
+I work very hard to produce a software package of the highest quality
+and functionality.  I try to look into all reported bugs, and will
+generally fix reported problems within a few days.
+
+IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST
+PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES
+ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR FOR ANY
+CLAIM BY ANY OTHER PARTY.
+
+If you have any questions, bugs, or suggestions, please contact either
+of us at:
+
+                           The Tool Shop BBS
+                       (602) 264-3969 (HST 9600)
+                       (602) 279-2673 (HAYES 9600)
+
+The latest version is always available for downloading.
+
+Enjoy!     Samuel H. Smith
+           - Author and Sysop of The Tool Shop.
+           Darin Wayrynen
+           - Author of NextGen Term, Gemspeed, and Bytefree.
+   
+ 

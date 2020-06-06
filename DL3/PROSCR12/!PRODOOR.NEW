@@ -1,0 +1,751 @@
+$NOMACS$
+
+History of ProDOOR changes (in reverse order)
+---------------------------------------------
+
+11-Nov-92
+   Corrected an error in 10-nov postings that caused a 'missing fossil
+   driver' error to be printed when attempting to logon locally.
+
+10-Nov-92
+   Replaced old BIOS drivers with a new FOSSIL driver.  Change line one
+   of any ProDoor/ProKit* config file from INTERRUPT or HANDSHAKE to
+   FOSSIL to enable this logic.
+
+08-Nov-92
+   Added logic to give up idle time using (ax=1680/int 2f) when neither
+   doubledos nor desqview are detected.  This should work well under ms-
+   windows, os/2 and other protected environments that support the
+   release virtual machine timeslice function.
+
+   Restored original idle logic.  It appears that the new idle look
+   fails under some environments.
+
+07-Nov-92
+   Found places where trailing spaces instead of trailing nulls were
+   being written into the USERNET.XXX file.
+
+   The status code was not always being written into the USERNET.XXX
+   record.
+
+   Changed call waiting logic to occasionally reset the "node up" status
+   in case the USERNET.XXX file is damaged while nodes are online.
+
+   Increased stack allocation by 1k.
+
+06-Nov-92
+   Added logic to bypass a node in USERNET.XXX file when the Status
+   field is 0, even if the "node up" bit is set.  This is for
+   compatibility with USERNET.EXE from CDC.
+
+05-Nov-92
+   I guessed wrong about how PCBoard initializes the "Version" field in
+   the new USERNET.XXX file.  This version properly initializes the file
+   to match files made by PCBoard.  You will need to erase your current
+   USERNET.XXX file and let this program re-create it for the change to
+   go into effect.
+
+   I also guessed wrong about how PCBoard pads the remainder of the
+   NAME, LOCATION and OPERATION fields.  Earlier versions padded these
+   fields with SPACES- this version pads with NULLS.
+
+04-Nov-92
+   Changes in node status display.
+
+   Rewrite logic to detect a node chat request using the new USERNET.XXX file
+   formats.
+
+   Corrected processing of "More?" and "Press (enter) to continue" prompts to
+   properly preserve the original display color.
+
+   Removed extraneous second "Press (enter) to continue" prompt following the
+   use of @wait@ and @more@ macros.
+
+03-Nov-92
+   Changed USERNET.DAT handlers to drop support for old format and to add
+   support for the new format used by recent pcboard releases.  You must
+   update or replace all other door programs that use the old format usernet
+   file.
+
+   Corrected runtime error 04EC:0361 during (J S) command.
+
+   Increased heap memory allocation by 5k.
+
+28-Oct-92
+   Added a calculation of minutes since last caller log entry in node status
+   display.
+
+17-Oct-92
+   Corrections and changes in NOEXT.EXE and PROUT1.BAT.
+
+   Corrected runtime error 201 & 1E7D:0622 which was caused when any ANSI
+   numeric parameter exceeded 255.
+
+06-Oct-92
+   Added a check for conference-specific PRORATIO files in the form
+        PRORATIO.nn
+   where nn is the conference number.
+
+02-Oct-92
+   Changed sysop status display, (F)ind-user function and conference member
+   flag in PROSM to refer to conference autoscan flag as well as conference
+   membership flags.
+
+21-Sep-92
+   Corrected runtime error 201 @ 0fcb:053a in PRODOOR which was caused by
+   entering a new message numbered over 65535.
+
+   Corrected runtime 201 @ 0000:5c27 in PROSM which was caused by a
+   conference with over 15 message index blocks.  ProDoor can handle only up
+   to 15 message blocks (32k simultaneous sequential message numbers) per
+   conference.
+
+20-Sep-92
+   Went back to old method of blocking activity prior to an event.
+
+19-Sep-92
+   Removed some spurious [FLOW] messages that wrapped around to the next line
+   of the local display.
+
+   Changed "Directory:" prompt to allow (F) in place of (FL)ag.
+
+   Runtime error 168E:2B55 was caused by a protocol description going over 30
+   characters in length.  Overlong descriptions are now truncated instead of
+   causing a runtime error.
+
+17-Sep-92
+   Removed checks for:
+        SET NOSAVE=ON
+   in your environment.  You may remove any such settings in your batch
+   files.  If you have a specific need for the USERS and PCBOARD.SYS files to
+   be updated prior to running EXEC modules, you can add the environment
+   statement:
+        SET EXECSAVE=ON
+   before running the program.  Be warned that some systems encounter
+   problems when this setting is activated, so I recommend against using it
+   unless you have a specific need.
+
+11-Sep-92
+   Removed logic to set DIRXX and map \ into / for DSZ based transfers. This
+   isn't needed after all...
+
+   Changes '%COMSPEC% /c' to 'call' since everybody should be using dos 3.3
+   or newer by now.
+
+10-Sep-92
+   More internal changes to place modem off-hook more quickly when the phone
+   is ringing at the same time.
+
+08-Sep-92
+   Changed EXEC logic to open and close com ports even if NOSAVE environment
+   variable is in effect.
+
+04-Sep-92
+   Improved logic to prevent insertion of '*' new upload marker into DIR text
+   lines that are not really filename entries.
+
+03-Sep-92
+   Added automatic logic to insert
+        SET DIRRX=$PLAY$/
+   environment prior to executing DSZ-based protocol.  This may improve
+   security against bbs hackers.  DSZ-based protocol command lines now mapped
+   all '\' characters into '/' to confirm with DSZ documentation.
+
+01-Sep-92
+   Added "[flow]" message when output is suspended due to CTS flow control.
+   Shortened timeouts to place modem off-hook more quickly.
+
+   Added logic to remove pathnames from parameters in (T)able command when a
+   caller is online.  Pathnames still display during local logons.
+
+28-Aug-92
+   Increased stack allocation by 4k.
+
+10-Aug-92
+   Corrected a few reported RUNTIME errors that were uncovered by rangecheck
+   code that was enabled in the previous betas.
+
+04-Aug-92
+   Removed logic to check for upload duplication with alternate file .EXT
+   values.  It appears that folks want to allow this kind of duplication...
+
+28-Jul-92
+   Internal changes to prevent lockup following 'g' command on some machines.
+
+   Enabled stack and rangecheck code- this version will take more RAM, but
+   perhaps it will report a runtime error that will help solve the recent
+   problem of crashing.
+
+17-Jul-92
+   Internal prologon/prodoor/prokit changes to prevent missed events.
+
+   Changes in prodoor/prologon to prevent logons during the 'event window',
+   allowing callers prior to the window to have up to 'window' minutes.
+
+14-Jul-92
+   Changes to allow ansi detect strings during the initial prompt if they do
+   not arrive within the first 6 seconds.
+
+04-Jul-92
+   The QPREFIX environment variable was not working.
+
+01-Jul-92
+   Internal change in bufio unit to prevent endless DOS error [6] retries
+   while reading buffered files.
+
+   Added logic to bypass the "Loading XXXXX - Please wait..." messages if NS
+   is appended to the OPEN or DOOR command.
+
+   Added logic to allow " NS" suffix in PROXxxx command translations to
+   trigger non-stop mode, allowing seamless control flow to other doors.
+
+30-Jun-92
+   Added a check for QPREFIX environment variable to override the message
+   default quote prefix of ">".
+
+19-Jun-92
+   Added support for $$LOGOFF.BAT file during logoff.
+
+28-May-92
+   Internal changes to allow CONFINFO file to be made read/only.
+
+27-May-92
+   Internal ProDoor/ProKit changes to allow operation at 115200 com port
+   speeds.
+
+   Added a check for the environment variable
+        SET NOCD=ON
+   to disable carrier detect monitoring.  This makes it possible to set up an
+   inhouse/direct connect board with 3 wire serial cables.
+
+25-May-92
+   Some corrections in &, |, .AND. and .OR. search processing.
+
+22-May-92
+   Some 21-may postings could not find ANY download files.
+
+21-May-92
+   Added & and | as alternates for .AND. and .OR. in dir searches.
+
+   EXE files are no longer compressed with PKLITE -E; you can compress them
+   yourself if you prefer compressed files.
+
+   Changes in prokit to properly set PCBOARD.SYS 'curconf' and 'conference'
+   entries to match USERS file 'curconf' and 'curconfh' entries.  (May solve
+   problems when current conference > 255 on entry to a prokit door).
+
+02-May-92
+   Changed graphics mode logic to speed up file directory listings by
+   converting leading spaces in multi-line file descriptions to ansi cursor
+   positioning codes.
+
+   Possible correction to exec/(f v) problems when SET NOSAVE=ON is not in
+   the environment.
+
+   Hardcoded the option /e:1000 in subshells created by exec/(f v) to deal
+   with the possible problem of command.com truncating the environment to the
+   existing environment variable allocation.
+
+27-Apr-92
+   Added new caller log entry
+        New CONFINFO file created by PROGRAM
+   to identify when ProDoor or a related program needs to create a new
+   CONFINFO file.
+
+   When a new CONFINFO file is created, all conferences of #39 are now
+   flagged as public.
+
+   When a new CONFINFO file is created, all conferences are given the default
+   propack options of "400 eltkwn360".
+
+   (I don't know why, but my CONFINFO file mysteriously dissappeared and had
+   to be re-created - perhaps these changes will help track down what's going
+   wrong)
+
+22-Apr-92
+   Changed 'q y' and 'personal mail scan' during logon and conference entry
+   to no longer report messages FROM the current user.
+
+   Corrected a problem that would occasionally cause a drop to DOS after
+   logoff (broken 21-apr).
+
+21-Apr-92
+   Corrected 'off abnormally' caller log entry when carrier is lost and
+   caller has NOT given the G command.
+
+   Added prokit function
+        procedure auto_detect_ansi;
+   which will enable graphics modes if graphics is currently disabled and the
+   caller's terminal emulation appears to support ansi codes. This function
+   may result in a delay of up to 5 seconds for non-ansi callers.  The delay
+   cannot be reliably reduced because of slow turn- around times with
+   networks (such as PC Pursuit) and some buffered modems.
+
+   Corrected the message 'Sorry, file is being updated. Try again later' when
+   scanning DIR files over a network.
+
+14-Apr-92
+   Increased maximum download batch size from 10000k to 32000k bytes.
+
+31-Mar-92
+   Changed $DOOR.NAM format during downloads to be the same as that used
+   during uploads- this makes ADDBIDIR/PRODIZ processing possible for
+   bidirectional uploads.  This version finally DOES retrieve FILE_ID.DIZ
+   descriptions for bidirectional uploads.
+
+   Some early 31-mar versions wrote "| (download)" to the $door.nam file,
+   possibly confusing external protocol drivers.
+
+30-Mar-92
+   Changes in upload logging logic to preserve bidirectional upload
+   descriptions found in $DOOR.NAM file (compatibility with PRODIZ and
+   ADDBIDIR utilities).
+
+28-Mar-92
+   Changed upload posting logic to handle DSZLOG entries that do NOT include
+   the path to where the file was stored.
+
+24-Mar-92
+   Added a check for the environment variable
+        SET PCB-G=ON
+   and if present, ProDoor will now call up PCB145/KEY:G to perform the
+   logoff function instead of doing it internally.
+
+23-Mar-92
+   Added the message 'Sorry, file is being updated. Try again later' when
+   repeated attempts fail to open an existing file.  This usually indicates a
+   SHARE violation resulting from concurrent updates in progress over a
+   network.
+
+   Changes to prevent 'Time limit reduced because of a pending event' message
+   from popping up during user input.
+
+21-Mar-92
+   Returned logic to eliminate hangup delay when 'G Q' is used. The 'goodbye
+   after transfer' option now does 'G Q' rather than 'G'. Changed logic to
+   consider carrier loss after 'G' command is issued as a normal logoff
+   rather than an abnormal one.
+
+   Removed 'ctrl-L' from local screen after @CLS@ is expanded.
+
+12-Mar-92
+   Corrected a long-standing bug that prevented prodoor from creating a new
+   CONFINFO file with over 130 conferences when additional conferences had
+   already been allocated with EXTADJ.
+
+09-Mar-92
+   More changes to possibly remove the need for SET NOSAVE=ON setting.
+
+19-Feb-92
+   Added logic to keep the "Time limit reduced because an event is pending"
+   message at the bottom of the screen in visual edit mode.
+
+18-Feb-92
+   Added a check for conference specific PROFREE files in the form
+        PROFREE.nn
+   where nn is the conference number.
+
+   Corrected logic in com port re-initialization that may correct problems on
+   systems needing the SET NOSAVE=ON environment.
+
+12-Feb-92
+   Added a check for security specific PROTRNS files, using the format
+        xxxTRNS
+   where xxx is the user level.  For example,
+        010TRNS
+   would be used in place of PROTRNS for level 10 users.
+
+   Changed messages regarding "protocol driver registration" to be a little
+   more generic.
+
+06-Feb-92
+   Corrected PROSM to not stop on user records with 65535 "earned kbytes".
+
+05-Feb-92
+   Added a check for the environment variable
+        SET NOSAVE=ON
+   to disable the new user file SAVE/RESTORE logic during EXEC and shell
+   functions.  Shawn, please see if this makes your lockups go away.
+
+04-Feb-92
+   Removed '1 file(s) copied' message when transferring between doors.
+
+   Added progress messages on screen while dropping carrier.
+
+29-Jan-92
+   Corrected $DOOR.NAM loader was to prevent stripping off all text following
+   '#' in description lines.
+
+24-Jan-92
+   Removed changes in G;Q processing made back in december.
+
+   Changes in prokit to make logon/logoff caller log entries when running
+   doors in local testing mode.
+
+20-Jan-92
+   The <no description given> message was not being inserted in upload
+   descriptions when a caller drops carrier before inserting a valid upload
+   description.
+
+09-Jan-92
+   Changes in helpfile processing to prevent @WAIT@ macros from triggering
+   pauses in un-selected topics.
+
+08-Jan-92
+   Corrected detection of invalid uploads.
+
+04-Jan-92
+   Added a check for $ immediately following protocol letters in PROD.CNF.
+   If present, this flags the protocol to make all downloads FREE to callers
+   who are using registered protocol drivers.
+
+03-Jan-92
+   Added logic to recognize "Allow one-name users" in
+   pcbsetup.allow_onename.
+
+31-Dec-91
+   Changed format of $DOOR.NAM file during uploads to eliminate the 255
+   character length limitation.  Example of new $DOOR.NAM format:
+      J:\PLAY3\TESTFIL1.ZIP
+      | This is the description text for TESTFIL1.
+      | This text consists of any number of lines,
+      | all beginning with the vertical bar character
+      | and ending with a blank line.  Filespecs must
+      | include the PLAYPEN directory for the current
+      | node.
+
+      J:\PLAY3\TESTFIL2.ZIP
+      | Short, single line description.
+
+   Each description line begins with a "|" in column 1.  The description ends
+   on a blank line.  Note that the last line in $DOOR.NAM must also be blank.
+
+   This change makes it possible for other programs to insert data from
+   FILE_ID.DIZ files during PROUTEST processing without truncation of the
+   description.
+
+29-Dec-91
+   Corrected logic to properly detect unregistered versions of Puma/Mpt.
+
+   Eliminated delay before dropping carrier when G;Q (quick logoff) is used.
+
+20-Dec-91
+   Changed DSZLOG parsing logic to better handle protocols that do not
+   include the full directory\filename in DSZLOG entries.
+
+   Added logic to detect and report unauthorized tampering of HSLINK.EXE
+   following file transfers.
+
+   Added logic to detect registered protocol drivers and to thank the user
+   for registering.
+
+18-Dec-91
+   Added logic to save current PCBOARD.SYS and USERS data before calling an
+   EXEC program, and to reload these records on return from such programs.
+
+   Added logic to use the contents of PRODOOR.CMD (if any) on return from an
+   EXEC program as the next command line to be executed.
+
+10-Dec-91
+   Changed ProKit internal EXTUSER declarations to help K-Mail to use
+   CONFINFO/ EXTESER data.  See EXTUSER.DCL for the new declarations.
+   Existing data files are not changed in any way.
+
+28-Nov-91
+   Changes in prokit library to preserve conference numbers > 255 under
+   pcboard 14.5.
+
+   Changes to correct transfer logging when '*.*' is used in a download
+   protocol definition.
+
+   Note: You cannot use '*.*' in bidirectional protocol definitions.
+
+26-Nov-91
+   Re-released as ProDoor 3.44.
+
+   Changes in ProKit library to preserve current conference information even
+   if invalid according to current CONFINFO settings.  This may help K-Mail
+   and other PCB145 compatible doors to work better.
+
+22-Nov-91
+   More changes in file transfer logging logic.
+
+21-Nov-91
+   Changes in DSZLOG processing.
+
+17-Nov-91
+   Added new 'PR' sysop read mail command to route the current message to the
+   printer.
+
+   Added new 'CAP' sysop read mail command to capture the current message and
+   append it to the end of CAPTURE.TXT.
+
+16-Nov-91
+   Command lines passed to EXEC- were not including a leading space.
+
+14-Nov-91
+   The remainder of the user command line is now passed to EXEC- command
+   lines when called from PROX??? files.
+
+   The EXEC- function now closes down the COM port prior to execution and
+   re-opens it afterwards.
+
+   Added code to verify uploads exist even though DSZLOG says they are there.
+
+06-Nov-91
+   Changes in upload processing to allow uploads which are NOT listed in
+   DSZLOG to again be accepted.
+
+02-Nov-91
+   Changed EXEC- command translation to not display "processing your
+   request". Note that if you pass $R$ on the EXEC command line, this will
+   specify the full filename of the "result file".  If this file has been
+   written to by the EXEC program, the contents will be automatically
+   displayed by prodoor on return from the EXEC.
+
+   Modified PRONS.COM module to move the status lines to the top of screen
+   and to lock only those two lines.  This allows better screen management
+   with full-screen protocols, such as HSLINK.
+
+   Some HSLINK bidirectional uploads were STILL being logged as free
+   downloads.  I've finally tracked this down to a bug in the way HSLINK
+   writes to the DSZLOG file.  Please get a newer HSLINK beta.
+
+01-Nov-91
+   Increased heap memory allocation by another 2k.
+
+30-Oct-91
+   Increased heap memory allocation by 2k.
+
+   Added new command translation in PROX??? files:
+        0,NAME,EXEC-COMMAND LINE
+   which causes the specified command line to be executed when the named
+   command is issued at the required security level.  Any any $ or @
+   variables in the command line will be expanded before passing control to
+   the program or batch file.
+
+   Some bidirectional uploads were still being logged as downloads.
+
+24-Oct-91
+   The FV function was incorrectly saying all files are "free downloads".
+
+   Some bidirectional uploads were being logged as downloads.  This has been
+   corrected.
+
+23-Oct-91
+   Some late 22-oct betas would not remember upload descriptions given in
+   advance and would require re-entry after uploading.  This has been
+   corrected.
+
+22-Oct-91
+   Changes in DSZLOG handlers to better handle bidirectional uploads, as with
+   the new HS/Link protocol.
+
+   Added a check for '*' immediately following the protocol letter in
+   prod.cnf.  If present, all downloads using the defined protocol will
+   be considered "free".  For example:
+         ;
+         95 H* 0 T 50 HS/Link (Bi-directional) FREE!
+         hslink -p$N$ -u$PLAY$ $@$ -a
+         ;
+         95 H 0 R 0 HS/Link
+         hslink -p$N$ -u$PLAY$
+         ;
+
+   Some early 22-oct betas would incorrectly detect downloads as newly
+   uploaded files and prompt the caller for descriptions.  This has been
+   corrected.
+
+14-Mar-91
+   Slight change to allow RECYCLE3 to tell the difference between prodoor and
+   prologon without patching prodoor.exe.  Reposted as PROD342.ZIP with a
+   different release date.
+
+13-Mar-91
+   Bugfix release 3.42 as PROD342.ZIP.
+
+10-Jul-91
+   Please note: ProDoor 3.4 and later require RECYCLE3.ZIP -- earlier
+   versions of RECYCLE may not function properly due to the new
+        SET PCBDOOR...
+   variables that are now present in the $door.bat files.
+
+   Corrected logic to allow conference specific display files in conferences
+   which do not have download directory listing files defined.
+
+   Added a test to prevent attempted expansion of @x variables when the two
+   characters following @x are not proper hex digits.  This should prevent
+   unexpected expansion of character sequences that are not really valid @x
+   codes.
+
+   Added a check for the environment variable:
+        SET NOTEAR=ON
+   and if present, the door will no longer insert the "---" tearline before
+   the message tagline.
+
+08-Mar-91
+   Bugfix release 3.41 as PROD341.ZIP.
+
+   Corrected an error in OPEN DOOR logic that totally prevented opening doors
+   that are flagged to require pcboard 14.5 USER.SYS or DOOR.SYS files.
+
+   Corrected OPEN DOOR command to correctly select a door by name when the
+   door name has numbers in it.
+
+   Added command line passing to door files.
+
+   Added logic to insert the following lines prior to executing a door:
+      SET PCBDOOR=open door command parameters
+      SET PCBDRIVE=C:
+      SET PCBDIR=C:\PCB3
+      SET PCBDAT=C:\PCB3\PCBOARD.DAT
+      SET PCBNODE=3
+      SET PCBPORT=1
+   for compatibility with recent pcb145+ betas.
+
+   Additional changes are required in your PRODOOR doorfile for operation
+   with doors using DOORS.SYS or USERS.SYS files.  Use the provided
+   PRODOOR.INS and PRODOOR files.
+
+   The correction involves the replacement of
+      rem call up pcb145 on return from new style doors
+      if exist users.sys pcb145/key:open;prodoor^M
+      if exist door.sys pcb145/key:open;prodoor^M
+
+   with
+      rem call up pcb145 on return from new style doors
+      if exist users.sys goto return145
+      if exist door.sys goto return145
+
+   and the addition of
+      :return145
+      echo  >$door.bat pcb145/key:open;prodoor^M
+      echo >>$door.bat door
+      $door
+
+   to the end of the PRODOOR doorfile.
+
+
+20-Apr-91
+   Some display lines were being split in the middle of @X sequences at about
+   character 200 in the expanded text.  This has been changed to split at
+   250, fixing some displays that were not processed correctly.
+
+11-Apr-91
+   A "More" prompt was sometimes happening in ANSI displays when the cursor
+   is on the last line of the specified page size.
+
+10-Apr-91
+   Changes in parsing of $DOOR.RES result files to allow ansi codes to be
+   preserved.
+
+02-Apr-91
+   Changed F4(find) function in extended conference configuration to
+   initially clear the conference name.
+
+   Added current conference number to PROUTEST.BAT command line.
+
+   Added "node paging sysop" and "user logging on" status codes for
+   USERNET.DAT.
+
+01-Apr-91
+   Official release of prodoor 3.4.
+
+   Increased heap allocation to prevent runtime error 203 in some cases.
+
+   Added a check for "event scueduled in 1440 minutes" message.
+
+28-Mar-91
+   Increased heap space in normal version by 5k to allow more
+   extensive PROTRNS files.
+
+27-Mar-91
+   Some 26-mar betas had a broken ZIPM function.
+
+   More work on the documentation.
+
+   Prepared first beta of the complete set of release files, posted as
+   PROD34B.ZIP.
+
+   Merged functions of CHKPATH.EXE with PROSM.EXE; CHKPATH.EXE is no longer
+   used.
+
+   ** Note: the environment setting
+        SET OVCRT=ON
+   may be needed under DesqView and other windowing/timeshare systems to
+   prevent screen bleed-through or background lockups.
+
+   Added
+        SET PROTRNS=ON
+   environment setting to assist in development of PROTRNS files.  When
+   present, the program will output all translatable messages surrounded in
+   {...}.  These can be used to determine changes or additions that are
+   possible in the PROTRNS files.
+
+   Added "/ $LASTMSGNO$" after display of current message number.
+
+   Added #, !, -, $ and _ to list of characters that filenames may start with
+   for automatic directory colorization to work properly.
+
+   Added '*' flagging of newer files in file listings.
+
+   Added (CHAT U), (CHAT A) and (CHAT ?) commands to control and report node
+   chat availability status.
+
+   Added @WAIT@ macro, which acts like @MORE@ used to.
+
+   Added a check for $HELPFILE$ on a line by itself.  If present, the
+   remainder of the current display file will be processed as a multi- topic
+   help file with topic and subtopic prompting/searching.
+
+   Added a check for @X codes in DIR files.  When one of these codes is
+   found, the program disables automatic colorization for the remainder of
+   the DIR file, allowing @X codes to take control.
+
+   Added a new help file:
+        PROFV
+   which is active at the (F V) and (VX) prompts.
+
+   Added code that will check for the environment variable
+        SET ECHOFLAG=ON
+   and if found, will creat the file
+        ECHOFLAG
+   in the prodoor directory whenever an "echo" message is saved.  It will be
+   the responsibility of your mailer system to remove this file when mail has
+   been transferred.
+
+   Added explicit (G) option at 10 second countdown for automatic logoff.
+
+   Added logic in (W)rite-user-info function to reject passwords that are
+   listed in the new PROPCAN file.  Passwords that contain parts of the
+   username are also automatically rejected.
+
+   Added logic to allow prodoor to open doors requiring USER.SYS or DOOR.SYS
+   files by means of a call to PCB145 with a /KEY parameter.
+
+   Added logic to allow xx/xx/xx date formats as well as xx-xx-xx.
+
+   Added logic to check for PROTRNS when PROTRNS.LNG is not found.
+
+   Added logic to disconnect a user after repeatedly entering invalid
+   input at any prompt.
+
+   Added logic to expand $ and @ macros in DIR files and in results of
+   (F), (L), (N) and (Z) commands.
+
+   Added logic to flush message file buffers when checking for
+   end-of-messages. This corrects the operation of the 'messages left by
+   alternate node' detection.
+
+   Added logic to help in accessing pcb145-specific doors within prodoor
+   and prologon.  The new logic executes the command
+     pcb145/key:open;doorname^M
+   prior to executing the DOOR.BAT file for doors that require doors.sys or
+   users.sys files.  This in conjunction with some changes in your board.bat
+   file will allow a temporary way of accessing all doors within prodoor.
+   This method will be replaced with direct file updates in the prodoor 4.0
+   betas.  See sample PRODOOR and BOARD.BAT files.
+
+   Added logic to honor the "disable uploads XX minutes prior to event"
+   option from pcboard.dat.
+

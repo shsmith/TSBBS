@@ -1,0 +1,47 @@
+
+PROP - Proportional Spacing Print Utility   (01-Nov-86 shs)
+
+This utility will print your text files with proportional spacing.
+It can do so in both "draft" and two-pass "quality" modes.
+
+To use PROP, simply enter:
+   prop FILENAME
+where FILENAME is the full filename of the file you want to print.
+
+Prop can also be used to print several files at once:
+   prop FILE1 FILE2 FILE3
+
+The default action is to print each file using the default font (typeface)
+file, and two-pass quality style print.   These options can be changed on
+the command line.
+
+The following options are recognized:
+
+-Fname
+   This option specifies that the font should be loaded from the file
+   'name' instead of the default file, PROP.FNT.  The font file controls
+   the typeface of print produced by PROP.
+
+-Q
+   This option specifies that the print should be produced in "quality"
+   mode.  This mode makes two passes over each line.
+
+-D
+   This option specifies that the print should be produced in "draft"
+   mode.  Each line is printed in a single pass.
+
+
+
+Examples
+   prop prop.doc
+         Print prop.doc with all default values.
+
+   prop -D prop.doc
+         Print prop.doc using the faster "draft" style.
+
+   prop -D -Fprop7.fnt prop.doc
+         Print prop.doc in draft mode with a font (typeface) controlled by
+         the file prop7.fnt.
+
+
+

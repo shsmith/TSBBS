@@ -1,0 +1,29 @@
+
+
+         Quick Caller Log Viewer for PCBoard 11.8 and 12.0
+                      Version 1.4, 17-Jul-88
+
+
+                           Courtesy of:
+                          Samuel H. Smith
+                       The Tool Shop PCBoard
+                            Phoenix, Az
+                          (602) 279-2673
+
+
+CLVIEW is a simple utility to allow PCBoard sysops to quickly scan 
+through the caller log file.   You can page forward and backward 
+or jump to a specified record number.   A filter option eliminates 
+all lines except logons, messages and file transfers.   DOS 3.x 
+file sharing is supported. 
+
+Full source code is provided, of course...
+
+If you like this program, please call my system and leave me a 
+note. I would also appreciate bug reports and suggestions for 
+improvements. 
+
+Enjoy!
+   Samuel
+
+

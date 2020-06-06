@@ -1,0 +1,13 @@
+echo off
+rem. Pcboard door script for PROKIT demo program
+
+cd \pro
+prokit prokit.cnf c:\pcb2
+
+rem. The following statements are REQUIRED for any door that
+rem. has a (G)oodbye function, because otherwise a scheduled event
+rem. following door closing could be missed.
+
+cd \pcb2
+if exist event.bat event
+board

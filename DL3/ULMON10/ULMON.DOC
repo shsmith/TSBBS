@@ -1,0 +1,129 @@
+
+                           ULMON 1.0 (ULMON10)
+                      Automatic Upload Space Monitor
+
+
+                  This program is provided courtesy of:
+                            The Tool Shop BBS
+                               Phoenix, Az
+                              (602) 279-2673
+
+
+         Written by: Samuel H. Smith, 23-Dec-87 (rev. 23-Dec-87)
+                          Public Domain Material
+
+     !WARNING! - THIS IS A DANGEROUS UTILITY!  IT'S JOB IS TO DELETE
+           FILES FROM YOUR UPLOAD DIRECTORY.  USE IT WITH CARE!
+                          YOU HAVE BEEN WARNED.
+
+
+This is a sysop utility program that will help monitor your upload 
+directory and keep disk space from running out.   It can be used in your 
+EVENT.SYS to automatically purge old uploads when the system must be run 
+unattended for long periods. 
+
+
+Usage:    ulmon KBYTES_FREE UPLOAD_LISTING UPLOAD_DIR [/batch]
+
+Where:    KBYTES_FREE
+             Specifies the number of K-bytes of free
+             space to leave on the upload disk.
+
+          UPLOAD_LISTING
+             Specifies the full pathname of the file containing
+             your upload directory listings.
+
+          UPLOAD_DIR
+             Is the directory where the upload files are stored.
+
+          /batch
+             Means to delete files without asking first.
+             (must be lower case)
+
+
+WHAT IT DOES
+============
+
+The automatic upload monitor first checks to see if the specified free 
+space exists on the upload disk.  If there is plenty of space it has 
+nothing to do, so it quickly exits. 
+
+Normally, there will be enough new uploads that some of the old ones must 
+be deleted to make room.   The upload monitor will scan through your 
+upload files listing and check for valid filenames.   When it finds one 
+it will list the file's description and ask you if it can be deleted.  If 
+you say NO the file will be skipped.  If you say YES, the file will be 
+deleted from the disk and from your directory listing.   This process is 
+repeated until you reach the free-space goal, or run out of files. 
+
+
+If you add "/batch" to the command line, the program will automatically 
+delete files without asking.  This mode is suitable for use in your 
+EVENT. Run the upload monitor in interactive mode first to make sure it 
+works the way you want it to. 
+
+Because this utility deletes files, I recommend that you make a full 
+backup before running it the first time.   It has been carefully tested, 
+but there is still a small chance of a bug and you don't want to take any 
+chances. 
+
+
+
+EXAMPLE USE IN EVENT.SYS
+========================
+
+ulmon 750c:\pcb\main\dir14 d:\upload
+
+This command will make sure you have at least 750k of free space on drive 
+D:.  It will delete files from d:\upload in the order that they are 
+listed in c:\pcb\main\dir14.  It runs in interactive mode and will ask 
+before killing each file. 
+
+
+ulmon 2000 c:\pcb\admin\adir13 d:\junk /batch >>ulmon.log
+ulmon 1000 c:\pcb\main\dir14 d:\upload /batch >>ulmon.log
+
+This example will try to keep 2megs of free space by killing off files in 
+the  d:\junk directory.   When the junk directory is empty, the upload 
+monitor will start deleting files from the main upload directory to keep 
+a minimum of 1meg space.   I frequently review uploads and move the 
+"junk" files into the d:\junk directory, where they are still available 
+for downloading until the space is needed. 
+
+The ">>ulmon.log" command tail causes all ULMON output to be logged to 
+ULMON.LOG for later reference. 
+
+
+
+DISCLAIMER
+==========
+
+This software is completely FREE.   I ask only for your comments, 
+suggestions and bug reports.   If you modify this program, I would 
+appreciate a copy of the new source code.   Please don't delete my name 
+from the program. 
+
+I cannot be responsible for any damages resulting from the use or mis-use 
+of this program!    
+
+If you have any questions, bugs, or suggestions, please contact me at The 
+Tool Shop,  (602) 279-2673.   The latest version is always available for 
+downloading. 
+
+Enjoy!     Samuel H. Smith
+           Sysop,  The Tool Shop.
+
+
+REVISION HISTORY
+================
+
+23-Dec-87 version 1.0
+   Initial release
+
+25-Dec-87 version 1.0a
+   Corrected a runtime error while attempting to delete the backup
+   file for your upload listing (runtime error 002 at 0000:3887)
+
+07-Jan-88 version 1.0b
+   Shortened some messages to reduce the size of the logfile.
+

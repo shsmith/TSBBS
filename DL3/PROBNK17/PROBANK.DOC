@@ -1,0 +1,74 @@
+
+ProBank - Another DOOR for "ProKit"
+-----------------------------------
+
+This door program implements a real Savings Bank for your users.
+
+Your users can deposit time in a personal "account" and then withdraw
+the time on a later date when they need it.  This will allow users to
+"save up" time for that big download they can't otherwise get.
+
+The sysop can limit the maximum "balance" or time savings to prevent
+someone from hogging the system for too long.
+
+Revision history
+----------------
+
+04-17-90 v1.7 beta
+        Recompiled with ProKit 3.2 beta libraries.  This version
+        supports non-standard COM ports through COM8 as well as the
+        COMBASE and COMIRQ environment variables.
+
+
+Installation
+------------
+
+Here is a sample configuration file:
+   HANDSHAKE
+   bank.dat
+   60
+   bwelcom
+   bmenu
+   bnew
+   bclose
+
+   --------------------------
+   Configuration file format:
+
+   line 1 = Driver type (HANDSHAKE, INTERRUPT, BIOS, PCBTRAP)
+   line 2 = Savings Bank Accounting filename
+   line 3 = Highest allowed balance (in minutes)
+   line 4 = Welcome message filename      \
+   line 5 = Main menu filename             \    "G" added to end
+   line 6 = New account message filename    >-- for graphics mode
+   line 7 = Closing door message filename  /
+
+
+Also included is BANKLIST, a small report program that lists all of the 
+ProBank accounts and balances.  The output might be used in a bulletin.
+
+Example:  banklist c:\pro\bank.dat >c:\pcb\gen\blt14
+
+
+
+                          DISCLAIMER
+                          ==========
+
+IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM,
+OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+   This is a FREE program; full source code is included.
+
+   If you have any questions, bugs, or suggestions, please contact 
+   me at: 
+       The Tool Shop BBS
+      (602) 264-3969 (HST)
+      (602) 279-2673 (2400)
+
+   The latest version is always available for downloading. 
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.

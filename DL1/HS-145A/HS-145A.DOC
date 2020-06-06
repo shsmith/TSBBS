@@ -1,0 +1,98 @@
+
+ 
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                IN PCBOARD 14.5A (BETAS DATED 10/30/91)
+ 
+                                  
+     Please refer to the PCBOARD manual and change HISTORY for detailed
+     information on installation of external protocols.  This
+     information was tested with HSLINK betas posted on 10/30/91 and
+     PCBOARD 14.5A betas posted on 10/30/91.
+
+     The following installation steps should work for most folks:
+
+     Copy the provided PCBSH.BAT and PCNRH.BAT files into your \PCB
+     system directory.  On a multi-node system, copy these files into
+     the \PCB directory for each node.  Copy HSLINK.EXE into directory
+     included in your search PATH.
+
+     You can edit PCBSH.BAT and PCBRH.BAT to include options on the
+     HSLINK command line, but most folks won't need to change anything.
+     If your system can't keep up with the COM port while accessing the
+     disk drive, you may want to add -HS to the command line in each
+     file.  If you want to experiment, there are a number of optional
+     parameters you can read about in HSLINK.DOC and HSLINK.NEW.
+
+     Contents of PCBSH.BAT
+     ---------------------
+         echo off
+         if exist pcberr.fil del pcberr.fil
+         if exist %DSZLOG% del %DSZLOG%
+         hslink -hs -p%1 -e%5 -u%6 %3
+                 |
+                 +---- this was added if you need slow handshake
+
+     Contents of PCBRH.BAT
+     ---------------------
+         echo off
+         if exist pcberr.fil del pcberr.fil
+         if exist %DSZLOG% del %DSZLOG%
+         hslink -hs -p%1 -e%5 -u%6
+                 |
+                 +---- this was added if you need slow handshake
+     
+     Next you need to install the HS/LINK protocol into the PCBOARD
+     protocol menu.  There are two ways to do this.
+
+     The easiest is to edit your \PCB\GEN\PCBPROT.DAT file in text
+     editor and add the following line:
+        H,B,1024,HS/Link (bidirectional batch),N,N,Y
+
+     If you prefer to use PCBSETUP, the following steps will give the
+     same result.
+
+     Load up PCBSETUP and press C to access the FILE LOCATIONS 2 screen.
+     Then cursor down to the PROTOCOL DATA FILE and press F2.
+     In this screen you press ALT-I to insert a new protocol.
+     When asked for "USE" enter "H".
+     When asked for "TYPE" enter "B".
+     When asked for "SIZE" enter "1024".
+     When asked for "MNP" enter "N".
+     When asked for "PORT OPEN" enter "N".
+     When asked for "LOCK LINES" enter "Y".
+
+     You should see the protocol defined like this:
+       ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+       บ                        PCBoard Setup Utility                       บ
+       บ                         Edit Protocol File                         บ
+       บ                                                                    บ
+       บ                   Port Lock                                        บ
+       บ Use Type Size MNP Open Lines             Protocol Description      ฑ
+       บ อออ ออออ ออออ อออ ออออ อออออ อออออออออออออออออออออออออออออออออออออ ฑ
+       บ  H   B   1024  N   N     Y   HS/Link (bidirectional batch)         ฑ
+       บ                                                                    บ
+
+     Press ESC to exit this screen.
+     When asked "SAVE CHANGES" press "Y" and ENTER.
+     Press ESC two more times to exit the setup program.
+     When asked "SAVE Y/N/Q/A" press "Q" and ENTER.
+
+
+I hope these instructions help, but remember, I can't take
+responsibility for anydamages resulting from these instructions.  If you
+get stuck, it always helps to read the DOC files that come with PCBOARD
+and with HSLINK.  If all else fails, call up the tool shop and ask for
+help on the main board.  Either I will help you, or somebody else will
+know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    Hayes-V series 9600     Contributors only
+  (818) 891-6780    US Robotics 2400        Free to all
+
+

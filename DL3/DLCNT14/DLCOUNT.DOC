@@ -1,0 +1,105 @@
+
+                                    DLCOUNT
+
+                     PCBoard Download Log "Counter" Utility
+
+                     Copyright 1993, 1994 Samuel H. Smith
+
+
+                     This program is provided courtesy of:
+                           Samuel H. Smith
+                           The Tool Shop
+                           P. O. Box 4808
+                           Los Angeles, CA 91412-4808
+
+                           The Tool Shop BBS
+               Phone number                   Modem type
+               --------------    --------------------------------------
+               (213) 851-2393    v.32bis (Free Access)
+               (213) 851-2127    v.32bis Multi-Line (Subscribers Only)
+               (213) 851-2314    USR HST 9600 (Subscribers Only)
+               (213) 851-9969    VOICE (Orders and Technical Support)
+               (213) 851-4691    FAX (Orders and Technical Support)
+
+
+    This program will analyze the PCBoard DOWNLOAD.TXT log file, and produce
+    a summary of the number of times each available file has been downloaded.
+    Each time this program is run, execution is speeded by processing only
+    the lines added to DOWNLOAD.TXT since the prior execution.
+
+    This program can be used in conjunction with TRIMDL to keep accurate
+    download counts, even when the DOWNLOAD.TXT file is trimmed to reduce
+    file size.  Remember to reset file counters by erasing the DLCOUNT.DAT
+    file each time you use TRIMDL or any other utility to trim the
+    DOWNLOAD.TXT file.
+
+
+                                     USAGE
+                                     =====
+
+    dlcount DOWNLOAD.TXT DLPATH.LST DIRFILE ... DIRFILE
+
+    The first parameter specifies the full directory and filename of your
+    DOWNLOAD.TXT file.  This is usually C:\PCB\MAIN\DOWNLOAD.TXT.
+
+    The second parameter specifies the full directory and filename of your
+    DLPATH.LST file.
+
+    You may then specify any number of DIR files to be updated. Wildcards are
+    allowed.  Each specified DIR file will be updated to reflect the current
+    download count for all listed files.
+
+
+                                    EXAMPLE
+                                    =======
+
+    c:
+    cd \pcb\gen
+    dlcount c:\pcb\main\download.txt dlpath.lst dir* upload
+
+    This sample command is suitable for use in your EVENT.SYS file to
+    automatically update all DIR* listing files and the UPLOAD listing file.
+
+
+                                   DISCLAIMER
+                                   ==========
+
+    THIS PROGRAM IS "FREEWARE".  USE FOR NONCOMMERCIAL PURPOSES IS FREE. IF
+    YOU WITH TO USE THIS PROGRAM IN A COMMERCIAL APPLICATION, YOU MUST
+    CONTACT THE AUTHOR FOR PERMISSION.
+
+    IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST
+    PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES
+    ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR FOR ANY CLAIM
+    BY ANY OTHER PARTY.
+
+    MAKE BACKUPS!
+
+
+                                REVISION HISTORY
+                                ================
+
+    17-May-94 version 1.4
+       Added logic to also report files that have never been downloaded,
+       as an aid in tracking down unpopular files.
+
+    19-Mar-94 version 1.3
+       Added logic to insert a blank line after each file entry in all
+       DIR files processed.  This produces a more pleasant display format
+       when multi-line descriptions are used.
+
+    15-Feb-94 version 1.2
+       Changes to allow processing of more files in less available ram.
+
+       Added logic to allow wildcards outside the current directory.
+
+    04-Dec-93 version 1.1
+       Sometimes the 'last download' dates in december are reported as 00
+       rather than 12.  This version corrects the bug.
+
+        NOTE: YOU MUST ERASE DLCOUNT.DAT WHEN INSTALLING THIS VERSION
+              OR REPORTED DATES WILL NOT BE CORRECT!
+
+    14-Oct-93 version 1.0
+       Initial coding and release.
+

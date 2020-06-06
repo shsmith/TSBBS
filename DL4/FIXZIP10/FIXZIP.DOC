@@ -1,0 +1,54 @@
+
+                  FIXZIP - Zipfile Redovery Utility
+                           v1.0, 02-21-89
+                   Copyright 1989 Samuel H. Smith
+
+
+PKUNZIP version 0.90 does not have the ability to extract *ANY* files
+from a truncated zipfile.  This utility will read the zipfile and
+attempt to reconstruct the central directory so that PKUNZIP can extract
+the files that are good.
+
+
+Usage:  fixzip infile.zip outfile.zip
+
+Example:
+        fixzip badzip.zip fixed.zip
+
+The input and output zipfiles must NOT be the same or your original file
+will be destroyed.
+
+
+This program is provided courtesy of:
+
+                Samuel H. Smith
+                 The Tool Shop
+                  Phoenix, AZ
+        (602) 279-2673 9600 baud / Hayes-V
+        (602) 264-2969 9600 baud / HST
+
+
+Disclaimer
+----------
+
+This software is completely FREE.   I ask only for your comments,
+suggestions and bug reports.   If you modify this program, I would
+appreciate a copy of the new source code.   Please don't delete my name
+from the program.
+
+I cannot be responsible for any damages resulting from the use or mis-
+use of this program!
+
+If you have any questions, bugs, or suggestions, please contact me at
+The Tool Shop,  (602) 279-2673.
+
+Enjoy!     Samuel H. Smith
+
+
+
+Revision History
+----------------
+
+02-21-89 v1.0
+   Initial release
+

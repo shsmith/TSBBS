@@ -1,0 +1,2 @@
+   procedure edit_message;
+   procedure edit_header;

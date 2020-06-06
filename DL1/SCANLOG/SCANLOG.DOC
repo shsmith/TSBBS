@@ -1,0 +1,99 @@
+
+                                SCANLOG
+
+                        DSZLOG Scanning Utility
+
+                         Public Domain Material
+                                   by
+                            Samuel H. Smith
+                                 5/7/93
+
+
+This program is a utility for use with the HSLINK file transfer
+protocol.  It scans a DSZLOG-style transfer log and returns ERRORLEVELS
+corresponding to either the number of successful incoming files, the
+number of successful outgoing files, the number of aborted incoming
+files, or the number of aborted outgoing files.  This information can be
+used in BATCH files to perform different actions depending on the
+results of a bidirectional protocol.
+
+
+                                 USAGE
+
+   scanlog LOGFILE -I
+     Sets ERRORLEVEL to the number of completed Incoming files
+
+   scanlog LOGFILE -O
+     Sets ERRORLEVEL to the number of completed Outgoing files
+
+   scanlog LOGFILE -R
+     Sets ERRORLEVEL to the number of aborted incoming files
+
+   scanlog LOGFILE -T
+     Sets ERRORLEVEL to the number of aborted outgoing files
+
+
+
+                         EXAMPLE (EXAMPLE.BAT)
+
+    @ECHO OFF
+
+    REM -- SAMPLE HSLINK COMMAND LINE TO SEND ALL FILES IN
+    REM -- C:\UPLOADS AND TO PLACE ANY RECEIVE FILES INTO
+    REM -- C:\DOWNLOADS.  EDIT THIS COMMAND LINE TO MATCH YOUR
+    REM -- REQUIRED COM PORT AND DIRECTORY NAMES.
+    SET DSZLOG=HSLINK.LOG
+    IF EXIST HSLINK.LOG DEL HSLINK.LOG
+    HSLINK -P2 C:\UPLOADS\*.* -UC:\DOWNLOADS
+
+    REM -- REPORT IF ANY OUTGOING FILES (UPLOADS) WERE SUCCESSFUL
+    SCANLOG HSLINK.LOG -O >NUL
+    IF ERRORLEVEL 255 GOTO NOLOG
+    IF ERRORLEVEL 1 GOTO UPLOADOK
+    ECHO NO FILES WERE TRANSMITTED.
+    GOTO CHECKI
+
+    :NOLOG
+    ECHO SINCE THERE IS NO DSZLOG FILE, NO FILES WERE TRANSFERRED.
+    GOTO CONTINUE
+
+    :UPLOADOK
+    ECHO AT LEAST 1 FILE WAS TRANSMITTED SUCCESSFULLY.
+
+    REM -- REPORT IF ANY INCOMING FILES (DOWNLOADS) WERE SUCCESSFUL
+    :CHECKI
+    SCANLOG HSLINK.LOG -I >NUL
+    IF ERRORLEVEL 1 GOTO DOWNLOADOK
+    ECHO NO FILES WERE RECEIVED.
+    GOTO CHECKT
+    :DOWNLOADOK
+    ECHO AT LEAST 1 FILE WAS RECEIVED SUCCESSFULLY.
+
+    REM -- REPORT IF ANY OUTGOING FILES (UPLOADS) WERE ABORTED
+    :CHECKT
+    SCANLOG HSLINK.LOG -T >NUL
+    IF ERRORLEVEL 1 GOTO UPLOADERR
+    ECHO NO OUTGOING FILES WERE ABORTED.
+    GOTO CHECKR
+    :DOWNLOADOK
+    ECHO AT LEAST 1 OUTGOING FILE WAS ABORTED.
+
+    REM -- REPORT IF ANY INCOMING FILES (DOWNLOADS) WERE ABORTED
+    :CHECKR
+    SCANLOG HSLINK.LOG -R >NUL
+    IF ERRORLEVEL 1 GOTO DOWNLOADERR
+    ECHO NO INCOMING FILES WERE ABORTED.
+    GOTO CONTINUE
+    :DOWNLOADOK
+    ECHO AT LEAST 1 INCOMING FILE WAS ABORTED.
+
+    :CONTINUE
+
+
+                               DISCLAIMER
+
+USE THIS FREE PROGRAM AT YOUR OWN RISK.  IN NO EVENT WILL  I BE LIABLE
+TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST PROFITS,  LOST  SAVINGS OR
+OTHER INCIDENTAL  OR CONSEQUENTIAL  DAMAGES ARISING OUT  OF YOUR USE  OR
+INABILITY  TO USE THE  PROGRAM, OR  FOR ANY CLAIM BY ANY OTHER PARTY.
+

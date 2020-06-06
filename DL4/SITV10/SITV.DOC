@@ -1,0 +1,19 @@
+
+SETV - StuffIt File Lister; S.H.Smith 7-11-89
+
+This is a simple verbose-listing utility for Macintosh .SIT files.
+
+I don't know what "folders" are, so it probably won't work on files that
+contain them.  I also don't know the format of the encoded date/time
+stamps.  If someone could kindly forward this information to the Tool
+Shop I would appreciate it.
+
+                                Samuel H. Smith
+                                Sysop of the Tool Shop
+                                (602) 279-2673
+                                (602) 279-0230
+                                (602) 264-3969
+
+Usage is
+        SITV file.SIT >OUTFILE
+

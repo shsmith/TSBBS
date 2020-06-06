@@ -1,0 +1,47 @@
+
+History of ProKit changes (in reverse order)
+--------------------------------------------
+
+15-Jun-94
+   Corrections to prevent distortion of lines containing a lot of @X codes.
+
+26-May-94
+   Corrected local logon logic to produce properly formatted CALLER log
+   entries.  Some caller log reports were being confused by a missing
+   logoff line when the shut_down_door function is used in a local call.
+
+23-Feb-94
+   Added logic to prevent a prokit door from actually logging the user off.
+   The usual prokit logoff functions will drop carrier, but expect pcboard
+   to perform the final logoff processing.  You can over-ride this by setting
+   the environment variable
+        SET PCB-G=ON
+   in a doorscript.
+
+21-Feb-94
+   Changed USERNET.XXX update logic to prevent corruption of USERNET.XXX
+   files created by PCBoard 15.x.
+
+21-Nov-92
+   ProDoor's new internal live chat mode is now available to prokit
+   doors via the 'live_chat' procedure call.
+
+11-Nov-92
+   Enabled file flagging logic at "More" prompts when allow_flagging is
+   set to true.  Results of flagging are stored in the string variable
+   pending_flags.
+
+01-Jul-92
+   Internal change in bufio unit to prevent endless DOS error [6]
+   retries while reading buffered files.
+
+17-Jun-92
+   Added
+        default_comment_subject: string40
+   variable in proenter unit.  This determines the default subject for
+   comment message entry.
+
+   Output translations were not being performed.  The logic to perform
+   output translations via pdispln and pdisp calls is not available.
+   Note that displn and disp do NOT translate.
+

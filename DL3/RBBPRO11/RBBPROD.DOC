@@ -1,0 +1,83 @@
+
+
+                      RBBS / ProDOOR Gateway
+                      ======================
+
+                       Version 1.1 02-Apr-88
+
+
+    An interface for PCB ProDOOR operation under RBBS CPC15.1C
+
+
+               This program is provided courtesy of:
+                         The Tool Shop BBS
+                            Phoenix, Az
+                          (602) 279-2673
+
+           Written by: Samuel H. Smith, (rev. 20-Dec-87)
+                      Public Domain Material
+
+
+
+
+INSTALLATION
+============
+
+1. Place the files in this ARC in \PROD.  If you want to put them 
+   somewhere else, you must edit PROD25.CNF, PROD.BAT and 
+   PCBOARD.DAT. 
+
+2. Copy the <FILES.BBS files from each of your public file areas> 
+   to files DIR1, DIR2, etc. in \PROD.  These are the files used 
+   by prodoor for the [F]ile listings, [Z]keyword search and 
+   [L]ocate files functions.  You might want to schedule an event 
+   to automatically update these from time to time.  Edit 
+   PCBOARD.DAT to list the pathnames to your download directories 
+   and your upload directory. 
+
+3. Edit DIR to list the file areas avaiable by number to correspond 
+   to the DIRn files.  
+
+4. (optional) create a bulletin menu file BLT and any number of 
+   bulletin text files BLT1, BLT2, etc.  Edit PCBOARD.DAT to list 
+   the number of active bulletins. 
+
+5. Rename PROD.BAT to the desired door number for ProDOOR in your 
+   RBBS system.  Edit your <doors menu> file to list this door. 
+   
+6. Security measures.  Prodoor has a full set of user-level based 
+   security features.  Security levels for the various menu 
+   options are defined in PCBOARD.DAT.   Security levels for 
+   download directories are defined in FSEC.   The prodoor gateway 
+   does not update any RBBS files to record user activity (it 
+   does, however, keep a detailed activity log in PCBOARD format 
+   as well as an optional transcript of all sessions) 
+
+
+
+DISCLAIMER
+==========
+
+This software is completely FREE.   I ask only for your comments, 
+suggestions and bug reports.   If you modify this program, I would 
+appreciate a copy of the new source code.   Please don't delete my 
+name from the program. 
+
+I cannot be responsible for any damages resulting from the use or 
+mis-use of this program!    
+
+If you have any questions, bugs, or suggestions, please contact me 
+at The Tool Shop,  (602) 279-2673.   The latest version is always 
+available for downloading. 
+
+Enjoy!     Samuel H. Smith
+           Sysop,  The Tool Shop.
+
+
+REVISION
+========
+
+Release 1.1 of RBBPRO has been compiled with the current ProDoor tool set
+and should solve the "lockup" problem seen in some systems.
+
+

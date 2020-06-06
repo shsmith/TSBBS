@@ -1,0 +1,69 @@
+Caluse 0.9 beta
+
+By Greg Grimshaw   Copyright 1992 - Grimware
+
+	I will make one statment before continuing, Pcboard 14.5
+is a commercial program. Commercial software requires that the 
+user (sysop) have made ALL legal payments before attempting to use
+this software. I will not be held responcible for people who violate 
+these requirements. ProLogon and ProDoor are copyright of Sam Smith and
+require user to make a payment for use beyond a resonable trial period.
+I do not intend to slander the name of Clark Developement with this
+document and any statements impling this are not intentional. I hope 
+that Clark Developement will reverse their present opinion and
+support open developement of good quality Third Party Applications(TPA).
+We have already lost the creative genious of Sam Smith, I hope
+we do not discorage others.
+
+This program has been created for LEGAL ProLogon BBS SYSOP
+who have been screwed by closed minded authors of PCBoard.
+These people feel that they can dictate to sysops and indirectly
+the people we support, the user, that they have such a special BBS
+package they are willing to reduce the software created for this 
+program by creating special file formats that can not be viewed 
+without authors signing a non-disclosure agreement. Although
+I created Caluse for Mail doors like Markmail, other doors that
+require from the user.sys file will benifit as well.
+
+	As any ProLogon sysop knows, you require PCB to operate
+correctly. As a ProLogon Sysop you have made a desision will
+not serve your users purposes as you wish. This does not mean 
+you should not be able to operate the software you have paid for.
+Caluse accesses PCB in a way that is transparent to your users. They 
+will not have to enter PCB just to run a TPA. 
+
+ Syntax:
+Caluse C:\BBS\
+
+	The command line is the pointer to the PCBoard.sys and must
+have the path only. I have Caluse in my utility directory but it may be 
+anywere in your path. 
+Typical batch file:
+
+@echo off 
+echo calling Qmail
+cd\pcb
+Set TPA=MM
+caluse C:\BBS\
+D:\MM\MarkMail
+set TPA=
+cd\bbs
+board
+
+
+	You will note that there is a call to name a DOS environment
+TPA to the name of the TPA predefined in PCBSETUP. After you call
+Caluse, User.sys will be present to the TPA to use. You must have
+sufficent DOS memory to add this variable.
+
+Some of the features of Caluse is the one call of the file to obtain
+the file. If Caluse discovers an error in operation, it will record 
+the error to a file called Caluse.err, it will contain the date, time
+and nature of the error. If no path is found in the command line, Caluse
+will assume the file is present in the operating directory.
+
+Typical contents of Caluse.err
+C:\BBS>type caluse.err
+05-30-1992    13:38:03      No TPA installed in DOS
+C:\BBS>
+

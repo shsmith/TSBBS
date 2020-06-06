@@ -1,0 +1,174 @@
+
+                      ProTPA - a ProDoor/Prologon Utility
+                   Copyright (C) 1993, All Rights Reserved
+
+             ***   by the ProDoor Express Development Team  ***
+
+                   Max Bernard, B.H. Forbes, Mark Fuller
+              Thomas Enstall, Steve Harris, and Samuel Smith
+
+
+  ------------------------------------------------------------------------
+  Description      :  Provide PCB14.5 USERS.SYS support for ProDoor Sysops
+
+  Original Code    :  Max Bernard
+  Non-TPA Code     :  B. H. Forbes
+  Lead Beta Tester :  Thomas Enstall
+
+  Program Usage/Syntax:
+
+    ProTPA [tpa_keyword]  <-- Creates USERS.SYS for TPA Door.
+    ProTPA /C             <-- Creates USERS.SYS for Non-TPA Doors.
+    ProTPA /R             <-- Reads USERS.SYS, updates system files.
+
+  ------------------------------------------------------------------------
+
+
+  What is ProTPA?
+  ---------------
+  If you are a ProDoor sysop who  has been wanting to  run TPA doors, or
+  doors that require USERS.SYS, and did NOT like having to invoke PCB to
+  do so, then this utility is for you.  It will create USERS.SYS for any
+  TPA door, will read back USERS.SYS data and update EXTUSER, USERS, and
+  the USERS.INF if necessary on return from the door.   In addition,  it
+  can also be used with any non-TPA door that requires a USERS.SYS  file.
+
+
+
+                        -------------------------
+                        Installation Instructions
+                        -------------------------
+
+  You will need to do FIVE things:
+  --------------------------------
+   1)  Put ProTPA somewhere in your path where it can be found.
+   2)  Revise your DOORS.LST file and set the USERS.SYS file to "N".
+   3)  Revise each door bat file and add TWO lines that will call ProTPA
+   4)  Revise your BOARD.BAT file and remove the call to PCB.
+   5)  Revise your PRODOOR bat file and remove any USERS.SYS commands.
+
+
+  Detailed Instructions:  (All VERY Important !!)
+  ----------------------
+  1)  You need to put ProTPA.EXE somewhere in your path so that it can
+      be found when it is called.  In addition and VERY IMPORTANT, you
+      MUST be in the directory where PCBOARD.DAT is when ProTPA runs
+      because it needs the system file names and locations.
+
+
+  2)  DOORS.LST file:
+      ---------------
+      Use PCBSETUP (or whatever you use now) to edit the DOORS.LST file
+      and set the "USERS.SYS" field of the door to "N".   We  won't  be
+      needing PCB to create this file anymore.   This is VERY important.
+      If you do NOT set this value to "N", ProDoor will think that PCB
+      is going to create the USERS.SYS and will NOT create the correct
+      $door.bat file.
+
+      NOTE: If you have security-specific DOORSxxx.LST files, make sure
+            you edit those as well.
+
+
+  3)  Door BAT files for TPA doors:
+      -----------------------------
+      You'll need to edit each TPA door bat file and make TWO calls to
+      the ProTPA utility.  One will create the USERS.SYS file, the other
+      will read the USERS.SYS file and if required, update EXTUSER, USERS
+      and USERS.INF.
+
+      Example TPA door bat file.   (TPA Door/keyword: MARKMAIL)
+      ---------------------------------------------------------
+      cd\pcb                             <-- Get to PCBOARD.DAT dir.
+      ProTPA MARKMAIL >> ProTPA.log      <-- Creates USERS.SYS
+      D:\PCB\DOORS\MARKMAIL\MARKMAIL     <-- Runs MarkMail door
+      ProTPA /R       >>ProTPA.log       <-- Reads updated USERS.SYS
+      IF EXIST EVENT.BAT EVENT
+      BOARD
+
+
+      Example NON-TPA door bat file.
+      ------------------------------
+      cd\pcb                             <-- Get to PCBOARD.DAT dir.
+      ProTPA /C       >> ProTPA.log      <-- Creates USERS.SYS
+      D:\PCB\DOORS\CHATBOX\CHATBOX       <-- Runs Chat Box door
+      ProTPA /R       >>ProTPA.log       <-- Reads updated USERS.SYS
+      IF EXIST EVENT.BAT EVENT
+      BOARD
+
+      NOTE:
+      The '>>' redirection to a ProTPA.LOG file lets you capture all
+      output from ProTPA into a log file which can be viewed later.
+      Once you are comfortable that ProTPA is doing it's job, you can
+      remove the ">>" redirection.
+
+
+  4)  BOARD.BAT
+      ---------
+      Edit your BOARD.BAT file to remove any lines that now call PCB to
+      process USERS.SYS doors.  Look for lines that look like this:
+
+            IF EXIST users.sys PCB145/KEY:open;prodoor^M
+
+      If you have a line like that in your BOARD.BAT, remove it or at
+      least comment or "rem" it out (with the REM command).
+
+
+  5)  PRODOOR
+      -------
+      Edit the bat file that calls ProDoor.  Mine is called PRODOOR,
+      and is in the same directory as the rest of my doors.  Yours
+      will probably be named the same, but might be in your \PCB dir.
+      Look for any lines in the bat file that look like:
+
+            IF EXIST users.sys GOTO Return145
+
+      If you have lines like those in your PRODOOR file, remove it or at
+      least comment it out (with the REM command).
+
+
+  6)  Multi-node operation
+      --------------------
+      If you run a multi-node system and don't share the above files among
+      your nodes, be sure to apply the above steps to the files used by each
+      node.
+
+
+  All Done!
+  ---------
+  You are now ready to bring the board back up.  If you followed the above
+  instructions, you should now have a faster, smoother way to run doors
+  that require a USERS.SYS.
+
+
+  Caveats:
+  --------
+  This ProTPA program is a FREE TEMPORARY utility provided to you by
+  the ProDoor Express (PDX) Development Team.  It is for ProDoor sysops
+  that need USERS.SYS support while waiting for ProDoor 4.0.
+
+  When ProDoor 4.0 is released, ProTPA will no longer be needed and thus,
+  will cease to function.  You will be able to use the free ProTPA program
+  for approximately 60 Days.
+
+  If you decide that you do NOT want to upgrade to ProDoor 4.0 but still
+  want to use ProTPA after ProDoor 4.0 is released, then you will need to
+  register ProTPA.   Registration for ProTPA is $15.  You may contact
+  us at:
+
+                    Forbes Development Company
+                         19811 Pine Wind
+                      Humble, Texas   77346
+
+         (713) 852-4541  (2400 baud, Free Public Lines)
+         (713) 852-4543  (38.4, HST, Private Lines)
+         (713) 852-7486  Fax
+  -----------------------------------------------------------------------
+
+  And last... You ain't seen nothing yet !!  Watch for ANOTHER "utility".
+  There are a couple of more on the way BEFORE ProDoor 4 !!
+
+  All from the ProDoor Express (PDX) Development Team... striving to do
+  better, and determined to make being a Sysop an easier/funner job.
+
+
+

@@ -1,0 +1,49 @@
+(*
+ * popup - utility library for simple "pop-up" windows (3-1-89)
+ *
+ *)
+
+type
+   videoram =           array [0..1999] of word;
+   videoptr =           ^videoram;
+
+   window_push_rec = record
+      WindMin:          word;
+      WindMax:          word;
+      TextAttr:         integer;
+      CuX:              integer;
+      CuY:              integer;
+   end;
+
+   window_save_rec = record
+      Push:             window_push_rec;
+      Image:            videoram;
+   end;
+
+var
+  { saved_window: window_save_rec; }
+   disp_mem:            videoptr;
+
+
+procedure setcolor(fg,bg: integer);
+
+function make_string(c: char; len: integer): string;
+
+procedure disp (s:                  string);
+procedure displn(s: string);       {fast display and linefeed}
+
+procedure shadow_display;
+
+procedure enable_cursor;
+procedure disable_cursor;
+
+procedure window(x1,y1,x2,y2: integer);
+
+procedure save_window(var saved: window_save_rec);
+procedure restore_window(saved: window_save_rec);
+
+procedure push_window(var push: window_push_rec);
+procedure pop_window(var push: window_push_rec);
+
+procedure init_pop_up;
+

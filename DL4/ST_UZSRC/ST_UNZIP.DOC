@@ -1,0 +1,383 @@
+
+             This Atari ST version derived from original
+                        code developed by: 
+        Copyright 1989 Samuel H. Smith;  All rights reserved
+               The Tool Shop BBS,  (602) 279-2673.
+
+
+
+          ===================================================== 
+
+         
+          v2.72:
+                Now correctly handles extended character set.
+                
+          =====================================================      
+
+
+
+
+          ST_UNZIP...a ZIP file extraction utility for the Atari ST.
+                               version 2.72
+                                 12/06/89
+
+                             EXTRACTING A ZIP FILE
+
+              This section will describe some simple examples, illustrating
+          the command format for extracting files from a ZIP file.
+
+          ||============================================================||
+          ||                                                            ||
+          ||                                                            ||
+          ||                 How to Extract a ZIP file                  ||
+          ||                                                            ||
+          || A ZIP file is one which holds much information in a        ||
+          || greatly reduced space.  Use the ST_UNZIP program to        ||
+          || extract compressed files from a ZIP file.  An entire ZIP   ||
+          || file can be extracted, or a specific file  can be          ||
+          || delegated to be extracted.                                 ||
+          ||                                                            ||
+          || There are four main parameters on the ST_UNZIP command:    ||
+          ||                                                            ||
+          || 1. The command options           |  letter commands        ||
+          ||                                  |  example: -v=view files ||
+          ||                                                            ||
+          || 2. The ZIP file name             |  zipfile.zip            ||
+          ||                                                            ||
+          || 3. Selected file to be extracted |  foo.txt                ||
+          ||                                                            ||
+          || 4. The destination where you want| Default = directory     ||
+          ||    the extracted information to  | where program is started||
+          ||    be located (optional)         |                         ||
+          ||                                                            ||
+          ||  Examples:                                                 ||
+          ||                                                            ||
+          ||    x zipfile.zip  A:\                                      ||
+          ||                                                            ||
+          || This command will extract all the files in the ZIP file    ||
+          || zipfile.zip.  It will locate extracted files to the A      ||
+          || drive.                                                     ||
+          ||                                                            ||
+          ||                                                            ||
+          ||    i  A:\zipfile.zip  foo.c                                ||
+          ||                                                            ||
+          || In this example the ZIP file located in the A drive will   ||
+          || be extracted  to the drive and/or folder ST_UNZIP is run   ||
+          || from, this is the default.  Only the foo.c file will be    ||
+          || extracted.                                                 ||
+          ||                                                            ||
+          ||     xo \collect\zipfile.zip  A:\                           ||
+          ||                                                            ||
+          || In this example, the path location of the ZIP file is      ||
+          || specified.   The files will be extracted to the A drive.   ||
+          || With the 'xo' option, any file on the A drive with the same||
+          || name will be overwritten _without_ asking for user         ||        
+          || confirmation.                                              ||
+          ||============================================================||
+
+
+                              ST_UNZIP  GUIDE
+
+          The following table will provide a quick  guide to all of
+          the options of ST_UNZIP.  The command syntax is also shown
+          below.
+
+          ||==============================================================||
+          ||                                                              ||
+          ||                        ST_UNZIP                              ||
+          ||                                                              ||
+          || ST_UNZIP [options] zipfile [d:path\] [file...]               ||
+          ||                                                              ||
+          || zipfile = ZIP file name.  Default extension is .zip          ||
+          || file    = Names of files to compress. Wildcards *, ?  are ok.||
+          ||           Default is ALL files.                              ||
+          || list    = An optional list file name.                        ||
+          ||                                                              ||
+          ||                                                              ||
+          || Options are:                                                 ||
+          ||            c[m]= extract a file to screen                    ||
+          ||              m = extracts a screen-full at a time            || 
+          ||                  and more                                    ||
+          ||            i[o]= extract individual file to disk             ||
+          ||            p   = extract a text file to printer              ||
+          ||            v   = verbose list to screen                      ||
+          ||              o = overwrite existing files:                   ||
+          ||            x[o]= extract all files from zipfile              ||           
+          ||            t   = test zipfile crc integrity                  ||           
+          ||==============================================================||
+
+                       DESCRIPTION OF COMMAND OPTIONS
+
+
+              The command options used in extracting a ZIP file will be
+          explained in detail in this section.  
+
+          - The command options must be the first parameter on the
+            command line.
+
+          - The first filename listed on the command line will be
+            interpreted as the ZIP file to be extracted.  When using
+            the 'i' option, the next filename will be interpreted as
+            the specific file to be extracted from the zipfile. 
+          
+          - The command can be typed using either upper case, lower
+            case, or any combination.
+
+          - All command options can be preceded by a '-' character
+            (i.e. -v).  At present there is no need to use this
+            character.  This flag will be used in future versions 
+            of ST_UNZIP.
+
+          - Unrelated options of ST_UNZIP cannot be combined.
+
+          - The default values for the command line are as follows:
+
+
+            1. If no extension is specified for the ZIP file the .zip
+               extension is assumed.
+
+            2. If no destination is specified for the extracted files, they
+               will be located in directory that the program is being run
+               from.
+
+            3. If no file specs (filenames without wildcards) are
+               listed, the default is all(*.*).
+
+
+              The following table lists all the options valid with the
+          PKZIP command.  A brief summary is also given in the table.  The
+          options are explained in detail, along with programming examples,
+          following the table.
+
+                          Table 1   ST_UNZIP Command Options
+          ==============================================================
+
+          OPTION         SUMMARY
+
+          -c[m]          Extracts a particular file to the console or
+                         with 'm' option extracts to console a screen
+                         full at a time, and more.
+
+          -i[o]          Extract a particular file to disk.  
+
+          -p             Extracts a particular text file to a printer.
+
+          -v             Verbose/views technical information about
+                         files in the ZIP.
+
+          -x[o]          Extracts files from the ZIP file.
+             
+             o           Overwrite existing files:  
+                         Used along with either 'x' or 'i' option.    
+             
+          -t             reads each file in zipfile then calculates
+                         the CRC value.  displays (OK!) if crc good,
+                         and displays actual and "should be" values.   
+ 
+          Notes:  Parameters listed in [ ] are optional.
+                 o   Overwrites existing files without asking for
+                     user confirmation.
+          ================================================================  
+
+
+              This section will give a detailed explanation of the command
+          options used in the ST_UNZIP command.
+
+              The command options are explained in groups determined by
+          function.  The options pertaining to extracting ZIP files are
+          explained first, followed by the view options, print options, and
+          miscellaneous options.
+
+
+          -x  Extract files from a ZIP file
+
+              This command will extract all files from a ZIP file.  
+          The extracted files will be located in the current
+          directory unless you specify a destination.  The -x option
+          is the default option for the ST_UNZIP command.  If no
+          option is listed on the command  -x will be assumed.
+
+              If a file being extracted already exists at the same
+          destination where the extracted files are being located, the
+          program will prompt you for confirmation before it overwrites the
+          existing file.
+
+
+          Example:   C:\DB\ST_UNZIP -x  A:lists.zip
+
+              In the above example, all of the files will be extracted
+          from the ZIP file called 'lists'. The ZIP file is located on
+          the A drive,  they will be extracted to the C:\DB\ directory.
+
+              If files in 'lists.zip' already exists at 'C:\DB\', the
+          program will prompt you for confirmation before it overwrites 
+          the existing file.
+          ============================================================
+
+
+          -xo Extracts files from ZIP file and overwrite existing files
+              on disk.
+
+              This command will extract files from a ZIP file and
+          automatically overwrite any same-named files found at the
+          destination where the extracted files are being located.  The
+          program will NOT prompt you for confirmation before overwriting
+          these files.
+
+             The extracted files will be located in the current directory 
+          unless you specify a destination.
+
+          Example:   C:ST_UNZIP -xo zipfile 
+
+              In the above example,  all files will be extracted
+          from the ZIP file called 'zipfile' (the .zip extension is
+          assumed).  As the files are being extracted any file with
+          the same name in the current directory (C:) will be 
+          overwritten.
+          ============================================================
+          
+
+          -i  Extract an individual file from a ZIP file
+
+              This command will extract an individual file from a ZIP   
+          file.  The extracted file will be located in the current
+          directory unless you specify a destination.
+
+              If a file being extracted already exists at the same
+          destination where the extracted files are being located, the
+          program will prompt you for confirmation before it overwrites
+          the existing file.
+
+
+          Example:   C:ST_UNZIP -i zipfile stuff.exe E:\foo\
+
+              In the above example,  the 'stuff.exe' file will be extracted
+          from the ZIP file called 'zipfile' (the .zip extension is
+          assumed).  The file will be extracted to the 'E:\foo\' directory.
+          
+              If 'stuff.exe' already exists at 'E:\foo\', the program will
+          prompt you for confirmation before it overwrites the existing file.
+           ============================================================
+
+
+          -io Extract an individual file from ZIP file and overwrite
+              any existing file with same name.
+
+              This command will extract an individual file from a ZIP
+          file and automatically overwrite any same-named file found. The
+          program will NOT prompt you for confirmation before overwriting
+          this file.
+
+             The extracted file will be located in the current directory 
+          unless you specify a destination.
+
+ 
+          Example:   C:ST_UNZIP -xo zipfile stuff.exe
+
+              In the above example,  the 'stuff.exe' file will be extracted
+          from the ZIP file called 'zipfile' (the .zip extension is
+          assumed).  As the file is being extracted any file with
+          the same name in the current directory (C:)will be 
+          overwritten.
+          ============================================================
+
+
+          -c     Extract files from a ZIP file and display them on the
+                 screen
+
+              This command will extract files from a ZIP file and display
+          them on the monitor.  The extracted files will scroll
+          continuously on the screen.
+
+          
+          Example:   A:ST_UNZIP  -c d:\schedule\zipfile dates.doc
+
+              In this example, the file 'dates.doc' will be extracted from
+          the 'zipfile' file in directory 'd:\schedule\' and displayed on 
+          the screen and scroll continuously.
+
+          -cm    Lists all files in ZIP file and steps through them one at
+                 a time prompting for action
+
+              This commmand will list all files, step through them, and
+          prompt for (N)ext (V)iew (R)elist/(O)ne (Q)uit.
+
+          Example:   C:ST_UNZIP  -cm e:\temp\zipfile
+
+              The above example will list the contents of 'zipfile'.
+          After the listing each file will be stepped to and a
+          menu of commands  will be provided.  If you select (N)ext,
+          the next file in the 'zipfile' will be the choice for action.
+          If you choose to (V)iew a file, the first display will be a
+          screen-full of the selected file.  You will then be prompted
+          for "More:  (Y)es, (N)o, (C)ontinuous?".  Selecting
+          (Y)es  will display another screen full of text.  Selecting 
+          (N)o will abort the (V)iew action on the present file and 
+          skip to the next file in the "zipfile".
+
+              If the selection is (C)ontinuous, the file selected will
+          scroll continuously.  You can pause the display by using
+          [Control-s]:(hold the 'Control' key down and press 's'),
+          to resume the display hit [Control-q].
+
+              After the initial detailed verbose listing, the display
+          defaults to an alphabetical list of filenames only.  You can
+          use the (R)elist command to redisplay the detailed verbose
+          listing.  You can also call up an individual file and view
+          its detailed verbose information by using the (O)ne command
+          selection.   Selecting (O)ne will display: (N)ext (V)iew 
+          (M)ain menu.  The (N)ext command will allow you to skip
+          to the particular file you wish detailed verbose information
+          on.  When you get to the file name you wish to examine,
+          selecting (V)iew will display detailed verbose information
+          about that file only.  Selecting (M)ain menu returns you to
+          the command line prompt: (N)ext (V)iew (R)elist/(O)ne (Q)uit.
+          
+          
+                   Non-text files will not be displayed.
+          ============================================================
+
+
+          -v  Verbose\view technical information
+
+              This option will display technical information concerning the
+          files contained within a ZIP file.  
+
+               The following information about each file in the ZIP file
+          will be displayed (scrolled) on the screen.
+
+                      Name        Name of the file
+                      Length      Original length of the file
+                      Stowage     Type of file compression used, Implode or
+                                  Shrink, (or Reduce if an older version of
+                                  PKZIP was used)
+                      SF          Percent reduction in file size
+                      Size        Size of the compressed file
+                      Date        Actual date of the file
+                      Time        Actual time of the file
+                      CRC-32      The CRC-32 value of the file
+          ============================================================
+
+
+          -p   Extract  a particular text file to a printer
+
+              This option is used to extract files from a ZIP file and send
+          the output to a printer.  
+
+
+          Example:   C:ST_UNZIP -p zipfile.zip stuff.doc
+
+              In the above example, the 'stuff.doc' file will be extracted
+          from 'zipfile.zip' to the printer.
+          ============================================================
+          
+          
+          -t   Tests the CRC integrity of all files in a zipfile
+          
+               This options reads the zipfile registered CRC value then
+           calculates the files actual CRC value.  If the two values match,
+           an "OK!" is displayed, if they do not match, a bell is sounded
+           and an error message is displayed for the particular file with
+           the error.    
+============================================================================
+                                 The End

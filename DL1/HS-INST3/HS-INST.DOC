@@ -1,0 +1,98 @@
+
+
+              INSTALLING HS/LINK IN COMM AND BBS PROGRAMS
+
+
+    HS-INST is a collection of installation tips on how to install the
+    HS/Link protocol in a number of different COMM and BBS programs.
+
+    HS/Link is a new high speed, full streaming, full-duplex,
+    bi-directional batch file transfer protocol with advanced
+    full-streaming-error- correction and dynamic-code-substitution.
+    It is easy to use and runs very fast.
+
+
+    The HS/Link protocol can be easily installed in most modern COMM
+    programs.  Specific instructions have been prepared for many popular
+    COMM programs, and are available in the following separate ZIP
+    files.
+
+     Communication program           Instructions posted in
+     _____________________           _______________________
+
+        BOYAN 5.0                       HS-BOY50.ZIP
+
+        {COMMO}                         HS-COMMO.ZIP
+
+        GT POWER 15.50                  HS-GT15.ZIP
+
+        PROCOMM PLUS and
+        PROCOMM PLUS TEST DRIVE         HS-PCPTD.ZIP
+
+        PROCOMM PLUS/WINDOWS            HS-PROW.ZIP
+
+        QMODEM 4.3                      HS-QMOD.ZIP
+
+        ROBO COMM 3.1                   HS-RC31.ZIP
+
+        TELIX 3.1                       HS-TELIX.ZIP
+
+        TELEMATE 2.1                    HS-TMATE.ZIP
+
+
+
+    The HS/Link protocol can easily be installed in most modern BBS
+    programs as an external protocol.   Specific instructions have been
+    prepared for many popular BBS programs, and are available in
+    separate ZIP files.
+
+              BBS program                      Instructions posted in
+     _______________________________           _______________________
+
+        Auntie 5.12                               HS-AU512.ZIP
+  
+        GAP 5.1                                   HS-GAP51.ZIP
+
+        MarkMail under Gap                        HS-MKML.ZIP
+
+        PCBOARD 14.5  (11/90)                     HS-145.ZIP
+
+        PCBOARD 14.5a (10/30/91)                  HS-145A.ZIP
+
+        PROBOARD 1.17                             HS-PB117.ZIP
+
+        PRODOOR 3.43 (10/30/91)                   HS-PROD.ZIP
+
+        RemoteAccess 1.10                         HS-RA110.ZIP
+        RemoteAccess 1.11                         HS-RA111.ZIP
+        RemoteAccess                              HS-RA.ZIP
+
+        RBBS 17.3C (12/05/91)                     HS-R173C.ZIP
+
+        Rybbs                                     HS-RYBBS.ZIP
+
+        SuperBBS 1.15 Gamma4                      HS-S1154.ZIP
+
+        Searchlight BBS                           HS-SLBBS.ZIP
+
+        Spitfire BBS version 3.0                  HS-SF30.ZIP
+
+        UltraBBS version 2.08                     HS-UB208.ZIP
+
+        Virtual BBS version 5.40                  HS-VBB54.ZIP
+
+        Waffle                                    HS-WAF.ZIP
+
+        Wildcat! Test Drive version 2.15          HS-WC215.ZIP
+
+        WWIV version 4.20                         HS-WWIV.ZIP
+
+
+
+                         NOTE FOR BBS OPERATORS
+                         ======================
+
+      If you wish to post the zip files nested inside HS-INST for
+      seperate downloading by your users, you can use the file 'DIR' as
+      a directory listing.
+

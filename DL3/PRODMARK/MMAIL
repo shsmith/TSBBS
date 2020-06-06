@@ -1,0 +1,13 @@
+@ECHO OFF
+cd %PCBDIR%
+cls
+SET TPA=MM
+CALUSE I:%PCBDIR%\
+sys145
+MM
+CD %PCBDIR%
+pcb145 /readsys
+SET TPA=
+if exist pcbstats.dat del pcbstats.dat
+IF EXIST EVENT.BAT EVENT
+BOARD

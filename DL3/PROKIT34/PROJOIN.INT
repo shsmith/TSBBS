@@ -1,0 +1,44 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * PCB ProDOOR ProJoin unit - join, abandon, config, status, ZIPM
+ *
+ *)
+
+unit ProJoin;
+
+interface
+
+   uses Tools;
+
+procedure select_main_board;
+procedure abandon_conference;
+procedure display_conference_status(func: char);
+   {display status of all conferences; optionally exclude those
+    with no new messages in them}
+
+procedure conference_registration;
+procedure capture_conference(n: integer);
+procedure capture_new_mail;
+procedure display_conference_news;
+procedure join_conference;
+
+procedure open_mail_capture;
+procedure buffer_mail_capture;
+procedure close_mail_capture;
+procedure capture_current_message;
+function lookup_conference_number(name: anystring): integer;
+procedure search_conference_list;
+
+
+implementation

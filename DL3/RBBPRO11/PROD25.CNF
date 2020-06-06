@@ -1,0 +1,47 @@
+; Stripped config file for ProDOOR 2.5 - see PRODOOR.CNF for full comments 
+; EXAMPLE FOR RBBS/PRODOOR RBBPRO10.ARC
+HANDSHAKE
+1.0
+20.0
+3.0
+C:\PROD\PLAY
+C:\PROD\HOLD
+C:\PROD\HELD
+Z T 9 Zmodem Batch
+C:\PROD\dsz pB4096 handshake cts sz *.*
+O T 9 Overdrive SEAlink Batch
+C:\PROD\clink /P$N$ /O T *.*
+B T 9 Ymodem Batch
+C:\PROD\dsz pB4096 handshake cts sb -k *.*
+S T 9 SEAlink Batch
+C:\PROD\clink /P$N$ T *.*
+T R 0 Alternate-SEAlink
+C:\PROD\dsz pB4096 handshake cts sb *.*
+Y T 1 Ymodem (Xmodem-1K)
+C:\PROD\dsz pB4096 handshake cts sx -k
+C T 1 Slow Xmodem/CRC
+C:\PROD\dsz pB4096 handshake cts sx
+K T 9 Slow Kermit Batch
+C:\PROD\pckermit -C -L COM$N$ -B $B$ -M 31 -P N -S *.*
+W T 1 Window Xmodem
+C:\PROD\wxfer -C port $N$ speed $B$ -S
+G T 9 Ymodem-G Batch
+C:\PROD\dsz pB4096 handshake cts sb -k -g *.*
+Z R 0 Zmodem Batch
+C:\PROD\dsz pB4096 handshake cts restrict rz
+B R 0 Ymodem Batch
+C:\PROD\dsz pB4096 handshake cts restrict rb
+O R 0 Overdrive SEAlink Batch
+C:\PROD\clink /P$N$ /O R *.*
+Y R 1 Ymodem (Xmodem-1K)
+C:\PROD\dsz pB4096 rx -c -k
+S R 0 SEAlink Batch
+C:\PROD\clink /P$N$ R
+C R 1 Slow Xmodem/CRC
+C:\PROD\dsz pB4096 rx -c
+K R 0 Slow Kermit Batch
+C:\PROD\pckermit -C -L COM$N$ -B $B$ -M 31 -P n -R
+W R 1 Window Xmodem
+C:\PROD\wxfer -C port $N$ speed $B$ -R
+G R 0 Ymodem-G Batch
+C:\PROD\dsz pB4096 handshake cts rb -g

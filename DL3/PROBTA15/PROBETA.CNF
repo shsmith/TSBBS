@@ -1,0 +1,77 @@
+INTERRUPT
+6
+H-HS/Link
+hslink -p$N$ -nu
+P-HS/Link via PC Pursuit
+hslink -p$N$ -nu -w4 -s512 -!
+Z-Zmodem
+dsz port $N$ estimate 0 $C$ sz
+B-Ymodem Batch
+dsz port $N$ estimate 0 $C$ sb -k -c
+O-Xmodem-1K (old Ymodem)
+dsz port $N$ estimate 0 $C$ sx -k -c
+C-Xmodem/CRC
+dsz port $N$ estimate 0 $C$ sx -c
+6
+Windows DLP HS/Link Protocol BETA
+|This is a special version of HS/Link designed
+|for use with PROCOMM PLUS FOR WINDOWS in
+|the windows environment. (74k)
+U:\DL1\HSD114*.ZIP
+HS/Link External Protocol BETA v1.21B0
+|Beta test version of HS/link corrects problems
+|in -MN option and deals better with locking
+|modems. (96k)
+U:\DL1\HS121B*.ZIP
+HS/Link RELEASE Version 1.20.
+|This is the complete 1.20 release, including
+|all DOC files, the HSCONFIG program and the
+|FOSSIL version FHSLINK.EXE.  (size: 145k)
+U:\DL1\HS120.ZIP
+Complete Instructions for HS/Link Installation.
+|Includes all supporting docs, and batch files as
+|well as MKDLIST, BEW2LST and DLOG2LST utilities.
+|(size: 95k)
+U:\DL1\HS-INST?.ZIP
+Master File listing by file directory. (608k)
+U:\DL1\TOOLSHOP.EXE
+Master File listing by file name. (560k)
+U:\DL1\TOOLSORT.EXE
+
+----------------------------------------------
+Format of PROBETA.CNF
+
+The first line must be 'INTERRUPT'.
+
+The next line is the number of protocols.
+
+Each protocol is defined in two lines.  The first line is the protocol
+name, and the second is the command line to use for the protocol.  All
+prodoor $ and @ variables are available, if needed.  The first letter of
+the protocol name is used as the protocol letter.
+
+The next line is the number of beta files.
+
+Each beta file is defined in two lines.
+The first line is the description of the file. The description can be up
+to 255 characters. Continuation description lines must begin with the
+"|" character.  The base filename will automatically be inserted into
+the first 13 characters of the description.
+The second line is the full pathname of the file.
+
+Newest PUBLIC BETA version of HS/Link.
+|Corrects bugs and adds many features, including an
+|ONLINE CHAT function as and a new FOSSIL version.
+|THIS IS BETA TEST CODE - USE AT YOUR OWN RISK!
+U:\DL1\HS113??.ZIP
+Newest DAILY ALPHA/BETA version of HS/Link.
+|This is NOT a public beta and should not be
+|uploaded elsewhere.  Changes often and may not
+|always work.  Use the PUBLIC BETA above for
+|more reliable code.
+U:\DL1\HSLEXE.ZIP
+Current HS/Link RELEASE Version 1.12.
+|This is the complete 1.12 release, including
+|all DOC files and the HSCONFIG program.
+U:\DL1\HS112.ZIP
+

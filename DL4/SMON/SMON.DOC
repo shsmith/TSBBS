@@ -1,0 +1,27 @@
+
+SMON - Seek Monitor
+
+This is a small resident utility that provides a "moving seek display" that
+follows the position of your disk heads as they move.   The seek monitor
+display shows the active drive letter and the function code.  Function
+codes are:
+  R - read
+  W - write
+  F - format
+  ? - verify
+  * - other
+
+This program isn't very useful, but it's fun to watch while waiting for 
+your disk...  (it doesn't slow your disk down by more than 0.1%).
+
+This is FREEWARE, and the source is included (of course!).   Please don't
+sell this program.   If you modify it, I'd like to see the new version.
+
+Courtesy of:
+   Samuel H. Smith and
+   The Tool Shop PCBoard
+   (602) 279-2673
+
+-----
+   SMON.COM is assembled for COLOR monitors
+   SMONM.COM is for monochrome

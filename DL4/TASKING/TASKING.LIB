@@ -1,0 +1,82 @@
+
+--
+-- TASKING - Task Management Package Specification
+--
+-- This package provides a simple "co-routine" method of management
+-- of multiple tasks.
+--
+-- Author: S.H.Smith, 30-Mar-86
+--
+
+with TASKDATA;
+
+package TASKING is
+
+--
+-- visible tasking data types
+--
+   subtype CODE_ADDRESS is TASKDATA.CODE_ADDRESS;
+      -- an address within the code segment
+
+   subtype PRIORITIES is TASKDATA.PRIORITIES;
+      -- priority of a task; 0 is highest
+
+   subtype TASK_ID is TASKDATA.TASK_ID;
+      -- a unique task identifier code
+
+--
+-- task creation
+--
+   procedure START (addr:  in CODE_ADDRESS;     -- task entry address
+                    name:  in string;           -- task name
+                    size:  in integer;          -- size of task stack/1000
+                    prio:  in PRIORITIES;       -- task priority
+                    id:    out TASK_ID);        -- the new task's ID
+
+      -- start a new task and return the task ID code so
+      -- that the task may be later identified.
+
+
+   procedure START (addr:  in CODE_ADDRESS;     -- task entry address
+                    name:  in string;           -- task name
+                    prio:  in PRIORITIES);      -- task prioritiy
+
+      -- start a new task with defaults and throw away task ID.
+      -- for use when tasks control is not needed.
+
+
+--
+-- Task time sharing
+--
+   procedure GIVE_UP_TIME;
+      -- the calling task wishes to give up some time so that
+      -- other tasks may execute.  this is the only way that control
+      -- is passed from task to task in this implementation of TASKING.
+
+   procedure GIVE_UP_TIME (ticks: integer);
+      -- the calling task wishes to give up 'ticks' timeslices so that
+      -- other tasks may execute.
+
+   procedure EXECUTE_TASK;
+      -- executes the next eligible task.  returns when that task
+      -- calls give_up_time.
+      -- procedure repetitively.
+
+
+--
+-- Exceptions
+--
+   TOO_MANY_TASKS: exception;
+      -- this exception is raised when there are too many active tasks
+      -- and another one cannot be created.
+
+   INVALID_TASK: exception;
+      -- this exception is raised when the specified task is
+      -- not active.
+
+   NO_ACTIVE_TASKS: exception;
+      -- this exception is raised by execute_task when there are no
+      -- tasks to execute.
+
+end TASKING;
+

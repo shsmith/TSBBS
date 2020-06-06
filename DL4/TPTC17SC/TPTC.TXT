@@ -1,0 +1,904 @@
+
+
+.c TPTC17 - Translate Pascal to C
+
+.c Version 1.7a, 31-Mar-88
+
+
+.c (C) Copyright 1986, 1988 by Samuel H. Smith
+
+.c All rights reserved.
+
+
+
+    This program will read a turbo pascal source file and convert it
+    into the corresponding C source code.   It does much of the work
+    required in a full translation.
+
+.f Turbo Pascal is a registered trademark of Borland International.
+
+
+
+.v TABLE OF CONTENTS
+
+    Usage . . . . . . . . . . . . . . . . . . . . . . .
+
+    Command line options. . . . . . . . . . . . . . . .
+
+    Translations performed. . . . . . . . . . . . . . .
+
+    Support for Turbo Pascal 4.0. . . . . . . . . . . .
+       Files created for each unit. . . . . . . . . . .
+       The system unit. . . . . . . . . . . . . . . . .
+       The standard units . . . . . . . . . . . . . . .
+       Interrupt and Inline procedures. . . . . . . . .
+
+    Support for Turbo Pascal 3.0. . . . . . . . . . . .
+
+    Support for Pascal/MT+. . . . . . . . . . . . . . .
+
+    Language extensions . . . . . . . . . . . . . . . .
+       Imbedded C language. . . . . . . . . . . . . . .
+       Imbedded preprocessor directives . . . . . . . .
+       The 'AS <replacement name>' clause . . . . . . .
+       The 'SYMTYPE <typename>' clause. . . . . . . . .
+
+    Known problems and planned changes. . . . . . . . .
+
+    Explanation of error messages . . . . . . . . . . .
+
+    Explanation of errors reported by the C compiler. .
+
+    Revision history. . . . . . . . . . . . . . . . . .
+
+    Support . . . . . . . . . . . . . . . . . . . . . .
+
+    License . . . . . . . . . . . . . . . . . . . . . .
+       SourceWare: What is it?. . . . . . . . . . . . .
+       Why SourceWare?. . . . . . . . . . . . . . . . .
+       Copyright. . . . . . . . . . . . . . . . . . . .
+
+.p a
+.v USAGE
+
+   TPTC input_file [output_file] [options]
+
+
+Where:
+   input_file      specifies the main source file, .PAS default
+   output_file     specifies the output file, .C default
+   -B              deBug trace during scan
+   -BP             deBug trace during Parse
+   -D              Dump user symbols
+   -DP             Dump Predefined system symbols
+   -I              output Include files' contents
+   -L (-NL)        map (don't map) all identifiers to Lower case
+   -M              use Pascal/MT+ specific translations
+   -NC             No Comments passed to output file
+   -NU             No standard Unit (use to translate tptcsys)
+   -Q              Quiet mode; suppress warnings
+   -R              format displays for Redirection
+   -Sdir\          search dir\ for .UNS symbol files
+   -Tnn            Tab nn columns in declarations
+   -Wdrive:        use drive: for Work/scratch files (ramdrive)
+   -#              don't translate lines starting with "#"
+
+
+Default command parameters are loaded from TPTC environment variable.
+
+
+Examples:
+   tptc fmap
+   tptc fmap -L -d -wj:\tmp\
+   tptc -l -d -wj: -i -q -t15 fmap.pas fmap.out
+
+   set tptc=-wj: -i -l -sc:\libs
+   tptc test       ;uses options specified earlier
+
+.p a
+.v COMMAND LINE OPTIONS
+
+.u -B
+
+Debug trace during scan.  Traces source line numbers and lexical tokens
+seen during the source scan.  This trace may be helpful to isolate the
+exact context where an error message is produced.  It is also helpful in
+tracking down "lockups" during translation (although the current
+translator version should be immune to locking).
+
+Example:
+   TYPES.PAS(26) {str2} {:=} {"hello2"} {;}
+   TYPES.PAS(27) {str1} {[} {1} {]} {:=} {'H'} {;}
+
+
+.u -BP
+
+Debug trace during parse.  This option produces a trace of each major
+step in the parsing process.  This trace is handy if you want to know
+how the translator recognizes a particular statement.  When the
+translator botches a translation, this output will also help to identify
+the point at which the mistake was made.
+
+Example:
+   TYPES.PAS(26) {str2} <stmt> <ident> <lvalue> {:=} <assign> {"hello2"}
+   <expr> <term> <string> {;}
+   TYPES.PAS(27) {str1} <stmt> <ident> <lvalue> {[} <subs> {1} <expr>
+   <term> <number> {]} {:=} <assign> {'H'} <expr> <term> <char> {;}
+
+
+
+.u -D
+
+Dump user symbols.  Produces a report of the symbol table contents after
+each program unit is processed.  This report is handy if you suspect the
+translator has min-interpreted a declaration.  It is also instructive in
+following a given translation.
+
+Example:
+   /* User symbols:
+    *    Type                 Class  Base  Limit Pars  Pvar   Identifier
+    *   -------------------- ------- ---- ------ ---- ------ --------------
+    *    integer             []       100      0   -1      0   ar3
+    *    myarray             Scalar     1      0   -1      0   ar2
+    *    integer             Subtype  100    200   -1      0   range2
+    *    integer             Const      0    100   -1      0   lowend
+    */
+
+
+
+.u -DP
+
+Dump predefined system symbols.  Reports the "predefined" symbols at the
+end of a translation.  This portion of the symbol table includes the
+symbols from any "uses" statements, as well as the "builtin" symbol
+table entries.
+
+Example:
+   /* Predefined symbols:
+    *    Type                 Class  Base  Limit Pars  Pvar   Identifier
+    *   -------------------- ------- ---- ------ ---- ------ --------------
+    *    text                Scalar     0      0   -1      0   input
+    *    integer             Subtype    0      0   -1      0   shortint
+    *    integer             Builtin    0      0    2      0   memw
+    *    string              *          1      0   -1      0   charptr
+    *    char                []         1      0   -1      0   string
+    *    boolean             ()         0      0    1      0   seekeof
+    *    Int                            0  32767   -1      0   integer
+    */
+
+
+
+.u -I
+
+Output include files' contents.  This option causes the translator to
+process all include files during translation.  The include file contents
+will then be included in the translation output.  Use the UNINC
+post-processor to extract the translated include files back to separate
+files.
+
+When not used, include statements are translated into C format #include
+directives, but the contents of the include file are not loaded.
+Improper translation is likely to result if the include file contains
+procedure or data declarations needed during the translation of the main
+file.
+
+
+
+.u -L (-NL)
+
+Map (don't map) all identifiers to lower case.   The -L option causes
+the translator to force all identifiers to lower case.  This is useful
+when translating sources that are all upper-case, or that mix cases in
+an irregular way.  This may be required since case is significant to all
+standard C compilers.   When compiling a unit, the unit symbol file will
+contain lower-case identifiers.   Identifiers loaded from a "uses"
+statement are not effected by this option (they are effected by the -L
+option at the time of translation of the unit interface).   -NL cancels
+the effect of -L and is provided as an "over-ride" when you have made -L
+the default through the TPTC environment variable.
+
+
+.u -M
+
+Use Pascal/MT+ specific translations.  Enables some translations that
+are specific to Pascal/MT+.  This mode is automatically activated when a
+"MODULE" statement is encountered.
+
+
+.u -NC
+
+No comments passed to output file.  This option strips comments from the
+translated code.  It is useful when translating very large programs,
+since it greatly reduces the size of the translated output.
+
+
+.u -NU
+
+No standard unit.  This option disables the implicit use of TPTCSYS. It
+is used primarily when re-translating TPTCSYS (since it should not use
+itsself!).  It can also be used where you plan to explicity use your own
+special system unit.
+
+
+.u -Q
+
+Quiet mode; suppress warnings.  This option suppresses all "Warning:"
+messages that are produced by the translator.  Warning messages are
+often very important, so be careful with this option.
+
+
+.u -R
+
+Format displays for redirection.  This option disables the running
+line-number and include filename display that is normally produced. It
+is needed when you redirect translator output to a file.
+
+
+.u -Sdir\
+
+Search dir\ for .UNS symbol files.  Each "uses" statement causes a
+corresponding .UNS file to be loaded.  This option specifies the
+directory in which your standard .UNS files are stored.  The translator
+first checks the current directory, then the specified search directory.
+This option eliminates the need for a copy of TPTCSYS.UNS, DOS.UNS,
+CRT.UNS, etc. in each directory.
+
+
+.u -Tnn
+
+Tab nn columns in declarations.  The translator attempts to align
+identifiers in declarations.  Because of the differences in identifier
+ordering between C and pascal, it is not possible to preserve the
+original spacing from the source file.  If you specify -T0, all
+alignment will be disabled.  Remember, this is a translator - not a
+pretty-printer.  If you want "beautiful" formatting in the translated
+program, you will need to use a formatting utility.  I recommend
+INDENT2, which is very flexible and includes full source C code.
+
+
+.u -Wdrive:
+
+Use drive: for work/scratch files (ramdrive).  The translator creates a
+scratch file for each procedure translated.  This option allows you to
+route those scratch files to a specified disk drive or subdirectory.  If
+you have a RAMDISK, you will want to use the -W option.
+
+
+.u -#
+
+Don't translate lines starting with "#".  Programs originally written
+for TSHELL already include C compatible preprocessor directives. This
+option allows the translator to pass these directives without any
+translation.
+
+.p a
+.v TRANSLATIONS PERFORMED
+
+Comments are translated from either {...} or (*...*) into /*...*/.
+
+Begin and End are translated into { and }.
+
+Const declarations are translated from
+   ID = VALUE
+into
+   static ID = VALUE.
+
+Simple Var declarations are translated from
+   ID TYPE
+into
+   TYPE ID.
+
+Integer subrange types are translated into integers.
+
+Record types are translated from
+   ID = record MEMBER-LIST end
+into
+   typedef struct { MEMBER-LIST } ID.
+
+Enumeration types are translated from
+   ID = (...)
+into
+   typedef enum {...} ID.
+
+Array types are translated from
+   ID = array [RANGE] of TYPE
+into
+   typedef TYPE ID[RANGE].
+
+Pointer types are translated from
+   ID = ^DEFINED-TYPE
+into
+   DEFINED-TYPE *ID.
+
+String types are translated from
+   ID = string[N]
+into
+   typedef char ID[N+1].
+
+File types are translated from
+   ID = text[N]
+   ID = file
+into
+   FILE *ID
+   int ID.
+
+For statements are translated from
+   for VAR := FIRST to LAST do STATEMENT
+   for VAR := FIRST downto LAST do statement
+into
+   for (VAR = FIRST; VAR <= LAST; VAR++) STATEMENT
+   for (VAR = FIRST; VAR >= LAST; VAR--) STATEMENT
+
+While statements are translated from
+   while COND do STATEMENT
+into
+   while (COND) statement.
+
+Repeat statements are translated from
+   repeat STATEMENTS until COND
+into
+   do { STATEMENTS } while(!COND).
+
+If statements are translated from
+   if COND then STATEMENT else STATEMENT
+into
+   if (COND) STATEMENT; else STATEMENT.
+
+Case statements are translated from
+   case VALUE of
+      V:    STATEMENT;
+      V,U:  STATEMENT;
+      else  STATEMENT
+   end
+into
+   switch (VALUE) {
+      case V:  STATEMENT; break;
+      case V:
+      case U:  STATEMENT; break;
+      default: STATEMENT;
+   }.
+
+Ranges in the form VAL..VAL automatically include cases for intermediate
+values.
+
+The IN operator is translated from
+   VAL in [A,B,C]
+ into
+   inset(VAL, setof(A,B,C,-1)).
+
+The ParamCount and ParamStr functions are translated from
+   paramcount
+   paramstr(n)
+into
+   argc
+   argv[n].
+
+Dummy parameter lists are added to function and procedure calls, where
+they are required in C but not in Pascal.
+
+The following expression operators are translated
+   from  DIV  to  / ,     MOD  to  % ,
+         AND  to  &&,     OR   to  ||,
+         XOR  to  ~ ,     <>   to  !=,
+         NOT  to  ! ,     SHR  to  >>,
+         SHL  to  <<,     =    to  ==,               {+others}
+         :=   to  = .
+Bitwise AND and OR operators are translated into & and |.
+
+The '^' symbol is translated
+   from  VAR^          to  *VAR,
+         VAR^.MEMBER   to  VAR->MEMBER.
+
+Exit statements are translated
+   from  exit    to  return.
+
+The New operator is translated from
+   new(VAR)
+into
+   VAR = malloc(sizeof(*VAR)).
+
+
+Procedure/function formal parameter lists are translated into the
+   new form defined in ANSI C (and as used by Turbo C):
+from
+   function NAME(V1: TYPE1; V2: TYPE2): TYPE3
+into
+   TYPE3 NAME(TYPE1 V1,TYPE2 V2)
+
+Procedures are translated into functions with 'void' return types.
+
+The special character literal syntax, ^C or #nn, is translated into
+'\xHH', where HH is the hex notation for the ascii code.
+
+Hex constants $hhhh are translated into 0xhhhh.
+
+Write and WriteLn are translated from:
+   write(VAR,VAR:n,VAR:n:m)
+   writeln(FILE,VAR,VAR,VAR)
+into
+   printf("%d%nd%n.md",VAR,VAR,VAR)
+   fprintf(FILE,"%d%d%d\n",VAR,VAR,VAR).
+
+Read and ReadLn are translated from:
+   read(VAR,VAR,VAR)
+   readln(FILE,VAR,VAR,VAR)
+into
+   scanf("%d%nd%d",&VAR,&VAR,&VAR)
+   fscanf(FILE,"%d%d%d\n",&VAR,&VAR,&VAR).
+
+String assignments are translated from:
+   VAR := "string"
+   VAR := "string1(" + VAR1 + ")string2"
+into
+   strcpy(VAR, "string")
+   sbld(VAR,"string1(%s)string2",VAR1).      {+other compound forms}
+
+String comparisons are translated from:
+   VAR == "string"
+   VAR < "string"
+   "string" >= VAR
+into
+   (strcmp(VAR,"string") == 0)
+   (strcmp(VAR,"string") < 0)
+   (strcmp("string",VAR) >= 0).
+
+Function value assignments are translated from:
+   FUN_NAME := expr
+into
+   return expr.
+
+Numeric statement labels are translated to label_nn.
+Label identifiers are not changed.
+Local GOTO statements are handled properly.
+
+Nested procedures are "flattened" out, but local variable sharing and
+local scoping are not translated.
+
+Direct I/O port and memory references are translated:
+   portw[expr] := expr + port[n]
+   mem[seg:ofs] := memw[seg:ofs] + expr
+into
+   outport(expr, expr+inportb(n))
+   pokeb(seg,ofs, peek(seg,ofs)+expr)
+
+VAR parameters are translated into pointer variables;  references to
+formal parameters are implicitly dereferenced (i.e. * added); references
+to actual parameters are implicitly referenced (i.e. & added).
+
+Forward pointer type declarations are translated, but will not
+compile in C.  They must be manually recoded.
+
+Variant record type declarations are translated into unions.
+
+Absolute variables are translated into initialized pointer variables.
+
+The WITH statement is translated into an initialized pointer variable.
+Expressions depending on the with are translated.  There is still some
+ambiguity when translating nested with statements.
+
+Variant record type decl's are translated into unions.  Expressions
+using the variant part are translated when there is no ambiguity.
+
+.p a
+.v SUPPORT FOR TURBO PASCAL 4.0
+
+.u Units
+
+The translator will create several files for each UNIT that is
+translated:
+
+file.UNS
+   Unit symbol table.  This table is loaded during translation of
+   programs or units that "use" this unit.
+
+file.UNH
+   Unit header file.  This is a C "header" that defines all entry points
+   and data types declared in the unit interface section.  An "include"
+   statement is automatically generated in programs or units that "use"
+   this unit.
+
+file.C
+   This is the body of the unit.  It will also include the unit header
+   file.  A special #define is generated to nullify the effect of the
+   "extern" prefix in all unit header declarations.  This will cause the
+   C compiler to perform the actual allocation of data objects within
+   this compilation unit.
+
+
+.u The system unit
+
+The translator automatically uses its own "system" unit at the start of
+each translation.  The source for this unit is TPTCSYS.PAS.  The
+declarations in this unit allow the translator to generate proper
+parameter passing for predefined procedures that are part of Borland's
+system unit.
+
+Several language extension have been implemented to simplify the
+creation of C language runtime libraries based on Turbo Pascal units.
+See the language extensions section for details.
+
+
+
+.u The standard units
+
+Borland includes the interface section for each standard unit as a .DOC
+file.  These are suitable for direct "translation" after you make the
+noted changes.  You need to "translate" these files to generate the unit
+header and unit symbol table files that are required later.
+
+The GRAPH.DOC unit will require manual edits before it can be
+translated.  It seems that some commentary documentation was added that
+does not conform to turbo pascal syntax.  These comment blocks should be
+deleted from the file (or enclosed in proper comment delimiters).   The
+long documentation section following the "implementation" keyword will
+be ignored if you place a single period on the following line.
+
+
+.u Interrupt and Inline procedures
+
+These are both translated, but will probably need recoding to be
+compatible with C compilers.  A warning is generated if either of these
+procedure types is detected.
+
+.p a
+.v SUPPORT FOR TURBO PASCAL 3.0
+
+The standard unit, tptcsys, contains only declarations that are implicit
+in Turbo Pascal 4.0 compilations.  Several declarations needed by Turbo
+Pascal 3.0 are provided in the TP3 unit.  Add the line:
+
+     uses TP3;
+
+to the head of any Turbo Pascal 3.0 sources before attempting to
+translate them.
+
+Note that many of the "missing" Turbo Pascal 3.0 declarations are
+actually provided by other Turbo Pascal 4.0 units (such as DOS and CRT).
+
+.p a
+.v SUPPORT FOR PASCAL/MT+
+
+Var declarations are translated from
+   ID external TYPE
+into
+   extern TYPE ID.
+
+The following expression operators are translated
+   from   !   to  | ,    |    to   |,
+          &   to  & ,    ~    to   !,
+          ?   to  ! ,    \    to   !.
+
+External function declarations are translated
+from
+   external function NAME(V1: TYPE1; V2: TYPE2): TYPE3
+   external [n] function NAME(V1: TYPE1; V2: TYPE2): TYPE3
+into
+   extern TYPE3 NAME()
+
+External procedure declarations are translated
+from
+   external procedure NAME(V1: TYPE1; V2: TYPE2)
+   external [n] procedure NAME(V1: TYPE1; V2: TYPE2)
+into
+   extern void NAME()
+
+Write and WriteLn are translated from:
+   write([ADDR(FUN)],VAR:n,VAR:n:m)
+   write([],VAR:n,VAR:n:m)
+into
+   iprintf(FUN,"%nd%n.md",VAR,VAR)
+   printf("%nd%n.md",VAR,VAR)
+
+Read and ReadLn are translated from:
+   read([ADDR(FUN)],VAR,VAR)
+   read([],VAR,VAR)
+into
+   iscanf(FUN,"%d%nd%d",&VAR,&VAR,&VAR)
+   scanf("%d%nd%d",&VAR,&VAR,&VAR)
+
+Long integer constants #nnn are translated into nnnL.
+
+
+.p a
+.v LANGUAGE EXTENSIONS
+
+Several language extension have been implemented to simplify the
+creation of C language runtime libraries based on Turbo Pascal units.
+See the system unit, tptcsys.pas, for examples of these extensions.
+
+
+.u Imbedded C language
+
+Lines starting with "\" are passed directly to the object file without
+any translation.  This allows you to imbed C language statements and
+declarations in your Pascal source file.  This is used in the
+implementation of many of the standard procedures.
+
+
+.u Imbedded preprocessor directives
+
+Lines starting with '#' can be passed directly to the object file
+without any further processing.  This is useful when translating Pascal
+sources that already contain C preprocessor directives (as with TSHELL).
+You must use the "-#" command line option to enable this feature.
+
+
+.u The 'AS <replacement name>' clause
+
+If a procedure declaration is followed with "as newname", the new
+identifier newname will be used in place of the original identifier in
+the object file.  This can be used to resolve conflicts between pascal
+procedures and standard C library procedures.  Example:
+
+     procedure length(s: string): integer as strlen;
+
+
+.u The 'SYMTYPE <typename>' clause
+
+If a variable declaration is followed with "symtype typename", the
+variable's symbol type in the symbol table will be changed to the
+specified symtype.   Example:
+
+     type
+        text = record
+             ...
+        end SYMTYPE TEXT;
+
+Legal typenames:
+     ARRAY           POINTER         FUNCTION        STRUCT
+     CONSTANT        SUBTYPE         SCALAR          BUILTIN
+     INT             LONG            DOUBLE          CHAR
+     FILE            TEXT            BOOLEAN         VOID
+     UNIT
+
+
+.p a
+.v KNOWN PROBLEMS AND PLANNED CHANGES
+
+-- C operator precedence differs from that of Pascal, and the
+   differences are not translated.
+
+-- Unit interface identifiers should be prefixed with unit name to
+   prevent conflicts with other identical identifiers in another unit.
+
+-- Translate "dot notation" in reference to unit interface sections.
+
+-- Allow overloading of record member identifiers (currently entered as
+   globals in the symbol table, leading to redeclarations if they are
+   used in different global contexts).
+
+-- Nested procedure variable passing.
+
+-- Set operations (general operator overloading? - using techniques
+   developed in earlier ada-tp project).
+
+-- Selection of proper 'with' pointer when two are more with levels are
+   active (may result from symbol table changes when record member
+   identifiers get proper scope rules).
+   
+-- Return statement ordering in functions.
+
+-- More runtime library functions.
+
+-- Translations for binary (untyped, record types) file operations.
+
+-- Detect and translate concat() calls.
+
+-- Detect array-of-character data and use string-like translations.
+
+-- Update documentation to match current program changes.
+
+-- Write a translation guide, giving hints and tips for translating.
+
+-- Detect and escape "%" in string expressions passed to scat, sbld,
+   etc.
+
+-- Work on plvalue to reduce code duplication in initial identifier
+   parse.
+
+-- com1..com2 range evaluates to 1 in subscript declaration (eg. wxterm)
+
+.p a
+.v EXPLANATION OF ERROR MESSAGES
+
+Fatal: Aborted by <escape> key
+   This message indicates that the user pressed the ESCAPE key to  abort
+   the translation in progress.
+        
+Fatal: Can't create tempfile: <NAME>
+   The translator wanted to create a temporary file but could not. This
+   is usually caused by an invalid drive or directory  specified with
+   the '-w' command line option.  It could also be  caused by
+   insufficient disk space, not enough file handles  available, or
+   excessive procedure block nesting.
+        
+Fatal: Can't open unit symbol file: <NAME>
+   The translator needed to load a unit symbol file (a .UNS file),  but
+   could not locate the file.  Tptc needs to load TPTCSYS.UNS  for each
+   translation (this file defines the default environment  and
+   predefined functions).  This could also be caused by a  missing or
+   incorrect directory specification in the '-s' command  line option.
+        
+Fatal: Functions nested too deeply
+   Procedure or function units were nested more than 10 levels  deeply. 
+   This might also be caused by a missing "interface"  keyword (which
+   would cause the procedure specifications to look  like nested
+   procedure implementations).
+        
+Fatal: Includes nested too deeply
+   Include files may be nested up to two levels.  
+        
+Fatal: Incompatible .UNS format
+   The unit symbol file loaded by a "uses" statement was bade by an
+   incompatible version of the translator.  Retranslate the used unit to
+   generate a new .UNS file.
+
+Fatal: Out of memory
+   There was not enough memory to make another symbol table entry,  or
+   to allocate the buffer for a new file.  Increase memory, divide your
+   program into smaller parts, or include fewer units  in your "uses"
+   statement.
+
+Fatal: Out of stack space 
+   This error indicates that all available stack was exhausted  while
+   parsing your source file.  It can be caused by highly  complex
+   expressions in conjunction with high levels of procedure  unit
+   nesting.
+
+Fatal: Too many identifiers 
+   You listed too many identifiers in a declaration before the data type
+   specification.  These identifiers are limited because they must be
+   held until the ': type' clause is reached.  Break up the declaration
+   into two or more parts.
+
+Fatal: Too many params
+   There were too many parameters in the current procedure declaration
+   or call.  This is currently limited to 16.
+
+Error: Identifier expected
+   In an expression, a symbol or keyboard was found where an identifier
+   (variable name) was required.
+
+Error: Section header expected
+   The translator was expecting VAR, CONST, TYPE, PROCEDURE,  FUNCTION,
+   or some other main section header.  Instead, it found  an identifier
+   or special character.  Often caused by faulty  recovery from a
+   previous error.
+
+Warning: Dynamic length reference
+   A reference to the zero-th byte in a string was detected.  Since
+   translated code uses the C convention for strings, this code requires
+   a conversion to C string conventions.  The translator can handle all
+   of turbo's standard string operations.  Use length(str) rather than
+   ord(str[0]) for the string length.  Use str := copy(str,1,len) rather
+   than str[0] := chr(len) to modify the length of a string.
+        
+Warning: Expression too long
+   Expressions are limited to a maximum of 255 characters each.  This
+   limit applies to the combined lengths of all parameters in function
+   calls.  Simplify the expression, reduce use of 'with' statements, or
+   introduce intermediate variables.
+
+Warning: Gigantic case range
+   A numeric range in a case selector covers too great a range.   Since
+   the translator must generate one line of code for each value  within
+   the range, it is advised that the statement be recoded  using an if
+   else if sequence.
+        
+Warning: Inline procedure
+   An inline procedure was detected within an interface section.
+   Interface sections must not contain executable code in the C language
+   target files.  Convert this to a normal procedure containing an
+   inline statement.
+        
+Warning: Interrupt handler
+   An 'interrupt' procedure was detected.  These procedures require
+   special attention, since the C conventions for interrupt  handlers
+   differ from those of turbo pascal.
+        
+Warning: Nested function
+   This warning is generated when a nested procedure/function block  is
+   found.  The translator does not yet translate shared  variables or
+   formal parameters among nested functions.
+
+Warning: Redeclaration not identical
+   A global procedure, function or variable declaration is incompatible
+   with a previous declaration of the same name.  This sometimes results
+   from nested procedures or local constants.
+
+.p a
+.v EXPLANATION OF ERRORS REPORTED BY THE C COMPILER
+
+.c (SECTION TO BE WRITTEN)
+        
+
+.p a
+.v REVISION HISTORY
+
+  See HISTORY.DOC for the complete revision history.
+ 
+03/30/88 v1.7a
+03/25/88 v1.7
+   Repackaged into three archives:  
+      TPTC17.ARC    (main file; exe, docs and supporting files)
+      TPTC17SC.ARC  (source code)
+      TPTC17TC.ARC  (test cases)
+
+02/13/88 v1.6
+   First distributed as TPTC16 under the SourceWare concept.
+
+06/01/87 v1.5
+05/26/87 v1.4
+05/20/87 v1.3
+04/22/87 v1.2
+04/15/87 v1.1
+12/19/86 v1.0
+   First distributed as TPC10 under ShareWare concept.
+
+09/09/85 v0.0 
+   Initial coding by Samuel H. Smith.  Never released.
+
+
+.v SUPPORT
+
+I work very hard to produce a software package of the highest quality
+and functionality.  I try to look into all reported bugs, and will
+generally fix reported problems within a few days.
+
+Since this is user supported software under the SourceWare  concept, I
+don't expect you to contribute if you don't like it or if it doesn't
+meet your needs.
+
+If you have any questions, bugs, or suggestions, please contact  me at:
+    The Tool Shop BBS
+    (602) 279-2673
+
+The latest version is always available for downloading.
+
+
+I continue to update and improve TPTC.  If you have a program that TPTC
+will not translate, please send me a copy of it.  This will help me in
+future versions.  I will not redistribute the file without your
+permission.
+
+Send sample sources to:
+    Samuel. H. Smith
+    (602) 279-2673 (data)
+    5119 N. 11 ave 332
+    Phoenix, Az 85013
+
+.p a
+.v LICENSE 
+
+.u SourceWare: What is it? 
+
+SourceWare is my name for a unique concept in user supported software.
+
+Programs distributed under the SourceWare concept always offer complete
+source code.
+
+This package can be freely distributed so long as it is not modified or
+sold for profit.  If you find that this program is valuable,  you can
+send me a donation for what you think it is worth.  I suggest about $20.
+
+Send your contributions to:
+   Samuel. H. Smith
+   5119 N. 11 ave 332
+   Phoenix, Az 85013
+
+
+.u Why SourceWare? 
+
+Why do I include source code?  The value of good software should be
+self-evident.  The source code is the key to complete understanding of a
+program.  You can read it to find out how things are done.  You can also
+change it to suit your needs, so long as you do not distribute the
+modified version without my consent.
+
+
+.u Copyright
+
+If you modify this program, I would appreciate a copy of the new source
+code.   I am holding the copyright on the source code, so please don't
+delete my name from the program files or from the documentation.
+

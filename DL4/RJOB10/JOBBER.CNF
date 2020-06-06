@@ -1,0 +1,30 @@
+;
+; jobber.cnf - remote job executive configuration file
+;
+
+;--job queue directory - this network directory will be used for
+;--passing all job requests;  best performance if on a ramdisk.
+;--directory must not have any other files in it!
+j:\que
+
+;--delay between job polls, clock ticks (18 per second)
+18
+
+;--jobber name replacement table
+;
+; This is a table of macro replacements.  These macros are expanded as jobs are
+; executed.  This facility allows you to assign logical names to physical
+; devices, programs, directories, etc.
+;
+ROM_1:=e:
+ROM_2:=f:
+WORM:=g:
+RAM:=j:
+
+;
+; Example job requests:
+;    rex copy WORM:\dl5\moon.arc m:\tmp
+;       -- copies the file g:\dl5\moon.arc into network directory m:\tmp
+;       -- for remote access.
+;
+

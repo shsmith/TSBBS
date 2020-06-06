@@ -1,0 +1,577 @@
+
+                                 AGENT AGREEMENT
+
+
+               THIS AGREEMENT is made and entered into this _______ day
+       of ______________, 19__, by and between Samuel H. Smith, with a
+       place of business in Panorama City, California, USA (hereinafter
+       "Developer") and Arthur A. Mol from The Owl's Nest having a place
+       of business at Soest, The Netherlands (hereinafter "Agent").
+
+
+
+       RECITALS
+
+       Whereas, Developer has developed certain computer software
+       products and is marketing those products throughout the world;
+
+       Whereas, Agent is in the business of marketing computer software
+       and is interested in marketing the computer software developed by
+       Developer;
+
+       Whereas, Developer is interested in having Agent market its
+       computer software;
+
+       NOW, THEREFORE, in consideration of the mutual covenants and
+       promises hereinafter contained, the parties hereby agree as
+       follows:
+
+
+
+       Section 1.  Definitions
+
+       1.1  "Computer Software" shall mean computer software developed
+       by Developer generally known by HS/Link, and all enhancements
+       thereto developed by Developer.
+
+       1.2  "Software Products" shall mean any of the individual
+       computer software products developed and marketed by Developer
+       which form a part of the Computer Software, including the HS/Link
+       Products and Upgrades listed on attached Exhibit "A."
+
+       1.3  "Third Party Software" shall mean computer software products
+       developed by third parties, but marketed by Developer, which
+       products relate generally to HS/Link, and are generally referred
+       to as "utility programs."
+
+       1.4  "Technical Information" shall mean any confidential or
+       proprietary trade secret information, know-how, data, methods,
+       processes, specifications, quality standards, sales literature,
+       reports, or training materials in any way related to or connected
+       with the Computer Software.
+
+       1.5  "Territory" shall mean the Territory defined in attached
+       Exhibit "B."
+
+
+       Section 2.  Grant of Rights
+
+       2.1  Subject to the terms and conditions set fourth herein,
+       Developer grants Agent a non-exclusive right to market Computer
+       Software and Third Party Software throughout the Territory.
+
+       2.2  Agent agrees to commit itself to a thorough, vigorous, and
+       diligent program of exploiting and selling Computer Software and
+       Third Party Software throughout the Territory, in accordance with
+       the customs and practices of the computer software industry, so
+       that full utilization of the Computer Software will result and
+       sales of the Computer Software will achieve a reasonably high
+       level within the Territory.
+
+       2.3  Developer shall have the right to thoroughly review the
+       performance of Agent not less frequently than every six (6)
+       months to determine whether Agent is in compliance with the
+       performance criteria set fourth in paragraph 2.2.  In the event
+       Developer, in its sole and exclusive judgement, determines that
+       said performance criteria are not being met, Developer shall have
+       the right to terminate this Agreement pursuant to the provisions
+       of paragraph 8.2.
+
+       2.4  Agent agrees to indemnify and hold harmless Developer from
+       any and all liability of whatever nature arising out of or in
+       connection with the business activities conducted by Agent,
+       including activities related to the performance of its duties and
+       obligations under this Agreement and the sale of Computer
+       Software and Third Party Software.
+
+       2.5  Developer will refer all sales requests received from
+       customers in Agent's territory to Agent for handling.  However,
+       in the event a customer in Agent's territory wishes to deal
+       directly with Developer for their purchase and/or support,
+       Developer reserves the right to service such requests as it sees
+       fit in order to prevent a lost sales opportunity.
+
+
+
+       Section 3.  Price, Payment, and Recording
+
+       3.1  Agent agrees that all Computer Software sold by it will be
+       sold at a reasonable price, but in no event for a price less than
+       that set forth in Developer's current price list, excluding
+       shipping and handling.  A current Developer price list is
+       attached hereto as Exhibit "A," and will by updated at such time
+       as it is modified by Developer.
+
+       3.2  Agent must purchase all Computer Software or Third Party
+       Applications according to Developer's current price list.
+
+       In addition to Computer Software costs, Agent must pay to
+       Developer all freight, shipping, and handling charges associated
+       with providing software.
+
+
+       3.3  All purchases are on a NET 30 day payment schedule which
+       begins the day of shipment from Developer.  Agent must pay for
+       all Computer Software with a credit card or an international
+       money order payable in U.S. Dollars.
+
+       3.4  All monies payable hereunder shall be paid in United States
+       Dollars directly to Developer.  In the event payment in United
+       States Dollars is not at that time permitted by law or by reason
+       of the decision of any competent authority in the country
+       involved, Agent shall then discharge its obligation for payment
+       in such other currency and at such place as may be permitted and
+       agreed to by Developer. In the event any currency conversion is
+       required, such conversion shall be the sole responsibility of
+       Agent and shall be made by using the exchange rate prevailing at
+       a first class foreign exchange bank in the United States on the
+       last business day of the month to which payments relate.
+
+       3.5  Agent shall keep and maintain proper books of account with
+       reference to all Computer Software and Third Party Software sold.
+       When requested by Developer, such books of account shall be open
+       at reasonable times and at reasonable intervals for Developer,
+       through a Certified Public Accountant or its equivalent, to
+       inspect such books of account and to make abstracts therefrom for
+       the purpose of verifying compliance with the provisions of this
+       Agreement.  Inspection of the books shall be done during normal
+       business hours and in such a manner as to avoid disruption of the
+       business of Agent.
+
+       3.6  Agent must submit on a frequent basis the customer data to
+       whom computer software was sold.  It is suggested that this will
+       be done by each tenth sale of the computer software.  Agent must
+       send the customer data by modern telecommunication service i.e.
+       FAX machine or by usage of The Toolshop BBS service and not by
+       any postal or similar service.
+
+
+
+       Section 4.  Duties and Obligations of Developer
+
+       4.1  Developer agrees that Agent shall have the right to return
+       any unused or defective inventory, after first providing written
+       notice to Developer specifying the precise reason for the return.
+       All returns shall be shipped to Developer with freight, shipping,
+       and handling charges prepaid by Agent.
+
+       4.2  Developer agrees to provide Agent with a list of Developer's
+       existing Computer Software customers within the Territory in
+       order to facilitate response to anticipated requests for upgrades
+       from such customers.  The customer list shall be updated by
+       Developer not less frequently than once each year.
+
+
+       4.3  Developer agrees to provide Agent with periodic updates
+       concerning any changes or improvements in the Computer Software.
+       Such updates may take the form of written communications
+       forwarded by mail or other suitable means, or may be in the form
+       of messages posted on Developer's computer bulletin board system
+       and addressed to Agent.
+
+
+       Section 5.  Duties and Obligation of Agent
+
+       5.1  Agent shall develop and maintain proper and adequate
+       security measures to assure that only registered purchasers of
+       Software Products, either from Developer or from Agent, have
+       access to any registered Developer files.  Agent will also assure
+       that customers are not able to obtain access to Software Products
+       which they have not purchased.  Shareware products which are
+       distributed on a "try before you buy" basis are excluded from
+       this.
+
+       5.2  Agent agrees to actively monitor and investigate any and all
+       reports of unauthorized use of any Computer Software.  In the
+       event Agent suspects that any user is running unauthorized
+       software, Agent will immediately take all necessary steps to
+       contact the offending party and encourage that party to
+       discontinue such activities.  Simultaneously, Agent shall notify
+       Developer of such unauthorized activity, and Developer shall have
+       the right to take whatever action it deems necessary to protect
+       its copyrights, trademarks and other rights in its Computer
+       Software and to prevent any further unauthorized use.  Agent
+       agrees, without cost to Developer, to fully cooperate with
+       Developer in the enforcement and protection of Developer's
+       rights.
+
+       5.3  Agent agrees not to make copies of any copyrighted Computer
+       Software or Third Party Software.  All software containing media,
+       including specifically disks, shall be obtained solely from
+       Developer.
+
+       5.4  Agent agrees to provide its purchasers of Software Products
+       with adequate user support according to general industry
+       practices.  Agent shall maintain a 24 hour per day, 365 day per
+       year, Software Product purchaser dedicated bulletin board service
+       for customers of both Developer and Agent.  Voice and alternate
+       technical support shall be provided at the discretion of Agent.
+       For questions and support problems which Agent desires additional
+       assistance from Developer, Agent will contact Developer for
+       technical assistance through Developer's Customer Support BBS
+       system. All responses to support questions made on the Developer
+       Customer Support system will be left as a reply to the request.
+       Agent will be responsible for obtaining all response messages.
+
+
+       Section 6.  Developer Trademark and Copyrights
+
+       6.1  In order to facilitate the performance by Agent of its
+       duties set forth herein, Developer grants to Agent a nonexclusive
+       license to use any trademark of the Computer Software within the
+       Territory, for the limited purposes of furthering the objectives
+       of this Agreement.  Agent's use of the trademark shall only be in
+       conjunction with Computer Software manufactured by Developer and
+       provided to Agent pursuant to this Agreement, and all
+       advertisements, promotional materials, and the like employing the
+       trademark shall be approved in advance in writing by Developer.
+
+       6.2  Agent shall not use the trademark in connection with goods
+       or services which are neither provided nor approved by Developer.
+
+       6.3  The parties recognize and agree that Developer is the sole
+       and exclusive owner of all copyrights in and to the Computer
+       Software and all rights in the Computer Software.
+
+
+       Section 7.  Confidential Disclosures
+
+       7.1  The Parties acknowledge that from time to time Developer has
+       or will be required to disclose to Agent Technical Information
+       which is confidential, proprietary or secret, in the furtherance
+       of the objects of this Agreement.  The parties acknowledge that
+       the provisions of this Agreement are necessary to protect the
+       confidentiality, value, and secrecy of such Technical
+       Information.
+
+       7.2  Agent agrees that it shall take reasonable precautions to
+       preserve the confidential, proprietary or secret status of any
+       such Technical Information and shall treat such Technical
+       Information with the same degree of care and precaution as it
+       customarily uses to protect its own Technical Information.  Agent
+       shall require that its employees understand and agree in writing
+       to treat and hold such Technical Information in confidence
+       consistent with the provisions herein.  Agent further agrees that
+       it shall utilize all such Technical Information solely for
+       furthering the objectives of this Agreement and it will not,
+       either during or any time subsequent to this Agreement, otherwise
+       use such Technical Information for its own benefit or for the
+       benefit of others; nor will Agent publish or otherwise disclose
+       such Technical Information to any other individual, firm or
+       corporation without first obtaining written consent from
+       Developer.
+
+
+       7.3  The obligations of this section shall survive termination of
+       this Agreement, provided, however, that such obligations shall
+       not apply to:
+
+       (a) any information which was disclosed to Agent by a third party
+       who is under on obligation of confidentiality to Developer or a
+       party in privity with Developer; or
+
+       (b) any information which Agent can reasonably demonstrate,
+       through documentation, has become generally known through no
+       fault of Agent to the trade or public prior to or subsequent to
+       the disclosure by Developer.
+
+       7.4  Within thirty (30) days after the date of termination of
+       this Agreement Agent shall furnish Developer with written notice
+       specifying that through reasonable care and to the best of its
+       knowledge:
+
+       (a) all Technical Information embodied in all printed documents,
+       books, drawings, memoranda, files, blueprints, diagrams, customer
+       lists, manufacturing procedures, know-how, testing data, studies,
+       reports, evaluations, and any other materials which constitute or
+       embody any confidential, proprietary, or secret Technical
+       Information have been returned to Developer; and
+
+       (b) the originals and all copies of any machine readable
+       documentation containing any portion of the Technical Information
+       of Developer have been destroyed or returned to Developer.
+
+
+       Section 8.  Term and Termination
+
+       8.1  This Agreement shall commence upon execution and shall
+       continue until terminated as provided herein.
+
+       8.2  If payments from Agent to Developer are in arrears for
+       thirty (30) days after the due date, or if Agent defaults in
+       performing any of the other terms of this Agreement then
+       Developer shall have the right to terminate this Agreement upon
+       giving thirty (30) days prior written notice to Agent of default.
+       If the cause for such notice of default is not cured within
+       thirty (30) days after such notice, the Agreement shall terminate
+       upon expiration of said thirty (30) day period.
+
+       8.3  Developer shall have the right and option at its sole
+       discretion to immediately terminate this Agreement upon written
+       notice to Agent, in the event Agent shall file, or any person
+       shall file against Agent, any action for bankruptcy,
+       reorganization, receivership or similar relief under any laws
+       intended for the benefit of creditors, shall have a receiver or
+       manager appointed in respect of any part of its business, shall
+       make an assignment for the benefit of creditors, shall become
+       insolvent, shall voluntarily or involuntarily dissolve, liquidate
+       or terminate its existence, or shall be nationalized.
+
+
+       8.4  Upon termination of this Agreement for any reason, nothing
+       herein shall be construed to release either party of any
+       obligation which matured prior to the effective date of such
+       termination.
+
+
+       Section 9.  Taxes
+
+       9.1  Agent shall be solely responsible for the payment and
+       discharge of any taxes or duties relating to any transaction of
+       Agent in connection with the importation, use or sale of any
+       Software Products or Third Party Software in the Territory.
+
+
+       Section 10.  Independence of the Parties
+
+       10.1  This Agreement shall not constitute the designation of
+       either party as the representative or agent of the other, nor
+       shall either party by this Agreement have the right or authority
+       to make any promise, guarantee, warranty, or representation, or
+       to assume, create, or incur any liability or obligation of any
+       kind, express or implied, against or in the name of or on behalf
+       of the other.
+
+
+       Section 11.  Assignment
+
+       11.1  Agent shall not have the right to assign, sublicense or
+       otherwise transfer this Agreement and the licenses granted hereby
+       and the rights acquired by it hereunder without the prior written
+       consent of Developer.  If such written consent is given, such
+       assignment and transfer shall not be deemed effective unless such
+       assignee or transferee has agreed in writing to be bound by the
+       terms and provisions of this Agreement.  Upon such assignment or
+       transfer and agreement by such assignee or transferee, the term
+       "Agent" as used herein shall include such assignee, sublicensee
+       or transferee.
+
+
+       Section 12.  Notices
+
+       12.1  Any written notice required or permitted by this Agreement
+       shall be given by registered or certified mail, or overnight
+       express delivery service or its equivalent, postage prepaid, and
+       shall be effective upon proper mailing.  The addresses of the
+       parties for communication and notice, unless subsequently changed
+       by written notice to the other, shall be:
+
+              Developer:        Samuel H. Smith
+                                The Tool Shop
+                                8808 Moonbeam Ave
+                                Panorama City, CA 91402, U.S.A.
+
+              Agent:            Arthur A. Mol
+                                The Owl's Nest
+                                Hazepad 25
+                                3766 JL Soest, Netherlands
+
+
+       Section 13.  General Provisions
+
+       13.1  The parties agree that this Agreement shall constitute the
+       complete and exclusive statement of the Agreement between them
+       and superseded all proposals, oral or written, and all other
+       communications between them relating to the Licensed Technology.
+
+       13.2  No agreement changing, modifying, amending, extending,
+       superseding, discharging, or terminating this Agreement or any
+       provisions herein shall be valid unless it is in writing and is
+       dated and signed by duly authorized representatives of the party
+       or parties to be charged.
+
+       13.3  The provisions of this Agreement are severable, and in the
+       event that any provisions of this Agreement shall be held to be
+       invalid, illegal or unenforceable, the validity, legality, and
+       enforceability of the remaining provisions shall not in any way
+       be affected or impaired thereby.
+
+       13.4  Failure of any of the parties to enforce any of the
+       provisions of this Agreement or any rights with respect thereto
+       or failure to exercise any election provided for herein, shall in
+       no way be considered a waiver of such provisions, rights, or
+       elections or in any way to effect the validity of this Agreement.
+       No term or provision of this Agreement shall be deemed waived and
+       no breach excused, unless such waiver or consent shall be in
+       writing and signed by the party claimed to have waived or
+       consented. Any consent by any party to, or waiver of, a breach by
+       the other, whether expressed or implied, shall not constitute a
+       consent to, waiver of, or excuse for any other different or
+       substitute breach.
+
+       13.5  This Agreement is entered into and shall be governed by and
+       construed in accordance with the laws of the state of California,
+       except that questions affecting the construction and effect of
+       any copyright or trademark shall be determined by the law of the
+       country in which the copyright or trademark right was granted.  By
+       the execution of this Agreement, both parties agree to be subject
+       to the jurisdiction of the state and federal courts of the state
+       of California with respect to this Agreement.
+
+       13.6  If either party brings an action to enforce any provision
+       of this Agreement, the prevailing party in said action shall be
+       entitled to court costs and reasonable attorneys fees.
+
+
+       13.7  Headings used in this Agreement are for reference purposes
+       only and shall not be deemed a part of this Agreement.
+
+       13.8  The signatories hereto personally warrant (i) that they
+       have the right and power to enter into this Agreement, to grant
+       the rights granted hereunder, and (ii) that upon the execution of
+       this Agreement, it shall constitute a valid, binding and
+       enforceable agreement of the parties.
+
+       IN WITNESS WHEREOF, the parties hereto have caused this Agreement
+       to be duly executed and witnesses as of the date first mentioned
+       above.
+
+
+
+
+       Developer: ___Samuel H. Smith________________________
+
+
+       Date: _______________________________________________
+
+
+       Signature: __________________________________________
+
+
+
+
+
+       Agent: _______The Owl's Nest_________________________
+
+
+       By: __________Arthur A. Mol__________________________
+
+
+       Date: _______________________________________________
+
+
+       Signature: __________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       Exhibit A
+
+       HS/Link Agent Prices
+       Effective 01/01/92 through 02/01/92 (All prices shown in USD)
+
+                                                     Dealer   Retail
+
+          HS/Link Registration Only.................  $7.50    $15
+          (includes user license, NO DISK)
+
+          HS/Link Registration and 5.25" disk.......  $16      $25
+
+          HS/Link Registration and 3.5" disk........  $17      $27
+
+          Printed and bound operation manual .......  $10      $15
+
+
+     Agent agrees to request blocks of 20 or more licenses per request.
+
+
+     All shipping charges to and from Developer to Agent are the sole
+     responsibility of Agent and will be billed to Agent at the time of
+     shipment.  Payment of shipping accounts are due within 30 days of
+     receipt of shipping invoice.
+
+     Developer agrees to send Agent an invoice by postal service for
+     each request made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       Exhibit A
+
+       HS/Link Agent Prices
+       Effective 02/02/92 (All prices shown in USD)
+
+                                                     Dealer   Retail
+
+          HS/Link Registration Only.................  $10      $20
+          (includes user license, NO DISK)
+
+          HS/Link Registration and 5.25" disk.......  $20      $30
+
+          HS/Link Registration and 3.5" disk........  $21      $32
+
+          Printed and bound operation manual .......  $10      $15
+
+
+     Agent agrees to request blocks of 20 or more licenses per request.
+
+
+     All shipping charges to and from Developer to Agent are the sole
+     responsibility of Agent and will be billed to Agent at the time of
+     shipment.  Payment of shipping accounts are due within 30 days of
+     receipt of shipping invoice.
+
+     Developer agrees to send Agent an invoice by postal service for
+     each request made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       Exhibit B
+
+       Agent Territory
+
+
+       Agent territory includes the entire countries of Europe.
+

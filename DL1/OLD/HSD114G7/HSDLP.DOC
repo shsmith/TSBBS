@@ -1,0 +1,231 @@
+
+                              DLP HS/Link
+
+                     Copyright 1993 Samuel H. Smith
+                          All Rights Reserved
+
+
+            A version of the HS/Link File Transfer Protocol
+                              for use with
+                        ProComm Plus for Windows
+
+                    (PRELIMINARY APPLICATION NOTES)
+
+
+HSLINK.DLP is a special version of the HS/Link program which has been written
+specifically for use by ProComm Plus for Windows (PROWIN).
+
+
+                              INSTALLATION
+
+Simply place the HSLINK.DLP in your PROWIN directory, and the HSLINK protocol
+will automatically appear in the protocol menus and will work as other
+protocols do in this environment.
+
+If you wish to include HS/Link in your "host mode" operations, copy the
+supplied HOST.WAS file to your PROWIN\ASPECT directory.
+
+
+                               OPERATION
+
+Once HSLINK.DLP is installed in your PROWIN directory, the HS/Link protocol
+will automatically appear in PROWIN's protocol menus.
+
+Downloads are automatic and require no special attention.
+
+To upload, click the "upload" icon and select files to transmit.
+
+To perform a bidirectional transfer, note that you MUST NOT press the final
+<ENTER> key required by the BBS you are calling.  Instead, click the "upload"
+icon and flag outgoing files.  When HSLINK starts on your end, it will send
+the final <ENTER> key sequence to the BBS.
+
+                             CONFIGURATION
+
+If you wish to set HS/Link options, you can modify the HSLINK.INI file in
+your PROWIN directory.  These settings are normally manipulated via the
+"Advanced!" setup option of HS/Link from within PROWIN.
+
+To configure HSLINK.DLP, activate ProComm+ "Current Setup" ICON, then
+highlight the button "Protocol: hslink.dlp" and click "Advanced!".
+
+Crash Recovery settings
+        Off
+                Disable crash recovery.  Do not allow received files to
+                overwrite existing files.  Partial files from aborted
+                transfers are automatically erased.
+
+        Full Recovery
+                Enable full crash recovery.  This option causes partial
+                files from aborted transfers to be retained.  If a
+                received file matches the filename of an existing file,
+                the contents of the file is compared to the received
+                file, and only those blocks which differ are
+                transferred.
+
+        Overwrite
+                Disable crash recovery.  Allow received files to
+                overwrite existing files.  Partial files from aborted
+                transfers are retained.
+
+
+Block Size settings
+        256     Each block will be 265 bytes in length
+        1k      Each block will be 1024 bytes in length
+        2k      Each block will be 2048 bytes in length
+        4k      Each block will be 4096 bytes in length
+
+Acknowledge Window Settings
+        Full streaming (none)
+                In this mode of operation, blocks are transmitted
+                continuously with no acknowledgement of receipt.  This
+                mode of operation is useful when error correcting modems
+                are used or when flow control is not required.
+
+        8 blocks (normal)
+                In this mode of operation, up to 8 blocks may be in
+                transit before an acknowledgement of receipt is
+                required.  Once acknowledgement is received, the next
+                block will be transmitted.  This acknowledgement process
+                provides a form of flow control which is useful when
+                other forms of flow control are not totally reliable.
+
+        4 blocks (PC Pursuit)
+                When operating HSLINK on a PC Pursuit connection, I
+                recommend the settings of Ack Window = 4, Block size =
+                256, Xon/Xoff = ON, Minimal Blocks = OFF.
+
+File Settings
+        Transfer Log File:
+                This defines the DSZLOG-style transfer result log
+                filename.  If left blank, the DSZLOG environment
+                variable specifies this filename.  If no DSZLOG
+                environment setting exists, no logfile will be produced.
+
+        Error Log File:
+                This defines the filename for a detailed transfer and
+                error log to be created.  If left blank, the HSERR
+                environment variable specifies this filename.  If no
+                HSERR environment setting exists, no logfile will be
+                produced.
+
+        Duplicate Checklist:
+                This defines the filename of a duplication checklist
+                file.  The duplication checklist file can contain a list
+                of directories or filenames to check for duplication.
+                If an incoming file matches a filename or a file in a
+                directory listed here, the file will be rejected.
+                NOTE: duplication checking is active ONLY when Crash
+                Recovery is set to "OFF".  Other crash recovery modes
+                grant HSLINK permission to modify existing files, making
+                a duplication checklist meaningless.
+
+Other Options
+        Original File Time Stamp
+                Checking this option causes the original file's time and
+                date to be preserved.  Unchecking the option causes the
+                current time and date to be given to a file when it is
+                received.
+
+        Minimal Blocks
+                Checking this option causes HSLINK to minimize each
+                block transmitted, resulting in an increase in thruput.
+                Unchecking this option causes HSLINK to include
+                additional information in each block as required by PC
+                Pursuit or some other environments.
+
+        File Buffering
+                Checking this option causes HSLINK to use a 10k buffer
+                for files being received or transmitted.  Unchecking
+                this option causes HSLINK to read or write each file
+                block as it is sent or received.
+
+        Large Status Display
+                Checking this option causes a larger file transfer
+                status display to be used.
+
+        XON/XOFF Handshake
+                Checking this option indicates that you desire to use
+                the XON/XOFF software handshake.  Unchecking this option
+                indicates that you do not desire this handshake, but
+                that you will still use it if the remote unit desires
+                its use.
+
+        Force Remote to use Local Settings
+                Checking this option causes forces the remote unit to
+                use your settings for Minimal Blocks, Block Size, Ack
+                Window and Xon/Xoff.  Unchecking this option allows the
+                remote unit to override your settings, or causes
+                compromise settings to be negotiated according to both
+                local and remote options.
+
+        Allow Bidirectional Transfers
+                Checking this option allows files to be received while
+                files are being transmitted.  Unchecking this option
+                causes HSLINK to reject any incoming files when files
+                are being transmitted.
+
+        Beeper in Chat Mode
+                Checking this option allows the remote unit to beep your
+                speaker with the "page remote" or ^G key in CHAT mode.
+                Unchecking this option forces your speaker to remain
+                silent at all times.
+
+
+Controls
+        OK
+                This causes current settings to be saved.
+
+        Cancel
+                This causes changes in settings to be discarded and
+                previous settings to remian in effect.
+
+        Use Default
+                This resets all settings to their original default
+                values, which should work properly in most
+                circumstances.
+
+        Register...
+                This allows you to enter your personal registration code
+                as well as your name and company name.
+
+
+
+                              DIFFERENCES
+
+HSLINK.DLP is similar to the standard DOS HSLINK with the following
+exceptions:
+
+*  GIF files are automatically displayed onscreen during file transfer.
+
+*  The command line is automatically provided by PROWIN.  Modify the
+   HSLINK.INI file provide protocol options.
+
+*  The "REGISTER" screen now accepts DLP HS/Link activation codes.
+   Sorry, but DOS HS/Link registrations are not valid for the Windows
+   DLP version.
+
+
+
+              !!!!!!!!!!!!!! BETA TEST VERSION !!!!!!!!!!!!!!!!
+     This version may seem to work, but it has not been fully tested and
+              is not an official release!  You have been warned.
+           PLEASE MAKE FREQUENT BACKUP COPIES OF ALL CRITICAL FILES
+              !!!!!!!!!!!!!! BETA TEST VERSION !!!!!!!!!!!!!!!!
+
+    Beta Testing is a means of getting widespread exposure to unfinished
+    versions of a program during the development process.  The idea is for as
+    many users as possible to "beta test" the program and to make suggestions
+    and report bugs.  This type of widespread testing can lead to a very
+    stable and bug-free finished product (the RELEASE version). Please read
+    HSLINK.NEW to see what has been changed recently.
+
+    If you encounter problems or would like to make a suggestion, please
+    contact the author. HS/Link product support is available by voice at
+    (818) 891-4228 between 9am and 6pm pacific time, TUESDAY through
+    SATURDAY.
+
+    To obtain newer beta test versions, please call (818) 891-1344 and select
+    the "free downloading" service from the initial "special services menu".
+    You need not be a registered Tool Shop BBS user to access this special
+    service.

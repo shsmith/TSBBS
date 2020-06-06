@@ -1,0 +1,32 @@
+
+HS/Link Revision History (in reverse order)
+-------------------------------------------
+
+14-May-92
+   Version 1.11 didn't solve the problem for some slow machines.
+   Additional changes in 1.12 seem to cover all the bases.
+
+   Posted version 1.12 as hslk112.zip for testing.
+
+14-May-92
+   Version 1.10 will sometimes return errorlevel 2 after successfully
+   receiving files and when no outgoing files are active.  Version 1.11
+   corrects this.
+
+   Posted version 1.11 as hslk111.zip for testing.
+
+13-May-92
+   Official release of HS/Link 1.10 as HSLINK11.ZIP.
+   See WHATSNEW.110 for a complete list of changes between version 1.0
+   and version 1.1.
+
+14-Jan-92
+   Official release of HS/Link 1.00 as HSLINK10.ZIP.
+
+17-Oct-91
+   Initial posting of HS/Link beta as HSLK10B.ZIP.
+
+July-87
+   Initial protocol design and prototype development began but was never
+   made functional enough for public testing.
+

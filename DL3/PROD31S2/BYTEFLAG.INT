@@ -1,0 +1,2 @@
+function getbbit(bits: byte; bitval: byte): boolean;
+procedure setbbit(var bits: byte; bitval: byte; value: boolean);

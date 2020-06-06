@@ -1,0 +1,61 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+function expert: boolean;
+
+function scan_nextpar(var cmdline: string): string;
+procedure get_nextpar;
+procedure unget_par;
+
+procedure not_understood;
+procedure not_available;
+procedure file_not_found (name: anystring);
+procedure file_missing;
+
+procedure keypause;
+
+function pro_command: anystring;
+function pro_title: anystring;
+function pro_code: char;
+function pro_files: integer;
+function pro_mode: transfer_modes;
+
+function estimated_time(size: longint): real;
+
+procedure open_capture;
+procedure close_capture;
+
+procedure clean_playpen;
+procedure clean_scratch;
+
+procedure disp_margin(left,width: integer);
+
+function expdate(yymmdd: string8): string8;     {convert to mm-dd-yy}
+function mmddyy_to_yymmdd(mmddyy: string8): string8;
+function yymmdd_to_mmddyy(yymmdd: string8): string8;
+
+function todays_date_mmddyy: string8;
+function todays_date_yymmdd: string8;
+
+function dtok(d: double): string8;
+function stok(s: single): string8;
+
+function posc(c: char; var s: string): integer;
+
+procedure check_command_line(var command: string);
+procedure execute(command: string);
+
+procedure disconnect_warning(left: integer);
+procedure check_disconnect_warning;
+
+function file_is_new(name: dos_filename): boolean;
+

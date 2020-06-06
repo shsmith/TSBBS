@@ -1,0 +1,76 @@
+
+ProLot - Another DOOR for "ProKit"
+----------------------------------
+
+This door program implements a real lottery for your users.  
+
+Each ticket costs a minute.  Losing tickets are thrown into the pot. 
+Winners are credited with most of the time in the jackpot.  
+
+The sysop can control the amount of "cream" taken off the top... 
+resulting in a total reduction in online time. 
+
+Here is a sample configuration file:
+
+   HANDSHAKE
+   c:\pcb\gen\blt12
+   68.0
+   1549
+   0.10
+   100
+   The last winner was SYSOP, who won 80 minutes on 02-04-88 17:51.
+   c:\pcb\gen\blt13
+
+   --------------------------
+   Configuration file format:
+
+   line 1 = Driver type (HANDSHAKE, INTERRUPT, BIOS, PCBTRAP)
+   line 2 = Lottery status bulletin filename
+   line 3 = Number of minutes currently in the pot
+   line 4 = Number of tickets sold so far
+   line 5 = Fraction of time taken aside for sysop
+   line 6 = Odds against winning (higher numbers give higher jackpots)
+   line 7 = Information about the last winner
+   line 8 = Lottery winner history bulletin filename
+
+
+The lottery generates a bulletin each time it is run.  You can post this 
+bulletin to let your users know how big the jackpot is (which should 
+encourage them to buy more tickets). 
+
+
+                               DISCLAIMER
+                               ==========
+
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM,
+     OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+   This is a FREE program; full source code is included.
+
+   If you have any questions, bugs, or suggestions, please contact 
+   me at: 
+       The Tool Shop BBS
+      (602) 264-3969 (HST)
+      (602) 279-2673 (2400)
+
+   The latest version is always available for downloading. 
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.
+
+
+Revision history
+----------------
+
+6-7-89 v1.8
+  Corrects time calculation bug introduced in version 1.7.
+  Recompiled with official prokit 3.0 libraries.
+
+4-8-90 v1.9á
+   Recompiled with ProKit 3.2 beta libraries; this version adds support
+   for nonstandard COM ports COM3..COM8 as well as the COMBASE and
+   COMIRQ environment variables.
+

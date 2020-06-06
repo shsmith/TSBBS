@@ -1,0 +1,860 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                          Lang-"Assembly" Source Code
+                       218 files using 10,088,653 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+13-ASM'S.ZIP    38647  06-29-87  13 assembly program listings
+                               | Download Count: 12   Last Download: 01-29-96
+                               |
+256FILES.ZIP    38007  07-17-87  Open 256 files simultaneously. With .ASM src
+                               | Download Count: 2    Last Download: 11-18-95
+                               |
+386BUG.ZIP       2362  06-05-87  Test for 386 multiply bug
+                               | Download Count: 7    Last Download: 07-18-95
+                               |
+6502.ZIP        42429  03-16-87  6502 Cross Assembler
+                               | Download Count: 3    Last Download: 01-29-96
+                               |
+6800.ZIP        27630  04-23-89  6800 assembler and documentation
+                               | Download Count: 4    Last Download: 01-29-96
+                               |
+68000.ZIP       85168  05-15-89  68000 C compiler with C source (MSC)
+                               | Download Count: 3    Last Download: 01-29-96
+                               |
+6870X.ZIP       21799  08-12-87  6870x series cross assembler w/C source
+                               | Download Count: 3    Last Download: 01-29-96
+                               |
+68HC11FP.ZIP    21162  10-24-87  Floating point routines for MC68HC11 uP
+                               | Download Count: 2    Last Download: 03-07-93
+                               |
+80386EX.ZIP      4828  02-11-87  Notes on the 80386 and EMS simulation pgms
+                               | Download Count: 3    Last Download: 04-27-96
+                               |
+80486.ZIP        1904  04-17-88  TXT FROM INFO WORLD ON 80486 CHIP
+                               | Download Count: 5    Last Download: 01-24-96
+                               |
+8088REG.ZIP      1247  10-24-87  See what your CPU is up to
+                               | Download Count: 8    Last Download: 01-29-96
+                               |
+A370.ZIP        96984  11-07-89  IBM 370 Asembler for IBM PCs
+                               | Download Count: 2    Last Download: 01-29-96
+                               |
+A86CVT.ZIP      35663  06-16-87  'HOW TO' convert MASM code to A86 - Snipper
+                               | Download Count: 7    Last Download: 01-24-96
+                               |
+A86V400.ZIP    177926  12-31-94  A86 macro assembler, V4.00 updated with
+                               | INCLUDE files, listings, no limit on size of
+                               | source files, fwd refs in complex
+                               | expressions, END operand, default ORG END in
+                               | DATA SEGMENT, and more! Contains info about
+                               | A386/D386. From Eric Isaacson Software.
+                               | Download Count: 15   Last Download: 01-29-96
+                               |
+A86V402.ZIP    178701  11-06-95  A86 macro assembler, V4.02 updated with
+                               | INCLUDE files, listings, no limit on size of
+                               | source files, fwd refs in complex
+                               | expressions, END operand, default ORG END in
+                               | DATA SEGMENT, and more! Contains info about
+                               | A386/D386. From Eric Isaacson Software.
+                               | Download Count: 2    Last Download: 07-16-97
+                               |
+AFORM.ZIP        7673  04-02-87  ASM source code formatter
+                               | Download Count: 9    Last Download: 07-19-94
+                               |
+ALIB10.ZIP     192828  04-14-94  ALIB 1.0 High level ASM library $0-$20
+                               | Assembly language program functions include
+                               | database, compression, hyper reader, memory
+                               | manager, floating point, menu system and
+                               | more.
+                               | Download Count: 15   Last Download: 01-24-96
+                               |
+ALTBC553.ZIP   324162  05-08-93  Assembly language toolkit for QBPDS 7.0/7.1.
+                               | Download Count: 7    Last Download: 05-04-95
+                               |
+ALTVB10B.ZIP   319477  10-07-92  Assembly language toolbox for Visual Basic.
+                               | Beta version only.
+                               | Download Count: 12   Last Download: 12-28-94
+                               |
+ANSI_12.ZIP     18334  06-15-89  MJMefford's PC Mag's ANSI.COM v1.2 w/ASM
+                               | Download Count: 10   Last Download: 08-25-95
+                               |
+AS.ZIP          14847  03-01-87  Unix-like front end for MASM
+                               | Download Count: 3    Last Download: 03-10-97
+                               |
+ASCUTILS.ZIP    25115  05-25-88  Utils for filtering text files - Asm src
+                               | Download Count: 7    Last Download: 11-08-94
+                               |
+ASM-MACS.ZIP    24690  09-03-87  Collection of asm & mac routines
+                               | Download Count: 4    Last Download: 03-29-94
+                               |
+ASM-TUT.ZIP    338321  08-03-92  ASM language tutorial
+                               | Download Count: 22   Last Download: 04-27-96
+                               |
+ASM32PM.ZIP     38665  06-08-93  Renaissance '93 Presents PMODE v2.1232 Coded
+                               | By: Tran Of Renaissance Finally! A raw, DPMI,
+                               | VCPI, and XMS Compliant Protected Mode System
+                               | Designed For The Serious 386 Programmer.
+                               | Works Flawlessly Under DesqView, QEMM, and
+                               | even Windows 3.1! Forget Ever Having To Deal
+                               | With The 64K Segment Barrier, or Even The
+                               | 640K Limit Again! Includes Full ASM Source
+                               | Code And Coding Examples.
+                               | Download Count: 34   Last Download: 12-01-96
+                               |
+ASMCMPR.ZIP      3174  06-03-90  Asm code to compare data.
+                               | Download Count: 4    Last Download: 03-24-96
+                               |
+ASMEDIT.ZIP     29589  04-24-89  Editor for TASM, MASM (Neither of which has
+                               | their own!)
+                               | Download Count: 9    Last Download: 04-27-96
+                               |
+ASMFLOW.ZIP     55818  12-14-92  Excellent Flow Charting Program "DEMO" from
+                               | Quantasm for ASM programmers, and well worth
+                               | a download. Fully functional with small
+                               | programs or sub-programs or code fragments.
+                               | Provides cycle counts for timing estimates,
+                               | 8088 80286 80386 80486 contains many a good
+                               | feature!.
+                               | Download Count: 12   Last Download: 01-24-96
+                               |
+ASMFLT.ZIP       6890  04-20-88  Assembly lang template for filter program(s)
+                               | Download Count: 3    Last Download: 04-03-94
+                               |
+ASMLIB38.ZIP   186416  06-19-94  ASMLIB v3.8 is an assembly language library
+                               | that includes routines for: Advanced graphics
+                               | for HGA, CGA, EGA VGA, SVGA, Xmode, etc.,
+                               | FAST disk I/O, easy keyboard/screen I/O,
+                               | EMS/XMS/VMS accessing, system info, advanced
+                               | math, complex data types, pull down menu's,
+                               | popup windows and much more! MASM, TASM,
+                               | OPASM, etc. compatible. Shareware by Doug
+                               | Herr - $25
+                               | Download Count: 23   Last Download: 02-26-96
+                               |
+ASMLIB40.ZIP   256900  04-02-95  ASMLIB v4.0 - for 16-bit Assembly- language
+                               | programming - A library that includes
+                               | routines for: extensive graphics for HGC,
+                               | HGC+, CGA, MCGA, EGA, VGA, SVGA & SVGA VESA,
+                               | etc., SuperFAST buffered disk I/O, keyboard &
+                               | direct screen I/O, EMS/XMS access, system
+                               | info, pull down menus, popup windows, and
+                               | much more! Shareware by Doug Herr - $25
+                               | Download Count: 10   Last Download: 12-01-96
+                               |
+ASMLOOK.ZIP      4072  08-16-89  Asm code to look for string in memory.
+                               | Download Count: 6    Last Download: 03-24-96
+                               |
+ASMPOP.ZIP      20369  06-17-87  Tsr reference for asm programmers - well done
+                               | Download Count: 11   Last Download: 04-19-96
+                               |
+ASMREF.ZIP     159447  11-04-88  Assembly language technical references by
+                               | Dave Williams (ca. 1988)
+                               | Download Count: 14   Last Download: 04-19-96
+                               |
+ASMSAMP1.ZIP   276725  12-12-91  Lots of utilties, many with ASM source
+                               | (collected thru the years)
+                               | Download Count: 12   Last Download: 07-12-94
+                               |
+ASMWAIT.ZIP      3627  10-21-89  Asm code to wait HH:MM:SS.
+                               | Download Count: 4    Last Download: 04-19-96
+                               |
+ASMWIZ20.ZIP    77159  11-03-94  Assembly Wizard's Library v2.0 for assembly
+                               | language (most assemblers are supported).
+                               | Text and graphics, buffered file I/O, kbd,
+                               | mouse, exception handler, string support,
+                               | hi-res timers & countdowns, Lots more. Tiny
+                               | model (.COM format). By Tom Hanlin.
+                               | Download Count: 7    Last Download: 01-12-97
+                               |
+ASSEMBLY.ZIP     8254  05-15-91  Assembly source examples of interfacing to
+                               | PowerBasic.
+                               | Download Count: 3    Last Download: 08-07-94
+                               |
+ASYNC.ZIP       16869  02-21-87  Serial Port Device Driver in MASM
+                               | Download Count: 8    Last Download: 11-18-95
+                               |
+ATKEY.ZIP       35401  05-02-87  PC/at keyboard programs / MASM src
+                               | Download Count: 6    Last Download: 04-19-96
+                               |
+BASICOS2.ZIP   110528  02-28-96  NitrousBasic for DOS. A Basic
+                               | interpreter/compiler for OS/2
+                               | Download Count: 0
+                               |
+BASM20.ZIP     107603  06-11-95  Basic to assembly language translator.
+                               | Download Count: 11   Last Download: 07-16-97
+                               |
+BELL.ZIP         7338  07-06-89  Change your machine's BELL. Four versions
+                               | with ASM source code.
+                               | Download Count: 6    Last Download: 01-24-96
+                               |
+BIOSTUFF.ZIP   252844  03-05-90  Complete source code examples and some
+                               | utilities for accessing the BIOS on your
+                               | computers. For serious programmers only!!!
+                               | Download Count: 13   Last Download: 04-19-96
+                               |
+BLANKALL.ZIP     6173  02-09-87  A tsr screen blanker, you set the time; ASM
+                               | Download Count: 5    Last Download: 04-19-96
+                               |
+BOOTSECT.ZIP     5149  03-02-87  Full description and disassembly of what is
+                               | contained in the bootsector of every disk.
+                               | boot from C with disks in A or just to find
+                               | out how the system boots.
+                               | Download Count: 21   Last Download: 02-16-97
+                               |
+BUBBLE.ZIP      74348  09-19-88  Program disassembler
+                               | Download Count: 19   Last Download: 08-07-97
+                               |
+BW-ONLY.ZIP      6521  01-03-88  Use a composite monitor on CGA (Color burst
+                               | Download Count: 0
+                               |
+BXD2.ZIP        26062  03-19-88  Brand-X Debugger v2.6
+                               | Download Count: 9    Last Download: 01-25-96
+                               |
+BYTE.ZIP        17576  08-06-89  Good interactive tutorial on how bytes move
+                               | in a computer. You can add, subtract, shift
+                               | bytes, and more !
+                               | Download Count: 6    Last Download: 03-24-96
+                               |
+CALLPRN.ZIP      2123  03-16-87  How to directly call the PRN driver / MASM
+                               | Download Count: 2    Last Download: 03-24-96
+                               |
+CBOOT200.ZIP     4138  04-16-87  Program abort/reboot with multiple options.
+                               | Download Count: 5    Last Download: 10-12-94
+                               |
+CDTO.ZIP         1903  10-07-87  Find file and change dir to it - Christenson
+                               | Download Count: 3    Last Download: 01-02-94
+                               |
+CHAIN217.ZIP     8513  05-28-89  CHAIN v2.17 05-28-89 : traces FAT and tell
+                               | which clusters a specified file occupies -
+                               | with ASM source code
+                               | Download Count: 5    Last Download: 03-24-96
+                               |
+CHASM41.ZIP    142930  05-11-87  CHeap ASsembler version 4.10. This board ha
+                               | an earlier (1986) version. Will assemble .COM
+                               | files but not .EXE files
+                               | Download Count: 4    Last Download: 04-19-96
+                               |
+CHIPS.ZIP       11165  01-01-88  Check chips (CPU & math-coproc) ASM, OBJ, EXE
+                               | Download Count: 5    Last Download: 01-29-96
+                               |
+CHK4DDOS.ZIP     1991  12-03-87  Test for DoubleDOS, useful in .BAT files
+                               | Download Count: 0
+                               |
+CLOCK10.ZIP     13070  10-18-90  C/ASM routines to present a corner clock on
+                               | screen. Very easy to use in your own
+                               | programs.
+                               | Download Count: 3    Last Download: 04-08-94
+                               |
+CODE32.ZIP      37541  03-01-93  Renaissance 1993 Presents Everything You
+                               | Need To Start Coding In 386 Protected Mode
+                               | Assembly. An Update Of Our Old START32 Code,
+                               | It Also Includes Many Helpful Routines And
+                               | Examples To Start You Off. The Libraries
+                               | Include File I/O, Command Line Parsing, And
+                               | Advanced Keyboard Handling. Many Bugs Fixed
+                               | Since The Last Release! Get Out Of The Stone
+                               | Age And Start Using Your 386 PC To Its
+                               | Fullest Potential!
+                               | Download Count: 45   Last Download: 12-01-96
+                               |
+COMM1-34.ZIP    23895  03-13-88  RS232 driver for up to 34 ports (it works!)
+                               | Download Count: 15   Last Download: 11-25-95
+                               |
+CRACKERS.ZIP    19951  04-23-87  Disassemble any file into it's source code.
+                               | Download Count: 24   Last Download: 06-24-96
+                               |
+CRASH119.ZIP    51640  07-04-89  CRASH v1.19: Detects crash of BBS & reboots
+                               | Download Count: 5    Last Download: 10-12-94
+                               |
+CRCMASM.ZIP      5044  11-01-91  MASM assembly code for calculations of CRC
+                               | values for strings / or may be adapted to
+                               | work with code blocks, bytes, words. Source
+                               | provides standard 16 bit CRC values. Handy!
+                               | Download Count: 9    Last Download: 11-18-95
+                               |
+CRITTER.ZIP      9257  11-14-87  Crit err handler repl Abort/Retry/Ign, w/ASM
+                               | Download Count: 1    Last Download: 03-24-96
+                               |
+D86V400.ZIP     95335  12-30-94  D86 debugger, V4.00, updated with keystroke
+                               | scripts, macro keys, Undo command, and file
+                               | copy and delete. Contains info about
+                               | A386/D386. From Eric Isaacson Software.
+                               | Download Count: 14   Last Download: 01-25-96
+                               |
+DASM48.ZIP      15950  01-28-94  Intel HEX disassembler for 8048
+                               | microprocessor
+                               | Download Count: 3    Last Download: 01-25-96
+                               |
+DASM80.ZIP      15112  01-28-94  8080 disassembler
+                               | Download Count: 2    Last Download: 03-11-94
+                               |
+DASMZ80.ZIP     40300  01-28-94  Z80 Intel HEX file disassembler
+                               | Download Count: 2    Last Download: 02-16-94
+                               |
+DEADMAN.ZIP      6510  04-22-87  Prevent timeout logoffs with this program
+                               | Download Count: 1    Last Download: 08-04-95
+                               |
+DELDUP22.ZIP    11460  07-21-87  Vern Buerg's DEL DUPlicates v2.2 / MASM src
+                               | Download Count: 2    Last Download: 07-12-94
+                               |
+DESQTEST.ZIP     2814  04-22-88  Test if under DESQview in a .BAT file/ MASM
+                               | Download Count: 2    Last Download: 03-02-94
+                               |
+DIRMATCH.ZIP    18955  09-19-89  Assembly lang source code for DIRMATCH from
+                               | PC Magazine
+                               | Download Count: 1    Last Download: 04-03-94
+                               |
+DIR_VLA.ZIP      9488  02-21-94  [ASM] Several usefull sources in ASM for DOS
+                               | operations. From VLA.
+                               | Download Count: 10   Last Download: 03-24-96
+                               |
+DISATR11.ZIP    29185  06-30-93  DISASTER v1.0 <ASP> - Interactive disassemble
+                               | . This program reads a COM, SYS or EXE file
+                               | and tries to find out what is code and what s
+                               | data. The user can interactively correct i ,
+                               | add comments and meaningful labels. Event
+                               | ally a source-file is produced which can be
+                               | e-assembled. System requirements: 128K Syst m
+                               | recommendations: color screen Author: Feico
+                               | Nater Shareware, BeukweG 24, 7556 DE Hengelo
+                               | v, Netherlands. Registration $50.00
+                               | Download Count: 52   Last Download: 06-24-96
+                               |
+DOS32V12.ZIP    40035  10-22-93  A 386 32 bit dos extender for Assembly
+                               | Programmers, Version 1.2 ASM source.
+                               | Download Count: 13   Last Download: 12-01-96
+                               |
+DOSMON2.ZIP      8075  05-26-89  TSR:display DOS calls status:revised ASM onl
+                               | Download Count: 3    Last Download: 07-31-96
+                               |
+DRIVERS2.ZIP   140855  08-01-93  Crynwr TCP/IP Packet Source Code (ASM)
+                               | Download Count: 4    Last Download: 12-01-96
+                               |
+DSCRNSAV.ZIP     4619  11-10-93  Screen Saver with source code ASM
+                               | Download Count: 8    Last Download: 11-24-96
+                               |
+E03A.ZIP        23660  01-21-90  Text Editor, simply named "E"; Version 0.3a.
+                               | Comes with assembly source.
+                               | Download Count: 1    Last Download: 04-08-94
+                               |
+E12.ZIP         40015  10-13-90  Good small editor with asm source
+                               | Download Count: 2    Last Download: 04-07-94
+                               |
+EASYASM.ZIP    247915  11-06-93  An assembly language source compiler that
+                               | requires MASM 5.0 or later. This is supposed
+                               | to make assembly programming easy.
+                               | Download Count: 15   Last Download: 11-28-94
+                               |
+EC100.ZIP        5652  05-31-89  Exec BAT file at a specified time v1.00 w/ASM
+                               | Download Count: 4    Last Download: 04-19-96
+                               |
+EE.ZIP         131702  02-06-93  Very fast text editor w/ assembler source
+                               | code in self extracting form (EE.EXE) the
+                               | program (EE.COM) is designed to be customized
+                               | & is ,of course, public domain.
+                               | Download Count: 4    Last Download: 04-07-94
+                               |
+EGAWORK.ZIP      6108  07-29-87  Info for programming w/EGA (Asm, Exe, Txt)
+                               | Download Count: 0
+                               |
+EMS40.ZIP       23001  06-06-89  Turns extended memory into expanded lim4.0
+                               | Includes ASM source. From PC Mag.
+                               | Download Count: 10   Last Download: 04-19-96
+                               |
+EMSDISK.ZIP     12281  05-29-87  Ram disk for EMS memory, excellent .ASM incl.
+                               | Download Count: 2    Last Download: 07-21-93
+                               |
+ENVI@103.ZIP    22967  04-30-93  ENVI-MAN v1.03 r04/30/93 Micrometric <ASP>:
+                               | An Environment utility: small assembly
+                               | language routine with optional display of
+                               | environment strings & data such as location,
+                               | size & space available of the Master env.;
+                               | batch file environment space test provides
+                               | graceful exit if there is not enough.
+                               | Download Count: 13   Last Download: 09-13-94
+                               |
+EXE2COM.ZIP      5414  09-26-87  Replaces DOS EXE2BIN - by Cove Software
+                               | Download Count: 2    Last Download: 02-11-96
+                               |
+EXECDE.ZIP       1914  09-02-89  ASM example of how to spawn a program
+                               | Download Count: 3    Last Download: 11-21-94
+                               |
+EXECOM12.ZIP     5763  05-09-89  EXE-to-COM converter. Small, fast, with
+                               | source (ASM).
+                               | Download Count: 6    Last Download: 02-19-97
+                               |
+FASVID10.ZIP     4217  02-03-92  Fast video assembly language routines.
+                               | Download Count: 18   Last Download: 04-19-96
+                               |
+FILWATCH.ZIP    35762  04-20-87  Dunford's File Watch - monitors disk activit
+                               | Download Count: 3    Last Download: 05-04-94
+                               |
+FIX101KY.ZIP     4937  07-24-88  Remaps 101-key kbd for sanity w/ASM Hanlin
+                               | Download Count: 3    Last Download: 04-19-96
+                               |
+FUNUTILS.ZIP    61803  07-07-90  A set of "fun" utilities with assembly
+                               | sources to each one. Good to learn different
+                               | techniques from.
+                               | Download Count: 11   Last Download: 04-19-96
+                               |
+GETDATE2.ZIP     3977  04-16-91  Date/time display w/ASM source
+                               | Download Count: 10   Last Download: 03-24-96
+                               |
+GIVEBK31.ZIP     5796  04-26-88  Give back time under DESQview/DoubleDOS, ASM
+                               | Download Count: 2    Last Download: 04-08-94
+                               |
+HDC.ZIP         13290  04-18-87  Hard Disk Cache (2 versions, good) / MASM src
+                               | Download Count: 5    Last Download: 03-10-97
+                               |
+HDSENTRY.ZIP     3509  05-23-87  Protects your Hard Disk while running new
+                               | programs.
+                               | Download Count: 3    Last Download: 04-08-94
+                               |
+HERCBIOS.ZIP    20659  03-12-87  Hercules bios for IBM / MASM source
+                               | Download Count: 3    Last Download: 04-08-94
+                               |
+HILOAD10.ZIP    18143  06-18-90  asm. source & executable for HILOAD program
+                               | load TSRs into High Memory (>640k)
+                               | Download Count: 5    Last Download: 02-19-97
+                               |
+HPRTSC.ZIP       6754  08-19-87  Hercules graphics print screen, w/ASM source
+                               | Download Count: 2    Last Download: 04-08-94
+                               |
+INT101.ZIP       8073  04-17-88  Pop-up interrupt vector display
+                               | Download Count: 3    Last Download: 09-16-95
+                               |
+INTERCE.ZIP     35212  04-18-89  Intecepts and logs DOS interrupts during
+                               | program execution
+                               | Download Count: 7    Last Download: 09-16-95
+                               |
+INTHELP.ZIP     15689  11-20-88  Helps in debugging interrupt conflicts
+                               | Includes ASM source code.
+                               | Download Count: 8    Last Download: 02-19-97
+                               |
+IS16550.ZIP      3652  06-16-89  Detects presence of 16550 UART : w/ASM src.
+                               | Download Count: 6    Last Download: 04-19-96
+                               |
+KFLUSH.ZIP       1545  07-05-87  Flush kbd afer runing macro,bat or pgm/ MASM
+                               | Download Count: 1    Last Download: 04-08-94
+                               |
+LDIR41.ZIP      15010  01-27-89  Vern Buerg's List DIRectory v4.1 w/ASM
+                               | Download Count: 6    Last Download: 05-22-95
+                               |
+LIMEMS41.ZIP    66157  11-12-87  Description from the Intel EMS 4.0 developme
+                               | kit for LIM EMS expanded memory std.
+                               | Download Count: 0
+                               |
+LOADALL.ZIP      5087  01-30-89  Documentation for the "secret" LOADALL
+                               | instruction in the 80286 -- supposed to allow
+                               | quick access to extended memory in REAL mode.
+                               | Download Count: 9    Last Download: 07-06-96
+                               |
+LW286.ZIP       15959  12-22-87  80x86 Command Set in a POPUP - handy !!!
+                               | Download Count: 0
+                               |
+MASM2A86.ZIP    41056  01-31-91  Text file from author Eric Isaacson
+                               | explaining how to convert MASM source code
+                               | listings to A86 source code listings.
+                               | Download Count: 2    Last Download: 03-12-95
+                               |
+MD86.ZIP       155264  06-24-90  Disassembler that works very well. Take apart
+                               | EXE's and COM's into assembly language.
+                               | Download Count: 45   Last Download: 11-09-96
+                               |
+MD8610.ZIP     157220  04-21-88  Interactive Dissambler for COM and EXEs.
+                               | Download Count: 6    Last Download: 05-21-94
+                               |
+MEMRES.ZIP      17963  06-05-88  Memory Res utilities (From Compuserve) / MAS
+                               | Download Count: 0
+                               |
+MENUMOUS.ZIP     3209  01-25-89  Map mouse to arrow keys, TSR's w/asm source
+                               | Download Count: 5    Last Download: 03-18-96
+                               |
+MINI_ASM.ZIP     7636  01-26-94  ÚÄ¿ ÚÄÂÄÂÄÄÂÄÄ¿x.x.s
+                               | ³ ÀÄ´   ´ Ä´ Ä´doc.l
+                               | ÀÄÄÄÁÄÁÄÁÄÄÁÄÄÙhrtro
+                               | ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                               | very detailed commented
+                               | sourcecode for lkcc's
+                               | 500-byte-mini-intro..
+                               | it's a must if u wanna
+                               | learn asm-coding !
+                               | Download Count: 24   Last Download: 08-07-97
+                               |
+MOTOASM2.ZIP    12065  02-17-90  A modified version STOBIN.ASM and STOBIN.EXE
+                               | Fixes a bug and allows specifying a beginning
+                               | (E(E))PROM address offset for writing an
+                               | high-memory executable file. Changes made by
+                               | Charles Whitlatch.
+                               | Download Count: 3    Last Download: 03-10-96
+                               |
+MOTOASMS.ZIP   110019  12-08-89  Collection of Motorola cross-assemblers for
+                               | such uP's as the 6800, 6809, 6811, etc...
+                               | Download Count: 2    Last Download: 01-13-94
+                               |
+MOUSEASM.ZIP     7094  12-26-87  Mouse routines in .ASM
+                               | Download Count: 7    Last Download: 04-19-96
+                               |
+MOV21A.ZIP       5139  10-20-88  Fast file mover v 2.01a, docs & A86 source 2
+                               | Download Count: 4    Last Download: 04-08-94
+                               |
+MSLOOKUP.ZIP    43528  05-17-87  Fuction look up (Int's) program
+                               | Download Count: 2    Last Download: 01-25-96
+                               |
+NEWKBIOS.ZIP     4159  07-17-87  BIOS Support for F11 and F12
+                               | Download Count: 3    Last Download: 04-08-94
+                               |
+NEW_BIOS.ZIP    36057  01-18-88  "Bug-free" BIOS .asm source code for XT's.
+                               | Download Count: 3    Last Download: 04-08-94
+                               |
+NG-INTS.ZIP     36631  06-10-89  norton guide database of PC interrupts
+                               | Download
+                               | Download Count: 6    Last Download: 08-27-94
+                               |
+NGDD.ZIP        18863  11-22-88  Norton Guides Uncompiler!
+                               | Download Count: 6    Last Download: 12-20-93
+                               |
+NJRAMD15.ZIP    22465  06-30-87  Ram disk- LIM EMS AST EEMS, low ovhd, MASM
+                               | Download Count: 1    Last Download: 06-01-93
+                               |
+NJRAMT.ZIP       5820  10-21-87  EMS memory testing, ASM source
+                               | Download Count: 5    Last Download: 11-04-96
+                               |
+NNANSI.ZIP      37052  03-20-89  ANSI.SYS optimized for EGA/VGA - SUPER FAST!
+                               | Download Count: 6    Last Download: 10-25-95
+                               |
+NOYB.ZIP         4056  05-11-89  On demand resident screen blanker (asm src)
+                               | Download Count: 2    Last Download: 04-08-94
+                               |
+NP.ZIP           5758  11-30-88  This will show you at your prompt if a file
+                               | is shelled, and its name. ASM source.
+                               | Download Count: 3    Last Download: 04-08-94
+                               |
+NUMLOCK.ZIP      1196  07-24-87  Turns off the num-lock on 101 style kbd/ MASM
+                               | Download Count: 2    Last Download: 03-22-94
+                               |
+NUMVERT.ZIP      5150  12-08-92  Number Conversion program w/.ASM source.
+                               | Conversion between Hex, Bin, Dec, etc.
+                               | Download Count: 13   Last Download: 03-23-96
+                               |
+OBJTOASM.ZIP    14203  01-06-91  OBJTOASM -- This program will take MicroSoft
+                               | standard .OBJ code and print it's assembler
+                               | equivalent. Appears to be well written and
+                               | reliable.
+                               | Download Count: 14   Last Download: 11-18-95
+                               |
+OBJTOO22.ZIP    48220  12-30-92  ObjTool 2.2: check/view/repair/alter .OBJ
+                               | files. Rename publics, externals, default
+                               | lib. Delete language, default lib. Search
+                               | OBJs. Select files by wildcard, time, date,
+                               | size. A "one stop OBJ shop" by Tom Hanlin.
+                               | Download Count: 11   Last Download: 03-05-96
+                               |
+OEMSRC.ZIP      28615  03-21-89  ASM source for HIMEM.SYS extended memory mgr
+                               | Download Count: 3    Last Download: 02-19-97
+                               |
+OVL.ZIP         67144  01-22-89  Overlay manager for MASM, BASIC and C
+                               | Download Count: 4    Last Download: 03-17-97
+                               |
+OWNER152.ZIP     8700  03-13-87  utility tells which file is using a cluster n
+                               | Download Count: 1    Last Download: 02-22-93
+                               |
+PCMAC.ZIP       78261  11-06-93  Universal Macro Assembler. A two pass
+                               | symbolic cross assembler for IBM and PC
+                               | clones. This program is useful when
+                               | developing assembly programs for a processor
+                               | for which there is no assembler.
+                               | Download Count: 15   Last Download: 04-19-96
+                               |
+PCREMOTE.ZIP    23288  11-27-89  Remote control of PC via modem (PC magazine)
+                               | includes ASM and BASIC source.
+                               | Download Count: 13   Last Download: 04-19-96
+                               |
+PDATB501.ZIP   258847  02-06-93  Microsoft Prof. Development System (PDS) ASM
+                               | toolbox add-on for programmers. Very nice
+                               | addition and powerful. Windowing, and much,
+                               | much more...
+                               | Download Count: 8    Last Download: 04-18-94
+                               |
+PKV100.ZIP      13033  10-14-90  PKV v1.00 - Another .ZIP file viewer w/ ASM
+                               | source. Displays entries in the same format
+                               | as PKUNZIP -v
+                               | Download Count: 7    Last Download: 02-19-97
+                               |
+POPASM.ZIP      25667  06-17-87  Popup MASM help facility
+                               | Download Count: 0
+                               |
+PORTMAP.ZIP      1518  03-04-87  Information on serial port
+                               | Download Count: 6    Last Download: 03-10-96
+                               |
+POWERKIT.ZIP    16159  09-30-87  A keyboard enhancer type of program. GREAT!
+                               | Download Count: 2    Last Download: 12-25-93
+                               |
+PROBE.ZIP       49055  03-24-90  Programmers utility to determine where your
+                               | programs spend the most time. Your compiler
+                               | must produce a .map file microsoft style
+                               | Download Count: 6    Last Download: 05-08-94
+                               |
+PSCAN10.ZIP      7080  02-08-89  scan OBJ & LIB files for public symbols
+                               | Download Count: 2    Last Download: 04-28-95
+                               |
+PSCHK.ZIP        2094  02-16-87  Check printer there before Print Screen/MASM
+                               | Download Count: 2    Last Download: 04-08-94
+                               |
+QMATH10.ZIP      5991  07-26-93  QMath10 (Roger Moser; $0) - is a set
+                               | of fast 64-bit signed integer arithmetic
+                               | routines in assembler.
+                               | Download Count: 2    Last Download: 12-01-96
+                               |
+RAMKIT2.ZIP     40491  03-06-88  A kit bag full of ram disk drivers
+                               | Download Count: 2    Last Download: 08-02-93
+                               |
+RATASM.ZIP      29360  05-15-88  PREPROCESSOR FOR STRUCTURED ASM
+                               | Download Count: 2    Last Download: 03-24-96
+                               |
+REGMAC.ZIP       4615  10-20-91  ASM source to display all 8086 registers in
+                               | binary.
+                               | Download Count: 3    Last Download: 04-19-96
+                               |
+RMDMTC.ZIP      21471  02-27-88  Assorted TSR source examples
+                               | Download Count: 5    Last Download: 04-03-94
+                               |
+ROMF.ZIP        21613  09-24-89  Analyze object files
+                               | Download Count: 0
+                               |
+ROMTOOLS.ZIP     5738  08-26-87  Check your roms
+                               | Download Count: 1    Last Download: 08-04-94
+                               |
+RS232DD.ZIP     36152  07-07-87  Device driver rs232 ver 2.72
+                               | Download Count: 6    Last Download: 07-18-94
+                               |
+RXDOSCMD.ZIP   152551  02-07-93  ASM Source code (and objs) fOr command.com
+                               | replacement.
+                               | Download Count: 9    Last Download: 03-10-96
+                               |
+SBRK.ZIP         3272  02-25-87  SuperBreak. Break out of any pgm.
+                               | Download Count: 7    Last Download: 04-08-94
+                               |
+SCANCOD2.ZIP     9529  04-30-87  Shows keyboard scan codes / MASM src
+                               | Download Count: 7    Last Download: 04-19-96
+                               |
+SCOPE105.ZIP    45169  03-01-88  CodeScope v1.05 GREAT execution profiler!
+                               | Download Count: 6    Last Download: 02-02-95
+                               |
+SCRD_ASM.ZIP    13718  06-20-92  Assembly language routines fOr Sound Blaster
+                               | Download Count: 21   Last Download: 09-05-95
+                               |
+SCROLL.ZIP     135904  03-11-93  Demo on the scrolling capabilities of Mode X.
+                               | Includes ALL ASM source! 60-70 FPS!
+                               | Download Count: 16   Last Download: 05-19-96
+                               |
+SEMS5.ZIP       24377  12-22-88  EMS manager, with Assembly source
+                               | Download Count: 1    Last Download: 06-01-93
+                               |
+SETSEEK.ZIP      4779  02-20-87  Sets seek time on Floppy Disk Drives / MASM
+                               | Download Count: 3    Last Download: 03-24-96
+                               |
+SHOWPARK.ZIP     7594  04-16-87  Show park status of HD..with .ASM source
+                               | Download Count: 1    Last Download: 04-08-94
+                               |
+SHOWTSRS.ZIP    17337  09-29-88  Map TSRs and scroll with MASM/TASM
+                               | Download Count: 1    Last Download: 03-17-97
+                               |
+SLICE13.ZIP     10911  10-31-89  PC Mag's SLICE V 1.3 - bug fixes - copy large
+                               | files to multiple diskettes - w/ASM source
+                               | Download Count: 6    Last Download: 11-18-95
+                               |
+SMON13.ZIP       3668  01-22-88  Seek MONitor v1.3/TSR shows disk access w/AS
+                               | Download Count: 2    Last Download: 04-09-94
+                               |
+SNIPPER.ZIP      9867  11-02-87  Part of Screen Image to Disk File / MASM
+                               | Download Count: 1    Last Download: 04-09-94
+                               |
+SPEEDER.ZIP      2567  08-18-87  Redoes RAM refresh rate- TSR takes no room
+                               | Download Count: 5    Last Download: 07-18-94
+                               |
+SPIES.ZIP       18815  05-16-87  Some example tsr techniques with asm source
+                               | Download Count: 7    Last Download: 02-19-97
+                               |
+SSCED11.ZIP     33570  04-15-88  Popular CED text editor. MASM source
+                               | Download Count: 2    Last Download: 03-17-97
+                               |
+SWAPMSJ.ZIP     13885  09-01-90  swap program memory to ems or disk before a
+                               | spawn. asm source for msc and tc
+                               | Download Count: 2    Last Download: 01-07-94
+                               |
+TAIL-CT.ZIP      5141  01-31-90  Allows you to call any program and pass
+                               | command line parameters - use with menus, etc
+                               | Download Count: 3    Last Download: 04-09-94
+                               |
+TASM.ZIP        71318  02-09-89  Assembler. Pretty good for Shareware!
+                               | Download Count: 10   Last Download: 04-19-96
+                               |
+TASM28.ZIP     151898  05-04-91  Table driven cross assembler, for 8080,z80
+                               | 6800/8, 8031/52, 32010, etc. for a new
+                               | processor just add a table.
+                               | Download Count: 6    Last Download: 04-24-94
+                               |
+TAVIDEO.ZIP     14782  11-09-88  Video routines for Turbo Assembler
+                               | programmers
+                               | Download Count: 7    Last Download: 04-19-96
+                               |
+TBONES07.ZIP    35324  01-20-91  Bare bones assembly code for writing your own
+                               | TSRs.
+                               | Download Count: 22   Last Download: 03-22-94
+                               |
+TECHREF.ZIP    146888  12-16-88  PD DOS tech reference
+                               | Download Count: 3    Last Download: 04-19-96
+                               |
+TESS-A.ZIP      18969  10-02-88  TesSeRact v1.10 routines in ASM
+                               | Download Count: 0
+                               |
+TEXTWRAP.ZIP    12371  03-03-88  Useful text-mode screen commands / C & MASM
+                               | Download Count: 4    Last Download: 03-17-97
+                               |
+TIBTAZ.ZIP       3230  01-17-93  TIBTAZ traps INT3 Branch To Absolute (0)
+                               | Written by Bruce T. Findlay, March 1992.
+                               | Contributed to the Public Domain. TSR. Source
+                               | Code MASM + Doc file and *.Com
+                               | Download Count: 11   Last Download: 03-24-96
+                               |
+TIMER1S.ZIP      3393  03-19-87  High resolution execution timer / MASM src
+                               | Download Count: 8    Last Download: 03-10-97
+                               |
+TKRTGL.ZIP       2681  11-22-89  Unhook Int 1C on demand, for high speed
+                               | interrupt applications (asm src)
+                               | Download Count: 5    Last Download: 11-18-95
+                               |
+TOBOKEY.ZIP      4038  02-15-88  Types predefined keys at preset time; MASM!
+                               | Download Count: 4    Last Download: 03-05-96
+                               |
+TPA.ZIP         22157  09-08-89  The Programmer's Assistant, color chart,
+                               | ASCII table, 8086/8088 registErs, screen
+                               | addresses, a DEC/HEX/OCT/BIN converter
+                               | Download Count: 7    Last Download: 03-05-96
+                               |
+TRACE2.ZIP      42088  01-01-88  Program interrupt tracer / MASM and C source
+                               | Download Count: 5    Last Download: 08-27-94
+                               |
+TSR21.ZIP       33431  09-21-87  Memory Resident CALC, EDITOR, MAP tutorial
+                               | Download Count: 2    Last Download: 03-08-94
+                               |
+TSRCOMM.ZIP     17460  09-10-87  Better Async BIOS; from MS Journal; MASM src
+                               | Download Count: 9    Last Download: 04-07-94
+                               |
+TSRDEMO2.ZIP    15427  03-03-87  ASM src code , shows how to make a safe TSR.
+                               | Download Count: 5    Last Download: 04-03-94
+                               |
+TSRSHELL.ZIP    12469  02-02-87  Shell for writing TSR's / MASM
+                               | Download Count: 8    Last Download: 04-03-94
+                               |
+TSRWKS31.ZIP    78326  05-31-89  WorkTSR v3.1:TSRCOMxx utils replacements
+                               | w/ASM.
+                               | Download Count: 5    Last Download: 07-26-94
+                               |
+UCRASM30.ZIP   358043  03-25-93  Version 3 of the UCR standard library for
+                               | assembly language programmers.
+                               | Download Count: 6    Last Download: 05-02-94
+                               |
+V20UTILS.ZIP    76294  10-03-89  Misc. V20 processor programming utilities
+                               | Download Count: 0
+                               |
+VIDBUF.ZIP       4014  11-09-89  Display DesqView video Buffer address
+                               | Download Count: 0
+                               |
+WASM.ZIP        47776  03-26-87  A shareware assembler. No MACROS but it is
+                               | better than a lot of the other shareware
+                               | assemblers I'v seen
+                               | Download Count: 2    Last Download: 06-30-95
+                               |
+WASM223.ZIP    433218  04-01-93  Wolfware Assembler -- Conditional assembly
+                               | and macros are a good part of this assembler.
+                               | XLNT for writing assembly language programs.
+                               | Plenty of examples of code and routines you
+                               | can use in your own programs.
+                               | Download Count: 21   Last Download: 07-28-95
+                               |
+WATCHDOG.ZIP     4680  05-18-87  Checks printer ready - watcher / ASM source
+                               | Download Count: 2    Last Download: 04-07-94
+                               |
+WCPU050.ZIP     15996  03-12-93  Identifies all known CPU types through
+                               | pentium. Includes source code.
+                               | Download Count: 22   Last Download: 07-21-95
+                               |
+WHEN32.ZIP      13293  09-15-90  Start a process at given time w/ASM source
+                               | Download Count: 8    Last Download: 02-19-97
+                               |
+WIN2NG.ZIP      68307  04-24-88  Documents 501 function calls (API) for
+                               | Windows 2.0x. Use with Windows Dev. Kit &
+                               | Norton Guides
+                               | Download Count: 1    Last Download: 04-13-93
+                               |
+WINPRTSC.ZIP    11224  03-11-87  Save screen in MS print format for EGA/MASM
+                               | Download Count: 1    Last Download: 04-07-94
+                               |
+WS5ASC.ZIP       4972  09-20-88  Covert WordStar v5.0 and below to pure ASCII
+                               | files. Strips all high bit characters. Very
+                               | fast and includes ASM source !
+                               | Download Count: 2    Last Download: 05-22-95
+                               |
+XCRT.ZIP         5309  10-07-88  A few extensions for the TPAS 'CRT' unit.
+                               | Download Count: 0
+                               |
+XFILES.ZIP      10879  12-02-87  'Official' way to open more than 20 files/AS
+                               | Download Count: 3    Last Download: 11-18-95
+                               |
+XMS.ZIP         96878  06-07-89  MS Xpanded memory specification
+                               | Download Count: 0
+                               |
+XMS206.ZIP      89613  03-21-89  HIMEM.SYS v2.06 dtd 03-21-89 : Source Code
+                               | and AppNotes from Microsoft
+                               | Download Count: 1    Last Download: 03-11-94
+                               |
+XONE23.ZIP       8641  10-12-87  Extracts form ARCfile to ARCfile / MASM src
+                               | Download Count: 2    Last Download: 04-09-94
+                               |
+XONXOFF.ZIP      7664  07-16-89  Util to enhance data flow to Serial Printer
+                               | w/ ASM source : from USENET
+                               | Download Count: 5    Last Download: 09-09-96
+                               |
+Z8DSASM2.ZIP    37471  02-11-90  A newer version of Z8DISASM.BAS A BASIC
+                               | program to disassemble Z8 microcomputer
+                               | executable code. Author: Charles Whitlatch
+                               | Phoenix, AZ
+                               | Download Count: 0
+                               |
+ZANSI12.ZIP     21662  08-03-87  v1.2 ZANSI replace ANSI.SYS-better / MASM src
+                               | Download Count: 9    Last Download: 05-09-95
+                               |
+ZD86.ZIP        98581  10-15-91  ZanySoft fully interactive assy.lang.
+                               | debugger. Great features for the pro yet
+                               | friendly and simple enough for the casual
+                               | user.
+                               | Download Count: 11   Last Download: 11-26-94
+                               |
+ZDEL40.ZIP       6706  11-09-87  A global file deletion utility. MASM src
+                               | Download Count: 2    Last Download: 03-10-97
+                               |
+ZENASM.ZIP     156861  03-18-90  Source code files from the book, Zen of
+                               | Assembly Programming by Michael Abrash
+                               | Download Count: 6    Last Download: 02-19-97
+                               |
+ZENDISK1.ZIP    58411  02-15-90  Source listing of "Zen of Assembly Language"
+                               | Download Count: 3    Last Download: 05-01-94
+                               |
+ZENDISK2.ZIP    98837  02-15-90  Source listing of "Zen of Assembly Language"
+                               | Download Count: 3    Last Download: 05-01-94
+                               |
+ZENO25.ZIP      11024  01-19-90  Zeno v2.5 - Source code included
+                               | Download Count: 3    Last Download: 04-09-94
+                               |
+ZIP-KIT8.ZIP   111030  09-05-89  Utilities for PKZIP
+                               | Download Count: 5    Last Download: 02-01-97
+                               |
+ZV11.ZIP        10752  03-15-89  Zip file verbose lister with MASM source.
+                               | Download Count: 2    Last Download: 09-09-94
+                               |

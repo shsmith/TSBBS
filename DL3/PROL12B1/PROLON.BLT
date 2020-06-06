@@ -1,0 +1,31 @@
+
+06/15/89 ------
+   You can now bypass most logon prompts by "stacking" your responses.
+   At the "Do you want graphics: (Enter)=no?" prompt you can now respond
+   with any of the following formats:
+        N Q firstname lastname password doornumber
+                bypass welcome, display news, open door
+        N Q firstname lastname password doornumber NS
+                bypass welcome, bypass news, open door
+        N Q
+                bypass welcome, prompt for name & password, display news
+        N Q NS
+                bypass welcome, prompt for name & password, bypass news
+   Notice that you must now add 'NS' to the END of the initial response
+   line to bypass the normal NEWS display.
+
+
+05/30/89 ------
+   I am testing the new ProLogon "front door" utility.
+   You can now bypass most logon prompts by "stacking" your responses.
+   At the "Do you want graphics: (Enter)=no?" prompt you can now respond
+   with:
+        n q firstname lastname password 1
+   to logon and immediately jump into door 1.
+
+   Likewise, you can change your Qmail scripts to use:
+        n q firstname lastname password 9
+   To immediately open the Qmail door.
+
+   Please let me know how this works.  I'm open to suggestions if you
+   have any ideas on how to further streamline things.

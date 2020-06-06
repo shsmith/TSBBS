@@ -1,0 +1,265 @@
+f100 500 0
+a100
+;
+;----------------------------------------
+; DOSMON - DOS Activity Monitor
+;----------------------------------------
+;
+; This program will terminate and stay resident.  It intercepts the
+; DOS service interrupt and displays status information on the
+; screen during DOS service execution periods.
+;
+; S.H.Smith, 15-may-86
+;
+
+
+a100
+;----------------------------------------
+; startup entry point
+;----------------------------------------
+   jmp 2e0       ;install
+
+
+a103
+; vector for old interrupt
+   db 0,0,0,0
+
+
+a107
+; segment address for display memory
+; filled in by startup code
+   dw 0
+
+
+a10e
+; twiddle display index
+   dw 0
+
+
+a110
+; twiddle display characters
+   db "Ä\³/"
+
+
+a130
+; a signature in bytes
+   db 0a,0d,'DOSMON - DOS Activity Monitor',0a,0d
+   db '$  S.H.Smith, 15-May-86',0a,0d
+   db 1a
+
+
+a170
+;----------------------------------------
+; new DOS service interrupt
+;----------------------------------------
+;
+   push ds
+   push es
+   push bx         ;save entry registers
+   push ax
+;
+   cs:
+   mov ax,[107]    ;get display segment into es
+   mov es,ax
+;
+;----------------------------------------
+; prepare display with blanks
+;
+   mov ax,0f20     ;space with attribute of 15
+   es:
+   mov [94],ax
+   es:
+   mov [96],ax     ;set attribute of the function code locations
+   es:
+   mov [98],ax
+;
+;----------------------------------------
+; display the rotating twiddle character
+;
+   cs:
+   mov bx,[10e]    ;get twiddle index
+   inc bx
+   mov al,bl       ;advance to next twiddle position
+   and al,3        ;bx=bx mod 4 to rotate through twiddles
+   mov bl,al
+   cs:
+   mov [10e],bx    ;save next twiddle index
+;
+   cs:
+   mov ah,[110+bx] ;get the next twiddle character
+   es:
+   mov [94],ah     ;put twiddle status on screen
+;
+;----------------------------------------
+; display the DOS service number in hex
+;
+   pop ax          ;get the dos function code into ah
+   push ax
+;
+   and ah,0f
+   add ah,30       ;convert low digit to hex
+;
+   cmp ah,3a       ;handle A..F
+   jb 1e8
+   add ah,7
+   jmp 1e8
+
+
+a1e8
+   es:
+   mov [98],ah     ;and set LSB on screen
+;
+   pop ax          ;get fresh copy of function code into ah
+   push ax
+;
+   shr ah,1        ;move down bits for high digit
+   shr ah,1
+   shr ah,1
+   shr ah,1        ;make high byte hex and put on screen
+   and ah,0f
+   add ah,30
+;
+   cmp ah,3a       ;handle A..F
+   jb 218
+   add ah,7
+   jmp 218
+
+
+a218
+   es:
+   mov [96],ah     ;set MSB on screen
+   jmp 228
+
+
+a228
+;----------------------------------------
+; perform the DOS service function
+;
+   pop ax
+   pop bx
+   pop es          ;restore initial entry registers
+   pop ds
+;
+   cs:
+   jmp far [103]   ;jump to the real dos handler
+
+
+a2e0
+;----------------------------------------
+; startup code
+;----------------------------------------
+; determine where the video ram is.  this is done by putting a special
+; character on the screen and then looking for it in the various video
+; ram locations.
+;
+   push cs
+   pop ds
+;
+   mov ah,3         ;get cursor position
+   int 10           ;video bios service
+   push ax
+   push bx
+   push dx          ;save it for later
+;
+   mov dx,0
+   mov ah,2         ;home the cursor
+   int 10
+;
+   mov ah,0A
+   mov al,88        ;display a funny char at cursor
+   mov cx,1
+   int 10
+;
+; move cursor back to original position
+;
+   pop dx
+   pop bx
+   pop ax
+   mov ah,2
+   int 10
+;
+; look for MONO video ram
+;
+   mov dl,88
+   mov ax,b000
+   mov es,ax
+   es:
+   cmp dl,[0]
+   jz 360
+;
+; look for COLOR video ram
+;
+   mov ax,b800
+   mov es,ax
+   es:
+   cmp dl,[0]
+   jz 360
+;
+; couldn't find video ram; display a message and abort
+;
+   mov dx,308
+   mov ah,9
+   int 21           ;display error message
+   int 20           ;terminate program
+
+
+a328
+   db "ERROR: Can't find display memory$"
+
+
+a360
+;
+   cs:
+   mov [107],ax     ;set the display segment
+;
+;----------------------------------------
+; display the program signon message now that we are sure
+; that we can be installed
+;
+   mov dx,130
+   mov ah,9
+   int 21           ;display signon message
+;
+;----------------------------------------
+; now install new interrupt handler
+;
+   mov ax,0
+   mov es,ax
+;
+; save old DOS service vector
+;
+   es:
+   mov ax,[84]
+   cs:
+   mov [103],ax
+;
+   es:
+   mov ax,[86]
+   cs:
+   mov [105],ax
+;
+; install new vector
+;
+   mov ax,170       ;entry point offset
+   es:
+   mov [84],ax
+;
+   mov ax,cs        ;this code segment
+   es:
+   mov [86],ax
+;
+; set last resident code offset
+; and terminate-and-stay-resident
+;
+   mov al,0         ;exit code
+   mov dx,30        ;paragraphs to keep resident
+   mov ah,31        ;keep process function
+   int 21           ;terminate and stay in memory
+
+
+rcx
+400
+ndosmon.com
+w
+q
+

@@ -1,0 +1,22 @@
+
+                           DLOG2LST (2/5/92)
+
+                       DSZLOG to File List Filter
+
+                     Copyright 1992 Samuel H. Smith
+
+This filter program scans a DSZLOG file and returns selected information
+in the form of a file list.
+
+Usage:
+        DLOG2LST -I <DSZLOG >LISTING    ;list incoming files
+        DLOG2LST -O <DSZLOG >LISTING    ;list outgoing files
+        DLOG2LST -A <DSZLOG >LISTING    ;list all files
+
+Examples:
+        DLOG2LST -I <%DSZLOG% >UPLOAD.LST
+                Creates a list of files uploaded
+
+        DLOG2LST -O <DSZ.LOG >DOWNLD.LST
+                Creates a list of files downloaded
+

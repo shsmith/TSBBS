@@ -1,0 +1,9 @@
+ProTxt is an alternate editor for PCBoard's
+PCBTEXT files.  It allows you to simul-
+taneously view and/or edit two different
+PCBTEXT files.  ProTxt works more like a
+traditional "text editor" - i.e. it allows
+you to see a whole screenful of prompts at
+once instead of just one at a time.
+-------------------------------------------
+SourceWare from Samuel H. Smith.

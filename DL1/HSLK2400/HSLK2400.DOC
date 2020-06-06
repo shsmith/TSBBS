@@ -1,0 +1,233 @@
+                   HS/Link Installation for 2400 Baud Modems
+
+                        by Matt Hall (aka Skoal Bandit)
+
+
+DOWNLOADING HS/LINK
+
+      To acquire a copy of the most innovative protocol available, call a
+local BBS or The Tool Shop (818-891-6780) and search the file section for the
+keyword; "HS".  Use your current favorite protocol for the last time while you
+download the highest available version of HSLK????.ZIP.
+
+VERSIONS
+
+      HS/Link is unique in the way that its versions are numbered.  Version
+X.Y·Z is completely untested if Z is an even integer and is slightly tested if
+Z is an odd integer.  If Z is an even integer, the file should not be
+distributed and should only be downloaded from The Tool Shop.  If · exists in
+the version number then it is a beta testing release and may have minor bugs. 
+If · does not exist in the version number, the version has passed its testing
+phase.
+      Nearly every version is safe so you should look for the highest version
+number that does not have an even Z integer at the end.  Even those versions
+are usually alright but they should never be uploaded to any BBS.
+
+HS/LINK DIRECTORY
+
+      I suggest making a directory called HSLINK right off of the directory
+that your communications software is located.  For example, I unzip HS/Link
+archives into C:\TELIX\HSLINK\ after I download new versions.  As you can see,
+I use Telix so if you do too then you are already on the right track.  If not,
+you can still use HS/Link but I cannot guarantee that these instructions will
+work.
+
+DOCUMENTATION
+
+      Be sure to read the documentation that is included inside the HS/Link
+archive.  It has recently been updated and goes into more detail than this
+text file.
+
+HSCONFIG.EXE
+
+      After HS/Link has been unzipped into a directory of its own, change to
+that directory and type HSCONFIG and press Enter.  This is the program that
+you should run to configure HS/Link's options.  These options can be set from
+a command line too but this way is much easier.
+      The first option in HSCONFIG is "COM port number."  This can be
+determined by looking in the configuration of your communications software. 
+The second option is "Directory for downloaded file."  This can also be
+determined by looking in the configuration of your communications software
+(called "download direcotry" in Telix and most others).  If your
+communications software does not have an entry for a download directory,
+decide where you want all of the files that you download from BBSs to go.  My
+download directory (and also my upload directory, which you will need to know
+later if you are using Telix) is C:\TEMP\ and is defined in my Telix
+configuration.  The third option is "SLOW HANDSHAKE."  In most cases this
+should be No.  The only time that you might want to set it to Yes is if your
+hard drive is slow and/or you get several errors during transfers.
+      Press PageDown to go to the next page of options.  The first option is
+"Non-standard COM base."  This option should be set to 0 in most cases,
+consult your modem manual if you think you might have a strange COM port
+setup.  The next option is "Non-standard COM IRQ."  Once again, consult your
+modem manual if you think you might have a strange COM port setup.  The next
+option is "COM port open speed."  This option should be 0.  If you have some
+strange baud rate situation, this should still be 0 and you should use the -B
+option in a batch file.  The next option is "Effective modem-to-modem speed." 
+This is the baud rate that HS/Link will use to calculate transfer times.  If
+you have a normal 2400 baud modem, this should be 0.  However, if you have a
+2400 baud MNP modem this should be set to 2400 so that HS/Link will work with
+MNP but will still estimate transfer times at 2400bd which is more accurate
+than what your COM port will be set at.  If you are not sure about MNP,
+consult your modem manual and if it doesn't mention MNP then you don't have
+it.  The next two options ("CTS handshake" and "RTS handshake") should both be
+set to No if you don't have an MNP modem, if you do have an MNP then these
+should both be set to Yes.  The "XON/XOFF handshake" option should be set to
+Yes if you have a normal 2400 baud modem or set to No if you have an MNP
+modem.  The next option is "Enable Carrier Detect" and should be set to Yes in
+most cases.  The last option on this page is "original time/date stamp."  This
+option should be set to Yes if you want to keep whatever date is on each file
+when you download it or set to No if you want all files that you download to
+be stamped with the date that your computer shows when the download occurs. 
+It's probably best to be set to Yes.
+      Press PageDown again to go to the next page.  The first three options
+("Resume aborted transfers", "Keep partial files", and "overwrite/modify
+existing files") are designed to allow you to resume aborted downloads if they
+are aborted.  If you want to be able to resume aborted downloads, set the
+first three options on this page to Yes.  If, for some strange reason (if
+you're a sysop, you will have to decide if you want this or not), you don't
+want to be able to resume aborted downloads then set the first three options
+to No.  The fourth option on this page is "file read/write buffering."  This
+option should be set to Yes in most cases.  The "Dynamic-Code-Substitution" is
+what makes HS/Link faster than other protocols.  This option should be set to
+Yes in most cases.  The next option is "Size of transmitted data blocks." 
+Most protocols use 1024 (which is also the HS/Link default) but I have found
+that 2048 is better for larger files.  I recommend 2048 for this option but
+1024 will work just as well usually.  The next option is "blocks in transit
+before ACK is required."  This option is not very significant so I suggest
+leaving it at 8.  The next option is "Disable transmission of ACK" and I also
+suggest leaving this at No.  The final option on this page is "Force remote
+unit to use local option settings" and should be set to Yes unless you are a
+BBS operator.  If you are a BBS operator and you plan on using HS/Link with
+communications software and BBS software, this option should be set to No.  If
+you want to use this option for your communications software, include -! in
+your command line inside your HS/Link batch file (which will be explained
+later).  You should also use -NU in the HS/Link batch file if you are a sysop
+and your BBS software does not support two way transfers (the BBS software
+won't stop HS/Link from transferring both directions unless you use -NU but
+the BBS software must be able to detect that files were uploaded; most BBS
+software needs some kind of interface that will allow it to detect uploads).
+      Press PageDown again to go to the next page.  The first option is "Idle
+method."  If you're not sure, this option should probably be set to 0.  The
+next option is "NS16550AN buffering."  This option should usually be set to
+Yes and is not very significant.  "Minimal-Blocks" should only be set to Yes
+if you have an MNP modem.  "Incoming file duplication check list" should be
+left blank unless you have a text file containing a list of files that you
+already have (this option might be able to be used with certain BBS software). 
+"DSZLOG status logging file" should be set if you want to have a DSZ.LOG for
+your transfers.  The final option is "Force CTS handshake."  This option is
+for MNP modems and is insignificant in most cases.  If you're not sure about
+this option, set it to No.
+      Press PageDown one more time to go to the last page.  The first option
+here is "Full-Screen status display."  This should be set to Yes (if you are a
+BBS operator then you might need to put -NF in your BBS command line for
+HS/Link to disable the full-screen display).  The next option is "direct video
+writing" and should be set to Yes unless you are using HS/Link through
+Desqview, DoubleDOS, or other programs that cannot handle direct video
+writing.  The final five options are color options.  These can be set to
+whatever you think looks the best.  You can either choose your own colors,
+leave the colors that the author of HS/Link has defined, or use my colors
+which are: 9, 25, 26, 27, 29.
+
+BATCH FILE
+
+      You need to write a batch file to call HS/Link.  You only need one batch
+file to use HS/Link for one-way OR two-way transfers.  You need to know a few
+things to create this batch file.  The first thing is your upload directory
+which can be determined by looking in the configuration of your communications
+software.  My upload directory is the same as my download directory; C:\TEMP\
+and is defined in my Telix configuration.  You might not need to have an
+upload directory depending on your communications software but it is usually a
+good idea to have one (if you don't have an upload directory, use the same
+directory as your download directory).  The second thing you need to know is
+the complete path to HSLINK.EXE which was included in the HS/Link archive. 
+The last thing you need to know is what your communications program sends to
+batch files as: %1, %2, %3, %4, %5, %6, %7, %8, and %9.  You may need to post
+a message asking if anybody know what these values are for your particular
+communications software.  The values that Telix uses are:
+
+%1 - Baud Rate
+%2 - COM Port
+%3 - ULDIR\FILENAME.1
+%4 - FILENAME.2
+%5 - FILENAME.3
+%6 - FILENAME.4
+%7 - FILENAME.5
+%8 - FILENAME.6
+%9 - FILENAME.7
+
+      As you can see, you are limited to 7 upload filenames at a time but you
+can use wildcards to get more usually.  Telix v3.15 and lower does not put the
+entire path the upload filename on the 2nd through 9th upload filenames and
+that is why you need to know what you upload directory is defined as.
+      Now you are ready to create HSLINK.BAT which is the single batch file
+that is needed to use HS/Link.  To create a batch file, use a text editor or
+type
+"COPY CON HSLINK.BAT" if you do not have a text editor.  The batch file should
+look like this for Telix and similar (possibly exactly alike) for other
+communications software:
+
+@echo off
+C:
+cd\TEMP
+C:\TELIX\HSLINK\HSLINK -P%2 %3 %4 %5 %6 %7 %8 %9
+if errorlevel 1 pause
+
+      That is exactly how my batch file looks.  The second line goes to the
+drive that my upload directory is on.  The third line changes to my upload
+directory.  The fourth line contains the complete path to HSLINK.EXE and is
+followed by the COM port option (it is good to defined the COM port through
+the batch file because if you just put %3 through %9 after HSLINK and you only
+wanted to download, the batch file would call HSLINK.EXE with nothing after it
+which brings up a help screen).  You should modify this batch file according
+to your set up.
+      This batch file needs to be in your communications software directory or
+preferably in a directory that is in your DOS PATH statement.  My PATH
+contains C:\BAT and that is where I keep all of my batch files including
+HSLINK.BAT.  You should also copy HSLINK.BAT to the directory that HSLINK.EXE
+is located just to be sure that the batch file is run and not the executable
+file.  The directory that HSLINK.EXE is located does not need to be in your
+PATH and I don't recommend putting it in your PATH either.
+
+INSTALLING HS/LINK AS A PROTOCOL
+
+      To use HS/Link as a protocol in your communications software, go to the
+section of the configuration of your communications software that is used to
+install/configuration protocols.  To do this with Telix, press ALT-O and then
+P.
+      By pressing A, B, C, or D at this point in Telix, you will be prompted
+for a protocol name.  "HS/Link" is probably the best choice.  After you press
+Enter you will be prompted for an Upload Filename.  Enter "HSLINK" or
+"HSLINK.BAT" for this blank and also for the Download Filename blank.  Telix
+will then ask if the files are Telix Script Language or batch files.  The
+answer is (yep, you guessed it) batch files.  You also do not want Telix to
+prompt for Download Filenames either.
+      If you communications software is not like this in some way, post a
+message asking if anybody knows how to install protocols with your
+communications software.  It is very likely that somebody will know.
+
+CONCLUSION
+
+      Well, that's all folks!  To use HS/Link, call a BBS that supports
+HS/Link.  Add any files that you want to download to a batch queue (or with
+software such as PCBoard, you can use "DB" or "D" if HS/Link is available) and
+then start the download on the BBS.  Then start an upload on your end (press
+PageUp or ALT-S with Telix) and select any files that you want to upload.  If
+everything goes right, you will get a total CPS of over 450!
+      I strongly recommend registering HS/Link.  It is a great program and I
+guarantee that you will use it a lot once you install it.  This program gets
+excellent support from its author and new improved versions are constantly
+being released.  Samuel Smith has done a great job and should be compensated
+for it.  And besides, that closing screen is annoying!
+      If you have any questions or comments for the author, consult the
+HS/Link Documentation.  If you have any questions, comments, suggestions,
+additions, corrections, etc. for me, I can be reached at (517)546-3783 VOICE
+and am also a user on all of the BBSs in Livingston County (Michigan).  In
+case I cannot be reached in one of those ways, my address is:
+
+      903 W. Grand River
+      Howell, MI 48843
+
+      Thank you for reading my instructions.  This protocol will benefit you
+as well as myself and other BBS users because it will increase the amount of
+uploading which is good for everybody!

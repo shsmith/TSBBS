@@ -1,0 +1,76 @@
+
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                           IN Virtual BBS 5.4
+
+     Please refer to the RemoteAccess manual for detailed information on
+     installation of external protocols.  This information was tested
+     with HS/Link version 1.00 and Virtual BBS version 5.40.
+
+     Virtual BBS version 5.4 comes pre-installed for HS/Link.  Follow
+     these instructions if you wish to verify HS/Link installation, or
+     to make changes.  It also adds a single direction "upload" mode for
+     HS/Link.
+
+     Place a copy of HSLINK.EXE into your main C:\VBBS directory, or
+     some other directory in your PATH list.
+
+     Run VCONFIG.EXE and press 6 for DOWNLOAD PROTOCOLS.
+
+     The download definition of the HS/Link should look like this:
+
+  [DOWNLOAD PROTOCOLS]
+
+  Key Name                     Command Line (download protocols) (*=batch)
+  --- ------------------------ ------------------------------------------------
+  *H  HSLINK (Bidirectional)   HSLINK -p%1 -e%2 -UC:\VBBS\SYSOP %3
+
+     In place of C:\VBBS\SYSOP substitute your own upload directory, if
+     you use a different name for it.
+
+     The bi-directional transfers only work when the Download command is
+     used because you cannot request files to be received.  You may want
+     to explain to your users that they will need to describe any files
+     they upload while downloading AFTER the transfer is completed.
+
+     Return to the main menu of VCONFIG and select 7 for UPLOAD
+     PROTOCOLS.
+
+  [UPLOAD PROTOCOLS]
+
+  Key Name                     Command Line (upload protocols) (*=batch)
+  --- ------------------------ ------------------------------------------------
+  *H  HSLINK                   HSLINK -p%1 -e%2 -u%3
+
+     Note for systems running locked COM ports:
+     We have found that if you use a locked DTE of 9600 or above, you
+     will need to have a NS16550AN UART installed.  Also, for rock solid
+     performance you should add the -HS (Handshake Slow) switch to your
+     upload and download command lines.
+
+     This should get you set up in under 10 minutes.
+
+     You can edit the download and upload command lines to include
+     options on the HSLINK command line, but most folks won't need to
+     change anything.  If your system can't keep up with the COM port
+     while accessing the disk drive, you may want to add -HS to both
+     lines.  If you want to experiment, there are a number of optional
+     parameters you can read about in HSLINK.DOC and HSLINK.NEW.
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with RemoteAccess and with HS/Link.  If all else fails, call up the
+     Tool Shop and ask for help on the Support Conference.  Either I
+     will help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-3772    US Robotics HST 9600    Contributors only
+       (818) 891-1344    Hayes-V series 9600     Contributors only
+       (818) 891-6780    US Robotics 2400        Free to all

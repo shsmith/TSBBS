@@ -1,0 +1,32 @@
+
+
+-----------------------------------------------------------
+--                                                       --
+--                Linear Interpolation                   --
+--                Package Specification                  --
+--                 05-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+
+package INTERP is
+
+   function LINEAR_INTERPOLATION (value:     in integer;
+                                  value_min: in integer;
+                                  value_max: in integer;
+                                  to_min:    in float;
+                                  to_max:    in float) return float;
+      -- perform a linear interpolation on value between value-min and
+      -- value-max returning a corresponding value between to-min and
+      -- to-max.   Integer input and floating output.
+
+   function LINEAR_INTERPOLATION (value:     in float;
+                                  value_min: in float;
+                                  value_max: in float;
+                                  to_min:    in integer;
+                                  to_max:    in integer) return integer;
+      -- perform a linear interpolation on value between value-min and
+      -- value-max returning a corresponding value between to-min and
+      -- to-max.   Floating input and integer output.
+
+end INTERP;

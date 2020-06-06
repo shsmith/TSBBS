@@ -1,0 +1,53 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+function code_colors(code:  string30): string30;
+function code_color(control: integer): string20;
+   {form an ansi color command}
+
+procedure load_color_constants(name: string65);
+   {load a new set of color constants}
+
+procedure position(x,y: byte);
+   {position cursor}
+
+procedure clear_screen;
+   {easee screen in current color}
+
+procedure clear_eol;
+   {clear to end of line}
+
+
+{color selection macros}
+function aRED:     string20;
+function aGREEN:   string20;
+function aYELLOW:  string20;
+function aBLUE:    string20;
+function aMAGENTA: string20;
+function aCYAN:    string20;
+function aWHITE:   string20;
+function aGRAY:    string20;
+
+procedure adRED(m: string);
+procedure adGREEN(m: string);
+procedure adYELLOW(m: string);
+procedure adBLUE(m: string);
+procedure adMAGENTA(m: string);
+procedure adCYAN(m: string);
+procedure adWHITE(m: string);
+procedure adGRAY(m: string);
+procedure default_color;
+
+function expand_xansi(xansi: string20): string30;
+
+{$i \tinc\ansicolr.dcl}
+

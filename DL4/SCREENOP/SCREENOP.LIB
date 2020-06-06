@@ -1,0 +1,72 @@
+
+--
+-- Screen and keyboard operations package
+-- Janus/ADA specification
+--
+-- Author: S.H.Smith, 25-Jul-86
+--
+
+package SCREENOP is
+
+--
+-- screen control
+--
+   subtype CURSOR_X is integer range 1..80;
+   subtype CURSOR_Y is integer range 1..25;
+   subtype ASCII_CODE is integer range 0..255;
+
+
+   procedure POSITION_CURSOR (x:  CURSOR_X;
+                              y:  CURSOR_Y);
+      -- move the cursor to a position on the screen
+
+   procedure CLEAR_SCREEN;
+      -- erase the screen and leave the cursor at the home position
+
+   procedure NEW_LINE;
+      -- advance to a new line on the screen
+
+
+--
+-- screen output
+--
+   procedure PUT (c: character);
+      -- put a character on the screen
+
+   procedure PUT_ASCII (ascii: ASCII_CODE);
+      -- put a character on the screen based on ascii codes
+
+   procedure PUT (s: string);
+      -- put a string of characters on the screen (tty write)
+
+   procedure PUT (i: integer);
+      -- put an integer as a string of decimal digits
+
+   procedure PUT (f: float);
+      -- put a float as a string of decimal digits
+
+   procedure PUT_HEX (i: integer);
+      -- put an integer as a string of hex digits
+
+   procedure PUT_HEX (i: byte);
+      -- put a byte as a string of hex digits
+
+   procedure PUT_LINE (s: string);
+      -- put a string and advance to a new line
+
+
+--
+-- keyboard control
+--
+   function KEY_PRESSED return boolean;
+      -- see if a key has been pressed on the console
+
+   procedure GET (c: out character);
+      -- get the next console key (without echo)
+
+   procedure GET (s: in out string);
+      -- get a line of console input with editing and echo
+
+end SCREENOP;
+
+

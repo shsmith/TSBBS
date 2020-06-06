@@ -1,0 +1,10 @@
+A,I,128,Ascii,N,N,N
+X,I,128,Xmodem/Checksum,N,N,N
+C,I,128,Xmodem/CRC,N,N,N
+O,I,1024,1K-Xmodem       (a.k.a. Non-Batch Ymodem),N,N,N
+Y,I,1024,Ymodem,N,N,N
+G,I,1024,Ymodem/G,Y,N,N
+Z,D,1024,PCBoard Zmodem,N,N,Y
+D,D,1024,DSZ Moby Zmodem,N,N,Y
+H,B,1024,HS/Link,N,N,N
+N,I,0,None - Use T command to set default protocol!,N,N,N

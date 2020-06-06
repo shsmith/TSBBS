@@ -1,0 +1,33 @@
+TITLE
+DETERMINE TYPE OF CAR TO BUY
+
+GOALS
+   TYPE OF CAR TO BUY
+
+FACTS
+
+RULES
+
+IF
+   CHILDREN > 0
+   distance traveled to work < 51
+THEN
+   TYPE OF CAR TO BUY = FAMILY CAR
+
+if
+   yearly income < 20000
+then
+   type of car to buy = economy car
+
+IF
+   DISTANCE TRAVELED TO WORK > 50
+THEN
+   type of car to buy = economy car
+
+IF
+   yearly income > 30000
+   children = 0
+THEN
+   TYPE OF CAR TO BUY = SPORTS CAR
+END
+

@@ -1,0 +1,2 @@
+function format_real(v: real): string;
+

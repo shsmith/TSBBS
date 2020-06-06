@@ -1,0 +1,218 @@
+
+                             P r o  E D I T
+
+             Offline PCBoard Message File Editor and Viewer
+
+                          Version 3.4, 3-31-91
+                              PROEDT34.ZIP
+                For use with PCBoard Versions 14.0 - 14.2
+
+
+                  See READ.ME for important information
+
+
+                 Copyright (c) 1987, 1991 Samuel H. Smith
+                           ALL RIGHTS RESERVED
+
+
+   ProEdit is a full feature message utility for PCBoard sysops.  It
+   allows you to read, reply-to and enter messages without logging into
+   PCBoard.
+
+   It is compatible with network systems and allows most sysop mail
+   functions from a TaskView or DoubleDOS partition while PCBoard is
+   running.
+
+
+   ProEdit is a "local only" version of PCB/ProDoor.  It reads your
+   PCBOARD.DAT file to find your conferences, sysop function keys, etc.
+   It enables the F5 key for dropping to DOS in the middle of a session.
+
+   ProEdit also allows you to MODIFY existing messages;  you can change
+   the message header as well as the text.
+
+   ProEdit implements ProDoor's "Zip scan" mode, allowing you to select
+   messages based on a keyword somewhere in the text.
+
+   ProEdit provides most of the familiar PCBoard commands, and should
+   not require any explanation to experienced PCBoard operators.
+
+   Your CNFN (or CNFNG) file is used as a conference selection menu,
+   allowing you to switch conferences while inside ProEdit. You can also
+   specify the conference to edit on the command line.
+
+   ProEdit looks in the current directory for these files:
+      PROMAIL           ;read-mail help message
+      PROENTR           ;message entry help message
+      PROVIS            ;visual editor help message
+   These files will be used if present, but are not required for proper
+   operation.
+
+   ProEdit is compatible with ProDoor's extended conference system.
+   Make sure you always run ProEdit from your ProDoor directory.
+
+   If you do not use ProDoor, you should delete the 'CONFINFO' file
+   after making any change in your CNAMES (conference information) data
+   through PCBoard.
+
+---------------
+   PCBoard is a registered trademark of Clark Development Company
+
+
+        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        *                         IMPORTANT                         *
+        *                                                           *
+        *      IF YOU ARE RUNNING THE /D OR /S VERSION OF           *
+        *      PCBOARD YOU MUST INSURE THAT PCBOARD IS OFFLINE      *
+        *      BEFORE RUNNING PROEDIT!  OTHERWISE YOUR FILES        *
+        *      MAY BE CORRUPTED.  EVEN THOUGH PROEDIT SUPPORTS      *
+        *      FULL FILE SHARING, YOU MUST HAVE THE /E VERSION      *
+        *      OF PCBOARD TO SHARE FILES.                           *
+        *                                                           *
+        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+   Usage
+   -----
+
+   proedit [SYSTEM_DIR] [OPTIONS] [INITIAL_CONFERENCE] [INITIAL_COMMANDS]
+
+   SYSTEM_DIR specifies the location of your PCBOARD.DAT file.
+
+   OPTIONS, if present, may be any of:
+       -N###            ;select user record number ###.  The default
+                         user record is #1 (sysop).
+
+       -R               ;do not flag messages as being "read"
+
+       -U               ;do not update message pointers
+
+       -Q               ;quickly jump to the last message available
+                         instead of where you left off before.
+
+       -C               ;enable user CITY display
+
+       -X               ;expand macros in message text
+
+       -R -U -Q         ;all three options
+
+   Note that all options begin with "-".  All options must be separated
+   with spaces.
+
+
+   INITIAL_CONFERENCE specifies the conference to join on entry
+   to the message base.  If no initial conference number is given, you
+   will be sent to the one you were in last time you were in the system.
+
+   INITIAL_COMMANDS can be any list of ProEdit commands, to be executed
+   after joining the conference.
+
+
+   Examples
+   --------
+
+   proedit c:\pcb
+           ReJoin the conference you were reading in your previous
+           session and begin reading the new messages.  All pointers
+           will be updated as if you were logged into the system.
+
+   proedit c:\pcb -n2
+           Access proedit using the SECOND user record instead of the
+           first one.  This allows you to access alternate user names
+           through ProEdit.
+
+   proedit c:\pcb j 4
+           Join conference 4 and begin reading the new messages. All
+           pointers will be updated as if you were logged into the
+           system.
+
+   proedit c:\pcb -R -U -Q j 4
+           Join conference 4 and quickly jump to the last message,
+           bypassing the conference news and last-read pointers.
+
+
+                                       LICENSE
+
+     SourceWare: What is it?
+
+     SourceWare is my name for a unique concept in user supported
+     software. Programs distributed under the SourceWare concept always
+     offer source code.
+
+     This package can be freely distributed so long as it is not
+     modified or sold for profit.  If you find that this program is
+     valuable,  you can send me a donation for what you think it is
+     worth.  I suggest about $20.
+
+     Send your registrations to:
+                   Samuel H. Smith
+                   The Tool Shop
+                   P. O. Box 4808
+                   Panorama City, CA 91412-4808
+
+     When you send a registration, your existing user account on The
+     Tool Shop will be upgraded for extended time and downloading.  You
+     will also be able to download a special "register" program.  The
+     register program allows you to install your own "registration"
+     message seen by callers when opening ProDoor.
+
+
+     Why SourceWare?
+
+     Why do I include source code?  Why isn't the donation mandatory?
+     The value of good software should be self-evident.  The source code
+     is the key to complete understanding of a program.  You can read it
+     to find out how things are done.  You can also change it to suit
+     your needs, so long as you do not distribute the modified version
+     without my consent.
+
+
+     Copyright
+
+     If you modify this program, I would appreciate a copy of the new
+     source code.   I am holding the copyright on the source code, so
+     please don't delete my name from the program files or from the
+     documentation.
+
+
+                                      DISCLAIMER
+
+          I make no warranty of any kind, express or implied, including
+          without limitation, any warranties of merchantability and/or
+          fitness for a particular purpose.  I shall not be liable for
+          any damages, whether direct, indirect, special or
+          consequential arising from a failure of this program to
+          operate in the manner desired by the user.  I shall not be
+          liable for any damage to data or property which may be caused
+          directly or indirectly by the use of this program.
+
+          IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING
+          ANY LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR
+          CONSEQUENTIAL DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO
+          USE THE PROGRAM, OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+                                       SUPPORT
+
+     I work very hard to produce a software package of the highest
+     quality and functionality.  I try to look into all reported bugs,
+     and will generally fix reported problems within a few days.
+
+     Since this is user supported software under the SourceWare concept,
+     I don't expect you to register if you don't like it or if it
+     doesn't meet your needs.
+
+     If you have any questions, bugs, or suggestions, please contact me at:
+                        The Tool Shop BBS
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    Hayes-V series 9600
+                  (818) 891-6780    US Robotics 2400 (free line)
+
+     The latest version is always available for downloading.
+
+     Enjoy!
+
+          Samuel H. Smith
+          Author and Sysop of The Tool Shop.
+

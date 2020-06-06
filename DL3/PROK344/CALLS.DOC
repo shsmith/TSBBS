@@ -1,0 +1,306 @@
+
+(*
+ * CALLS.DOC - Summary of DOOR support functions provided by ProKIT
+ *
+ * (C) 1988 Samuel H. Smith (rev. 04-aug-88)
+ *
+ *)
+
+procedure init;
+{must be first - opens com port, loads setup and user data}
+
+procedure uninit;
+{must be last - closes com port and updates database}
+
+procedure close_down_door(messages: boolean);
+{same as uninit but does not send ANY messages to the caller
+ if called as close_down_door(false)}
+
+
+(* ---------------------------------------------------------------- *)
+(* high level input and output *)
+
+procedure disp(msg: string);
+   {display a string without linefeed}
+
+procedure displn(msg: string);
+   {display a string and linefeed, increments linenum}
+
+procedure pdisp(msg: string);
+   {display a string without linefeed, allows $ and @ macros}
+
+procedure pdispln(msg: string);
+   {display a string and linefeed, increments linenum, allows $ and @ macros}
+
+procedure newline;
+   {C/R and linefeed, increments linenum}
+
+   
+procedure display_file(name: string);
+   {displays the contents of named file;
+    automatic "more:" prompting;
+    adds "g" to filename in graphics mode}
+
+procedure display_file_raw(name: string; number_lines);
+   {display a file with line numbers added}
+
+
+procedure input(var line: string;       {the variable to input into}
+                maxlen: integer);       {maximum length of input}
+   {read a line of input with the specified length; echo to screen;
+    leaves cursor after the last key typed before C/R;
+    automatic check for time-left and carrier loss - sets dump_user}
+
+procedure get_cmdline;      
+   {calls 'input' to read into 'cmdline', maps to upper case}
+
+procedure get_nextpar;      
+   {scan next param from 'cmdline' into 'par'}
+
+procedure wait_for_enter;   
+   {prompt "Press (enter) to continue: " only in novice mode}
+
+procedure force_enter;
+   {prompt "Press (enter) to continue: "}
+
+procedure position(x,y: byte);
+   {position cursor; graphics mode only}
+
+procedure clear_screen;
+   {ease screen in current color; graphics mode only}
+
+procedure clear_eol;
+   {clear to end of line; graphics mode only}
+
+
+
+(* ---------------------------------------------------------------- *)
+(* high-level command-line input and prompt handlers *)
+
+procedure get_cmdline_raw(prelength: integer);
+   {get a command line; prelength=0 for normal prompts.
+    if prelength > 0 then the user input and a prompt of prelength
+    characters will be erased from the screen after the input}
+
+procedure prompt_def(prompt: string80; default: string80);
+   {display a prompt with a default value; example:
+        prompt_def('File to open:','(Enter)=none? ');}
+
+procedure get_def(prompt: string80; default: string80);
+   {get input after displaying a prompt with a default}
+
+procedure get_defn(prompt: string80; default: string80);
+   {same as get_def but appends '(Enter)=none?' to the end of the default}
+
+procedure get_defen(prompt: string80);
+   {same as get_def but the default is always '(Enter)=none?'}
+
+procedure get_defyn(prompt: string80; default: boolean);
+   {get input with yes/no default based on boolean value}
+
+
+
+(* ---------------------------------------------------------------- *)
+(* low level input and output *)
+
+function nomore: boolean;      
+   {prompts "more?" when needed, 
+    returns TRUE if user answers 'no' or uses ^K}
+
+procedure display_file_raw(name: string; remove_semicolons);
+   {display a file with semicolons in column 1 changed to spaces (script0)}
+
+procedure display_file_raw(name: string; remove_paths);
+   {display a file with all drive and directory names excluded}
+
+procedure display_file_raw(name: string; dir_colorize);
+   {display a DIR file with automatic colorization}
+
+
+function get_key: char;        
+   {wait for single key; no echo}
+
+function key_ready: boolean;
+   {is a key waiting (local or remote)}
+
+function time_key(ms: real): char;
+   {wait for a key; returns chr(0) if no key is pressed with
+    'ms' thousandths of a second}
+
+
+procedure check_carrier_loss;   
+   {set dump_user and print msg on carrier loss}
+
+function carrier_present: boolean;
+   {returns TRUE only if carrier is present}
+
+procedure transmit_data(s:    string);
+   {send a string to the modem without echo to the local display}
+
+procedure flush_com;
+   {wait for all requested output to be sent to the modem}
+
+procedure lower_dtr;
+   {force the modem to hang-up}
+
+procedure raise_dtr;
+   {allow the modem to operate again}
+
+procedure force_offhook;
+   {hang up and then place the  modem off-hook}
+
+
+procedure line_input(var line: string;     {read input into this variable}
+                     maxlen:   integer;    {maximum length of input}
+                     echo:     boolean;    {echo to screen? dots if false}
+                     autocr:   boolean);   {automatic C/R when full?}
+   {line input with full control}
+
+function scan_nextpar(var cmdline: string): string;
+   {scan a string and return the next ";" or " " delimited parameter;
+    removes the param from the input string; used in command stacking}
+
+procedure popup_prompt(prompt: string; var answer: string);
+   {prompt for input; erase prompt afterwards}
+
+
+(* ---------------------------------------------------------------- *)
+(* color control *)
+
+function aBLUE:    string;
+function aCYAN:    string;      {output ansi color codes}
+function aGRAY:    string;      {return null strings in non-graphic mode}
+function aGREEN:   string;
+function aGREY:    string;
+function aMAGENTA: string;
+function aRED:     string;
+function aWHITE:   string;
+function aYELLOW:  string;
+
+procedure default_color;
+   {change display to the default color (as defined in pcbsetup)}
+
+
+(* ---------------------------------------------------------------- *)
+(* pcboard information functions *)
+
+function expert:   boolean;        {expert flag set?}
+function graphics: boolean;        {ansi graphics flag set?}
+function local:    boolean;        {local mode?, no com port}
+
+
+function minutes_left: integer;
+   {minutes left before automatic logoff}
+
+function time_used: integer;       
+   {minutes used since login}
+
+procedure adjust_time_allowed(seconds: real);
+   {add or subtract online time}
+
+procedure check_time_left;
+   {print a message and set dump_user if time has run out}
+
+procedure display_time(true);
+   {display (xxxx used, xxxx left)}
+
+procedure display_time(false);
+   {display (xxxx left)}
+
+
+function conference_name: string;      
+   {example: 'Main Board' or 'xxxx Conference'}
+
+function download_k_allowed: real;
+   {how many K bytes are left for downloading?}
+
+
+function event_run_needed(event_now): boolean;
+   {will event be started immediately if the caller logs off right now?}
+
+function event_run_needed(event_possible): boolean;
+   {will the event be due if the caller uses all available time}
+
+function minutes_before_event: integer;
+   {how many minutes before the event is to be started?}
+
+
+function verify_level(func: char): boolean;       
+   {example:  verify_level('D') = true 
+    if pcboard 'D' command is allowed;
+    logs security violation if not}
+   
+procedure make_log_entry (entry: string;        {message to log}
+                          echo: boolean);       {also display if true}
+   {make an entry in caller log; 
+    also echo to screen if second param is TRUE}
+
+procedure chat_mode;
+   {activate sysop-chat mode}
+
+procedure operator_page;
+   {page sysop and possibly enter chat mode}
+
+procedure online_user_update;
+   {edit user password, phone numbers, security level, conference
+    registrations, etc}
+
+
+(* ---------------------------------------------------------------- *)
+(* utilities *)
+
+procedure replace_string( var line: string; oldstr, newstr: string);
+   {scans line and replaces all occurences of 'oldstr' with 'newstr'}
+
+procedure stoupper(var st: string);  
+   {map string to all upper case}
+
+procedure strip_trailing(var s: string);
+   {remove trailing spaces from a string variable}
+
+function get_environment_var(id: string): string;
+   {returns the value of an envionment variable;
+    example: get_environment_var('PATH=') returns "C:\;C:\BATCH..."}
+
+
+function get_time: real;  
+   {returns the time of day in seconds since midnight}
+
+function todays_date_mmddyy: string8;   {format: mmddyy}
+function todays_date_yymmdd: string8;   {format: yymmdd}
+function system_date: string;           {format: mm-dd-yy}
+function system_time: string;           {format: hh:mm}
+
+function expdate(yymmdd: string): string;
+   {convert mmddyy to mm-dd-yy}
+function mmddyy_to_yymmdd(mmddyy: string8): string8;
+   {convert mmddyy to yymmdd}
+function yymmdd_to_mmddyy(yymmdd: string8): string8;
+   {convert yymmdd to mmddyy}
+
+
+
+(* ---------------------------------------------------------------- *)
+(* data type conversion *)
+
+function wtoa(w:   word):    string;   {word to ascii}
+function ltoa(int: longint): string;   {longint to ascii}
+function itoa(int: integer): string;   {integer to ascii}
+
+function atof(asc: string):  real;     {ascii to float}
+function atoi(asc: string):  integer;  {ascii to integer}
+function atol(asc: string):  longint;  {ascii to longint}
+function atow(asc: string):  word;     {ascii to word}
+
+
+function ftoa(f: real; width,dec: integer): string;
+   {convert pascal floating to string with specified width and decimal places}
+
+function stof(B: single): real; {convert 4 byte single (basic format) to real}
+function dtof(B: double): real; {convert 8 byte double (basic format) to real}
+procedure ftod(PasReal: real; var B: double); {convert real to 8 byte double}
+procedure ftos(PasReal: real; var B: single); {convert real to 4 byte single}
+
+function stoa(s: single): string;       {convert single to ascii}
+function stol(s: single): longint;      {convert single to longint}
+

@@ -1,0 +1,175 @@
+
+--
+-- TASKCTL - Task Management Control Package
+--
+-- This package provides a simple "co-routine" method of management
+-- of multiple tasks.    For 8086 Janus/ADA 1.5.2
+--
+-- Author: S.H.Smith, 30-Mar-86
+--
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+@ with SCREENOP; use SCREENOP;
+  with BITOPS;
+
+with TASKING;  use TASKING;
+
+package body TASKCTL is
+
+   use TASKDATA;
+
+
+---------------------------------------------------------------
+--                                                           --
+--                     Private procedures                    --
+--                                                           --
+---------------------------------------------------------------
+
+
+   procedure dispose_stack (id: in TASK_ID) is
+      -- dispose of the stack for a task, if needed
+   begin
+
+      for i in 1..max_stack loop
+         if allocation(i) = integer(id) then
+            allocation(i) := 0;
+         end if;
+      end loop;
+
+   end dispose_stack;
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                     Task information                      --
+--                                                           --
+---------------------------------------------------------------
+
+   function PROCESS_ID return TASK_ID is
+      -- returns the process ID of the caller's task
+      -- or reserved_task if not in a task at all.
+   begin
+      if task_table(curtask).running then
+         return curtask;
+      else
+         return reserved_task;
+      end if;
+   end PROCESS_ID;
+
+
+   function PROCESS_NAME return string is
+      -- returns the name of the caller's task
+      -- or "unused" if not in a task at all.
+   begin
+      return task_table(process_id).name;
+   end PROCESS_NAME;
+
+
+   function PROCESS_PRIORITY (id: in TASK_ID) return PRIORITIES is
+      -- returns the priority of the specified task
+   begin
+      return task_table(id).prior;
+   end PROCESS_PRIORITY;
+
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                     Task control                          --
+--                                                           --
+---------------------------------------------------------------
+
+   procedure SET_PRIORITY (id:  in TASK_ID;
+                           pri: in PRIORITIES) is
+      -- sets the priority of the specified task
+   begin
+      task_table(id).prior := pri;
+      task_table(id).skips := pri;
+   end SET_PRIORITY;
+
+
+   procedure SUSPEND (id: in TASK_ID) is
+      -- suspend execution of the specified task
+   begin
+
+      case task_table(id).status is
+         when unused =>
+            raise INVALID_TASK;
+
+         when starting =>          -- if we suspend a starting task we will
+            raise program_error;   -- skip the required startup stacking
+
+         when active =>
+            task_table(id).status := suspended;
+
+         when suspended =>
+            null;
+      end case;
+
+   end SUSPEND;
+
+
+   procedure SUSPEND is
+      -- the calling task is suspended
+   begin
+      suspend (curtask);    -- suspend myself
+      GIVE_UP_TIME;              -- and let the next task execute
+   end SUSPEND;
+
+
+
+   procedure RESUME (id: in TASK_ID) is
+      -- resume execution of the specified task
+   begin
+
+      case task_table(id).status is
+         when unused =>
+            raise INVALID_TASK;
+
+         when starting | active =>
+            null;
+
+         when suspended =>
+            task_table(id).status := active;
+      end case;
+
+   end RESUME;
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                      Task destruction                     --
+--                                                           --
+---------------------------------------------------------------
+
+   procedure KILL (id: in TASK_ID) is
+      -- terminate and destroy the specified task
+   begin
+
+      case task_table(id).status is
+         when unused =>
+            raise INVALID_TASK;
+
+         when starting | active | suspended =>
+            task_table(id).status := unused;
+
+            if task_table(id).running = false then
+               dispose_stack(id);
+            else
+               raise program_error;   -- can't kill a task while
+                                      -- it is running!
+            end if;
+
+      end case;
+
+   end KILL;
+
+
+end TASKCTL;
+
+

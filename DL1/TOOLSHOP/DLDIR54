@@ -1,0 +1,363 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                          Util-Modem Config & Utility
+                        65 files using 3,416,644 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+144MODEM.ZIP     3738  02-27-93  Information on 14.4 (Fax)Modem vendors,
+                               | brands, prices, and other data from March
+                               | 1993 issue of Computer Shopper
+216USR.ZIP       2411  02-20-94  ************************************ ***
+                               | USRobotics Courier HST Dual *** *** Standard
+                               | Terbo Settings *** *** for max 21.6
+                               | throughput ***
+                               | ************************************
+550_UTIL.ZIP    13507  02-04-93  550_UTIL.ZIP contains 3 utilities for the
+                               | 16550 UART. IS16550.EXE tests for the
+                               | presence of a 16550 on ports COM1: - COM4:.
+                               | 16550.EXE turns the 16550 FIFO on or off to
+                               | fix when programs leave the FIFO on at exit
+                               | (this can cause the port to not exist upon a
+                               | warm reboot or other programs to not
+                               | recognize the port. COMM.BAT shows use of
+                               | 16550JHH.EXE and NU Batch Enhancer to turn
+                               | off the 16550 FIFO upon exit from TELIX.
+ALARMA.ZIP       8346  09-29-93  Remote Alarm v0.1. Uses telephone to wake up
+                               | people from any place in the world.
+ALLINITS.ZIP   286070  02-21-93  Initilization Codes For All Kinds Of Modems!
+ANS37A.ZIP     272619  02-09-94  ANSWER.EXE Voice Mail System Software for the
+                               | ZyXEL/Zoom v3.7a - Dos (sample voice files
+                               | are in zyx_bin1.exe & zyx_bin2.exe) (no -AV,
+                               | author included contents.doc)
+ASETIME.ZIP     40776  08-16-94  ASETIME Version 3.2 This utility will call
+                               | the National Bureau of Standards and retrieve
+                               | the time from the atomic clock and reset your
+                               | DOS time accordingly.
+ASYNC10.ZIP     22967  01-31-94  Async is a program to open Com port 1 or Com
+                               | port 2, transmit a data string: and monitor
+                               | the modem response.
+ATPLUS10.ZIP    60252  09-18-93  ATPlus v1.0 - Send "AT" commands to your
+                               | modem from the DOS command line. Accepts
+                               | command line switches, or reads from its
+                               | configuration file. Works with or w/out a
+                               | FOSSIL driver and supports COM1 - COM4
+                               | including non-standard ports. Output can be
+                               | redirected, or suppressed. Shareware from
+                               | Alien Archives!. (09-18-93)
+ATQR600.ZIP     14659  04-05-93  Basic "AT" command set reference
+ATSEND19.ZIP    23940  05-29-94  ATSEND 1.9 by Joseph Sheppard. Sends "AT"
+                               | commands to Hayes compatable modems from DOS
+                               | or Batch file. Supports configurable
+                               | non-standard COM ports. Includes a program to
+                               | write batch files for ATSEND quickly and
+                               | easily. Shareware $10.00.
+AWUTIL.ZIP       4466  12-14-93  Utils for PC Anywhere. AW.EXE checks to see
+                               | if PCAnywhere 4.5 AWHOST is running on a
+                               | machine, and then returns a message and a DOS
+                               | Errorlevel. AWZAP.EXE performs a PCAnywhere
+                               | host cancel from the DOS prompt. It will not
+                               | work while AWHOST is active, only while it is
+                               | resident, and inactive. It also returns DOS
+                               | Errorlevels when exiting. CHKMOD1,2,3,4.COM
+                               | detect
+                               | either ALL OFF or ALL ON.
+BBX400.ZIP      18390  05-18-94  BRKBOX 4.00 04/18/94 BRKBOX is a software
+                               | version of a hardware breakout box. It
+                               | displays the status of a COM or LPT port
+                               | inside your PC. From Foley Hi-Tech Systems
+                               | (ASP).
+BEEPJR.ZIP      65972  01-15-94  The Beepster Junior A small program which can
+                               | send messages to tone only, digital and alpha
+                               | pagers from nearly any standard PC compatible
+                               | computer equipped with a serial baud modem.
+BEEPME11.ZIP    72943  05-03-93  BeepMe 1.1 calls your pager when it detects
+                               | rings on the phone. works with COM1 or COM2
+                               | This one's NOT crippled!!! Bret Lanius
+CALLFD10.ZIP     5229  02-13-93  Call Forward V1.0: Simple Util That Allows
+                               | One Whose Phone Lines Have "call Forwarding"
+                               | To Automatically Activate And Deactivate The
+                               | Call Forwarding Feature At Prescheduled Times
+                               | To Any Phone Number You Designate; Not A TSR
+                               | & Requires BASIC/qBASIC/etc To Run.
+                               | Christopher Darryn. (newest File Date:
+CALLRT14.ZIP    30889  05-05-93  Call Router v1.4 The Communications Utility
+                               | designed to help handle your incoming calls.
+CODEX.ZIP        3711  06-16-93  CODEX 3266 MODEM SETUP TO QMODEM
+COMADR11.ZIP    36978  12-24-94  Reset the COM port I/O address list (those
+                               | "3F8" and "2E8" things you set jumpers for on
+                               | adapter cards) stored in your computer's
+                               | memory to either the defaults or whatever you
+                               | like. That way, the digital address the
+                               | software sees for the COM port actually
+                               | agrees with the jumper setting, overriding
+                               | whatever garbage your BIOS loaded in during
+                               | start-up. This is especially useful for
+                               | crowded machines, or ones using extended
+                               | adapters like the Mouse Systems Serial Card,
+                               | or the Quickpath Portfolio I/O card, which
+                               | allow you to set different addresses to
+                               | resolve various I/O and interrupt (IRQ)
+COMDOG1.ZIP     32934  01-05-95  Locates modems & shows port # - Free COMdog
+                               | is a freeware utility that sniffs out modems
+                               | connected to or configured as PC serial ports
+                               | and displays their port numbers.
+COMSPEED.ZIP    25634  08-10-93  ComSpeed 1.0 (Gary S. Tessler; $19) tests the
+                               | data rate of the COM port. It returns the
+                               | actual baud rate that a COM port is set to.
+COMST11.ZIP     25431  08-01-93  ************* COMSET 11.0  *************
+                               | Comset 11 setup/test modems/uarts Ver 11
+                               | supports Com1-4, IRQ2-7, speeds to 57.6kbps.
+                               | Returns errorlevels to batch files depending
+                               | on modem's state. Unlike mode.com, Comset
+                               | works with any Uart. Also swaps ports, logs
+                               | in Com3&4 to DOS, displays port status. With
+                               | docs
+COMST12.ZIP     25401  12-17-93  Comset 12 Modem/Uart/Serial Port tester Test,
+                               | setup ports/modems/uarts. Ver 12 supports
+                               | Com1-4, IRQ2-7, speeds to 115200bps. Returns
+                               | errorlevels to batch files depending on
+                               | modem's state. Enable/Disable 16550AFN uart
+                               | buffers Also swaps ports, logs in Com3&4 to
+                               | DOS , displays port status. With docs.
+COMTAP21.ZIP   129379  04-26-93  COMTAP v2.1 ASP - Software serial
+                               | communications line monitor and debugger.
+                               | Microsecond timestamp resolution; Passive
+                               | bi-directional dual port monitoring and
+                               | interactive single port control; Display
+                               | macro-recording; Full log parameter control;
+                               | Context-sensitive Hypertext help. Fully
+                               | functional ASP approved, v2.1 Revision A,
+                               | from Paladin Software, Inc.
+COURIER.ZIP      3582  09-18-93  Info on new 19.2/21.7 bps USR Courier
+                               | modems.. plus forthcoming v.34 28.8 bps
+                               | protocal.. From America Online
+CTSSPU22.ZIP   152830  12-22-94  CTS SERIAL PORT UTILITIES v2.2: Fix comm
+                               | problems. Detect multiple com ports at one
+                               | address, IRQ used, ports that can't generate
+                               | IRQs, and other conflicts. Detects failed
+                               | UARTs. NEW "Modem-finder" & BIOS options.
+                               | Reports port settings, writEs to log file.
+                               | Change any port setting. Version 2 allows
+                               | operation under Windows and OS/2! DOS 2+, any
+                               | display.<ASP>
+EETOOL1.ZIP      8849  01-25-95  Capacitor and Resistor decoder for Win
+ELDA21.ZIP      28807  12-25-94  ELDA v2.1 Enhanced Line Diagnostic Analyser
+                               | by Brian E. Kelly. Sends link interrogation
+                               | commands to compatible modems and filters
+                               | their replies, sending the requested
+                               | responses to a log file or to the screen.
+                               | Sample configurations provided for US
+                               | Robotics and PPI modems. Support for V.FC and
+                               | V34 "V.Fast" modems. User definable /
+                               | configurable response filters. Works under
+                               | DOS and in OS/2 DOS emulations.
+ESP20H.ZIP     140501  07-22-94  Latest drivers (6/17/94) for the Hayes ESP
+                               | Communications Accelerator. Includes drivers
+                               | for WFWG 3.11. If you have a Hayes ESP and
+                               | WGWG 3.11 you need this!
+ESP2D.ZIP       82183  01-19-94  Hayes ESP2 - High Speed Serial Port
+                               | Communications Accelerator Card second
+                               | generation that REALLY works - software
+                               | update version 2.0D with ESPCA 1.01 that
+                               | fixes a lot of problems you might have had
+                               | with the s/w that came with the card.
+FAST550.ZIP     24372  05-17-93  Documentation for using 16550 serial ports.
+                               | Includes several utility programs.
+FEEFIF14.ZIP    29368  10-06-93  FeeFifo v1.4: enables the FIFO of a 16550A
+                               | UART chip at the COM port specified by the
+                               | user; 10/06/93; Gary S. Tessler, P.E.
+FINDIR.ZIP      46116  08-25-93  Contains the documentation, assembly source
+                               | code and executable files for FINDIRQ.COM, a
+                               | utility that reports which interrupt request
+                               | lines (IRQs) in a system are assigned to
+                               | specific devices and which are free to use
+                               | for installing a new peripheral device. PC
+                               | Magazine, Utillities, Volume 12, Number 16
+FINDUART.ZIP     7877  03-12-94  FINDUART will search your system for your
+                               | serial port UARTS and will tell you what
+                               | there I/O address is. This is a great program
+                               | for finding your I/O address for Muliport
+                               | serial cards where all 8 ports may have
+                               | seperate I/O address's. Works great with
+                               | ARNET and Digiboard Non Intelligent cards.
+FLH27A.ZIP     113889  03-09-93  Intel 14.4EXF/SatisFAXtion 400e flash PROM
+                               | Update Program - 2/3/93 This program will
+                               | update the Flash PROM on the Intel 14.4EXF
+                               | modem and the SatisFAXtion 400e faxmodem with
+                               | the latest version of the Flash Code. NOT for
+                               | the 14.4EX; check your model number to be
+                               | sure before running. Downloaded from Intel's
+                               | BBS 2/28/93.
+FONE11.ZIP      16935  07-02-93  Fred's Fone Bug allows you to listen to the
+                               | phone using your modem's speaker.
+FX550107.ZIP     9482  03-14-94  FIX16550 device driver v01.07.00. AUTOMATIC
+                               | NON-RESIDENT device driver to fix a problem
+                               | with AMI BIOSes and 16550 UARTS (used in
+                               | hi-speed modems and serial boards). 8514/A
+                               | compatibility option. Also adds COM3: and
+                               | COM4: to systems that don'T "see" them.
+                               | Shareware, US$10 File should include Author's
+                               | PKZIP -AV
+H-MTRB.ZIP       4956  06-03-93  H-MTRB.TXT 9397 Mainframe Configuration
+                               | Support (06/03/93) How to Disable Error
+                               | Correction (MNP) Modem Troubleshooting Tips
+                               | Where to Get Help for Configuring S/W Prob
+                               | Rcvg From Modem (Need @#)
+INIT-200.ZIP    35702  07-26-93  Modem initializaTion strings. Database of
+                               | more than 400 init strings. Search quickly
+                               | your modem init - string With a print to
+                               | paper option.
+INITS.ZIP       18099  11-08-93  All types of modems listed with the proper
+                               | init string to make them run. Very detailed.
+IOCHECK.ZIP     26796  04-01-93  IOCHECK is a utility program that searches
+                               | your PC's I/O space for 8250-16550 UARTs
+                               | (COMx: ). Bypasses the BIOS to find std and
+                               | non std serial ports. Returns location, type
+                               | and interrupt. Handy for debugging
+                               | communications/control problems.
+IP132.ZIP       21702  01-17-95  IP - PORT IDENTIFIER - VERSION 1.32 - From
+                               | MEL's Diner BBS! IP will identify serial port
+                               | base addresses, IRQ assignments, register
+                               | status and quite a variety of other serial
+                               | port info. Ports - Diagnostic - Address - IRQ
+                               | MARK LESTER
+KSPBOOT.ZIP      4571  05-25-94  KSPBOOT: Source and executable for a "robust"
+                               | program to reboot if the phone rings four
+                               | times without an answer. DeSmet ASM88
+                               | assembler source code included. Freeware.
+MDMLIGHT.ZIP     4968  10-31-94  Show modem lights on your computer monitor.
+                               | Great for those with internal modems! [File
+                               | Date: 12-20-92]
+MDMWZ303.ZIP    36638  01-10-95  Tells is on each of your four COM-Ports and
+                               | which IRQ is connected to each COM-Port,
+                               | COM?-IRQ?. It will give you a written report
+                               | about your Modem. FaxModem Wizard is used by
+                               | professionals and layman to install hardware
+                               | and software on COM1 through COM4 in IBM
+                               | compatible computers. If you want to
+                               | fine-tune your computer or you think you may
+                               | have a hardware conflict, you are welcome to
+                               | use these utilities. You will want to read
+                               | the whole README.TXT file, but carefully
+                               | study the "FAX/MODEM INSTALLATION:" section.
+MODEM210.ZIP    61662  01-01-94  MODEM v2.10a - Add full modem control to your
+                               | batch programs. Status checking. Dialing.
+                               | Even a basic terminal program. Information is
+                               | sent back to the batch file via the DOS
+                               | ERRORLEVEL variable. Can also be used with
+                               | regular (EXE or COM compiled) programs if
+                               | they can detect the ERRORLEVEL. From Pinnacle
+MODEM402.ZIP    32749  05-18-95  Indicates what is on each of your four
+                               | COM-Ports and which IRQ is connected to each
+                               | COM-Port, COM?-IRQ?.  It will give you a
+                               | written report about your Modem.         hw
+MODEM404.ZIP    32938  06-16-95  Shows what is on COM-Ports and which IRQ is
+                               | connected to each COM-Port, COM?-IRQ?.  It
+                               | will give you a written report about your
+                               | Modem.  FaxModem Wizard is used by
+                               | professionals and layman to install hardware
+                               | and software on COM1 through COM4 in IBM
+                               | compatible computers.                     hw
+MODEMD52.ZIP   132427  06-15-93  Modem Doctor 5.2S, the premier modem,uar
+                               | diagnostic utility. Tests ports, IRQ set
+                               | self-connect modem tests, handshake test and
+                               | more than 60 others. Ver 5.2 adds aa command
+                               | line switch /Q that allows user to toggle IRQ
+                               | diagnostics off. Contains tech reference
+                               | manual, user manual.
+MODEMD60.ZIP   154169  01-02-95  Modem Doctor 6.0S,modem/uart diagnostics The
+                               | premier modem/uart system utility. Ver 6
+                               | tests ports, IRQ's, & modem self- connect
+                               | tests, handshake tests & more than 60 others.
+                               | Support for IRQ 2-15, Digiboards, Burst tests
+                               | measure thruput and handshaking, ID's all
+                               | active IRQ's motherboard type and much more!
+NG-ROC-B.ZIP   101152  02-18-93  Release 2: Norton Guide for Twincom, Infotel,
+                               | & Supra V.32bis modems. Includes *Unlinker*
+                               | to convert Guide back to plain text;
+                               | comprehensive explanations of V.42, V.42bis,
+                               | MNP, Fax, and GSZ/HS-Link/Hydra docs.
+OFFHK30.ZIP     32378  10-10-94  OFFHOOK Sends OFFHOOK to Comm port for DOS
+                               | DESQ WIN3. This pRogram physicAlly
+                               | comm port so that it will work while in a
+                               | multi-tasking environment. FREEWARE by Maddog
+                               | Productions v3.0 215-855-4621 1:2614/716
+PEEKABOO.ZIP     3200  09-18-93  Peek-A-Boo v1.0 is a simple, but effective
+                               | program that checks all COM ports and sees if
+                               | a 16550AFN UART is being used(and the
+                               | earlier, FIFO broken 16550). FreeWare. Source
+                               | code included.
+PEM.ZIP        103788  03-29-93  Private email system runs in the background
+                               | (TSR) in DOS or Windows and allows anyone
+                               | with a regular answering macHine and a 2400
+                               | modem to send and receive electronic mail.
+                               | Many features.
+SPC58.ZIP       30096  05-04-93  SPC (Version 5.8) by Bob Eyer SPC is a
+                               | redirectable System Information display
+                               | program designed to show as much information
+                               | as possible in the smallest amount of space.
+                               | Missing drives are no problem, making this
+                               | program valuable for network or removable
+                               | drives.
+SPORTS11.ZIP     4548  03-08-93  SPORTS is a real-time serial and parallel
+                               | port analyzer. Function determines IRQ's
+                               | attached to those ports. Simple / Works!
+SUPINFO.ZIP     69142  07-02-93  Supramodem Information, rom upgrades, line
+                               | noise & other InfoRmation
+UARTS21.ZIP      7724  03-08-93  UARTS provides continual real-time data
+                               | enquiry for all uart registers DOS COM ports
+                               | COM1, COM2, COM3, and COM4. Also dynamically
+                               | detects & displays each IRQ and it's enable
+UARTYP.ZIP       1272  06-03-93  Displays PC Uart chip in PC
+UMENU101.ZIP   220312  08-31-94  UltiMenu v1.01 DOS Menu System <ASP> Removes 
+                               | itself completely from system memory for 
+                               | running programs; 18 Categories with 18 
+                               | Programs per Category are supported; mouse 
+                               | support; context sensitive on-line help; 
+                               | fully configurable; offers several built-in 
+                               | utilities such as a File Handler, Screen 
+                               | Blanker, Contact Manager and Label Manager.
+VOICECMD.ZIP    23610  12-30-93  Extended voice command sets for Zoom's line
+                               | of voice capable fax modemS. Use of this
+                               | command set is NOT recommended
+                               | user or others not experienced with the
+                               | terminal command mode of your software.
+                               | Direct from the ZOOM bbs.
+WDA20.ZIP      312951  03-30-95  Debt Analyzer for Windows v2.0 Debt 
+                               | Elimination at its best! A package designed 
+                               | to help reduce and eliminate debt and save 
+                               | you hundreds of dollars in the process. Build
+                               | debt reduction schedules or loan 
+                               | consolidation schedules. Handles up to 50 
+                               | debts at once. Use minimum payments 
+                               | (percentages too), current payments or 
+                               | accelerated payments with elimination. Nine 
+                               | priority methods or define your own.
+                               | Major Update
+WFAX11.ZIP      11161  01-08-93  Determine which fax card you have
+ZIP171.ZIP      35400  12-18-93  Transfer files between two IBM compatible
+                               | computers; it requires no expensive
+                               | additional hardware, just a simple serial
+                               | cable. It can be used from the DOS command
+                               | line or a batch file, or run from an
+                               | interactive menu. It transfers files as
+                               | simply as using the COPY command, and has
+                               | options that make it easy to reconcile
+                               | directories on both computers.
+ZOOMCFG.ZIP      1100  01-06-93  Nonvolatile Ram settings and help for people
+                               | having trouble with ZOOM 14.4K bps modems.
+      
+                               | correct IRQ detects.
+                               | take based ring measurements and the number
+                               | User supported software by RBK software. Wow!
+                               | Registration still only $15!
+                               | used with ringmate. Supports COM ports 1-4.
+                               | for both voice and data. Determines action to
+                               | of incoming rings detected. Excellent when
+                               | system. The LPT device must be online for
+                      
+                               | or anywhere a single phone line is being used
+                

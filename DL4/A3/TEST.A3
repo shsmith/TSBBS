@@ -1,0 +1,62 @@
+
+--
+-- test program for a3 compiler
+--
+
+pragma list (on );   -- list source while parsing
+pragma debug(off);   -- don't trace yacc parsing
+pragma trace(off);   -- don't trace actions
+
+package TEST is
+
+   I: integer;
+   F: float;
+
+   procedure JUNK is
+      procedure JUNK1 is
+         procedure JUNK2 is
+         begin
+            F := F * (F-1.0);
+         end JUNK2;
+      begin
+         JUNK2;
+      end JUNK1;
+   begin
+      JUNK1;
+   end JUNK;
+
+   procedure PROC1 is
+      LOCAL: boolean;
+   begin
+      I := 3;
+      for I in 1 .. 20 loop
+         JUNK1;
+         F := F * 1.1;
+      end loop;
+
+      if I = 3 then
+         I := 4;
+      elsif I = 5 then
+         I := 3;
+      elsif I = 4 then
+         I := 7;
+      else
+         I := I + 1;
+      end if;
+
+      if F > 100.0 then
+         F := F - 100.0;
+      end if;
+
+      while F < 10.0 loop
+         F := F + 1;
+         exit when I < 3;
+      end loop;
+
+   end PROC1;
+
+begin -- main block
+   NULL;
+end TEST;
+
+

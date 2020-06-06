@@ -1,0 +1,251 @@
+
+Sammendrag av Post Kommandoer
+-----------------------------
+
+(+) eller (-) setter lese retning.
+(/)Vise pÜ nytt samme melding.
+(A)vslutte konferanse og gÜ til Hoved base omrÜdde.
+(B)ulletin listing.
+(DA) Din post eller til "alle".
+(DI)n post (til eller fra).
+(HA) det. Logge av basen.
+(HO)tkey mode. Direkte utfõring av kommanoder, (uten bruk av ENTER).
+(HU)rtig sõking av post (viser fõrste linje av teksten ogsÜ).
+(HHU)rtigere sõking av post (bare meldings hoder).
+(J)oin en konferanse.
+(J A)uto-oppdatering av konferanser du vil vëre medlem i.
+(J N)ye meldinger i alle konferanser.
+(J S)tatus av alle konferanser.
+(J D)in post. Sõk i konferanser etter post adresset tl deg.
+(J +)gÜ til neste hõyere konferanse.
+(J -)gÜ til neste lavere konferanse.
+(K)ommentar til sysop.
+(LM)Lese tidligere merket melding.
+(LR)Les referanse til melding.
+(M)erke meldings nummer.
+(MG)grafikk mode av/pÜ.
+(N)tilbake til hoved kommando prompt.
+(NODE)vise hvem som er pÜ annen node.
+(OPEN)èpne DùR.
+(PE)ker. Sette din sist leste meldings peker.
+(R)ope pÜ Sysop.
+(S)krive en melding.
+(SL)ette melding (hvis du har hõyt nok adgangsnivÜ).
+(SV)are pÜ melding.
+(SO)svare pÜ en melding til mottaker av denne melding. (Original)
+(SVAR)e pÜ en spesiell melding.
+(S)iden sist lest.
+(SK) SlÜ av og pÜ sõk av konferanse og (zipm a).
+(T) Lese meldinger etter trÜd.
+(UT)en stopp. Fortlõpende lesing.
+(V)ise profil.
+(X)pert bryter.
+(Z)ip sõking i meldings innhold.
+(ZIPM)zip ny post.  Pakke nye meldinger for nedlasting.
+
+(KO)opiere melding  \
+(F)inne bruker        \
+(EN)dre melding         \       
+(FLY)tte melding          \ Bare for
+(P) Gjõre privat           /  Sysop
+(U) Gjõre offentlig       /
+(RED)de slettet melding  /
+(RU) kikke pÜ          /
+    
+
+Post kommando Detaljer.
+-----------------------
+
+(Enter)     Lese neste melding. Bemerk meldings promptet "(Enter)='+'" 
+            eller "(Enter)='-'" som forteller hvilken retning (Enter) 
+            vill ta deg.
+
+(+) or (-)  Du kan skifte retning Ü lese post ved Ü skrive "+" eller 
+            "-". Promptet forteller deg hvilken vei du gÜr.
+            Hvis du bare trykker (Enter) vil du automatisk lese fremover
+            og nÜr det ikke er flere meldinger i en konferanse, vil du 
+            automatisk gÜ over til neste konferanse.
+
+(#)         Du kan skrive hvilken som helst nummer og den meldingen
+            blir da vist. Hvis det ikke er melding med det nummeret,
+            vil ProDOOR sõke etter meldingen nërmest dette nummeret i
+            stedetfor.
+
+(/)         Vise pÜ nytt samme melding.
+
+(A)vslutte  Avslutte konferanse og gÜ til Hoved basen.
+            Fortsetter Ü lese meldinger.
+
+(DI)n       Sõker etter meldinger med ditt navn i.
+
+(DA)        Sõker etter meldinger til deg eller til "alle".
+
+(HA) det    Logger deg av basen.  Eksempel:
+                HA          ;logger av
+                HA Q        ;hurtig avlogg, viser ikke avlogg notis.
+
+(HO)tkeys   Instant respons pÜ de de fleste kommandoer. Du trenger
+            ikke trykke RETURN for Ü activisere de fleste kommandoer.
+            I hotkey mode mÜ du bruke ";" (ikke SPACE) for Ü "stacke"
+            kommandoer. Mellomrom tasten virker som RETURN i hotkey mode.
+
+(HU)rtigSõk 
+            Viser alle meldingshodene i meldinger som er tilgjengelig
+            for lesing samt fõrste linjen av selve teksten.
+
+(HHU)rtigereSõk 
+            Samme som over men viser bare meldings hodene.
+
+
+(J)         Brukes for gÜ til en konferanse og for Ü fortsette Ü lese post.
+            Du kan spesifisere enten et konferanse nummer eller et konferanse
+            navn.  Eksempler:
+               J M         ;main base
+               J;+         ;gÜ til neste tilgjengelige konferanse
+               J;6         ;gÜ til konferanse 6
+               J TOOLS     ;gÜ til tools konferansen
+               J;2;Q       ;gÜ til konferanse uten Ü vise nyhets fil
+               J S         ;status for alle konferanser.
+               J S +       ;status for konferanser etter denne.
+               J A 20      ;konfigurer autoscan, begynn med konferanse 20
+
+            Disse under funksjonene er tilgjengelig:
+               (A)uto-oppdater konferanse valg
+               (M)ain base
+               (N)ye meldinger status
+               (S)tatus av alle konferanser       
+               (Y) Din post. Sõk i konferanser etter post adressert til deg.
+               (+)neste hõyere konferanse
+               (-)neste lavere konferanse
+
+(K)ommentar 
+            Skriv en kommentar melding til sysop.  Du spesifiserer et
+            'subjekt' til meldingen. Meldingen vil bli privat slik at 
+            den bare kan leses av sysop.
+
+(LM)        Lese melding merket med (M)erke kommandoen.
+
+(LR)        Lese REF flytter deg til 'Ref#' meldingen.
+
+(M)erke     Merker aktuell melding for senere lesing. Brukes sammen med
+            (LM) lese merket melding.
+
+(MG)        SlÜr ANSI grafikk mode av/pÜ.
+
+(N)         Returnerer til kommando promptet.
+
+(NODE)      Viser hvem som er pÜ andre noder i et multi-node system.
+
+(NS)        Lesing og sõking fortlõpende uten stop. Kan stoppes med ^S, 
+            abrytes med ^K eller slutt pÜ melding.
+
+(PE)ker     Resetter din 'sist leste meldings' peker til denne melding.
+            Denne kan brukes sammen med ARCM for Ü hente meldinger pÜ nytt.
+            Eksempel:
+               500 PE           ;velger melding 500 og setter 
+                               ;sist leste melding peker til den.
+
+
+
+(S)kriv     Skriv en ny melding.  Du kan skrive hvem meldingen skal vëre
+            til samt hvilket emne den skal vëre om.
+            Du kan ogsÜ beskytte meldingen slik at den bare blir sett 
+            av adressaten. Sysop kan lese alle meldinger.
+
+(SL)ette    Dersom meldingen er enten TIL eller FRA deg blir denne kommandoen
+            tilgjengelig. Denne vil slette meldingen fra basen.
+            Men det er ikke sikkert at du har hõyt nok level for Ü 
+            bruke denne.
+
+(SV)are     Svare pÜ melding som vises i õyeblikket. Du har anledning
+            til Ü endre pÜ subjekt eller gjõre den til en privat melding.
+
+
+(SVAR)      Med denne kan du svare pÜ en melding direkte fra kommando
+            linjen. Kan ogsÜ brukes hvis du skal svare pÜ meldinger som
+            du har hentet med ARCM funksjonen. Orginal meldings nummerene
+            skrives fortrlõpende.
+
+
+(S)iden     Begynner Ü lese meldinger der du sist leste.
+
+(SK)        SlÜ av/pÜ auto-join og ZIPM adgang pÜ aktuell konferanse.
+
+(T)rÜd      Sõker etter annen melding med samme subjekt.
+
+(X)pert     Velger expert eller begynner mode.
+
+
+(Z)ip       Sõke i meldinger. Lar deg spesifisere et 'sõke ord'. 
+            NÜr du har valgt denne funksjonen vil du se BARE meldinger 
+            som inneholder 'sõkeordet' enten i 'hodet' eller i selve 
+            meldingen. Dersom du har valgt grafikk vil linjer med 
+            sõkeordet i vises med en annen farge.
+
+(ZIPM)      Arkivere ny post. Hente opp til 800 nye meldinger i valgte
+            konferanser og arkiverer de i en fil som som kalles IDCODE.ZIP
+            for kortest mulig ned lastings tid. 
+            Hvor IDCODE er navnet som Sysop for den aktuelle basen har valgt.
+            Eksempler:
+               ZIPM N         ;liste nye meldinger i konferanser fõr henting
+               ZIPM A         ;hente ny post i alle valgte konferanser
+               ZIPM M 10 14   ;hente ny post i hoved base (M),og i 10 og 14
+               ZIPM TOOLS AI  ;hente ny post i konferansene TOOLS og AI
+            Bruk (PE)ker kommandoen for Ü resette meldings pekere.
+            Bruk (J A)uto-oppdatering for Ü velge konferanser til (ZIPM A).
+
+Sysop kommandoer (ikke tilgjengelig for brukere)
+------------------------------------------------
+
+(KO)pi    Kopiere meldingen til en annen konferanse.
+
+(ED)it      Brukes for Ü editere meldings hode uten Ü gÜ
+            via EN)dre melding kommandoen.
+
+(F)inne     Finn og vis informasjon fra bruker filen for sender 
+            av en melding.
+
+(FLY)       Flytt meldingen til en annen konferanse.
+            
+
+(EN)dr      Editere en meldings tekst eller 'hode' informasjon.
+
+(P)rivat    Endre en meldings status til 'BARE MOTTAKER'.
+
+(U)         Endre en meldings status til 'OFFENTLIG'.
+
+(RED)de     Redd en melding som har blitt slettet.
+
+(RU)        Bryter for 'lest-flagg' og bruker-oppdatering for Ü lese
+            meldinger uten Ü oppdatere 'sist leste meldings' peker.
+
+
+Hvordan kommandoer kan skrives nÜr du leser meldinger.
+------------------------------------------------------
+
+   2000 +                    ;les forover fra melding 2000
+
+   1000 S                    ;les melding 1000 og deretter fortsett
+                              hvor du var.
+
+   HHU DA NS                  ;hurtigere listing av post til deg eller 
+                              til 'alle'.
+
+   M 345 LM                  ;sett et merke hvor du er, les melding
+                              345 og deretter fortsett hvor du var.
+                              
+   Z nõkkelord               ;sõk etter nõkkelord i meldinger.
+
+   Z nõkkelord NS            ;sõk fortlõpende etter nõkkelord i 
+                              meldinger.
+
+   SVAR 4431                 ;skriv et svar til melding 4431.
+
+   J;+                       ;gÜ til neste tilgjengelige meldingsomrÜde
+
+   J TOOLS                   ;gÜ til TOOLS konferansen.
+
+   ZIPM 1 2 3                ;arkiver ny post fra konferansene 1,2 og 3.
+  
+   750 PE                    ;resett din 'sist leste melding' peker til 750
+

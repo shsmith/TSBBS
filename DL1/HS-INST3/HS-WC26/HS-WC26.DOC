@@ -1,0 +1,91 @@
+
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                 IN WILDCAT! BBS TEST DRIVE VERSION 2.6
+
+     Please refer to the WILDCAT! manual for detailed information on
+     installation of external protocols.  This information was tested
+     with WILDCAT! test drive version 2.61S.
+
+     The following installation steps should work for most folks:
+
+     Run MAKEWILD.EXE to set your wildcat configuration options.
+
+     On page 'General Information - Part 1' line 11, add 1 to the number
+     of external protocols.  If this is your first external protocol,
+     set this entry to '1'.
+
+     On page 'External Protocol Definition' enter the following
+     information for HS/Link:
+
+  ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+  บ                   EXTERNAL PROTOCOL DEFINITIONS                        บ
+  บ                                                                        บ
+  บ      LTR      Name           Up .BAT         Dn .BAT      Batch        บ
+  บ       -   ------------     -----------     ------------     -          บ
+  บ       H   HS/Link          HS-U.BAT        HS-D.BAT         Y          บ
+  บ                                                                        บ
+  ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+     On page 'Node Information' line 4 set the Path for External
+     Protocols to C:\WILDCAT\EP.  Note that if you use a different
+     directory here you must also edit the CD statements in HS-U.BAT and
+     HS-D.BAT to reflect your system.
+
+     Place a copy of HSLINK.EXE into your protocol directory,
+     C:\WILDCAT\EP.  Also copy the supplied HS-U.BAT and HS-D.BAT files
+     into the C:\WILDCAT\EP directory.
+
+     This should get you set up in under 10 minutes.
+
+     Wildcat 2.6 does not support batch uploads, nor does it support
+     bidirectional transfers.  If the caller attempts to upload multiple
+     files, or files that do not match the filename given in advance,
+     the resulting upload file may be corrupt or misnamed.
+
+     I understand that Mustang software is currently working on a new
+     version of Wildcat! which will have these capabilities.  Please
+     contact Mustang for upgrade information.
+
+     Note for systems running locked COM ports:
+     We have found that if you use a locked DTE of 9600 or above, you
+     will need to have a NS16550AN UART installed. Also, for rock solid
+     performance you should add the -HS (Handshake Slow) switch to your
+     'HS-D.BAT' and 'HS-U.BAT' batch files.
+
+     You can edit HS-D.BAT and HS-U.BAT to include options on the HSLINK
+     command line, but most folks won't need to change anything. If your
+     system can't keep up with the COM port while accessing the disk
+     drive, you may want to add -HS to the command line in each file.
+     If you want to experiment, there are a number of optional
+     parameters you can read about in HSLINK.DOC and HSLINK.NEW.
+
+     Contents of HS-D.BAT
+     --------------------
+          CD \WILDCAT\EP
+          HSLINK -P%2 -B%1 %3 %4 %5 %6 %7 %8 %9
+          IF ERRORLEVEL 1 COPY ALL.OK TRANSFER.BAD
+
+     Contents of HS-U.BAT
+     --------------------
+          CD \WILDCAT\EP
+          HSLINK -P%2 -B%1 -U%5
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with Wildcat! and with HS/Link.  If all else fails, call up the
+     Tool Shop and ask for help on the Support Conference.  Either I
+     will help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-6780    v.32bis 14400           Free to all
+       (818) 891-1344    v.32bis 14400           Multiple subscriber lines
+       (818) 891-3772    US Robotics HST 9600    Subscribers only
+

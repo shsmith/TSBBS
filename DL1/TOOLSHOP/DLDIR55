@@ -1,0 +1,67 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                                  Util-Mouse
+                        21 files using 1,978,275 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+ARRMO11A.ZIP     8491  01-25-91  ARRMOUSE ver. 1.1a, use a mouse in place of
+                               | the cursor keys.
+CHKM11.ZIP       7502  07-09-94  CHKM (Check Mouse) Version: 1.1 CHKM, is a
+                               | small, free, utility the checks the status of
+                               | the mouse driver and mouse. The program will
+                               | tell you if a mouse driver is installed, the
+                               | mouse driver version, the mouse type, the IRQ
+                               | used by the mouse, and the number of buttons.
+                               | From Bob's Software.
+CLOAKING.ZIP    14774  03-01-95  Allows DOS mouse driver MOUSE.EXE to be
+                               | loaded in extended memory, freeing valuable
+                               | conventional and upper memory for your DOS
+                               | applications.  Cloaking works in conjunction
+                               | with a supported memory manager to enable the
+                               | mouse driver to load in extended memory.
+                               | Without cloaking, the DOS mouse driver
+                               | consumes about 27k of conventional or upper
+                               | memory.  Working in conjunction with the
+                               | cloaking interface, however, it uses a mere
+CSHOWMS.ZIP     27488  02-15-91  Great mouse driver for CSHOW
+EXECUTOR.ZIP    31119  07-01-93  Mouse program to change the functions of the
+                               | buttons so you can launch programs or do
+                               | other specific things with the mouse.
+G-RUNME.ZIP     79100  01-09-92  Genius 9.06 mouse driver (latest version)
+GWSMOUSE.ZIP    26935  02-15-91  New! Mouse driver for Graphics Workshop
+HD0534.ZIP      60177  07-08-92  msmouse drv v 8.20a
+LMOUSE62.ZIP   146067  03-18-93  Logitech mouse driver v6.2
+LOGIT643.ZIP   572156  08-04-94  Logitech MouseWare Enhanced version 6.43
+MOUSE-C.ZIP     64422  02-21-92  Complete IBM/MS mouse functions. Source for
+                               | cursor movement, buttons. Also, a *GREAT*
+                               | cursor editor that generates C source code to
+                               | put in your apps!
+MOUSE6.ZIP       9635  03-22-92  MOUSE program, better than MS MOUSE 8.0
+                               | requires less memory, and works faster
+MOUSE800.ZIP    23308  05-31-92  Mouse Systems drivers v.8.00
+MW612.ZIP      140886  09-09-92  Logitech Mousware Utilities v6.12
+MW641TUS.ZIP   530296  08-26-94  Logitech SenseWare 6.41
+                               | ~~~~~~~~~~~~~~~~~~~~~~~ Latest software for
+                               | Logitech's mouse, including the CLOAKING
+                               | ability form HELIX software to reduce memmory
+                               | usage!
+ODOMET10.ZIP    16931  07-22-92  Odemeter for your mouse. Tracks miles/feet or
+                               | centimeters/kilmeters yuour mouse has moved.
+                               | From the Internet.
+PP111.ZIP       83911  02-07-93  PRECISE POINT v1.11 <ASP> - Graphical Mouse
+                               | Driver. Installs as a dos TSR utility.
+                               | Transforms the text mode block mouse cursor
+                               | into a smooth moving graphical pointer. Works
+                               | with EGA/VGA text mode applications. Now
+                               | UltraVision compatible. By Andy Hakim.
+RITEON21.ZIP    55319  08-17-93  Teach your mouse lots of new tricks
+RODENT.ZIP       1137  08-16-94  Rodent.com is a small program from Compute
+                               | magazine which will show you what kind of
+                               | mouse you have, what IRQ it's on, and for
+                               | serial mice, what com port it's on.
+RS232!.ZIP      45636  07-01-93  Show in real time what the serial port is
+                               | doing on screen.
+TELIXRAT.ZIP    32985  03-18-91  Mouse Systems Telix 3.12 mouse interface.

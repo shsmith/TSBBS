@@ -1,0 +1,67 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+var
+   current_line: string;
+   prev_prompt:  string;
+        
+procedure pdisp (msg:  string240);
+procedure pdispln(msg:  string240);
+procedure disp (msg:  string240);
+procedure dispc( c: char );
+procedure displn(msg:  string240);
+procedure newline;
+procedure spaces(n: byte);
+procedure space;
+procedure beep;
+procedure erase_prompt (len: integer);
+procedure repeat_prompt;
+
+procedure get_cmdline_raw(prelength: integer);
+
+procedure no_hotkeys;
+procedure get_cmdline;  {get cmdline without hotkeys}
+procedure get_hcmdline; {get cmdline with hotkeys}
+
+procedure prompt_def(prompt: string80; default: string80);
+procedure get_def(prompt: string80; default: string80);
+procedure get_defn(prompt: string80; default: string80);
+procedure get_defnh(prompt: string80; default: string80);
+procedure get_defen(prompt: string80);
+procedure get_defyn(prompt: string80; default: boolean);
+procedure get_defbl(prompt: string80);
+procedure get_int(prompt: string80; var n: byte);
+
+function key_ready: boolean;
+function get_key: char;
+function time_key(ms: integer): char;
+
+procedure drop_carrier;
+procedure force_offhook;
+
+procedure check_carrier_loss;
+
+procedure line_input(var line:  string;
+                     maxlen:    integer;
+                     echo:      boolean;
+                     autocr:    boolean);
+
+procedure input(var line:  string;
+                maxlen:    integer);
+
+procedure force_new_prompt;
+
+procedure get_chars(prompt: string;
+                    var dest;
+                    size: integer;
+                    echo: boolean);
+

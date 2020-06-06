@@ -1,0 +1,260 @@
+                        OPTIMIZING HS/LINK FOR WWIV 4.21
+     
+          After talking at length with Sam Smith, the author of HS/Link, I
+think I have the proper setups to make HS/Link work reliably with PC Pursuit. I
+also found out a couple of other things that really speed HS/Link up for
+regular transfers.
+     
+          The first part of this document defines some terms that are used in
+the rest of this discussion. The second part discusses ways of setting up
+HS/Link to optimize normal WWIV BBS connections. The third part describes the
+problems involved using HS/Link on WWIV with PC Pursuit, and how they can be
+taken care of. Part 4 deals with optimizing HS/Link for use with your terminal
+program, and part 5 deals with how to do Bi-Directional uploads and downloads.
+     
+     
+     Part 1 - Definitions:
+     
+     BLOCK :
+     HS/Link sends data in packets (blocks). Normally each block contains a
+     unique sequence number and checksum info to aid in data verification and
+     error detection and recovery.
+     
+     BLOCK SIZE (-s) : 
+     Size of each block in bytes.
+     
+     CONFIGURATION FILE :
+     An ASCII file that is used to set HS/Link's options. This file can be
+     created with HSCONFIG, or with your editor. The default configuration file
+     is HSLINK.CFG. This is the file that HS/Link looks for if no other is
+     specified on the command line. To specify another configuration file start
+     your command line as follows: "HSLINK -@filename". Don't type the quotes.
+     The filename is the name of the alternate configuration file you want
+     HS/Link to use. This MUST be the FIRST option on the command line.
+     
+     CURRENT HS/LINK VERSION :
+     Be sure to use the LATEST release of HS/Link. While the current version is
+     always compatible with older versions, you will not get the benefit of the
+     latest enhancements and fixes if you are using an old version. At the time
+     of this writing, the latest RELEASE version is 1.12.
+     
+     DOWNLOAD DIRECTORY (-U) :
+     This option controls the destination directory for incoming files. By
+     default, HS/Link will put incoming files into the "current" directory.
+     This is where WWIV is expecting to find them. The BBS will move the files
+     to where they belong, so the -U option should NOT be used for the BBS. It
+     may however be used in conjunction with a caller's terminal program. For
+     Example, -UC:\TEMP in the caller's HSLINK.CFG file would place the
+     incoming files in his TEMP directory on drive C:.
+     
+     FORCE REMOTE TO USE LOCAL OPTIONS (-!) 
+     This option causes the remote (called) end to use some of the options
+     specified by the calling end. This does NOT affect any of the options
+     having to do with security, such as the upload path, or the overwrite
+     option. It does affect block size (-s), xon/xoff (-hx), and windows (-w).
+     
+     HARDWARE HANDSHAKING - CTS/RTS (default) : 
+     A means of flow control where the modem asserts the CTS (clear to send)
+     line when it is able to receive data from the computer. If it's buffer
+     fills up, it drops the CTS line. In the same way, the computer asserts the
+     RTS (request to send) line when it is able to receive data from the modem,
+     and drops it if it is busy. This scheme is used by High Speed modems that
+     can operate with a port speed that is higher than the connect speed.
+     
+     SLOW HANDSHAKE (-hs) :
+     Sends Xoff or lowers RTS during disk I/O. This causes the computer to
+     signal the modem not to send any data during disk I/O. It is available for
+     systems with slow disk access. It may help if you get frequent CRC errors
+     of COM overruns on clean lines.
+     
+     WINDOW (-w) : 
+     The number of blocks HS/Link will send before stopping and waiting for an
+     acknowledgment (ACK)
+     
+     XON/XOFF (default) :
+     A software method of telling the other end to suspend/restart          
+     sending data. It is not generally necessary for error correcting modems,
+     but no harm is done by leaving it enabled. (Do not disable this if Slow
+     Handshaking (-hs) is required by your system)
+     
+     
+     Part 2 - Optimizing HS/Link for WWIV BBSs that do NOT make NET calls via              
+              PCP
+     
+     If you operate a WWIV BBS that does NOT make NET callouts via PCP, then
+the following HSLINK.CFG file settings and INIT settings should be optimum for
+you.
+     
+                HSLINK.CFG - use HSCONFIG or wordprocessor to create
+     
+     -A        /* don't send ACKs */                      << don't type the >>
+     -S4096    /* sets 4k blocks */                       << comments       >>
+     -W0       /* do not wait for ACK /*
+     
+                    INIT settings for HS/Link
+     
+     Description              : HS/Link
+     Xfer OK code             : 0
+     Require MNP/LAPM         : N
+     Receive command line:
+     HSLINK -P%2 -E%4 -U%3
+     Send command line:
+     HSLINK -P%2 -E%4 %3
+     Receive batch command line:
+     HSLINK -P%2 -E%4 -U%3
+     Send batch command line:
+     HSLINK -P%2 -E%4 @%3
+     Bi-directional transfer command line:
+     HSLINK -P%2 -E%4 -@ @%3
+     
+     
+     Part 3 - Optimizing HS/Link for WWIV BBSs that make NET calls via PC               
+              Pursuit
+     
+          OK, now for the problem with PCP. Being a timeshare net, it does not
+transmit data continuously, especially during busy times. There may be delays
+in data transmission. If the HS/Link default block size of 1024, or 4096 is
+used, and the default window of 8 is in effect, HS/link will send 8 of these
+blocks before stopping for an acknowledgment. If PCP is busy, this may be more
+data than it can "swallow" in one gulp. Once PCP gets behind, it may have
+problems recovering, in which case the data may or may not get thru. Even if it
+does, the ACK may not get back to the sending end, in which case HS/Link waits
+for it's internal timeout, before trying again. Often PCP cannot recover at
+all, and HS/Link will finally about the transfer.
+     
+          This problem can be resolved by using smaller blocks, and smaller
+windows. A setting of 512 or smaller for the block size is recommended, and a
+window of 4 should work fine. This will give PCP smaller blocks of data, and
+HS/Link will stop more often to check that the data has been received.
+     
+          This sounds easy to implement, but there is one problem with WWIV
+that we have to overcome. We are able to set the command line that HS/Link uses
+for regular BBS callers by using the INIT program, BUT we have no way of
+controlling the command line that the NETWORK uses for it's callouts. This
+means we are stuck using the same configuration for both our NET calls and our
+regular callers. 
+     
+          There is a workaround that will do the job for those systems that
+make NET callouts via PCP, but still want their regular callers to get the best
+speed out of HS/Link. We can set the options we want to use for NET callouts in
+the HSLINK.CFG file, since that is the one HS/Link looks for by default. Then
+we can create another configuration file to use when a regular caller activates
+HS/Link. We can specify that alternate configuration file on the HS/Link
+command lines in INIT. If you called your alternate config file BBS_CALL.CFG,
+and it was in your C:\WWIV directory, then your HS/Link setup in INIT should
+look like this:
+     
+     Description              : HS/Link
+     Xfer OK code             : 0
+     Require MNP/LAPM         : N
+     Receive command line:
+     HSLINK -@C:\WWIV\BBS_CALL.CFG -P%2 -E%4 -U%3
+     Send command line:
+     HSLINK -@C:\WWIV\BBS_CALL.CFG -P%2 -E%4 %3
+     Receive batch command line:
+     HSLINK -@C:\WWIV\BBS_CALL.CFG -P%2 -E%4 -U%3
+     Send batch command line:
+     HSLINK -@C:\WWIV\BBS_CALL.CFG -P%2 -E%4 @%3
+     Bi-directional transfer command line:
+     HSLINK -@C:\WWIV\BBS_CALL.CFG -P%2 -E%4 -@ @%3
+     
+          Your default HS/Link config file that will be used for the NET
+callouts should look like the following. It should be named HSLINK.CFG, and
+should be in the same directory as HS/Link. This is the optimum setup for use
+with PCP:
+     
+     -!        /* force remote to use these settings */
+     -S512     /* use 512 byte blocks */
+     -W4       /* wait for ACK after every 4 blocks */
+     
+          Your alternate config file for use with regular callers should look
+like this, and the name should match what you specified in INIT on the HS/Link
+command line (ie. BBS_CALL.CFG), and should also be in the same directory as
+HS/Link.
+     
+     -A        /* don't send ACKs */
+     -S4096    /* sets 4k blocks */
+     -W0       /* do not wait for ACK /*
+     
+          These should provide optimum setup for those WWIV BBS systems that
+callout via PCP and want the best for their non PCP callers. Regular PCP
+callers should configure their terminal programs to use a setup like the
+HSLINK.CFG mentioned in part 4.
+     
+     
+     Part 4 - HS/Link and your terminal program
+     
+          The calling party has the responsibility of determining the best
+HS/Link configuration options for his/her particular situation (PCP, Non PCP,
+etc). You should configure HS/Link for your terminal program, and include at
+least the following options in the .CFG file. Be sure to include the (-!) to
+force the remote to also use your preferences.
+     
+          If you are calling via PCP, then your HS/Link config file should look
+like the following one. You should also use PCP's default handshaking:
+     
+     -!        /* force remote to use these settings */
+     -S512     /* use 512 byte blocks */
+     -W4       /* wait for ACK after every 4 blocks */
+     -UC:\temp /* set this to the directory you want your downloads to go in /*
+     
+          If you use "direct" connections ( regular lines), then your HS/Link
+config file should look like this:
+     
+     -!        /* force remote to use these settings */
+     -A        /* don't send ACKs */
+     -S4096    /* sets 4k blocks */
+     -W0       /* do not wait for ACK /*
+     -UC:\temp /* set this to the directory you want your downloads to go in /*
+     
+          In the event that you do both PCP and Non PCP calls, you can give one
+of these files a different name (ie NON_PCP.CFG), and then on the HS/Link
+command line for your Non PCP calls, include the following as the FIRST option:
+     
+     -@NON_PCP.CFG 
+     
+     Be sure to include the pathname.   ie @C:\TELEX\NON_PCP.CFG
+     
+     
+     Part 5 - Bi-Directional file transfers
+     
+        For bi-directional transfers to work properly, You must NOT have a
+"Download Directory" set in the HSLINK.CFG file for the BBS !  This is the
+option that begins with a -U. If you want uploads to go to the Sysop directory,
+you should set that option in INIT. It is ok for the caller to have the -U
+option set for his terminal program.
+     
+         Here is the procedure for doing bi-directional file transfers:
+     
+     Select (D)ownload
+     Enter the file name you want to receive
+     Select "Batch" as the protocol
+     Repeat for additional files
+     
+     Select (U)pload
+     Enter the file name and description of the file to be uploaded
+     Select "Batch" as the protocol
+     Repeat for additional files
+     
+     Type X or B to bring up the "Batch" transfer menu
+     Select B from the menu    << this is important. D or U will NOT work >>
+     Select HS/Link as the protocol
+     Start your HS/Link UPLOAD  << HS/Link will take care of the downloads >>
+     
+     
+          I hope this takes some of the mystery out of HS/Link operation. Sam
+Smith (HS/Link author) has looked this over, and it has his blessings. If you
+have any problems, or discover something I have overlooked, or described
+incorrectly, PLEASE notify me as soon as possible. I will attempt to update
+this document as new information becomes available.
+     
+     
+     
+                                Lance Halle  1@6211 
+           MOON VALLEY TRIANGLE    Phoenix, Az.    602-942-9228  24 hrs 
+                             WWIVnet  602 A.C.  [GSA ASV] 
+     
+     07/11/92
+     
+     
+     

@@ -1,0 +1,18 @@
+
+-- s.h.smith, 22-mar-86
+
+with longops, text_io;
+
+package longio is
+
+   procedure put (n: longops.long_integer;
+                  w: integer);
+
+   procedure put (n: longops.long_integer);
+
+   procedure put (f: text_io.file_type;
+                  n: longops.long_integer);
+
+end longio;
+
+

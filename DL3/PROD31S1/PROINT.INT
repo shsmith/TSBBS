@@ -1,0 +1,44 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+type
+   user_ix_rec = record
+      urec: word;
+      name: char25;
+   end;
+
+var
+   user_ix:  user_ix_rec;
+
+procedure load_conf(n: integer);
+
+procedure get_user_rec(var user: pcb_user_rec; recn: word);
+procedure get_user_info(var user: pcb_user_rec; name: char25);
+procedure load_user_rec;
+procedure load_extuser;
+procedure put_user_rec(var user: pcb_user_rec; recn: word);
+procedure save_user_rec;
+procedure save_extuser;
+
+procedure load_pcbsys_file;
+procedure save_pcbsys_file;
+procedure save_offline_pcbsys_file;
+
+procedure build_scratchnames;
+
+procedure load_cnames_file;
+procedure load_pcbdat_file;
+
+procedure high_ascii_filter(var c: char);
+
+function get_pcbtext(n: integer): anystring;
+

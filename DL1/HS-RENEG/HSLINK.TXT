@@ -1,0 +1,48 @@
+*******************************************************************************
+*                     Setting Up HS/Link In Renegade                          *
+*******************************************************************************
+
+  From what I hear, this is how the Renegade author, Cott Lang, has his HS/Link
+protocol information set up. So, seing as it worked for him, it should work for
+you also.  This is what the screen should look like:
+
+--------------------------------------------------------------------------------
+!. Type/protocol:Active - Single - Bidirectional
+1. Keys/descrip:"H" / "(H) HS/Link"
+2. ACS required: ""
+3. Temp. log   : *None*
+4. <U>L log    : *None*
+   <D>L log    : *None*
+5. <U>L command: "HSLINK -! -A -E%A -I1 -K -P%P @%L"
+   <D>L command: "HSLINK -! -A -E%A -I1 -K -P%P @%L"
+6. Code mean   :Transer OK
+7. <U>L codes  :(1)"H"   (2)"h"    (3)"h"   (4)"h"   (5)"h"   (6)"h"
+   <D>L codes  :(1)"h"   (2)"h"    (3)"h"   (4)"h"   (5)"h"   (6)"h"
+E. Enciron. cmd: *None*
+I. DL File lsit: %C\fi.lst
+C. Max DOS chrs:128  P. Log position: Filename: 0 - Status: 0
+--------------------------------------------------------------------------------
+
+     You may need to change some of the info, for your upload and download logs
+if you keep them, this is mainly for the command line info and upload/download
+codes.
+     If you have HS/Link set up as a protocol on your Renegade BBS, you can
+upload your .REP packet and download a .QWK packet with the mail door if you
+like.  This is a unique feature of the protocol, it will save you a lot of time.
+     This document is put into the public domain, and may be freely passed
+around to your fellow sysops, the command lines should work with Telegard and
+other BBS's.  This is my very small contribution into the Renegade world, but
+now you can't say I didn't contribute.  If this document was important to you
+and you found it usefull, you may want to call up my BBS, The Virtual Reality
+BBS, (712) 737-3960 and leave a note to the sysop saying, "Your text file
+about HS/Link was really helpful, thanks!"  That would give my self esteem
+a boost, but do not feel obligated.
+
+  Written By: Travis Noteboom
+              The Virtual Reality BBS -= 14,400 V.32bis =-
+              (712) 737-3960
+              National HUB for Power Net Echo Mail
+
+*******************************************************************************
+*                          END OF DOCUMENT ! ! !                              *
+*******************************************************************************

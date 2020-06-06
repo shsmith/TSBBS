@@ -1,0 +1,5 @@
+Utility to scan DSZLOG files and
+return ERRORLEVEL according to
+command line options.  Use in batch 
+files with HS/Link to determine
+results of a transfer.

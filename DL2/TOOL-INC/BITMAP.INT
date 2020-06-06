@@ -1,0 +1,15 @@
+
+const
+   maxbit = 10000;
+
+type
+   bitnumber = 0..maxbit-1;
+   bitmap = record
+      bits:  array[0..4] of byte;       {bits 0..39}
+   end;
+
+function getbit(var bmap{: bitmap}; bitnum: bitnumber): boolean;
+   {return true/false for specified bit 0..39 in a bitmap}
+
+procedure setbit(var bmap{: bitmap}; bitnum: bitnumber; value: boolean);
+   {set the specified bit in a bitmap}

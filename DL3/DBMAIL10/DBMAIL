@@ -1,0 +1,12 @@
+echo off
+rem. Pcboard door script for DOWNLOAD BY MAIL program
+
+u:
+cd \pcb\dbmail
+dbmail dbmail.cnf %PCBDRIVE%%PCBDIR%
+
+%PCBDRIVE%
+cd %PCBDIR%
+if exist event.bat event
+
+board

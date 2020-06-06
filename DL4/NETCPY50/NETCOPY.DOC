@@ -1,0 +1,87 @@
+
+CP - Unix-like file copy, (v5.0, 4-5-95)
+Copyright (C) 1987, 1995 Samuel H. Smith; All rights reserved.
+
+'CP' is a small file copy utility.   It works much like the DOS copy
+command and is patterned after the Unix facility by the same name.
+
+Usage:
+  cp [-U] [-R] [-2] SOURCE DEST
+  cp SOURCE1 SOURCE2 ... SOURCEn DEST
+  cp @LISTFILE DEST
+  cp SOURCE
+
+  -U updates destination only if source is newer
+        This option causes CP to replace older files, but to skip
+        copying when the destination is the same as, or newer than, the
+        source file.
+
+  -E copy only if destination exists
+        This option allows you to replace existing files, but not add
+        files that are not already present in the destination directory.
+
+  -R allows read-only destination to be replaced
+        This option allows you to replace a file that is flagged as
+        read-only.  The new file will also be read-only.  This is useful
+        when updating EXE files in a directory that is entirely read-
+        only (such as a common directory on a network).
+
+  -F skip files that cannot be opened
+        This option causes the program to internally trap system 'fatal
+        errors' rather than passing control to the current 'retry,
+        abort, fail' error handler.
+
+  -2 reduces buffering to 2k blocks
+        This option reduces the I/O buffering from the normal 32k
+        buffers to a small 2k buffer.  You may find this option useful
+        when copying to or from a floppy disk under a network or
+        timeshare system, since smaller blocks will reduce system
+        loading.
+
+Examples:
+  cp a:*.arc
+        ;copies all .arc files into current dir
+
+  cp /pcb/main/*.* /pcb/gen/*.* d:/backup
+        ;copies files from two directories into backup directory
+
+  cp -r program.exe c:\library
+        ;copies file program.exe to library directory, allowing the
+        ;library copy to be read-only.
+
+  cp -u *.* c:\backup
+        ;copies all files to backup directory.  skips copying files that
+        ;are already present in backup area, but copies missing or newer
+        ;files.
+
+  cp -r -u *.exe c:\bin
+        ;updates all .exe files in c:\bin, also allowing destinations to
+        ;be replaced if flagged read-only
+
+  cp @/tmp/files.lst /backup
+        ;reads /tmp/files.lst and treats each line as a filespec to be
+        ;copied to /backup
+
+
+Cp works just like the DOS copy command, with the following exceptions:
+  - Both / and \ are allowed as directory delimiters
+  - Multiple source files may be specified
+  - Network file sharing is supported
+  - Files cannot be renamed during a copy (I.E. DEST must be a directory)
+
+
+No time to write documentation!
+Maybe a longer doc file in the next release.
+
+DISCLAIMER: IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES,
+INCLUDING ANY LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR
+CONSEQUENTIAL DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE
+PROGRAM, OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+                                                  Samuel H. Smith
+                                                  P.O. Box 4808
+                                                  Los Angeles, CA 91412-4808
+                                                  (213) 851-9969 (voice)
+                                                  (213) 851-2127 (bbs)
+                                                  Email: shsmith@primenet.com
+

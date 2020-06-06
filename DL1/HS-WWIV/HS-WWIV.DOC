@@ -1,0 +1,81 @@
+
+                      ADDING HS/LINK TO WWIV 4.20
+                TESTED WITH WWIV 4.20 AND HS/LINK V1.00
+
+     Please refer to the WWIV documentation for detailed information on
+     installation of external protocols.  This information was tested
+     with HS/Link version 1.00 and WWIV version 4.20.
+
+     The following installation steps should work for most folks:
+
+     Place a copy of HSLINK.EXE into your main C:\WWIV directory, or
+     into some other directory listed in your dos PATH setting.
+
+     Run INIT.EXE and select 7 (external protocols)
+     Press I to insert a new protocol.
+
+     The definition of the HS/Link should look like this:
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³     Description          : HS/Link                                    ³
+  ³                                                                       ³
+  ³     Xfer OK code         : 0                                          ³
+  ³                                                                       ³
+  ³     Require MNP/LAPM     : N                                          ³
+  ³                                                                       ³
+  ³     Receive command line:                                             ³
+  ³     hslink -p%2 -u%3                                                  ³
+  ³                                                                       ³
+  ³     Send command line:                                                ³
+  ³     hslink -p%2 -nu %3                                                ³
+  ³                                                                       ³
+  ³     Receive batch command line:                                       ³
+  ³     hslink -p%2 -u%3                                                  ³
+  ³                                                                       ³
+  ³     Send batch command line:                                          ³
+  ³     hslink -p%2 -nu @%3                                               ³
+  ³                                                                       ³
+  ³     Bi-directional transfer command line (not implemented yet):       ³
+  ³     hslink -p%2 @%3 -u%5                                              ³
+  ³                                                                       ³
+  ³     <ESC> when done.                                                  ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+     The bi-directional capability of WWIV is not currently implemented.
+     You may want to explain to your users that bidirectional transfers
+     should not be attempted with this version of WWIV.
+
+     Note for systems running locked COM ports:
+     We have found that if you use a locked DTE of 9600 or above, you
+     will need to have a NS16550AN UART installed.  Also, for rock solid
+     performance you should add the -HS (Handshake Slow) switch to all
+     of the above command lines.
+
+     This should get you set up in under 10 minutes.
+
+     You can edit the command lines to include options on the HSLINK
+     command line, but most folks won't need to change anything.  If
+     your system can't keep up with the COM port while accessing the
+     disk drive, you may want to add -HS to both lines.  If you want to
+     experiment, there are a number of optional parameters you can read
+     about in HSLINK.DOC and HSLINK.NEW.
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with WWIV and with HS/Link.  If all else fails, call up the Tool
+     Shop and ask for help on the Support Conference.  Either I will
+     help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-3772    US Robotics HST 9600    Contributors only
+       (818) 891-1344    Hayes-V series 9600     Contributors only
+       (818) 891-6780    US Robotics 2400        Free to all
+                                                                             

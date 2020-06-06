@@ -1,0 +1,122 @@
+
+This sample file is only a small portion of Cliff Peterson's
+Phoenix area file cross reference.  If you want the whole listing, please
+download XFILE1287.ARC (or newer).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  XFILE - A Cross Reference of Valley BBS Files
+
+                           Compiled by Cliff Peterson
+
+
+
+
+                                 DECEMBER, 1987
+
+
+
+
+
+
+                             Peterson and Associates
+                              Database Consultants
+                                 (602) 242-8286
+
+                                Specializing in:
+
+                                List Management
+                              Database Management
+                       Mainframe Tape to Diskette Transfer
+
+
+
+
+
+
+
+
+            Technoids Anonymous  899-4876   1,120 files - 55,122,000 bytes
+            Tool Shop            279-2673   1,214 files - 42,807,229 bytes
+            Measurement #1       897-6459     621 files - 31,336,363 bytes
+            Radioactive West     873-0810     654 files - 30,657,213 bytes
+            DCS Exchange         437-4671     690 files - 29,798,697 bytes
+            First Board          381-1278     318 files - 18,337,424 bytes
+            Centra Link          254-9031     528 files - 15,056,714 bytes
+            Sam's Place          926-9276     273 files - 13,158,724 bytes
+            Sunwise              584-7395     124 files -  5,027,280 bytes
+
+
+           *** Total unrepeated files ****  3,769 files  159,508,623 bytes
+
+
+12/01/87               ** XFILE **    BBS Cross Reference              Page 1
+
+ File Name   Boards      Size   Date     Description
+
+001PCMAC.ARC CH         10240 07-29-87 5 UTILS FROM PCMAG WITH DOCUMENTATION
+001PCMAG.ARC BDGI        9600 08-07-87 5 utils from PC-mag with documentation
+002PCMAG.ARC BDGHI      12416 08-07-87 5 more utils from PC-mag with
+                                       documentation
+003PCMAG.ARC BDGHI      10240 08-14-87 5 more utils from PC-mac with
+                                       documentation
+004PCMAG.ARC BDGHI      10240 09-08-87 5 utils from pcmag with documentation
+005PCMAG.ARC BGI        16384 08-31-87 5 UTILS FROM PCMAG WITH DOCUMENTATION
+006PCMAG.ARC BGI        13568 10-16-87 5 utilities from PC magazine (file #6).
+007PCMAG.ARC BGI         7168 10-16-87 5 utilities from PC magazine (file #7).
+008PCMAG.ARC BGI        21632 10-16-87 5 utilities from PC magazine (file #8).
+009PCMAG.ARC BGI        14848 10-16-87 5 utilities from PC magazine (file #9).
+010PCMAG.ARC BGI         6656 10-16-87 5 utilities from PC magazine (file #10).
+1&2DOCS.ARC  I          74752 11-22-87 DOCUMENTATION FOR THE 1COM & 2COM FILES
+100LETRS.ARC C          59392 08-10-87 100 from letters to ease you pain.
+100LTRS.ARC  BEI        48128 11-01-87 100 letters for your word processor
+121-V22.ARC  D          91227 07-07-87 121 v2.2  Allows xfer and chat at same
+                                       time!
+123-LOAN.ARC BE         10240 11-01-87 Loan program for 123
+123.ARC      B          51200 11-07-87 123 add-ins for faster recalc and more.
+123ADN.ARC   ABD        72704 11-23-87 Speedup and Learn from Lotus (for >= V
+                                       2.0)
+123EGA.ARC   EG          6656 10-25-87 Fixes Date-Rollover on MS-DOS         AS
+123FNC.ARC   D          17408 07-31-87 C routines to write 123 files.
+123MOUSE.ARC AG          1024 06-13-87 MS mouse control of Lotus 1-2-3
+123PREP.ARC  B          31744 11-18-87 Convert ASCII Files to Lotus 123
+123REL2.ARC  A           3072 11-08-87 Unprotection for Lotus release 2
+123UTIL.ARC  B          13824 08-08-87 UTILITIES FOR LOTUS 123
+123V201.ARC  ABCFGHI     5120 06-26-87 unprotect 123 version 2.01
+123WKS2.ARC  I         149760 04-10-87 pc #302 requires lotus 123
+13-ASM'S.ARC D          53248 07-17-87 13 ASSEMBLY PROGRAM LISTINGS
+1COM.ARC     I          41984 11-22-87 DOS UTILITIES FROM PC MAGAZINE   11/21/87
+29ROWS.ARC   A           4096 10-13-87 Display 29 rows on the EGA...
+2COM.ARC     I          35840 11-22-87 DOS UTILITIES FROM PC MAGAZINE  11/21/87
+2METER.TXT   AEF         1920 10-08-87 A listing of HAM radio stations...
+3-DEMON.ARC  I          30720 06-17-87 This is a very good 3D version of PacMan.
+3-DEMON.ARC  FG         49024 08-16-87 MAZE TYPE GAME
+31TO31A.ARC  BD        225280 11-18-87 To convert from QMODEM 3.1 to 3.1A latest
+                                       ver
+33HDFIX.ARC  ACDGI      11520 09-14-87 fixes hard disk problems with PC-DOS 3.3
+3405-2.ARC   D           3840 09-09-87 DOD mandate for exclusive use of ADA
+                                       language
+386PCB.ARC   CG          6144 11-06-87 Tells how to set up a great PCB on 386!
+386PCBDV.ARC D           6026 11-11-87 Setup for
+                                       386/PCBoard/Desqview/Multi-nodes
+3DCHESS.ARC  GI        126976 06-28-87 THIS IS A 2 & 3-DIMENSIONAL CHESS GAME.
+3DDEMO.ARC   B           8320 09-20-87 3D object rotation demonstration
+3DEMO.ARC    C          10240 09-13-87 demo of dos imigaging
+3DSURFAC.ARC H          21504 10-31-87 3-D Drawing program
+3DTICTAC.ARC B          31744 11-23-87 Tic tac toe game.  Not too easy
+3DTTT.ARC    A           8192 11-20-87 3-D TIC TAC TOE
+3PARKERS.ARC ABE        11264 10-24-87 3 head parkers, 2 with ASM source
+3PBUG.ARC    C          18432 05-13-87 Some doc's on dbase 3 plus
+

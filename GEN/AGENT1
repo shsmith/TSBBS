@@ -1,0 +1,28 @@
+
+                The Tool Shop: Specializing in Software Tools
+
+                  Special files for Authorized AGENTS ONLY!
+
+ File Name      Size     Date                  File Description
+------------  -------  --------  ---------------------------------------------
+
+HSOAS01.ZIP    117886  11-30-93  (16:45) HS/Link Office Automation System
+ | This contains a number of programs that can be used to automate the
+ | process of credit card order processing.  Prints customized registration
+ | certificates, invoices, and can also handle BBS subscriptions by credit
+ | card.  FOR AGENTS ONLY!
+ | DOWNLOAD PASSWORD: HAGENT
+HSREG01.ZIP     40528  02-05-92  (21:35) Automatic HS/Link Registration DOOR
+ | This DOOR program maintains a database of HS/Link registrations that
+ | have been issued to BBS users.  It assumes that any user that gains
+ | access to the door is entitled to a new HS/Link registration, and that
+ | no single user name will be given more than 1 registration.
+ | The database of reqistrations is built from AGENT packets downloaded
+ | from the Tool Shop BBS.  FOR AGENTS ONLY!
+HSUSER.ZIP      83117  08-10-92  Current HS/Link registered user list
+ | Database of all registered hslink users with user number, name and
+ | address in TEXT format.  NOT PUBLIC INFORMATION.
+ORDER01.ZIP     70568  11-30-93  (12:54) ProKit Online Order Facility
+ | Front line credit card order taking program.  FOR AGENTS ONLY!
+ | DOWNLOAD PASSWORD: HAGENT
+ORDER01S.ZIP     8266  08-11-93  Online Order Door source

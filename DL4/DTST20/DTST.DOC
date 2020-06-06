@@ -1,0 +1,55 @@
+
+DTST - Yet another disk tester                v2.0 01-May-90
+==============================                (C) 1990 Samuel H. Smith
+
+DTST is a small utility that is used to check out your hard disks.  It
+has the special ability to report "slow" sectors.  These are sectors
+that read properly, but often require retries.  I feel that such sectors
+are on the verge of failure and should quickly be locked out before they
+cause any harm.
+
+DTST consults your FAT and reports if clusters are already marked bad.
+You can use another disk utility (such as Norton's NU) to locate any
+files using the questionable sectors.  Copy the files to a safe place
+and then use "DT" to mark the blocks as "bad".  This will prevent real
+trouble before it happens.
+
+Use this at your own risk!  I am including source code so you can verify
+that it has not been hacked.
+
+                                                Samuel H. Smith
+                                                The Tool Shop
+                                                (602) 279-2673
+
+Revision history
+----------------
+
+15-feb-88 v1.0
+   Initial coding and release.
+
+21-feb-88 v1.1
+   Added two optional parameters to specify the first and last
+   sector number to test.
+
+21-may-88 v1.2
+   Changed scanning direction.  Consults boot record for information
+   needed to calculate cluster numbers.
+   
+23-may-88 v1.3
+   Fixed the 'slow sector' message, which was broken in the 21-may version.
+   Also reduced display activity during testing.
+
+16-jun-88 v1.4
+   The FAT is now loaded to determine clusters which are already marked
+   as bad.  Added READ/WRITE test.  Initial SourceWare release.
+
+26-jun-88 v1.5
+   Directed the non-error track by track status messages to the display
+   regardless of where standard output has been redirected.  This removes
+   clutter from a logfile if you are running DTST in a batch with output
+   redirected to a file.
+
+01-may-90 v2.0
+   Added support for DOS 4.0 and partitions over 32meg.
+   Added additional error messages when a disk failure is detected.
+

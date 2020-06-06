@@ -1,0 +1,13 @@
+
+
+ Start  Stop   Length Name                   Class
+ 00000H 00000H 00000H AAA                    PROG
+ 00000H 02FDBH 02FDCH PROG                   PROG
+ 02FE0H 04BB5H 01BD6H DATA                   DATA
+ 04BC0H 04C3FH 00080H STACK                  DATA
+
+ Origin   Group
+ 02FE:0   DGROUP
+ 0000:0   PGROUP
+
+Program entry point at 0000:0076

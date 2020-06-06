@@ -1,0 +1,105 @@
+
+ProWho - Another DOOR for "ProKit"              (Two doors in 1!
+----------------------------------               See XFILE.DOC)
+
+The "WHO UPLOADED THAT FILE?" door for PCBoard!
+
+This door will scan the system download/upload log and list all entries
+that mention a specific name.
+
+
+You may select any full filename for scanning.  The search is done
+based on matching keywords (like the Zippy scan function).
+
+You can enter searches like this:
+   GOODIE.ARC           ;all access to this file
+   JOE JONES            ;all activity by this user
+   02-09-1988           ;all activity on this date
+
+These searches can take a few minutes to complete, so please be patient!
+
+
+
+Here is a sample configuration file:
+   HANDSHAKE
+   c:\pcb\main\download.txt
+   wwelcom
+   wmenu
+   wclose
+
+   --------------------------
+   Configuration file format:
+
+   line 1 = Driver type (HANDSHAKE, INTERRUPT, BIOS, PCBTRAP)
+   line 2 = Download listings filename (download.txt file)
+   line 3 = Welcome message filename      \
+   line 4 = Main menu filename             \___ "G" added to end
+   line 5 = Closing door message filename  /    for graphics mode
+
+
+Note that this is a generic "text search" door, and it can be applied to
+just about any text file.  For example, you could customize the messages
+and use it to search a master file cross-listing (such as XFILES) to find
+which boards have a specific file.  See XFILE.DOC for more info on this.
+
+
+
+                          DISCLAIMER
+                          ==========
+
+IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM,
+OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+   This is a FREE program; full source code is included.
+
+   If you have any questions, bugs, or suggestions, please contact 
+   me at: 
+                                The Tool Shop BBS
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    Hayes-V series 9600
+                  (818) 891-6780    US Robotics 2400 (free line)
+
+   The latest version is always available for downloading. 
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.
+
+
+Revision history
+----------------
+
+2-19-88 v1.0
+   Initial coding and release.
+
+2-20-88 v1.01
+   Changed messages to be more generic.  Removed case sensitivity.
+   Added sample files for the XFILE door.
+
+5-21-88 v1.1
+   Recompiled with ProDoor beta 30 libraries.  Added a warning message
+   when wildcards are used in the search key (only keyword matching is 
+   allow).
+
+4-22-89 v1.6
+   Recompiled with prokit 2.9 libraries.  Corrected bug that caused "."
+   display to wrap cursor around to previous line.  Slight speedup.
+
+6-7-89 v1.7
+   Recompiled with prokit 3.0 libraries.  Added calls to boyer-moore
+   search routines for 50-75% faster searches.
+
+4-8-90 v1.8á
+   Recompiled with ProKit 3.2 beta libraries; this version adds support
+   for nonstandard COM ports COM3..COM8 as well as the COMBASE and
+   COMIRQ environment variables.
+
+3-9-91 v1.9á
+   Recompiled with ProKit 3.4 beta libraries; changed counters from
+   integers to long integers to allow DOWNLOAD.TXT files with over 32k
+   lines.
+

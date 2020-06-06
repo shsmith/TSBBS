@@ -1,0 +1,42 @@
+@X09---------------------------------------------------
+@X03
+The following functions are available at most "MORE" prompts:
+
+   @X09(@X0EY@X09)@X03es   Continue the current display.
+   @X09(@X0ENS@X09)@X03    Continue the current display in non-stop mode.
+   @X09(@X0EN@X09)@X03o    Stop the current display and return to a menu prompt.
+   @X09(@X0EF@X09)@X03lag  Flag a filename for later downloading.
+
+In addition, most more prompts allow other commands to be specified.
+For instance, a MORE prompt from the main menu will respond to most main
+menu commands.  A MORE prompt in the mail reader will respond to most
+mail reader commands.
+
+Additional help is available on the following More Prompt topics:
+
+        Y  N  NONSTOP  FLAG
+
+~
+:?
+Please type one of the indicated topics for additional help.
+Press @X09<@X0CENTER@X09>@X03 alone to exit the help system.
+~~
+:Y
+@X09(@X0EY@X09)@X03es   Continue the current display.
+        Pressing ENTER also causes the current display to continue.
+~~
+:N
+@X09(@X0EN@X09)@X03o    Stop the current display and return to a menu prompt.
+        You can optionally stack the next command after N and it
+        will be immediately executed instead of repeating a menu.
+        Displays can also be cancelled with the ^K command.
+~~
+:NONSTOP
+@X09(@X0ENS@X09)@X03    Continue the current display in non-stop mode.
+        Non-stop modes can be cancelled with the ^K command.
+~~
+:FLAG
+@X09(@X0EF@X09)@X03lag  Flag a filename for later downloading.
+
+@X09(@X0EF U@X09)@X03   Unflag specified flags.
+~~

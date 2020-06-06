@@ -1,0 +1,2 @@
+procedure replace_string( var line: longstring; oldstr, newstr: string65);
+   (* perform string replacement if possible *)

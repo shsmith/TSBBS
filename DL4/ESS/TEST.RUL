@@ -1,0 +1,38 @@
+TITLE
+Test rules
+
+goals
+
+FACTS
+   it is dark
+   it is late
+   go to sleep
+   i am tired
+   drink water
+   i have water
+   i am thirsty
+
+RULES
+
+IF
+   it is dark
+THEN
+   it is late
+
+IF
+   it is late
+THEN
+   go to sleep
+
+IF
+   i am tired
+THEN
+   go to sleep
+
+IF
+   i have water
+   i am thirsty
+THEN
+   drink water
+END
+

@@ -1,0 +1,84 @@
+
+--
+-- TASKDATA - Task Management Data Package
+--
+
+package TASKDATA is
+
+   --
+   -- visible tasking data types
+   --
+
+   subtype CODE_ADDRESS is integer;    -- an address within the code segment
+
+   subtype PRIORITIES is integer range 0..10000;
+                                       -- priority of a task; 0 is highest
+
+   max_tasks: constant := 15;       -- number of tasks allowed
+
+   type TASK_ID is new integer range 1..max_tasks;
+                                    -- a unique task identifier code
+
+
+   --
+   -- task status values
+   --
+
+   type task_status is (unused,      -- unused task table entry
+                        starting,    -- task is waiting to be started
+                        active,      -- task is active
+                        suspended);  -- task is active, but has been suspended
+
+
+
+   --
+   -- task information record
+   --
+
+   type task_rec is record
+
+      name:      string(20);      -- the name of the task
+
+      status:    task_status;     -- the status of the task
+
+      prior:     PRIORITIES;      -- the task's priority (0=highest)
+
+      skips:     PRIORITIES;      -- the number of timeslices to skip
+                                  -- before executing again
+
+      running:   boolean;         -- the task is running at this moment
+
+      addr:      CODE_ADDRESS;    -- the current address when the
+                                  -- task is next given time
+
+      stack:     integer;         -- the task's current stack pointer
+
+   end record;
+
+
+
+   --
+   -- private global variables
+   --
+
+   task_table:  array (TASK_ID) of task_rec;
+                                 -- the table of all tasks
+
+   curtask:  TASK_ID;            -- the current task table entry.  scheduling
+                                 -- of the next task is done before the
+                                 -- task is given some time
+
+
+   reserved_task: constant := max_tasks;
+                                 -- special TASK_ID value uses when there
+                                 -- is no appropriate task for the operation.
+
+
+   max_stack: constant := 60;    -- highest 1k stack block to allocate
+
+   allocation: array(1..max_stack) of integer;
+                                 -- table of 1k block allocations
+
+end TASKDATA;
+
+

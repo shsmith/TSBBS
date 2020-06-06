@@ -1,0 +1,53 @@
+
+ 
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                            IN Auntie 5.12
+ 
+                                  
+
+     Installing HS/LINK in Auntie is simplicity in itself.  You must be 
+     at version 5.12 which is currently still in beta, but all 
+     registered Auntie owners can get the latest beta from the home base 
+     BBS, Wes Meier's WC-BBS.  With Auntie you simply run the CONFIG 
+     program and under the protocols you simply toggle support HS/LINK 
+     to true.  The below is a sample of that screen.
+
+Ö[CONFIG: Protocols (Hit Alt-M to Toggle Mouse ON)]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+º                                                                              º
+º Kermit is Supported .................................................. FALSE º
+º JMODEM is Supported ................................................... TRUE º
+º YMODEM-G May be Selected by NON-Error Checking Callers ............... FALSE º
+º MPT is Supported ..................................................... FALSE º
+º HSLink is Supported ................................................... TRUE º
+º Save Changes and End (*)                                                     º
+º End Without Saving Changes (Esc)                                             º
+º Main Menu                                                                    º
+º                                                                              º
+ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+
+     Next make sure that the HSLINK.EXE is in your path.  The defaults 
+     for HS/LINK are found in the AUNTEXT file at line 1277.  If you 
+     find you need the slow handshake with your drive you can either add 
+     that in that line or make a HSLINK.CFG file with the defaults you 
+     want to use.  If you do change anything in the AUNTEXT file you 
+     must run MAKANTXT.exe again to regenerate the AUNTEXT.RND file that 
+     the system uses while running.
+
+     Once you finish just run AUNTVERF to assure that you have 
+     everything set up right which will also make sure that HSLINK.EXE 
+     is in your path.  Auntie uses the DSZ.LOG to get the stats when 
+     finished with file transfers.  Bidirectional transfers run great 
+     with Auntie.  Even while the user is downloading his/her QWK mail 
+     packet they can send up a file and Auntie handles it all just fine.
+
+
+     That's all there is to it, but as always, make sure to read the 
+     docs for HS/LINK and Auntie.
+
+  Good luck!
+
+  Randy Young
+  SysOp of the ATT-PAC BBS running Auntie
+
+  510 829-6062 and 510 833-7274.  Both nodes with Hayes Ultra144 v.32bis 
+  modems.  Full access on first call with never any fees.

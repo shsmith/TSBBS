@@ -1,0 +1,61 @@
+<!UPDATE.342>
+
+Release notes for ProDoor 3.43                          10-22-91
+==============================
+
+ProDoor 3.43 is a minor release fixing known bugs in ProDoor 3.42.
+
+This version does not include a new manual, and does not require and
+data or configuration file changes compared to prodoor 3.41.
+
+Please read !PRODOOR.NEW for details on exactly what's been changed.
+
+See !UPDATE.341 and !UPDATE.342 for other update information.
+
+
+
+Installation
+------------
+
+Install PRODOR34.ZIP as instructed in the enclosed documentation.
+
+Then replace the PRODOOR.EXE file with the new one provided in PROD342.ZIP.
+
+All file formats of ProDoor 3.4 are still recognized; no file
+conversions or changes are required.
+
+This update corrects the process of logging bidirectional uploads.  3.42
+would log all bidirectional uploads as having errors.  This update
+properly reads the DSZ.LOG file and extracts error counts and average
+speeds for both transmits and receives.
+
+This update is compatible with my new protocol, HS/Link.  To install the
+current HS/Link beta into prodoor, add the following lines at the end of
+the PROD.CNF file:
+
+;
+95 H 0 T 50 HS/Link (Bi-directional)
+hslink -p$N$ -u$PLAY$ $@$
+;
+95 H 0 R 0 HS/Link
+hslink -p$N$ -u$PLAY$
+;
+
+And copy HSLINK.EXE into a PATH directory.   The current HSLINK beta is
+posted as HSLK10B3.ZIP, but this will probably change as HS/Link betas
+develop.
+
+HS/Link is not _just_ another bidirectional protocol, it is also a very
+fast protocol for normal downloading and uploading, incorporating some
+new ideas (such as Full-Streaming-Error-Correction and Dynamic-Code-
+Substitution) to make things happen a bit faster.  I may also release
+source code under some form of my SourceWare concept.
+
+
+Optional Files
+--------------
+
+The overlay version of ProDoor 3.43 is posted as PROD343O.ZIP.
+
+
+

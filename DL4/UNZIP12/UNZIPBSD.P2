@@ -1,0 +1,197 @@
+269a270
+> int extract   = 1;		/* Extract contents */
+271a273
+> int list_zip  = 0;		/* list contents only */
+274a277,280
+> int numbad =0;
+> int Total_files =0;
+> long Total_bytes =0;
+> long Total_length =0;
+281c287
+< 	if (test_zip)
+---
+> 	if (!extract)
+407c413
+< 	if (!test_zip)
+---
+> 	if (extract)
+769,771c775,777
+< 			printf(" Testing: %-12s ", filename);
+< 			else
+< 			printf(" Extracting: %-12s ", filename);
+---
+> 				printf("Testing: %-12s ", filename);
+> 			if (extract)
+> 				printf(" Extracting: %-12s ", filename);
+779,781c785,787
+< 			printf(" Testing: %-12s ", filename);
+< 			else
+< 			printf("UnShrinking: %-12s ", filename);
+---
+> 				printf("Testing: %-12s ", filename);
+> 			if (extract)
+> 				printf("UnShrinking: %-12s ", filename);
+791,793c797,799
+< 			printf(" Testing: %-12s ", filename);
+< 			else
+< 			printf("  Expanding: %-12s ", filename);
+---
+> 				printf("Testing: %-12s ", filename);
+> 			if (extract)
+> 				printf("  Expanding: %-12s ", filename);
+815,819c821,831
+<         if (crc32val != lrec.crc32)
+<               printf(" Bad CRC %08lx  (should be %08lx)", lrec.crc32, crc32val);
+< 	else
+< 	if (verbose)
+< 		printf(" Passed, CRC = %08lx", lrec.crc32);
+---
+> 	if (!list_zip) {
+> 	  if (crc32val != lrec.crc32) {
+> 		numbad++;
+> 		printf(" Bad");
+> 		if(verbose)
+> 		printf(", CRC %08lx  (should be %08lx)", lrec.crc32, crc32val);
+> 	  } else {
+> 		printf(" Ok");
+> 		if (verbose)
+> 		printf(", CRC = %08lx", lrec.crc32);
+> 	  }
+820a833
+> 	}
+868a882,891
+> 	byte	yr, mo, dy;	/* parts of a date */
+> 	byte	hh, mm, ss;	/* parts of a time */
+> 
+> 	static char    *mon[] =	/* month abbreviations */
+> 	{
+> 	 "Jan", "Feb", "Mar", "Apr",
+> 	 "May", "Jun", "Jul", "Aug",
+> 	 "Sep", "Oct", "Nov", "Dec"
+> 	};
+> 
+882a906,913
+> 	yr = (lrec.last_mod_file_date >> 9) & 0x7f;	/* dissect the date */
+> 	mo = (lrec.last_mod_file_date >> 5) & 0x0f;
+> 	dy = lrec.last_mod_file_date & 0x1f;
+> 
+> 	hh = (lrec.last_mod_file_time >> 11) & 0x1f;	/* dissect the time */
+> 	mm = (lrec.last_mod_file_time >> 5) & 0x3f;
+> 	ss = (lrec.last_mod_file_time & 0x1f) * 2;
+> 
+888,889c919,923
+< 	printf("Mod time	: %d\n",lrec.last_mod_file_time);
+< 	printf("Mod date	: %d\n",lrec.last_mod_file_date);
+---
+> 	printf("Mod time	:");
+> 		printf("%2d:%02d%c\n",
+> 		       (hh > 12 ? hh - 12 : hh), mm, (hh > 11 ? 'p' : 'a'));
+> 	printf("Mod date	:");
+> 		printf("%2d %3s %02d\n", dy, mon[mo - 1], (yr + 80) % 100);
+907a942,951
+> 	byte	yr, mo, dy;	/* parts of a date */
+> 	byte	hh, mm, ss;	/* parts of a time */
+> 
+> 	static char    *mon[] =	/* month abbreviations */
+> 	{
+> 	 "Jan", "Feb", "Mar", "Apr",
+> 	 "May", "Jun", "Jul", "Aug",
+> 	 "Sep", "Oct", "Nov", "Dec"
+> 	};
+> 
+930a975,982
+> 	yr = (rec.last_mod_file_date >> 9) & 0x7f;	/* dissect the date */
+> 	mo = (rec.last_mod_file_date >> 5) & 0x0f;
+> 	dy = rec.last_mod_file_date & 0x1f;
+> 
+> 	hh = (rec.last_mod_file_time >> 11) & 0x1f;	/* dissect the time */
+> 	mm = (rec.last_mod_file_time >> 5) & 0x3f;
+> 	ss = (rec.last_mod_file_time & 0x1f) * 2;
+> 
+937,938c989,993
+< 	printf("Mod time	: %d\n",rec.last_mod_file_time);
+< 	printf("Mod date	: %d\n",rec.last_mod_file_date);
+---
+> 	printf("Mod time	:");
+> 		printf("%2d:%02d%c\n",
+> 		       (hh > 12 ? hh - 12 : hh), mm, (hh > 11 ? 'p' : 'a'));
+> 	printf("Mod date	:");
+> 		printf("%2d %3s %02d\n", dy, mon[mo - 1], (yr + 80) % 100);
+949a1005,1028
+> 
+> 	if (list_zip) {
+> 	Total_files++;
+> 	Total_bytes += rec.uncompressed_size;
+> 	Total_length += rec.compressed_size;
+> 
+> 	printf("%-12s  %8d  ", filename,rec.uncompressed_size);
+> 	if (verbose) {
+> 		printf("%8d  ",rec.compressed_size);
+> 		if (rec.compressed_size)
+> 			printf("%3d%%  ",100L - (100L * rec.compressed_size)/
+> 				rec.uncompressed_size);
+> 		else
+> 			printf("---   ");
+> 	}
+> 
+> 	printf("%2d %3s %02d", dy, mon[mo - 1], (yr + 80) % 100);
+> 
+> 	if (verbose)
+> 		printf("  %2d:%02d%c",
+> 		       (hh > 12 ? hh - 12 : hh), mm, (hh > 11 ? 'p' : 'a'));
+> 	printf("\n");
+> 	}
+> 
+982a1062,1071
+> 	if (list_zip) {
+> 	 if (verbose) {
+> 	 printf("\nName          Length    Size now   SF   Date       Time");
+> 	 printf("\n============  ========  ========  ====  =========  ========\n");
+> 	 } else {
+> 	 printf("\nName          Length    Date");
+> 	 printf("\n============  ========  =========\n");
+> 	 }
+> 	}
+> 
+996a1086,1111
+> 			if (test_zip) {
+> 			if (numbad < 1)
+> 				printf("No errors detected\n");
+> 			else
+> 			if (numbad == 1)
+> 				printf("One error detected\n");
+> 			else
+> 				printf("%d errors detected\n",numbad);
+> 			}
+> 			if (list_zip) {
+> 			 if (verbose) {
+> 	 		 printf("        ====  ========  ========  ====  \n");
+> 			 printf("Total:  %4d  %8d  %8d  ",
+> 				Total_files,Total_bytes,Total_length);
+> 			 if (Total_length)
+> 				printf("%3d%%\n", 100 - (100 * Total_length)/
+> 					Total_bytes);
+> 			else
+> 				printf("---\n");
+> 
+> 			 } else {
+> 			 printf("        ====  ========\n");
+> 			 printf("Total:  %4d  %8d\n",
+> 				Total_files,Total_bytes);
+> 			 }
+> 			}
+1048c1163
+< 	while ((c = getopt (argc, argv, "dtv")) != EOF)
+---
+> 	while ((c = getopt (argc, argv, "dltv")) != EOF)
+1052c1167,1168
+< 		case 't':	test_zip++; break;
+---
+> 		case 'l':	list_zip =1;extract =0; break;
+> 		case 't':	test_zip =1;extract =0; break;
+1114c1230
+< 	printf("Usage:	UnZip -htv FILE[.zip]\n\n");
+---
+> 	printf("Usage:	UnZip -hltv FILE[.zip]\n\n");
+1115a1232
+> 	printf("  -l    List zip archive.\n");

@@ -1,0 +1,155 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                          Lang-All Other Source Code
+                        59 files using 9,723,740 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+ABC_LANG.ZIP   186192  04-06-90  ABC Programming Language - a new imperative
+ADV_SYS.ZIP    124079  02-26-90  An Adventure Game Writing System
+APL.ZIP        151819  10-19-88  APL (A Programming Language) Interpreter
+ASM68000.ZIP    63170  03-05-86  Cross assembler from IBM to 68000 / Modula-2
+ATEASE1.ZIP    310769  07-31-92  AT EASE FOR COMPUTER PROGRAMMING v1.4:
+                               | Identical to the version that retailed for
+                               | $349 and that PCM Magazine called "the most
+                               | detailed yet interesting approach to problem
+                               | solving" they had ever seen. "Any beginning
+                               | or advanced programmer could benefit from
+                               | this system, whether to write structured code
+                               | in BASIC, C, Pascal or assembler--or simply
+                               | to tap the power of macros in Lotus 1-2-3."
+                               | File 1 of 2. (ASP)
+ATEASE2.ZIP    236117  07-31-92  AT EASE FOR COMPUTER PROGRAMMING v1.4: File 2
+                               | of 2. (ASP)
+BAS2FOR.ZIP      7403  02-10-86  Basic to Fortran converter.
+BOZOL.ZIP       36626  10-26-93  BozoL is a small and fast fully working
+                               | interpretive language with all of the basics
+                               | already built in. Variables, structure,
+                               | program flow, logic, etc. Reminiscent of
+                               | GWBASIC... well, sort of. This language is
+                               | specially designed to run as fast as possible
+                               | and may seem more like real english than
+                               | anything else. The purpose of BozoL is to
+                               | allow you to add your own commands and
+                               | functions. Use BozoL for process control,
+                               | prototyping, an application command language,
+                               | spread sheet formulas, whatever! From Erik
+                               | Olson.
+COBOL001.ZIP   144829  01-23-89  MBP visual COBOL compiler, 1of4
+COBOL002.ZIP   127664  06-30-86  MBP visual COBOL compiler, 2of4
+COBOL003.ZIP   168432  11-28-86  MBP visual COBOL compiler, 3of4
+COBOL004.ZIP    72843  07-14-86  MBP visual COBOL compiler, 4of4
+COBOL650.ZIP   178142  10-11-90  Final shareware version of Cobol compiler
+COBOL700.ZIP   131738  09-18-90  Bob Nowek's COBOL compiler v7.00 (9-17-90)
+EUPHOR13.ZIP   445521  05-18-95  Euphoria Programming Language v1.3
+                               | Public Domain Edition for DOS/Windows.
+                               | Simple, flexible, powerful and easy to 
+                               | learn. 10-20x faster than Microsoft QBasic.
+                               | No 640K limit. Complete Reference Manual.
+                               | Over 13,000 lines of free source code, 
+                               | including: full-screen editor with color 
+                               | syntax highlighting; 3D TicTacToe; real-time
+                               | space war game; Mandelbrot generator; 
+                               | random dot stereogram; and many more.
+EZCASE.ZIP     224018  09-02-89  Easy Computer Assisted Software Engineering
+                               | 1.53, requires EGA and mouse.
+FDRA225A.ZIP   106324  04-18-92  FLODRAW v2.25 <ASP> Program Files - Disk 1 o
+                               | 2. A diagramming program for flowcharts and
+                               | schematics. Menu driven, help screens,
+                               | tutorial. Includes symbol libraries, or
+                               | create your own. Auto line drawing, UNDO,
+                               | convert to PCX format. Requires CGA, 512k.
+                               | Printers: Epson, ProPrinter, HP LJ II &
+                               | DeskJet. No mouse support yet. $37.50 Version
+                               | 2.25 corrects v2.2 print problems.
+FDRA225B.ZIP   131545  04-18-92  FLODRAW v2.25 <ASP> Library and documentation
+                               | files - disk 2 of 2. FLODRAW User Manual.
+                               | Libraries for electric schematics, logic
+                               | diagrams, and others. Library utility for
+                               | building libraries. Utility to convert
+                               | FLODRAW files to PCX format files.
+FLODEMO.ZIP    253918  02-06-91  Flow Charting demo from Patton & Patton
+FM2CMP30.ZIP   119855  02-06-93  Fitted Software Tools - Modula-2 v3.0
+                               | Compiler
+FM2DOC30.ZIP    51640  02-06-93  Fitted Software Tools - Modula-2 v3.0
+                               | Documentation
+FM2LIB30.ZIP    71140  02-06-93  Fitted Software Tools - Modula-2 v3.0 Library
+FM2UTL30.ZIP    44750  02-06-93  Fitted Software Tools - Modula-2 v3.0
+                               | Utilities
+FMT.ZIP         23783  01-24-89  Fortran Automatic format statements
+FREE-V3.ZIP      6109  02-08-90  Display free memory and disk space w/Modula-
+                               | by Peter Perchansky: freeware 02/06/90
+GAWK215.ZIP    354747  07-28-93  AWK programming language for DOS. GNU. Free
+GRAFX.ZIP      113903  08-21-89  Fortran Graphic Extension Library
+HHV201.ZIP     141798  03-24-90  HyperHelper v2.01: Hypertext helpfile
+                               | compiler & runtime module.
+HYPERHLP.ZIP    60499  02-21-89  Tool to create hypertext help systems
+IAPL11.ZIP     180386  10-23-89  Interpreter for APL
+ICON8.ZIP      264769  09-16-90  ICON Programming Language, Version 8. Has
+                               | *nothing* to do with Windows or "icons".
+                               | Wonderful for non-numeric applications. By Dr
+                               | Ralph Griswold at U of Arizona. Other
+                               | platforms (unix,mac) avaiLable. Public
+                               | domain, supported.
+ICON8LIB.ZIP   252715  04-06-90  ICON Programming Language, Version 8.
+                               | Libraries and examples. See ICON8.ZIP, you'll
+                               | need that too.
+INTLAN.ZIP      27495  09-30-90  Text files for inter-language calling
+                               | conventions - BASIC, PASCAL, assembly, C.
+J-PC-30.ZIP    119770  03-26-91  The J (ASCII) dialect of the APL programming
+                               | language. Limited docs.
+JORF_1.ZIP     109223  04-01-92  JORF language, 1of4, Object oriented
+                               | interpreters for DOS and Windows - Create
+                               | programs that will run in both environments -
+                               | It is kinda slow (it's an interpreter), but
+                               | this does work
+JORF_2.ZIP     151047  04-01-92  JORF language, 2of4
+JORF_3.ZIP     155747  04-01-92  JORF language, 3of4
+JORF_4.ZIP     166117  04-01-92  JORF language, 4of4
+LOGO20.ZIP      58439  01-14-94  DFP LOGO version 2.0
+                               | Full implementation of the LOGO
+                               | computer language including turtle
+                               | graphics.
+M2CORE.ZIP      75710  03-28-90  modula2 core reference guide and demo by
+                               | Bruce Gavin for Jensen & partners
+                               | Modula2.version 1.17
+MAPPER31.ZIP   176647  02-02-92  System for supporting screen I/O that is
+                               | somewhat independent of changes (remember BMS
+                               | in CICS - kinda like that)
+MODULA2.ZIP     54873  06-11-87  Various MODULA-2 Routines
+MODULA2A.ZIP   124975  03-02-89  Modula Programming Tutorial, Part 1 of 2.
+MODULA2B.ZIP    69962  03-02-89  Modula Programming Tutor,prt.2 of 2.
+MUMPS50.ZIP    117381  06-07-87  PD MUMPS compiLer
+OBERON20.ZIP   639792  09-19-94  Oberon programming language version 2
+OOCOBOL.ZIP      9332  02-17-93  .
+PELLI.ZIP        3188  01-01-80  Programming in postscript Pc/MAG
+PFILE20.ZIP     47035  05-17-90  Menu-driven source code printing util, good.
+PROGPACK.ZIP   885178  06-25-93  A package of programs with different function
+                               | coded in Qbasic, Pascal, and C++.
+PSCM12.ZIP      90301  12-03-90  Project Source Code Management v1.2 ExcelleNt
+                               | Source Code manager for single or groups,
+                               | comments, revisions and more!
+SMALTALK.ZIP   366195  12-16-92  GNU Smalltalk Ver. 1.1.1, Object Oriented
+                               | Programming Language from the Free Software
+                               | Foundation. C source code. Conforms to spec
+                               | as outlined in the book "Smalltalk-80"
+SNB-PD.ZIP     230884  08-17-87  PLAIN VANILLA VERSION OF SNOBOL-4, BELL LABS
+                               | PUBLIC DOMAIN PROGRAMMING LANGUAGE.
+TURING.ZIP     152919  06-28-92  The TURING programming language. Like Pascal,
+                               | for educational purposes.
+TUTGNUST.ZIP    83798  04-15-93  GNU tutorial for the Smalltalk object
+                               | orientend programming language.
+XC1307.ZIP     142461  09-01-93  Working demo of RTA's EXTACY Modula-2Oberon-2
+                               | development system. Supports many different
+                               | platforms, including: PC/MS-DOS, UNIX (Sun,
+                               | HP, DEC, MIPS), Macintosh, Amiga. Ideal
+                               | system for multi-language portable
+                               | application development. Generates highly
+                               | portable ANSI compliant C source-code.
+XLISP21E.ZIP   762760  09-17-92  XLISP-PLUS this is a revised version of XLISP
+                               | Version 2.1e (includes sources and docs)
+XSCHEME.ZIP     64542  05-11-89  Dave Betz version of Scheme programming lang
+XSCHSRC.ZIP     58501  05-11-89  Source for XSCHEME language in C
+ZIPSHOW.ZIP      1557  10-30-89  AWK script to create catalogable file of ZIP

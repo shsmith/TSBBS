@@ -1,0 +1,97 @@
+\\    HSLBOY.BSC  6-27-92 Version 1.0
+\\
+\\    New approach to HSLink installation, based on suggestions and
+\\ comments from Matthew Waldron, Doug Manne, and Lee Breeden.
+\\ First time through, this script sets up a file in your Script
+\\ directory - ##HSL.FIL , which has your HSLink serial number and
+\\ password, or just ## if unregistered. Once this file exists,
+\\ HSLBOY prompts you to run the HSLink installation script, but you
+\\ have the option to make a new  configuration file, or you may just
+\\ delete ##HSL.FIL , and you will be prompted to make a new one.
+\\ (For example, if you are newly-registered, and want to add your
+\\ serial number and password to the script.)
+\\
+\\    To install, just put in Script directory, and call up by the
+\\ following macro    \GS[HSLBOY]  .
+\\                                            Paul Buerkle
+\\                                            6-27-92
+
+|Start
+\KS\ZS\KO[60]\DM20,10[ ษออออออออออออออออออออออออออออออออออออป ]
+\DM20,11[ บ      HS/Link Unzip - Register      บ ]
+\DM20,12[ บ               Script               บ ]
+\DM20,13[ บ             HSLBOY.BSC             บ ]
+\DM20,14[ ศออออออออออออออออออออออออออออออออออออผ ]
+\PA[3]\ZS\FE+%S:##hsl.fil[\GB[Menu2]]
+\GB[Menu1]
+
+|Menu2    \\ delete previous version or not
+\DM20,10[ ษออออออออออออออออออออออออออออออออออออป ]
+\DM20,11[ บ       Do you want to run the       บ ]
+\DM20,12[ บ   script, or enter a new config?   บ ]
+\DM20,13[ บ                                    บ ]
+\DM20,14[ บ   <Enter> = Run   <Space> = New    บ ]
+\DM20,15[ ศออออออออออออออออออออออออออออออออออออผ ]
+\KV0R[ <Enter> = Run  <Space> = New ]
+\IV0+R[\ZS \GB[Run]
+\IV0+" [\DC-[del %S:##hsl.fil]\ZS\GB[Menu1]]
+
+|Menu1  \\New configuration - registered or unregistered
+\DM20,10[ ษออออออออออออออออออออออออออออออออออออป ]
+\DM20,11[ บ     Enter the serial number and    บ ]
+\DM20,12[ บ     password from HSLink docs -    บ ]
+\DM20,13[ บ           the ones after           บ ]
+\DM20,14[ บ         HSLINK.EXE $BRAND$         บ ]
+\DM20,15[ บ  Just  <Enter>  if not registered  บ ]
+\DM20,16[ ศออออออออออออออออออออออออออออออออออออผ ]
+\KV3##[]\IV3+##[\ZS\GB[GenCfg] |ELSE \ZS\GB[Check]\GB[GenCfg]]
+
+|Check \\ Make sure data is correct
+\DM18,10[ ษออออออออออออออออออออออออออออออออออออออออป ]
+\DM18,11[ บ     Your registration command line     บ ]
+\DM18,12[ บ                will be:                บ ]
+\DM18,13[ บ                                        บ ]
+\DM18,14[ บ                                        บ ]
+\DM24,14[HSLINK.EXE $BRAND$ @V3]
+\DM18,15[ บ                                        บ ]
+\DM18,16[ บ    Make sure this matches your docs.   บ ]
+\DM18,17[ บ                                        บ ]
+\DM18,18[ บ  <Enter> = go on    <Space> = reenter  บ ]
+\DM18,19[ บ               <Q> = quit               บ ]
+\DM18,20[ ศออออออออออออออออออออออออออออออออออออออออผ ]
+\KV0Y[ ]\IV0+Y[\GB[GenCfg]]  \\write ##hsl.fil
+\IV0+" [\ZS \GB[Menu1]] \\re-enter if wrong
+\IV0+Q[\ZS\AB] \\ quit
+\ZS~\GB[Check] \\recycle block if "none of the above"
+
+|GenCfg   \\make config file
+\FE+%S:##hsl.fil[\DC-[del %S:##hsl.fil]] \\delete previous
+\AF`%S:##hsl.fil[%V3]\GV0[%S:##hsl.fil]\GV0[]\ZS\GB[End1] \\make new
+
+|End1   \\newly-written version
+\DM20,10[ ษออออออออออออออออออออออออออออออออออออป ]
+\DM20,11[ บ                                    บ ]
+\DM20,12[ บ     New configuration is ready     บ ]
+\DM20,13[ บ                                    บ ]
+\DM20,14[ บ   <E>nter = run   <Space> = quit   บ ]
+\DM20,15[ บ                                    บ ]
+\DM20,16[ ศออออออออออออออออออออออออออออออออออออผ ]
+\KV0R[ <Enter> = run, <Space> = quit ]\ZS \\R = default
+\IV0+R[\GB[Run] |ELSE \RS\AB] \\R = run <Space> - quit
+
+|Run  \\ choose file, unzip to ext. protocol directory
+\FML[%D:hs*.*] \\File Mgr on all files starting "HS" in d/l directory
+\GV4[%D:boymark.lst]\GV4[] \\ read line from boymark.lst
+\II+^Z,%V4[\DM12,24[  No file to process!  ]\AB \\quit if no name
+\DC+[pkunzip -o %V4 %P: hs*.*] \\unzip (overwrite) chosen file into %P:
+\FE+%S:##hsl.fil[\GV1[%S:##hsl.fil] \\get line from config file.
+\II+##,%V1[\GB[RunNR]|ELSE \GB[RunR]] \\registered/unregistered
+
+|RunNR  \\ end - unegistered
+\ZS\ND[%B:]\DM24,12[  %V4 unzipped  ]\AL2[0]~\AL2[0]
+\KV0" [ Press any key to continue... `]\ZS\AB
+
+|RunR \\register, conclude
+\ND[%P:]\DC+[HSLINK.EXE $BRAND$ %V1]\ZS\ND[%B:]
+\DM20,12[  %V4 unzipped - registered  ]\AL2[0]~\AL2[0]
+\KV0" [ Press any key to continue... `]\ZS\AB

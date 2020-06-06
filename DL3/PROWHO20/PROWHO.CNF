@@ -1,0 +1,14 @@
+HANDSHAKE
+c:\pcb\main\download.txt
+wwelcom
+wmenu
+wclose
+
+--------------------------
+Configuration file format:
+
+line 1 = Driver type (HANDSHAKE, INTERRUPT, BIOS, PCBTRAP)
+line 2 = Download listings filename (download.txt file)
+line 3 = Welcome message filename      \
+line 4 = Main menu filename             \___ "G" added to end
+line 5 = Closing door message filename  /    for graphics mode

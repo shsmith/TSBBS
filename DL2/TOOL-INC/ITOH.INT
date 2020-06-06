@@ -1,0 +1,3 @@
+function itoh(i: longint): string8;   {integer to hex conversion}
+function htoi(h: string8): longint;   {hex to integer conversion}
+

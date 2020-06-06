@@ -1,0 +1,62 @@
+
+TASKING - Task Management in Janus/ADA               30-Mar-86, S.H.Smith
+                                                     Public Domain Material
+
+
+This package provides facilities for creation and manipulation of
+multiple tasks in Janus/ADA for the IBM PC.
+
+Refer to the tasking package specification, TASKING.LIB, for full
+details of calling conventions.   The program TASKDEMO is an example
+program that sets up several tasks.
+
+
+
+The tasking package provides the following functions:
+
+Task creation
+-------------
+   Start -         Allocate stack and start a procedure as a new task.
+                   Any ordinary Janus/ADA procedure can be started as a task.
+                   Each task is assigned a process-id, which is used as a
+                   "handle" for manipulating the task.
+
+
+Task information
+----------------
+   Process_id -    Get the unique process-id code of the currently running
+                   process.  This process ID can be used for shared resource
+                   allocation (such as file sharing).  This function is
+                   provided because a single procedure can be started up as
+                   several different tasks.
+
+   Process_name -  Get the name of the caller's process.  This can be
+                   useful when two or more tasks use the same common
+                   library procedure, and the procedure needs to know
+                   who is using it.
+
+
+Task control
+------------
+   Suspend -       Put the specified task "on hold" until it is explicitly
+                   terminated or resumed.
+
+   Resume  -       Wake up a task that has been suspended.
+
+   Kill -          Destroy the specified task and release it's stack memory
+                   for the use of other tasks.
+
+
+Time sharing
+------------
+   Give_up_time -  This call is placed inside each task procedure.  It causes
+                   the calling procedure to give up some time while other
+                   tasks are executed.   Calls to give_up_time cause a
+                   context switch to another task.
+
+   Execute_task -  This call is used by the user's main program to start the
+                   multi tasking system.  Each call to execute_task causes
+                   an active task to be scheduled and activated.  Control
+                   returns to the main program when the activated task makes
+                   a call to give_up_time.
+

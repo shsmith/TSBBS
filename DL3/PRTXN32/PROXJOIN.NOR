@@ -1,0 +1,11 @@
+; PROXJOIN - ProDoor command translation for JOIN CONFERENCE COMMAND prompt.
+;
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+; This translation file can be used to translate conference names, conference
+; numbers, and the join options A, L, S, N, Y.
+;
+10,D,Y             ;din personlig post

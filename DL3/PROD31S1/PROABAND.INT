@@ -1,0 +1,2 @@
+procedure select_main_board;
+procedure abandon_conference;

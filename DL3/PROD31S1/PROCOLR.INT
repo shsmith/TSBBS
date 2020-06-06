@@ -1,0 +1,1 @@
+procedure displn_dir(var line: longstring);

@@ -1,0 +1,6 @@
+Find file in BBS download directories.
+Version 1.1 of 9/12/92.  Uses text DLPATH.LST
+file. Can also be used to check for .EXT
+duplication in upload testing.
+Includes Turbo Pascal source code.
+Written by Samuel H. Smith

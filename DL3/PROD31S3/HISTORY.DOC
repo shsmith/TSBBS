@@ -1,0 +1,1398 @@
+
+History of PCB/ProDOOR changes (in reverse order)
+-------------------------------------------------
+
+28-Sep-89
+   Changes to prevent users selecting a password with more than one word.
+
+25-Sep-89
+   Final assembly of production-style beta archive.  Please test the
+   INSTALL procedure and report back with any problems.
+   Updated documentation and supporting files.
+
+22-Sep-89
+   (NS)non-stop command wasn't working at mail command prompts.
+
+   Documentation update.  Please report any major bugs that remain in
+   the beta code.  Production release is scheduled in early october.
+
+   Added new environment variable
+        SET EXTCONF=ON
+   to allow ProDoor and other Pro* doors to remain in extended
+   conferences after exit to DOS.  Current versions of PCBOARD 14.2 will
+   abort back to BOARD.BAT when this happens, but ProLogon and other
+   pro* doors support this.
+
+17-Sep-89
+   'NS' command wasn't working at Mail Command prompts (broken 16-sep).
+
+16-Sep-89
+   Default "Mail" commands were broken by the 14-sep beta.
+
+   @ variables were not being expanded in Quick scan displays.
+
+   Changes in low-level interrupt handlers to address problem of
+   repeated or lost input characters.
+
+14-Sep-89
+   Added command translation (via PROMAIL.XLT) at Mail Command prompt.
+
+   Disabled hotkey modes in ProKit doors.
+
+11-Sep-89
+   When SET PCB=/NOSUBS is active, all @ variables are now replaced with
+   "(deleted)" in message entry.
+
+   Added code to delete @ variables in user database variables.
+
+   Corrected an error in [OPEN ACCESS DENIED] error recovery that
+   prevented aborting the operation after 5 tries.
+
+   Presence of EGA and 43/50 line video modes is now disabled by the
+   'SET OVCRT=ON' environment.  This may solve the "background init"
+   problem under TaskView.
+
+10-Sep-89
+   Added error report when overlay or EXE file cannot be opened.
+
+   Added a check for 'SET OVCRT=ON' to disable quick BIOS functions,
+   since these seem to interfere with OmniView/TaskView operation.
+
+08-Sep-89
+   Internal changes in ^K and off-hook logic.
+   Added support for "Allow ONLY password changes" option in PCBSETUP.
+
+02-Sep-89
+   Internal changes; preparation for open beta test.
+
+01-Sep-89
+   Corrected description display when an upload is promised but never received.
+
+29-Aug-89
+   Corrected "warning: automatic disconnect" message (broken 27-aug).
+
+   Changed free space check to use the "default" drive if no drive
+   letter is specified in a directory name.  This method will not work
+   if your PRODOOR directory is not on the same drive as your PCBOARD
+   system directory.
+
+   Changed display drivers to use only dos writes rather than the
+   standard 'int 29' method when running under TaskView/TopView.
+
+28-Aug-89
+   Shortened hotkey timeout from 2 seconds to 1 second.
+
+   Message pointers are no longer updated on unreadable messages
+   when the 'force all messages private' flag is set in a conference.
+
+27-Aug-89
+   Corrected prompt for number of lines to enter in non-visual message
+   entry.
+
+   Corrected "warning: automatic disconnect" message when less than 0
+   minutes remain.
+
+   Corrected conference prompts after attempting to join an undefined
+   conference.
+
+21-Aug-89
+   Fixed (Q)uote function to allow quoting line numbers over 99.
+   Corrected redisplay after ^K while in visual editor.
+
+20-Aug-89
+   Adjusted margin when logging to printer to match recent changes in PCB 14.2.
+
+   Added @ and $ variable expasion to >, < and " commands as used in the
+   PROMAIN.XLT command translation file.
+
+   Printer logging was not working in some 8/19 and 8/20 betas.
+
+19-Aug-89
+   Corrected an error in handling a missing PROMAIN.XLT file.
+
+   Changed printer output code to use BIOS rather than DOS, greatly
+   speeding printing through a network.
+
+   The ALT-P function now automatically disables graphics mode to
+   prevent sending escape codes to the printer.
+
+17-Aug-89
+   (J +) and (J -) commands weren't working properly.
+
+   Simplified hotkey system.
+
+   Added new (optional) translation file for main command prompt.
+   If present, PROMAIN.XLT will define main command translations.
+
+   Added three new commands which may be used in conjunction with a
+   translation file:
+      "  ;display the rest of the line to the user
+      >  ;display the rest of line AND place it in the caller log
+      <  ;place the rest of line in the caller log with no message.
+
+   Internal changes in display processing in preparation for alternate
+   language display capability.
+
+16-Aug-89
+   Added another message when reaching the end of a conference.
+
+   When reading reverse the direction changes to "+" when the lowest
+   message is read.
+
+15-Aug-89
+   Changed TAB key (control-I) to expand to 4 spaces instead of 8.
+
+   Changed QUOTE section to prompt for ending line number instead of
+   number of lines to be quoted.
+
+   Changed QUOTE function to insert ">" before quote lines only of the
+   original line does not have a ">" within the first 3 characters.
+
+   Added logic to detect messages left by alternate nodes when end of a
+   conference is reached.
+
+14-Aug-89
+   Corrected expire date display in (F)ind-user.
+
+   Corrected initial prompt after (I)nsert-line function.
+
+   The security message for sysop's security level was not always
+   being displayed during logon.
+
+   All 13-aug betas did not update USERNET.DAT properly.
+
+13-Aug-89
+   Changed (baudG) to (baudE) when indicating error correcting corrections.
+
+   The "node dropping to DOS" status code (X) will now be preserved in
+   the usernet file when the node status would normally change.
+
+   Early 13-aug betas did not update USERNET.DAT properly.
+
+12-Aug-89
+   Corrected strange display on return from F5(shell) while in chat
+   (broken in 10-aug beta).
+
+   Added a length check on COMSPEC variable and reduced total
+   directory lengths allowed during install.  This should prevent
+   archive functions from failing due to overlong command lines.
+
+   Control-K was not properly repeating command prompts.
+
+   Changes in critical error handler to allow FATAL to handle critical
+   errors when loaded.
+
+   Adjusted buffering for faster text file displays through a network.
+
+   Combined overlays into PRODOOR.EXE.  The file PRODOOR.OVR is no
+   longer needed; please delete it.
+
+10-Aug-89
+   Added expiration-date to (F)ind-user display.
+
+   Deleted automatic news displays in ProEdit.
+
+   The join speedup of 6-aug prevented joining conferences that
+   have a number in the name.
+
+   Inserted I/O delays between I/O port accesses to prevent
+   problems on very fast CPUs.
+
+08-Aug-89
+   One file was not being closed during "renumber conferences" in
+   PROSM, leading to eventual errors during a long session.
+
+06-Aug-89
+   Changed (J +) and (J -) commands to use AutoJoin flags.
+   Changes in (J n) for faster operation.
+
+05-Aug-89
+   Deleted automatic (G)oodbye after transfer is for downloads with
+   estimated durations of 15 minutes or more.
+
+   Installed new "going offhook" logic developed in ProLogon to insure
+   that modem actually stays offhook during recycle.
+
+   More work on F2(edit) functions in ProSM.  All list and text file
+   editors are at least partially working.
+
+04-Aug-89
+   Changes in (NS) handling at More? prompts within mail section.
+
+03-Aug-89
+   Corrected detection of non-sliding events.
+
+   Added automatic redisplay on return from (F5)shell while in visual
+   editor.
+
+   Added additional messages and error checking to (W)rite-user-info command.
+
+   Added F4 [find] function to Conference Definition section of
+   PROSM config program.
+
+   Added messages in Extended User Edit function to indicate the reason
+   for skipping a user record.  Messages are:
+        [FLAGS]         ;user.flags not initialized (still = ' ')
+        [NAME]          ;specified extuser record has wrong name
+   ProSM cannot edit a user record that does not have a corresponding
+   EXTUSER record as created by PRODOOR.   See PRODOOR.DOC and PROSM.DOC
+   for file conventions that are required.
+
+   Added F2 [edit] / F3 [edit graphics] functions for file editing while
+   in Conference Definitions section.  Use SET EDITOR=PROGRAM to change
+   text editors.
+
+   Eliminated 1/2 second delay after ESCAPE key in visual editor
+   during LOCAL sessions.
+
+   Corrected counting of conferences when a new CONFINFO file is created
+   during the same session.
+
+   If PCB=/NOSUBS is present all @ characters entered by normal users
+   are changed to # when a new message is saved to disk.  @ variables
+   are now expanded at all times.
+
+02-Aug-89
+   Added code to cycle the printer offline if an error occurs when
+   either ALT-P or (F3) is used to do printer logging.
+
+   Worked on (RE) right after an auto-join suggestion.
+
+31-Jul-89
+   Corrected current message when 'RE' is used after 'autojoin' is
+   suggested.
+
+   Updated PRONS module to allow number of scrolling lines to be
+   specified on the command line.
+
+30-Jul-89
+   Changed 'z' keyword prompt to allow multi-word file search keys
+   *if* the keyword is not stacked.
+
+   Upload processing was not detecting files with the same name but
+   different file .EXTs as it should.
+
+   Changes in PROSM to allow security control over prodoor's new (W)rite-
+   user-info command.
+
+   Added new (ED)it-header command to allow direct message header edits
+   without first entering the (MOD) function.  Stacking is allowed, so you
+   can use commands like this:
+        ED F SYSOP              ;change "from:" to SYSOP
+        ED E                    ;toggle echo status
+        ED S NEW SUBJECT        ;change subject
+
+   Corrected TS command prompts to match the Z command.
+
+   Added a check to prevent DOS errors when entering a message to an
+   invalid name (such as ?).
+
+   Changed file modes on PRODOOR.REG file to allow it to be marked R/O.
+
+29-Jul-89
+   Cosmetic changes in disconnect warning and chat request displays.
+
+   Changes in thread logic to prevent unreadable topics from being
+   selected.
+
+   Changes in prompt redisplays after ^K abort.
+
+28-Jul-89
+   Moved chat-request check to make it's delay less obvious.
+
+   Improved internal processing of prompt redisplay after Control-K
+   and return from F5(shell).
+
+   Corrected "subject:" display during message entry.
+
+   Initial beta release of ProEdit 3.1.
+
+27-Jul-89
+   The new thread logic was accidentally being activated during a Y scan.
+
+   'TO:' and 'SUBJECT:' edits in the (MOD) function were not being
+   updated on the screen, though they were stored in the message file.
+
+   Added (W)rite-user-info command in main command prompt.
+
+26-Jul-89
+   Added logic to prevent multiple "chat request" messages.
+
+   Added logic to delay chat request checks by the 'node chat delay'
+   setting in PCBsetup.
+
+   Added a flag in EXTUSER file to lock a user's current conference
+   registrations, allowing sysop to block access to public or auto-
+   register areas.
+
+   Updated PROSM to include the new "Lock Conferences: Y/N" flag in the
+   extended user data section.  Set this flag to YES and the user will
+   forever be barred from any conference not explicitly selected through
+   this screen.
+
+   Added a check for SET PCB=/NOSUBS to disable @...@ display macros
+   in the message base.  Other uses of macros remain active.
+
+   Added a check to prevent non-sysop users from using to: @user@ messages.
+
+   Added a check to restrict use of (F)ind-user command user record #1
+   (sysop) regardless of security level.
+
+   Changed RU (snoop mode) to be legal for normal users.
+
+   Adjusted message file buffering for faster message scanning.
+
+   Added a "thread memory" to improve message threading by automatically
+   skipping messages that have already been seen during the current
+   session.
+
+   Added a check for
+        SET CAPFILE=\path\filename
+   environment to over-ride the default DEBUGxx.OUT file name used by
+   Alt-F and PRODEBUG=ON functions.
+
+25-Jul-89
+   Added support for non-standard COM port configurations.  To use
+   com ports other than the normal COM1 and COM2, you can now insert the
+   following statements in your BOARD.BAT file:
+        SET COMBASE=nnnn        ;port base I/O address (decimal)
+        SET COMIRQ=n            ;port IRQ setting
+   Use these SET statements in conjunction with a com port setting of
+   COM3 in your PCBOARD.DAT file.
+
+   Mail packets were not being deleted immediately after a successful
+   download.
+
+   Increased detail in DOS error reports.
+
+24-Jul-89
+   Added a check for chat requests from other nodes.  When a chat
+   request is received, the message
+        (USER NAME) on node (NN) wants to CHAT with you.
+   is printed and the contents of PROREQ is then displayed.  Edit the
+   PROREQ file to provide instructions for how to return to PCBoard to
+   initiate a chat session.
+
+   Enabled command stacking in (MOD) function, allowing things
+   like (H;T;whoto) to be entered on a single line.
+
+   (C)omment messages are now assigned a status code of (~) rather
+   than (*) for better PCBoard compatibility.
+
+   Generate automatic disconnect after 10 invalid responses to a
+   yes/no question.
+
+   In batch uploading, once a filespec is entered the transfer will
+   be aborted if no valid filespecs are given (the code used to
+   go into unspecified upload mode under these conditions).
+
+23-Jul-89
+   Automatic (G)oodbye after transfer is now active for downloads with
+   estimated durations of 15 minutes or more.
+
+   Changes to prevent users killing 'to: @user@' messages.
+
+22-Jul-89
+   The PRODOOR.REG file was not being recognized if flagged read/only.
+
+   When F8(dump user) button is pressed the file PRODUMP is now displayed
+   instead of the hardcoded 'Automatic disconnect!' message.
+
+   Updated PRO-P.BAT to properly repack in ZOO format when member files
+   do not have a period in the file names.
+
+   Updated PROUTEST.BAT to eliminate "perm" dszlog creating.  This was
+   causing "file creation error" on several systems.
+
+   Added buffering to CONFINFO accesses to speed (J)oin command.
+
+   Added a message display when conference bulletins are updated
+   since the last call.
+
+19-Jul-89
+   Wrote new assembly routines to speed most displays by up to 50%.
+   Corrected 'to:' display during message entry.
+
+18-Jul-89
+   Added automatic support for 43 line EGA local display.  Note: you
+   must switch the display into 43 line mode before calling ProDoor.
+   The SET43.COM program in ANSI_43.ZIP seems to work on most EGA
+   display adaptors.  (NOTE: SET LINES=43 IS NO LONGER USED)
+   Updated visual editor to automatically adjust to user page length
+   and screen lines.
+   Updated PRONS.COM module to automatically adjust to number of
+   screen lines in use.
+   Some file paths were being shown on the screen when the directory
+   did not begin with a drive letter.
+   Corrected handling of replies to 'TO: @user@' messages.
+
+17-Jul-89
+   Possible correction of the "time bug".  Please report back with more
+   details if this doesn't fix it.
+
+16-Jul-89
+   Added @... and $... macro expansion to SCRIPT0 and batch result file
+   displays.
+   Corrected beeping when 'keyboard timeout=0'.
+   In PROSM conference definitions editor added Ctrl-PgUp and Ctrl-PgDn
+   to scroll by 10 conferences.  Added prompt for specific CNAMES file
+   name to update in F10 [update CNAMES] function.
+   Corrected processing of duplicate filenames in download list.
+   Cosmetic change in reporting of free download files.
+
+15-Jul-89
+   Added file buffering in node status display.
+
+14-Jul-89
+   (FV) now works the same as (F V).
+   (TS) now works the same as (Z) or (R Z).
+   Added (P)age-length command.
+   Added 1 second delay before retry on network/file open errors.
+
+12-Jul-89
+   When reading to the end of a (t)hread, (y)our, or (ya) search the
+   current message number is returned to the message following the start
+   of the thread.
+   Increased function key delay from 0.2 seconds to 0.5 seconds; should
+   make function keys work better in visual editor over buffered modems.
+   Corrected upload description posting when SET NOULBY=ON is used.
+
+11-Jul-89
+   Initial "free download" message was sometimes including the
+   directory of the matching file.
+   Corrected processing of @lasttimeon@ macro.
+   Changes in PROSM to improve filename generation when conference names
+   are not valid filenames.
+
+10-Jul-89
+   Added check for SET NOULBY=ON to disable "Uploaded by:" entries
+   in upload dir listing.
+   Corrected registration checks to work with some messages that were
+   previously not recognized - also get the new PROREG program if you
+   have been having this difficulty.
+   Decreased heap and stack allocation by 2k.
+   The PRODOOR.OVR file is now expected in the SAME directory as the
+   active copy of PRODOOR.EXE (the .OVR file used to be required in the
+   current directory). This allows you to relocate PRODOOR.EXE and
+   PRODOOR.OVR to a RAMDISK.
+
+09-Jul-89
+   Added a message before starting "free" downloads.
+   New versions of CHKPATH.EXE and PRO-R.BAT automatically delete
+   original ZIPM file when repacking to a new format.
+
+08-Jul-89
+   Increased heap space some more.
+   Fixed original speed problem in overlays; the .OVR version should
+   now be just about as fast as the non-overlay.
+   Added code to initialize a new USERNET.DAT file if needed.
+   Upload duplication checks now ignore the file extention.
+   Upload descriptions now include the name of the uploader.
+
+07-Jul-89
+   Packed prodoor.exe to increase heap space.  If you ran out of heap
+   with yesterday's beta, please use ALT-B and report back the two
+   numbers that are printed out.  These numbers tell me how much heap
+   and stack are needed on your system configuration.
+   Added another error check when processing ALT-I.
+   Event suspense time was not being handled properly for events
+   between 6pm and midnight.
+
+06-Jul-89
+   Corrected processing of @user@ during message entry.
+   Recompiled without overlays because of severe speed problems
+   on some systems.  PRODOOR.OVR is no longer used in this beta.
+
+05-Jul-89
+   Removed some extra beeps after a download.
+   ProSM was changing blank filenames into "\" in conference definitions.
+
+04-Jul-89
+   Added a check for time as well as date in determination of when
+   to display a conference news file.
+   New assembly language routines in message loader; ZIPM and R Z are
+   now 25% faster.  Improved buffering logic to speed REVERSE message
+   base scans by as much as 40%.
+
+03-Jul-89
+   Changes (X)pert toggle to use the regular expert flag instead of
+   ProDoor's own internal flag.
+   Changed (FL U) command to allow specific flags to be removed.
+   Use the new (FL U *) command to clear all flags.
+
+02-Jul-89
+   Added PCBoard 14.2 compatible @....@ macros in message base.
+   Changed (F)lag at (F)iles prompt to (FL)ag to prevent accidental flagging.
+
+29-Jun-89
+   R Y wasn't working if your last-read was below the base message.
+
+16-Jun-89
+   Worked in unit sizes; overlay version of code uses 34k less RAM.
+
+14-Jun-89
+   Added "Auto ReJoin" flag to CONFINFO file and PROSM.
+
+14-Jun-89
+   Added check for security-level specific DOOR menus.
+   Append .NNN for user level to DOORS and DOORSG menu files.
+   If no level-specific menu is available the normal menu will be used.
+   (This will become ProDoor 3.01)
+  
+11-Jun-89
+   Added support for COM3 and COM4 using Telix 3.11 defaults.
+   Com2 is PORT 3E8 IQR 4,  Com3 is PORT 2E8 IRQ 3.
+
+18-Jun-89
+   Removed case sensitivity from mail and scratch prefix definitions.
+   Added additional error checking for duplicate download paths.
+
+06-Jun-89
+   Corrected YA and SCAN commands in hotkey mode.
+   Corrected 'autoflag' of scratch files after using (VX X) to allow
+   additional files to be selected for download.
+
+02-Jun-89
+   Official release of ProDoor 3.0.
+
+01-Jun-89
+   Corrects a bug in time-left calculation during the second call of the day.
+   THIS IS THE FINAL BETA!  OFFICIAL RELEASE HAS BEEN DELAYED TO 6-2-89.
+   Corrected (Q Y) which was acting like (Q YA) most of the time.
+   Alt-M jumps to node status display.
+
+27-May-89
+   Alt-N was not being recognized in 'recycle after each call' mode.
+   New (YA) command to read mail to you OR to 'all'.
+   New (Q YA) and (QQ YA) commands to quick scan mail to you or to 'all'.
+  
+26-May-89
+   Corrected time-left calculation under some conditions.
+
+25-May-89
+   Raised limit on maximum efficiency from 150% to 200%.
+   Scratch files were not being auto-selected after (F V X)tract.
+   Added the ability to create a USERNET.DAT file when none exists.
+
+21-May-89
+   Internal changes.
+
+19-May-89
+   Corrected disk space check prior to uploading.
+   Corrected handling of batch uploads where wildcards are used to
+   select files.
+   New message subjects are mapped to upper case if they start with
+   a lower case letter.
+
+17-May-89
+   More complete loading of PCBOARD.DAT into internal data structures.
+
+16-May-89
+   Corrected time calculation during download file selection to account
+   for files estimated to take less than 1 minute, and to take into
+   account time spent selecting the files.
+
+13-May-89
+   Added a check for 'subscription mode' to control expired user checks.
+   Changed (T)hread command to retain original subject and to require
+   an exactly matching subject to continue the thread.
+   Changed (Q Y) command to select only messages to or from the caller.
+
+12-May-89
+   Added error checking to prevent uploads of over 50 files from causing
+   a system crash.
+   Added error message and caller log entries when uploads cannot be
+   posted due to insufficient disk space.
+   Internal changes to allow disk space test on partitions > 32 meg.
+   Message pointers were not being updated after downloading a REPACKed
+   zipm packet.
+   Added a warning prompt when a command is about to clear the flagged
+   file list.
+
+10-May-89
+   Added code in PROSM to automatically adjust .NDX file sizes to match
+   the specified number of blocks.  You don't even need to repack /
+   reindex conference files!
+   Time adjustment was not working properly in CHAT mode (idle time factor
+   was being used instead of chat mode time factor).
+
+09-May-89
+   Added optional 'starting conference' parameter to (J A) command.
+
+08-May-89
+   Changed scratch and zipm file selection logic to allow the
+   (FL U)nflag command to deselect these files.  This makes it
+   possible to repack a zipm packet without being forced to
+   also download the original.
+   Reformatted documentation for 60 lines per page.
+
+07-May-89
+   Moved mail.txt capture file from playpen to scratch directory; this
+   change should prevent abnormal zipm captures from being detected as
+   bidirectional uploads.
+   Added logic to insert 5 second delay before dropping carrier *only*
+   when the modem dte bps is higher than the caller's connect bps.
+
+06-May-89
+   Further work on documentation.  Updated prosm/install to use the
+   new configuration and utility file names.  Added a check for the
+   setting of DSZLOG environment to correct operation on systems that
+   don't follow installation recommendations.
+
+05-May-89
+   All files needed for installation should now be present in
+   PROD30B1.ZIP.  Started updating documentation; more work will be done
+   here in the next weeks.  Please critique the docs and report back on
+   any pages that are incorrect, unclear or incomplete.
+
+03-May-89
+   Some aborted transfers were being charged as valid.
+
+02-May-89
+   Transfer CPS values were not being read from DSZLOG at all times.
+   Message entry now allows mixed upper/lower case subjects.
+
+01-May-89
+   Changed display order in J S/N/Y commands.
+   Changed 'minutes used:' caller log entry to properly reflect minutes
+   used before midnight crossover.
+
+30-Apr-89
+   Improved logging of partial transfers that are aborted.
+   Upload descriptions were being requested after transfer, even if
+   already entered.
+   Added more output during conference scanning.
+   Personal message counting during conference scan is now performed
+   only on conferences with 'auto scan' set.
+
+27-Apr-89
+   Corrected processing of downloads using '*.*' in the command line.
+   Added a check for attempts to download '0' byte files.
+   Empty ZIPM packets were being recognized as uploads.
+   Corrected adjustment of 'earned k bytes' when PWRD allotted bytes
+   are exhausted.
+
+26-Apr-89
+   Quotation function wasn't picking the right starting line number when
+   a 'city:' display was present.
+   Files listed in PROFREE are not exempt from daily byte limit checks
+   prior to the downloading.
+
+25-Apr-89
+   Added a check for expired users.  When a user is expired the 'expired
+   security level' will be used in all security checks.  Please note,
+   however, that prodoor does not yet check the 'expired conference
+   registration' settings - expired users are given normal conference
+   access.
+
+23-Apr-89
+   Softened "P" to allow REPACK command in hotkeys mode.
+   Updated PRO-V.BAT to lock out textview of this form with LHARC10 -
+   Please use LZHTV in your PRO-R.BAT file instead.
+   Starting line number for quotations automatically selects line 8 if a
+   'city:' line is present.
+   Added support for conference-specific message files.  Append .NNN
+   (where NNN is the conference number) to message file names for
+   conference-specific files.  If *.NNN files are not found, the normal
+   message files will be used instead.  Note: this feature is not
+   available when alternate language .LNG files are being used.
+   The (J S/N/Y) commands were not working when the last-read pointer
+   was lower than the first message on file.
+
+22-Apr-89
+   Unspecified uploads did not correctly determine total kbytes
+   transferred.
+   Changed (J S)tatus and (J N)ews display to scan for personal
+   messages.
+   New (J Y)our command to find conferences with new mail TO YOU in
+   them.
+   Changed (R Y)our command to scan only 'to:' field in message header.
+   Use (Z)ip search to find messages with your name in them.
+   Changes download logic to call 'proutest' in case of bi-modem type
+   uploads.  Please install the new PROUTEST.BAT file.
+
+20-Apr-89
+   The (X)tract function now changes the SCRATCH file .EXT to match that
+   of the source file, instead of using the "assumed" file type.
+   The (H)otkey command wasn't working (broken in 4-17 beta).
+   Several changes in PRO-*.BAT files to improve error checking and
+   reporting.
+
+18-Apr-89
+   Corrected cases when '*.*' is used in a download command line
+   and files were flagged as 'uploads'.
+
+17-Apr-89
+   Corrected spurious error messages when download.txt is undefined.
+   Added error checking in MOVE command.
+   Added security level check for (H)otkeys command.
+   Added security level check for (QU)it to bbs command.
+
+15-Apr-89
+   Keyboard-timeout was not working in hotkey mode.
+   Write new 'CHKPATH' utility and modified batch files to call it.
+   This utility will help isolate missing programs in prodoor batches.
+   Changes in PRO-X.bat
+
+13-Apr-89
+   Added 'SET CONFINFO=path\file' to control multiple CONFINFO files
+   on network systems.
+   Added 'F9: init conference to default values' in conference
+   definition.
+   Added 'F10: update CNAMES file from CONFINFO' in conference
+   definition.
+   Corrected batch uploading when no filenames are given in advance
+   (broken 4-8).
+
+11-Apr-89
+   Corrected hotkey mode to allow <space> for auto-join.
+   Removed (F) from hotkey list to allow optional stacking.
+
+10-Apr-89
+   NOTE: the 'testfile' command comes with PCBoard 14.1 beta code.
+   (K)ill command was not checking security levels (broken 4/8).
+
+   ZIPM packets were not being deleted after a valid download
+   (broken 4/9).
+
+   ZIPM packets were not being created when the packet number was
+   over two digits long (broken 4/8).
+
+09-Apr-89
+   Corrected batch uploads when filenames are not specified in advance
+   (broken in early 4/9 betas).
+   Corrected upload testing (broken in 4/8 beta).
+
+   The 'starting line number to quote' prompt was sometimes being
+   skipped.
+   Added $NODE$ macro to return current node number.
+   ProDoor now checks the playpen directory for unsolicited uploads
+   after each download.
+   This makes it possible to install BIMODEM-like protocols.
+
+08-Apr-89
+   Changes in low-level file handlers to improve error messages and
+   retry logic under network/share environments.
+
+   Implemented multiple compressed file support.
+   Change "Archive Manipulation" commands to:
+      PRO-R $N$ $TIME$ $R$
+      PRO-V $R$
+      PRO-X $R$
+      PRO-T $R$
+      PRO-P $R$
+   and install the new PRO-*.BAT files in your prodoor directory.
+   These batch files have support for PKZIP/PKUNZIP, PKPAK/UNPAK,
+   PAK, LHARC and ZOO.  Other file types can be easily added.
+
+   NOTE: For alternate packed file formats to be handled properly you
+         will need copies of the following programs available to the
+         batch files:
+
+        PROGRAM                         FOUND IN
+    --------------                  ----------------
+    ZIPDS.EXE                       zipds11.zip
+    ZIPTV.EXE ARCTV.EXE             ziptv15.zip arctv29b.zip
+    PROXZIP.EXE PROXARC.EXE         prodor29.zip prodor28.zip
+    PKZIP.EXE PKUNZIP.EXE           pkz092.exe
+    PKPAK.EXE PKUNPAK.EXE           pk361.exe
+    PAK.EXE                         pak151.exe
+    LHARC.EXE                       lharc10.com
+    ZOO.EXE                         zooXXX.zip
+
+   Updated REPACK command to allow conversion between all supported
+   packed file formats.  Additional conversions can be added by editing
+   the PRO-P.BAT batch file.
+
+07-Apr-89
+   Added a check for attempts to COPY, MOVE or KILL before actually
+   reading a message.
+   Added automatic command-execution after a 2 second delay in hotkey
+   mode.  This makes commands like (D)ownload execute after waiting 2
+   seconds for the user to type O (for DOOR).
+   Changed (O)riginal command to go directly to quote function without
+   first asking.
+   Changed (Q)uote function to default to line 7 and to quote 2 lines.
+   Added a special cursor so you know when hotkeys are active.
+   Added automatic clear-screen between messages in hotkey mode.
+   Added ALT-D command in PROSM protocol definition editor.
+   Added the ability to insert/remove a range of group conferences in PROSM.
+
+04-Apr-89
+   Removed extra "DSZ" lines from caller log.
+   Restored (FL)ag command at main command prompt.
+
+02-Apr-89
+   Entry of ";" now cancels hotkey mode for the remainder of an input line.
+   Corrected ALT-I to allow "\" character in hotkey mode.
+   Various changes in PROUTEST.BAT.
+   Fixed 'G' command in ProEdit.
+   Added new 'PROREADg' menu file for novice mode "mail command" prompt.
+
+   Note: command stacking is not allowed in hotkey mode.  If you use a
+         ";" to stack a command, you will cancel hotkeys for the rest of
+         that line.  For example:
+                J 1
+         will launch the Join as soon as you type <space>, whereas
+                J;1
+         will cancel hotkeys on the ";" and allow you to press 1<enter>.
+
+31-Mar-89
+   Invalid uploads were not being deleted.
+   Minor changes in PROSM module.
+
+30-Mar-89
+   Corrected ALT-I filename prompt in hotkey mode.
+   The (J)oin command is no longer 'hot' in hotkey mode.
+   New commands include:
+        (J +)join next higher
+        (J -)join next lower
+        (J S conf)status starting with conference 'conf'
+        (J N conf)new messages starting with conference 'conf'
+        (J N +)new messages starting with next conference
+   Forced 'display on' when sysop chat mode is entered.
+
+28-Mar-89
+   Allowed commands with imbedded 'E's in hotkey mode.
+   Corrected file-date check so conference NEWS files will be
+   displayed when they are supposed to be.
+
+24-Mar-89
+   Corrected new-user initialization to *always* work, even if a caller
+   previously used ProDoor 2.7, or has mail waiting but has not yet
+   entered the door.
+
+23-Mar-89
+   The (J A) process can be stopped with (Q)uit.
+
+21-Mar-89
+   The ESC key now erases the current command-line.
+   Fixed the (CHAT) command.
+
+18-Mar-89
+   Added code to display conference news files if changed since last logon.
+   Internal changes in automatic-logoff logic.
+   Corrected operation of (RU) command.
+
+17-Mar-89
+   Added (RU)snoop command to place prodoor into proedit's RU mode.
+   RU also works in ProEdit to toggle RU mode during a session.
+   Added PCBoard 14 compatible "high ascii filter".
+   Added a a new hotkey system.  Type 'H' to enable.
+   Corrected non-filename parsing that truncated words at 8 letters.
+   Added (G Q) command to logoff without seeing the SCRIPT0 display.
+   When carrier is lost, at least 5 message lines must have been entered
+   to trigger auto-save.
+   Added a disk-full test during ZIPM text capture.
+   Changed parsing of $RESULT.LOG file to allow upload testing of
+   multiple file types (i.e. .EXT is not required in the test-failed-
+   message definition).
+   Added (SC)an command to toggle scanning current conference.
+   Added support for 38400 BPS connect speeds in PCB 14.1.
+
+
+01-Mar-89
+   Official release of ProDoor 2.9.
+
+29-Feb-89
+   Changes to prevent improperly initialized user records due to the
+   action of RECYCLE in conjunction with logoff through sub-doors.
+   Corrected line counting in (J) and (B) functions to match PCBoard.
+   Disabled CTS handshake during going-offhook process to handle systems
+   that do not assert CTS after carrier is lost.
+
+25-Feb-89
+   THIS IS THE FINAL BETA FOR PRODOOR 2.9.
+   PLEASE REPORT ANY PROBLEMS IMMEDIATELY!
+   RELEASE IS SCHEDULED FOR 3-1-89.
+
+   Restored message pointer after failed zip scan.
+   Changed descriptions of REPACK command.  This will NOT convert file
+   formats in prodoor 2.9.  Look for a better repack in 3.0.
+   Changed PROSM to not clear fields when the first character is changed.
+   Implemented high-ascii filter in visual editor.
+   NOTE: It appears that PCBoard 14.0 does NOT implement the high-ascii
+   filter, even though PCBSETUP has an entry to control it.
+
+22-Feb-89
+   Corrected (REPACK) command as an alternate name for REARC.
+   Clarified description of 'minimum level to join' as 'minimum level
+   for auto-registration' in PROSM.
+
+19-Feb-89
+   Added a check in the (F V) X(tract) command and all other external
+   shell commands for overlong command lines.  Changed (ARCM) command
+   to (ZIPM) command.
+
+18-Feb-89
+   Fixed missing newlines in message entry (broken 14-feb). Finished
+   implementation of PROXZIP module for extract-partial-zipfile.  Added
+   new $TIME$ macro to allow ZIPTV to know the user's time-left instead
+   of defaulting to 10 minutes. Added code to remove 'disappearing
+   prompts' from ALT-F and ALT-P outputs.
+
+17-Feb-89
+   Working on PROXZIP.EXE to replace the function of PROXARC on
+   zipfiles.  Initial test release of ZIPTV with 'reduction' working but
+   not 'shrinking'.  ZIPTV001.ZIP is the first alpha version of ZIPTV.
+   Both zipfile utilities should be working in the next week or so.
+
+16-Feb-89
+   Changed batch and config files to use PKZIP instead of PKPAK for
+   systems that switch from .ARC to .ZIP as the default packed format.
+   Took out PROSM's help system (it's too late for such a feature in
+   this beta -- look for it in the next version).  Changed PROSM to
+   check for and fix config files with identical 'MAIL' and 'SCRATCH
+   FILE' prefixes.  These must be different to prevent "double
+   flagging".
+
+14-Feb-89
+   Increased frequency of carrier lost/time limit checks in (B), (F),
+   (L), (N), (Z) commands.  Changes in message section to allow display
+   of lines up to 80 characters long.  Corrected line-length limits in
+   message 'to:' and 'subject:' entries.  Implemented a simple online
+   help system in PROSM.
+
+12-Feb-89
+   Cosmetic changes in ARCM and 'auto register' messages.
+   Added reminder messages in 'renumber conference' function.
+   Internal changes in declarations of Qmail-3 conference flag bits.
+   This beta freezes the functions and features for this release.
+   The production 2.9 release is scheduled for 3-1-89 so please report
+   any remaining bugs as soon as possible!  Thanks.
+
+11-Feb-89
+   Implemented several new functions in PROSM - Insert group conference,
+   remove group conference, pack extended user file and renumber
+   conferences.  Added a caller log entry when a user is automatically
+   registered in a conference based on his security level.
+
+06-Feb-89
+   Cosmetic changes in message entry prompt.  Added Qmail-3 compatible
+   declarations in extended conference definition file.
+
+04-Feb-89
+   Added an message in INSTALL to explain PCBPROT.DAT changes and the
+   related "missing shell file" error message in PCBoard.  Improved
+   handling of undefined protocol letters at protocol selection prompt.
+
+03-Feb-89
+   Corrected action of (F)ind user command.  Tinkered with 'you have
+   mail' logic during message entry.  Added a check for valid inputs at
+   'new security level' and other numeric prompts.
+
+01-Feb-89
+   Changed (F)ind-user command to find "TO" user name if the "FROM" name
+   is sysop.   Added support for alternate language message files.
+
+31-Jan-89
+   Added new 'MINIMUM SECURITY TO JOIN' entry in extended conference
+   definition section of ProSm.  If a non-0 value is entered, ProDoor
+   will automatically enroll users in private conferences when they have
+   a security level that is at least as high as the specified value.
+
+30-Jan-89
+   Updated documentation on SET EXTUSER environment.
+   Added a few more checks for improper filenames in configuration file.
+
+29-Jan-89
+   Corrected CITY display (it was working only on messages with
+   'refer#'s in them)
+
+28-Jan-89
+   Changed (G)oodbye logic to handle time charges for logons with
+   midnight rolover.
+
+27-Jan-89
+   Updated CNAMES loader to allow "conference added security" < 0.
+   Removed reference to CLINK.EXE in install procedure.
+
+22-Jan-89
+   Removed beep in original-message display during reply entry.
+
+21-Jan-89
+   Simplified PRONS.COM module to remove obsolete code and to reduce
+   chances of crashing under some configurations.  Restored the warning
+   message about upload time limits prior to non-sliding events.
+   Implemented 'disable uploads prior to event' flag from PCBsetup.
+   Corrected handling of GROUP PASSWORD messages for non-sysop readers.
+   Corrected a bug in (E)nter and (RE)ply commands that caused a
+   spurious $PTRS.NEW file to be created.
+   Added code to that allows registered copies to display a custom
+   registration message.
+
+17-Jan-89
+   Added beep when reading mail addressed to you.
+   Added automatic next message display with MOVE command.
+   Fixed ProEdit command line stacking (broken in 1-12 beta)
+
+15-Jan-89
+   Fixed the extra '$' shown after the $MAIL$ macro is expanded.
+   Optimized new file scan for 100% speed increase.
+   The (J A) function still wasn't returning to the original conference.
+   Added code to preserve message pointers until AFTER a successful
+   message packet is downloaded.
+
+12-Jan-89
+   Corrected auto-join processing when no conferences are available.
+   Cleared command-stack during error messages while in expert mode.
+   Some changes to reduce the possibility if extra spaces in DSZLOG
+   causing files to be logged more than once.
+
+11-Jan-89
+   The (J A) function wasn't returning to the original conference number.
+   Got rid of the repeated 'time limit reduced' messages.
+
+09-Jan-89
+   Re-implemented security checks on X and M commands.  Added the
+   ability to add more than a few extra protocols in PROSM.  Tinkered
+   with colors in PROSM.
+
+08-Jan-89
+   More changes in handler for blank filenames...
+   ProEdit initial expert mode is now read from the sysop user record.
+
+07-Jan-89
+   Added additional error checking for empty filenames in configuration
+   files.  Added two new display file macros:  $NAME$ (user's full name)
+   and $CONF$ (conference number where mail is waiting).  Changed handling
+   of the 'PROUSER' (you have mail waiting) file to make it a little more
+   useful.
+
+   Wrote the new ProDoor System Manager program, PROSM.EXE.
+   Added a prompt for new user security level after (F)ind-user
+   function in message reader.
+   Added "(Ctrl-K) aborts" messages.
+   Wrote EXTADJ utility to adjust number of extended conferences stored
+   in the EXTUSER data file.
+   Reduced prompting when download filenames are stacked.
+   Deleted 'Fname' command parameter in ProEdit; use the extended
+   conference system instead.
+   Added 'R S' default command to repeat last message read when no
+   ProEdit commands are stacked on the command line.
+   Improved display format in directories with multi-line descriptions.
+   Implemented 'validate TO: in message entry' flag from PCBSETUP.
+   Moved download time/kbyte check to avoid aborting a whole batch
+   when one file exceeds the user limits.
+   Streamlined processing of 'RZ' automatic upload request.
+   Changed 'Files:' prompt to say 'Directories', which is more correct.
+   Added EXTUSER environment variable.
+   Added 'more' check during auto-join conference scanning.
+   Updated directory scanning displays to match new PCBoard betas.
+   Added new (RR)efer command to jump to 'refer#' message.
+   Updated ConfEdit to automatically create new conference files.
+   Wrote new ExtEdit utility to allow editing of extended user records.
+   Fixed a bug in INTERRUPT handler that caused CTS handshake to be disabled.
+   Changes in low-level I/O to speed up caller logging under networks.
+   Wrote ConfEdit for conference data editing.
+   Moved conf_info to a random data file.
+
+
+01-Dec-88
+   Official release of version 2.8.
+
+NOTE:  Use EXTCONV.ARC to convert user data from ProDoor 2.6 or 2.7 to
+       the new format used in 2.8.  This will preserve earned Kbytes,
+       extended conference registration, and extended conference
+       pointers.
+
+   Change in display_file procedure to handle full-screen ANSI displays.
+   Recoded some low-level I/O functions is assembler for faster operation.
+   Deleted (CI)ty command; added SET CITY=ON env. to enable city display.
+   ">$R$" will redirect the program output for handling by ProDoor.
+   Added $...$ macro expansion in archive config commands.
+   Initial testing of enhanced ARCTV.EXE module.
+   Added message status code and reply status to (Q)uick scan display.
+   Added automatic detection of 'RZ' to start zmodem uploads.
+   Recompiled with Turbo Pascal 5.0.
+   Removed all .ARC file specific code in ProDoor.
+   Rewrote (F V), (VX), (TEST) and (REARC) commands to use command-lines
+   defined in the prodoor configuration file.
+   The files PROARC, PROARC.BAT, PROTEST, PROTEST.BAT and PROEXT are no
+   longer needed.
+   New files PROXTRA.EXE and PRORARC.BAT must be in your prodoor directory.
+   Simplified (LIB) support files and enabled multi-node CD ROM operation.
+   Changes in PROARCM.BAT and PROUTEST.BAT file formats.
+   ProDoor now honors PCBoard's ARCHIVE EXT settings in PCBSETUP 'Options 2'.
+   Added logic to detect invalid answers to yes/no questions.
+   'minutes left' field is PCBOARD.SYS is now updated when opening doors.
+   Daily-download-bytes are now cleared at midnight.
+   Implemented a user-record flag to indicate that a user has mail waiting.
+   Increased length of filename variables from 32 to 45 chars.
+   Added new 'TAGLINE' environment.
+   Implemented word-wrap during multi-line upload description entry.
+   Added status line indications for ALT-F and ALT-P toggles.
+   Added automatic (enter) at the end of sysop macro function keys.
+   Increased 9 filespec limit to 50 filespecs.
+   Added recognition of error-free protocols in ProConfig and ProDoor.
+   Added time-left to "More?" prompt displays.
+   'Free' downloads are no longer logged to the caller log.
+   Added new 'PROFREE' data file which lists free download filespecs.
+   Added new entry in config file to define ARCM filename prefix.
+   Added (F)lag option at most "More?" prompts.
+   Enabled the 'search aborted' message when ^K is used during (Y)our scans.
+   Added (MG)graphics-mode command in message reader (and ProEdit).
+   Added new 'Ffilename' parameter to ProEdit.
+   Updated install program to check for more common installation errors.
+   Re-implemented color hilight during zip scan in message reader.
+   Added (D)ate and T(i)me to message header editor.
+   Added a check for destination user name during message entry.
+   Added (F)ind-info command during message entry.
+   Added decoding for visual commands: ^W-Beginning of line, (Home)-Beginning
+   of line, (Ctrl-Left)-Word left, (Ctrl-Right)-Word right.
+   Implemented ALT-P printer-on toggle.
+   Rewrote display handler for better scrolling and status-line protection
+   with ansi graphics.
+   Added the first 75 characters of message text to the (Q)uick scan.
+   Added NODE status command.
+   Added calls to update current activity instead of 'out of code in
+   door' all the time.
+   Re-implemented "Keep uploads inside conference" prompt.
+   Implemented conference-names in auto-join function.
+   Increased download directory table from 50 to 200 entries.
+   Implemented 'Use real name for SYSOP' switch from pcbsetup.
+   Implemented new 'join by name' feature.
+   Added support for 'echo mail' mode in conferences.
+   Added support Qmodem DoorWay mode in visual editor.
+   Add multi-line upload descriptions (pcb 14.0).
+   Added 'Q' option in ProEdit for quick-startup.
+   Added checks in INSTALL to prevent the SCRATCH directory from being
+   the same as the PLAYPEN directory.
+   Removed limit on number of lines in a quotation.
+   Changes in interrupt driver to speed up remote keyboard input.
+   Added a check for ^K to abort an ARCM run.
+   Changes to honor "recycle with modem off-hook" (PCB 14.0).
+   Changes to honor default color and intensity from pcbsetup.
+   Changes to honor "disable 5 minute timeout" (PCB 12.1).
+   Changes to honor "keyboard timeout minutes = 0" (PCB 14.0).
+   Added automatic selection of (L)ocate vs. (Z)ip based on detection of
+   wildcard in the search key.
+   Deleted (F)ilter function due to lack of interest.
+   Added sysop (F)ind-user function to display sender's user info.
+   Implemented private upload directory (PCB 14.0).
+   Updated protocol letters to follow new PCB 14 conventions.
+   Added default protocol pointer in protocol listing.
+   Added City and Last On in message reader when user record is available.
+   Added code to honor the new "event buffer" when events are active.
+   Rewrote and simplified event time logic.
+   Added "scan" flag in conference status display.
+   Implemented (REPLY) and (MOVE) message commands.
+   Enabled threading after (K)ill, (CO)py, (RE)ply and (MOVE) commands.
+   Initial beta version for PCB 14.0 compatibility.
+   Changes to speed cursor keys in visual mode.
+   Added time-left display in visual editor.
+   Added ^B(reformat paragraph) visual command.
+   <ENTER> no longer splits lines in 'Overtype' mode.
+   Word motion commands now stop on delimiters other than spaces.
+   Added SCRATCH name prefix to config file and config program.
+   Added original-message-quoting to the visual edit ^O(riginal) function.
+   A sequential number is now assigned to SCRATCH and MAIL files.
+   Added (O)riginal command to redisplay the original message text!
+   This is ^O(riginal) in visual mode.
+   Added ^J(oin lines) and ^P(end of line) visual commands.
+   Initial coding of visual-edit mode during message entry and modification.
+
+
+30-May-88 -----------------
+   Released final code as PRODOR26.ARC.
+
+   Added a check in INSTALL for an over-long prodoor directory name.
+   Added ProPack style buffering to message and index files.
+   Added 'Via' lines to messages entered in proedit/prodoor.
+   Moved ARCM capture tempfile into the playpen directory.
+   Added (UNK)ill command.
+   Eliminated upload description prompt on invalid archives.
+   Allowed '0' as well as 'M' for main board in ARCM function.
+   Updated INSTALL to automatically handle multi-node systems.
+   Changed batch files to use PKARC rather than ARCE/ARCA.
+   Stopped COM port interference when used in LOCAL mode.
+   Invalid uploads are now automatically deleted.
+   Corrected time-left check during non-stop mail reading.
+   Added (J C)onfig and (ARCM C)onfig conference registration function.
+   Added a display during auto join to explain skipped conferences.
+   Enabled command-stacking for LAST CHANCE prompt for one-step downloading.
+   'SCRIPT0' is now used instead of PROBYE.
+   Added $@$ protocol macro to enable dsz's indirect file-list feature.
+   Initial release of PROCONF, the prodoor configuration editor.
+   Combined PROD.CNF, PROCOLOR and PROCTL into a single config file.
+   Implemented GROUP PASSWORD protection in reader (but not for new entry).
+   Updated INSTALL to get defaults from PCBOARD.DAT.
+   Initial release of EXTEDIT, the extended user file editor.
+   Keyboard tabs are now expanded with spaces.
+   Upload byte-credits are now stored permanently for use in prodoor.
+   Changed (V) to view user profile  (including "earned" bytes).
+   New "auto join" of next registered conference after last message is read.
+   Implementated (C)omment message entry.
+   Implemented buffering in most config/data files for faster loading.
+   Corrected elapse-time checking even when commands are keyed-ahead.
+   Enabled command-stacking with VX command.
+   Added month and day to (q)uick mail scan display.
+   Removed (T)hread and (Y)our from (Z)ip starting prompt.
+   Simplified (T)hread and (Y)our mail commands.
+   Disabled 'stack check' code.  Stack checking seems to increase crashing...
+   Rewrote PRONS to take care of dangling interrupt vectors
+   Added (L)ast subcommand in reader to force 'last read' pointer
+   Implemented proper (Q)uick mail scan.
+   Changed (Q)uit to (QU)it.
+   Increased maximum number of ARCM messages to 400.
+   Deleted the cryptic (V)erb subcommand.
+   Implemented new simplified (ARCM) command
+   Added node number to alt-f output file.
+   Added identification banner to mail capture files.
+   Implemented 'make messages private' flags from pcbsetup.
+   Implemented PROCTL data file to control security level and time accounting.
+   Added buffering to archive text-view function.
+   Worked on (J N) function to minimize disk thrashing.
+   Added (ARC), (J)oin, (A)bandon commands to mail command prompt.
+   (J)oin is available at the read mail prompt.
+   Added 'starting message' prompt to V and Z subcommands.
+   Added (M)emory and (RM)ecall subcommands.
+   Added (N)ew and (S)tatus options at (J)oin command prompt.
+   Added new (S)tatus command to display status of all conferences.
+   Added a check for invalid DIR numbers in directory scanner.
+   Added support for up to 36 conferences.
+   The file PROCONF.DAT will be created automatically to track message pointers.  See EXTRA.DOC. The join command now accepts '0' or 'M' to abandon
+   Added PRONEW file which is displayed the first time a user enters the door.
+   Pathnames are automatically stripped in ARC test/rearc, etc. batch files.
+   Added new (V)erbosity subcommand in message reader.
+   Added ARCM command for use with the (V C) mail capture option.
+   Added new files in prodoor directory:  PROCAP, PROARCM, PROARCM.BAT.
+   Included INSTALL utility in beta release file.
+   
+
+16-Mar-88 2.55
+   Made provisions for 2 digit node numbers in scratch filenames.
+   Removed second "download estimate" on single file transfers.
+   Added 'NEWS' command to redisplay conference/main board news file.
+   Implemented 'q' option in Join function to bypass conference news.
+   Changed event logic to detect "possible" events as well as "immediate"
+   events - prevents event time from slipping.
+   Implemented alt-f to toggle debug.out capture.
+   Took out (p)age back function due to lack of interest.
+
+28-Jan-88
+   Packaged for final release.  Released as
+       PROD25S1.ARC   ;The main source files for the door and utilities
+       PROD25S2.ARC   ;The common library files (required part of tool-inc)
+       PROD25S3.ARC   ;Documentation and other supporting files
+       PRODOR25.ARC   ;The main DOOR and supporting files
+       PROINS25.ARC   ;Automatic install for ProDoor
+       PROLIB25.ARC   ;CD-ROM library support files
+       PROEDT25.ARC   ;Message base editor
+       PROKIT25.ARC   ;Door kit for Turbo Pascal 4.0, based on ProDoor
+
+24-Jan-88 beta 54
+   Modified PROECHO to set errorlevel if carrier is lost. Uploads can be
+   aborted with a blank description.
+   Implemented upload logging to DOWNLOAD.TXT.
+   Implemented "drop to dos after each caller" from pcbsetup.
+   Enabled escape codes in message entry.  
+   Added (CO)py to copy a message from one conference to another.  
+   Added a quick archive size test, ARCS.EXE to prevent calling ARCE to test
+   truncated archives.  ARCE /T locks up on some truncated archives.
+   Implemented ALT-I sysop key for file input.
+   Added time-left and expert mode in message reader.
+   Added 'PCBTRAP' driver option for better local display.
+   Uploads are now credited to daily download limit.
+   Added automatic disconnect warning message.
+   Added security level checks on (R), (R E), (R K), (R RE), (TEST), (LIB) and
+   (REARC) functions.
+   Changed 'E'xit command to 'E'nter (use 'Q'uit to return to PCBoard).
+   Fixed 'read flagging' on public messages.
+   Added PROECHO.COM to display message before upload testing.
+   Added (F)ilter toggle to filter out "noise" lines.
+   Added (T)hread, (P)rotect and (U)nprotect commands.
+   Added optional config file PROCOLOR for definition of colors used.
+   Added a check for PROMAIL to optionally disable the read mail section.
+   Enabled some command-stacking in message reader and in ProEdit.
+   Message read yes/no flags are now updated.
+   Added help files for (R)ead and (E)nter submodes.
+   Implemented (Z)ip scan in message reader.  
+   Implemented (K)ill message function.
+   Added working (R)ead messages command.
+   Added (RE)ply and (E)nter message subfunctions.
+   Implemented 'disable high-bit filter' from pcbsetup.
+   Implemented sysop macro keys shift/F1..F10.
+   Added a small TSR to prevent the status line scrolling away during
+   transfers.
+   (VX) skips the list and goes directly to the extract/view prompt.  Added a
+   prompt for automatic testing of uploads.
+   Added node-id to sysop display.
+   Implemented 'disable 5 minute timeout' switch.
+   Converted sources to Turbo Pascal 4.0 format; recompiled into PRODOOR.EXE.
+   This changes your 'prodoor' script.  See READ.ME.
+   Added a new 'LIB' command, which can be used to provide access to a library
+   of CD-ROM disks.   See LIBRARY.DOC for details.
+   Implemented F5 key for sysop shell to DOS.
+   DIR file colorizing is disabled for files with ansi codes in them.
+   PROEXT and LIBHELP message files.  $SCRATCH$ display macro.
+   Added TEST and REARC commands, PROARC and PROTEST message files. PROCTREE
+   automatic sub-subdirectory scanner.
+   Implemented "... NS" on command lines.
+   Added sysop keys: Up, Down, PgUp, PgDn.
+   Added default filename to [f]iles [v]iew and [v]iew text archive.
+   Added fatal error logging to $DOOR.ERR.
+   Added LIB command for automatic access to CD-ROM disks.
+   Added more friendly explanations for erroneous inputs.
+   Added NULL command for non-ibm users.
+   Added parity stripping when in 7E mode in INTERRUPT driver.
+   Added support for complete session logging if 'SET PRODEBUG=ON'.
+   Added [P]age back option to all text file displays.
+   All commands now handle "... ns" for non-stop operation.
+   Automatic support for 19200 bps operation (with /MLK support).
+   Automatically adds color to DIR files.
+   Complete rewrite of color/graphics mode.  Much more colorful.
+   Eliminated all access to PCBTEXT for messages.
+   Handshake driver now operates properly with USR/HST at 19200 bps.
+   Implemented "disable 5 minute keyboard timeout" switch.
+   Implemented DOWNLOAD.TXT logging in PCB 12.1 format.
+   Implemented F5 key for sysop shell to DOS from the door.
+   Removed limits on FSEC, UPSEC, DOORS.DAT data files.
+   Several new message files for enhanced customization.
+   Simplified configuration files; Automatic installation utility.
+   Smart event-start logic prevents missed events.
+   Specific page numbers can be selected in text file displays.
+   Status display does not scroll away during transfers.
+   Support for PCBoard 12.1.  Gateways for RBBS 15.1C and GT 13.00.
+   Unix-style enhanced wildcard support (multiple '*'s allowed).
+   User security level enforcement according to PCBSETUP settings.
+
+16-Oct-87 2.4c
+   Fixed some bugs that crept into the 2.4 release version. Posted as
+   UPD2412.ARC.
+
+28-Sep-87 2.4 Official release
+   Released as PROD2411.ARC and PROD2412.ARC for PCBoard 11.8a and 12.0.  Added
+   automatic interface to pcboard files for [F], [L], [N], [Z], [J], [B]
+   functions.  Added archive view and extract.
+
+24-Jun-87 2.31
+   Beta test version; not released to public.
+
+15-Jun-87 2.3
+   Released as PCBPRO23.ARC.  First fully functional public release.  This
+   release supported the "playpen" concept for safe batch uploading.
+
+20-May-87 2.1, 2.2 beta
+   Beta test version; not released to public.
+
+07-May-87 2.0
+   Rewritten for use under PCBoard 11.8.  Renamed to PCBPRO20 and "PCB ProDOOR
+   2.0".  Not released to public.
+
+Version 2 ----------------------
+
+
+02-May-87 1.12
+   This version was originally released for the GT-Host system. Released as
+   SHSDOORS.ARC (no longer available).
+
+28-Apr-87 1.03 - 1.10
+   Beta test version; not released to public.
+
+26-Apr-87 1.00
+   Initial coding, S.H.Smith.
+
+Version 1 ----------------------
+
+

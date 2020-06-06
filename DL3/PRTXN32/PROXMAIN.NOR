@@ -1,0 +1,38 @@
+;
+; PROXMAIN.(LNG) -ProDoor command translation definition for MAIN command prompt
+;               For ProDoor 3.1 betas of 8/17/89 and later.
+;
+; File format is:
+;       level oldcommand newcommand
+;
+; List higher levels first.  Oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+;display a message for LIB command
+0,LIB," Sorry, we don't have a CD-ROM!
+90,QU,QU
+10,QU," This command is disabled here!
+;
+; Special commands handy in translation:
+;       " rest of line          ;display rest-of-line to user
+;       > rest of line          ;display and LOG rest-of-line
+;       < rest of line          ;LOG rest-of-line but display nothing
+;
+10,BR,W                ;brukerinfo, endre passord etc.
+10,DA,YA               ;meldinger til deg og til A)lle
+10,DI,Y                ;meldinger til deg, personal messages
+10,HA,G                ;ha det,logge av, goodbye
+10,HHU,QQ              ;hurtigere s›k, bare 'hodet'
+10,HU,Q                ;hurtigs›k meldinger, quickscan
+10,K,C                 ;kommentar til sysop
+10,L,R                 ;lese melding
+10,LE,L                ;lete etter filnavn, zip search (locate)
+10,LI,T                ;liste overf›ringsprotokoller
+10,NYHET,NEWS          ;vise NEWS p† nytt
+10,OMPAKK,REPACK       ;pakke om fil i annet format
+10,R,O                 ;rope p† sysop, operator page
+10,S,E                 ;skrive melding , enter message
+10,SI,P                ;sidelengde, page length
+10,SK,SC               ;toggle scan conf
+10,SVAR,REPLY          ;svare melding direkte
+10,ME,FL               ;merke fil for download, Flag

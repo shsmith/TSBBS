@@ -1,0 +1,130 @@
+
+             HOW TO USE THE USENET GATEWAY ON THE TOOL SHOP
+             ==============================================
+
+WHAT IS USENET:
+
+Usenet: a world-wide e-mail network linking many universities, governments,
+businesses and bbs systems such as The Tool Shop. There are, at the time of
+this writing, over 4,000 newgroups, (read newsgroup as 'Conference'),
+covering just about any conceivable subject in the universe.
+
+The _MAJOR_ difference in E-mail on Usenet as compared to the average BBS
+is that in the newsgroups, all mail is public and is always addressed to
+'ALL'. Do not post in a newgroup unless it TRULY WILL BE OF INTEREST TO
+EVERYONE READING THAT NEWSGROUP!  You message goes to every single usenet
+site carrying that newgroup around the world!  Usenet administration gets
+very upset if messages are posted which are not of general interest to all
+those reading the newsgroup.  If you wish to reply to an individual who has
+posted, send your message via the ROSENET/INTERNET GATEWAY.
+
+The following instructions only apply to conferences that are part of the
+Usenet network.
+
+On The Tool Shop there is a conference that is of particular importance when
+using the Usenet Gateway:
+
+    - Conference 42 [UnixUseNet] is the Usenet Gateway support conference and
+      is where any questions or comments regarding the use of the gateway
+      should be placed.  Everyone using the Usenet news groups should add
+      Conf. #42 to their offline mail packets.
+
+Also note that, on The Tool Shop, the Usenet conferences are available only to
+those who are using the RoseMail/RoseReader combination, the reason for this
+is the ever present need/temptation to correspond with an "individual" and
+that cannot properly be done in Usenet news Groups, but it can be done with
+Internet E-Mail, hence the need for Rosemail/RoseReader. The RoseReader
+offline mail reader is available to all Tool Shop Members at the top of File
+Area 8, it handles the Usenet news groups just fine and, when used with the
+RoseMail door, has the added advantage of providing the Internet E-Mail.  A
+"Tool Shop specific" version of RoseReader is available for a free trial to
+all Tool Shop Members.  Just go into Door 1 and type 'REG'. If you select the
+'free' Key, you would fill out the application and within hours your E-mail
+Key will be here waiting for you.  If you decide you want the 'Platinum'
+version which will unlock all the enhanced features such as file transfers,
+magazines, and 'unattended' mode operation, you would call back in four to
+five working days, go into Door 1 and type 'KEY'. Your Platinum Key will be
+sent via a download to you.  Note: some of these enhanced features are not yet
+available on the network, but may be in the future.
+
+When sending messages remember that Usenet is a global network, and as a
+result take into the consideration the cost of echoing your message around
+the world.  If your message is only of interest to a specific person then
+send that person a private message via Internet. Remember that all private
+e-mail, both incoming and outgoing, is via the Rosenet/Internet gateways.
+If your reply is of general interest then send a public message, but please
+think about the quoting of the previous message, delete any of the quoting
+that is not relevant to your reply. Keep quotes AS BRIEF AS POSSIBLE!
+
+Your address on The Tool Shop is first.last@rose.com  where the 'first' and
+'last' are the names you use to logon to The Tool Shop.  Your address is
+automatically added on to all your outgoing mail by the Usenet Gateway.
+
+
+IMPORTANT NOTICE:  Members of The Tool Shop are not allowed to access or join
+                   list servers, mail-servers, mailing lists or request
+                   files from FTP sites. Use of these services can overload
+                   the gateway and can result in the termination of your
+                   membership without refund, (that's what happens to The
+                   Tool Shop itself if we don't pay attention to this), there
+                   are plans to make these sevices available at extra cost,
+                   but that will not happen for a while yet.
+
+     List-server / Mailing List : These are automatic programs running
+     at another computer site.  When you subscribe to the list-server, any
+     mail that is sent to the list-server (mailing list) will be broadcast
+     with a copy of each message being mailed to each person on the
+     subscription list.  The result could be many copies of the same
+     messages to be brought onto a system (such as Rose).
+
+     Mail-server : This is an automatic program that will take requests for
+     file(s) and send the file(s) as personal mail to the person requesting
+     the file(s).  This again is a problem when it comes to overloading a
+     system with personal mail.
+
+
+    If you are sending mail to someone on Compuserve, you would put the
+    person's Compuserve identification code in the 'name' field so it
+    would look like the following:
+
+                       To: 70511.1234@compuserve.com
+
+    Compuserve ID's use commas between the numbers above. It is
+    _EXTREMELY_ important you change the comma to a period as in the
+    example above. If you don't, your message will be sucked into a
+    black hole!
+
+
+HOW TO SEND A PUBLIC MESSAGE IN A USENET CONFERENCE:
+
+1.  Make sure you are in the conference you wish your message to appear in
+    and that your message REALLY IS OF INTEREST TO ALL.
+
+2.  Address your message to ALL
+
+3.  Preface your subject with UN: , thus if your subject was TEST then you
+    would put UN: TEST in the subject field.
+
+4.  Enter your message as you normally would starting on line 1.
+
+Below is an example of a public message:
+
+==========================================================================
+To:   ALL
+From: JOHN SMITH
+Subj: UN: Example Message          Conf:    345 OS2Misc
+--------------------------------------------------------------------------
+This is an example (using the comp.os.os2.misc newsgroup) of how to 
+send a public message via Usenet.  All you would have to do is make 
+sure that you change the conference number to match the conference you 
+want to put your message in.
+---
+ þ RoseReader 1.73 P001001: For total connection, Use Net.
+                                                                                                                       
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Note that it is important that you place the message in the conference 
+you want it to appear in.
+
+The space after the UN: is VERY important.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

@@ -1,0 +1,123 @@
+
+
+
+                   TPTC - Turbo Pascal to C translator
+                         Version 1.7a, 30-Mar-88
+
+           Copyright 1988 Samuel H. Smith; ALL RIGHTS RESERVED
+
+
+        These files are distributed under the SourceWare concept.
+       Do not distribute modified versions without my permission.
+            Do not use any of this in a commercial product.
+        Do not remove this notice or any other copyright notice.
+
+
+
+
+Tptc is delivered in three archives:
+
+TPTC17.ARC      87574  05-03-88  Translate Pascal to C.  Exe+DOC files.   v1.7B
+        This is the main distribution archive.  It contains the
+        translator, documentation and a few supporting files. See
+        HISTORY.DOC for the revision history, including changes since
+        the manual was last updated.  See TODO.DOC for a list of changes
+        that are planned in the near future.
+                      
+TPTC17SC.ARC    87870  05-03-88  Full Source Code for TPTC.  SourceWare.  v1.7B
+        This is the complete source code for TPTC.  This is distributed
+        under the SourceWare concept.  See the file LICENSE.DOC for
+        details.
+           
+TPTC17TC.ARC    46765  05-03-88  A number of Test Cases for TPTC.         v1.7B
+        This archive contains a number of "test cases" used to verify
+        the operation of TPTC.  New test cases are added as the
+        translator development proceeds.
+           
+
+
+
+
+
+
+                               DISCLAIMER
+                               ==========
+
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR
+     FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+
+
+
+
+
+
+
+
+  ----------------
+     Turbo Pascal is a registered trademark of Borland International.
+
+
+                                 LICENSE
+                                 =======
+   SourceWare: What is it?
+   -----------------------
+   SourceWare is my name for a unique concept in user supported 
+   software. 
+   
+   Programs distributed under the SourceWare concept always offer
+   complete source code. 
+
+   This package can be freely distributed so long as it is not  modified
+   or sold for profit.  If you find that this program is  valuable,  you
+   can send me a donation for what you think it is  worth.  I suggest
+   about $20.  The donation is manditory if you are using this program 
+   in a comercial setting.
+
+   Send your contributions to:
+      Samuel. H. Smith
+      5119 N. 11 ave 332
+      Phoenix, Az 85013
+
+
+   Why SourceWare?
+   ---------------
+   Why do I include source code?   The value of good software should be
+   self-evident.   The source code is the key to complete understanding
+   of a  program.  You can read it to find out how things are done.  You
+   can also change it to suit your needs, so long as you do not 
+   distribute the modified version without my consent. 
+
+
+   Copyright
+   ---------
+   If you modify this program, I would appreciate a copy of the  new
+   source code.   I am holding the copyright on the source  code, so
+   please don't delete my name from the program files or  from the
+   documentation. 
+
+
+                                 SUPPORT
+                                 =======
+
+   I work very hard to produce a software package of the highest 
+   quality and functionality.  I try to look into all reported  bugs,
+   and will generally fix reported problems within a few  days.  
+
+   Since this is user supported software under the SourceWare  concept, 
+   I don't expect you to contribute if you don't like it  or if it
+   doesn't meet your needs. 
+
+   If you have any questions, bugs, or suggestions, please contact  me
+   at: 
+       The Tool Shop BBS
+        (602) 279-2673
+
+   The latest version is always available for downloading. 
+
+   Enjoy!     Samuel H. Smith
+              Author and Sysop of The Tool Shop.
+

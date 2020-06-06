@@ -1,0 +1,28 @@
+
+   The only way we could get these programs to run AT ALL was to put
+them in front of ProLogon in the BOARD.BAT.  That caused yet ANOTHER
+problem ... every time the Board.bat cycled, even between doors, all
+these programs were being run.  The programs worked correctly, but
+our concern is the additional, unnecessary time to recycle.
+
+   Our solution was to make a single change to your RECYCLE source
+and change the BOARD.bat so that those programs will ONLY be run
+between callers.  We took part of your advice to Ray Waltz and us
+to make a change to our programs (but we don't even want them to
+be CALLED unless the caller's offline) by having them look at the
+PCBOARD.SYS to see if it's empty, a step further and changed
+your recycle to reflect an errorlevel of 2 if the PCBOARD.SYS is
+empty.  We grouped all our between-caller programs into a label
+(:maint) and placed it just prior to :runpcb and inserted the line
+        IF ERRORLEVEL 2 GOTO MAINT
+just prior to the existing line; if errorlevel 1 goto runpcb.
+
+   Now all works well and we're not cluttering up EVERY recycle of
+the board.bat.  We've uploaded our board.bat and the altered source
+of your RECYCLE in a file called RERECYCLE.zip, if you care to peek.
+
+Wow! I'm long-winded tonight!  Thanks for listening, Sam!
+
+Don and Lana
+---
+ * Via ProEdit 3.0R  Modem Zone * Home of InstaReg * Middletown, OH

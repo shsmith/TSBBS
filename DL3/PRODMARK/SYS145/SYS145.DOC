@@ -1,0 +1,22 @@
+This program, when run in the directory containing your PCBOARD.SYS,
+will read in the PCBOARD.SYS from your Prologon/Prodoor 14.2 format,
+and a small .dat file SYS145.DAT, and will overwrite PCBOARD.SYS with
+a new one in the PCB 14.5 format needed for some doors to operate.
+
+This was written to use the FV (File View) program as a door off of Prodoor.
+It may or may not help with your needs.
+
+This program is freeware.
+
+I would suggest keeping your original PCBOARD.SYS in tact, so I use
+the batch file to do this:
+
+copy PCBOARD.SYS PCBOARD.BAK
+SYS145
+cd\doorsdir
+doorprg
+cd\pcb
+del PCBOARD.SYS
+ren PCBOARD.BAK PCBOARD.SYS
+board
+

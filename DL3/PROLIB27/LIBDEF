@@ -1,0 +1,18 @@
+;prodoor definition file for cd-rom library
+;file format:  <hi disk code> <cd-rom prefix for codes upto hicode>
+;              no leading or extra spaces allowed.
+;                       modified for PC-SIG 4-88 high-sierra format
+9 \001_100\disk000
+99 \001_100\disk00
+100 \001_100\disk0
+200 \101_200\disk0
+300 \201_300\disk0
+400 \301_400\disk0
+500 \401_500\disk0
+600 \501_600\disk0
+700 \601_700\disk0
+800 \701_800\disk0
+900 \801_900\disk0
+999 \901_1000\DISK0
+1000 \901_1000\disk
+

@@ -1,0 +1,83 @@
+
+(*
+ * Bufio - Buffered File I/O Unit (3-1-89)
+ *
+ * This unit provides both read and write buffering on block oriented
+ * random-access files.  It is optimized for sequential reads or writes,
+ * but will function properly with fully random files.
+ *
+ *)
+
+unit BufIO;
+
+interface
+   uses DosMem, MdosIO, debugs;
+
+   const
+      maxbufsiz = $FE00;         {largest file buffer to allocate}
+
+   type
+      bufarray = array[0..maxbufsiz] of char;
+
+      buffered_file = record     {buffered file description record}
+         pathname:   dos_filename;  {full name of the file}
+         handle:     dos_handle; {handle for dos calls}
+         maxrec:     word;       {maximum number of records}
+         recsiz:     word;       {record size}
+         bufsiz:     word;       {size of the data buffer}
+         buffer:     ^bufarray;  {the data buffer}
+         fptr:       word;       {base record in file for buffer}
+         fnext:      word;       {next record position in buffer (0=first)}
+         fcount:     word;       {count of records in buffer}
+         dirty:      boolean;    {unsaved changes in buffer?}
+         reverse:    boolean;    {reading backwards?}
+      end;
+
+
+   var
+      berr: boolean;       {true if buffered read or write fails}
+
+
+   procedure bcreate(name:    dos_filename);
+      {create an empty file; use with bopen to open output files}
+
+   procedure bprepare(var bfd:   buffered_file;
+                      fd:        dos_handle;
+                      maxrecn:   word;
+                      recsize:   word);
+      {enable buffering on an already open dos_handle}
+
+   procedure bopen(var bfd:   buffered_file; {file variable}
+                   name:      dos_filename;  {name of file}
+                   maxrecn:   word;          {number of records to buffer}
+                   recsize:   word);         {size of each record}
+      {open a buffered file}                 {sets 'bErr' if not ok}
+
+   procedure bflush(var bfd:  buffered_file);
+      {write buffer, force re-read on next access}
+      
+   procedure bseek(var bfd:   buffered_file;
+                   recn:      word);
+      {set position of buffered file}
+   
+   procedure bseekeof(var bfd:   buffered_file);
+      {set position of buffered file to end-of-file}
+   
+   function btell(var bfd:    buffered_file): word;
+      {tell current record number in buffered file}
+
+   function beof(var bfd:     buffered_file): boolean;
+      {check for eof on buffered file}
+
+   procedure bread(var bfd:   buffered_file;
+                   var dest);
+      {buffered read}
+   
+   procedure bwrite(var bfd:   buffered_file;
+                    var src);
+      {buffered write}
+
+   procedure bclose(var bfd:  buffered_file);
+      {close a buffered file}
+
+implementation

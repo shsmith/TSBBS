@@ -1,0 +1,10 @@
+type
+  single    = array[0..3] of byte;
+function stof(B: single): real;
+   {convert 4 byte single to real}
+procedure ftos(PasReal: real; var B: single);
+   {convert real to 4 byte single}
+function stol(s: single): longint;
+procedure incs(var s: single; n: real);
+procedure ltos(l: longint; var B: single);
+procedure zeros(var B: single);

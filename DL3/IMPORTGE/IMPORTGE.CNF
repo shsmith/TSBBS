@@ -1,0 +1,58 @@
+
+;
+; Configuration file for UNARCM 2/6/89
+;
+
+post all                ;post all messages, even if not "echo" messages
+
+;
+; To prevent message duplication, all messages containing your own
+; system identifier will excluded from the ARCM packet.
+; The exclude statement can also be used to exclude unwanted user names
+; or subject matter.  Up to 40 exclude statements are allowed.
+;
+exclude Origin: The East           ;exclude CFB echos
+exclude Origin: The British        ;exclude CFB echos
+exclude Origin: British        ;exclude CFB echos
+exclude From: DON MADSON       ;exclude CFB echos
+exclude ==[ North Coast        ;exclude CFB echos
+exclude PORTED FROM THE xCFB's =>
+;
+; Rename the host's SYSOP messages for the proper name of the sysop.
+;
+rename J.SHIFRIN, Jerry Shifrin
+rename D.RUFFER [DENNIS], Dennis Ruffer
+rename D.RUFFER, Dennis Ruffer
+rename GARY-S [GARY], Gary Smith
+rename S.W.SQUIRES [SCOTT], Scott Squires
+rename M.TRACY, MARTIN TRACY
+rename L.BROTZMAN, LEE BROTZMAN
+rename FIGCHAPTERS [JACK WOEHR], JACK WOEHR
+rename DANMILLER, DAN MILLER
+rename J.BROWN11, JACK BROWN
+rename NMORGENSTERN [LEONARD], LEONARD MORGENSTERN
+
+origin GEnie and the Forth Interest Group
+
+;
+; Each convert line specifies the imported conference name, a comma,
+; and the local conference name in which the messages are to be posted.
+; No conversion is needed if your conference names exactly match those
+; found in the ARCM packet.   Up to 100 convert statements are allowed.
+;
+convert 1,         GEnie
+convert 2,         GEnie
+convert 3,         GEnie
+convert 4,         GEnie
+convert 5,         GEnie
+convert 6,         GEnie
+convert 7,         GEnie
+convert 8,         GEnie
+convert 9,         GEnie
+convert 10,        GEnie
+convert 11,        GEnie
+convert 12,        GEnie
+convert 13,        GEnie
+convert 14,        GEnie
+convert 15,        GEnie
+

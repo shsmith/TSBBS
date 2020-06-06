@@ -1,0 +1,1 @@
+function atof (asc:           anystring): real;

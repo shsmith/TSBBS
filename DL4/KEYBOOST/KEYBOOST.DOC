@@ -1,0 +1,29 @@
+
+KeyBoost - Keyboard booster and clicker  (S.H.Smith, 15-Aug-86)
+           Public domain material.  Personal use only.
+
+This program attaches to the keyboard interrupt.  It can improve the
+responsiveness and speed of the keyboard.  It also adds a keyclick
+so you can tell when the keyboard is repeating.
+
+
+Usage:  KeyBoost RESPONSE SPEED CLICK
+
+Where:  RESPONSE is A-Z   (A=no repeat, B=fastest, Z=slowest)
+        SPEED    is A-Z   (A=fastest, Z=slowest)
+        CLICK    is A-Z   (A=none, B=short, Z=long)
+
+Examples:
+   KeyBoost D A G         This command gives a very quick response (A),
+                          fast repeats (A), and a medium keyclick (G).
+
+   KeyBoost N B B         This command gives fast response (N), normal
+                          repeats (B), and a short keyclick (B).
+
+   KeyBoost N B A         This command gives fast response (N), normal
+                          repeats (B), and no keyclick (A).
+
+   KeyBoost V B G         This command gives normal response (V),
+                          normal repeats (B), and medium keyclick (G).
+
+

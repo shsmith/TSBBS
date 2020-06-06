@@ -1,0 +1,11 @@
+
+149k or 42.09% free, out of 354k total disk space
+Total of 205k used by 12 files in *.*
+
+ getfiles.inc   4k  12-Jan-86 1310      outline.pas    4k  12-Jan-86 1828     
+ makelib.bat    1k  12-Jan-86 1646      outline.prn   14k  12-Jan-86 1852     
+ outedit.inc   13k  12-Jan-86 1637      outln11.lbr   38k  12-Jan-86 1649     
+ outfiles.inc  19k  12-Jan-86 1845      outmisc.inc   12k  12-Jan-86 1831     
+ outline.com   26k  12-Jan-86 1846      regpack.inc    1k  12-Jan-86  709     
+ outline.lbr   63k  12-Jan-86 1647     
+ outline.olf   10k  12-Jan-86 1852     

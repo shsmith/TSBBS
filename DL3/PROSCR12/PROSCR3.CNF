@@ -1,0 +1,15 @@
+INTERRUPT
+l:\pcb\gen\script3
+l:\pcb\main\answer3
+0
+
+----------------------------------
+ProScrip Configuration File Format:
+
+line 1 = Driver type (INTERRUPT, BIOS, PCBTRAP)
+line 2 = Script Questionnaire Filename
+line 3 = Script Answer Filename
+line 4 = New security level after answering script (0=keep same level)
+         note: will only change lower levels to this one, will never
+         lower the level.
+

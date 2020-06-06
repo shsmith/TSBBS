@@ -1,0 +1,71 @@
+
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                        IN ULTRABBS VERSION 2.08
+
+     Please refer to the UltraBBS manual for detailed information on
+     installation of external protocols.  This information was tested
+     with HS/Link betas posted on 11/21/91 and UltraBBS version 2.08.
+
+     The following installation steps should work for most folks:
+
+     Place a copy of HSLINK.EXE and the provided HS.BAT file in your
+     main C:\UBBS directory.
+
+     Run SETUP.EXE and cursor down to EDIT CURRENT PROTOCOLS FILE and
+     press enter.
+
+     Press ALT-I to insert a new protocol.
+
+     For "Letter:" enter "H".
+     For "Name:" enter "HS/Link"
+     For "Type:" enter "B"
+     For "@ Support?" enter "Y"
+     For "DSZ.LOG?" enter "Y"
+     For "Download/Bidir BAT file" enter "HS.BAT"
+     For "Upload BAT file" enter "HS.BAT"
+
+     Exit the setup program.
+
+     This should get you set up in under 10 minutes.
+
+     You can edit the 'HS.BAT' batch file to include options on the
+     HSLINK command line, but most folks won't need to change anything.
+     If your system does not use the standard C:\UBBS\BATCH batch upload
+     directory, you will need to edit both batch files and change
+     references to C:\UBBS\BATCH to whatever is used in your
+     installation.
+
+     If your system can't keep up with the COM port while accessing the
+     disk drive, you may want to add -HS to both lines.  If you want to
+     experiment, there are a number of optional parameters you can read
+     about in HSLINK.DOC and HSLINK.NEW.
+
+     Contents of HS.BAT
+     ------------------
+        rem HSLINK UPLOAD/DOWNLOAD UNDER ULTRABBS 2.08
+        hslink -p%1 -hs @%3 -uC:\UBBS\BATCH
+
+     When testing UltraBBS version 2.08 in this configuration I found
+     that the last file in a download batch was never actually included
+     in the batch.  This appears to be a bug in UBBS, which may be
+     corrected in later versions.
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with UltraBBS and with HS/Link.  If all else fails, call up the
+     Tool Shop and ask for help on the Support Conference.  Either I
+     will help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-3772    US Robotics HST 9600    Contributors only
+       (818) 891-1344    Hayes-V series 9600     Contributors only
+       (818) 891-6780    US Robotics 2400        Free to all
+

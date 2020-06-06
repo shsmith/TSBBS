@@ -1,0 +1,7 @@
+procedure prepare_line(var line: string);
+procedure prepare_protocol_table;
+procedure remove_variables(var line: string);
+
+const
+   delete_variables: boolean = false;
+

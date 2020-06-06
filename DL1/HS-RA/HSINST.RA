@@ -1,0 +1,30 @@
+
+                        -=-=-=-=-=-=-=-=-=-=-=-=-
+                          Hilfe zur Installation
+                           von HS/Link unter RA
+                        -=-=-=-=-=-=-=-=-=-=-=-=-
+
+Im DOS folgendes eingeben:
+SET DSZLOG=<RA-Pfad>DSZLOG.LOG
+
+Im RaConfig unter External Protocols Setup folgendes eingeben:
+Name..............HS/Link
+Key...............H
+Ext ctl file......No
+Batch.............Yes
+Status............Always available
+Log file..........<RA-Pfad>DSZLOG.LOG
+Ctl file..........<RA-Pfad>HSLINK.CTL
+DL command line...HSLINK.EXE -E<baud-rate> -P<com-port> @<RA-Pfad>HSLINK.CTL
+UL command line...HSLINK.EXE -E<baud-rate> -P<com-port> -U<BBS-Uploads-Pfad>
+DL ctl string.....@
+UL ctl string.....
+DL log keyword....h
+UL log keyword....H
+Log name word.....10
+Log name descr....0
+
+Ich hoffe, das hilft vielen Sysops weiter. Bei Fragen, Netmail an Manuel Wenger
+@Fidonet 2:302/6.15.
+
+(c)1991 by Manuel Wenger

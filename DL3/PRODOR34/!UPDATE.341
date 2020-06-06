@@ -1,0 +1,53 @@
+<!UPDATE.341>
+
+Release notes for ProDoor 3.41                          05-08-91
+==============================
+
+ProDoor 3.41 is a minor release fixing known bugs in ProDoor 3.40.
+
+This version does not include a new manual, and does not require and
+data or configuration file changes compared to prodoor 3.40.
+
+Please read !PRODOOR.NEW for details on exactly what's been changed.
+
+
+Installation
+------------
+
+Install PRODOR34.ZIP as instructed in the enclosed documentation.
+
+Then replace the PRODOOR.EXE file with the new one provided in PROD341.ZIP.
+
+All file formats of ProDoor 3.4 are still recognized; no file
+conversions or changes are required.
+
+Additional changes are required in your PRODOOR doorfile for operation
+with doors using DOORS.SYS or USERS.SYS files.  Use the provided
+PRODOOR.INS and PRODOOR files.
+
+The correction involves the replacement of
+   rem call up pcb145 on return from new style doors
+   if exist users.sys pcb145/key:open;prodoor^M
+   if exist door.sys pcb145/key:open;prodoor^M
+
+with
+   rem call up pcb145 on return from new style doors
+   if exist users.sys goto return145
+   if exist door.sys goto return145
+
+and the addition of
+   :return145
+   echo  >$door.bat pcb145/key:open;prodoor^M
+   echo >>$door.bat door
+   $door
+
+to the end of the PRODOOR doorfile.
+
+
+Optional Files
+--------------
+
+The overlay version of ProDoor 3.41 is posted as PROD341O.ZIP.
+
+
+

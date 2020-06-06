@@ -1,0 +1,7 @@
+echo off
+rem pcboard door script for LOTTERY demo program
+cd \pro
+prolot prolot.cnf c:\pcb2
+cd \pcb2
+if exist event.bat event
+board

@@ -1,0 +1,200 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                            Lang-"ADA" Source Code
+                        58 files using 1,528,652 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+03017.ZIP      181968  11-30-93  ADA 9X Language Mapping Document Proposes
+                               | '9X' revisions to the original Ada 83
+                               | language definition, allowing object oriented
+                               | programming and relaxing many limitations of
+                               | the original language.
+                               | Download Count: 3    Last Download: 12-17-93
+                               |
+3405-2.ZIP       2977  07-27-87  DOD mandate for exclusive use of ADA language
+                               | Download Count: 0
+                               |
+ABKS0108.ZIP    40346  08-14-94  This flyer is intended to be a comprehensive
+                               | list of Ada-related books that have been
+                               | published. Abstracts are provided for those
+                               | books that are part of the Ada Joint Program
+                               | Office library. Files: 5 Newest: 12/3/92
+                               | Oldest: 10/1/91
+                               | Download Count: 3    Last Download: 08-21-94
+                               |
+ADA-RATL.ZIP   266530  04-24-88  Rational for the Design of the Ada Language
+                               | Download Count: 0
+                               |
+ADA-TUTR.ZIP   162433  03-25-88  ADA Tutor, very nice Tutorial (500 examples)!
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+ADA-USE.ZIP     14036  09-01-87  Summary of who's using ADA and for what
+                               | Download Count: 3    Last Download: 01-24-96
+                               |
+ADABOOKS.ZIP    23060  07-27-87  Overviews of several good books on ADA
+                               | Download Count: 0
+                               |
+ADALIB.ZIP      18718  08-11-86  Some libraries for J/ADA (source+doc)
+                               | Download Count: 0
+                               |
+ADAMAKE.ZIP     54952  07-07-88  A Project Make Utility in Janus/Ada 2.0.1
+                               | Also includes a number of handy Ada packages
+                               | in source form.
+                               | Download Count: 0
+                               |
+ADAMENU2.ZIP    17126  02-17-88  A menu system for validated j/ada
+                               | Download Count: 0
+                               |
+ADATODAY.ZIP     8844  02-21-88  December 87 issue of Ada Today newsletter
+                               | Download Count: 0
+                               |
+ADAVARS.ZIP     13196  03-15-90  Lists ADA variables & corresp. line# ocurranc
+                               | Download Count: 0
+                               |
+ADAXREF.ZIP     12371  11-11-86  ADA Cross Reference Utility/ ADA source
+                               | Download Count: 0
+                               |
+AF-POL.ZIP       4551  07-27-87  Air Force policy statement on ADA language
+                               | Download Count: 0
+                               |
+ANLE.ZIP        46514  09-04-85  ANLE - A Nice Little Editor. Full source code
+                               | and documentation. (The code is for an
+                               | ancient version of Janus/Ada - It needs work)
+                               | Download Count: 0
+                               |
+ASR-PC.ZIP       4341  05-30-88  Ada Software Repository; $10 for MS-DOS disks
+                               | Download Count: 1    Last Download: 09-18-93
+                               |
+AUGUSTA.ZIP     36648  01-07-86  An ADA subset compiler and interpreter w/src
+                               | Download Count: 4    Last Download: 12-17-94
+                               |
+AVALID.ZIP       1752  04-24-88  Notes on Ada validation process
+                               | Download Count: 0
+                               |
+CMDLINE.ZIP      3706  05-07-88  J/ADA Command Line Interface Package
+                               | Download Count: 0
+                               |
+CREASE50.ZIP    51585  08-17-88  Catalog of Resources for Education in Ada and
+                               | Software Engineering (CREASE) April 1988
+                               | edition.
+                               | Download Count: 0
+                               |
+EXCEPTNS.ZIP     2242  09-06-88  How to raise Ada exceptions from ASM language
+                               | Download Count: 1    Last Download: 04-17-93
+                               |
+FILEOPS.ZIP      5458  07-29-88  Much better than standard Ada SEQUENTIAL_IO
+                               | or DIRECT_IO packages. Includes ASM source.
+                               | For Janus/Ada 2.0.x
+                               | Download Count: 0
+                               |
+FOUREA.ZIP       1609  04-24-88  Fast Fourier package in Ada
+                               | Download Count: 1    Last Download: 11-05-93
+                               |
+FRACTAL.ZIP     44908  08-31-88  Fractals in Ada - CGA required; with source
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+GLOSSARY.ZIP     8600  06-01-87  Glossary of ADA related terms
+                               | Download Count: 0
+                               |
+GRAMMAR.ZIP      8214  01-14-87  LALR grammar for the ANSI Ada language
+                               | Download Count: 0
+                               |
+JEXPERT.ZIP     12077  06-24-87  J/ADA Expert system
+                               | Download Count: 0
+                               |
+JGRAP.ZIP       11306  11-04-86  J/ADA Graphics package
+                               | Download Count: 0
+                               |
+JLISP.ZIP       12972  05-04-86  J/ADA Lisp interpreter
+                               | Download Count: 3    Last Download: 11-14-94
+                               |
+JMANUALX.ZIP    11275  02-13-88  J/ADA Manual Appendix for Ada extensions
+                               | Download Count: 0
+                               |
+JOBJECT.ZIP     34919  01-07-88  J/ADA Object files for GRAP and WINDOWS
+                               | Download Count: 0
+                               |
+JROMINT.ZIP      2200  02-13-88  J/ADA Rom Interrupt access package
+                               | Download Count: 0
+                               |
+JWINDOWS.ZIP    19467  12-29-87  J/ADA Window management package
+                               | Download Count: 0
+                               |
+LRM-01.ZIP      10822  02-05-87  Ada language ref. Chapter 1
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-02.ZIP       9182  02-05-87  Ada language ref. Chapter 2
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-03.ZIP      35773  02-05-87  Ada language ref. Chapter 3
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-04.ZIP      25764  02-05-87  Ada language ref. Chapter 4
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-05.ZIP      10397  02-05-87  ADA Language Reference Chapter 5
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-06.ZIP      12095  02-05-87  ADA Language Reference Manual, chapter 6
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-07.ZIP      12229  02-05-87  ADA Language Reference Manual, chapter 7
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-08.ZIP      12961  02-05-87  ADA Language Reference Manual, chapter 8
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-09.ZIP      18032  02-06-87  ADA Language Reference Manual, chapter 9
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-10.ZIP      10800  02-05-87  Ada Language Reference Manual, Chapter 10
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-11.ZIP      11596  02-05-87  Ada Language Reference Manual, Chapter 11
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-12.ZIP      12657  02-05-87  Ada Language Reference Manual, Chapter 12
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-13.ZIP      12972  02-05-87  Ada Language Reference Manual, Chapter 13
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-14.ZIP      22782  02-05-87  Ada Language Reference Manual, Last Chapter!
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM-READ.ZIP      515  02-06-87  Ada language ref. Read-me-first
+                               | Download Count: 0
+                               |
+LRM-TOC.ZIP      2570  02-06-87  Ada language ref. Table of contents
+                               | Download Count: 1    Last Download: 12-17-94
+                               |
+LRM.ZIP          1479  02-12-87  Notes on the language reference manual
+                               | Download Count: 0
+                               |
+MA360Z.ZIP       3954  07-09-91  ADA generic FFT routine from EDN magazine.
+                               | Download Count: 0
+                               |
+MAKEDEF.ZIP       815  07-14-88  A slight correction for ADAMAKE.ARC
+                               | Download Count: 0
+                               |
+MANPOWER.ZIP    24027  05-26-88  J/ADA Manpower Estimate Generator
+                               | Download Count: 0
+                               |
+PD-ADA.ZIP      97632  05-03-86  Some PD ada packages (COMM, GRAPH, DOS, etc)
+                               | Download Count: 1    Last Download: 09-30-93
+                               |
+POLYSORT.ZIP     8768  12-29-87  Mult-file polysort in J/ADA
+                               | Download Count: 0
+                               |
+TITLE-3.ZIP     15214  12-21-87  Ada Program Support Environment description
+                               | Download Count: 0
+                               |
+VAL-COMP.ZIP    10713  02-20-88  Latest list of Validated ADA Compilers
+                               | Download Count: 3    Last Download: 10-08-94
+                               |
+WHETSTON.ZIP     4002  02-13-88  System/Compiler benchmark in ADA
+                               | Download Count: 2    Last Download: 02-19-96
+                               |

@@ -1,0 +1,72 @@
+                                                                            
+   ÛÛÛÛßßßßßßßßßßßßß          ÛÛÛßßßßßßß           ÛÛÛÛßßßßßßßßßß            
+                                                                             
+   ÛÛÛÛßßßßßßßßßßßßß      ÛÛÛÛßßßßßßßßßßßßßß       ÛÛÛÛßßßßßßßßßßßßßßß       
+                                                                             
+   ÛÛÛÛßßßßßßßßßßßßß    ÛÛÛÛßßßßßßßßßßßßßßßßßßß    ÛÛÛÛßßßßßßßßßßßßßßßß      
+                                                                             
+   ÛÛÛÛßßßßßßßßßßßßß    ÛÛÛÛßßßßßßßßßßßßßßßßßßß    ÛÛÛÛßßßßßßßßßßß           
+                                                                             
+   ÛÛÛÛßßßßßßßßßßßßß      ÛÛÛÛßßßßßßßßßßßßßß       ÛÛÛÛßßßßßßßßßßßßß         
+                                                                             
+   ßßßßßßßßßßßßßßßßß          ßßßßßßßßßß           ßßßßßßßßßßßßßßßßßßßß      
+
+                      -=   TimeBack v1.o for Prodoor    =-
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  I. Credits:       ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Written by: Party Animal [ECR/KHT]
+Documentation by: Ruff Rider [DM/UTG/MTA]
+Special Thanx to: Me, Black Rider, Jurgen, Party Animal
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  II Introduction:  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+    
+    Simply put it, PRODOOR doesnt give time back for Bi-Directional Uploads.     
+This simple door is ran from a hslink download batch file to give users
+there time back that they deserve. It looks at the DSZLOG to check if
+a Bi-Directional upload takes place and gives time back accordingly.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ III Quick Docs     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+TIMEBACK.CNF
+
+INTERRUPT
+C:\PROD\HSLINK.LOG
+2
+
+Line 1: Leave as is
+Line 2: DSZLOG
+Line 3: TimeBack Factor ie 2 times
+
+Sample batch file ( Also Included in the Archive)
+
+[PROD.CNF] Protocol Setup
+
+Hslink v1.20 Release°°°°°°°°°°        H     T       50      0.95     N
+Cmd line: %comspec% /c hsk-dl -p$N$ -u$PLAY$ $@$ -I2 -K -NV -NM -R
+
+[HSK-DL.BAT]
+
+HSLINK  %1 %2 %3 %4 %5 %6 %7 %8 %9 -LF%PCBDRIVE%%PCBDIR%\$DOOR.LOG -NO%PCBDRIVE%\HSLINK.DUP
+for %%f in (G:\PLAY%NODE%\*.*) do call hsktime %%f
+
+[HSKTIME.BAT]
+REM Diffrent TIMEBACK.CNF for each node
+TIMEBACK G:%PCBDIR%\TIMEBACK.CNF %PCBDIR% %1
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ IV Hints           ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+
+SET Statements must be used to be able to use the %XXXX% variables.
+Without set statements please use the actual Directories, and Node #.
+
+For Further information on TIMEBACK see sample batch files .
+
+

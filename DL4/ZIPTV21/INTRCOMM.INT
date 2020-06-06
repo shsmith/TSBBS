@@ -1,0 +1,194 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+const
+   carrier_lost = #$E3;              (* code returned with carrier is lost *)
+
+   com_chan:     integer = 0;   (* current communication channel, 0=none *)
+
+   port_base:    integer = -1;  (* base port number for 8250 chip *)
+                                (* value = -1 until init is finished *)
+
+   port_irq:     integer = -1;  (* port irq number *)
+
+   old_vector:   pointer = nil; (* pointer to original com interrupt handler *)
+   
+   XOFF_char:    char = ^S;     (* XOFF character code *)
+
+   disable_cts_check: boolean = false; {false if RTS handshake is needed}
+
+   even_parity:   boolean = false; {strip parity?}
+
+
+var
+   port_intr:    integer;       (* interrupt number for 8250 chip *)
+   intr_mask:    integer;       (* interrupt controller initialization code *)
+
+   uart_type:    byte;          (* contents of UART identification register *)
+   prev_LCR:     byte;          (* previous LCR contents *)
+   prev_IER:     byte;          (* previous IER contents *)
+   prev_MCR:     byte;          (* previous MCR contents *)
+   prev_ICTL:    byte;          (* previous ICTL contents *)
+
+   xmit_active:  boolean;       (* is the transmitter active now?
+                                   (is a THRE interrupt expected?) *)
+
+   XOFF_active:  boolean;       (* has XOFF suspended transmit? *)
+
+   rxque:        queue_rec;     (* receive data queue *)
+   txque:        queue_rec;     (* transmit data queue *)
+
+   reg:          registers;     (* register package *)
+
+(**
+   bios_bastab:  array[0..3] of word absolute $40:0;
+**)
+                                (* bios table of com port bases for each
+                                   port com1..com4 *)
+
+
+(*
+ * Uart register definitions
+ *
+ *)
+
+const
+   ICTL = $21;                  (* system interrupt controller i/o port *)
+
+   RBR = 0;  (* receive buffer register *)
+   THR = 0;  (* transmit holding register *)
+
+   DLM = 1;  (* divisor latch MSB *)
+   IER = 1;  (* interrupt enable register *)
+      IER_DAV     = $01;       (* data available interrupt *)
+      IER_THRE    = $02;       (* THR empty interrupt *)
+      IER_LSRC    = $04;       (* line status change interrupt *)
+      IER_MSR     = $08;       (* modem status interrupt *)
+
+
+   IIR = 2;  (* interrupt identification register *)
+      IIR_PENDING = $01;       (* low when interrupt pending *)
+
+      IIR_MASK    = $06;       (* mask for interrupt identification *)
+        IIR_MSR     = $00;       (* modem status change interrupt *)
+        IIR_THRE    = $02;       (* transmit holding reg empty interrupt *)
+        IIR_DAV     = $04;       (* data available interrupt *)
+        IIR_LSR     = $06;       (* line status change interrupt *)
+
+   FCR = 2;  (* FIFO control register *)
+      FCR_ENABLE_FIFO   = $C1;   (* write to port to enable FIFO *)
+      FCR_DISABLE_FIFO  = $00;   (* write to port to disable FIFO *)
+      FCR_16550         = $80;   (* bit set if chip is 16550 or 16550AN *)
+
+   LCR = 3;  (* line control register *)
+      LCR_5BITS   = $00;       (* 5 data bits *)
+      LCR_7BITS   = $02;       (* 7 data bits *)
+      LCR_8BITS   = $03;       (* 8 data bits *)
+
+      LCR_1STOP   = $00;       (* 1 stop bit *)
+      LCR_2STOP   = $04;       (* 2 stop bits *)
+
+      LCR_NPARITY = $00;       (* no parity *)
+      LCR_EPARITY = $38;       (* even parity *)
+
+      LCR_NOBREAK = $00;       (* break disabled *)
+      LCR_BREAK   = $40;       (* break enabled *)
+
+     {LCR_NORMAL  = $00;}      (* normal *)
+      LCR_ABDL    = $80;       (* address baud divisor latch *)
+
+
+   MCR = 4;  (* modem control register *)
+      MCR_DTR     = $01;       (* active DTR *)
+      MCR_RTS     = $02;       (* active RTS *)
+      MCR_OUT1    = $04;       (* enable OUT1 *)
+      MCR_OUT2    = $08;       (* enable OUT2 -- COM INTERRUPT ENABLE *)
+      MCR_LOOP    = $10;       (* loopback mode *)
+
+
+   LSR = 5;  (* line status register *)
+     LSR_DAV      = $01;       (* data available *)
+     LSR_OERR     = $02;       (* overrun error *)
+     LSR_PERR     = $04;       (* parity error *)
+     LSR_FERR     = $08;       (* framing error *)
+     LSR_BREAK    = $10;       (* break received *)
+     LSR_THRE     = $20;       (* THR empty *)
+     LSR_TSRE     = $40;       (* transmit shift register empty *)
+
+     LOERR_count:       integer = 0;    {overrun error count}
+     LPERR_count:       integer = 0;    {parity error count}
+     LFERR_count:       integer = 0;    {framing error count}
+     LBREAK_count:      integer = 0;    {break received count}
+
+
+   MSR = 6;  (* modem status register *)
+     MSR_DCTS     = $01;       (* delta CTS *)
+     MSR_DDSR     = $02;       (* delta DSR *)
+     MSR_DRING    = $04;       (* delta ring *)
+     MSR_DRLSD    = $08;       (* delta receive line signal detect *)
+     MSR_CTS      = $10;       (* clear to send *)
+     MSR_DSR      = $20;       (* data set ready *)
+     MSR_RING     = $40;       (* ring detect *)
+     MSR_RLSD     = $80;       (* receive line signal detect *)
+
+
+(* table of port base and interrupt vector for each COMn: value *)
+   LOCAL_COMn = 0;
+   MAX_COMn = 8;
+   COM_BASE_TABLE: ARRAY[1..MAX_COMn] OF WORD =
+        ($3F8,$2F8,$3E8,$2E8,0,0,$2E8,$3E8);
+   COM_IRQ_TABLE:  ARRAY[1..MAX_COMn] OF BYTE =
+        (4, 3, 4, 3, 0, 0, 5, 5);
+
+
+(* table of interrupt masks an interrupt vectors for each IRQ number *)
+   IRQ_MASK_TABLE: ARRAY[0..7] OF BYTE =
+        ($01,$02,$04,$08,$10,$20,$40,$80);
+   IRQ_VECT_TABLE: ARRAY[0..7] OF BYTE =
+        ($08,$09,$0A,$0B,$0C,$0D,$0E,$0F);
+
+
+procedure push_flags;
+   inline($9C);
+
+procedure pop_flags;
+   inline($9D);
+
+procedure disable_int;
+   inline($FA);
+
+procedure enable_int;
+   inline($FB);
+
+procedure io_delay;
+   inline($EB/$00);     {jmp $+2}
+
+procedure INTR_service_transmit;
+procedure INTR_poll_transmit;
+procedure INTR_service_receive;
+procedure INTR_check_interrupts;
+
+procedure cancel_xoff;
+procedure control_k;
+procedure INTR_lower_dtr;
+procedure INTR_raise_dtr;
+procedure INTR_select_port;
+procedure INTR_init_com;
+procedure INTR_uninit_com;
+procedure INTR_set_baud_rate(speed: word);
+
+procedure INTR_flush_com;
+procedure INTR_transmit_data(s:    longstring);
+function  INTR_receive_ready: boolean;
+function  INTR_receive_data:  char;
+procedure verify_txque_space;
+

@@ -1,0 +1,128 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * mdosio - library for interface to DOS v3 file access functions (3-1-89)
+ *
+ *)
+
+unit MDosIO;
+
+interface
+
+   uses Dos,debugs;
+
+   type
+      dos_filename = string[64];
+      dos_handle   = word;
+
+      long_integer = record
+         lsw: word;
+         msw: word;
+      end;
+
+      seek_modes = (seek_start {0},
+                    seek_cur   {1},
+                    seek_end   {2});
+
+      open_modes = (open_read  {h40},     {deny_nothing, allow_read}
+                    open_write {h41},     {deny_nothing, allow_write}
+                    open_update{h42});    {deny_nothing, allow_read+write}
+
+      dos_time_functions = (time_get,
+                            time_set);
+
+   const
+      dos_error   = $FFFF; {file handle after an error}
+      min_handle  = 2;
+      max_handle  = 10;
+      dos_retry_count:  integer = 0;
+
+   var
+      dos_regs:         registers;
+      dos_name:         dos_filename;
+      dos_write_err:    boolean;
+      dos_names:        array[min_handle..max_handle] of dos_filename;
+
+   type
+      dos_functions = (_open,  _creat,
+                       _close, _times,
+                       _read,  _write,
+                       _rseek, _lseek,
+                       _lock,  _unlock);
+
+   const
+      function_names:  array[dos_functions] of string[5] =
+                      ('OPEN', 'CREAT',
+                       'CLOSE','TIMES',
+                       'READ', 'WRITE',
+                       'RSEEK','LSEEK',
+                       'LOCK', 'UNLCK');
+                       
+
+   procedure dos_check_error(fun: dos_functions);
+
+   procedure dos_call(fun: dos_functions);
+
+   function dos_open(name:      dos_filename;
+                     mode:      open_modes):  dos_handle;
+
+   function dos_create(name:    dos_filename): dos_handle;
+
+   function dos_read( handle:   dos_handle;
+                      var       buffer;
+                      bytes:    word): word;
+
+   procedure dos_write(handle:  dos_handle;
+                       var      buffer;
+                       bytes:   word);
+
+   procedure dos_lseek(handle:  dos_handle;
+                       offset:  longint;
+                       method:  seek_modes);
+
+   procedure dos_rseek(handle:  dos_handle;
+                       recnum:  word;
+                       recsiz:  word;
+                       method:  seek_modes);
+
+   function dos_tell: longint;
+
+   procedure dos_find_eof(fd:   dos_handle);
+
+   procedure dos_close(handle:  dos_handle);
+
+   procedure dos_unlink(name:   dos_filename);
+
+   procedure dos_file_times(fd:       dos_handle;
+                            func:     dos_time_functions;
+                            var time: word;
+                            var date: word);
+
+   function dos_jdate(time,date: word): longint;
+
+   function dos_exists(name: dos_filename): boolean;
+
+   function dos_lock(handle:  dos_handle;
+                     offset:  longint;
+                     bytes:   word): boolean;
+
+   procedure dos_unlock(handle:  dos_handle;
+                        offset:  longint;
+                        bytes:   word);
+
+   procedure dos_time(var ms: longint);
+
+   procedure dos_delay(ms: longint);
+
+
+implementation

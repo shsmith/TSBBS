@@ -1,0 +1,13 @@
+echo OFF
+rem Door script for PRODOOR system
+set CITY=ON
+set PRODEBUG=
+rem NOTE: Each node MUST have a different DSZLOG setting!
+set DSZLOG=L:\PCB3\$door.log
+L:
+cd L:\PROD
+prodoor PROD.CNF L:\PCB3 %1
+L:
+cd L:\PCB3
+$door BOARD
+BOARD

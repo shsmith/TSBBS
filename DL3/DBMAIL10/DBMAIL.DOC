@@ -1,0 +1,219 @@
+
+                   ProKit Downloads By Mail Facility
+                   ---------------------------------
+
+                      (preliminary documentation)
+
+                     Copyright 1992 Samuel H. Smith
+                     All Rights Reserved, Worldwide
+
+                   SEE DBMAIL.NEW FOR REVISION HISTORY
+
+
+                               DISCLAIMER
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR
+     FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+                                Overview
+                                --------
+
+This program is a PCBoard-compatible DOOR designed to let your callers
+order "downloads by mail" with payment by credit card.  It can also be
+used locally for order entry.
+
+The DBMAIL door presents the user with a menu of supported disk formats
+that can be mailed.  The user can then select specific files from your
+file system.  The door will automatically figure determine the number of
+diskettes required and will calculate the final price of the order.
+State and local tax will be added, if needed.
+
+All files normally available in the current conference will
+automatically be located, and any FSEC security measures will be
+enforces (with the exception of file and byte limits).  Users are also
+allowed to access the dir listings with the normal F, L, Z and N
+commands.
+
+The user is then asked for billing information, including shipping
+address and credit card numbers.  Credit card numbers are checksum
+verified.  It is possible to configure the door to accept only certain
+credit card types, and to assign a different 'company' name for each
+type of credit card.
+
+
+                              Installation
+                              ------------
+
+Sample doorfile for the DBMAIL door:
+
+\pcb\order
+----------
+   echo off
+   rem. Pcboard door script for DOWLOADS BY MAIL program
+   u:
+   cd \pcb\dbmail
+   dbmail dbmail.cnf %PCBDRIVE%%PCBDIR%
+   %PCBDRIVE%
+   cd %PCBDIR%
+   if exist event.bat event
+   board
+
+This doorfile assumes that DBMAIL.EXE and the associated data files are
+stored in u:\pcb\dbmail.  Change references to this directory if you
+install the DBMAIL DOOR somewhere else.
+
+To access the DBMAIL door locally, you can use a batch file like this:
+
+\pcb\lmail.bat
+---------------
+   @echo off
+   if not '%PCBDRIVE%' == '' goto online
+   set PCBDRIVE=J:
+   set PCBDIR=\pcb3
+   :online
+   u:
+   cd \pcb\dbmail
+   dbmail lmail.cnf %PCBDRIVE%%PCBDIR% LOCAL
+   %PCBDRIVE%
+   cd %PCBDIR%
+
+This batch file will use the current PCBOARD node information, if
+present in the environment.  Otherwise it uses J:\PCB3 as the node
+directory.  Change lines 3 and 4 to reflect your own local
+configuration.  The alternate 'lmail.cnf' configuration file may include
+ordering options that are not provided to remote callers.
+
+
+                          Configuration files
+                          -------------------
+
+The DBMAIL program uses a configuration file to define supported disk
+formats as well as the various text files which are displayed to the
+user.
+
+Sample configuration file for the DBMAIL door:
+
+u:\pcb\dbmail\dbmail.cnf
+----------------------
+   INTERRUPT
+   12456
+   THE TOOL SHOP
+   THE TOOL SHOP
+   THE TOOL SHOP
+   THE TOOL SHOP
+   THE TOOL SHOP
+   the State of California
+   7.25
+   Los Angeles County
+   1.0
+   DBMAIL.LOG
+   DBMAIL.INT
+   DBMAIL.SEL
+   DBMAIL.BIL
+   DBMAIL.FIN
+   4
+   360 4 4.00 6.00 1.80 360k 5.25" low density floppy disk
+   1200 1 8.00 6.00 1.80 1.2meg 5.25" high density floppy disk
+   720 1 8.00 10.00 1.80 720k 3.5" low density floppy disk
+   1440 1 9.00 10.00 1.80 1.2meg 3.5" high density floppy disk
+
+   ------------------------------------------------------------
+   ProKit Downloads By Mail DBMAIL.CNF file format:
+
+   Line 1: INTERRUPT
+   Line 2: List of accepted credit card types
+                (list of digits: 2=carte blanche 3=amex 4=visa 5=mc 6=discover)
+   Line 3: The company name for (placed in $4$ for display purposes) for
+           the first entry in the credit card type list.
+           The company names for each additional entry in card type list
+   Line 4: The state name for in-state tax
+   Line 5: The % tax rate for in-state orders (0=removes this prompt if no
+           state tax is collected)
+   Line 6: The local/county name for local tax
+   Line 7: Additional % tax for local orders (0=removes this prompt if
+           no local tax is collected)
+   Line 8: Output filename for record of pending orders.  This file
+           receives the text of all completed orders.
+
+   Line 9: Filename of introductory messages before "continue yes/no"
+   Line 10: Filename of billing/ordering instructions
+   Line 11: Filename of instructions displayed prior to file selection
+   Line 12: Filename of final message after placing an order
+
+   Line 13: Number disk formats available
+   Line 14: First disk format.  Each disk format is defined in the following
+   format:   AAAA BBBB CCCC DDDD EEEE FFFF
+   where
+      AAAA is the number of K bytes per disk
+      BBBB is the cluster size for this disk type in K bytes
+      CCCC is the basic charge per disk
+      DDDD is the additional charge per megabyte
+      EEEE is the additional charge per disk for overseas shipment
+      FFFF ... the rest of the line is a description of the disk format
+
+   Repeat line 14 for each additional disk format available.
+
+
+The configuration file defines the company name, state and local tax
+rates, the order log output file, various text display files and finally
+the list of disk types that are supported.
+
+
+                             Order logging
+                             -------------
+
+When an order is taken, critical information is placed in the CALLER log
+and a new record (page) is written to the end of DBMAIL.LOG file.  The
+DBMAIL.LOG file is a text file which contains the final and ONLY
+complete record of the transaction.  I am writing other programs (see
+the HS/Link Office Automation System) to read this log file automate the
+disk production process and to produce an invoice and shipping list for
+order fulfilment.
+
+Here is a sample of an order record:
+
+u:\pcb\dbmail\dbmail.log
+------------------------
+
+        Credit Card Order
+        -----------------
+
+             Order Date: 02-05-92 09:39    Node: 1   Level: 10
+
+      Order Placed with: THE TOOL SHOP BBS
+
+        Order Placed by: NANCI BRINIAS            
+
+                   Name: Nanci Brinias
+
+                Company: 
+
+     Billing Address(1): Via Oropa, 15
+                    (2): Milano Italy
+                    (3): 20100
+
+            Card Number: 0000 0000 0000 0000   (VISA)
+
+        Expiration Date: 00/00
+
+              Sub Total: $ 40.00
+                    Tax: $  0.00
+                  Total: $ 40.00
+
+                  Phone: 39-2-4354664
+
+        --------------------- Items Ordered ------------------
+
+          Authorization: ___________
+
+                   Bank: BNL
+
+
+        [Processed by ProKit Downloads-by-mail Facility 1.0 (05-05-92)]
+
+
+                             Sample Session
+                             --------------
+

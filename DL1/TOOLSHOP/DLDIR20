@@ -1,0 +1,860 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                             Lang-"C" Source Code
+                       330 files using 31,654,091 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+!VPAL.ZIP       39553  10-24-93  A 'C' library to change the palette in VGA-
+                               | Text OR graphics modes! Also a fading
+                               | function. Register for $5 By Software Visions
+                               | Requires VGA.
+10COMMAN.ZIP     2000  12-30-93  The Ten Commandments for C Programmers, by
+                               | Henry Spencer
+58LIB10.ZIP    119213  04-26-93  MB_LIB Hudson & Opus Message Base Library for
+                               | C programmers
+5DOS-C.ZIP      12812  06-30-91  This is the source code in Turbo C++ for a
+811CQA.ZIP       8499  11-01-93  Microsoft sample C++ source code wrapper API
+811WINQA.ZIP     6977  11-01-93  Microsoft sample C source code on multiple
+                               | data segments
+ADVNTURE.ZIP   118440  03-09-88  Adventure game with 'C' src. For OS/2 and DOS
+AMISL083.ZIP    42735  05-02-92  TSR library with ASM/C source
+ANSIC.ZIP        6449  06-18-89  ANSI C - Source 'C' All the routines
+                               | necessaty to add ANSI interpretation to your
+                               | programs.
+APPMAK.ZIP      53397  07-15-93  AppMaker 1.0 (Mark Szamrej; $0) creates a
+                               | skeleton for a Windows based application
+                               | which is compatible with Visual C++ and MFC
+                               | 2.0.
+AR.ZIP          12598  12-13-90  AR - Source 'C' The source code to a
+                               | compression utility that is supposed to be as
+                               | tight as PKZIP. There is hardly any dox, but
+                               | the code is fairly easy to follow. Includes a
+                               | MAKE file too.
+ASYAM.ZIP       12220  06-26-93  Asynch Routines: This library is currently
+                               | designed to work with Borland C++ v3.1, and
+                               | hasn't been tested with any other C compiler.
+                               | This is an ANSI C library. Well, not totally
+                               | ANSI. It uses some non-standard routines
+                               | specific to MSDOS.
+ASYCLS11.ZIP     7074  04-06-91  Asynchronous class for C++. Interrupt drive,
+                               | source included.
+ASYNC13.ZIP     30260  11-28-90  C source for com port routines. Reasonably
+                               | complete interrupt driven.
+ATP07SRC.ZIP   147662  09-16-93  ATP QWK Reader 1.42, C source code database
+                               | style BBS QWK reader, easily handles 3000+
+                               | line messages, free licensed under GNU GPL
+AU112SRC.ZIP    41790  03-15-90  C source for Harris' Archive Utilities
+AU116-4S.ZIP   100659  04-22-94  Universial Archive Utilities v1.16.04á C/C++
+                               | Source Code. Dedicated to the public domain
+                               | by The Society of Public Domain Dudes.
+AUTOCTRL.ZIP    13618  10-25-93  Microsoft C sample source code, create
+                               | automatic OLE controls.
+AUTODILE.ZIP    18158  03-09-90  Simple phone dialing program w/Turbo C source
+AWK300.ZIP      82556  05-23-90  AWK V. 3.0 - Rob Duff's PC implementation of
+                               | a great utility language - released 23May90
+AWKDEMO2.ZIP    11069  12-31-89  Sample AWK PrograMs .. Useful & Interesting.
+AXMSLIB.ZIP     16960  02-28-92  "Another XMS Lib", MSC/BC source to a nice
+                               | XMSalloc() library, well done!
+B2C.ZIP         42115  12-19-92  B2C is a tool for generating C source chunks
+                               | or C header files from binaries. It
+                               | automagically generates complete C header
+                               | files which can directly be in- cluded using
+                               | the C pre-processors's #include
+                               | directive--Joerg Heitkoetter
+BASIC-C.ZIP     37860  01-06-91  A Basic interpreter written entirely in "C".
+                               | It can be used as a learning tool for
+                               | writting your own interpreter or just to see
+                               | how 'things' are done. By Michael Lavett,
+                               | derived from "C: Power User's Guide", by Herb
+                               | Schildt
+BC42P1.ZIP       6211  08-31-94  Patch #1 for BC++ 4.02
+BC42P2.ZIP       3648  08-31-94  Patch #2 for BC++ 4.02
+BC42P3.ZIP       7063  08-31-94  Patch #3 for BC++ 4.02
+BEHED12.ZIP      9771  02-26-93  Utility for IBM computers to remove the
+                               | MacBinary header from Macontosh files.
+                               | Includes C source.
+BINARY.ZIP       3386  05-19-91  Source code in Turbo C++ for finding text
+                               | within binary files. Includes 9 options for
+                               | hunting capitals, punctuation, word-
+                               | searching, etc...
+BIOSV1-1.ZIP    10205  04-24-90  Backup PC's BIOS ROM into ASCII (Motorola
+                               | HEX) now written in 'C', and is 10 times
+                               | faster than previous version.
+BIRTHC.ZIP       1751  11-06-94  A simple program that computes how many days,
+                               | years and months old you are. "C" source
+                               | code.
+BITSTR.ZIP       2511  07-12-89  Improved bit ops in C
+BJARNE.ZIP       4713  08-27-90  A talk on OOPS and C++ with creator.
+BKCALC.ZIP       9317  10-08-89  C source to calculate amount of media to do
+                               | backup. All floppie densities and some tape
+BLKADE20.ZIP    83283  03-20-92  BLOCKADE for C programmers. Library to allow
+                               | your C .COM and .EXE programs protect
+                               | themsleves from unauthorized alterations.
+                               | This version allows you to "Brand" your
+                               | program with customer names, seiral #, etc
+                               | just prior to protecting and shipping your
+                               | product. Source avail. with registration.
+BLOWFISH.ZIP     9134  11-02-94  "C" source code for Blowfish encryption
+                               | routine, contributed by Bruce Schneier.
+BMG.ZIP          3531  04-01-90  Complete Boyer Moore String searches in 'C'.
+BPLUS25A.ZIP    29645  12-05-91  Binary tree routines for C.
+BPLUS_C.ZIP     20220  04-20-89  Collection of C source code for b-tree
+                               | indexed databases.
+BRIK2SRC.ZIP    48898  07-12-89  C source for 32 bit CRC's
+BRUTE.ZIP        6043  06-07-91  The Brute Force algorithm is useful for
+                               | searching text within binary files, or text
+                               | files. Finds a perfect match, then returns to
+                               | original program. Written in "C", but anyone
+                               | can look through it and understand it fairly
+                               | easily. From Dave Smith.
+BSRC_250.ZIP   429475  09-15-91  C Source for BinkleyTerm ver 2.50. Includes
+                               | source code for zmodem file transfers.
+BTRVEXP.ZIP     29080  08-13-89  Btrieve Express C Routines
+BWBAS10.ZIP    106603  09-23-93  C Source code for a BASIC interpreter.
+BYTE1091.ZIP    66025  09-19-91  BYTE mag email programs w C source
+B_TO_C.ZIP      28602  06-17-88  Basic to C language converter.
+C-MOUSE.ZIP      6656  09-18-89  Source code for adding the mouse to your
+                               | programs.
+C-NDX.ZIP      122973  11-27-89  Create and access dBASE files from C.
+C-TUTOR.ZIP    306550  08-13-94  a c language tutor
+C-WORTHY.ZIP   188711  09-11-91  Demo of C-Worthy C++ compiler
+C2CPP.ZIP        7345  12-12-93  Convert your existing investment in C code to
+                               | object oriented C code automatically.
+CACODE.ZIP     183683  07-14-93  UUencode/UUdecode written in Clipper with C
+                               | source
+CAL.ZIP         14506  03-10-88  Un*x-like calendar and reminder system, with
+                               | C source
+CALDELC2.ZIP    14482  10-27-89  This is a utility that allows you to delete
+                               | file or multiple files on a given
+                               | day...useful for sysops that are using the
+                               | Calls program. Rewritten in C.
+CANSWERS.ZIP     9183  08-21-90  Answers to common "C" questions
+CB250.ZIP       54381  05-06-91  C Beautifier, version 2.5. Differs in its
+                               | ability to use tabs for indentation rather
+                               | than a number of spaces. Very flexible.
+CBASE101.ZIP   203775  06-21-90  Very complete database manipulation package,
+                               | in C source.
+CCC1053A.ZIP    28001  12-25-89  Triple C Object-Oriented Development Kit
+                               | [1/3]
+CCC1053B.ZIP   223521  12-25-89  Triple C OODK [2/3]
+CCC1053C.ZIP   300843  12-25-89  Triple C OODK [3/3]
+CENVID.ZIP     167069  08-10-93  What is C minus type declaration and minus
+                               | pointers? Why C minus minus (Cmm). This is
+                               | supposed to make programming easy for the
+                               | novice and pro. CEnvi is Cmm.
+CFC&V.ZIP       36703  06-02-90  C source code file formatter. Choose from 5
+                               | default styles. C source included
+CFF50B.ZIP     238364  02-12-94  Culver's Fabulous Filesystem Version 5.0 Beta
+                               | release. This is a portable 32 bit
+                               | filesystem/database engine for memory, and
+                               | disk. It has copyable objects and a permanent
+                               | malloc. Portable C source code- no
+                               | executable!
+CGO.ZIP        115680  09-11-90  C-graphics pkg.
+CHAOS-1.ZIP    340822  04-26-91  CHAOS Anarchy files [1/3] Nearly 300
+                               | files/2.1MB of pure hell. Files on every
+                               | imaginable topic... ATM fraud, nerd bashing,
+                               | pay-fone phreaking, black boxing, bombs of
+                               | all sorts... too many to list.
+CHAOS-2.ZIP    289007  04-26-91  CHAOS Anarchy files [2/3]
+CHAOS-3.ZIP    237639  04-26-91  CHAOS Anarchy files [3/3]
+CHINTS.ZIP       7866  11-10-89  Hints on PRG in 'C'
+CKIT258.ZIP    212344  06-01-93  CKIT2.58; Door Developer kit for Microsoft C,
+                               | Quick C, Turbo C and BC++. Supports PCBoard
+                               | 12.0, 14.0 -> 14.5, WILDCAT!, DOOR.SYS,
+                               | DORINFOx.DEF and ANY BBS known.
+CLEARC11.ZIP    24794  05-26-92  ClearC V1.1 is intended for C programmers to
+                               | help make C program files more legible by
+                               | spacing operators, function calls, control
+                               | guards, and by reformatting the code to a
+                               | specified style and indentation preference.
+                               | ClearC is a great tool for those who have to
+                               | maintain or understand C programs developed
+                               | by others. Shareware ($30) from Invariant
+                               | Software.
+CLEAR_C.ZIP      4840  12-07-89  Makes your C code more readable
+CLT165.ZIP     193127  01-29-94  Clint 1.65 - The ultimate C source checking
+                               | tool.
+CMPLRTUT.ZIP    96553  03-27-89  Compiler construction tutorial.
+COMBALG.ZIP      5421  03-04-90  NEURAL NETWORK COMBINATION ALGORYTHMS IN
+                               | TURBO-C.
+COMLIB11.ZIP    32980  10-06-89  Communications lib for c.
+CONCUR.ZIP      10229  10-11-88  Concurent functions. C source
+COP.ZIP         34591  07-23-92  C source to allow object oriented programmin
+                               | with standard C. poor mans C++
+CPLSTUT.ZIP    204004  02-12-94  This is a C++ Tutor program...
+CPORT13.ZIP     44012  11-10-91  Cport v1.30: C Language interrupt-driven
+CPPB.ZIP        31451  07-13-89  C++ source formatter, class analyzer
+CPPCOM.ZIP      18165  02-27-91  Async C++ Classes for Modem Handling
+CPPTASK.ZIP     53964  08-21-91  Multi-tasking modules for C++ (a port from
+                               | the old CTASK group)
+CPPTOU.ZIP      59965  05-16-90  C++ tutor form author of C++ books, must see
+CPPTOUR.ZIP     54856  06-23-89  C++ Language tutor
+CPPTSK.ZIP       6668  08-17-91  C++ Multitask library
+CPSTRING.ZIP     3027  06-08-91  C++ class for handling strings
+CPTUTOR1.ZIP    96516  11-29-92  C++ Tutor from Coronado. Complete with text
+CPTUTOR2.ZIP   107587  11-29-92  C++ Tutor from Coronado Disk 2 of 2
+CPUMET.ZIP      17520  06-04-91  CPU meter from MS. Sample source included.
+CRYPT(3).ZIP     3141  09-22-94  "C" source code for Crypt(3) based
+                               | encryption. From Sci.Crypt newsgroup, dated
+                               | 9-21-94.
+CSETUP.ZIP      60119  03-08-94  Sample C code for Windows app setup routine.
+CSMPLR.ZIP       7426  06-18-90  Plum-Hall ANSI C validation sampler.
+CSORTS.ZIP       6752  10-02-88  *Very* fast sort routines for C
+CSOUND.ZIP      15568  08-15-89  Source for MSC sound routines with examples
+CSTUFFA.ZIP      4357  12-13-89  examples in C for link lists and INT86
+                               | function calls to BIOS
+CTASK22B.ZIP   316180  02-18-92  Multitasking 'C' library and source code.
+                               | Very well written and is freeware
+CTRLAWK.ZIP      1960  07-09-92  AWK program to solve the problem of SLMR,
+                               | OLX, etc. running out of memory when INV-FAC
+                               | QWK files are viewed. There're just too many
+                               | conference descriptions. This will trim down
+                               | to just the ones you have mail from. Req's a
+                               | version of AWK.
+CTUTR.ZIP      239398  11-05-91  Paperless C programming language tutor; learn
+CXL-SFD2.ZIP    38399  08-09-89  Screen Design - gen c src for cxl
+CXREF3A.ZIP     68683  11-08-93  C XREF v3.0a <ASP> - cross-references any
+                               | number of C modules and outputs: o A list of
+                               | their global variables and constants. o A
+                               | summary listing of the functions. o A verbose
+                               | list of the functions. o A tree of the
+                               | function's calls and callers. From DA
+                               | Software. Shareware.
+C_ALL.ZIP      950451  01-11-94  All C and C++ Technical Information files
+                               | Direct from the Borland BBS
+C_LESSON.ZIP    46180  11-08-93  C Programming Lesson
+C_TUTOR.ZIP    190158  11-18-92  A good C language tutor...
+DAT2C.ZIP       13468  08-14-92  DAT2C v0.0. Simple utility to convert any
+                               | file into a C array. Useful only to C/C++
+                               | programmers. DAT2C CONVERT FILE C C++ Author:
+                               | Mark Devlin
+DATES.ZIP        3044  06-25-89  C functions (source) for manipulating dates.
+                               | Handles leap year, etc. through the year
+                               | 4000.
+DBPR20-1.ZIP    38801  12-10-88  C code to help you build dialog boxes 1/3
+DBPR20-2.ZIP    80364  01-22-89  C code to help you build dialogue boxes 2/3
+DDJDPMI.ZIP    538613  10-12-92  C++ DPMI Libraries from DDJ forum on
+                               | Compuserve. Includes source and examples.
+DES.ZIP         19466  08-27-89  DES Source Code in C W/ examples
+DFLAT11.ZIP    141411  03-18-92  DFLAT TEXT EDITOR W SOURCE *PD*
+DGAT05.ZIP     324456  10-16-92  DOS to UUCP gateway.
+DIFF23.ZIP      13674  08-02-88  DIFF v2.3;insert change bars in docs w/C
+DISKSECT.ZIP     1662  02-04-90  C source function to read disk sectors
+DLOADU14.ZIP   128105  06-10-91  Dynamic Loading for Microsoft and Borland C
+DOCIT111.ZIP    18316  12-20-89  DOCIT - Version 1.11 A 'C' source summary
+                               | generator. Directs all header info and other
+                               | pertanants from the source to an output file.
+                               | An easy way to get the important info from
+                               | your source.
+DOSWDW.ZIP      12153  12-29-89  C & asm source to run a child process in a
+                               | window if screen writes are not direct
+DPMI_LIB.ZIP     4394  10-09-91  DOS Protected Mode Interface Library
+DSPACE.ZIP      23677  02-10-90  Quickey C function to show used and free disk
+                               | space. Works with large dos 4.0 partitions,
+                               | disk manager, novell, etc. Exe is included.
+DSTACK.ZIP      26928  09-09-89  C source to push and pop directories paths
+                               | onto a stack. eases directory changing
+DVMAM11.ZIP     21019  10-08-90  TURBO C memory manager 1.10. Allocate up to
+                               | 24 megs of memory via conventional, EMS 3.2+
+                               | and extended memory on '286/'386.
+DZNR100A.ZIP   169859  06-13-91  C Screen designer, object oriented.
+EASTER.ZIP      17745  01-20-91  [OS/2 & DOS] Program to determine when
+                               | Minicon, er Easter, will fall. w/ Source Code
+                               | in C. Exe will run in both DOS and OS/2.
+EEMS21.ZIP      19288  04-11-89  EMS memory programming tools for c programmer
+EMAC16AS.ZIP    96488  04-30-90  Source for FREEMACS v1.6a editor (3-90)
+EMSCLA.ZIP      13176  12-30-93  C class for accessing EMS memory in a very
+                               | transparent way. Very easy to use. Max EMS
+                               | memory available in shareware version 1Mb.
+EMSIF24.ZIP     67483  06-27-93  EMS interface for Borland/Turbo/MS C[++]
+ENCOM.ZIP       96985  08-02-92  EnCom library, version 1.0A (C) 1992 EnQue
+                               | Software! EnCom provides the PC programming
+                               | community with a powerful tool for developing
+                               | communications applications. The EnCom
+                               | library is written in 100% portable C and
+                               | supports the Borland and Microsoft families
+                               | of compilers.
+EVALUATE.ZIP    24898  06-15-94  Recursive ANSI C function which will parse a
+                               | string containing mathematical expressions
+                               | and return its value. e.g. "sin(PI)" => 0.0
+EXEMOD.ZIP       5447  03-27-90  Modify EXE files from within Turbo C or Turbo
+                               | Pascal
+EXTALK.ZIP      21272  07-21-89  C source for embedded-language processor,
+F2C-SRC.ZIP    302231  06-15-91  Fortran to C source code convertor source
+                               | code.
+F77TOC.ZIP     209434  05-05-90  Fortran 77 to C code translator
+FBM.ZIP        147051  07-24-89  The Fuzzy Pixmap software in C, from CMU
+FGIN131.ZIP     69186  04-08-94  C library for getting data input in both text
+                               | and graphics modes. For use w/Fastgraph.
+FGREP103.ZIP    58550  09-30-92  Fast GREP in TC with source
+FLEXLIST.ZIP    74859  09-28-89  Linked List routines in C (w/source)
+FN32-101.ZIP    96623  02-12-94  Allows 32 character filenames under MSDOS!
+                               | with C source code.
+FONTM.ZIP       69557  09-03-91  Font-Mania * create Fonts in C/PAS/ASM
+FOXIND.ZIP      11751  11-02-89  Foxbase+ index info - displays basic info
+                               | about .IDX files - w/C source
+FRASRC18.ZIP   821040  07-18-93  Source code for Fractint 18.0
+GETVECT.ZIP       990  07-13-93  example of getvect()/setvect() from Borland
+                               | C++ 2.0 Direct from the Borland BBS
+GIF2EPS.ZIP      4654  10-07-91  C Src code for a GIF to Postscript convertor.
+GIFLIB11.ZIP   203318  11-13-90  library of C routines with doc for reading
+                               | compuserve .gif format files
+GNUCHS30.ZIP   126819  03-31-90  GnuChess v3.0 converted from tar format
+GRANNY.ZIP      61145  03-11-90  NEURAL NETWORK GRANNY CELL ROUTINE IN TURBO-
+                               | LIGHTSPEED-C AND QUICK-C WITH EXE. <YOOL'S
+                               | VERSION>
+GUI_LIBR.ZIP   220911  05-06-93  A GUI library for Borland C++ and Turbo C++
+GWMALLOC.ZIP    87560  04-08-93  The Gray Watson debugging malloc library is C
+                               | source code for a drop in replacement for the
+                               | system malloc & other memory manage ment
+                               | routines. What is unique about this library
+                               | is that it contains a number of powerful
+                               | debugging facilities including very
+                               | comprehensive heap testing and ex- cellent
+                               | run-time debugging information.
+HASH_F1.ZIP      1949  03-20-91  Short example source in C on hash tables and
+                               | using the F1 key.
+HELP.ZIP        17241  02-10-89  HELP system W/ C Src. Resembles CP/M HELP.
+                               | Allows user creation of help files.
+HTIMER.ZIP      37431  11-17-92  Mark Betz's Microsecond Timer - C source
+                               | provided
+HUGE.ZIP         2409  08-02-93  example of dealing with arrays greater than
+                               | 64k in size. Direct from the Borland BBS
+HYDRAKIT.ZIP   228075  01-11-93  A bi-directional protocol which you can
+                               | include in your own programs and modify if
+                               | you wish since the source code (C) is here
+                               | for your use.
+IDIOMS.ZIP      83082  12-12-91  C++ source code from the book "C++ Idioms"
+IHX.ZIP          2196  11-22-89  Intel hex translation programs (c source)
+INDENT52.ZIP    99461  07-18-89  C Source code formatter & documentor
+INDENTPP.ZIP    43852  08-27-92  C/C++ source code reformatter- lots o options
+INIFN135.ZIP    25181  03-05-93  Initialization File Functions v1.35: offers C
+                               | functions to retrieve and manipulate
+                               | information stored in text-based
+                               | configuration files
+INI_API.ZIP      9448  06-15-93  DOS .INI file manager in BP 7.0 Uses same API
+                               | function interface as Windows's 'Profile'
+                               | stuff. Makes it easy to manage .INI (or .CFG,
+                               | or whatever) files in DOS programs.
+INTRLIB1.ZIP    96321  03-10-92  IRIT Interaction library 1.0. BC++, DJGPP
+INTUIT.ZIP     210728  02-15-92  "C" Programmer'S User Interface Building Tool
+                               | That Permits The Programmer To Paint The
+                               | Interface Screens. Interactively Create And
+                               | Test Dialogs. Font Editor, Icons, Other
+                               | Resources.
+INTUIT2.ZIP     10347  03-27-92  "C" Programmer'S User Interface Building Tool
+                               | That Permits The Programmer To Paint The
+                               | Interface Screens. Interactively Create And
+                               | Test Dialogs. Font Editor, Icons, Other
+                               | Resources.
+ISAM101A.ZIP   273413  08-27-93  ISAM Manager v 1.01. DataBase Programming
+                               | System for C++. Full B+Tree/ISAM database
+                               | system which is really easy to use. Very fast
+                               | single-user system! Multiple indexes per
+                               | file, multiple fields per index. Up to 2
+                               | billion records per file! Requires Zortech
+                               | C++ v 3.0 or later, Borland C++ v 3.1 or
+                               | later, or Microsoft Visual C++. DOS and
+                               | Windows libraries provided. <ASP>
+ISC366.ZIP     149846  02-12-94  ISC v3.66 - Interrupt Service Class routines
+                               | for C++. These aid programmers in creating
+                               | TSR's and programs to run in the background.
+                               | Unzip using the -d option switch to create
+                               | the proper dir's.
+IXFWIN.ZIP      91674  07-15-93  IXFWIN 1.0 by Orange Software. Turns C or C++
+                               | code into a cross referencing database. It
+                               | lets you interactively search and browse
+                               | through programs. This can help programmers
+                               | better understand their source code and
+                               | enable them to reuse their software.
+                               | SHAREWARE: $88
+JFKLIB.ZIP      81217  05-11-91  Class Library for Borland C++
+JIREND.ZIP     226360  02-12-94  Virtual reality demo can connect to glove and
+                               | 3d glasses. Includes C source code.
+JMLIB.ZIP       20126  08-19-90  C src for PD jmodem 8-8 version compiles
+                               | under MC large memory model.
+JPGSRC5A.ZIP   575172  03-03-95  The Independent JPEG Group's JPEG software.
+                               | This distribution contains the fifth public
+                               | release of the Independent JPEG Group's free
+                               | JPEG software. This package contains C
+                               | software to implement JPEG image compression
+                               | and decompression.  JPEG (pronounced
+                               | "jay-peg") is a standardized compression
+                               | method for full-color and gray-scale images.
+                               | JPEG is intended for compressing "real-world"
+                               | scenes; cartoons and other non-realistic
+KRSOURCE.ZIP    30797  10-05-91  C source files for K & R tutorial
+KTREEUT.ZIP    203072  06-27-92  KeyTree Utilities library routines for C
+                               | programmers for the creation, access and
+                               | maintenance of indexEd files of variable
+                               | length records
+KWCTUTOR.ZIP   160491  01-19-90  The best C tutorial I've seen so far,
+                               | interactive, no bulky text to print out.
+LCOMM30.ZIP     65482  04-21-88  Shareware communications routines for C
+LHA211S.ZIP     57936  03-04-91  LHarc 2.11 - source code
+LINGUA13.ZIP    45210  03-13-94  LINGUA -- MULTILANGUAGE SUPPORT FOR YOUR
+                               | PROGRAMS VERSION 1.3. The LINGUA package
+                               | is designed to help C-programmers to
+                               | develop applications that must be
+                               | released in multiple languages. The end
+                               | user gets a program plus one or more
+                               | datafiles containing all text in the
+                               | program. One datafile for each different
+                               | language. A language can be chosen at
+                               | run time. This thus avoids different
+                               | .exe files for different languages. The
+                               | programmer needs only to compile one
+                               | executable and to make a text data file
+                               | for every supported language. It's also
+                               | easy to afterwards create support for
+LISTPROC.ZIP     2441  08-27-89  Some lisp list Examples in 'c'
+LJL.ZIP         15150  09-05-90  C source for doing source and tex listings on
+                               | the LaserJet Series II printer. Each line has
+                               | its own line and every 5th line is shaded for
+                               | easy reading. Listings are in landscape mode
+                               | and in condensed print.
+LZW4C14.ZIP     38943  07-12-94  NAME: LZW Data Compression Library for C
+                               | KEYS: LZW DATA COMPRESSION LIBRARY COMPRESS
+                               | FILE: LZW4C14.ZIP VER: 1.4 DATE: June 94
+                               | REG$: MarshallSoft Computing, Inc. --- $45.00
+                               | DSCR: LZW4C is a data compression library for
+                               | C programmers which uses the LZW algorithm as
+                               | published in research papers by Lempel, Ziv,
+                               | and Welch. The LZW algorithm is probably the
+                               | best generic compression algorithm known
+                               | today. Supports Borland Turbo C, Microsoft C,
+                               | and MIX Power C.
+MC32CRC.ZIP     22435  11-19-89  32 bit CRC for C with .ASM
+MEDIT0.ZIP      81963  05-13-93  Map Editor! Includes C source to display the
+                               | map in your own game! Awesome!
+METAPH.ZIP       4797  06-11-91  C source for a sounds like algorithm similar
+                               | to soundex but solves some shortcomings
+MKPROTO.ZIP      8471  09-09-89  Extracts ANSI style Function prototypes from
+                               | C source code. These can then be included in
+                               | header files.
+MMOVE.ZIP       10275  11-23-89  Move files across physical drives C source
+MODCODE.ZIP     27083  04-17-92  Turbo Pascal and 'C' Source Code to playing
+                               | MOD files through a soundcard &/or PC
+                               | Speaker.
+MONDOS3D.ZIP     5532  12-07-89  Monitor Dos Open function with c,asm src
+MOU-ROUT.ZIP    28522  01-08-91  C source routine that allows you to have a
+                               | mouse arrow like that in graphics mode. BUT
+                               | this one is in TEXT mode. EGA or VGA
+                               | required. This is a hot piece of code.
+MOU.ZIP         42175  01-10-91  Graphic mouse cursor in TEXT mode (C & Pascal
+                               | source included). Very good!
+MOU104.ZIP      49521  03-15-91  Mouse Routines in C - Displays a 'real'
+                               | graphics cursor - Excellent
+MOUROUT.ZIP      3316  08-29-92  Mouse routines for Turbo C++
+MPLUS.ZIP      109704  09-01-90  MPLUS v1.3 is a little GUI library. Provides
+                               | windows (mix text & graphics), dialog boxes,
+                               | menu bar, and mouse support. Low RAM usage
+                               | and learning curve. Requires MSC 5.x or 6.0.
+                               | Supports VGA, EGA, and CGA.
+MSCTSR.ZIP       5613  09-17-89  Build a TSR in Quick C - excellent!
+MSEC_12.ZIP      8298  12-11-91  Source code for a millisecond timer routine
+                               | in C.
+MSGD2SRC.ZIP    91531  08-12-90  source code for msged 2.00. includes full c
+                               | and assembler source
+MS_ARCAD.ZIP   254503  06-22-93  Programming Arcade Games [MS_ARCAD] (David
+                               | Conger; $15+) - is a tutorial on programming
+                               | object oriented arcade games in Turbo C.
+MULTI_C1.ZIP    70138  05-26-93  MUL_C1.ZIP MultiApp Core V1.2 A set of
+                               | platform independent classes(c++) that will
+                               | form the core system of any application.
+                               | Classes are included for communication, file
+                               | i/o(with sharing), timing, dynamic data
+                               | structures and other useful functions. The
+                               | MultiApp system allows between Mac and
+                               | Windows. Includes .LIB for borland large
+                               | model. From MicroGenesis.
+NAMECONV.ZIP    10224  05-27-89  TEXT on Name Convention for Programmers by
+                               | Chas. Simonyi of Microsoft <one of their
+                               | resident gurus>
+NDX200.ZIP      21294  07-21-89  Btree routines in C source
+NETBIOS.ZIP      7550  09-26-88  Several programs in C illustrate NetBios
+                               | calles for LAN control and communication.
+NEWNEWS.ZIP     23788  01-17-90  C program generates funny newspaper with C
+                               | source
+NEWTOOL.ZIP    126256  08-05-89  Generators for input screens and images as
+                               | icons or character sets. outputs 'c' source
+                               | code. All vidio modes, mouse,mouse icon and
+                               | function key external calls. Microsoft 'c'
+                               | used. 'c' all source included.
+NJQUOTER.ZIP    85117  04-02-91  Quote of the day program, including C source
+                               | code and a large database of quotes.
+NS-16550.ZIP    38849  07-20-91  Sample code for NS16550 programming direct
+                               | from National Semiconductor. Also shows how
+                               | to detect various other uart types.
+OBJEAS2A.ZIP   231568  12-29-92   ObjectEase v2.0 The ULTIMATE BC++ & TC++
+                               | Library! (1 of 2) Major bug fix upgrade! If
+                               | you had trouble with v1.0 then this version
+                               | is for you! Text mode windows, menus,
+                               | pushbuttons, checkboxes, mouse control, sound
+                               | queues, graphics mode pushbut- tons, icons,
+                               | animations, bitmaps, pull- down menus,...
+                               | EVERYTHING that you could ever want!
+                               | Compatible with all Borland C++ compilers.
+OBJEAS2B.ZIP   220221  12-29-92   ObjectEase v2.0 The ULTIMATE BC++ & TC++
+                               | Library! Major bug fix upgrade!. If you had
+                               | trouble with v1.0 then this version is for
+                               | you! Text mode windows, menus, pushbuttons,
+                               | checkboxes, mouse control, sound queues,
+                               | graphics mode pushbut- tons, icons,
+                               | animations, bitmaps, pull- down menus,...
+                               | EVERYTHING that you could ever want!
+                               | Compatible with all Borland C++ compilers.
+ODOORS41.ZIP   387977  02-26-93  BBS Door developent libraries for "C"
+OLEO130S.ZIP   342435  04-15-93  GNU Oleo spread sheet version 1.3, like Lotus
+                               | 1-2-3 but better for you than the high-priced
+                               | spread, C source code.
+OORT10.ZIP     251381  12-07-93  OORT v1.0, a C++ library source code ray
+                               | tracing.
+P2C12GNU.ZIP   398440  08-15-93  GNU p2c pascal to C translator, recognizes
+                               | many pascal DialEcts. C source code, V.1.20
+PARTY.ZIP       19463  11-06-89  C source to copy files to big for 1 floppy t
+                               | multiple floppies
+PASTRANS.ZIP    56026  02-20-88  Pascal to c translator from europe. translate
+PCC_EDIT.ZIP    40455  01-05-89  Programers editor with source code.
+PCL4C34.ZIP     65795  01-17-93  Personal Communications Library For C
+                               | programmers.
+PCLIST.ZIP       2321  11-27-92  Doubly Linked List Routines For C++ Also
+                               | Includes A Nice Tutorial On The Use Of Linked
+                               | Lists
+PCPILOT.ZIP     50695  01-14-90  Programmer's pop up with Tur C source
+PCVMM1.ZIP      26531  03-19-90  virtual memory C library
+PCX-IN-C.ZIP    28485  07-24-89  C source & .EXE for reading & displaying .PCX
+                               | image files from PC PAINTBRUSH
+PGP10SRC.ZIP   199119  11-23-91  Pretty Good Privacy Using RSA Public Key
+                               | Cryptography; C source code
+PGP20SR.ZIP    352076  02-12-94  Complete source code to PGP20, the best RSA
+                               | public key cryptosystem available today.
+PGP22SRC.ZIP   481836  03-09-93  Source code for PGP22.ZIP.
+PGP23ASR.ZIP   513975  02-12-94  Pretty Good Encryption SourCe
+PGP26ASR.ZIP   607142  08-29-94  PGP 2.6a Source-Code. Bug-fix, issued
+                               | 08-21-94. This is *NOT* an official PGP from
+                               | Phil Zimmermann, but is signed by "Rebellious
+PGP26IS.ZIP    617784  10-19-94  Source code for PGP 2.6.i. Not an official
+                               | PGP version. It is still possible to compile
+                               | a version of PGP using this source code file
+                               | that is byte-identical to MIT PGP 2.6.1 using
+                               | the USA_ONLY option. Obtained by FTP from:
+                               | ftp.dsi.unimi.it/pub/security/crypt/PGP/.
+PGP26SRC.ZIP   628626  06-02-94  Complete Source Code for Pretty Good Privacy
+                               | ver 2.6 - RSA public-key encryption freeware
+                               | for MSDOS, protects E-mail.  Lets you
+                               | communicate securely with people you've never
+                               | met, with no secure channels needed for prior
+                               | exchange of keys. This version of PGP uses a
+                               | version of RSAREF provided to MIT by RSA Data
+                               | Security for use in PGP. This version is
+                               | legal within the U.S.
+                               | [THIS COPY IS DIRECT FROM THE OFFICIAL FTP
+                               | DISTRIBUTION SITE, NET-DIST.MIT.EDU]
+PGP26U_S.ZIP   515569  08-20-94  Source Code for PGP 2.6ui - International.
+PGPPATCH.ZIP     3716  09-13-94  Text file contains "C" source code listing
+                               | for patch to PGP 2.6ui. Patch adds switch for
+                               | a new option: "SecureWipe." "SecureWipe = on"
+                               | operates like PGP 2.6ui without modification
+                               | - i.e., it uses PGP's random number generator
+                               | to wipe its temporary files. "SecureWipe =
+                               | off" tells PGP to wipe the files with
+                               | ordinary zeros. While less secure, "off" is
+                               | much faster. File also includes discussion of
+                               | issue, and criticism. From ALT.SECURITY.PGP
+                               | posts dated 9/10 and 9/12/94.
+PM_TEST.ZIP     23778  03-07-94  A program and source code in C, showing how
+                               | to switch a 286 into and out of protected
+                               | mode without a DOS extender compiler.
+POVDOC.ZIP      99150  07-23-92  This archive contains the documentation for
+                               | the Persistence of Vision Raytracer, POV-Ray
+                               | V1.0, formatted for the IBM-PC. You also need
+                               | to download POVSCN.ZIP and an executable for
+                               | your computer. For a list of all the files
+                               | and for more information on what POV-Ray is,
+                               | download the small text file POVINF.DOC from
+                               | this library.
+PROC100.ZIP     13161  01-11-90  Execute a command on all files in a dir or on
+                               | a list, prompt yes/no w/source
+PROMODEM.ZIP    59675  12-13-92  C Async library, includes example term prog
+PROTO217.ZIP   108112  06-15-92  C and C++ incremental prototypes extractor
+PROWIND1.ZIP    89139  11-14-90  The is file 2 of 2 of ProWindows PLUS
+PROWIND2.ZIP   223235  11-14-90  ProWindows(tm) PLUS is a fantastic
+                               | programmer's development tool for Turbo-C
+                               | programmers. Formerly a commercial product,
+                               | it has just been released into the Shareware
+                               | market by DSE Software Publishing. This is
+                               | file 1 of 2. FANTASTIC!
+PRTCHK.ZIP       8758  11-04-89  C source to check printer status and report
+                               | back.
+PSCM13.ZIP     115664  07-31-92  Project Source Code Manager v1.3 - Excellent
+                               | Version Control System for Programmers. Keeps
+                               | track of Major/Minor/Instance revisions, plus
+                               | comments and sets.
+PSGHOST.ZIP    264857  10-28-89  .
+QUUX100.ZIP     13992  11-01-92  QUUX is a UUencode / UUdecode package for
+                               | MS-DOS computers. UUencoding allows you to
+                               | send binary files over electronic mail and
+                               | other systems that handle text-only data.
+                               | Fast, reliable, and freeware.
+QWIKC21.ZIP     71279  11-06-93  from eagle performance software, 'c' routines
+                               | made with assembler, ergo very fast!
+QWKSOURC.ZIP     5036  07-08-92  Source Code in C to QWK Program.
+RC5DEMO.ZIP      4163  02-24-95  C source code for example implementation of
+                               | RC5 encryption algorithm from Ronald L.
+                               | Rivest.  Dr. DobbsJournal, 01/95 pp. 146,148
+RCS43SRC.ZIP   146733  03-22-91  GNU Revision Control System with C source
+READOBJ.ZIP     17039  03-08-93  Source and *.EXE to read contents of *.OBJ
+                               | programming source files. SOURCE written in
+                               | Microsoft "C" and commented, Good utility!
+REALCNVT.ZIP     7652  06-21-88  Convert between C, Basic, IEEE, TPAS real fmt
+REHACK.ZIP     391236  02-12-94  C++ source code for a graphics game
+RES104.ZIP      43937  09-04-94  RES 1.04 - RES is a resource file management
+                               | package for C++ developers. The advantages of
+                               | using resource files (files containing other
+                               | files) are increased speed, less wasted disk
+                               | space, and a much more professional
+                               | appearance. RES is a must for programs with
+                               | many data files.
+RHEVT.ZIP       20061  07-10-93  C++ keyboard unit source code for REHACK
+RHWIN.ZIP        8051  07-10-93  C++ windows unit source code for REHACK
+RITESTRC.ZIP    41215  06-24-89  Generates a C language struct for any dBase
+                               | Clipper .DBF fed to it from command line
+RLCT_CPP.ZIP    27846  09-22-91  David Terrys Realcnvt Ever So Slightly
+                               | Modified So That It Will Compile Under Tc++.
+                               | Libraries For Each Model Enclosed.
+RMAXTK10.ZIP    50795  12-13-91  RMAXTask multitasking library for C and C++.
+                               | Run multiple concurrent tasks in one .EXE
+                               | Great docs included ... source upon
+                               | registration.
+RTX.ZIP         76017  03-08-92  Source code for a multitasking kernel. From
+                               | Jun/Jul Ink magazine. C/asm source and demo.
+RW42P1.ZIP       3308  09-01-94  BC++ 4.02 resource workshop patch #1
+SB30TEX.ZIP    291169  04-10-90  DOS TeX v3.00 - a freeware program - 04/04/9
+SCD113.ZIP     104485  04-11-90  Turbo C Library for acessing dbase files;
+SDE.ZIP         28285  01-17-90  Synchronous Data Exchange between
+                               | simultaneously running pgms w/ full C source
+SERIALTC.ZIP     3764  04-19-88  TC Serial Routines
+SER_IO.ZIP      23458  07-19-92  .
+SER_TC.ZIP       5489  05-14-90  serial i/o intr handling using new extentions
+                               | in TC++ ... sample asynch intr handler
+SHOW285.ZIP     24193  05-11-90  prints a hardware manifest, memory dos/ems,
+                               | mouse driver level, disk sizes etc. C source
+                               | included.
+SLIK11.ZIP       9175  12-22-92  SLIKMODE - With source MSC works like the DOS
+                               | MODE command, with the exceptions it only
+                               | touches the COM port(s). Sets from command
+                               | line driven switchs. You can use this to set
+                               | the UART / COMx to about any baud rate
+                               | including (9600+) - Handy!
+SMAK124.ZIP     20712  04-13-92  Simple make utility for programmers that use
+                               | C, ASM, or BASIC.
+SMALLCOM.ZIP    47987  05-30-89  Dr Dobbs C source for stevens smallcom
+SNIFFEXE.ZIP    21200  08-18-89  Verifies .EXE files are valid .EXE files with
+                               | C source
+SNIP0492.ZIP   256672  04-13-92  Useful collection of many C src pub domain
+                               | routines collected by Bob Stout
+SNIP0792.ZIP   293683  07-04-92  Snippets For C Language Programmers. Over 250
+                               | Files And 25,000 Lines Of C Source Code, Some
+                               | Assembly Language Code Too. The Best Public
+                               | Domain Answers To The "how Do I ..."
+                               | Questions Seen In The Fidonet C_echo And
+                               | Elsewhere For The Past 5 Years Or So. Some Of
+                               | The Programs Included Are: Windchill
+                               | Calculation, Warm-cold Boot, Des Encryption,
+SNIP1091.ZIP   227752  10-03-91  Collection of relatively short free/pd C/ASM
+                               | routines collected by Bob Stout from
+                               | contributions to Fido C_Echo. Many useful
+SNIP8-91.ZIP   120147  08-13-91  Collection of relatively short public domain
+                               | C source routines collected by Bob Stout from
+                               | contributions in the FidoNet C_Echo Lots of
+                               | useful code
+SNIP9-91.ZIP   150413  09-13-91  Collection of relatively short public domain
+                               | C/ASM source routines collected by Bob Stout
+                               | from contributions in FidoNet C_Echo. Lots of
+                               | useful code.
+SORT-AI.ZIP      3132  09-04-89  C src to a lisp-like string sort
+SORTS.ZIP       51522  09-27-89  C sorts demo. Many sorts visually demostrated
+                               | with C source quick sort/ shell/ bubble/ etc
+SORTTEXT.ZIP    29138  10-04-89  Flexible sort engine with C source
+SPAWNO41.ZIP    98532  04-26-92  C lib to swap on exec
+SPLINT.ZIP      22261  04-18-89  Splay Prefix Coding data compression (Japan)
+                               | with source code <from USENET 04-18-89>
+SPPBC2.ZIP      53672  05-10-92  C++ serial port routines - this has a demo
+                               | and .LIB - register for source
+SPRITE.ZIP     173442  09-03-90  Sprite editor for EGA/VGA Graphics w/sample
+                               | sprites, water drop animation sequence w/
+                               | full source code in Turbo C and
+                               | documentation.
+SPYSRC13.ZIP    48902  11-17-89  NetBios remote Control Package (source code)
+                               | works similar to Network Eye, Closeup Lan
+SUPEROPT.ZIP    42384  12-16-92  GNU SUPEROPTIMIZER The superoptimizer is a
+                               | function sequence generator that uses a ex-
+                               | haustive generate-and-test approach to find
+                               | the shortest instruction sequence for a given
+                               | function.You have to tell the super optimizer
+                               | which function and which CPU you want to get
+                               | code for, and how many instruc- tions you can
+                               | accept.  C source.
+SYSGRAPH.ZIP     8574  04-24-88  View system load via graph under Windows with
+                               | C source
+TABFILTS.ZIP    13224  11-27-89  DOS filters for adding/removing tabs from
+                               | text files. C source included.
+TASKC.ZIP       30771  10-02-89  Simple multi-tasking kernel for C, with
+                               | source
+TCCLIB2.ZIP     87499  02-15-90  Large collection of C source routines.
+                               | Useful.
+TCD.ZIP         20855  11-26-89  Turbo C 2.0 function lib for DBASE access
+TCFOS2.ZIP       4941  07-30-90  Fossil routines for Turbo C
+TCHRT3.ZIP      48474  07-23-90  Version 3 of the timer toolbox for Turbo C.
+                               | 42 functions manager multiple microsecon
+                               | timers, generate precision delays, and
+                               | profile user selected user interrupts,
+                               | execution profiling, data acquisition and
+                               | process control applications
+TCKEY.ZIP       19518  06-08-90  KEYBOARD HANDLING ROUTINES WITH TC 2.0 SOURC
+TCOMM4.ZIP      37564  10-07-88  "C" Serial comm library Litecomm Ver 4.0
+TCOMME.ZIP      67196  10-13-88  "C" Serial comm Litecomm Ver. 4.0 Demo
+TCSERIAL.ZIP     3765  03-31-88  Turbo-C Buffered Serial I/O routines, w/src
+TDE13.ZIP      195410  01-20-92  V1.3 of PD ascii editor with C source
+TDT-E.ZIP      191264  11-17-93  TesSeRact Development Tools Shareware Files,
+                               | including the TesSeRact CXL User Interface
+                               | Development System, Screen Designer, Printer
+                               | Control, Compression, and File ManageMent
+                               | Systems. This is File #14 of 14, and contains
+                               | the TopSpeed C/C++ 3.x Small Model Libraries.
+                               | Innovative Data Concepts, Inc; 09/21/92
+TGE129C.ZIP    166845  08-25-93  The Graphics Engine 1.29 C (PUBLIC BETA) -
+                               | TGE is a VGA/SVGA graphics library for C/C++
+                               | programmers, with complete source code. TGE
+                               | has such features as a powerful library of
+                               | graphical and mouse interface functions,
+                               | device-independence, support For Loadable
+                               | drivers and
+                               | and advanced clipping, output modes, virtual
+                               | coordinates, bitmap scaling, definable mouse
+                               | pointers, and more.
+TLINK4.ZIP      89227  06-12-91  A beta program from borland,i think its for
+                               | turbo c
+TOOLOW.ZIP      14076  04-22-92  BC++ src for a windows toolbar
+TRMITE10.ZIP    21776  09-20-90  Graphical simulation for Windows w/Source!
+                               | Very nice program based on an article in
+                               | Scientific American on turing machines.
+TSR100JE.ZIP    72896  03-22-93  TSR class for Borland C++ (with source)
+TURBOSED.ZIP    31327  11-15-89  C source & exe for a stream editor.
+UE312.ZIP      292614  05-02-93  MicroEMACS 3.12. Latest version of PC clone
+                               | of the famous GNU EMACS editor. This archive
+                               | contains three versions of the editor as well
+                               | as the support files: MEIBM.EXE for DOS
+                               | machines, MEANSI.EXE for DOS machines running
+                               | ANSI.SYS, and ME16M.EXE, a DPMI version that
+                               | will edit very large files.
+UNARJ220.ZIP    35185  08-18-91  C Src for ARJ extractor. Self extracting EXE
+UNDOC2E.ZIP      8118  01-06-91  C And Asm Source To Show Programmers How To
+                               | Use Undocumented Dos Interrupt 2Eh Which
+                               | Allows Commands To Be Executed As If They
+                               | Were Typed At The Command Line. This Allows
+                               | The Program To Alter The Master Environment.
+UNDOC_CL.SWI     3164  01-28-94  Undocumented C compiler switches (MS-C 4.0)
+UNEEK100.ZIP     6403  05-22-90  Eliminates duplicate records from a file.
+                               | Similar to Un*x unique but with fields. Fully
+                               | public domain with C source. Uploaded by the
+                               | author.
+UPTOOL.ZIP     185143  08-28-89  Next update of newtool.zip includes
+                               | vector,icon,palette,screen generator tools.
+                               | Uploaded by author.
+USENET_S.ZIP    32366  05-28-89  a USENET Starter Kit : contains TEXT on how
+                               | it works, how to upload/download binary
+                               | files, how to unscrample UUE format files,
+                               | etc. Include uudecode.exe and source code for
+                               | this utility in C, PAS & BAS
+UUEXE520.ZIP    32933  02-22-93  UUENCODE/DECODE version 5.20. UU-encoding is
+                               | a way to code a file which may contain any
+                               | charcters into a standard character set that
+                               | an be relibly sent over diverse networks.
+VCRP11.ZIP      39614  01-22-93  VCRPLUS Version 1.1 DECODE and ENCODE VCR
+                               | PLUS codes. Includes C source code. Compiled
+                               | with BC++ 3.1.
+VF.ZIP          26613  08-13-88  Source code in 'C' for file viewer utility
+VGAIMAGE.ZIP   144912  08-09-89  Very interesting C code for Matrix
+                               | manipulation of vga images. Image detail,
+                               | blur effects etc. Very interesting .
+VIEWA.ZIP       11063  11-28-89  C source to view and read ASCII
+VIEWBAKC.ZIP    12650  10-13-90  view what is inside of 3.3 dos backup
+                               | includes C source
+VLIBDOS.ZIP    188801  03-03-92  Visual Library for easy creation of 2D and 3D
+                               | graphics for C and C++ programmers.
+WB613-01.ZIP   137721  10-29-91  Window Boss V6.13 Sample and source code,
+                               | demo, batch file, include files. You need
+                               | this file and wb613-03 and one of the
+                               | complier specify files wb613-2?
+WB613-03.ZIP    64752  10-31-91  Window Boss V6.13 Reference Manual
+WB613-2A.ZIP    59070  10-08-91  Window Boss V6.13 Library files for MS C and
+                               | MS Quick C
+WB613-2B.ZIP    28433  10-08-91  Window Boss V6.13 library files for Watcom C
+WB613HST.ZIP    11907  11-25-91  Semi-detailed history of Window Boss- a C
+                               | function library
+WB613INF.ZIP     3111  11-25-91  Description of Window Boss V6.13
+WGT_SPR2.ZIP   106749  09-30-92  C code for sprites and cool graphic effects
+                               | like dissolves, etc.
+WGT_TC21.ZIP   142807  09-26-92  More graphic routines library for Turbo C.
+WHEATLIB.ZIP   112826  12-20-92  C++ lib, free, includes string, file, vector
+                               | and linked list routines
+WINCLASS.ZIP     6206  03-19-91  C++ source to Windows Class.
+WNDWC20.ZIP    106074  11-06-93  Windows for Turbo C 2.0. This is from the
+                               | same people that did QWIKC20.
+WNNSIM.ZIP    1209080  09-20-92  Neural net simulator, graphical user
+                               | interface, MSC C++ SOURCE
+X10_PDC2.ZIP    44656  07-27-93  X10 professional developer library for C
+XLIB20.ZIP      59714  11-12-93  XLIB is a library of procedures which can
+                               | simplify protected-mode programming in
+                               | assembly language and C under DOS. These
+                               | procedures handle mode switching, extended
+                               | memory, interrupts, and files. XLIB operates
+                               | under DPMI, VCPI, XMS and clean
+                               | configurations. XLIB is shareware.
+XLIB4B.ZIP     330271  12-14-94  Public Domain Mode X Graphics Library.
+                               | Includes FULL source code along with good
+                               | examples. A must for the serious game
+                               | programmer.
+XSHARP18.ZIP    52828  02-06-93  This is the source code and executable of the
+                               | 3-d graphics animation code written by
+                               | Michael Abrash in Dr. Dobbs Journal June 1992
+                               | issue.
+YAMP16.ZIP     112179  01-11-93  Yet Another Matrix Program V1.6, C++ Matrix
+                               | Algebra Package With Source Code To Support
+                               | Recursive Matrix Functions. Has Virtual
+                               | Memory Version, And Documentation In Latex
+                               | Format. Freeware.
+YCSPED10.ZIP    47733  03-17-93  All game designers MUST download this program
+                               | yc's Sprite Editor is a 32x32x256 sprite
+                               | editor for use by video game program
+                               | designers for the IBM PC. This program
+                               | requires a SVGA card capable of 640x480x256
+                               | and compatible with VESA, Trident or Video7
+                               | and a MS compatible mouse. It outputs C or
+                               | Pascal source and is fully loaded with
+                               | editing functions. Very nicely done with a
+                               | very intuitive GUI. Very compact! A great
+                               | addition to your game designing toolbox! 6
+YRCAL17T.ZIP    61949  10-02-89  Generates & prints calendars in 33 languages
+                               | includes all C source. Many options
+ZCRYPT23.ZIP    21023  10-28-94  InfoZIPs ZCrypt 2.3 generic C sources C
+                               | source code addon to provide PKWARE
+                               | compatible encryption and decryption sup port
+                               | for InfoZIPs Zip 2.0.1 and UnZip 5.12 and
+                               | later This software has been placed in the
+                               | public domain ie completely unrestricted It
+                               | may be imported into the US but NOT EXPORTED
+                               | FROM THE UNITED STATES This is a violation of
+ZIPVC11.ZIP     12507  03-07-89  Verbose ZIP dir lister w/MS-C source v1.1
+                               | Share compatible & shows CRC values
+ZMAC.ZIP        58358  03-08-88  Z80 Macro assembler and disassembler, with C
+ZMAX100B.ZIP    57907  08-26-90  ZMAX file transfer protocol-faster than
+                               | zmodem. Includes C source.
+ZMODEMC.ZIP      9858  04-17-89  C source for ZModem..
+                      

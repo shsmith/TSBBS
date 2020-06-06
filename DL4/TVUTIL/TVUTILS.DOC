@@ -1,0 +1,18 @@
+
+Here are a couple of utility commands I wrote for TaskView 1.4.
+
+SETNAME - set the name of a task, as shown by the TVSTAT command.
+Usage:
+   setname <partition> <name>
+Example:
+   setname 3 PCBoard Node 1
+
+VSCRON - enable virtual screen mode.  This is the opposite of VSCROFF, which
+is included with TaskView 1.4.  This command can be used to fight the effects 
+of direct-screen writers that bleed through from the background.
+
+
+			Samuel H. Smith
+			The Tool Shop
+			(602) 279-2673
+

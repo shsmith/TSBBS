@@ -1,0 +1,4 @@
+procedure error_handler;
+procedure install_error_handler;
+var
+   ExitSave: pointer;   {pointer to next exitproc in the chain}

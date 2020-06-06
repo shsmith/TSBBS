@@ -1,0 +1,33 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                           Util-All Other Utilities
+                          5 files using 148,880 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+586NPX.ZIP       2907  01-28-95  Turns off the floating point support of the
+                               | Pentium processor. This software detects the
+                               | specific level of the Pentium chip and
+                               | redirects applications to use floating point
+                               | emulation. However, using floating point
+                               | emulation can degradate the performance of
+                               | your application(s). For typical spreadsheet
+                               | and word processor applications, this
+                               | degradation will be minimal. For floating
+                               | point-intensive applications, such as CAD,
+                               | the degradation will be more noticeable. For
+                               | OS/2 Warp customers, this solution works for
+                               | all OS/2, DOS, and Windows applications.
+CLPCPU.ZIP       9752  01-23-95  Detect CPU type from 8088 to Pentium
+CPUIDF.ZIP       7740  01-11-95  CPU/Pentium Flaw Detection program available
+                               | at Intel.com. Date: 11 Jan 1995 01:23:48 GMT.
+                               | Organization: Intel. We have release a
+                               | program CPUIDF.EXE which identifies the type
+                               | of Intel microprocessor your PC contains. It
+                               | will also tell you whether or not your
+                               | Pentium (tm) processor has the floating point
+                               | divide flaw.
+CPUINF11.ZIP    16935  01-25-95  Identifies CPU type, tests for bugs.
+WATTCP.ZIP     111546  08-05-92  Waterloo Univ. TCP/IP utilities

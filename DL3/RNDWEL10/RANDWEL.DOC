@@ -1,0 +1,60 @@
+
+                                RANDWEL
+                     Select random welcome screens
+                for PCBoard and most other BBS programs.
+
+                     Copyright 1992 Samuel H. Smith
+
+                 Another quick-n-dirty freebie utility
+                       courtesy of The Tool Shop
+                       (818) 891-6780 (free line)
+
+
+                                 Usage
+                                 -----
+
+                          randwel CONFIG_FILE
+
+                                Example
+                                -------
+
+                          randwel randwel.cfg
+
+ Insert in your BOARD.BAT file just prior to loading the BBS software.
+
+
+                           Config file format
+                           ------------------
+
+Line 1 contains the DESTINATION of a DOS COPY command for your active
+welcome screen.
+
+The remaining lines each specify a possible alternate welcome file.
+
+
+                        Sample RANDWEL.CFG file
+                        -----------------------
+
+c:\pcb\gen\welcome?.
+c:\pcb\gen\welcome?.001
+c:\pcb\gen\welcome?.002
+c:\pcb\gen\welcome?.003
+c:\pcb\gen\welcome?.004
+c:\pcb\gen\welcome?.005
+c:\pcb\gen\welcome?.006
+c:\pcb\gen\welcome?.007
+c:\pcb\gen\welcome?.008
+c:\pcb\gen\welcome?.009
+c:\pcb\gen\welcome?.010
+
+
+This config file will randomly select c:\pcb\gen\welcome.001 through
+c:\pcb\gen\welcome.010 and copy it to c:\pcb\gen\welcome.  The ?
+prior to the . causes a welcomeg (graphics version of welcome) to also
+be copied.  If you are not running pcboard or you prefer not to copy
+both graphic and non-graphic welcome files, please remove the ? from
+each line of the config file.
+
+USE AT YOUR OWN RISK!
+SOURCE CODE INCLUDED!
+

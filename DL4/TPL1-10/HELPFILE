@@ -1,0 +1,20 @@
+
+/*
+ * helpfile - help function in tpl/1
+ *
+ */
+
+cls                     /* clear screen */
+newline
+
+." Dictionary: " 
+newline
+newline
+
+.dict
+newline
+
+free
+newline
+
+

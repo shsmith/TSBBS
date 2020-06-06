@@ -1,0 +1,19 @@
+@CLS@@X07
+@X0F                             ProDoor MAIN MENU               @X07(?) for help
+
+@X0EÕÍÍÍÍÍ@X09<@X0F TRANSFERS @X09>@X0EÍÍÍÍÍÍÑÍÍÍÍ@X09<@X0F CONFERENCES @X09>@X0EÍÍÍÍÑÍÍÍÍÍ@X09<@X0F MESSAGES @X09>@X0EÍÍÍÍÍÍ¸
+@X0E³ @X0F(D)@X0Cownload    @X09[@X0Fto you@X09] @X0E³ @X0F(J)@X0Aoin conference     @X0E³ @X0F(ZIPM) @X0Ezip new mail   @X07@X0E³
+@X0E³ @X0F(U)@X0Cpload      @X09[@X0Ato bbs@X09] @X0E³ @X0F(A)@X0Abandon conference  @X0E³ @X0F(E)@X0Enter new message   @X07@X0E³
+@X0E³ @X0F(L)@X0Cocate files  @X09[@X0Bname@X09] @X0E³ @X0F(B)@X0Aulletin listings   @X0E³ @X0F(Q)@X0Euick mail scan     @X07@X0E³
+@X0E³ @X0F(N)@X0Cew files     @X09[@X0Edate@X09] @X0E³ @X0F(F)@X0Aile directories    @X0E³ @X0F(R)@X0Eead mail           @X07@X0E³
+@X0E³ @X0F(Z)@X0Cip scan   @X09[@X03keyword@X09] @X0E³ @X0F(NEWS) @X0Afile display   @X0E³ @X0F(Y)@X0Eour personal mail  @X07@X0E³
+@X0EÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÕÍÍÍÍÍÍ@X0C<@X0F ZIPFILES @X0C>@X0EÍÍÍÍÍÍÑÍÍÍÍÍ@X0C<@X0F ELSEWHERE @X0C>@X0EÍÍÍÍÍÑÍÍÍÍÍ@X0C<@X0F UTILITIES @X0C>@X0EÍÍÍÍÍ¸
+@X0E³ @X0F(F V)@X09iew zipfile       @X0E³ @X0F(G)@X0Doodbye    @X09[@X0Clogoff@X09] @X0E³ @X0F(HO)@X0Btkeys!   @X09[@X0Don@X0F/@X0Eoff@X09] @X0E³
+@X0E³ @X0F(VX)@X09quick view/extract @X0E³ @X0F(LIB)@X0Drary disks       @X0E³ @X0F(M)@X0Bode     @X09[@X0Cgraphics@X09] @X0E³
+@X0E³ @X0F(REPACK) @X09to compress   @X0E³ @X0F(OPEN) @X0Dother doors    @X0E³ @X0F(T)@X0Bable of protocols  @X07@X0E³
+@X0E³ @X0F(TEST) @X09zip validity    @X0E³ @X0F(QUIT) @X0Dto bbs         @X0E³ @X0F(X)@X0Bpert @X09[@X05menu @X03on@X07/@X06off@X09] @X0E³
+@X0EÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ@X0F
+
+

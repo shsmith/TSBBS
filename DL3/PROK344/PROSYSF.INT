@@ -1,0 +1,108 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * PCB ProDOOR - sysop/system functions (7-1-89)
+ *
+ *)
+
+unit ProSysF;
+
+interface
+   Uses
+     Dos,
+     Tools,
+     MdosIO,
+     ProData;
+
+procedure sysop_view_log;
+procedure sysop_remote;
+procedure password_entry;
+procedure edit_user_info;
+procedure write_user_info;
+procedure view_profile;
+
+procedure translate_cmdline(xfile: filenames);
+procedure get_xcmd(xfile: filenames);
+
+procedure shell_to_dos;
+   {allow the sysop to drop to DOS for a moment}
+
+procedure toggle(var v: char2);
+   {toggle a variable and update status display accordingly}
+
+procedure dispatch_function_key(c: char);
+   {sysop function key dispatch}
+
+procedure process_function_keys;
+   {read next local function code and dispatch it}
+
+procedure chat_mode;
+procedure operator_page;
+
+procedure flag_files;
+procedure autoflag_scratch;
+function flag_warning(quit: boolean): boolean;
+
+procedure log_onoff(what: string30; state: boolean);
+procedure expert_toggle;
+procedure mode_toggle;
+procedure snoop_toggle;
+procedure hotkey_toggle;
+procedure scan_toggle;
+procedure visual_prompt_toggle;
+procedure use_visual_toggle;
+procedure cls_toggle;
+procedure node_chat_toggle;
+
+procedure set_node_status(newcode: char);
+procedure node_status_display;
+procedure node_chat;
+procedure check_chat_request;
+
+const
+  node_available        = 'A';
+  node_unavailable      = 'U';
+  node_in_door          = 'D';
+  node_entering_msg     = 'E';
+  node_transfer         = 'T';
+  node_group_chat       = 'G';
+  node_logoff_pending   = 'L';
+  node_dropping_2dos    = 'X';
+  node_no_caller        = ' ';
+  node_chat_request     = 'R';
+  node_going_down       = '@';  {not a standard code}
+
+  chat_poll: boolean = true;    {true if polling for chat}
+
+  node_prev_code: char = #0;
+
+procedure update_user_info(var user:      pcb_user_rec;
+                           var extuser:   extuser_rec;
+                           maxlevel:      integer);
+
+type
+   status_formats = (normal_format, help_format, pgup_format, pgdn_format);
+
+procedure update_status_display (format:  status_formats);
+   {display current status information on the last 2 lines of the screen}
+
+procedure init_status_display;
+   {prepare the screen for status displays}
+
+procedure transfer_status_display;
+   {prepare the status display area for execution of a protocol driver}
+
+procedure delete_status_display;
+   {completely remove status display from the screen}
+
+implementation

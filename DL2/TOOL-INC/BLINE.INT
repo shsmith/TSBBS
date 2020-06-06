@@ -1,0 +1,14 @@
+
+{------------------------ Necessary Type Declarations -------------------------}
+
+TYPE
+  BTable = ARRAY[#0..#255] OF Byte;
+
+PROCEDURE MakeTable(VAR SrchSt : string;
+                    VAR cray : BTable);
+
+FUNCTION BMsearch(VAR buffr;
+            bsize : Integer;
+            VAR table;
+            VAR SrchSt : string) : Integer;
+

@@ -1,0 +1,11 @@
+
+   This archive contains a small revision of ProTpa 1.0á18 which I call
+   1.0á20.  The revision corrects ProTpa's use of CDC's method of julian
+   date calculation, which should solve various problems in doors that
+   check expiration dates and differentiate expired conferences from
+   normal conferences.
+
+           -- Samuel H. Smith
+              (818) 891-1344 Tool Shop BBS
+              (818) 891-4228 Voice
+

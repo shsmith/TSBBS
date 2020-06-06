@@ -1,0 +1,163 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                                 Util-Keyboard
+                        41 files using 1,308,436 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+128KEY.ZIP       8696  12-20-93  Expand DOS type-ahead buffer to 128 bytes.
+                               | Works with all versions of MS-DOS and DR-DOS.
+                               | Not a TSR!
+ANYKY30.ZIP     29596  11-23-93  Anykey keyboard macro upload/download utility
+                               | for Gateway 2000 Anykey keyboards. Version
+                               | 3.0.
+APPMAP11.ZIP    25863  02-18-93  AppMap v1.1 allows users to define which keys
+                               | perform a specific function so that the same
+                               | key combination will perform the same opera-
+                               | tion throughout their programs. FREEware.
+ASCII-2.ZIP     11849  08-16-93  ASCII v2.0 reveals ASCII and Extended ASCII
+                               | codes of a keypress in both decimal and
+                               | hexadecimal notation. TABLE.EXE that presents
+                               | the ASCII Table is also included.
+AUTOSC20.ZIP    96218  12-27-93  AutoScript version 2.0 TSR which "records"
+                               | and "plays" scripts in background. Records
+                               | keystrokes, kbd status changes, and delays
+                               | between keys. Powerful script language with
+                               | commands to save scrns, gener intrs, loop,
+                               | lock kbd, and much more. Branch based on text
+                               | on scrn, data in memory, program name, etc.
+                               | Ideal for making DEMOS of apps, AUTO SOFTWARE
+                               | TESTING, TASK SCHEDULING. Kbd enhancement,
+                               | scrn blanker, kbd lock, more
+BREAK12.ZIP      4029  01-15-92  Disable Ctrl-break key from your program
+CHAR8.ZIP       13625  06-19-94  AscII-Chart v8 --- June '94 --- $1.00 reg
+                               | INPUT all characters (0-255) directly into
+                               | your editor, at the CURSOR position, and
+                               | WITHOUT the 3-digit number that you have to
+                               | enter from the KeyPad with the ALT key. It
+                               | also shows DECIMAL, HEXADECIMAL, CHAR,
+                               | BINARY, and SCAN values for all characters
+DDKEY202.ZIP    32435  02-09-95  DDKEY v2.02 <ASP> - Powerful 7.5k TSR key
+                               | redefinition utility with pop-up editing,
+                               | optional record mode, literal key, halt for
+                               | user entry in macros, instant on/off, pair
+                               | shorthand, toggle CapsLock/NumLock in macro,
+                               | automatic capitals at sentence start, 24-hr
+                               | alarm, screen blanker, ASCII table, modify
+                               | cursor, print screen to file, load & save key
+                               | files. Pause, reassign, chain macros.
+                               | Customizable. Includes Dvorak layout +. $18
+DFKUNR30.ZIP    13645  04-26-94  DOS-F-KEY v3.0
+                               | By Mark Linehan
+                               | ----------------------------------
+                               | Now you can assign your own macros
+                               | to your F1-F10 keys, for use at
+                               | the DOS PROMPT! No more typing
+                               | DIR /W a million times a day!
+                               | You can easily EXCLUDE the F3 key
+                               | for those that like to get the
+                               | LAST command with it!
+                               | ----------------------------------
+DOSCOMM.ZIP      9735  01-24-95  TSR to: Assign a Command, or a Series of
+                               | Commands To The Function Keys. Edit keys
+                               | enabled on DOS command line as follows. Back
+                               | Space, Insert, Delete, Home, End, Left Arrow,
+                               | and Right Arrow Storage and scroll through,
+                               | of last 15 commands entered using the Up
+                               | Arrow and Down Arrow Keys, or Mouse Movement.
+                               | To Execute the Command Press 'Enter' or Left
+                               | Mouse Button. Stored Command Length is
+                               | limited to sixty-three characters, but does
+                               | not hinder longer DOS commands. Function Keys
+                               | F11, and F12 Set new Screen Colors if You
+                               | Have an ex- tended keyboard on your system.
+ELITEKEY.ZIP     3493  02-13-94  ELiTE TSR Key so you can write ELiTE
+EMOTIC11.ZIP    16401  01-02-94  TSR to insert EMOTICONS into your text or
+                               | comm session.
+KBCTL.ZIP        5212  01-10-91  Keyboard controller for IBM AT type
+                               | computers. Caps fix, QuickKey, ...
+KBD141.ZIP      10960  02-05-93  Set various keyboard features
+KEYBE10.ZIP     13966  01-27-94  ‰¿≠Á‰ k‰ù·Èírd dr≠˚‰r 1.0
+                               | …ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª
+                               | ∫ ¿‰Ás ùÈÊ Áùp‰ ‰¿≠Á‰     ∫
+                               | ∫ w≠ÁhÈÊÁ hí˚≠Ôg ÁÈ ¿‰írÔ ∫
+                               | ∫ ÁhÈs‰ ísõ≠≠ Áh≠Ôgs      ∫
+                               | ∫ ür‰‰ wír‰z              ∫
+                               | ∫ includes ConfIguring    ∫
+                               | ∫ your own keys           ∫
+                               | ∫ loading and unloading   ∫
+KEYLOCK1.ZIP     5301  09-13-91  Set keyboard toggles from command line.
+KEYPRS.ZIP       4479  03-19-91  Non- tsr, stuff the key buffer up
+KEYRATE.ZIP     15687  07-23-91  The ultimate in keyboard utilities--set the
+                               | key repeat rate as well as the key read
+                               | delay. For 286/386/486 machines only, though.
+KEYS.ZIP         6804  10-14-91  Output Scan Codes for Extended Keys
+KEYSPEED.ZIP     6016  07-28-91  Speed up keyboard reaction
+KEYTAP13.ZIP    10772  01-30-95  KeyTap v1.30 - Non-TSR keystroke simulator.
+                               | Runs application or shell whilst simulating
+                               | user keypresses. Ideal for automating menu
+                               | driven programs, or using from batch scripts.
+                               | Key list may given on command line or read
+                               | from file. Automatic pacing for slow apps.
+                               | Delays can be inserted into the key list.
+                               | less than 3.5K in memory!
+KEYTOG.ZIP      43996  08-16-94  KEYTOGGLE Version 1.27 allows simultaneously
+                               | setting the state of the SCROLL LOCK, CAPS
+                               | LOCK, INSERT and NUMBER LOCK keys. A quiet
+                               | mode is included for batch opperations. In
+                               | verbose mode a key state chart is displayed.
+                               | Registration Is only $6.00. ***Toolshop***
+LOCKOFF.ZIP     15693  05-06-93  Turns off Caps, Scroll, Num Lock.
+LOX2.ZIP         3136  04-27-91  GOOD UTILITY TO HAVE IN YOUR AUTOEXEC FILE,
+                               | USE LOX TO LOCK IN OR OUR THE CAPS, NUM, INS,
+                               | KEYS.
+NCS-OFF.ZIP      1738  05-02-93  *** NCS-Off *** NCS-Off is a simple program
+                               | that turns off Caps-Lock, Num-Lock, and
+                               | Scroll-Lock. There is no registration fee for
+                               | NCS-Off.
+NOSTOP.ZIP       7846  12-21-93  NOSTOP v1.1 Completely disable CTRL-BREAK,
+                               | CTRL-ALT-DEL, CTRL-C. Device driver or TSR.
+                               | Perfect for networks.
+PB-20.ZIP       29728  08-26-92  Playback Ver 2.0a - DOS Macro utility.
+PB16.ZIP        26969  03-22-91  Playback keystrokes, has menu, hotkeys, good
+PB19.ZIP        29675  10-28-91  Playback - Keyboard strokes playback utility
+PB19C.ZIP       29896  02-24-92  Playback v1.9C: captures your keystrokes, in-
+                               | cluding the delay between keystrokes, & lets
+                               | you play them back w/hot-keys, as an execut-
+                               | able file, via a batch file, or from a point-
+                               | n-shoot menu; RSE Inc
+PB20.ZIP        31033  04-24-92  PlayBack 2.0 - Keystroke recorder
+PEP.ZIP        113253  08-20-91  A fine keyboard macro program. Now you can
+                               | enter keystrokes at an appointed time when
+                               | you are not there!!!
+PROKEZ17.ZIP    28447  03-01-95  Pro-Keys ver. 1.7 is a ShareWare command line
+                               | environment. ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ Features
+                               | ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ * Uses 6.2K of memory. *
+                               | Advanced command line completion, editing and
+                               | recall. * Extended keyboard buffer. * Make
+                               | configuration changes on the fly. *
+                               | Unloadable. * Time slicing (no CPU munching).
+                               | * DOSKEY compatible macros. Randy Gregory -
+                               | randy@agecon.wisc.edu
+PTM229J.ZIP    228260  02-21-94  DOS PHANTOM v2.9j <ASP> Task Automator -
+                               | Record any task you perform at the keyboard
+                               | for playback by hotkey or on a schedule.
+                               | Store selected screen text for playback as
+                               | keyboard input to another program. Unlimited
+                               | record length. Edit recordings using powerful
+                               | script language: read/write files, looping,
+                               | pop-up text windows and menus. Great for
+                               | application integration and scheduled tasks.
+RKR.ZIP          7101  07-16-91  Rock Utilities - Reset keyboard rate
+RKS.ZIP          6275  07-16-91  Rock Utilities - Check key status
+SKEY40.ZIP     334298  12-23-91  Stack Key & more. Collection of powerful
+                               | batch enhancers.
+STUFF301.ZIP    12374  01-17-91  Keyboard stuffer will wait for/until time,
+                               | display prompt, input from a file, and
+                               | reboot. ASM source included.
+SWAPKEYS.ZIP     6399  08-25-91  swap ctl and capslock w/asm source
+TYPE.ZIP         2815  10-20-91  Typing speedor for DOS
+X.ZIP            4722  01-30-93  Program to extend keyboard type ahead buffer
+                               | to 256 characters.

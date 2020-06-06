@@ -1,0 +1,76 @@
+---------------------------------------------------
+
+The (F V) and (VX) commands list contents of zipfile and optionally view
+the text files without downloading.  It is also possible to  "extract"
+parts of a zipfile into $SCRATCH$ for downloading.
+
+Additional help is available on the following topics:
+
+       [V]  View
+       [X]  Xtract
+       [R]  Relist
+       [VX] Quick
+       [Summary]
+
+Enter the text inside the square brackets ie: V for VIEW
+
+
+~
+:?
+Please type one of the indicated topics for additional help.
+Press <ENTER> alone to exit the help system.
+~~
+:V
+(V)iew      View text file.  This function extracts the specified text
+            files from a zipfile and displays them for online evaluation.
+~~
+:VX
+(VX)quick   Quick view/extract zipfile contents.  View the text files in
+            an zipfile without downloading.
+
+You can take any of these actions on each file contained in the .ZIP
+file:
+   (Enter) or (S)kip
+       Pressing (Enter) alone or typing (S) will skip over the current
+       file and present you with the next file in the archive.
+
+   (V)iew
+       Directly view the contents of the current text file.
+
+   (Q)uit
+       Skip over all the remaining files in the zipfile and return you
+       to the ProDOOR command prompt.
+~~
+:R
+(R)elist    List view zipfile contents.  View the text files in an
+            zipfile without downloading.
+
+You can take any of these actions on each file contained in the .ZIP
+file:
+   (Enter) or (S)kip
+       Pressing (Enter) alone or typing (S) will skip over the current
+       file and present you with the next file in the archive.
+
+   (V)iew
+       Directly view the contents of the current text file.
+
+   (Q)uit
+       Skip over all the remaining files in the zipfile and return you
+       to the ProDOOR command prompt.
+~~
+:X
+(X)tract    Extract specified member files from a zipfile and prepare
+            them for downloading as $SCRATCH$.  Use this function to
+            download parts of files that are otherwise too large to
+            download within your alloted time and byte limits.
+~~
+:SUMMARY
+The (F V) and (VX) commands list contents of zipfile and optionally view
+the text files without downloading.
+
+The (R)elist subfunction repeats the listing of file members and optionally
+allows you to selectively view text members.
+
+The (X)tract subfunction extracts parts of a zipfile and prepares them for
+quicker downloading as $SCRATCH$.
+~~

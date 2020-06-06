@@ -1,0 +1,9 @@
+function remove_path(name: filenames): filenames;
+function path_only(name: filenames): filenames;
+function name_only(name: filenames): filenames;
+function remove_ext(name: filenames): filenames;
+function ext_only(name: filenames): filenames;
+procedure cons_path(var path: filenames;
+                    dir,name: filenames);
+procedure cons_name(var resu:          filenames;
+                    name1,name2,ext:   filenames);

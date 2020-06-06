@@ -1,0 +1,13 @@
+const
+   maxnumfiles =  200;
+   null =         #0;
+type
+   filearray =    array [1.. maxnumfiles] of varstring;
+var
+   filetable:     filearray;
+const
+   filecount:     integer = 0;
+
+procedure getfiles (pattern:       string65;
+                    var fdir:      filearray;
+                    var num:       integer);

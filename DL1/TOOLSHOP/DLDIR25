@@ -1,0 +1,75 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                           Lang-"Forth" Source Code
+                        33 files using 1,761,407 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+4CMP22O.ZIP     96717  11-18-94  ForthCMP Forth Compiler, version 2.2o Direct
+                               | machine code compilation of 83 Standard Forth
+                               | into MS-DOS COM, EXE, SYS, TSR, or
+                               | stand-alone 80x86 files. Many example
+                               | programs. Register for documentation.
+4CMP22S.ZIP    103098  11-18-94  ForthCMP Forth Compiler, version 2.2s Direct
+                               | machine code compilation of ANS Forth subset
+                               | into MS-DOS COM, EXE, SYS, TSR, or
+                               | stand-alone 80x86 files. Many example
+                               | programs. Register for documentation.
+BBL4DOCS.ZIP   111979  12-07-86  Freeware 32-bit Forth language system. Large
+                               | memory model supported. Documentation. 1 of 4
+BBL4EDIT.ZIP    65295  12-07-86  Freeware 32-bit Forth language system. EditoR
+BBL4SRC.ZIP    136001  12-06-86  Freeware 32-bit Forth languaGe system.
+                               | Assembly language source code. 3 of 4
+BBL4TH01.ZIP    85081  12-07-86  Freeware 32-bit Forth language system.
+                               | Utilities, executable compiler. 4 of 4
+CMOORECO.ZIP     7794  01-23-86  Transcript of CSI Forth forum conference wit
+                               | Charles Moore (inventor of Forth language)
+FIGFORTH.ZIP   101709  05-17-87  FIG Forth for the IBM PC. Pretty old, but
+                               | simple and still pretty good for learning.
+FORTHBBS.ZIP     2707  10-23-89  List of Forth on-line support, updated 10/89
+FORTHCMP.ZIP    93518  09-02-92  An excellent fast Forth compiler and
+                               | programming environment. New for '92.
+FORTHTUT.ZIP    25255  05-13-88  Forth Tutorial (G)
+FOX'SLZ1.ZIP     8957  09-02-92  A text file describing file compression with
+                               | Forth example source code.
+FPINDEX.ZIP     84404  10-05-87  Binary
+F_PCASM.ZIP     15656  10-10-88  F-PC Forth v2.15 assembler. File 1 of 6
+ISING.ZIP       31967  03-26-89  simulation of magnetic film, chaotic game of
+                               | life, or 2d fluid; 4th+asm source. Uploaded
+                               | by author
+LESSON0.ZIP      6819  10-23-88  F-PC 2.25 Forth Tutorial, 1 of 4
+LESSON1.ZIP     27133  10-24-88  F-PC 2.25 Forth Tutorial, 2 of 4
+LESSON2.ZIP     49632  11-04-88  F-PC 2.25 Forth Tutorial, 3 of 4
+LESSON3.ZIP     55794  12-19-88  F-PC 2.25 Forth Tutorial, 4 of 4 Thank Jerry
+                               | Shifrin.
+LPFORTH.ZIP    119313  01-07-85  Laxon & Perry Forth. A public domain Forth
+                               | that uses the hosts operating systems file
+                               | method (i.e. MS-DOS) to store files instead
+                               | of the normal Forth screen oriented way. Has
+                               | a good Forth word search which will find any
+MOORE1.ZIP       7112  03-14-87  Charles Moor (inventor of Forth language)
+                               | speaks on the subject of Robots and the Forth
+                               | language as the solution to "the software
+                               | problem".
+MOORE987.ZIP     6848  09-28-87  Charles Moore speaks about the Novix Forth
+                               | chip and building a system around it.
+MVPFORTH.ZIP    25655  10-22-83  FORTH language compiler
+PC-CON.ZIP      47503  05-09-88  Terminal program written in Forth
+PDE101.ZIP      59880  12-01-86  FORTH programmer's editor
+PSFORTH.ZIP      7288  02-14-90  Version of Forth Language written in
+                               | Postscript!
+PYGMY13.ZIP     63163  09-17-90  Small, clean Forth with source, docs, and
+                               | metacompiler
+SMILEY31.ZIP   104736  12-06-88  F-PC Forth tools by Mark Smiley
+SONZEN3.ZIP     56611  01-22-89  Son of ZEN forth. This is a C/Forth hybrid
+                               | development system.
+TUTOR4TH.ZIP    54594  02-17-87  Forth tutoral based on "Starting Forth"
+UNIFORTH.ZIP    75551  02-17-87  UNIFORTH Forth-83 Sampler is a subset of the
+                               | complete UNIFORTH system. It is fairly
+                               | complete with editor, assembler and supports
+                               | floating-point math. Intended for beginners.
+VIEWEDIT.ZIP     6373  02-16-90  Allows user to add an external editor (like
+                               | QEDIT) to F-PC Forth v3.50
+ZEN2APP3.ZIP    17264  03-19-90  Application compiler for ZEN 1.10 v3.0

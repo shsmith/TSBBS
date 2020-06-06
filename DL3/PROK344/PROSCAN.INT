@@ -1,0 +1,62 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * PCB ProDOOR file directory scanning (3-1-89)
+ *
+ *)
+
+unit ProScan;
+
+interface
+   Uses
+     Tools,
+     MDosIO,
+     ProData;
+
+procedure displn_dir(var line: string);
+
+const
+  colorizing: boolean = true;
+
+type
+   display_formats = (dir_colorize,
+                      display_normal, 
+                      remove_semicolons,
+                      number_lines,
+                      helpfile_format,
+                      result_format);
+   
+procedure display_file_raw(name: filenames;
+                           form: display_formats);
+   {display the specified file.  handles special cases for
+    graphics files and missing files}
+
+procedure display_file(name: filenames);
+
+procedure display_helpfile(name: filenames);
+
+procedure display_dirfile(name: filenames);
+   {display the specified directory file.  handles special cases for
+    graphics files and missing files}
+
+procedure display_resultfile;
+   {display the resultfile from archive testing; remove pathnames from
+    all lines; detect invalid archives and delete them}
+
+procedure display_macfile(fn: filenames);
+
+procedure dir_scan(mode:  scan_modes);
+
+procedure check_newer(var dirline: string; lastdate: string6);
+
+implementation

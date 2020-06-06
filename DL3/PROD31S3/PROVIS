@@ -1,0 +1,167 @@
+
+
+                           << ProDoor Visual Editor >>
+                           <<  Q u i c k   H e l p  >>
+
+
+
+ÕÍÍÍÍÍÍ< Cursor Movement >ÍÍÍÍÍÍÑÍÍÍ< Delete >ÍÍÍÍÑÍÍÍÍÍ< Miscellaneous >ÍÍÍÍÍ¸
+³ ^S Char left   ^D Char right  ³  ^G Character   ³   ^B Reformat paragraph   ³
+³ ^A Word left   ^F Word right  ³ DEL Char left   ³   ^N Insert a RETURN      ³
+³ ^E Line  up    ^X Line down   ³  ^T Word right  ³   ^O Original msg display ³
+³ ^I Tab cursor  ^P Line end    ³  ^Y Line        ³   ^Q Quote original msg   ³
+ÆÍÍÍÍÍÍÍÍÍ< Scrolling >ÍÍÍÍÍÍÍÍÍµ                 ³   ^V Overtype/Insert mode ³
+³ ^C Screen up   ^R Screen down ³  ^J Join lines  ³  ESC Exit to command mode ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+                           [More details on next page]
+
+
+
+
+The ProDoor Visual Editor provides full-screen visual editing for online
+message entry.  Visual editing requires ANSI terminal emulation.
+
+Visual editing commands are WordStar-like control characters.  If your
+terminal program provides ANSI keyboard emulation you will also be able
+to use the indicated function keys.
+
+
+<< Cursor Motion >>
+
+Ctrl-S  Move left  1 character     (Left arrow key)
+Ctrl-D  Move right 1 character     (Right arrow key)
+Ctrl-E  Move up    1 line          (Up arrow key)
+Ctrl-X  Move down  1 line          (Down arrow key)
+Ctrl-A  Move left  1 word          (Ctrl-Left arrow key)
+Ctrl-F  Move right 1 word          (Ctrl-Right arrow key)
+Ctrl-I  Tab cursor to next tabstop (Tab key)
+Ctrl-P  Move cursor to line end    (End key)
+Ctrl-W  Move cursor to line start  (Home key)
+
+
+<< Scrolling >>
+
+Ctrl-R  Move up a page             (PgUp key)
+Ctrl-C  Move down a page           (PgDn key)
+
+
+<< Delete >>
+
+Ctrl-G  Delete (gobble) character under cursor
+Ctrl-H  Delete character to the left of the cursor  (Backspace)
+Ctrl-T  Delete the word following the cursor
+Ctrl-Y  Delete the current line
+Ctrl-J  Join current line with next line
+
+
+<< Miscellaneous >>
+
+Ctrl-B  Reformat paragraph.  A paragraph ends with the first line that is
+        blank or that has leading spaces.
+
+Ctrl-L  Clear screen and redisplay.
+        This also scrolls the screen so the cursor line is in the middle
+        of the display.
+
+Ctrl-N  Insert a RETURN.  Splits line at the cursor.
+
+Ctrl-O  Review the text of the Original message you were reading or replying.
+        You may also quote selected lines from the original message.
+
+Ctrl-Q  Allows quoting from original message.  Same as Ctrl-O but does not
+        display the original message again.
+
+Ctrl-V  Toggle insert/overtype mode.  (Ins key)
+
+Ctrl-U  Quit visual mode and return to the Message Entry Command prompt.
+
+ESC     Exit visual mode and return to the Message Entry Command prompt.
+
+
+                    [Additional notes and tips on next page]
+
+
+
+Insert Mode versus Overtype Mode
+--------------------------------
+
+In insert mode, all characters typed are INSERTED before the cursor. The
+ENTER key splits the line and BACKSPACE can re-join lines.
+
+In overtype mode, characters "type over" what was on the screen before.
+Overtype mode also disables the automatic line SPLIT / JOIN available in
+insert mode.  Use ^N(split) and ^J(join) to manually split and join
+lines while in overtype mode.
+
+
+
+Keyboard emulation
+------------------
+
+The easiest way to control the cursor in Visual Edit mode is to use your
+cursor keys.  Most popular terminal programs provide some sort of
+keyboard emulation.  Unfortunately, this emulation is either incomplete
+or requires you to go through an involved configuration process.
+
+ProDoor also supports the "Doorway" keyboard mode of Qmodem.
+
+The WordStar* command set was chosen as a control-character command set
+because it can function on virtually any keyboard and with any terminal
+emulation mode.  It also has the advantage of leting you keep your
+fingers on the "home" keys while moving the cursor around.
+
+
+
+Function             Keyboard Codes Recognized       Doorway Codes
+--------             -------------------------       -------------
+
+
+Cursor up . . . . . . . . . . . ^E
+                        or      <esc> A                 <nul> H
+
+Cursor down . . . . . . . . . . ^X
+                        or      <esc> B                 <nul> P
+
+Cursor right. . . . . . . . . . ^D
+                        or      <esc> C                 <nul> M
+
+Cursor left . . . . . . . . . . ^S
+                        or      <esc> D                 <nul> K
+
+Word right. . . . . . . . . . . ^F                      <nul> t
+
+Word left . . . . . . . . . . . ^A                      <nul> s
+
+Beginning of line . . . . . . . ^W
+                        or      <esc> H                 <nul> G
+
+End of line . . . . . . . . . . ^P
+                        or      <esc> K                 <nul> O
+                        or      <esc> R
+
+Page up . . . . . . . . . . . . ^R
+                        or      <esc> r                 <nul> I
+
+Page down. . . . . . . . . . .  ^C
+                        or      <esc> q                 <nul> Q
+
+Insert mode toggle . . . . . .  ^V
+                        or      <esc> n                 <nul> R
+
+
+In this table, the symbol <esc> means any one of these character code
+sequences:
+        chr(27)
+        chr(27) [
+        chr(27) [ O
+
+The symbol <nul> means chr(0) or an ascii NUL.  These codes correspond
+directly to the IBM extended scan codes produced by the corresponding
+keyboard keys.  These codes are used if your terminal program supports
+"Doorway" mode.
+
+This provides support for a wide variety of keyboard emulations.
+

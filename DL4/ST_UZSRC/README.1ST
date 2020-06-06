@@ -1,0 +1,27 @@
+
+Mr. Sam Smith....
+
+        This is my first attemp at programming.
+	
+		This file includes "C" source code derived from your
+		version 2.0 of UNZIP for the IBM world.
+		
+		I request permission to release the program version
+		as shareware for the Atari ST machine.
+		
+		I initially developed it for personal use but believe
+		there are other folks in the ST world who could use it.
+		
+		
+Thank-you
+
+Arthur Cravener
+
+
+
+*NOTE...
+     I've had to add a "horrible" KLUDGE to convert some imploded
+     characters to their correct values.  This uses a CASE routine
+     that can be found in the unImplode routine in the UNZXTRACT.C
+     module.  Any help as to why this KLUDGE had to be added would
+     be appreciated.		

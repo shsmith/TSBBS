@@ -1,0 +1,1 @@
+procedure capstr(var s: string);

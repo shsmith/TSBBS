@@ -1,0 +1,130 @@
+
+(*
+ * pull - utility library for simple "pull-down" windows
+ *        uses functions in popup.inc (3-1-89)
+ *
+ *)
+
+const
+   MAX_PULLDOWN = 10;
+   MAX_AREC = 100;
+
+   MAX_VARS = 1000;
+   FIRST_VAR = 30000;
+   LAST_VAR = FIRST_VAR+MAX_VARS;
+
+   MAX_SVARS = 1000;
+   FIRST_SVAR = LAST_VAR+1;
+   LAST_SVAR = FIRST_SVAR+MAX_SVARS;
+
+   QUIT_SEL = #255;      {special select value to quit top menu}
+   DIVIDER_ENTRY = -254; {special action value for divider lines}
+   UNUSED_ENTRY  = 0;    {special action value for unused pulldown entries}
+
+   IDLE_KEY = #246;      {special keystroke value constantly passed to
+                          user _key function when idle}
+
+type
+   pulldown_entry = record
+      title:  string[40];
+      action: integer;
+   end;
+
+   pulldown_rec = record
+      border_fg: byte;
+      border_bg: byte;
+      text_fg:   byte;
+      text_bg:   byte;
+      select_fg: byte;
+      select_bg: byte;
+      ainit:     integer;
+      aexit:     integer;
+      line:      array[1..MAX_PULLDOWN] of pulldown_entry;
+      curline:   integer;
+      longest:   integer;
+   end;
+
+   pulldown_arec = array[0..MAX_AREC] of pulldown_rec;
+
+
+   pulldown_vrec = array[FIRST_VAR..LAST_VAR] of real;
+
+
+   pulldown_string = string[30];
+
+   pulldown_srec = array[FIRST_SVAR..LAST_SVAR] of pulldown_string;
+
+
+   pulldown_actionp =
+               function (pullno:   integer;   (* pulldown menu number *)
+                         entry:    integer;   (* entry in pulldown menu *)
+                         action:   integer;   (* action code *)
+                         var sel:  char)      (* select key *)
+                             : boolean;       (* true to force menu exit *)
+   {pulldown action routine; called when a pulldown entry is selected}
+
+   pulldown_initp =
+             procedure (pullno:    integer;
+                        action:    integer;
+                        var sel:   char);
+   {pulldown init routine; called when a pulldown menu is opened}
+
+   pulldown_exitp =
+             procedure (pullno:    integer;
+                        action:    integer;
+                        var sel:   char);
+   {pulldown exit routine; called when a pulldown menu is closed}
+
+   pulldown_keyp =
+              function  (pullno:   integer;   (* pulldown menu number *)
+                         entry:    integer;   (* entry in pulldown menu *)
+                         var sel:  char)      (* select key *)
+                             : boolean;       (* true to force menu exit *)
+   {process unknown keys}
+
+var
+   pulldown_action:     pulldown_actionp;
+   pulldown_init:       pulldown_initp;
+   pulldown_exit:       pulldown_exitp;
+   pulldown_key:        pulldown_keyp;
+
+   pulldown_vars:       ^pulldown_vrec;
+   pulldown_nvars:      integer;
+
+   pulldown_svars:      ^pulldown_srec;
+   pulldown_nsvars:     integer;
+
+   pulldown_table:      ^pulldown_arec;
+   pulldown_size:       integer;
+
+   pulldown_cnf:        PathStr;
+
+   pulldown_redisp:     boolean;                (* set by client to force
+                                                   redisplay of menus *)
+
+
+procedure pulldown(topx,topy:    integer;
+                   pullno:       integer;
+                   parent:       integer;
+                   var pull:     pulldown_rec;
+                   var sel:      char);
+   {pulldown window processor; display the pulldown window and
+    select an entry from it}
+
+procedure open_pulldown(pullno:       integer;
+                        parent:       integer;
+                        var sel:      char);
+
+procedure init_pulldown(actionp:        pulldown_actionp;
+                        initp:          pulldown_initp;
+                        exitp:          pulldown_exitp;
+                        keyp:           pulldown_keyp;
+                        var tablep;
+                        tablesz:        integer;
+                        numvars:        integer;
+                        numsvars:       integer;
+                        configfn:       PathStr);
+   {connect client-supplied action, initialize, exit, and keystroke processors
+    to act upon a specified pulldown table, which is associated with the
+    specified configuration file}
+

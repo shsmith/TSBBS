@@ -1,0 +1,1 @@
+function ftoa(f: real; width,dec: integer): string20;

@@ -1,0 +1,2 @@
+procedure qWrite(x,y: integer; s: string);
+ 

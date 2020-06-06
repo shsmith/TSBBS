@@ -1,0 +1,29 @@
+
+                        LIST EXTENDED USER FILE          12-28-88
+                        =======================
+
+The EXTLIST program lists a summary of the contents of the extended user
+file.  It uses the EXTUSER environment variable to determine the full
+filename of the extended user file.  If the EXTUSER environment is not
+set the program will access 'EXTUSER' in the default directory.
+
+
+Here is a typical display:
+
+      20 extended conferences in file.
+     219 bytes per user record.
+     469 user records in file.
+
+     Rec   Date             Name
+     --- -------- -------------------------
+       1 12-28-88 SAMUEL SMITH
+       2 12-12-88 CHRIS MILLER
+       3 12-12-88 GLENN LEARN
+       4 12-14-88 GEO SHAFFER
+       5 12-13-88 DON CARROLL
+       6 12-27-88 MARK RAPP
+       7 12-13-88 LOUIS KOZMAN
+       8 12-11-88 BRUCE CHAFFEE
+       9 12-19-88 MIKE BERNSTEIN
+      10 12-20-88 ROBERT THOMAS
+

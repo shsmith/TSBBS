@@ -1,0 +1,33 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+type
+   display_formats = (dir_colorize, 
+                      display_normal, 
+                      remove_semicolons,
+                      number_lines);
+   
+procedure display_file_raw(name: filenames;
+                           form: display_formats);
+   {display the specified file.  handles special cases for
+    graphics files and missing files}
+
+procedure display_file(name: filenames);
+
+procedure display_dirfile(name: filenames);
+   {display the specified directory file.  handles special cases for
+    graphics files and missing files}
+
+procedure display_resultfile;
+   {display the resultfile from archive testing; remove pathnames from
+    all lines; detect invalid archives and delete them}
+

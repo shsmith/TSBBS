@@ -1,0 +1,79 @@
+
+               ษออออออออออออออออออออออออออออออออออออออออป
+               บ                                        บ
+               บ        ><     HSLBOY.BSC     ><        บ
+               บ                                        บ
+               บ   Unzip/Register Script for HS/Link    บ
+               บ                                        บ
+               บ              in BOYAN 5.0              บ
+               บ                                        บ
+               ศออออออออออออออออออออออออออออออออออออออออผ
+
+
+
+Description
+
+
+        HSLBOY.BSC is a script to simplify unzipping and registering
+
+        new copies of HSLink bidirectional file transfer protocol, as
+
+        they are released. When run for the first time, it creates a
+
+        file called ##HSL.FIL , which holds your registration serial
+
+        number and password (or just  ## , if you are not registered).
+
+        Then (and, on subsequent runs, at startup) the script presents
+
+        a File Manager directory list of all files in your download
+
+        directory that begin with "HS". From these, just highlight the
+
+        version of HSLink you want, and press <Enter>. The script will
+
+        unzip it into your external protocol directory, then enter your
+
+        registration codes. No more searching in drawers for those docs,
+
+        every time you download a new version of HSLink.
+
+
+
+
+Installation and Use
+
+
+        To use, just unzip HSLBOY.BSC into your Boyan script directory, and
+
+        run it.  \SC[HSLBOY]  or Alt-R  HSLBOY  <Enter> . Be sure there is a
+
+        copy of HSLK<xxx>.ZIP in your download directory, for the script to
+
+        work on. It isn't necessary to delete any old HSLink files, as the
+
+        unzipping is in overwrite (pkunzip -o) mode, so previous files of
+
+        the same name are simply overwritten.
+
+
+        The script does not process every file in HSLink, just those that
+
+        fit the wildcard  HS*.* . This covered HSCONFIG.EXE, HSLINK.EXE,
+
+        HSLINK.DOC, and HSLINK.NEW, in the version (1.12) used in testing.
+
+
+        The script has been tested in several places, and seems to work
+
+        well; I'd appreciate hearing of any bugs or suggestions. I can be
+
+        reached on most any Boyan conference.
+
+
+        Thanks to Matthew Waldron, Doug Manne, and Lee Breeden for testing
+
+        and suggestions.
+
+                                                        Paul Buerkle
+                                                        6-27-92

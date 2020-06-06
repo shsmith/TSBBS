@@ -1,0 +1,5 @@
+U:
+cd U:\PROD
+set EXTUSER=U:\PROD\EXTUSER
+set CONFINFO=U:\PROD\CONFINFO
+prosm prod.cnf J:\PCB3 %1

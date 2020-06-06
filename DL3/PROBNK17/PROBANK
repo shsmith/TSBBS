@@ -1,0 +1,10 @@
+echo off
+rem pcboard door script for SAVINGS BANK door program
+cd \pcb\door
+probank probank.cnf c:\pcb
+banksort bank.dat
+banklist bank.dat >c:\pcb\gen\blt14
+copy c:\pcb\gen\blt14 i:\gen >nul
+cd \pcb
+if exist event.bat event
+board

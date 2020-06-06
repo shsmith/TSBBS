@@ -1,0 +1,76 @@
+;
+; Configuration file for CALLS v14s16.
+; Anything following ";" is a comment.
+; Keywords may appear in any order.
+; Default values will be used for keywords not specified in the config file.
+;
+
+;report subtitle
+;SUBTITLE Tool Shop Activity Report
+
+;full name of caller input file
+INFILE  DAY
+
+;output file to produce
+OUTFILE blt99
+
+;file for saved history information
+SAVEFILE nul
+
+;number of nodes to scan (1=single node mode)
+NODES   10
+
+;list of reports to produce from the following list
+;
+;   A - system statistics            B - graphic modes
+;   C - baud rates                   D - hourly usage
+;   E - conferences joined           F - bulletins read
+;   G - doors opened                 H - download protocols
+;   I - download efficiency          J - upload protocols
+;   K - upload efficiency            L - batch sizes
+;   M - files downloaded             N - security statistics
+;   O - security level counters      P - connect type analysis
+;   Q - free downloads
+;                                    Z - insert a blank line
+REPORTS ANBCDOPEFGHIJKLQM
+
+;number of "free downloads" to report
+MAXFREE 10
+
+;minimum d/l's to include a file in report
+MINDL   2
+
+;peak hours to report
+;                 1         2
+;        012345678901234567890123
+;PEAK    YNNNNNNNNNNNNNNNNYYYYYYY
+
+;determine peak 6 hours automatically
+PEAK AUTO
+
+;maximum number of conferences to report
+MAXCONF 20
+
+;maximum number of bulletins to report
+MAXBLT  20
+
+;maximum number of doors to report
+MAXDOOR 20
+
+;maximum number of batch sizes to report
+MAXBATCH 5
+
+;redefine protocol names
+PROTOCOL Z Zmodem
+PROTOCOL K SLOW! Kermit
+PROTOCOL G Ymodem-G (DSZ)
+PROTOCOL F Xmodem-1K-G
+
+;define how event time is reported
+;   EVENTMODE OFF disables calculation of event duration.
+;   EVENTMODE BUSY calculates event duration and accounts for it
+;       as 'busy' time (i.e. the system was in use during this time).
+;   EVENTMODE IDLE calculates event duration and accounts for it
+;       as 'idle' time (i.e. the system was NOT in use during this time).
+EVENTMODE BUSY
+

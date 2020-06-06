@@ -1,0 +1,45 @@
+
+                          ProECHO 1.0 01/23/88
+                    ProDOOR Batch Message Echo Module
+
+                   Copyright (C) 1988 Samuel H. Smith
+
+                             The Tool Shop BBS
+                            (602) 264-3969 (HST)
+                            (602) 279-2673 (2400)
+
+
+Usage:   proecho PORT TEXT ...
+         (use "~" to insert newlines)
+
+Sets ERRORLEVEL 2 if local mode.
+Sets ERRORLEVEL 1 if carrier is NOT present.
+Sets ERRORLEVEL 0 if carrier present.
+
+Example: proecho 1 ~Testing your uploads.  Please wait...~~
+
+
+ProECHO is used in door batch files to send messages to the com port. It 
+will not lock up with 'write fault' in case of carrier loss.   This 
+program was originally written for use by ProDOOR, but can be used in 
+any application where messages must be sent to the modem.   The only 
+restriction is that carrier must be present. 
+
+
+ProECHO can also be used in batch files to check if carrier is present. 
+For example: 
+
+   proecho 1 ~
+   if errorlevel 1 goto nocarrier
+   rem carrier is present
+
+   :nocarrier
+   rem carrier is not present
+
+
+NOTE:
+        PROECHO.EXE replaces PROECHO.COM in systems that use
+        non-standard com ports via the COMBASE and COMIRQ environment
+        variables.  If you wish to use PROECHO.EXE, please make sure you
+        erase all copies of PROECHO.COM.
+

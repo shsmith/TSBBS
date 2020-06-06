@@ -1,0 +1,4 @@
+type
+   zstring = array[0..255] of char;
+procedure ztos(var z: zstring; var s: string);
+procedure stoz(var s: string;  var z: zstring);

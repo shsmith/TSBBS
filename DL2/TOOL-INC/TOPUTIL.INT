@@ -1,0 +1,21 @@
+
+
+(* TOPUTIL.INT *)
+
+procedure edit_variable( pullno:        integer;
+                         varno:         integer);
+
+procedure fixup_vars( pullno:   integer);
+
+procedure do_store_settings;
+procedure do_load_settings;
+
+function get_ivar(  varno: integer ): integer;
+function get_var(  varno: integer ): real;
+procedure put_var( varno: integer;
+                   value: real );
+
+function get_svar( varno: integer ): string;
+procedure put_svar(varno: integer;
+                   value: string );
+

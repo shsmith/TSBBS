@@ -1,0 +1,2 @@
+function ljust(s: string80; w: integer): string80;
+function rjust(s: string80; w: integer): string80;

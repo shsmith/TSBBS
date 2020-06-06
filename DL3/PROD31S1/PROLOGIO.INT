@@ -1,0 +1,12 @@
+
+procedure log_upload_name(logfile:  anystring;
+                          source:   anystring;
+                          dest:     anystring;
+                          size:     longint;
+                          descr:    string);
+
+procedure log_download(entry: anystring);
+
+function next_extended_descr(var descr: string): anystring;
+procedure display_extended_description(descr: string);
+

@@ -1,0 +1,18 @@
+
+Sideprn:  another sideways file printer
+
+This program may be freely copied, provided it is never sold
+or otherwise used for profit.
+
+To print a file sideways with this program, just type:
+
+   sideprn FILENAME
+
+If you leave off the filename, sideprn will ask you for the name
+of the file to be printed.
+
+
+Note:  this program WILL print the line-drawing characters sideways!
+
+Enjoy!     S.H.Smith, 01-Jan-85
+

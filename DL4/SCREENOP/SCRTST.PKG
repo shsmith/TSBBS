@@ -1,0 +1,63 @@
+
+
+--
+-- Screen operations package test driver
+--
+-- This program tests each function of the screen operations
+-- package, SCREENOP.
+--
+-- S.H.Smith, 25-jul-86
+--
+
+with SCREENOP;  use SCREENOP;
+
+procedure SCRTST is
+   LINE: string;
+   C:    character;
+
+begin
+   CLEAR_SCREEN;
+
+   POSITION_CURSOR(1,1);     PUT_ASCII(218);
+   POSITION_CURSOR(1,24);    PUT_ASCII(192);
+   POSITION_CURSOR(80,1);    PUT_ASCII(191);
+   POSITION_CURSOR(80,24);   PUT_ASCII(217);
+
+   for i in 2..79 loop
+      POSITION_CURSOR(i,1);  PUT_ASCII(196);
+      POSITION_CURSOR(81-i,24); PUT_ASCII(196);
+
+      if i in 2..23 then
+         POSITION_CURSOR(1,25-i);  PUT_ASCII(179);
+      end if;
+
+      if i in 22..43 then
+         POSITION_CURSOR(80,i-20); PUT_ASCII(179);
+      end if;
+   end loop;
+
+
+   POSITION_CURSOR(1,3);
+   PUT_ASCII(179); PUT_LINE(" SCRTEST - This program tests the functions of the SCREENOP screen package.");
+   NEW_LINE;
+   PUT_ASCII(179); PUT_LINE(" The following functions are used to make this display:");
+   PUT_ASCII(179); PUT_LINE("      POSITION_CURSOR     -- Set cursor position on screen");
+   PUT_ASCII(179); PUT_LINE("      PUT (character)     -- Display character");
+   PUT_ASCII(179); PUT_LINE("      PUT (ascii)         -- Display character from ascii code");
+   PUT_ASCII(179); PUT_LINE("      PUT (string)        -- Display string");
+   PUT_ASCII(179); PUT_LINE("      PUT_LINE (string)   -- Display string with newline");
+   PUT_ASCII(179); PUT_LINE("      NEW_LINE            -- Display newline");
+
+   POSITION_CURSOR(1,14);
+   PUT_ASCII(179); PUT(" Testing GET (character),  Enter character: ");  GET(C);
+   PUT("     You typed: ["); PUT(C); PUT("]");
+
+   POSITION_CURSOR(1,17);
+   PUT_ASCII(179); PUT(" Testing GET (string),     Enter line: "); GET(LINE); NEW_LINE;
+   PUT_ASCII(179); PUT("                           You typed: ["); PUT(LINE); PUT_LINE("]");
+   NEW_LINE;
+
+   PUT_ASCII(179); PUT_LINE(" End of SCREENOP test.");
+
+end SCRTST;
+

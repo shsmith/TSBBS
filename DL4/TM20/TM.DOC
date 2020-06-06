@@ -1,0 +1,26 @@
+TM: A very simple replacement for Norton's 'TM' command.
+Public domain material.
+Samuel H. Smith.
+
+Version 2.1, 05-may-93
+
+Usage:
+        tm [/LOG] [/L] [/P] [START] [STOP] [REPORT] ["message"] [>outfile]
+
+Where:
+        /L              causes output to be left justified
+
+        /P              causes a prompt for input with "message" as a prompt
+                        (automatic timeout if no keyboard input in 30 seconds)
+
+        "message"       is included in output, unless /P is used, in which
+                        message is the prompt for input and any input supplied
+                        is included in the output.
+
+        /LOG            is ignored
+        START           is ignored
+        STOP            is ignored
+        REPORT          is ignored - these are provided for compatibility
+                        with norton's TM command.
+
+

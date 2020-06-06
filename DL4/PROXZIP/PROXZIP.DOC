@@ -1,0 +1,4 @@
+
+ProExZip v2.9 03-01-89 (C) 1989 S.H.Smith
+
+Usage: proxzip INFILE.zip OUTFILE.zip MEMBER ... MEMBER

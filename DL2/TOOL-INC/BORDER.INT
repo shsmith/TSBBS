@@ -1,0 +1,28 @@
+
+(*
+ * border.inc - draw a border around a window
+ *
+ * S.H.Smith, 14-Nov-87
+ *
+ *)
+
+type
+  border_styles = (blank_border,        single_border,
+                   double_border,       mixed_border,
+                   taildouble_border,   rtaildouble_border,
+                   solid_border,        evensolid_border,
+                   thinsolid_border,    lohatch_border,
+                   medhatch_border,     hihatch_border);
+
+const
+  border_table:  array[blank_border..hihatch_border] of string[8] =
+    ('        ',  { blank      }         '⁄ƒø≥≥¿ƒŸ',  { single     }
+     '…Õª∫∫»Õº',  { double     }         '’Õ∏≥≥‘Õæ',  { mixed      }
+     'ÃÕª∫∫»Õº',  { taildouble }         '…Õπ∫∫»Õº',  { rtaildouble}
+     '€€€€€€€€',  { solid      }         '€ﬂ€€€€‹€',  { evensolid  }
+     'ﬁﬂ›ﬁ›ﬁ‹›',  { thinsolid  }         '∞∞∞∞∞∞∞∞',  { lohatch    }
+     '±±±±±±±±',  { medhatch   }         '≤≤≤≤≤≤≤≤'); { hihatch    }
+
+procedure display_border(topx,topy,botx,boty: integer;
+                         style: border_styles);
+

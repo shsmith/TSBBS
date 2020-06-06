@@ -1,0 +1,74 @@
+$YELLOW$($GREEN$@TIMEUSED@ used, $RED$@TIMELEFT@ left$YELLOW$)
+@X0A(@X0F@TIMELEFT@ min. left@X0A)
+[@INCONF@] Command?
+@X0E[Node $NODE$] @X0F@INCONF@ ($CONFNUM$) @X0AConference Command?
+You are not registered in Conference $5W$!
+Invalid conference selection ($5W$)!
+[@INCONF@] Mail Command:
+@INCONF@ Mail Command:
+(Enter) or (Y)es, (N)o, (F)lag, (NS)non-stop?
+(Enter), (N)o, (F)lag, (NS)non-stop?
+Sorry, you can't download any more today
+Sorry, you can't download any more, please upload something..
+(?) for help.
+(?) for Assistance.
+(?) for help with commands.
+(?) for Assistance with commands.
+($3$) not understood.  Type
+($3$) is not a valid menu option.  Type
+Warning: Name not found in USERS file!
+Warning: This USER does not exist on this BBS!
+Enter the filename to VIEW:
+Enter filename to VIEW (.ZIP assumed):
+Thanks for calling, $FIRST$!
+Thanks for visiting @BOARDNAME@ $FIRST$!
+DOOR # to Open:
+Door # to Enter:
+Keyboard Time Expired!
+Keyboard Time Expired, @BEEP@@BEEP@@BEEP@___PLEASE_WAKE_UP___ @BEEP@@BEEP@!!!
+Please wait ...
+Please give me a moment ...
+Enter the filename to test:
+Enter filename to TEST (.ZIP assumed):
+Wrong password entered!
+Wrong password entered, (Nervous?)!
+Bulletin:
+Bulletin # to read:
+(R)elist,
+(R)e-Display,
+@INCONF@ Conference Joined.
+Welcome to @INCONF@ Conference, $FIRST$.
+has 0 new
+has NO new
+New messages left by alternate node.
+NEW MESSAGES were entered by other nodes while you were reading mail.           Use R;S (Read Since) to read them.
+Access Denied - Name in use on another Node!
+Access Denied - Your name is an active caller on another Node!
+Not enough download bytes remaining!
+Sorry, Not enough download BYTES remaining..  Please UPLOAD something!
+Not enough time remaining!
+Sorry, You don't have enough TIME remaining.  Please UPLOAD something!
+Out of Code in Door
+Currently in a Door
+(Escape)=Exit
+(Escape)=Save
+Directory Scan for ($4$) ... (Ctrl-K) aborts
+(@X0CNEW@X0F) will show NEW files in UPLOAD area, (@X0CALL@X0F) in ALL @INCONF@ file areas.   Directory Scan for ($4$)..(Ctrl-K) aborts
+Node          Status                     Caller
+@X0CNode  @X0A        Status          @X0B Caller - City & State@X0F
+----   ---------------------   -------------------------
+----   ---------------------   -----------------------------------------
+Topic:
+HELP MENU Topic:
+with (/)
+with "/"
+Auto-join configuration update
+Auto-join configuration update, "Q" to Quit
+Checking ...
+Checking 1,980 megs ...
+your first name
+your REAL first name
+Unlimited
+@X00@X0FUnlimited@XFF
+Checking $4$
+Moving $4$

@@ -1,0 +1,76 @@
+@X09---------------------------------------------------@X03
+
+The @X09(@X0EF V@X09)@X03 and @X09(@X0EVX@X09)@X03 commands list contents of zipfile and optionally view
+the text files without downloading.  It is also possible to  "extract"
+parts of a zipfile into $SCRATCH$ for downloading.
+
+Additional help is available on the following topics:
+
+       @X09[@X0CV@X09]@X03  View
+       @X09[@X0CX@X09]@X03  Xtract
+       @X09[@X0CR@X09]@X03  Relist
+       @X09[@X0CVX@X09]@X03 Quick
+       @X09[@X0CSummary@X09]@X03
+
+Enter the text inside the square brackets ie: V for VIEW
+
+
+~
+:?
+Please type one of the indicated topics for additional help.
+Press @X09<@X0EENTER@X09>@X03 alone to exit the help system.
+~~
+:V
+@X09(@X0EV@X09)@X03iew      View text file.  This function extracts the specified text
+            files from a zipfile and displays them for online evaluation.
+~~
+:VX
+@X09(@X0EVX@X09)@X03quick   Quick view/extract zipfile contents.  View the text files in
+            an zipfile without downloading.
+
+You can take any of these actions on each file contained in the .ZIP
+file:
+   @X09(@X0EEnter@X09)@X03 or @X09(@X0ES@X09)@X03kip
+       Pressing @X09(@X0EEnter@X09)@X03 alone or typing @X09(@X0ES@X09)@X03 will skip over the current
+       file and present you with the next file in the archive.
+
+   @X09(@X0EV@X09)@X03iew
+       Directly view the contents of the current text file.
+
+   @X09(@X0EQ@X09)@X03uit
+       Skip over all the remaining files in the zipfile and return you
+       to the ProDOOR command prompt.
+~~
+:R
+@X09(@X0ER@X09)@X03elist    List view zipfile contents.  View the text files in an
+            zipfile without downloading.
+
+You can take any of these actions on each file contained in the .ZIP
+file:
+   @X09(@X0EEnter@X09)@X03 or @X09(@X0ES@X09)@X03kip
+       Pressing @X09(@X0EEnter@X09)@X03 alone or typing @X09(@X0ES@X09)@X03 will skip over the current
+       file and present you with the next file in the archive.
+
+   @X09(@X0EV@X09)@X03iew
+       Directly view the contents of the current text file.
+
+   @X09(@X0EQ@X09)@X03uit
+       Skip over all the remaining files in the zipfile and return you
+       to the ProDOOR command prompt.
+~~
+:X
+@X09(@X0EX@X09)@X03tract    Extract specified member files from a zipfile and prepare
+            them for downloading as $SCRATCH$.  Use this function to
+            download parts of files that are otherwise too large to
+            download within your alloted time and byte limits.
+~~
+:SUMMARY
+The @X09(@X0EF V@X09)@X03 and @X09(@X0EVX@X09)@X03 commands list contents of zipfile and optionally view
+the text files without downloading.
+
+The @X09(@X0ER@X09)@X03elist subfunction repeats the listing of file members and optionally
+allows you to selectively view text members.
+
+The @X09(@X0EX@X09)@X03tract subfunction extracts parts of a zipfile and prepares them for
+quicker downloading as @X0F$SCRATCH$.
+~~

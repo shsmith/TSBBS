@@ -1,0 +1,58 @@
+
+                          RECYCLE 1.4, 03-19-89
+                            A ProDoor Utility
+                 Copyright (C) 1988, 1989 Samuel H. Smith
+
+                            The Tool Shop BBS
+              (602) 264-3969 (HST)     (602) 279-2673 (Hayes-V)
+                         
+`Recycle' is a utility that will allow you to 'stack doors' from within
+ProDoor.   When you exit a door that was opened from ProDoor, control
+will be returned to ProDoor instead of the main board.  This utility
+also properly handles doors with built-in (G)oodbye handlers.
+
+Place a copy of RECYCLE.EXE in a DOS subdirectory, or in your PCBoard
+system directory.  It will be called before each PCBOARD.EXE load.
+
+Modify your BOARD.BAT file as shown:
+
+   if exist event.bat rename event.bat event.sys
+   if exist remote.bat rename remote.bat remote.sys
+   if exist door.bat del door.bat
+   if exist endpcb del endpcb
+   
+   recycle >NUL                         <-- add this
+   if errorlevel 1 goto runpcb          <-- add this
+   copy prodoor door.bat >nul           <-- add this
+   door N                               <-- add this
+   :runpcb                              <-- add this
+   if exist $door.bat del $door.bat     <-- add this (NOTICE!)
+   pcboard
+   
+   if exist door.bat door
+   if exist remote.bat remote
+   if exist event.bat event
+   if exist endpcb goto end
+   board
+   :end
+
+                               DISCLAIMER
+                               ==========
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM,
+     OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+     THIS IS FREEWARE.  NO CHARGE.  SOURCE INCLUDED.  COPYRIGHT APPLIES.
+
+Revision History
+----------------
+   19-apr-88 v1.0  Initial coding and release
+   21-apr-88 v1.1  Enabled local operation.
+   17-dec-88 v1.3  Modified to co-exist with QMAIL.
+   19-Mar-89 v1.4
+      Added a line to BOARD.BAT to prevent a caller being dropped to
+      ProDoor after previous caller logged off within a sub-door.
+
+  ----------------
+     PCBoard is a registered trademark of Clark Development Company.

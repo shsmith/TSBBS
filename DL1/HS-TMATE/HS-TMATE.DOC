@@ -1,0 +1,79 @@
+                      
+ 
+                  USING TELEMATE WITH EXTERNAL HS/LINK
+ 
+                                  
+     Installation: 
+
+     Please refer to the TELEMATE manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work for most folks:
+
+     Copy the provided HS-D.BAT and HS-U.BAT files, as well as
+     HSLINK.EXE into your TELEMATE directory, or into a directory
+     included in your search PATH.
+
+     You can edit HS-D.BAT and HS-U.BAT to include options on the HSLINK
+     command line, but most folks won't need to change anything.  If you
+     want to experiment, there are a number of optional parameters you
+     can read about in HSLINK.DOC and HSLINK.NEW.  The first thing you
+     might want to do is add a -Udrive:\path statement to direct your
+     downloads to your download directory, instead of having them placed
+     into the current directory.
+
+     Next you need to install the HS/LINK protocol into the TELEMATE
+     protocol menu.
+
+     Load up TELEMATE and press ALT-O to get into the OPTIONS menu.  Then
+     cursor down to the PROTOCOLS selection and press ENTER.  In this
+     screen, you tab down to the EXTERNAL PROTOCOLS section.
+
+     The default TELEMATE configuration defines all available external
+     protocols, so you will need to replace one of them with HS/Link.
+     The least efficient protocol is KERMIT, so this is a good choice to
+     replace with HS/Link.
+
+     Tab down to the "Protocol Name" which was originally "KERMIT" and
+     change it to "HS/Link".
+     Tab to "Key" and change it to "H".
+     Tab to "Upload Batch" and change it to "HS-U.BAT".
+     Tab to "Download Batch" and change it to "HS-D.BAT".
+     Tab to "Prompt download filenames" and change it to "blank".
+     Tab to "Auto Download Sequence" and change it to the three
+     characters ^, B and R (it should look like: ^BR).
+
+     Then press ENTER to get out of this screen and cursor down to SAVE
+     CHANGES and press ENTER to save your changes.
+
+     To download with HS/LINK, first you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, HS/Link will
+     automatically be loaded and the download will begin.
+
+     If you want to also upload to the BBS while downloading, you simply
+     press the PGUP key, select HS/LINK from the menu, and list the
+     upload filenames you want to have transmitted.
+
+I hope these instructions help, but remember, I can't take
+responsibility for anydamages resulting from these instructions.  If you
+get stuck, it always helps to read the DOC files that come with TELEMATE
+and with HSLINK.  If all else fails, call up the tool shop and ask for
+help on the main board.  Either I will help you, or somebody else will
+know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    Hayes-V series 9600     Contributors only
+  (818) 891-6780    US Robotics 2400        Free to all
+

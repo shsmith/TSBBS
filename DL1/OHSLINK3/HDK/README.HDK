@@ -1,0 +1,6 @@
+changes to hdk:
+added struct _ftime to hdktypes.h (used to convert DosDateTime to borlands _ftime)
+Added os2.h to hdk.h
+Added DosFindFirst defines to hsmisc.c, hsopt.c
+Replaced critcal ints with short ints (in send and receive packets) (hspriv.h)
+Added O_CREAT to bopen() call in process_open_file() in hsrecv.c

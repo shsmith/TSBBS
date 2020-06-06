@@ -1,0 +1,6 @@
+function atoi (asc:  anystring): integer;
+function hatoi (asc:  anystring): word;
+function atol (asc:  anystring): longint;
+function atow (asc:  anystring): word;
+function insert_commas(s: anystring): anystring;
+

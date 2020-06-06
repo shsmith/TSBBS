@@ -1,0 +1,105 @@
+
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                      IN WILDCAT! BBS VERSION 2.15
+
+     Please refer to the WILDCAT! manual for detailed information on
+     installation of external protocols.  This information was tested
+     with HS/Link betas posted on 11/19/91 and WILDCAT! test drive
+     version 2.15.
+
+     The following installation steps should work for most folks:
+
+     Wildcat! stores the protocol programs and batch files in the
+     "external protocols directory",  which is defined on line 13 of
+     frame 7 in the MAKEWILD.EXE configuration program.  The default
+     setting is C:\WILDCAT\EP, but please substitute your own directory
+     in the following examples.  If you use some other directory, you
+     will also have to change the "CD" statements in the provided
+     HS-U.BAT and HS-D.BAT files.
+
+     Place a copy of HSLINK.EXE into your protocol directory,
+     C:\WILDCAT\EP.  Also copy the supplied HS-U.BAT and HS-D.BAT files
+     into the C:\WILDCAT\EP directory.
+
+     Run MAKEWILD.EXE and access frame 8.  Add 1 to the number of
+     external protocols defined by item 3.
+
+     Next access frame 18 and enter the following definitions for the
+     HS/Link protocol:
+
+  ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+  บ                                                               Frame 18 บ
+  บ                   EXTERNAL PROTOCOL DEFINITIONS                        บ
+  บ                                                                        บ
+  บ      LTR      Name           Up .BAT         Dn .BAT      Batch        บ
+  บ       -   ------------     -----------     ------------     -          บ
+  บ       H   HS/Link          HS-U.BAT        HS-D.BAT         Y          บ
+  บ                                                                        บ
+  ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+     This should get you set up in under 10 minutes.
+
+     Wildcat 2.15 does not support batch uploads, nor does it support
+     bidirectional transfers.  If the caller attempts to upload multiple
+     files, or files that do not match the filename given in advance,
+     the resulting upload file may be corrupt or misnamed.
+
+     I understand that Mustang software is currently working on a new
+     version of Wildcat! which will have these capabilities.  Please
+     contact Mustang for upgrade information.
+
+     Note for systems running locked COM ports:
+     We have found that if you use a locked DTE of 9600 or above, you
+     will need to have a NS16550AN UART installed.  Also, for rock solid
+     performance you should add the -HS (Handshake Slow) switch to your
+     'HS-D.BAT' and 'HS-U.BAT' batch files.
+
+     You can edit HS-D.BAT and HS-U.BAT to include options on the HSLINK
+     command line, but most folks won't need to change anything. If your
+     system can't keep up with the COM port while accessing the disk
+     drive, you may want to add -HS to the command line in each file.
+     If you want to experiment, there are a number of optional
+     parameters you can read about in HSLINK.DOC and HSLINK.NEW.
+
+     Contents of HS-D.BAT
+     --------------------
+         echo off
+         REM download from Wildcat 2.15
+         cd \wildcat\ep
+         if exist transfer.bad del transfer.bad
+         hslink -p%2 -HS -NU %3 %4 %5 %6 %7 %8 %9
+         if errorlevel 1 copy hs-d.bat transfer.bad
+
+     Contents of HS-U.BAT
+     --------------------
+         echo off
+         REM upload to Wildcat 2.15
+         cd \wildcat\ep
+         if exist transfer.bad del transfer.bad
+         mkdir scratch
+         hslink -P%2 -HS -Uscratch
+         if errorlevel 1 copy hs-u.bat transfer.bad
+         copy scratch\*.* %4
+         for %%f in (scratch\*.*) do del %%f
+         rmdir scratch
+     
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with Wildcat! and with HS/Link.  If all else fails, call up the
+     Tool Shop and ask for help on the Support Conference.  Either I
+     will help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-3772    US Robotics HST 9600    Contributors only
+       (818) 891-1344    Hayes-V series 9600     Contributors only
+       (818) 891-6780    US Robotics 2400        Free to all
+

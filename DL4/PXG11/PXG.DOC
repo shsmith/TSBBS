@@ -1,0 +1,80 @@
+
+
+PXG - The Pascal Expert Generator
+
+By Samuel H. Smith,  Public Domain Material, Version 1.1, 6-Oct-85
+
+
+This program allows you to prepare a set of rules for a
+decision-tree based expert system.
+
+You teach the expert by repeatedly "Learning" new facts in the
+interactive learn mode.
+
+When you have your rules working properly, PXG will generate a
+stand-alone expert program in turbo pascal!
+
+
+This disk contains the following files:
+
+   PXG11.COM      The pascal expert generator
+   PXG11.PAS      Source code for the pascal expert generator
+   PXG.DOC        Documentation for the pascal expert generator
+   PXG.INC        Include file needed when compiling your experts
+
+   LANGEXP.KDB    A knowledge base for a language selection expert
+   LANGEXP.PAS    Generated source code for the language expert
+   LANGEXP.COM    The compiled language expert example
+
+   MECHANIC.KDB   The knowledge base for an auto mechanic expert
+   MECHANIC.PAS   Generated source code for the expert mechanic
+   MECHANIC.COM   The compiled expert mechanic example
+
+
+
+To start the Pascal Expert Generator, enter this command:
+
+   A> pxg11
+
+
+
+Legal commands while running PXG:
+
+   New          Create a new knowledge base
+                Use this to erase the current set of rules and prepare
+                to create your own expert.   You will be prompted to
+                enter the title of the expert.  This title will be
+                included in the expert program that you generate.
+
+   Read         Read a knowledge base from a disk file
+                Use this to load in a saved knowledge base.  You
+                can load either of the demonstration knowledge
+                bases (LANGEXP or MECHANIC) with this option.
+
+   Write        Write the current knowledge base to a file
+                Use this to save your knowledge bases.  You can
+                also edit a saved knowledge base with a text
+                editor to improve the rules.
+
+   Display      Display the rules in the current knowledge base
+                Use this to get a listing of all of the current
+                rules.
+
+   Program      Generate an expert program from this knowledge base
+                PXG will write a complete, ready to compile program
+                in turbo pascal to implement your expert!
+
+   Learn        Test this knowledge base and learn new rules
+                Operate the expert and learn new rules.  This is
+                the way you refine and build up your expert.
+
+   Quit         Exit to the system
+
+   ?            Print a list of commands.
+
+
+
+
+
+
+

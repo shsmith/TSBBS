@@ -1,0 +1,277 @@
+
+Revision history of TPTC (in reverse order)
+-------------------------------------------
+
+05/03/88
+-- corrected variant records when selector is a character type.
+-- improved handling of pointers, with, untyped params and absolute vars.
+-- added specific translation for addr() builtin.
+-- corrected translation of id^[n].m (simultaneous pointer dereference
+   and subscript requires an extra [0] subscript in c.)
+-- partial coding of DOS and CRT units.
+-- automatic casting in assignments involving type conversions.
+
+04/13/88
+-- added -3 option to automatically load declarations
+   from tp3.pas unit when translating turbo pascal 3.0 sources.
+
+04/12/88 1.7d
+-- internal changes in global initializer handling.
+-- work on tptcsys for cleaner compilation.
+-- changed constants to 'enum' for scalars and 'const' for others.
+   (string constants must still use #define)
+-- added proper typecasting in new() translation.
+
+04/08/88
+-- added argc, argv parameter variables to unit initializers.
+-- improved unit/main initialization sequences.
+-- worked on tptcsys.pas for clean compile and fewer stubs.
+-- illegal global variable initializers within an interface section
+   are now moved to a runtime initializer procedure.
+
+04/07/88 1.7c
+-- unit initializers are now translated as UNITNAME_init procedures.
+-- the main block now automatically calls all used unit initializer
+   procedures.
+-- the lines/minute speed report is now based on source lines rather
+   than object lines.
+-- suppressed 'not identical' warning when builtins are redefined.
+-- lines starting with "\" are passed directly to object file
+   without any translation (support for implementation of tp4-like
+   runtime library under C systems).
+-- added -NU command option to disable use of standard unit tptcsys
+   (needed when translating tptcsys).
+-- deleted tptcmac.h; moved all declarations to tptcsys unit.
+   
+04/06/88
+-- further speedup changes.
+-- changed unit header from ".." includes to <..> includes.
+-- corrected type detection in array pointer subscripting.
+-- corrected code generation for multiple constants on a line.
+
+04/05/88 1.7b
+-- changes in unit header format to ensure that all required unit
+   headers are included even when not explicitly mentioned in the main
+   compilation unit.
+-- tp4 typecasts are detected and translated.
+-- recoded symbol table lookup in assembly language (up to 50% faster).
+
+03/30/88 1.7a
+-- added -R option to format displays for redirection to a file.
+-- added version header to .UNS files.  be sure to re-translate tptcsys.pas
+   and all standard unit interfaces (dostd.bat).
+-- changed symbol table format to improve expression typing.
+-- major rewrite of expression and declaration parsers.  symbol table
+   entries are now chained by type (eliminating the need for the 'supertype'
+   entry and much of the associated guesswork).
+-- 'with' translation can now detect the expression typename.
+-- added a warning if an expression exceeds the 255 character length limit.
+
+03/26/88
+-- changes in $i parsing (fixed case where '$i fxxx' parsed as '$ifdef xxx')
+-- changed untyped constants back to #defines despite the scoping problems
+   (sure wish borland had fully implemented 'const' declarations!).
+-- corrected translation of 'type mine = ^simple' where simple is already
+   defined (tptc was doing a forward-type translation sometimes).
+
+---------------
+03/25/88 v1.7
+-- repackaged into three archives:  tptc17 (main file; translator, docs and
+   supporting files), tptc17sc (source code), tptc17tc (test cases).
+-- cosmetic changes in code generation for interface sections.
+-- implemented 'as new_name' clause for specification of a different
+   procedure/function name in the translated code (see tptcsys.pas).
+-- inline procedures in an interface section generate a warning since
+   they cannot be translated in this context.
+-- added -Sdir option to specify a search directory for .UNS symbol files
+   that are not in the default directory.
+-- default command-line options can be specified through the TPTC
+   environment variable from dos.
+
+03/24/88
+-- partial translation of expressions accessing variant record members.
+-- better handling of forward redeclarations that are incomplete.
+-- implemented translation of TP4 units
+        -- 'interface' section creates .UNS file with TPTC symbol table
+           information saved for later use.
+        -- 'interface' section creates .UNH header file for inclusion
+           in C sources using the unit
+        -- 'uses' section generates include of .UNH header and loads
+           the .UNS data into the current symbol table
+   you must translate SYSTEM.DOC, DOS.DOC, etc, before units USING these
+   can be translated.
+-- implemented translations for $DEFINE, $IFDEF, $IFNDEF, $ELSE and $ENDIF.
+-- moved standard symbol table entries to the special unit TPTCSYS.PAS,
+   which is implicitly "used" in each translation.  TPTCSYS.UNS must be
+   in the default directory when TPTC is called.  this eliminates the need
+   for special translations for val, intr, msdos and many other standard
+   procedures with VAR parameters.
+-- implemented translation of 'inline' procedures (tp4).
+
+03/23/88
+-- corrected translation of :(expr) in write when expr starts with a digit.
+-- added runtime check for too many procedure parameters.
+-- better handling of nested with statements.
+-- partial translation of with dependant expressions.
+-- changed constant declarations from #define to 'const' to allow full
+   scoping rules. (this doesn't work with tc1.0!)
+
+03/22/88
+-- corrected parsing error that could cause lockup at end of translation.
+-- added translation from chr(lit) to character literals where possible.
+-- allowed redefinition of 'exit' procedure.
+-- corrected empty case statement and empty then-before-else translation.
+-- corrected &* possibility in fscanv.
+-- improved output format in inline translation.
+-- added -BP option for deBug trace of statement Parsing.
+-- implemented proper local symbol tables in nested functions.
+
+03/21/88
+-- added -B option for deBug trace while scanning source file.
+-- changed numeric character literals from octal to hex.
+-- added warning if pascal string length byte is used in expressions.
+-- implemented translation of ^c^c (multiple control character literals).
+-- eliminated recursion in scanning consecutive comments.
+-- added specific translations for \a, \f, \t, \v character literals.
+-- corrected translation of ^.,  ^[, and #$hex character literals.
+-- added ".pas" default on include filenames.
+-- corrected translation of "external 'file.ext'..." procedure option.
+
+03/19/88
+-- slight improvement in recovery from syntax errors.
+-- corrected parsing of initialized set constants.
+
+03/18/88
+-- disable '#...' translation (tshell passing) without -# option.
+-- exit all nested procs in fatal error handler.
+-- added symbol table entries for 'builtin' procedure translations (allows
+   user redefinition of 'pos', for example).
+-- predefined symbol table entries are reported only if -DP option is used.
+-- partial translation of 'with' statements.
+
+03/17/88
+-- corrected translation of pointers to simple types.
+-- improved translation of character and numeric subrange types.
+-- partial translation of set expressions.
+-- corrected enumeration-type subscript range calculation.
+-- added -Tnn command option to control tabstops in declarations.
+-- changes in symbol table and parser for 20% faster operation.
+
+03/16/88
+-- added macros for paramcount and paramstr instead of specific translations.
+-- corrected implementation of mt+ translation for write([proc],...) form.
+-- added unique prefix on local #define's to prevent name clashes.
+-- added specific translations for \r, \n, \b, \e character constants.
+-- added translation for intr() and msdos() calls.
+-- implemented constant folding in trivial cases where index bases are added.
+-- added translation of @(...) operator.
+
+03/15/88
+-- added boolean as a basic type; this allows automatic selection of &, |
+   and &&, || in expressions.
+-- implemented translation for 'str' standard procedure.
+-- partial translation of 'val' procedure.
+-- better implementation of subscript base value translation.
+-- better type tracking in subscripted variables.
+
+03/14/88
+-- improved indentation in generated code for variant record decls (remember,
+   tptc is NOT a pretty printer!  use CB or INDENT to get pretty indentation).
+
+03/13/88
+-- added translation of :(expression) parameters in write statements.
+-- corrected translation of 'actual' VAR and untyped parameters.
+-- improved type detection in record member references.
+-- created 'uninc' postprocessor to split up output into original
+   include files (placed in a user specified destination directory).
+-- added 't2c.bat' batch file to combine translation and include processing.
+-- added code to ignore tp4.0 interface sections.
+
+03/12/88
+-- implemented proper procedure ordering for nested procedures (inmost
+   procedures are output first, followed by outer procedures).
+-- shortened command-line options to single letters.
+-- added -W option to allow specification of a RAMDISK for work files.
+
+03/11/88
+-- new method of expression type tracking; type botching is greatly
+   reduced while speeding execution.
+-- rewrote include file handler to allow nested includes.
+
+---------------
+03/10/88 v1.6a
+-- corrected recent errors in #include translation and -include processing.
+-- changes in status display and error message formats.
+-- translation of multi-dimensional and nested array declarations.
+-- translation of untyped var parameters.
+-- partial translation of absolute variable declarations.
+-- improved data type declaration in expressions with subscripts.
+
+---------------
+02/13/88 v1.6
+  Converted to TPAS 4.0 format; released under the SourceWare concept
+  (see README and LICENSE.DOC).
+
+10/15/87
+-- corrected error in typed constant translation where nested records
+   are initialized.
+-- variant record declarations are translated into unions but no variant
+   expression translations are done.
+-- changed nested procedure error messages to include procedure name.
+
+10/13/87
+-- improved string and array parameter translations
+-- string returns are now translated into char *
+
+---------------
+-- detect concat(concat... and replace with a sprintf variant
+-- changed sprintf calls to sbld calls to preserve sources during build
+-- pos(c,str) and pos(str,str) are now separately translated
+-- added 'base' to symbol table; use to add base-subscript offset
+   in all subscript references.
+-- moved typename translations to tpcmac.h header
+-- fixed bug in non-translation of tshell directives
+-- forward pointer declarations
+-- translate inline into asm statements
+-- complete forward translation
+
+06/01/87  v1.5
+   Added new command-line parser. Added -lower option to map identifiers
+   to lower case. Added -mt option to force pascal/mt+ mode. Added
+   partial var-parameter translation. Mem, MemW, Port and PortW are all
+   translated into Turbo C. Turbo-c procedure declaration syntax is now
+   used. Arrays may now be subscripted by enumeration types. Null else
+   clause now handled properly in IF and CASE statements. For .. downto
+   is now translated correctly. The VAL..VAL form is now translated in
+   case statements.
+
+05/26/87  v1.4
+   Additional support for pascal/MT+.   The translator "shifts" into a
+   MT+ specific mode when it recognizes the 'MODULE' statement. The '|'
+   operator is recognized for bitwise OR. The '\', '?' and '~' operators
+   are all translated into a unary not. Read(ln) and Write(ln) now
+   support the special case of "[]" for the I/O routine. Long integer
+   literals are translated from '#nnn' to 'nnnL'
+
+05/20/87  v1.3
+   Added support for pascal/MT+:  external procedures and variables,
+   special write/read indirect syntax, & and ! operators, default string
+   size for string declarations. Distributed as TPC13.
+
+04/22/87  v1.2
+   Corrected an error that led to a crash on lines with more than 40
+   leading spaces.  Distributed as TPC12.
+
+04/15/87  v1.1
+   Corrected handling of unary minus. Improved error messages; added
+   error messages to object file. Added handler for integer subrange
+   types. Added handling for goto statement and numeric labels. The
+   macro header, tpcmac.h, now contains more declarations. Distributed
+   as TPC11.
+
+12/19/86  v1.0
+   First distributed as TPC10 under shareware concept.
+
+09/09/85  v0.0  (paspp)
+   Initial coding by Samuel H. Smith.  Never released.
+

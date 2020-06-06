@@ -1,0 +1,61 @@
+
+BLDLIST 1.0 of 02-25-90   (C) 1990 Samuel H. Smith
+
+Usage:  BLDLIST dir ... dir [>out]
+
+You may specify one or more directories to scan.  Subdirectories are
+automatically included, so
+        D:\
+will scan all directories of drive D:, while
+        D:\DL
+will scan D:\DL and all subdirectories under D:\DL.
+
+
+Example:
+        BLDLIST C:\DL1 D:\DL2 K:\ >C:\PCB\GEN\DLINFO.DAT
+        BLTLIST L:\COMM L:\GIF L:\EDIT L:\GRAPH >>C:\PCB\GEN\DLINFO.DAT
+
+You can run BLDLIST multiple times, appending the results to a single
+output listing.
+
+I recommend you create a batch or EVENT to automatically update this
+listing file if it refers to directories that are being updated.
+
+ProDoor betas dated 2-26-90 and later are able to process such a file list
+when included in a DLPATH.LST file.  For example:
+
+DLPATH.LST
+----------
+
+U:\UPLOAD\
+M:\SYSOPS\
+M:\MAG\
+@C:\PCB\GEN\DLINFO.DAT
+M:\DISK\
+@C:\PCB\GEN\CR-ROM1.DAT
+
+When a DLPATH entry starts with '@' it is expected to specify the full
+filename of a file-listing file created with BLDLIST.  This can be used
+to speed up searching of slow drives.  You can also use this to reduce
+network traffic if you list network download directories and place the
+listing on a local drive.
+
+
+Format of BLDLIST output:
+
+BLDLIST produces output in the following format:
+
+{directory}
+{file1}
+{file2}
+{filen}
+{directory}
+{file1}
+...
+
+This format saves space by not repeating the full directory for each
+file to be listed.
+
+Please note:  each {directory} specified MUST start with a drive letter.
+For example, M:\DL2 is correct, but \DL2 will not work correctly.
+

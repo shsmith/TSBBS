@@ -1,0 +1,284 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                        Lang-"C"/Unix Compilers & Utils
+                       142 files using 17,598,431 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+43BSDSO1.ZIP    20730  12-06-93  Standard low-level API for networking on Unix
+68332.ZIP       99082  11-05-89  Motorola's Freeware 68332 asm & c compiler
+ADD13.ZIP        7935  12-29-92  Strips carriage returns (CHR 13) from text
+                               | files and writes the resulting output to a
+                               | specified file. This program is useful if you
+                               | are transferring files to/from systems that
+                               | deal with cr/lf combinations differently than
+                               | DOS does (such as BSD Unix).
+AGREP104.ZIP    21250  04-20-93  aGrep 1.04 is a very fast "grep" (global
+                               | regular expression parser) for searching thru
+                               | file(s) for a particular string (or pattern)
+                               | of characters. There are many versions of
+                               | "grep" utilities in distribu- tion, this
+                               | version offers options and methods that
+                               | compliment those versions.
+ARC-SYS5.ZIP    47856  04-05-87  Unix ARC sources
+ATPLNX06.ZIP   107524  10-13-93  LINUX binary for ATP 1.40 QWK mail reader
+                               | Freeware under the terms of GNU copyleft,
+                               | Version 1.40 now includes emacs-style
+                               | command-line editing, replies conference,
+                               | ability to read huge messages, and more.
+BAWK.ZIP        22038  04-01-86  C source for bawk unix utility
+BBUX.ZIP        25829  02-02-93  Boca Board Unix and Enix drivers
+BEGINLNX.ZIP    34201  04-08-92  Beginner's Guide to LINUX v0.95a: 04/06/92
+BGI256_3.ZIP   155386  10-16-93  BGI driver creation utilities
+BRUTE20.ZIP     14655  11-14-93  Brute v2.0 - A very fast unix password hacker
+                               | You give it a unix PASSWD/SHADOW file and a
+                               | word list and it will find matches by
+                               | encrypting the
+                               | the passwd/shadow file. Very fast.
+BSD-INFO.ZIP    88378  01-19-93  BDS Unix for 386 info
+BTOA.ZIP        18701  07-27-89  dos version of unix btoa & atob in C
+CC68.ZIP        54388  10-29-86  Updated C compiler; now uses Motorola ASM
+CKU179.ZIP     438975  02-17-92  Source code and make files for C-KERMIT for
+                               | UNIX/VMS systems. No documentation included.
+COMP43D.ZIP     37220  01-18-90  UNIX 16 bit compress util for MSDOS vsn 4.3d
+                               | dtd 18jan90 : EXE and DOC's <from CI$>
+CPR34.ZIP       40814  05-19-90  C Lang Source Code Printer/Cross-Referencer
+                               | utility vsn 3.4 dtd 19may90 : w/ C src.
+CRLF15B.ZIP     37021  09-15-93  Adds CR/LF to unix files
+CRON16.ZIP      71226  01-20-91  A good UNIX like utility that is for timing
+                               | in BAT files.
+CSH4.ZIP        45845  01-08-89  Unix csh -like shell v4.0, w/C source
+DCURSE.ZIP     171170  03-15-89  Complete unix CURSES library for DOS C
+DDJCURS.ZIP     25471  07-05-87  DOS version of unix CURSES library
+DIRLIB.ZIP       3856  12-15-93  Unix 'dirlib' package ported to MS-C
+DOS2UNIX.ZIP    21625  07-05-89  Converts DOS-style <CRLF> text files to UNIX
+                               | format and reverse w/C src - from USENET
+DOSEMU48.ZIP   109510  07-03-93  Linux dos emulator v0.48
+DSX22.ZIP      232070  07-03-93  DOSNIX 2.2. A UNIX style toolkit for MSDOS
+                               | Enhanced version of DOSNIX combines the most
+                               | frequently used UNIX commands with some slick
+                               | DOS utils to provide an extremely powerful
+                               | operating environment. Includes versions of
+                               | CAT, CP, CHMOD, LS, MV, MVDIR, RM, RN, TEE,
+                               | TOUCH and much more.
+ED.ZIP          57467  10-01-94  Ed, a UNIXish line editor
+EGREP2.ZIP      29567  12-16-90  unix-like egrep for DOS
+ELV16SRC.ZIP   212354  07-18-92  A clone of the UNIX VI editor, comes with
+                               | source for version 1.6 and Makefiles for MSC
+                               | BC and various UNIX systems. If you have
+                               | become VI - impaired as I have this is a good
+                               | product to have.
+EZCOMP20.ZIP    94323  07-13-92  EZComp Version 2.0 Unix compatible
+                               | compress/uncompress for DOS. Extreamly Fast,
+                               | true 32bit, runs in 386 protected mode, (386+
+                               | required), full 12 - 16 bit support. Uses
+                               | extended/expanded/Xms/Disk for extra mem if
+                               | needed. Supports older unix compress, stdin
+                               | etc..Rel:7/12/92 FreeWare from M C's Place
+                               | BBS.
+FAS209.ZIP      61195  06-24-91  NS16550 driver sources for various Unix
+FINDFILE.ZIP    11081  05-22-87  C src filefind, std/in ARC, UNIX wildcard exp
+FREEBSD.ZIP      1421  03-25-92  Information on a FREE version of BSD unix
+GAWK.ZIP       114174  05-02-88  GNU Project AWK MS-DOS exec and C source MS
+                               | DOS port of UNIX-V rel 4.0 AWK programming
+                               | language from GNU Project @ MIT
+GCOBJECT.ZIP     5865  12-10-89  Object orientation for GCC C++ compiler. 1/9
+GHOST.ZIP      261932  02-24-89  Postscript interperter for DOS EGA, UNIX.
+GNU-SED.ZIP     39732  11-18-86  GNU-sed utility w/source
+GNUPLOT2.ZIP   122336  03-21-90  GNU plot v2.0 3-90 update scientific plotting
+                               | utility
+GREP.ZIP        12209  03-04-92  The genuine GREP from unix compiled for MSDOS
+INDT1089.ZIP    88195  10-30-89  INDENT : C source code formatter - OCT 89 ver
+                               | - DOS port of UNIX utility. Full C source
+                               | code included <from CI$>
+LEX-MSC.ZIP    110635  10-02-87  LEX ported from UNIX to PC
+LINHOWTO.ZIP   136258  04-30-95  LINUX HOW-TO guides, contain hints and helps
+                               | on installing and using Linux. Many specializ
+                               | topics are covered such as UUCP, News, Mail,
+                               | SCSI, Networking, Printing, and Installation.
+LINUXFAQ.ZIP    14625  02-03-92  Linux OS 0.95 [3/5] Facts and questions
+LNXGUIDE.ZIP   147940  06-10-95  Guide to installing and administrating Linux
+                               | OS.
+LNX_INST.ZIP    38896  07-15-94  Install for Linux
+LSTC.ZIP        14232  08-02-90  This like UNIX's LS, a directory listing
+                               | program for MS-DOS. Written in Turbo C.
+LXFUTIL.ZIP    383331  03-22-92  File utilities for Linux
+M4.ZIP          20605  11-14-86  Macro processor (like UNIX)
+MACWHICH.ZIP     8584  11-22-92  MAC Which V1.0 unix like which for DOS
+                               | freeware from MAC's Place BBS
+MAKE100.ZIP     17158  03-28-88  Unix like make utility w/documentation.
+MASTRPLN.ZIP    25726  12-14-94  Masterplan, version 0.61 is a program
+                               | designed to solve the oft-posed problem of
+                               | how to find out who fingered you (on the
+                               | Internet and when you were last fingered. In
+                               | addition it also lets you keep track of then
+                               | number of times you have been fingered.
+                               | Finger ldb@netspace.students.brown.edu, to
+                               | see this in action. Masterplan reads a
+                               | templated file (normally .masterplan) which
+                               | can contain variables and commands to run.
+                               | "C" source code.
+MC20.ZIP       176720  08-20-90  MICRO C COMPILER - Version 2.00 This is a
+                               | small and efficient 'C' compiler. Great for
+                               | those that want to learn 'C'.
+MC313.ZIP      494761  05-17-95  Micro C Compiler - is a C compiler
+                               | which generates small executables. Many
+                               | example programs are included. 
+                               | Description Copyright 1995 PsL
+MINDOS11.ZIP    60482  04-05-91  Read Minix files in dos
+MINILIN1.ZIP  1409429  05-21-95  Unix on Dos (1 of 5)
+                               | Mini-linux runs from a DOS partition, no
+                               | need to repartition your disk to install.
+MINILIN2.ZIP  1431103  05-21-95  Unix on Dos (2 of 5)
+MINILIN3.ZIP  1395370  05-21-95  Unix on Dos (3 of 5)
+MINILIN4.ZIP  1314538  05-21-95  Unix on Dos (4 of 5)
+MINILIN5.ZIP    69278  05-21-95  Unix on Dos. Docs & install (5 of 5)
+MPACK12.ZIP    112050  08-11-94  pack/unpack messages in internet "MIME"
+                               | multi-media format. full source code
+MS_SH164.ZIP    99244  11-06-90  Unix type of shell for MSDos
+MS_SH200.ZIP   245143  12-15-93  DOS and OS/2 port of Unix SYS V Borne Shell
+                               | by Data Logic Ltd. Version 2.00 executables
+                               | and source.
+NDMAKE45.ZIP    91382  12-13-87  Unix style make utility
+NEWSMAN.ZIP     46120  01-24-88  Unix manual pages for USENET
+NJSORT11.ZIP    20343  10-30-88  Nifty James' sort util, has everything incl
+                               | source for specialized routines, good.
+NNTP.ZIP       154966  01-24-88  Unix Network News Transfer Protocol
+NRO.ZIP         20670  05-13-87  Unix nroff like text formatter w/source
+PATCH12.ZIP    107316  10-02-90  Patch- program to apply a DIF file to an
+                               | original file to make a new version. Includes
+                               | unix flavor source code.
+PAX.ZIP         44697  02-15-89  Archive utility zenix compatible
+PCC12B.ZIP     172052  12-01-88  Shareware desmet 'C' compiler; FULL C!
+PCCA2COM.ZIP     3409  12-04-88  .COM files from pcc 'C' compiler/assembler
+                               | This is the first full C compiler ever
+                               | distributed as shareware!
+PCCSTDIO.ZIP    76244  12-04-88  IO code for the PCC compiler
+PCC_CODE.ZIP    80179  12-03-88  Functions for the PCC compiler.
+PCC_COMM.ZIP    34963  12-03-88  Communications code for the PCC compiler.
+PCC_TSR.ZIP     21029  12-10-88  Tsr code for the PCC compiler
+PDCURS20.ZIP   198840  11-16-93  PDcurses 2.0: A Public Domain C Library That
+                               | is Compatible With Unix System V 3.2 Curses
+                               | Written For Most of The Popular DOS And OS/2
+                               | C Compilers. This Version Has Been Tested
+                               | With Microsoft C V6.0, Quickc V2.0 & Borland
+                               | C++ 2.0 Under DOS; Microsoft C 6.0 & Topspeed
+                               | C V3.02 Under OS/2 2.0. Also Compiled Suc-
+                               | Cessfully With Emx 0.8e, C Set/2 & Watcom 9
+PDMAKE.ZIP      32060  02-15-87  Unix-like MAKE with C source
+PHONE.ZIP        5861  04-09-87  Unix style phone book with Soundex and C src
+PPT100.ZIP     436345  11-16-93  PPT V1.0 - Programmer Productivity Tools A
+                               | collection of utilities for programmers
+                               | including multi-module searching of text & C
+                               | identifiers, renaming of C variables,
+                               | comprehensive function flow analysis, all
+                               | linked to your favorite editor & viewer
+                               | programs. Also disk usage analysis and globa
+                               | date/time stamp setting.
+PROTO212.ZIP   100551  01-24-92  PROTO - nice C prog utility that will check
+                               | or correct function prototypes - register for
+                               | more nice C utils
+PUBUNIX.ZIP      2737  04-15-88  List of public dial-up unix systems 8/88
+RUNPLI1A.ZIP   104199  04-25-89  PL/1 like Compiler with C Source
+RZSZ300.ZIP     68593  04-19-89  C Source code for rz/sz (ZMODEM) w/ RLE ver
+                               | 3.00 released 04-19-89 - for UNIX
+SED.ZIP         33821  05-04-86  GNU Unix-like stream editor; C source
+SEDMOD.ZIP      42769  07-05-89  UNIX-Style Stream Editor for IBM-Compatibles
+SEYON15A.ZIP    99651  12-15-92  Seyon 1.5 patch level 1. This is a full
+                               | featured telecommunications programs for the
+                               | X Windows environment. For LINUX and other
+                               | UNIX systems. C source code.
+SGREP.ZIP       25349  07-27-89  UNIX grep utility - a pretty good version
+SHAR.ZIP        35483  08-04-87  Unix shell-archive generator; C sources
+SHAREXE.ZIP      7461  09-14-87  Shell Archiver. MS/DOS ver for UNIX files
+SHELL22.ZIP     41718  10-15-92  Unix-like command.com replacement
+SIMUNX12.ZIP    41593  09-15-93  Simulates a unix login session
+SMALLC21.ZIP    85427  09-15-85  Interesting little C compiler- produces MASM
+                               | output from a subset of full C.
+STEV369A.ZIP   142420  08-12-90  Stevie...an aspiring UNIX vi clone for DOS.
+STRINGS.ZIP      9006  02-12-88  UNIX strings - find ASCII in .EXE or BINary
+                               | files (DOS)
+STUFFSRC.ZIP    13748  12-05-88  STUFFIT code. Needs UNIX compress code.
+SUPER.ZIP      303131  08-16-90  SUPER MAKE(tm) is a full feature programmer'
+                               | make utility with path control. This also
+                               | includes an editor that generates make files,
+                               | response files, and PC-lint indirect files.
+                               | MSC and TurboC compatible.
+TABX10.ZIP      11466  03-03-90  Utility to expand tabs to a user defined
+                               | number of spaces for any length line.
+                               | Includes C source.
+TAR4DOS.ZIP     37420  09-13-93  Make UNIX TAR files or extract files from
+                               | UNIX TAR archives.
+TAR92.ZIP       28983  06-26-91  Unix TAR utility for DOS (supports .Z files)
+TARREAD.ZIP      2948  01-24-88  Unix 'TAR' file reader and expander for DOS
+TOADUU19.ZIP    20262  07-31-89  Unix uunencode/uundecode ver 1.9
+TV_SHELL.ZIP    31661  08-12-94  unix-like shell for dos keeps all the normal
+                               | dos commands but adds some others, as well as
+                               | automatic "command completion" when you hit
+                               | tab and mouse cut-past capability. public
+                               | domain.
+UEDIR.ZIP        4883  11-22-89  Unix Enhanced DIR utility (c source)
+UMODEM-C.ZIP    12443  11-23-86  Unix C source code for Xmodem protocol
+UNAXCESS.ZIP    69433  10-27-86  UNIX based multiuser BBS System
+UNIXHINT.ZIP     2048  07-09-94  hints for using basic unix commands
+UNIXMAN1.ZIP   616725  05-09-92  Unix manual pages for about 300 unix or unix
+                               | clone commands.
+UNIXTRNG.ZIP   258539  03-27-92  Unix training manuals
+UNIXUTL.ZIP      9850  11-18-93  C Source Code For Cat, Head, Tail, & Tee
+UNIX_NEW.ZIP    13472  12-14-89  Help for newcomers to the UNIX arena
+UNXHARDW.ZIP    42196  04-04-92  What's needed to get into Unix
+UTRICKS.ZIP     42733  03-21-90  Various UNIX configuration tricks
+UUCP2.ZIP       47781  08-27-87  C source for Unix to Unix Copy support
+UUENCDEF.ZIP     3535  08-24-87  Unix uuencode/uudecode / C source
+UUPC-IBM.ZIP    37173  08-26-87  UUCP for the PC part 4. Unix USENET, etc.
+UUPC11Q2.ZIP   144869  12-08-91  OS2 Version of UNIX UUCP Required Executables
+UUPC11Q3.ZIP   119854  12-08-91  OS2 Version of UNIX UUCP Optional Executables
+UUPC11QD.ZIP   101288  12-08-91  Doc's for DOS or OS2 UUPC Version of UNIX
+                               | UUCP
+UUPC11QO.ZIP   135837  12-08-91  DOS Version of UNIX UUCP Optional Executables
+UUPC11QR.ZIP   178799  12-08-91  DOS Version of UNIX UUCP Required Executables
+UUPCUSER.ZIP   112441  01-10-90  Unix's UUCP protocol for PCs.
+UUSLAVE.ZIP     22680  02-16-87  Unix UUCP slave for the PC / C src
+UWPC201.ZIP    270226  02-06-95  Unix Windows terminal program, with src code.
+UWWIN103.ZIP    47331  01-27-92  MultiWindow Interface to Unix Connected to
+                               | Windows
+UX2DOS11.ZIP    45444  02-18-95  UNIX2DOS v.1.1--Convert Unix Text to DOS
+                               | (2/95) ====== Freeware by Mike St. Clair The
+                               | Unix convention for text files calls for the
+                               | line feed character between each line. The
+                               | DOS convention calls for both a carriage
+                               | return and a line feed. When moving a text
+                               | file from Unix to DOS, for example from the
+                               | Internet, this utility can be used to do this
+                               | conversion.
+UXCU.ZIP        16676  05-17-88  C source code for *nix CU
+UXHELP.ZIP      11640  10-14-93  Unix help in DOS. Also Unix shell scripts.
+UXTARPC.ZIP     24359  05-01-87  Full Unix 'TAR' ported to the PC; C source
+UXUUCP.ZIP     162254  06-16-88  C source code for *nix UUCP
+UZI.ZIP          9906  04-13-89  MS-DOS/UNIX TYPE UNZIPPER WITH C SOURCE
+VI-19A.ZIP      20869  02-18-89  Unix VI editor emulation (can get away from
+                               | unix editor)
+VI60A1.ZIP     177408  12-30-91  Oak Hill VI, v6.0, almost full unix program
+WAF161.ZIP     314476  04-07-90  UNIX BBS System with Usenet hooks
+WAF164.ZIP     327092  08-01-94  Waffel v.1.64 [Recommended For Internet Conne
+WART.ZIP        23920  11-24-87  DOS version of UNIX LEX / C source
+WWED013B.ZIP   113558  04-04-95  ww is a full screen programmers editor with
+                               | on-the-fly color syntax highlighting for
+                               | C/C++/REXX/HTML and smart CMode auto-indent,
+                               | multiple files/windows/modes and remappable
+                               | keyboard. Supports both line/stream and
+                               | column blocks. Supports regular expressions
+                               | and background compilation.    Version 0.13.
+XC.LZH          74914  08-28-92  Unix terminal emulaTion program, C source
+XCMALT.ZIP     101848  09-17-89  UNIX (SCO) pd communications prg.
+XXALLOC.ZIP     16407  12-26-89  DOS/UNIX C routines for multi-dimensional
+                               | dynamic arrays.
+YACC.ZIP        65844  02-06-84  LALR parser generator for C (Like UNIX)
+ZGREP15.ZIP     18751  03-23-90  ZGREP v1.5 - UNIX like Grep for DOS.
+ZIP10EX.ZIP    151341  10-03-91  Portable ZIP, export version. C Source code
+                               | for ZIP version 1.0 by the INFO-ZIP group.
+                               | This compiles under MSDOS, Macs, Unix, etc.
+                               | and produces portable, PKZIP compatible zip
+                               | files.

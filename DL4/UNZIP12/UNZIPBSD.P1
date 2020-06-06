@@ -1,0 +1,72 @@
+*** unzipbsd.c	Tue May  2 11:37:24 1989
+--- ../unzipbsd.c	Tue May  2 11:35:09 1989
+***************
+*** 112,117 ****
+--- 112,118 ----
+  #define INBUFSIZ 0x2000
+  byte *inbuf;			/* input file buffer - any size is legal */
+  byte *inptr;
++ byte *comment;
+  
+  int incnt;
+  unsigned bitbuf;
+***************
+*** 903,909 ****
+  	central_directory_file_header rec;
+  	char filename[STRSIZ];
+  	char extra[STRSIZ];
+- 	char comment[STRSIZ];
+  
+  	rec.version_made_by = get_word();
+  	rec.version_needed_to_extract = get_word();
+--- 904,909 ----
+***************
+*** 924,929 ****
+--- 924,931 ----
+  
+  	get_string(rec.filename_length,filename); 
+  	get_string(rec.extra_field_length,extra); 
++ 
++ 	comment = (byte *) (realloc(comment, rec.file_comment_length));
+  	get_string(rec.file_comment_length,comment); 
+  
+  	if (debugging) {
+***************
+*** 953,959 ****
+  void process_end_central_dir()
+  {
+  	end_central_dir_record rec;
+- 	char comment[STRSIZ];
+  
+  	rec.number_this_disk = get_word();
+  	rec.number_disk_with_start_central_directory = get_word();
+--- 955,960 ----
+***************
+*** 963,968 ****
+--- 964,970 ----
+  	rec.offset_start_central_directory = get_long();
+  	rec.zipfile_comment_length = get_word();
+  
++ 	comment = (byte *) (realloc(comment, rec.zipfile_comment_length));
+  	get_string(rec.zipfile_comment_length,comment); 
+  
+  	if (debugging) {
+***************
+*** 1073,1079 ****
+          /* allocate i/o buffers */
+  	inbuf = (byte *) (malloc(INBUFSIZ));
+  	outbuf = (byte *) (malloc(OUTBUFSIZ));
+! 	if ((inbuf == NULL) || (outbuf == NULL)) {
+  		printf("Can't allocate buffers!\n");
+  		exit(1);
+  	}
+--- 1075,1082 ----
+          /* allocate i/o buffers */
+  	inbuf = (byte *) (malloc(INBUFSIZ));
+  	outbuf = (byte *) (malloc(OUTBUFSIZ));
+! 	comment = (byte *) (malloc(INBUFSIZ));
+! 	if ((inbuf == NULL) || (outbuf == NULL) || (comment == NULL)) {
+  		printf("Can't allocate buffers!\n");
+  		exit(1);
+  	}
+

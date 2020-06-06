@@ -1,0 +1,63 @@
+
+To Install:
+-----------
+If you already have ProDoor 3.51 and ProLogon 1.31, all you
+need to do is replace your existing PRODOOR.EXE and PROLON.EXE.
+If you do NOT have 3.51 and 1.31, you should run the INSTALL
+program.
+
+
+What's 3.52??
+-------------
+Sorry, but we found a few problems with ProLogon 1.31 and
+ProDoor 3.51.  I was going to wait for the next official
+release but some of the problems were real annoying so
+rather than wait, here's the new code and the changes now!
+
+
+ProDoor/ProLogon Changes/Fixes since 3.51/1.31   Status  Date
+------------------------------------------------ ------ -----
+Another problem with DISP !!!  Fixed............ (done) 03/04
+More prompt at file listing won't take dir#..... (done) 03/04
+PgUp to get caller password not working......... (done) 03/03
+Missed RU command in table of good commands..... (done) 03/03
+Missing security lvl in callerlog if force scan. (done) 03/01
+
+
+
+New Feature:
+------------
+ A bonus to you, for my missing the bugs listed above.
+
+ 1. Do a SET COMMENT_FILE=C:\PCB\GEN\COMMENTS
+ 2. Create that file, and add keywords, a comma, and then a
+    security level.
+
+  example:
+
+    SCREW,0
+    _UCK,0      <--- you know what it is!
+    EAT ME,0
+    SHIT,0
+    FRIEND,20
+    BBS LIST,25
+
+ Now... when a NEW CALLER calls, these "keywords" will be checked
+ against what-ever they put in their "User Comment Field #1".
+ Mine asks.. "How did you hear about us??".
+
+ If ANY keyword phrase is found in their comment field... they'll get
+ the corresponding security level for that keyword INSTEAD of the
+ security level you have set for all new callers.
+ Again... INSTEAD of the value you have set for all new callers.
+
+ You can use this to DUMP obnoxious callers, and even UPGRADE callers
+ depending on what they say here.  Use it WISELY !!
+
+ Anything goes... any word, any phrase, any level.
+
+ NOTE:  To DISABLE this "feature", just remove the SET.
+
+ Good Luck.
+
+

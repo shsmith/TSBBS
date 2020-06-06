@@ -1,0 +1,1058 @@
+C:\SHS\PROJ\OUTLINE\OUTLINE.OLF                                    Contents 1
+
+ Document Outline Processor:  Outline v1.5. . . . . . . . . . . . . . . .   1
+     1. Overview. . . . . . . . . . . . . . . . . . . . . . . . . . . . .   1
+
+     2. How to enter an outline . . . . . . . . . . . . . . . . . . . . .   2
+         2.1 Enter the first section. . . . . . . . . . . . . . . . . . .   2
+
+         2.2 Enter the subsections. . . . . . . . . . . . . . . . . . . .   2
+
+         2.3 Go back to the top . . . . . . . . . . . . . . . . . . . . .   2
+
+
+     3. How to print out the outline. . . . . . . . . . . . . . . . . . .   3
+         3.1 Print full deails. . . . . . . . . . . . . . . . . . . . . .   3
+
+         3.2 Print outline of document. . . . . . . . . . . . . . . . . .   3
+
+         3.3 Print a table of contents. . . . . . . . . . . . . . . . . .   3
+
+         3.4 Print a section tree . . . . . . . . . . . . . . . . . . . .   3
+
+         3.5 Print a keyword index. . . . . . . . . . . . . . . . . . . .   3
+
+
+     4. How to move things around . . . . . . . . . . . . . . . . . . . .   4
+         4.1 Mark the sub-section you want to move or copy. . . . . . . .   4
+
+         4.2 Put the cursor where you want it to go . . . . . . . . . . .   4
+
+         4.3 And move it. . . . . . . . . . . . . . . . . . . . . . . . .   4
+
+         4.4 To delete sub-sections . . . . . . . . . . . . . . . . . . .   4
+
+         4.5 Oops...  Un-delete!. . . . . . . . . . . . . . . . . . . . .   5
+
+         4.6 To move a section from one outline to another. . . . . . . .   5
+
+
+     5. Summary of special keys . . . . . . . . . . . . . . . . . . . . .   6
+         5.1 Keys for moving around . . . . . . . . . . . . . . . . . . .   6
+
+         5.2 Keys for editing lines of text . . . . . . . . . . . . . . .   6
+
+         5.3 Keys for special services. . . . . . . . . . . . . . . . . .   6
+
+
+     6. How to include outside files. . . . . . . . . . . . . . . . . . .   7
+         6.1 How to include text files. . . . . . . . . . . . . . . . . .   7
+             Example. . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+
+
+         6.2 How to include graphics files. . . . . . . . . . . . . . . .   8
+             Example. . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+
+             Graphic file format. . . . . . . . . . . . . . . . . . . . .   8
+
+
+
+Document Outline Processor:  Outline v1.5                          Contents 2
+
+     7. Program release history . . . . . . . . . . . . . . . . . . . . .   9
+         7.1 Version 1.0, 11-Jan-86 . . . . . . . . . . . . . . . . . . .   9
+
+         7.2 Version 1.1, 12-Jan-86 . . . . . . . . . . . . . . . . . . .   9
+
+         7.3 Version 1.2, 16-Jan-86 . . . . . . . . . . . . . . . . . . .  10
+             7.3.1 Function key changes . . . . . . . . . . . . . . . . .  10
+
+             7.3.2 Startup option file. . . . . . . . . . . . . . . . . .  10
+
+             7.3.3 Using outline to make estimates. . . . . . . . . . . .  10
+
+
+         7.4 Version 1.3, 20-Jan-86 . . . . . . . . . . . . . . . . . . .  10
+
+         7.5 Version 1.4, 21-Mar-86 . . . . . . . . . . . . . . . . . . .  11
+
+         7.6 Version 1.5, 01-May-86 . . . . . . . . . . . . . . . . . . .  11
+
+
+
+
+
+C:\SHS\PROJ\OUTLINE\OUTLINE.OLF                                        Page 1
+
+
+ Document Outline Processor:  Outline v1.5
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+     Outline is a documentation tool that will let you create and modify 
+     documents in a "tree" structured way. You can use it like a word 
+     processor that has the powerful ability to manipulate whole sections as 
+     single lines in a higher level outline. 
+
+     This program may be freely copied, provided it is never sold or 
+     otherwise used for profit. 
+
+     Written by Samuel H. Smith, 21-Jan-86 
+
+     1. Overview
+     ÄÄÄÄÄÄÄÄÄÄÄ
+
+         Outline deals with "sections" in a document. Each section has a 
+         title, a 10 line description, and as many as 10 sub-sections. Each 
+         sub-section is itself a section, so a document can be nested as 
+         deeply as you want. If you move a section from one place to 
+         another, all of the sub-sections will be moved with it! 
+
+Document Outline Processor:  Outline v1.5                              Page 2
+
+
+     2. How to enter an outline
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         You enter your outline one section at a time. You fill in the 
+         details for that section and then go down into the subsections. 
+
+         2.1 Enter the first section
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Type in the title for the first section. The you can fill in 
+             the optional text lines. These lines will always go with the 
+             title of this section. Next, list the titles of all of the 
+             subsections that give details for this section. Don't worry 
+             about getting it perfect; you can come back later. 
+
+             When printed, the text lines will be reformatted to fit within 
+             the printer margins. Use blank lines (with a single space) to 
+             force paragraph breaks on the printout. 
+
+
+         2.2 Enter the subsections
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Now that you have the section filled in, you will want to put 
+             in more details for some of the subordinate sections. You do 
+             this by putting the cursor on the title of the subsection you 
+             want to work on. Then press the PgDn key to go "down" into this 
+             subordinate sections screen. Press PgUp to go back up. 
+
+
+         2.3 Go back to the top
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Once you have worked your way down to the lowest section of the 
+             outline, just press PgUp to go back up. This works one section 
+             at a time. You can go up and down by pressing PgUp and PgDn. 
+
+
+Document Outline Processor:  Outline v1.5                              Page 3
+
+
+     3. How to print out the outline
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Outlines can be printed in several formats. When you press the F4 
+         key, you will be given a menu of print formats. Each print format 
+         is a different way of viewing your outline. 
+
+         3.1 Print full deails
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             This print format will include all detail from your outline. It 
+             will be formatted into sections, and page numbers will be 
+             assigned. This is the only format that processes include files. 
+             You need to run a printout in full detail format to assign page 
+             numbers, if you plan to run other formats that use them. If no 
+             detail printout is desired, it can be printed to the "NUL" 
+             file. 
+
+         3.2 Print outline of document
+
+         3.3 Print a table of contents
+
+         3.4 Print a section tree
+
+         3.5 Print a keyword index
+
+
+Document Outline Processor:  Outline v1.5                              Page 4
+
+
+     4. How to move things around
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         One of the most powerful features of an outline processor like 
+         OUTLINE, is the ability to move things around by just moving the 
+         titles. If you move the title of a section, all of the sub- 
+         ordinate sections will automatically be moved along with it. You 
+         can also copy and delete sections in this way. 
+
+         4.1 Mark the sub-section you want to move or copy
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             The first step in doing a copy, is to locate the subsection 
+             that you want to work with. Put the cursor on the subsection 
+             title line and press F6. The word "<mark>" will appear to 
+             remind you that the line is ready to be moved or copied. 
+
+
+         4.2 Put the cursor where you want it to go
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             The next step is to move your cursor to the subsection title 
+             line where you want to move TO. This can be in ANY section 
+             except a subsection of the section you want to move!!! 
+
+             To protect you from moving a section to within itself, Outline 
+             will not let you go down (PgDn) into a marked section. If a 
+             section were to be moved (or copied) within itself, you would 
+             get an infinite self-reference! 
+
+
+         4.3 And move it
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             To move the marked section to where you are, just press F7. The 
+             subsection where your cursor WAS will be pushed down to make 
+             room. Copy works the same way with F8, but the original marked 
+             title is left alone. 
+
+
+         4.4 To delete sub-sections
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             You can delete an entire section and all of the subsections in 
+             it. You do this by putting the cursor on the subsection title 
+             line and pressing the F9 key. The deleted section is kept in a 
+             special holding area, where it can be retrieved by the F2 
+             (undelete) key. 
+
+Document Outline Processor:  Outline v1.5                              Page 5
+
+
+         4.5 Oops...  Un-delete!
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             If you delete a section and change your mind, you can Un-delete 
+             it with the F9 key. This will undelete, putting the recovered 
+             section in front of the sub-section under the cursor. Note that 
+             you can only un-delete the most recently deleted section. 
+
+
+         4.6 To move a section from one outline to another
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             You can use the delete/undelete feature to move a section from 
+             one outline to another. Just delete the section from the 
+             original outline, retrieve a different outline, and do an 
+             un-delete. Un-delete will insert the section into the new 
+             outline. 
+
+
+Document Outline Processor:  Outline v1.5                              Page 6
+
+
+     5. Summary of special keys
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Outline uses a number of special keys. These keys are used for 
+         moving around, editing lines of text, and for getting special 
+         services. 
+
+         5.1 Keys for moving around
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             The four arrow keys can be used to move the cursor around on 
+             the screen. The END key moves to the end of line. The HOME key 
+             moves to the start of a line. The TAB key moves four spaces at 
+             a time. The PgUp and PgDn keys let you move up and down the 
+             levels of your outline. The ENTER key takes you to the next 
+             line down. 
+
+
+         5.2 Keys for editing lines of text
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             The BACKSPACE key moves back and deletes one character. The 
+             DELETE key deletes the character under the cursor. The INSERT 
+             key will insert a space under the cursor. Text that you enter 
+             will overtype the line on the screen. The CTRL-X key will blank 
+             out the current line. 
+
+
+         5.3 Keys for special services
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             The F1 key will give you a help screen that summarizes the keys 
+             that are available. The ESC key generally takes you "out" of 
+             whatever you are into (the PgUp key also does this). The other 
+             numbered function keys allow you to MARK(F6), MOVE(F7), 
+             COPY(F8) and DELETE(F9) whole sections of your outline. You can 
+             save your work at any time with the SAVE(F3) key. Do this 
+             often! If you mess up, you can undo a delete with UNDELETE(F2). 
+             The ESTIMATE(F10) key will allow you to assign an estimate (in 
+             hours, days, etc.) to the current subsection. 
+
+
+Document Outline Processor:  Outline v1.5                              Page 7
+
+
+     6. How to include outside files
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+         6.1 How to include text files
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Outline will allow you to include the contents of an outside 
+             text file within the description part of a section. All you 
+             have to do is put in a line with the form: @FILENAME where 
+             FILENAME is any legal DOS path or file name. When printing the 
+             detail of this document, outline will read in this file and put 
+             it in context with the proper indentation. Note that this 
+             special line must not have any leading or imbedded spaces. 
+
+             Example
+             ÄÄÄÄÄÄÄ
+
+                 Here is an example of an included file: 
+                 
+                 149k or 42.09% free, out of 354k total disk space
+                 Total of 205k used by 12 files in *.*
+                 
+                  getfiles.inc   4k  12-Jan-86 1310      outline.pas    4k  12-Jan-86 1828     
+                  makelib.bat    1k  12-Jan-86 1646      outline.prn   14k  12-Jan-86 1852     
+                  outedit.inc   13k  12-Jan-86 1637      outln11.lbr   38k  12-Jan-86 1649     
+                  outfiles.inc  19k  12-Jan-86 1845      outmisc.inc   12k  12-Jan-86 1831     
+                  outline.com   26k  12-Jan-86 1846      regpack.inc    1k  12-Jan-86  709     
+                  outline.lbr   63k  12-Jan-86 1647     
+                  outline.olf   10k  12-Jan-86 1852     
+
+
+Document Outline Processor:  Outline v1.5                              Page 8
+
+
+         6.2 How to include graphics files
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Outline will allow you to include the contents of an outside 
+             graphics file within the description part of a section. All you 
+             have to do is put in a line with the form: &FILENAME where 
+             FILENAME is any legal DOS path or file name. When printing the 
+             detail of this document, outline will read in this file and 
+             format it for a graphic (IBM compatible) printer. Note that 
+             this special line must not have any leading or imbedded spaces. 
+
+             Example
+             ÄÄÄÄÄÄÄ
+
+*** Graphics Include file not found: &EXAMPLE.GRA
+                 Here is an example of an included file: 
+
+
+             Graphic file format
+             ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                 The graphic files are required to be in a special format. 
+                 This format is a sirect "binary" image of 16k of memory, 
+                 starting at B800:0000. 
+
+
+
+Document Outline Processor:  Outline v1.5                              Page 9
+
+
+     7. Program release history
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+         7.1 Version 1.0, 11-Jan-86
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             This was the initial release to the public domain. This first 
+             version had most of the basic features, but with a primitive 
+             user interface. 
+
+
+         7.2 Version 1.1, 12-Jan-86
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             This release added nicer looking screens and faster displays in 
+             the outline editor. The parent-section is displayed in the 
+             outline editor. The file save/load/print procedures now give a 
+             directory of files and allow you to pick from the directory. 
+             You can include the contents of an outside text file into the 
+             text of a section. The print-detail report now reformats text 
+             so that the right margin is not effected by indentation. 
+
+Document Outline Processor:  Outline v1.5                              Page 10
+
+
+         7.3 Version 1.2, 16-Jan-86
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             This release changes the function keys so that the editor keys 
+             are much the same as the main menu keys. A startup option file 
+             has been added. An outline estimate feature has been added. 
+
+             7.3.1 Function key changes
+             ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                 The function keys in the outline editor were changed so 
+                 that they would more closely match the main menu. 
+                 F2=load/undelete, F3=save, F4=summary, F5=detail. 
+
+
+             7.3.2 Startup option file
+             ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                 The file OUTLINE.OPT must be in the default drive when 
+                 outline is started. This file controls the way outline 
+                 formats reports and how it initializes the video mode. 
+
+                 Example contents of outline.opt: 
+
+                 {options for OUTLINE v1.2}
+                 60    {max number of lines to print on a page}
+                 20    {min number of lines on a page}
+                 4     {spaces of indentation for each level of nesting}
+                 77    {right margin for reformatted print file outputs}
+                 -     {character used to underline section titles}
+                 1     {should paragraphs of text be reformatted?  1=yes, 0=no}
+                 1     {should output be divided into pages?  1=yes, 0=no}
+                 2     {text mode code:  2=bw80, 3=c80}
+
+
+             7.3.3 Using outline to make estimates
+             ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                 The F10 key will now assign an "estimate" to the current 
+                 subsection. If used, the estimate for a section will 
+                 automatically become the sum of all subsection estimates. 
+                 This allows you to make estimates (in days, hours, etc.) 
+                 for your lowest level details, and outline will add them 
+                 all up for you. 
+
+
+
+         7.4 Version 1.3, 20-Jan-86
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Added search paths for option file (outline.opt) and any 
+             outline file that is being loaded. Fixed bug handling "0" 
+             estimates at top level. Changed printout estimate format to 
+             match the screen format. Moved printout procedures to a 
+             seperate include file. Fixed a bug in text reformat that caused 
+             some lines to be truncated. 
+
+Document Outline Processor:  Outline v1.5                              Page 11
+
+
+         7.5 Version 1.4, 21-Mar-86
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Made print file handlers remove underlining and extra blank 
+             lines when no subsections are present. Removed summary from 
+             beginning of detail printout. Added graphic picture include 
+             files. Changed printing directory to list only *.SUM,*.PRN. 
+             Added page numbers to printout and display. Changed "summary" 
+             format into a "table of contents" format. 
+
+
+         7.6 Version 1.5, 01-May-86
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+             Added "tree" format printout. Added "keyword index" format 
+             printout. Added checks to see if the current document has been 
+             saved or not. Fixed some bugs related to moving sections 
+             around. 
+
+
+
+
+
+                                         
+                                          ÚÄ1. Overview
+                                          ³                           
+                                          ³                            ÚÄ2.1 Enter the first section
+                                          ÃÄ2. How to enter an outlineÄÅÄ2.2 Enter the subsections
+                                          ³                            ÀÄ2.3 Go back to the top
+                                          ³                                
+                                          ³                                 ÚÄ3.1 Print full deails
+                                          ³                                 ÃÄ3.2 Print outline of document
+                                          ÃÄ3. How to print out the outlineÄÅÄ3.3 Print a table of contents
+                                          ³                                 ÃÄ3.4 Print a section tree
+                                          ³                                 ÀÄ3.5 Print a keyword index
+                                          ³                             
+                                          ³                              ÚÄ4.1 Mark the sub-section you want to move or copy
+                                          ³                              ÃÄ4.2 Put the cursor where you want it to go
+Document Outline Processor:  Outline v1.5ÄÅÄ4. How to move things aroundÄÅÄ4.3 And move it
+                                          ³                              ÃÄ4.4 To delete sub-sections
+                                          ³                              ÃÄ4.5 Oops...  Un-delete!
+                                          ³                              ÀÄ4.6 To move a section from one outline to another
+                                          ³                           
+                                          ³                            ÚÄ5.1 Keys for moving around
+                                          ÃÄ5. Summary of special keysÄÅÄ5.2 Keys for editing lines of text
+                                          ³                            ÀÄ5.3 Keys for special services
+                                          ÃÄ6. How to include outside filesÄÂÄ6.1 How to include text filesÄÄÄExample
+                                          ³                                 ÀÄ6.2 How to include graphics filesÄÂÄExample
+                                          ³                                                                     ÀÄGraphic file format
+                                          ³                           
+                                          ³                            ÚÄ7.1 Version 1.0, 11-Jan-86
+                                          ³                            ÃÄ7.2 Version 1.1, 12-Jan-86
+                                          ³                            ³                           
+                                          ³                            ³                            ÚÄ7.3.1 Function key changes
+                                          ÀÄ7. Program release historyÄÅÄ7.3 Version 1.2, 16-Jan-86ÄÅÄ7.3.2 Startup option file
+                                                                       ³                            ÀÄ7.3.3 Using outline to make estimates
+                                                                       ÃÄ7.4 Version 1.3, 20-Jan-86
+                                                                       ÃÄ7.5 Version 1.4, 21-Mar-86
+                                                                       ÀÄ7.6 Version 1.5, 01-May-86
+
+
+C:\SHS\PROJ\OUTLINE\OUTLINE.OLF                                       Index 1
+
+
+1
+   1. Overview. . . . . . . . . . . . . . . . . . . . 1
+   16k. . . . . . . . . . . . . . . . . . . . . . . . 8
+
+2
+   2. How to enter an outline . . . . . . . . . . . . 2
+   2.1 Enter the first section. . . . . . . . . . . . 2
+   2.2 Enter the subsections. . . . . . . . . . . . . 2
+   2.3 Go back to the top . . . . . . . . . . . . . . 2
+
+3
+   3. How to print out the outline. . . . . . . . . . 3
+   3.1 Print full deails. . . . . . . . . . . . . . . 3
+   3.2 Print outline of document. . . . . . . . . . . 3
+   3.3 Print a table of contents. . . . . . . . . . . 3
+   3.4 Print a section tree . . . . . . . . . . . . . 3
+   3.5 Print a keyword index. . . . . . . . . . . . . 3
+
+4
+   4. How to move things around . . . . . . . . . . . 4
+   4.1 Mark the sub-section you want to move or . . . 4
+   4.2 Put the cursor where you want it to go . . . . 4
+   4.3 And move it. . . . . . . . . . . . . . . . . . 4
+   4.4 To delete sub-sections . . . . . . . . . . . . 4
+   4.5 Oops...  Un-delete!. . . . . . . . . . . . . . 5
+   4.6 To move a section from one outline to ano. . . 5
+
+5
+   5. Summary of special keys . . . . . . . . . . . . 6
+   5.1 Keys for moving around . . . . . . . . . . . . 6
+   5.2 Keys for editing lines of text . . . . . . . . 6
+   5.3 Keys for special services. . . . . . . . . . . 6
+
+6
+   6. How to include outside files. . . . . . . . . . 7
+   6.1 How to include text files. . . . . . . . . . . 7
+   6.2 How to include graphics files. . . . . . . . . 8
+
+7
+   7. Program release history . . . . . . . . . . . . 9
+   7.1 Version 1.0, 11-Jan-86 . . . . . . . . . . . . 9
+   7.2 Version 1.1, 12-Jan-86 . . . . . . . . . . . . 9
+   7.3 Version 1.2, 16-Jan-86 . . . . . . . . . . . . 10
+   7.3.1 Function key changes . . . . . . . . . . . . 10
+   7.3.2 Startup option file. . . . . . . . . . . . . 10
+   7.3.3 Using outline to make estimates. . . . . . . 10
+   7.4 Version 1.3, 20-Jan-86 . . . . . . . . . . . . 10
+   7.5 Version 1.4, 21-Mar-86 . . . . . . . . . . . . 11
+   7.6 Version 1.5, 01-May-86 . . . . . . . . . . . . 11
+
+A
+   ANY. . . . . . . . . . . . . . . . . . . . . . . . 4
+   Ability. . . . . . . . . . . . . . . . . . . . . . 1, 4
+   About. . . . . . . . . . . . . . . . . . . . . . . 2
+Document Outline Processor:  Outline v1.5                             Index 2
+
+   Add. . . . . . . . . . . . . . . . . . . . . . . . 10
+   Added. . . . . . . . . . . . . . . . . . . . . . . 9-11
+   All. . . . . . . . . . . . . . . . . . . . . . . . 1-4, 7-8, 10
+   Allow. . . . . . . . . . . . . . . . . . . . . . . 6-9
+   Allows . . . . . . . . . . . . . . . . . . . . . . 10
+   Alone. . . . . . . . . . . . . . . . . . . . . . . 4
+   Along. . . . . . . . . . . . . . . . . . . . . . . 4
+   Also . . . . . . . . . . . . . . . . . . . . . . . 4, 6
+   Always . . . . . . . . . . . . . . . . . . . . . . 2
+   An . . . . . . . . . . . . . . . . . . . . . . . . 2, 4-10
+   And. . . . . . . . . . . . . . . . . . . . . . . . 1-11
+   Another. . . . . . . . . . . . . . . . . . . . . . 1, 5
+   Any. . . . . . . . . . . . . . . . . . . . . . . . 6-8, 10
+   Appear . . . . . . . . . . . . . . . . . . . . . . 4
+   Are. . . . . . . . . . . . . . . . . . . . . . . . 4, 6, 8, 10-11
+   Area . . . . . . . . . . . . . . . . . . . . . . . 4
+   Around . . . . . . . . . . . . . . . . . . . . . . 4, 6, 11
+   Arrow. . . . . . . . . . . . . . . . . . . . . . . 6
+   As . . . . . . . . . . . . . . . . . . . . . . . . 1, 10
+   Assign . . . . . . . . . . . . . . . . . . . . . . 3, 6, 10
+   Assigned . . . . . . . . . . . . . . . . . . . . . 3
+   At . . . . . . . . . . . . . . . . . . . . . . . . 2, 6, 8, 10
+   Automatically. . . . . . . . . . . . . . . . . . . 4, 10
+   Available. . . . . . . . . . . . . . . . . . . . . 6
+
+B
+   B800 . . . . . . . . . . . . . . . . . . . . . . . 8
+   BACKSPACE. . . . . . . . . . . . . . . . . . . . . 6
+   Back . . . . . . . . . . . . . . . . . . . . . . . 2, 6
+   Basic. . . . . . . . . . . . . . . . . . . . . . . 9
+   Be . . . . . . . . . . . . . . . . . . . . . . . . 1-4, 6, 8, 10
+   Become . . . . . . . . . . . . . . . . . . . . . . 10
+   Been . . . . . . . . . . . . . . . . . . . . . . . 10-11
+   Beginning. . . . . . . . . . . . . . . . . . . . . 11
+   Being. . . . . . . . . . . . . . . . . . . . . . . 10
+   Binary . . . . . . . . . . . . . . . . . . . . . . 8
+   Blank. . . . . . . . . . . . . . . . . . . . . . . 2, 6, 11
+   Breaks . . . . . . . . . . . . . . . . . . . . . . 2
+   Bug. . . . . . . . . . . . . . . . . . . . . . . . 10
+   Bugs . . . . . . . . . . . . . . . . . . . . . . . 11
+   But. . . . . . . . . . . . . . . . . . . . . . . . 4, 9
+   By . . . . . . . . . . . . . . . . . . . . . . . . 1-2, 4, 9
+
+C
+   COPY . . . . . . . . . . . . . . . . . . . . . . . 6
+   CTRL-X . . . . . . . . . . . . . . . . . . . . . . 6
+   Can. . . . . . . . . . . . . . . . . . . . . . . . 1-6, 9
+   Caused . . . . . . . . . . . . . . . . . . . . . . 10
+   Change . . . . . . . . . . . . . . . . . . . . . . 5
+   Changed. . . . . . . . . . . . . . . . . . . . . . 10-11
+   Changes. . . . . . . . . . . . . . . . . . . . . . 10
+   Character. . . . . . . . . . . . . . . . . . . . . 6
+   Checks . . . . . . . . . . . . . . . . . . . . . . 11
+   Closely. . . . . . . . . . . . . . . . . . . . . . 10
+   Come . . . . . . . . . . . . . . . . . . . . . . . 2
+Document Outline Processor:  Outline v1.5                             Index 3
+
+   Compatible . . . . . . . . . . . . . . . . . . . . 8
+   Contents . . . . . . . . . . . . . . . . . . . . . 3, 7-11
+   Context. . . . . . . . . . . . . . . . . . . . . . 7
+   Controls . . . . . . . . . . . . . . . . . . . . . 10
+   Copied . . . . . . . . . . . . . . . . . . . . . . 1, 4
+   Copy . . . . . . . . . . . . . . . . . . . . . . . 4
+   Create . . . . . . . . . . . . . . . . . . . . . . 1
+   Current. . . . . . . . . . . . . . . . . . . . . . 6, 10-11
+   Cursor . . . . . . . . . . . . . . . . . . . . . . 2, 4-6
+
+D
+   DELETE . . . . . . . . . . . . . . . . . . . . . . 6
+   DOS. . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Days . . . . . . . . . . . . . . . . . . . . . . . 6, 10
+   Deails . . . . . . . . . . . . . . . . . . . . . . 3
+   Deals. . . . . . . . . . . . . . . . . . . . . . . 1
+   Deeply . . . . . . . . . . . . . . . . . . . . . . 1
+   Default. . . . . . . . . . . . . . . . . . . . . . 10
+   Delete . . . . . . . . . . . . . . . . . . . . . . 4-6
+   Deleted. . . . . . . . . . . . . . . . . . . . . . 4-5
+   Deletes. . . . . . . . . . . . . . . . . . . . . . 6
+   Description. . . . . . . . . . . . . . . . . . . . 1, 7-8
+   Desired. . . . . . . . . . . . . . . . . . . . . . 3
+   Detail . . . . . . . . . . . . . . . . . . . . . . 3, 7-8, 10-11
+   Details. . . . . . . . . . . . . . . . . . . . . . 2, 10
+   Different. . . . . . . . . . . . . . . . . . . . . 3, 5
+   Directory. . . . . . . . . . . . . . . . . . . . . 9, 11
+   Display. . . . . . . . . . . . . . . . . . . . . . 11
+   Displayed. . . . . . . . . . . . . . . . . . . . . 9
+   Displays . . . . . . . . . . . . . . . . . . . . . 9
+   Do . . . . . . . . . . . . . . . . . . . . . . . . 2, 4-8
+   Document . . . . . . . . . . . . . . . . . . . . . 1, 3, 7-8, 11
+   Document Outline Processor:  Outline v1.5. . . . . 1
+   Documentation. . . . . . . . . . . . . . . . . . . 1
+   Documents. . . . . . . . . . . . . . . . . . . . . 1
+   Does . . . . . . . . . . . . . . . . . . . . . . . 6
+   Doing. . . . . . . . . . . . . . . . . . . . . . . 4
+   Domain . . . . . . . . . . . . . . . . . . . . . . 9
+   Don't. . . . . . . . . . . . . . . . . . . . . . . 2
+   Down . . . . . . . . . . . . . . . . . . . . . . . 2, 4, 6
+   Drive. . . . . . . . . . . . . . . . . . . . . . . 10
+
+E
+   END. . . . . . . . . . . . . . . . . . . . . . . . 6
+   ENTER. . . . . . . . . . . . . . . . . . . . . . . 6
+   ESC. . . . . . . . . . . . . . . . . . . . . . . . 6
+   ESTIMATE . . . . . . . . . . . . . . . . . . . . . 6
+   Each . . . . . . . . . . . . . . . . . . . . . . . 1, 3
+   Editing. . . . . . . . . . . . . . . . . . . . . . 6
+   Editor . . . . . . . . . . . . . . . . . . . . . . 9-10
+   Effected . . . . . . . . . . . . . . . . . . . . . 9
+   End. . . . . . . . . . . . . . . . . . . . . . . . 6
+   Enter. . . . . . . . . . . . . . . . . . . . . . . 2, 6
+   Entire . . . . . . . . . . . . . . . . . . . . . . 4
+   Estimate . . . . . . . . . . . . . . . . . . . . . 6, 10
+Document Outline Processor:  Outline v1.5                             Index 4
+
+   Estimates. . . . . . . . . . . . . . . . . . . . . 10
+   Etc. . . . . . . . . . . . . . . . . . . . . . . . 6, 10
+   Example. . . . . . . . . . . . . . . . . . . . . . 7-8, 10
+   Except . . . . . . . . . . . . . . . . . . . . . . 4
+   Extra. . . . . . . . . . . . . . . . . . . . . . . 11
+
+F
+   F1 . . . . . . . . . . . . . . . . . . . . . . . . 6
+   F10. . . . . . . . . . . . . . . . . . . . . . . . 6, 10
+   F2 . . . . . . . . . . . . . . . . . . . . . . . . 4, 6, 10
+   F3 . . . . . . . . . . . . . . . . . . . . . . . . 6, 10
+   F4 . . . . . . . . . . . . . . . . . . . . . . . . 3, 10
+   F5 . . . . . . . . . . . . . . . . . . . . . . . . 10
+   F6 . . . . . . . . . . . . . . . . . . . . . . . . 4, 6
+   F7 . . . . . . . . . . . . . . . . . . . . . . . . 4, 6
+   F8 . . . . . . . . . . . . . . . . . . . . . . . . 4, 6
+   F9 . . . . . . . . . . . . . . . . . . . . . . . . 4-6
+   FILENAME . . . . . . . . . . . . . . . . . . . . . 7-8
+   Faster . . . . . . . . . . . . . . . . . . . . . . 9
+   Feature. . . . . . . . . . . . . . . . . . . . . . 5, 10
+   Features . . . . . . . . . . . . . . . . . . . . . 4, 9
+   File . . . . . . . . . . . . . . . . . . . . . . . 3, 7-11
+   Files. . . . . . . . . . . . . . . . . . . . . . . 3, 7-9, 11
+   Fill . . . . . . . . . . . . . . . . . . . . . . . 2
+   Filled . . . . . . . . . . . . . . . . . . . . . . 2
+   First. . . . . . . . . . . . . . . . . . . . . . . 2, 4, 9
+   Fit. . . . . . . . . . . . . . . . . . . . . . . . 2
+   Fixed. . . . . . . . . . . . . . . . . . . . . . . 10-11
+   For. . . . . . . . . . . . . . . . . . . . . . . . 1-2, 6, 8, 10
+   Force. . . . . . . . . . . . . . . . . . . . . . . 2
+   Form . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Format . . . . . . . . . . . . . . . . . . . . . . 3, 8, 10-11
+   Formats. . . . . . . . . . . . . . . . . . . . . . 3, 10
+   Formatted. . . . . . . . . . . . . . . . . . . . . 3
+   Four . . . . . . . . . . . . . . . . . . . . . . . 6
+   Freely . . . . . . . . . . . . . . . . . . . . . . 1
+   From . . . . . . . . . . . . . . . . . . . . . . . 1, 3-5, 9, 11
+   Front. . . . . . . . . . . . . . . . . . . . . . . 5
+   Full . . . . . . . . . . . . . . . . . . . . . . . 3
+   Function . . . . . . . . . . . . . . . . . . . . . 6, 10
+
+G
+   Generally. . . . . . . . . . . . . . . . . . . . . 6
+   Get. . . . . . . . . . . . . . . . . . . . . . . . 4
+   Getting. . . . . . . . . . . . . . . . . . . . . . 2, 6
+   Give . . . . . . . . . . . . . . . . . . . . . . . 2, 6, 9
+   Given. . . . . . . . . . . . . . . . . . . . . . . 3
+   Go . . . . . . . . . . . . . . . . . . . . . . . . 2, 4
+   Graphic. . . . . . . . . . . . . . . . . . . . . . 8, 11
+   Graphic file format. . . . . . . . . . . . . . . . 8
+   Graphics . . . . . . . . . . . . . . . . . . . . . 8
+
+H
+   HOME . . . . . . . . . . . . . . . . . . . . . . . 6
+   Had. . . . . . . . . . . . . . . . . . . . . . . . 9
+Document Outline Processor:  Outline v1.5                             Index 5
+
+   Handlers . . . . . . . . . . . . . . . . . . . . . 11
+   Handling . . . . . . . . . . . . . . . . . . . . . 10
+   Has. . . . . . . . . . . . . . . . . . . . . . . . 1, 10-11
+   Have . . . . . . . . . . . . . . . . . . . . . . . 2, 7-8
+   Help . . . . . . . . . . . . . . . . . . . . . . . 6
+   Here . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Higher . . . . . . . . . . . . . . . . . . . . . . 1
+   History. . . . . . . . . . . . . . . . . . . . . . 9
+   Holding. . . . . . . . . . . . . . . . . . . . . . 4
+   Hours. . . . . . . . . . . . . . . . . . . . . . . 6, 10
+   How. . . . . . . . . . . . . . . . . . . . . . . . 2-4, 7-8, 10
+
+I
+   IBM. . . . . . . . . . . . . . . . . . . . . . . . 8
+   INSERT . . . . . . . . . . . . . . . . . . . . . . 6
+   If . . . . . . . . . . . . . . . . . . . . . . . . 1, 3-6, 10-11
+   Image. . . . . . . . . . . . . . . . . . . . . . . 8
+   Imbedded . . . . . . . . . . . . . . . . . . . . . 7-8
+   In . . . . . . . . . . . . . . . . . . . . . . . . 1-10
+   Include. . . . . . . . . . . . . . . . . . . . . . 3, 7-11
+   Included . . . . . . . . . . . . . . . . . . . . . 7-8
+   Indentation. . . . . . . . . . . . . . . . . . . . 7, 9
+   Index. . . . . . . . . . . . . . . . . . . . . . . 3, 11
+   Infinite . . . . . . . . . . . . . . . . . . . . . 4
+   Initial. . . . . . . . . . . . . . . . . . . . . . 9
+   Initializes. . . . . . . . . . . . . . . . . . . . 10
+   Insert . . . . . . . . . . . . . . . . . . . . . . 5-6
+   Interface. . . . . . . . . . . . . . . . . . . . . 9
+   Into . . . . . . . . . . . . . . . . . . . . . . . 2-6, 9, 11
+   Is . . . . . . . . . . . . . . . . . . . . . . . . 1, 3-4, 7-10
+   It . . . . . . . . . . . . . . . . . . . . . . . . 1-5, 7-8, 10
+   Itself . . . . . . . . . . . . . . . . . . . . . . 1, 4
+
+J
+   Just . . . . . . . . . . . . . . . . . . . . . . . 2, 4-5
+
+K
+   Kept . . . . . . . . . . . . . . . . . . . . . . . 4
+   Key. . . . . . . . . . . . . . . . . . . . . . . . 2-6, 10
+   Keys . . . . . . . . . . . . . . . . . . . . . . . 6, 10
+   Keyword. . . . . . . . . . . . . . . . . . . . . . 3, 11
+
+L
+   Later. . . . . . . . . . . . . . . . . . . . . . . 2
+   Leading. . . . . . . . . . . . . . . . . . . . . . 7-8
+   Left . . . . . . . . . . . . . . . . . . . . . . . 4
+   Legal. . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Let. . . . . . . . . . . . . . . . . . . . . . . . 1, 4, 6
+   Level. . . . . . . . . . . . . . . . . . . . . . . 1, 10
+   Levels . . . . . . . . . . . . . . . . . . . . . . 6
+   Like . . . . . . . . . . . . . . . . . . . . . . . 1, 4
+   Line . . . . . . . . . . . . . . . . . . . . . . . 1, 4, 6-8
+   Lines. . . . . . . . . . . . . . . . . . . . . . . 1-2, 6, 10-11
+   List . . . . . . . . . . . . . . . . . . . . . . . 2, 11
+   Load . . . . . . . . . . . . . . . . . . . . . . . 9-10
+Document Outline Processor:  Outline v1.5                             Index 6
+
+   Loaded . . . . . . . . . . . . . . . . . . . . . . 10
+   Locate . . . . . . . . . . . . . . . . . . . . . . 4
+   Looking. . . . . . . . . . . . . . . . . . . . . . 9
+   Lowest . . . . . . . . . . . . . . . . . . . . . . 2, 10
+
+M
+   MARK . . . . . . . . . . . . . . . . . . . . . . . 6
+   MOVE . . . . . . . . . . . . . . . . . . . . . . . 6
+   Made . . . . . . . . . . . . . . . . . . . . . . . 11
+   Main . . . . . . . . . . . . . . . . . . . . . . . 10
+   Make . . . . . . . . . . . . . . . . . . . . . . . 4, 10
+   Manipulate . . . . . . . . . . . . . . . . . . . . 1
+   Many . . . . . . . . . . . . . . . . . . . . . . . 1
+   Margin . . . . . . . . . . . . . . . . . . . . . . 9
+   Margins. . . . . . . . . . . . . . . . . . . . . . 2
+   Mark . . . . . . . . . . . . . . . . . . . . . . . 4
+   Marked . . . . . . . . . . . . . . . . . . . . . . 4
+   Match. . . . . . . . . . . . . . . . . . . . . . . 10
+   May. . . . . . . . . . . . . . . . . . . . . . . . 1
+   Memory . . . . . . . . . . . . . . . . . . . . . . 8
+   Menu . . . . . . . . . . . . . . . . . . . . . . . 3, 10
+   Mess . . . . . . . . . . . . . . . . . . . . . . . 6
+   Mind . . . . . . . . . . . . . . . . . . . . . . . 5
+   Mode . . . . . . . . . . . . . . . . . . . . . . . 10
+   Modify . . . . . . . . . . . . . . . . . . . . . . 1
+   More . . . . . . . . . . . . . . . . . . . . . . . 2, 10
+   Most . . . . . . . . . . . . . . . . . . . . . . . 4-5, 9
+   Move . . . . . . . . . . . . . . . . . . . . . . . 1, 4-6
+   Moved. . . . . . . . . . . . . . . . . . . . . . . 1, 4, 10
+   Moves. . . . . . . . . . . . . . . . . . . . . . . 6
+   Moving . . . . . . . . . . . . . . . . . . . . . . 4, 6, 11
+   Much . . . . . . . . . . . . . . . . . . . . . . . 10
+   Must . . . . . . . . . . . . . . . . . . . . . . . 7-8, 10
+
+N
+   NUL. . . . . . . . . . . . . . . . . . . . . . . . 3
+   Name . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Need . . . . . . . . . . . . . . . . . . . . . . . 3
+   Nested . . . . . . . . . . . . . . . . . . . . . . 1
+   Never. . . . . . . . . . . . . . . . . . . . . . . 1
+   New. . . . . . . . . . . . . . . . . . . . . . . . 5
+   Next . . . . . . . . . . . . . . . . . . . . . . . 2, 4, 6
+   Nicer. . . . . . . . . . . . . . . . . . . . . . . 9
+   No . . . . . . . . . . . . . . . . . . . . . . . . 3, 11
+   Not. . . . . . . . . . . . . . . . . . . . . . . . 4, 7-9, 11
+   Note . . . . . . . . . . . . . . . . . . . . . . . 5, 7-8
+   Now. . . . . . . . . . . . . . . . . . . . . . . . 2, 9-10
+   Number . . . . . . . . . . . . . . . . . . . . . . 6
+   Numbered . . . . . . . . . . . . . . . . . . . . . 6
+   Numbers. . . . . . . . . . . . . . . . . . . . . . 3, 11
+
+O
+   OUTLINE. . . . . . . . . . . . . . . . . . . . . . 4
+   OUTLINE.OPT. . . . . . . . . . . . . . . . . . . . 10
+   Of . . . . . . . . . . . . . . . . . . . . . . . . 1-11
+Document Outline Processor:  Outline v1.5                             Index 7
+
+   Often. . . . . . . . . . . . . . . . . . . . . . . 6
+   On . . . . . . . . . . . . . . . . . . . . . . . . 2, 4, 6
+   Once . . . . . . . . . . . . . . . . . . . . . . . 2
+   One. . . . . . . . . . . . . . . . . . . . . . . . 1-2, 4-6
+   Only . . . . . . . . . . . . . . . . . . . . . . . 3, 5, 11
+   Oops . . . . . . . . . . . . . . . . . . . . . . . 5
+   Option . . . . . . . . . . . . . . . . . . . . . . 10
+   Optional . . . . . . . . . . . . . . . . . . . . . 2
+   Or . . . . . . . . . . . . . . . . . . . . . . . . 1, 4, 7-8, 11
+   Ordinate . . . . . . . . . . . . . . . . . . . . . 4
+   Original . . . . . . . . . . . . . . . . . . . . . 4-5
+   Other. . . . . . . . . . . . . . . . . . . . . . . 3, 6
+   Otherwise. . . . . . . . . . . . . . . . . . . . . 1
+   Out. . . . . . . . . . . . . . . . . . . . . . . . 3, 6
+   Outline. . . . . . . . . . . . . . . . . . . . . . 1-10
+   Outline.opt. . . . . . . . . . . . . . . . . . . . 10
+   Outlines . . . . . . . . . . . . . . . . . . . . . 3
+   Outside. . . . . . . . . . . . . . . . . . . . . . 7-9
+   Overtype . . . . . . . . . . . . . . . . . . . . . 6
+   Overview . . . . . . . . . . . . . . . . . . . . . 1
+
+P
+   PRN. . . . . . . . . . . . . . . . . . . . . . . . 11
+   Page . . . . . . . . . . . . . . . . . . . . . . . 3, 11
+   Paragraph. . . . . . . . . . . . . . . . . . . . . 2
+   Parent-section . . . . . . . . . . . . . . . . . . 9
+   Part . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Path . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Paths. . . . . . . . . . . . . . . . . . . . . . . 10
+   Perfect. . . . . . . . . . . . . . . . . . . . . . 2
+   PgDn . . . . . . . . . . . . . . . . . . . . . . . 2, 4, 6
+   PgUp . . . . . . . . . . . . . . . . . . . . . . . 2, 6
+   Pick . . . . . . . . . . . . . . . . . . . . . . . 9
+   Picture. . . . . . . . . . . . . . . . . . . . . . 11
+   Place. . . . . . . . . . . . . . . . . . . . . . . 1
+   Plan . . . . . . . . . . . . . . . . . . . . . . . 3
+   Powerful . . . . . . . . . . . . . . . . . . . . . 1, 4
+   Present. . . . . . . . . . . . . . . . . . . . . . 11
+   Press. . . . . . . . . . . . . . . . . . . . . . . 2-4
+   Pressing . . . . . . . . . . . . . . . . . . . . . 2, 4
+   Primitive. . . . . . . . . . . . . . . . . . . . . 9
+   Print. . . . . . . . . . . . . . . . . . . . . . . 3, 9, 11
+   Print-detail . . . . . . . . . . . . . . . . . . . 9
+   Printed. . . . . . . . . . . . . . . . . . . . . . 2-3
+   Printer. . . . . . . . . . . . . . . . . . . . . . 2, 8
+   Printing . . . . . . . . . . . . . . . . . . . . . 7-8, 11
+   Printout . . . . . . . . . . . . . . . . . . . . . 2-3, 10-11
+   Procedures . . . . . . . . . . . . . . . . . . . . 9-10
+   Processes. . . . . . . . . . . . . . . . . . . . . 3
+   Processor. . . . . . . . . . . . . . . . . . . . . 1, 4
+   Profit . . . . . . . . . . . . . . . . . . . . . . 1
+   Program. . . . . . . . . . . . . . . . . . . . . . 1, 9
+   Proper . . . . . . . . . . . . . . . . . . . . . . 7
+   Protect. . . . . . . . . . . . . . . . . . . . . . 4
+   Provided . . . . . . . . . . . . . . . . . . . . . 1
+Document Outline Processor:  Outline v1.5                             Index 8
+
+   Public . . . . . . . . . . . . . . . . . . . . . . 9
+   Pushed . . . . . . . . . . . . . . . . . . . . . . 4
+   Put. . . . . . . . . . . . . . . . . . . . . . . . 2, 4, 7-8
+   Putting. . . . . . . . . . . . . . . . . . . . . . 2, 4-5
+
+R
+   Read . . . . . . . . . . . . . . . . . . . . . . . 7-8
+   Ready. . . . . . . . . . . . . . . . . . . . . . . 4
+   Recently . . . . . . . . . . . . . . . . . . . . . 5
+   Recovered. . . . . . . . . . . . . . . . . . . . . 5
+   Reformat . . . . . . . . . . . . . . . . . . . . . 10
+   Reformats. . . . . . . . . . . . . . . . . . . . . 9
+   Reformatted. . . . . . . . . . . . . . . . . . . . 2
+   Related. . . . . . . . . . . . . . . . . . . . . . 11
+   Release. . . . . . . . . . . . . . . . . . . . . . 9-10
+   Remind . . . . . . . . . . . . . . . . . . . . . . 4
+   Remove . . . . . . . . . . . . . . . . . . . . . . 11
+   Removed. . . . . . . . . . . . . . . . . . . . . . 11
+   Report . . . . . . . . . . . . . . . . . . . . . . 9
+   Reports. . . . . . . . . . . . . . . . . . . . . . 10
+   Required . . . . . . . . . . . . . . . . . . . . . 8
+   Retrieve . . . . . . . . . . . . . . . . . . . . . 5
+   Retrieved. . . . . . . . . . . . . . . . . . . . . 4
+   Right. . . . . . . . . . . . . . . . . . . . . . . 9
+   Room . . . . . . . . . . . . . . . . . . . . . . . 4
+   Run. . . . . . . . . . . . . . . . . . . . . . . . 3
+
+S
+   SAVE . . . . . . . . . . . . . . . . . . . . . . . 6
+   SUM. . . . . . . . . . . . . . . . . . . . . . . . 11
+   Same . . . . . . . . . . . . . . . . . . . . . . . 4, 10
+   Samuel . . . . . . . . . . . . . . . . . . . . . . 1
+   Save . . . . . . . . . . . . . . . . . . . . . . . 6, 9-10
+   Saved. . . . . . . . . . . . . . . . . . . . . . . 11
+   Screen . . . . . . . . . . . . . . . . . . . . . . 2, 6, 10
+   Screens. . . . . . . . . . . . . . . . . . . . . . 9
+   Search . . . . . . . . . . . . . . . . . . . . . . 10
+   Section. . . . . . . . . . . . . . . . . . . . . . 1-5, 7-10
+   Sections . . . . . . . . . . . . . . . . . . . . . 1-4, 6, 11
+   See. . . . . . . . . . . . . . . . . . . . . . . . 11
+   Self-reference . . . . . . . . . . . . . . . . . . 4
+   Seperate . . . . . . . . . . . . . . . . . . . . . 10
+   Services . . . . . . . . . . . . . . . . . . . . . 6
+   Several. . . . . . . . . . . . . . . . . . . . . . 3
+   Single . . . . . . . . . . . . . . . . . . . . . . 1-2
+   Sirect . . . . . . . . . . . . . . . . . . . . . . 8
+   Smith. . . . . . . . . . . . . . . . . . . . . . . 1
+   So . . . . . . . . . . . . . . . . . . . . . . . . 1, 9-10
+   Sold . . . . . . . . . . . . . . . . . . . . . . . 1
+   Some . . . . . . . . . . . . . . . . . . . . . . . 2, 10-11
+   Space. . . . . . . . . . . . . . . . . . . . . . . 2, 6
+   Spaces . . . . . . . . . . . . . . . . . . . . . . 6-8
+   Special. . . . . . . . . . . . . . . . . . . . . . 4, 6-8
+   Start. . . . . . . . . . . . . . . . . . . . . . . 6
+   Started. . . . . . . . . . . . . . . . . . . . . . 10
+Document Outline Processor:  Outline v1.5                             Index 9
+
+   Starting . . . . . . . . . . . . . . . . . . . . . 8
+   Startup. . . . . . . . . . . . . . . . . . . . . . 10
+   Step . . . . . . . . . . . . . . . . . . . . . . . 4
+   Structured . . . . . . . . . . . . . . . . . . . . 1
+   Sub- . . . . . . . . . . . . . . . . . . . . . . . 4
+   Sub-section. . . . . . . . . . . . . . . . . . . . 1, 4-5
+   Sub-sections . . . . . . . . . . . . . . . . . . . 1, 4
+   Subordinate. . . . . . . . . . . . . . . . . . . . 2
+   Subsection . . . . . . . . . . . . . . . . . . . . 2, 4, 6, 10
+   Subsections. . . . . . . . . . . . . . . . . . . . 2, 4, 11
+   Sum. . . . . . . . . . . . . . . . . . . . . . . . 10
+   Summarizes . . . . . . . . . . . . . . . . . . . . 6
+   Summary. . . . . . . . . . . . . . . . . . . . . . 6, 10-11
+
+T
+   TAB. . . . . . . . . . . . . . . . . . . . . . . . 6
+   TO . . . . . . . . . . . . . . . . . . . . . . . . 4
+   Table. . . . . . . . . . . . . . . . . . . . . . . 3, 11
+   Takes. . . . . . . . . . . . . . . . . . . . . . . 6
+   Text . . . . . . . . . . . . . . . . . . . . . . . 2, 6-7, 9-10
+   That . . . . . . . . . . . . . . . . . . . . . . . 1-10
+   The. . . . . . . . . . . . . . . . . . . . . . . . 1-11
+   Them . . . . . . . . . . . . . . . . . . . . . . . 3, 10
+   Then . . . . . . . . . . . . . . . . . . . . . . . 2
+   These. . . . . . . . . . . . . . . . . . . . . . . 2, 6
+   They . . . . . . . . . . . . . . . . . . . . . . . 10
+   Things . . . . . . . . . . . . . . . . . . . . . . 4
+   This . . . . . . . . . . . . . . . . . . . . . . . 1-10
+   Time . . . . . . . . . . . . . . . . . . . . . . . 2, 6
+   Title. . . . . . . . . . . . . . . . . . . . . . . 1-2, 4
+   Titles . . . . . . . . . . . . . . . . . . . . . . 2, 4
+   To . . . . . . . . . . . . . . . . . . . . . . . . 1-11
+   Tool . . . . . . . . . . . . . . . . . . . . . . . 1
+   Top. . . . . . . . . . . . . . . . . . . . . . . . 2
+   Tree . . . . . . . . . . . . . . . . . . . . . . . 1, 3, 11
+   Truncated. . . . . . . . . . . . . . . . . . . . . 10
+   Type . . . . . . . . . . . . . . . . . . . . . . . 2
+
+U
+   UNDELETE . . . . . . . . . . . . . . . . . . . . . 6
+   Un-delete. . . . . . . . . . . . . . . . . . . . . 5
+   Undelete . . . . . . . . . . . . . . . . . . . . . 4-5, 10
+   Under. . . . . . . . . . . . . . . . . . . . . . . 5-6
+   Underlining. . . . . . . . . . . . . . . . . . . . 11
+   Undo . . . . . . . . . . . . . . . . . . . . . . . 6
+   Up . . . . . . . . . . . . . . . . . . . . . . . . 2, 6, 10
+   Use. . . . . . . . . . . . . . . . . . . . . . . . 1-3, 5
+   Used . . . . . . . . . . . . . . . . . . . . . . . 1, 6, 10
+   User . . . . . . . . . . . . . . . . . . . . . . . 9
+   Uses . . . . . . . . . . . . . . . . . . . . . . . 6
+   Using. . . . . . . . . . . . . . . . . . . . . . . 10
+
+V
+   V1.5 . . . . . . . . . . . . . . . . . . . . . . . 1
+   Version. . . . . . . . . . . . . . . . . . . . . . 9-11
+Document Outline Processor:  Outline v1.5                             Index 10
+
+   Video. . . . . . . . . . . . . . . . . . . . . . . 10
+   Viewing. . . . . . . . . . . . . . . . . . . . . . 3
+
+W
+   WAS. . . . . . . . . . . . . . . . . . . . . . . . 4
+   Want . . . . . . . . . . . . . . . . . . . . . . . 1-2, 4
+   Was. . . . . . . . . . . . . . . . . . . . . . . . 9
+   Way. . . . . . . . . . . . . . . . . . . . . . . . 1-4, 10
+   Were . . . . . . . . . . . . . . . . . . . . . . . 4, 10
+   Whatever . . . . . . . . . . . . . . . . . . . . . 6
+   When . . . . . . . . . . . . . . . . . . . . . . . 2-3, 7-8, 10-11
+   Where. . . . . . . . . . . . . . . . . . . . . . . 4, 7-8
+   Whole. . . . . . . . . . . . . . . . . . . . . . . 1, 6
+   Will . . . . . . . . . . . . . . . . . . . . . . . 1-8, 10
+   With . . . . . . . . . . . . . . . . . . . . . . . 1-2, 4-9
+   Within . . . . . . . . . . . . . . . . . . . . . . 2, 4, 7-8
+   Word . . . . . . . . . . . . . . . . . . . . . . . 1, 4
+   Work . . . . . . . . . . . . . . . . . . . . . . . 2, 4, 6
+   Worked . . . . . . . . . . . . . . . . . . . . . . 2
+   Works. . . . . . . . . . . . . . . . . . . . . . . 2, 4
+   Worry. . . . . . . . . . . . . . . . . . . . . . . 2
+   Would. . . . . . . . . . . . . . . . . . . . . . . 4, 10
+   Written. . . . . . . . . . . . . . . . . . . . . . 1
+
+Y
+   You. . . . . . . . . . . . . . . . . . . . . . . . 1-10
+   Your . . . . . . . . . . . . . . . . . . . . . . . 2-6, 10
+
+

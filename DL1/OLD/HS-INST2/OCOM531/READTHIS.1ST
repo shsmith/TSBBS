@@ -1,0 +1,7 @@
+Beginning with Revision 5.30 of OpusComm, there is internal support
+for the 16550A UART chip.  This means that those of you that have the
+chip installed no longer need to run the 16550.EXE program to enable
+its special features.  OpusComm uses the chip in fully buffered mode
+(with more buffering than was allowed with the 16550.EXE program).
+
+

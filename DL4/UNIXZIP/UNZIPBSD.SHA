@@ -1,0 +1,1321 @@
+#! /bin/sh
+# This is a shell archive, meaning:
+# 1. Remove everything above the #! /bin/sh line.
+# 2. Save the resulting text in a file.
+# 3. Execute the file with /bin/sh (not csh) to create the files:
+#	Makefile
+#	unzipbsd.c
+#	crc32.c
+# This archive created: Mon Apr 17 15:43:47 1989
+export PATH; PATH=/bin:$PATH
+echo shar: extracting "'Makefile'" '(892 characters)'
+if test -f 'Makefile'
+then
+	echo shar: will not over-write existing file "'Makefile'"
+else
+sed 's/^	X//' << \SHAR_EOF > 'Makefile'
+	X# Makefile for unzipbsd
+	X
+	X
+	X# "make unzip"    -- makes unzip in current directory
+	X# "make install"  -- makes unzip, then moves it into DESTDIR defined below
+	X# "make clean"    -- deletes object files and executable unzip from current dir
+	X# "make shar"     -- make a SHell ARchive
+	X# "make arc"      -- make a DOS archive
+	X
+	X# Directory where we want to move executable unzip on "make install"
+	XDESTDIR=/usr/public
+	X
+	X# CFLAGS are flags for the C compiler.  LDFLAGS are flags for the loader.
+	XCFLAGS= -O
+	X# This is used for DBX
+	X#CFLAGS= -g
+	X
+	XLDFLAGS= -s
+	X
+	XCC=cc
+	X
+	X.c.o :
+	X	$(CC) -c $(CFLAGS) $*.c
+	X
+	XOBJS = unzipbsd.o crc32.o
+	X
+	Xunzip: $(OBJS)
+	X	cc $(LDFLAGS) -o unzip $(OBJS)
+	X
+	Xunzip.o: unzip.c
+	X
+	Xcrc32.o: crc32.c
+	X
+	Xinstall: unzip
+	X	mv unzip $(DESTDIR)/unzip
+	X
+	Xclean:
+	X	/bin/rm -f $(OBJS) core unzip
+	X
+	Xshar:
+	X	@shar -a Makefile unzipbsd.c crc32.c > unzipbsd.shar
+	X
+	Xarc:
+	X	@arc -a unzipbsd.arc Makefile unzipbsd.c crc32.c
+	X
+SHAR_EOF
+if test 892 -ne "`wc -c < 'Makefile'`"
+then
+	echo shar: error transmitting "'Makefile'" '(should have been 892 characters)'
+fi
+fi # end of overwriting check
+echo shar: extracting "'unzipbsd.c'" '(26546 characters)'
+if test -f 'unzipbsd.c'
+then
+	echo shar: will not over-write existing file "'unzipbsd.c'"
+else
+sed 's/^	X//' << \SHAR_EOF > 'unzipbsd.c'
+	X
+	X/*
+	X * Copyright 1989 Samuel H. Smith;  All rights reserved
+	X *
+	X * Do not distribute modified versions without my permission.
+	X * Do not remove or alter this notice or any other copyright notice.
+	X * If you use this in your own program you must distribute source code.
+	X * Do not use any of this in a commercial product.
+	X *
+	X */
+	X
+	X/*
+	X * UnZip - A simple zipfile extract utility
+	X *
+	X * To compile:
+	X *      tcc -B -O -Z -G -mc unzip.c        ;turbo C 2.0, compact model
+	X *
+	X */
+	X
+	X#define VERSION  "UnZip:  Zipfile Extract v1.2 of 03-15-89;  (C) 1989 Samuel H. Smith"
+	X
+	Xtypedef unsigned char byte;	/* code assumes UNSIGNED bytes */
+	Xtypedef long longint;
+	Xtypedef unsigned word;
+	Xtypedef char boolean;
+	X
+	X#define STRSIZ 256
+	X
+	X#include <stdio.h>
+	X /* this is your standard header for all C compiles */
+	X
+	X#ifdef MSDOS || M_XENIX
+	X#include <stdlib.h>
+	X /* this include defines various standard library prototypes */
+	X#endif
+	X
+	X
+	X/*
+	X * SEE HOST OPERATING SYSTEM SPECIFICS SECTION STARTING NEAR LINE 180
+	X *
+	X */
+	X
+	X
+	X/* ----------------------------------------------------------- */
+	X/*
+	X * Zipfile layout declarations
+	X *
+	X */
+	X
+	X
+	Xchar local_file_header_signature[] = {0x50,0x4b,0x03,0x04};
+	X
+	X
+	Xtypedef struct local_file_header {
+	X	word version_needed_to_extract;
+	X	word general_purpose_bit_flag;
+	X	word compression_method;
+	X	word last_mod_file_time;
+	X	word last_mod_file_date;
+	X	longint crc32;
+	X	longint compressed_size;
+	X	longint uncompressed_size;
+	X	word filename_length;
+	X	word extra_field_length;
+	X} local_file_header;
+	X
+	X
+	Xchar central_file_header_signature[] = {0x50,0x4b,0x01,0x02};
+	X
+	X
+	Xtypedef struct central_directory_file_header {
+	X	word version_made_by;
+	X	word version_needed_to_extract;
+	X	word general_purpose_bit_flag;
+	X	word compression_method;
+	X	word last_mod_file_time;
+	X	word last_mod_file_date;
+	X	longint crc32;
+	X	longint compressed_size;
+	X	longint uncompressed_size;
+	X	word filename_length;
+	X	word extra_field_length;
+	X	word file_comment_length;
+	X	word disk_number_start;
+	X	word internal_file_attributes;
+	X	longint external_file_attributes;
+	X	longint relative_offset_local_header;
+	X} central_directory_file_header;
+	X
+	X
+	Xchar end_central_dir_signature[] = {0x50,0x4b,0x05,0x06};
+	X
+	X
+	Xtypedef struct end_central_dir_record {
+	X	word number_this_disk;
+	X	word number_disk_with_start_central_directory;
+	X	word total_entries_central_dir_on_this_disk;
+	X	word total_entries_central_dir;
+	X	longint size_central_directory;
+	X	longint offset_start_central_directory;
+	X	word zipfile_comment_length;
+	X} end_central_dir_record;
+	X
+	X
+	X
+	X/* ----------------------------------------------------------- */
+	X/*
+	X * input file variables
+	X *
+	X */
+	X
+	X#define INBUFSIZ 0x2000
+	Xbyte *inbuf;			/* input file buffer - any size is legal */
+	Xbyte *inptr;
+	X
+	Xint incnt;
+	Xunsigned bitbuf;
+	Xint bits_left;
+	Xboolean zipeof;
+	X
+	Xint zipfd;
+	Xchar zipfn[STRSIZ];
+	Xlocal_file_header lrec;
+	X
+	X
+	X/* ----------------------------------------------------------- */
+	X/*
+	X * output stream variables
+	X *
+	X */
+	X
+	X#define OUTBUFSIZ 0x6000
+	Xbyte *outbuf;                   /* buffer for rle look-back */
+	Xbyte *outptr;
+	X
+	Xlongint outpos;			/* absolute position in outfile */
+	Xint outcnt;			/* current position in outbuf */
+	X
+	Xint outfd;
+	Xchar filename[STRSIZ];
+	Xchar extra[STRSIZ];
+	X
+	X#define DLE 144
+	X
+	X
+	X/* ----------------------------------------------------------- */
+	X/*
+	X * shrink/reduce working storage
+	X *
+	X */
+	X
+	Xint factor;
+	Xbyte followers[256][64];
+	Xbyte Slen[256];
+	X
+	X#define max_bits 13
+	X#define init_bits 9
+	X#define hsize 8192
+	X#define first_ent 257
+	X#define clear 256
+	X
+	Xtypedef int hsize_array_integer[hsize+1];
+	Xtypedef byte hsize_array_byte[hsize+1];
+	X
+	Xhsize_array_integer prefix_of;
+	Xhsize_array_byte suffix_of;
+	Xhsize_array_byte stack;
+	X
+	Xint codesize;
+	Xint maxcode;
+	Xint free_ent;
+	Xint maxcodemax;
+	Xint offset;
+	Xint sizex;
+	X
+	X
+	X
+	X/* ============================================================= */
+	X/*
+	X * Host operating system details
+	X *
+	X */
+	X
+	X#include <string.h>
+	X /* this include defines strcpy, strcmp, etc. */
+	X
+	X#ifdef MSDOS || M_XENIX
+	X#include <io.h>
+	X /*
+	X  * this include file defines
+	X  *             struct ftime ...        (* file time/date stamp info *)
+	X  *             int setftime (int handle, struct ftime *ftimep);
+	X  *             #define SEEK_CUR  1     (* lseek() modes *)
+	X  *             #define SEEK_END  2
+	X  *             #define SEEK_SET  0
+	X  */
+	X#else
+	X#include <sys/file.h>
+	X /*
+	X  * this include file defines
+	X  *             #define L_SET 0  (* Seek to absolute record *)
+	X  */
+	X#define SEEK_SET L_SET
+	X#endif
+	X
+	X
+	X
+	X#ifdef MSDOS || M_XENIX
+	X#include <fcntl.h>
+	X /*
+	X  * this include file defines
+	X  *             #define O_BINARY 0x8000  (* no cr-lf translation *)
+	X  * as used in the open() standard function
+	X  */
+	X#ifndef L_SET
+	X#define L_SET 1
+	X#endif
+	X#endif
+	X
+	X#ifndef O_BINARY
+	X#define O_BINARY 0		/* BSD don't have a Open_BINARY mode */
+	X#endif
+	X
+	X#include <sys/types.h>
+	X#include <sys/stat.h>
+	X /*
+	X  * this include file defines
+	X  *             #define S_IREAD 0x0100  (* owner may read *)
+	X  *             #define S_IWRITE 0x0080 (* owner may write *)
+	X  * as used in the creat() standard function
+	X  */
+	X
+	Xvoid set_file_time()
+	X /*
+	X  * set the output file date/time stamp according to information from the
+	X  * zipfile directory record for this file 
+	X  */
+	X{
+	X/*
+	X * On a BSD system, You can't change the creation date/time
+	X * (at least i think so) so for now, skip this code.
+	X */
+	X#ifdef MSDOS || M_XENIX
+	X	union {
+	X                struct ftime ft;        /* system file time record */
+	X		struct {
+	X                        word ztime;     /* date and time words */
+	X                        word zdate;     /* .. same format as in .ZIP file */
+	X		} zt;
+	X	} td;
+	X
+	X	/*
+	X	 * set output file date and time - this is optional and can be
+	X	 * deleted if your compiler does not easily support setftime() 
+	X	 */
+	X
+	X	td.zt.ztime = lrec.last_mod_file_time;
+	X	td.zt.zdate = lrec.last_mod_file_date;
+	X
+	X	setftime(outfd, &td.ft);
+	X#endif
+	X}
+	X
+	X/*
+	X * Some defines to use the GETOPT functions
+	X * that are on most systems, even TURBO-C has these.
+	X */
+	X#define USE_GETOPT		/* Use the GETOPT package */
+	Xint debugging = 0;		/* debug enable */
+	Xint verbose   = 0;		/* be verbose */
+	Xint test_zip  = 0;		/* test CRC's only */
+	X
+	Xlong crc32val;			/* The CRC value we calculate */
+	X
+	X/* ============================================================= */
+	X
+	Xint create_output_file()
+	X /* return non-0 if creat failed */
+	X{
+	X	if (test_zip)
+	X		return 0;
+	X
+	X	/* create the output file with READ and WRITE permissions */
+	X	outfd = creat(filename, S_IWRITE | S_IREAD);
+	X	if (outfd < 1) {
+	X		printf("Can't create output: %s\n", filename);
+	X		return 1;
+	X	}
+	X
+	X	/*
+	X	 * close the newly created file and reopen it in BINARY mode to
+	X	 * disable all CR/LF translations 
+	X	 */
+	X	close(outfd);
+	X	outfd = open(filename, O_RDWR | O_BINARY);
+	X
+	X	/* write a single byte at EOF to pre-allocate the file */
+	X        lseek(outfd, lrec.uncompressed_size - 1L, SEEK_SET);
+	X	write(outfd, "?", 1);
+	X	lseek(outfd, 0L, SEEK_SET);
+	X	return 0;
+	X}
+	X
+	X
+	Xint open_input_file()
+	X /* return non-0 if creat failed */
+	X{
+	X	/*
+	X	 * open the zipfile for reading and in BINARY mode to prevent cr/lf
+	X	 * translation, which would corrupt the bitstreams 
+	X	 */
+	X
+	X	zipfd = open(zipfn, O_RDONLY | O_BINARY);
+	X	if (zipfd < 1) {
+	X		printf("Can't open input file: %s\n", zipfn);
+	X		return (1);
+	X	}
+	X	return 0;
+	X}
+	X
+	X
+	Xint FillBuffer()
+	X /* fill input buffer if possible */
+	X{
+	X	int readsize;
+	X
+	X        if (lrec.compressed_size <= 0)
+	X		return incnt = 0;
+	X
+	X        if (lrec.compressed_size > INBUFSIZ)
+	X		readsize = INBUFSIZ;
+	X	else
+	X                readsize = (int) lrec.compressed_size;
+	X	incnt = read(zipfd, inbuf, readsize);
+	X
+	X        lrec.compressed_size -= incnt;
+	X	inptr = inbuf;
+	X	return incnt--;
+	X}
+	X
+	Xint ReadByte(x)
+	Xunsigned *x;
+	X /* read a byte; return 8 if byte available, 0 if not */
+	X{
+	X	if (incnt-- == 0)
+	X		if (FillBuffer() == 0)
+	X			return 0;
+	X
+	X	*x = *inptr++;
+	X	return 8;
+	X}
+	X
+	X
+	X/* ------------------------------------------------------------- */
+	Xstatic unsigned mask_bits[] =
+	X        {0,     0x0001, 0x0003, 0x0007, 0x000f,
+	X                0x001f, 0x003f, 0x007f, 0x00ff,
+	X                0x01ff, 0x03ff, 0x07ff, 0x0fff,
+	X                0x1fff, 0x3fff, 0x7fff, 0xffff
+	X        };
+	X
+	X
+	Xint FillBitBuffer(bits)
+	Xregister int bits;
+	X{
+	X	/* get the bits that are left and read the next word */
+	X	unsigned temp;
+	X        register int result = bitbuf;
+	X	int sbits = bits_left;
+	X	bits -= bits_left;
+	X
+	X	/* read next word of input */
+	X	bits_left = ReadByte(&bitbuf);
+	X	bits_left += ReadByte(&temp);
+	X	bitbuf |= (temp << 8);
+	X	if (bits_left == 0)
+	X		zipeof = 1;
+	X
+	X	/* get the remaining bits */
+	X        result = result | (int) ((bitbuf & mask_bits[bits]) << sbits);
+	X        bitbuf >>= bits;
+	X        bits_left -= bits;
+	X        return result;
+	X}
+	X
+	X#define READBIT(nbits,zdest) { if (nbits <= bits_left) { zdest = (int)(bitbuf & mask_bits[nbits]); bitbuf >>= nbits; bits_left -= nbits; } else zdest = FillBitBuffer(nbits);}
+	X
+	X/*
+	X * macro READBIT(nbits,zdest)
+	X *  {
+	X *      if (nbits <= bits_left) {
+	X *          zdest = (int)(bitbuf & mask_bits[nbits]);
+	X *          bitbuf >>= nbits;
+	X *          bits_left -= nbits;
+	X *      } else
+	X *          zdest = FillBitBuffer(nbits);
+	X *  }
+	X *
+	X */
+	X
+	X
+	X/* ------------------------------------------------------------- */
+	X
+	Xvoid Write_file()
+	X{
+	X	if (!test_zip)
+	X		write(outfd, outbuf, outcnt);
+	X}
+	X
+	X/* ------------------------------------------------------------- */
+	X
+	Xvoid FlushOutput()
+	X /* flush contents of output buffer */
+	X{
+	X	UpdateCRC(outbuf, outcnt);
+	X	Write_file();
+	X	outpos += outcnt;
+	X	outcnt = 0;
+	X	outptr = outbuf;
+	X}
+	X
+	X#define OUTB(intc) { *outptr++=intc; if (++outcnt==OUTBUFSIZ) FlushOutput(); }
+	X
+	X/*
+	X *  macro OUTB(intc)
+	X *  {
+	X *      *outptr++=intc;
+	X *      if (++outcnt==OUTBUFSIZ)
+	X *          FlushOutput();
+	X *  }
+	X *
+	X */
+	X
+	X
+	X/* ----------------------------------------------------------- */
+	X
+	Xvoid LoadFollowers()
+	X{
+	X        register int x;
+	X        register int i;
+	X
+	X	for (x = 255; x >= 0; x--) {
+	X                READBIT(6,Slen[x]);
+	X		for (i = 0; i < Slen[x]; i++) {
+	X                        READBIT(8,followers[x][i]);
+	X		}
+	X	}
+	X}
+	X
+	X
+	X/* ----------------------------------------------------------- */
+	X/*
+	X * The Reducing algorithm is actually a combination of two
+	X * distinct algorithms.  The first algorithm compresses repeated
+	X * byte sequences, and the second algorithm takes the compressed
+	X * stream from the first algorithm and applies a probabilistic
+	X * compression method.
+	X */
+	X
+	Xint L_table[] = {0, 0x7f, 0x3f, 0x1f, 0x0f};
+	X
+	Xint D_shift[] = {0, 0x07, 0x06, 0x05, 0x04};
+	Xint D_mask[]  = {0, 0x01, 0x03, 0x07, 0x0f};
+	X
+	Xint B_table[] = {8, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5,
+	X		 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6,
+	X		 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,
+	X		 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7,
+	X		 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
+	X		 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
+	X		 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
+	X		 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+	X		 8, 8, 8, 8};
+	X
+	X/* ----------------------------------------------------------- */
+	X
+	Xvoid unReduce()
+	X /* expand probablisticly reduced data */
+	X{
+	X        register int lchar;
+	X        int nchar;
+	X        int ExState;
+	X        int V;
+	X        int Len;
+	X
+	X        factor = lrec.compression_method - 1;
+	X	ExState = 0;
+	X	lchar = 0;
+	X	LoadFollowers();
+	X
+	X        while (((outpos + outcnt) < lrec.uncompressed_size) && (!zipeof)) {
+	X		if (Slen[lchar] == 0)
+	X                        READBIT(8,nchar)      /* ; */
+	X                else
+	X		{
+	X                        READBIT(1,nchar);
+	X                        if (nchar != 0)
+	X                                READBIT(8,nchar)      /* ; */
+	X                        else
+	X			{
+	X                                int follower;
+	X                                int bitsneeded = B_table[Slen[lchar]];
+	X                                READBIT(bitsneeded,follower);
+	X                                nchar = followers[lchar][follower];
+	X			}
+	X		}
+	X
+	X		/* expand the resulting byte */
+	X		switch (ExState) {
+	X
+	X		case 0:
+	X                        if (nchar != DLE)
+	X                                OUTB(nchar) /*;*/
+	X			else
+	X				ExState = 1;
+	X			break;
+	X
+	X		case 1:
+	X                        if (nchar != 0) {
+	X                                V = nchar;
+	X				Len = V & L_table[factor];
+	X				if (Len == L_table[factor])
+	X					ExState = 2;
+	X				else
+	X					ExState = 3;
+	X			}
+	X			else {
+	X                                OUTB(DLE);
+	X				ExState = 0;
+	X			}
+	X			break;
+	X
+	X                case 2: {
+	X                                Len += nchar;
+	X				ExState = 3;
+	X			}
+	X			break;
+	X
+	X                case 3: {
+	X				register int i = Len + 3;
+	X				int offset = (((V >> D_shift[factor]) &
+	X                                          D_mask[factor]) << 8) + nchar + 1;
+	X				longint op = outpos + outcnt - offset;
+	X
+	X				/* special case- before start of file */
+	X				while ((op < 0L) && (i > 0)) {
+	X					OUTB(0);
+	X					op++;
+	X					i--;
+	X				}
+	X
+	X				/* normal copy of data from output buffer */
+	X				{
+	X					register int ix = (int) (op % OUTBUFSIZ);
+	X
+	X                                        /* do a block memory copy if possible */
+	X                                        if ( ((ix    +i) < OUTBUFSIZ) &&
+	X                                             ((outcnt+i) < OUTBUFSIZ) ) {
+	X                                                memcpy(outptr,&outbuf[ix],i);
+	X                                                outptr += i;
+	X                                                outcnt += i;
+	X                                        }
+	X
+	X                                        /* otherwise copy byte by byte */
+	X                                        else while (i--) {
+	X                                                OUTB(outbuf[ix]);
+	X                                                if (++ix >= OUTBUFSIZ)
+	X                                                        ix = 0;
+	X                                        }
+	X                                }
+	X
+	X				ExState = 0;
+	X			}
+	X			break;
+	X		}
+	X
+	X                /* store character for next iteration */
+	X                lchar = nchar;
+	X        }
+	X}
+	X
+	X
+	X/* ------------------------------------------------------------- */
+	X/*
+	X * Shrinking is a Dynamic Ziv-Lempel-Welch compression algorithm
+	X * with partial clearing.
+	X *
+	X */
+	X
+	Xvoid partial_clear()
+	X{
+	X        register int pr;
+	X        register int cd;
+	X
+	X	/* mark all nodes as potentially unused */
+	X	for (cd = first_ent; cd < free_ent; cd++)
+	X		prefix_of[cd] |= 0x8000;
+	X
+	X	/* unmark those that are used by other nodes */
+	X	for (cd = first_ent; cd < free_ent; cd++) {
+	X		pr = prefix_of[cd] & 0x7fff;	/* reference to another node? */
+	X                if (pr >= first_ent)            /* flag node as referenced */
+	X			prefix_of[pr] &= 0x7fff;
+	X	}
+	X
+	X	/* clear the ones that are still marked */
+	X	for (cd = first_ent; cd < free_ent; cd++)
+	X		if ((prefix_of[cd] & 0x8000) != 0)
+	X			prefix_of[cd] = -1;
+	X
+	X	/* find first cleared node as next free_ent */
+	X        cd = first_ent;
+	X        while ((cd < maxcodemax) && (prefix_of[cd] != -1))
+	X                cd++;
+	X        free_ent = cd;
+	X}
+	X
+	X
+	X/* ------------------------------------------------------------- */
+	X
+	Xvoid unShrink()
+	X{
+	X#define  GetCode(dest) READBIT(codesize,dest)
+	X
+	X	register int code;
+	X	register int stackp;
+	X	int finchar;
+	X	int oldcode;
+	X	int incode;
+	X
+	X
+	X	/* decompress the file */
+	X	maxcodemax = 1 << max_bits;
+	X	codesize = init_bits;
+	X	maxcode = (1 << codesize) - 1;
+	X	free_ent = first_ent;
+	X	offset = 0;
+	X	sizex = 0;
+	X
+	X	for (code = maxcodemax; code > 255; code--)
+	X		prefix_of[code] = -1;
+	X
+	X	for (code = 255; code >= 0; code--) {
+	X		prefix_of[code] = 0;
+	X		suffix_of[code] = code;
+	X	}
+	X
+	X	GetCode(oldcode);
+	X	if (zipeof)
+	X		return;
+	X	finchar = oldcode;
+	X
+	X        OUTB(finchar);
+	X
+	X        stackp = hsize;
+	X
+	X	while (!zipeof) {
+	X		GetCode(code);
+	X		if (zipeof)
+	X			return;
+	X
+	X		while (code == clear) {
+	X			GetCode(code);
+	X			switch (code) {
+	X
+	X			case 1:{
+	X					codesize++;
+	X					if (codesize == max_bits)
+	X						maxcode = maxcodemax;
+	X					else
+	X						maxcode = (1 << codesize) - 1;
+	X				}
+	X				break;
+	X
+	X			case 2:
+	X				partial_clear();
+	X				break;
+	X			}
+	X
+	X			GetCode(code);
+	X			if (zipeof)
+	X				return;
+	X		}
+	X
+	X
+	X		/* special case for KwKwK string */
+	X		incode = code;
+	X		if (prefix_of[code] == -1) {
+	X                        stack[--stackp] = finchar;
+	X			code = oldcode;
+	X		}
+	X
+	X
+	X		/* generate output characters in reverse order */
+	X		while (code >= first_ent) {
+	X                        stack[--stackp] = suffix_of[code];
+	X			code = prefix_of[code];
+	X		}
+	X
+	X		finchar = suffix_of[code];
+	X                stack[--stackp] = finchar;
+	X
+	X
+	X                /* and put them out in forward order, block copy */
+	X                if ((hsize-stackp+outcnt) < OUTBUFSIZ) {
+	X                        memcpy(outptr,&stack[stackp],hsize-stackp);
+	X                        outptr += hsize-stackp;
+	X                        outcnt += hsize-stackp;
+	X                        stackp = hsize;
+	X                }
+	X
+	X                /* output byte by byte if we can't go by blocks */
+	X                else while (stackp < hsize)
+	X                        OUTB(stack[stackp++]);
+	X
+	X
+	X		/* generate new entry */
+	X		code = free_ent;
+	X		if (code < maxcodemax) {
+	X			prefix_of[code] = oldcode;
+	X			suffix_of[code] = finchar;
+	X
+	X			do
+	X				code++;
+	X			while ((code < maxcodemax) && (prefix_of[code] != -1));
+	X
+	X			free_ent = code;
+	X		}
+	X
+	X		/* remember previous code */
+	X		oldcode = incode;
+	X	}
+	X
+	X}
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid extract_member()
+	X{
+	X	unsigned b;
+	X
+	X	bits_left = 0;
+	X	bitbuf = 0;
+	X	incnt = 0;
+	X	outpos = 0L;
+	X	outcnt = 0;
+	X	outptr = outbuf;
+	X	zipeof = 0;
+	X	crc32val = 0xFFFFFFFFL;
+	X
+	X
+	X	/* create the output file with READ and WRITE permissions */
+	X	if (create_output_file())
+	X		exit(1);
+	X
+	X        switch (lrec.compression_method) {
+	X
+	X	case 0:		/* stored */
+	X		{
+	X			if (test_zip)
+	X			printf(" Testing: %-12s ", filename);
+	X			else
+	X			printf(" Extracting: %-12s ", filename);
+	X			while (ReadByte(&b))
+	X				OUTB(b);
+	X		}
+	X		break;
+	X
+	X        case 1: {
+	X			if (test_zip)
+	X			printf(" Testing: %-12s ", filename);
+	X			else
+	X			printf("UnShrinking: %-12s ", filename);
+	X			unShrink();
+	X		}
+	X		break;
+	X
+	X	case 2:
+	X	case 3:
+	X	case 4:
+	X        case 5: {
+	X			if (test_zip)
+	X			printf(" Testing: %-12s ", filename);
+	X			else
+	X			printf("  Expanding: %-12s ", filename);
+	X			unReduce();
+	X		}
+	X		break;
+	X
+	X	default:
+	X		printf("Unknown compression method.");
+	X	}
+	X
+	X
+	X	/* write the last partial buffer, if any */
+	X	if (outcnt > 0) {
+	X		UpdateCRC(outbuf, outcnt);
+	X		Write_file();
+	X	}
+	X
+	X	/* set output file date and time */
+	X	set_file_time();
+	X
+	X	close(outfd);
+	X
+	X	crc32val = -1 - crc32val;
+	X        if (crc32val != lrec.crc32)
+	X              printf(" Bad CRC %08lx  (should be %08lx)", lrec.crc32, crc32val);
+	X	else
+	X	if (verbose)
+	X		printf(" Passed, CRC = %08lx", lrec.crc32);
+	X	printf("\n");
+	X}
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid get_string(len, s)
+	Xint len;
+	Xchar *s;
+	X{
+	X	read(zipfd, s, len);
+	X	s[len] = 0;
+	X}
+	X
+	X/* UNIX support routines: Michael Enkelis */
+	Xget_byte()
+	X{
+	X	byte nibble;
+	X	read(zipfd,&nibble,1);
+	X	return (byte) (nibble & 0xff);
+	X}
+	X
+	Xget_word()
+	X{
+	X	byte nibble[2];
+	X		nibble[0] = get_byte();
+	X		nibble[1] = get_byte();
+	X	return (word) (nibble[0] | nibble[1] << 8);
+	X}
+	X
+	Xget_long()
+	X{
+	X	byte nibble[4];
+	X		nibble[0] = get_byte();
+	X		nibble[1] = get_byte();
+	X		nibble[2] = get_byte();
+	X		nibble[3] = get_byte();
+	X	return (longint)	((unsigned long) nibble[0] |
+	X			((unsigned long) nibble[1] << 8)  |
+	X			((unsigned long) nibble[2] << 16) |
+	X			((unsigned long) nibble[3] << 24));
+	X}
+	X/** End of added support routines **/
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid process_local_file_header()
+	X{
+	X	lrec.version_needed_to_extract = get_word();
+	X	lrec.general_purpose_bit_flag = get_word();
+	X	lrec.compression_method = get_word();
+	X	lrec.last_mod_file_time = get_word();
+	X	lrec.last_mod_file_date = get_word();
+	X	lrec.crc32 = get_long();
+	X	lrec.compressed_size = get_long();
+	X	lrec.uncompressed_size = get_long();
+	X	lrec.filename_length = get_word();
+	X	lrec.extra_field_length = get_word();
+	X
+	X	get_string(lrec.filename_length,filename);
+	X	get_string(lrec.extra_field_length,extra);
+	X
+	X	if (debugging) {
+	X	printf("\n\nProcess LOCAL file header.\n");
+	X	printf("Version used	: %d\n",lrec.version_needed_to_extract);
+	X	printf("Bit flags	: %d\n",lrec.general_purpose_bit_flag);
+	X	printf("Compression 	: %d\n",lrec.compression_method);
+	X	printf("Mod time	: %d\n",lrec.last_mod_file_time);
+	X	printf("Mod date	: %d\n",lrec.last_mod_file_date);
+	X	printf("Crc32		: %d\n",~lrec.crc32);
+	X	printf("Compressed size	: %d\n",lrec.compressed_size);
+	X	printf("Normal file size: %d\n",lrec.uncompressed_size);
+	X	printf("File name	: %s.%s\n",filename,extra);
+	X	}
+	X
+	X	extract_member();
+	X}
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid process_central_file_header()
+	X{
+	X	central_directory_file_header rec;
+	X	char filename[STRSIZ];
+	X	char extra[STRSIZ];
+	X	char comment[STRSIZ];
+	X
+	X	rec.version_made_by = get_word();
+	X	rec.version_needed_to_extract = get_word();
+	X	rec.general_purpose_bit_flag = get_word();
+	X	rec.compression_method = get_word();
+	X	rec.last_mod_file_time = get_word();
+	X	rec.last_mod_file_date = get_word();
+	X	rec.crc32 = get_long();
+	X	rec.compressed_size = get_long();
+	X	rec.uncompressed_size = get_long();
+	X	rec.filename_length = get_word();
+	X	rec.extra_field_length = get_word();
+	X	rec.file_comment_length = get_word();
+	X	rec.disk_number_start = get_word();
+	X	rec.internal_file_attributes = get_word();
+	X	rec.external_file_attributes = get_long();
+	X	rec.relative_offset_local_header = get_long();
+	X
+	X	get_string(rec.filename_length,filename); 
+	X	get_string(rec.extra_field_length,extra); 
+	X	get_string(rec.file_comment_length,comment); 
+	X
+	X	if (debugging) {
+	X	printf("\n\nProcess CENTRAL file header.\n");
+	X	printf("Version made by : %d\n",rec.version_made_by);
+	X	printf("Version used	: %d\n",rec.version_needed_to_extract);
+	X	printf("Bit flags	: %d\n",rec.general_purpose_bit_flag);
+	X	printf("Compression 	: %d\n",rec.compression_method);
+	X	printf("Mod time	: %d\n",rec.last_mod_file_time);
+	X	printf("Mod date	: %d\n",rec.last_mod_file_date);
+	X	printf("Crc32		: %d\n",~rec.crc32);
+	X	printf("Compressed size	: %d\n",rec.compressed_size);
+	X	printf("Normal file size: %d\n",rec.uncompressed_size);
+	X	printf("File name	: %s.%s\n",filename,extra);
+	X	printf("Comment size    : %d\n",rec.file_comment_length);
+	X	printf("Disk start #    : %d\n",rec.disk_number_start);
+	X	printf("File attributes : %d\n",rec.internal_file_attributes);
+	X	printf("Os attributes   : %d\n",rec.external_file_attributes);
+	X	printf("Offset to header: %d\n",rec.relative_offset_local_header);
+	X	printf("Comment         : %s\n",comment); 
+	X	}
+	X}
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid process_end_central_dir()
+	X{
+	X	end_central_dir_record rec;
+	X	char comment[STRSIZ];
+	X
+	X	rec.number_this_disk = get_word();
+	X	rec.number_disk_with_start_central_directory = get_word();
+	X	rec.total_entries_central_dir_on_this_disk = get_word();
+	X	rec.total_entries_central_dir = get_word();
+	X	rec.size_central_directory = get_long(); 
+	X	rec.offset_start_central_directory = get_long();
+	X	rec.zipfile_comment_length = get_word();
+	X
+	X	get_string(rec.zipfile_comment_length,comment); 
+	X
+	X	if (debugging) {
+	X	printf("\n\nProcess END_CENTRAL directory header.\n");
+	X	}
+	X}
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid process_headers()
+	X{ 
+	X	int i;
+	X	char sig[4];
+	X
+	X	while (1)
+	X	{ 
+	X	for (i=0; i<4; i++)		/* Read the ZIP file sig */
+	X		sig[i] = get_byte();
+	X
+	X	if (strncmp(sig,local_file_header_signature,4) == 0)
+	X		process_local_file_header();
+	X	else
+	X	if (strncmp(sig,central_file_header_signature,4) == 0)
+	X		process_central_file_header();
+	X	else
+	X	if (strncmp(sig,end_central_dir_signature,4) == 0)
+	X		{
+	X			process_end_central_dir(); 
+	X			return;
+	X		} 
+	X	else 
+	X		{ 
+	X			printf("Invalid Zipfile Header\n"); 
+	X			return;
+	X		} 
+	X	} 
+	X}
+	X
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X
+	Xvoid extract_zipfile()
+	X{
+	X	/*
+	X	 * open the zipfile for reading and in BINARY mode to prevent cr/lf
+	X	 * translation, which would corrupt the bitstreams 
+	X	 */
+	X
+	X	if (open_input_file())
+	X		exit(1);
+	X
+	X	process_headers();
+	X
+	X	close(zipfd);
+	X}
+	X
+	X
+	X/* ---------------------------------------------------------- */
+	X/*
+	X * main program
+	X *
+	X */
+	X
+	Xvoid main(argc, argv)
+	Xint argc;
+	Xchar **argv;
+	X{
+	X
+	X#ifdef USE_GETOPT
+	X	int c;				/* next option letter */
+	X	int count = 0;			/* count of required options seen */
+	X
+	X	extern int optind;		/* from getopt: next arg to process */
+	X	extern int opterr;		/* used by getopt */
+	X	extern char *optarg;
+	X
+	X	opterr = 0;			/* so getopt won't print err msg */
+	X
+	X	while ((c = getopt (argc, argv, "dtv")) != EOF)
+	X	{
+	X	switch (c) {
+	X		case 'd':	debugging++; break;
+	X		case 't':	test_zip++; break;
+	X		case 'v':	verbose++; break;
+	X		default:	short_help();
+	X		}
+	X	}
+	X
+	X	strcpy(zipfn,argv[optind]);
+	X	if (strlen(zipfn) == 0)
+	X		long_help();
+	X
+	X	/* .ZIP default if none provided by user */
+	X	if (strchr(zipfn,'.') == NULL)
+	X	strcat(zipfn,".zip");
+	X#else
+	X	if (argc != 2)
+	X		long_help();
+	X
+	X	/* .ZIP default if none provided by user */
+	X	strcpy(zipfn, argv[1]);
+	X	if (strchr(zipfn, '.') == NULL)
+	X		strcat(zipfn, ".zip");
+	X#endif
+	X
+	X        /* allocate i/o buffers */
+	X	inbuf = (byte *) (malloc(INBUFSIZ));
+	X	outbuf = (byte *) (malloc(OUTBUFSIZ));
+	X	if ((inbuf == NULL) || (outbuf == NULL)) {
+	X		printf("Can't allocate buffers!\n");
+	X		exit(1);
+	X	}
+	X
+	X        /* do the job... */
+	X        extract_zipfile();
+	X	exit(0);
+	X}
+	X
+	Xlong_help()
+	X{
+	Xprintf("\n%s\n",VERSION);
+	Xprintf("Courtesy of:  S.H.Smith and The Tool Shop BBS, (602) 279-2673.");
+	Xprintf("\n\n");
+	Xprintf("UNIX mods by: Michael Enkelis\n\n");
+	Xprintf("You may copy and distribute this program freely, provided that:\n");
+	Xprintf("    1)   No fee is charged for such copying and distribution, and\n");
+	Xprintf("    2)   It is distributed ONLY in its original, unmodified state.");
+	Xprintf("\n\n");
+	Xprintf("If you wish to distribute a modified version of this program, you MUST\n");
+	Xprintf("include the source code.\n\n");
+	Xprintf("If you modify this program, I would appreciate a copy of the  new source\n");
+	Xprintf("code.   I am holding the copyright on the source code, so please don't\n");
+	Xprintf("delete my name from the program files or from the documentation.\n\n");
+	Xprintf("IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST\n");
+	Xprintf("PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES\n");
+	Xprintf("ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR FOR ANY\n");
+	Xprintf("CLAIM BY ANY OTHER PARTY.\n\n");
+	Xprintf("Usage:  UnZip FILE[.zip]\n");
+	Xexit(1);
+	X}
+	X
+	Xshort_help()
+	X{
+	X	printf("Usage:	UnZip -htv FILE[.zip]\n\n");
+	X	printf("  -h    This help listing.\n");
+	X	printf("  -t    Test zip archive.\n");
+	X	printf("  -v    Verbose output.\n\n");
+	X	exit(1);
+	X}
+SHAR_EOF
+if test 26546 -ne "`wc -c < 'unzipbsd.c'`"
+then
+	echo shar: error transmitting "'unzipbsd.c'" '(should have been 26546 characters)'
+fi
+fi # end of overwriting check
+echo shar: extracting "'crc32.c'" '(7120 characters)'
+if test -f 'crc32.c'
+then
+	echo shar: will not over-write existing file "'crc32.c'"
+else
+sed 's/^	X//' << \SHAR_EOF > 'crc32.c'
+	X
+	X  /* ============================================================= */
+	X  /*  COPYRIGHT (C) 1986 Gary S. Brown.  You may use this program, or       */
+	X  /*  code or tables extracted from it, as desired without restriction.     */
+	X  /*                                                                        */
+	X  /*  First, the polynomial itself and its table of feedback terms.  The    */
+	X  /*  polynomial is                                                         */
+	X  /*  X^32+X^26+X^23+X^22+X^16+X^12+X^11+X^10+X^8+X^7+X^5+X^4+X^2+X^1+X^0   */
+	X  /*                                                                        */
+	X  /*  Note that we take it "backwards" and put the highest-order term in    */
+	X  /*  the lowest-order bit.  The X^32 term is "implied"; the LSB is the     */
+	X  /*  X^31 term, etc.  The X^0 term (usually shown as "+1") results in      */
+	X  /*  the MSB being 1.                                                      */
+	X  /*                                                                        */
+	X  /*  Note that the usual hardware shift register implementation, which     */
+	X  /*  is what we're using (we're merely optimizing it by doing eight-bit    */
+	X  /*  chunks at a time) shifts bits into the lowest-order term.  In our     */
+	X  /*  implementation, that means shifting towards the right.  Why do we     */
+	X  /*  do it this way?  Because the calculated CRC must be transmitted in    */
+	X  /*  order from highest-order term to lowest-order term.  UARTs transmit   */
+	X  /*  characters in order from LSB to MSB.  By storing the CRC this way,    */
+	X  /*  we hand it to the UART in the order low-byte to high-byte; the UART   */
+	X  /*  sends each low-bit to hight-bit; and the result is transmission bit   */
+	X  /*  by bit from highest- to lowest-order term without requiring any bit   */
+	X  /*  shuffling on our part.  Reception works similarly.                    */
+	X  /*                                                                        */
+	X  /*  The feedback terms table consists of 256, 32-bit entries.  Notes:     */
+	X  /*                                                                        */
+	X  /*      The table can be generated at runtime if desired; code to do so   */
+	X  /*      is shown later.  It might not be obvious, but the feedback        */
+	X  /*      terms simply represent the results of eight shift/xor opera-      */
+	X  /*      tions for all combinations of data and CRC register values.       */
+	X  /*                                                                        */
+	X  /*      The values must be right-shifted by eight bits by the "updcrc"    */
+	X  /*      logic; the shift must be unsigned (bring in zeroes).  On some     */
+	X  /*      hardware you could probably optimize the shift in assembler by    */
+	X  /*      using byte-swap instructions.                                     */
+	X  /*      polynomial $edb88320                                              */
+	X  /*                                                                        */
+	X  /*  --------------------------------------------------------------------  */
+	X
+	Xlong crc_32_tab[] = {
+	X      0x00000000L, 0x77073096L, 0xee0e612cL, 0x990951baL, 0x076dc419L,
+	X      0x706af48fL, 0xe963a535L, 0x9e6495a3L, 0x0edb8832L, 0x79dcb8a4L,
+	X      0xe0d5e91eL, 0x97d2d988L, 0x09b64c2bL, 0x7eb17cbdL, 0xe7b82d07L,
+	X      0x90bf1d91L, 0x1db71064L, 0x6ab020f2L, 0xf3b97148L, 0x84be41deL,
+	X      0x1adad47dL, 0x6ddde4ebL, 0xf4d4b551L, 0x83d385c7L, 0x136c9856L,
+	X      0x646ba8c0L, 0xfd62f97aL, 0x8a65c9ecL, 0x14015c4fL, 0x63066cd9L,
+	X      0xfa0f3d63L, 0x8d080df5L, 0x3b6e20c8L, 0x4c69105eL, 0xd56041e4L,
+	X      0xa2677172L, 0x3c03e4d1L, 0x4b04d447L, 0xd20d85fdL, 0xa50ab56bL,
+	X      0x35b5a8faL, 0x42b2986cL, 0xdbbbc9d6L, 0xacbcf940L, 0x32d86ce3L,
+	X      0x45df5c75L, 0xdcd60dcfL, 0xabd13d59L, 0x26d930acL, 0x51de003aL,
+	X      0xc8d75180L, 0xbfd06116L, 0x21b4f4b5L, 0x56b3c423L, 0xcfba9599L,
+	X      0xb8bda50fL, 0x2802b89eL, 0x5f058808L, 0xc60cd9b2L, 0xb10be924L,
+	X      0x2f6f7c87L, 0x58684c11L, 0xc1611dabL, 0xb6662d3dL, 0x76dc4190L,
+	X      0x01db7106L, 0x98d220bcL, 0xefd5102aL, 0x71b18589L, 0x06b6b51fL,
+	X      0x9fbfe4a5L, 0xe8b8d433L, 0x7807c9a2L, 0x0f00f934L, 0x9609a88eL,
+	X      0xe10e9818L, 0x7f6a0dbbL, 0x086d3d2dL, 0x91646c97L, 0xe6635c01L,
+	X      0x6b6b51f4L, 0x1c6c6162L, 0x856530d8L, 0xf262004eL, 0x6c0695edL,
+	X      0x1b01a57bL, 0x8208f4c1L, 0xf50fc457L, 0x65b0d9c6L, 0x12b7e950L,
+	X      0x8bbeb8eaL, 0xfcb9887cL, 0x62dd1ddfL, 0x15da2d49L, 0x8cd37cf3L,
+	X      0xfbd44c65L, 0x4db26158L, 0x3ab551ceL, 0xa3bc0074L, 0xd4bb30e2L,
+	X      0x4adfa541L, 0x3dd895d7L, 0xa4d1c46dL, 0xd3d6f4fbL, 0x4369e96aL,
+	X      0x346ed9fcL, 0xad678846L, 0xda60b8d0L, 0x44042d73L, 0x33031de5L,
+	X      0xaa0a4c5fL, 0xdd0d7cc9L, 0x5005713cL, 0x270241aaL, 0xbe0b1010L,
+	X      0xc90c2086L, 0x5768b525L, 0x206f85b3L, 0xb966d409L, 0xce61e49fL,
+	X      0x5edef90eL, 0x29d9c998L, 0xb0d09822L, 0xc7d7a8b4L, 0x59b33d17L,
+	X      0x2eb40d81L, 0xb7bd5c3bL, 0xc0ba6cadL, 0xedb88320L, 0x9abfb3b6L,
+	X      0x03b6e20cL, 0x74b1d29aL, 0xead54739L, 0x9dd277afL, 0x04db2615L,
+	X      0x73dc1683L, 0xe3630b12L, 0x94643b84L, 0x0d6d6a3eL, 0x7a6a5aa8L,
+	X      0xe40ecf0bL, 0x9309ff9dL, 0x0a00ae27L, 0x7d079eb1L, 0xf00f9344L,
+	X      0x8708a3d2L, 0x1e01f268L, 0x6906c2feL, 0xf762575dL, 0x806567cbL,
+	X      0x196c3671L, 0x6e6b06e7L, 0xfed41b76L, 0x89d32be0L, 0x10da7a5aL,
+	X      0x67dd4accL, 0xf9b9df6fL, 0x8ebeeff9L, 0x17b7be43L, 0x60b08ed5L,
+	X      0xd6d6a3e8L, 0xa1d1937eL, 0x38d8c2c4L, 0x4fdff252L, 0xd1bb67f1L,
+	X      0xa6bc5767L, 0x3fb506ddL, 0x48b2364bL, 0xd80d2bdaL, 0xaf0a1b4cL,
+	X      0x36034af6L, 0x41047a60L, 0xdf60efc3L, 0xa867df55L, 0x316e8eefL,
+	X      0x4669be79L, 0xcb61b38cL, 0xbc66831aL, 0x256fd2a0L, 0x5268e236L,
+	X      0xcc0c7795L, 0xbb0b4703L, 0x220216b9L, 0x5505262fL, 0xc5ba3bbeL,
+	X      0xb2bd0b28L, 0x2bb45a92L, 0x5cb36a04L, 0xc2d7ffa7L, 0xb5d0cf31L,
+	X      0x2cd99e8bL, 0x5bdeae1dL, 0x9b64c2b0L, 0xec63f226L, 0x756aa39cL,
+	X      0x026d930aL, 0x9c0906a9L, 0xeb0e363fL, 0x72076785L, 0x05005713L,
+	X      0x95bf4a82L, 0xe2b87a14L, 0x7bb12baeL, 0x0cb61b38L, 0x92d28e9bL,
+	X      0xe5d5be0dL, 0x7cdcefb7L, 0x0bdbdf21L, 0x86d3d2d4L, 0xf1d4e242L,
+	X      0x68ddb3f8L, 0x1fda836eL, 0x81be16cdL, 0xf6b9265bL, 0x6fb077e1L,
+	X      0x18b74777L, 0x88085ae6L, 0xff0f6a70L, 0x66063bcaL, 0x11010b5cL,
+	X      0x8f659effL, 0xf862ae69L, 0x616bffd3L, 0x166ccf45L, 0xa00ae278L,
+	X      0xd70dd2eeL, 0x4e048354L, 0x3903b3c2L, 0xa7672661L, 0xd06016f7L,
+	X      0x4969474dL, 0x3e6e77dbL, 0xaed16a4aL, 0xd9d65adcL, 0x40df0b66L,
+	X      0x37d83bf0L, 0xa9bcae53L, 0xdebb9ec5L, 0x47b2cf7fL, 0x30b5ffe9L,
+	X      0xbdbdf21cL, 0xcabac28aL, 0x53b39330L, 0x24b4a3a6L, 0xbad03605L,
+	X      0xcdd70693L, 0x54de5729L, 0x23d967bfL, 0xb3667a2eL, 0xc4614ab8L,
+	X      0x5d681b02L, 0x2a6f2b94L, 0xb40bbe37L, 0xc30c8ea1L, 0x5a05df1bL,
+	X      0x2d02ef8dL
+	X   };
+	X
+	X/* ------------------------------------------------------------- */
+	X
+	Xextern long crc32val;
+	X
+	Xvoid UpdateCRC(s, len)
+	Xregister char *s;
+	Xregister int len;
+	X /* update running CRC calculation with contents of a buffer */
+	X{
+	X   int i;
+	X   for (i = 0;  i < len;  i ++) {
+	X      crc32val = crc_32_tab[(int) ((crc32val) ^ (s[i])) & 0xff] ^
+	X         (((crc32val) >> 8) & 0x00FFFFFFL);
+	X   }
+	X}
+SHAR_EOF
+if test 7120 -ne "`wc -c < 'crc32.c'`"
+then
+	echo shar: error transmitting "'crc32.c'" '(should have been 7120 characters)'
+fi
+fi # end of overwriting check
+#	End of shell archive
+exit 0
+or transmitti

@@ -1,0 +1,4 @@
+{$DEFINE PATTERN_MATCH}
+function wildcard_match (var pattern,
+                         line:               string65): boolean;
+{pattern must be upper case; line is not case sensitive}

@@ -1,0 +1,238 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                           Lang-"Basic" Source Code
+                        66 files using 9,441,894 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+3CTRLS1.ZIP     51783  12-09-93  This is an index-tab customs control and two
+                               | other custom controls for Visual Basic
+                               | programmers. Shareware. $45.
+AABAS20.ZIP     39917  11-03-94  AABas 2.0, a library for QuickBasic 4.x
+                               | written entirely in assembly language. Over
+                               | 75 easy-to-use routines provide a variety of
+                               | functions. By Tom Hanlin.
+ABFACE.ZIP       5719  09-01-94  Source file ABFACE.BAS, for program
+                               | demonstrating techniques for manipulation of
+                               | playing cards. Also includes puzzle.
+ADR.ZIP          7469  07-25-93  Visual Basic application demostrates the use
+                               | of DBF files from dBase IV
+ALTQB553.ZIP   329788  05-17-93  ALT-QUICK for QUICK BASIC...v5.53 This is the
+                               | talked about programmer's tools that are
+                               | written by Christy Gemmell-England. Add many
+                               | new routines and functions to your present or
+                               | even new programs to give them a unique look
+                               | and feel. With this toolbox you can do it
+                               | easily ! Add Popups, zooms, extended
+                               | functions not present in QB45. Available in
+                               | QB, PDS, Visual Basic. !!! U.S.A. Support is
+                               | available thru Club PC BBS located in
+                               | Smithfield, Va. 804-357-0357.
+ASIC400.ZIP    263087  04-18-93  Latest version of a BASIC clone that compiles
+                               | source to COM files.
+ASIC50.ZIP     276364  01-09-95  Latest version of ASIC, a shareware BASIC
+                               | like compiler which produces small
+                               | executables. Now has SUB/ENDSUB subroutine
+                               | calling, better mouse support, and improved
+                               | disk I/O.
+ASILIB12.ZIP   186113  03-25-95  ASILIB v1.2 - for the ASIC v4.01 and 5.0
+                               | compiler - A library that includes routines
+                               | for: Advanced graphics for HGC, HGC+, CGA,
+                               | MCGA, EGA, VGA, SVGA & SVGA VESA, etc.,
+                               | SuperFAST disk I/O, easy keyboard & direct
+                               | screen I/O, EMS/XMS access, system info, pull
+                               | down menu's, popup windows, and much more! A
+                               | MUST for ASIC programmers! Shareware by Doug
+                               | Herr - $25
+BANSI111.ZIP    59074  09-17-94  ANSI Commands and Functions in a library! For
+                               | Microsoft BASICs: QuickBasic v4.5 and Vi DOS,
+                               | both Standard and Professional editions.
+                               | standard ANSI commands and functions. Great
+BASDRAW.ZIP     32261  02-10-95  Finally! A way to ditch those stupid DRAW
+                               | macro commands in BASIC! No longer will you
+                               | have to type "DRAW 'D14C20L55G21'" or
+                               | anything like that! Just use BASDRAW! Draw
+                               | witH the mouse, and save it in BASIC format!
+                               | Programmed and uploaded by: Ernest Rosado
+BASICDOS.ZIP   131933  02-28-96  NitrousBasic for DOS. A Basic
+                               | interpreter/compiler for DOS
+BASICDRW.ZIP   196789  05-25-94  A great program for Basic!.
+BASICFX.ZIP      5324  02-23-95  Special effects for BASIC programs
+BASUPD20.ZIP    31691  11-05-94  BasUpd 2.0 adds commands from PDS and Visual
+                               | Basic to QuickBASIC. Library and full sources
+                               | included. By Tom Hanlin.
+BASWIZ30.ZIP   194210  11-05-94  BASIC Wizard's Library v3.0 for Microsoft
+                               | BASIC compilers: QB, PDS, VB-DOS. BCD math,
+                               | telecomm, graphics from Herc to SVGA incl.
+                               | VESA and dot matrix to laser printer, read
+                               | and write .BMP images, mSec timers, equation
+                               | solver, virtual windows. By Tom Hanlin.
+BB14.ZIP       385614  06-28-93  BASICBASIC shareware BASIC compiler for DOS.
+                               | Excellent compiler with some good menuing
+                               | routines already built in!!!
+BINSRCH.ZIP      4129  09-29-94  Fast and efficient ASIC binary search demo
+                               | program with SRC code. The code was borrowed
+                               | from Ethan Winer's book "BASIC Techniques"
+                               | and made to run in the ASIC environment.
+BOZOL2.ZIP      69082  11-17-93  Source Code for BOZOL, an application
+                               | language written in PowerBasic.
+BULKST10.ZIP    10332  06-10-94  * Bulk Mail Sorting Program * Version 1.0 *
+                               | Written by Gerri Hesselberg * June, 1993
+                               | Written in Qbasic
+BW19FIX.ZIP      1601  05-21-93  Hanlin's fixes for BASWIZ1.9's memory
+                               | routines.
+CHATCRPT.ZIP     3173  04-23-94  Basic source code and description for a
+                               | program that promises to encrypt your
+                               | conversation in a BBS's chat mode. This is
+                               | NOT good encryption, just simple letter
+                               | substitution. It should keep your talk from
+                               | the prying eyes of a sysop, though.
+COMPILE.ZIP     99739  11-06-93  Compile QB programs easily from the "command"
+                               | line with this great utility.
+DECANSI4.ZIP     4138  02-10-95  ANSI routines for use in doors. For BASIC
+                               | programmers.
+DNALIB.ZIP     130335  01-26-95  DNA is a rich library of PowerBASIC source
+                               | code for creating mouse driven user
+                               | interfaces in text mode. DNA includes the
+                               | source code to a PowerBASIC-style text editor
+                               | that can be modified and adapted to your
+                               | applications. Freeware by Chris Foot.
+DWARCS12.ZIP    66587  04-01-93  DWArcs version 1.2 - Library for PowerBASIC
+                               | 3.0a/2.1f that will read in file list data
+                               | from within archives. Archives supported:
+                               | ARC, ARJ, LZH, PAK, ZOO, and the new ZIP
+                               | 2.04G! Extremely fast and easy to use!
+                               | DavisWARE - Written by James R. Davis!
+DWSCRN12.ZIP   235959  04-01-93  DW:Screen version 1.2 - Library for
+                               | PowerBASIC 3.0a/2.1f that will produce
+                               | fantastic screen
+                               | well as powerful command for grabbing and
+                               | restoring screens, windows, and converting a
+                               | screen into a importable string. Extremely
+                               | easy to use with source code! Reg: $25.00
+                               | DavisWARE - Written by James R. Davis!
+FONSRC.ZIP      15986  08-03-93  Visual Basic source code for Foneword, a
+                               | Windows 3.1 utility that finds all the
+                               | mnemonic words and phrases that can be made
+                               | from ordinary seven digit telephone numbers.
+                               | PC Mag Volume 12, Number 18
+IBRARY30.ZIP    48101  11-05-94  IBRARY 3.0 library for the ASIC 4.00
+                               | compiler. Over 200 assembly-language routines
+                               | of all types (assembler not required).
+                               | Shareware by Tom Hanlin.
+INTVAL.ZIP       1503  04-13-94  QB routines for converting string numbers to
+                               | long integers.
+LANGWN23.ZIP   386635  03-25-93  QuickBASIC software development library for
+                               | writing GUI applications.
+LOADGIF.ZIP     24470  08-20-93  QB/PDS routines for loading GIFs.
+MNUSYSQB.ZIP   198953  09-07-93  ** Menusys for QuickBASIC ** A complete
+                               | Text-Mode GUI for QuickBASIC 4.5, with
+                               | full-featured support library. Shareware,
+                               | $20.00 reg. fee.
+PBC22A.ZIP     176680  04-26-93  PBClone 2.2 library (1 of 2) for MS BASICs:
+                               | QB, PDS, VB-DOS. Over 610 routines of all
+                               | descriptions. LIBMATxx.ZIP or LIBWIZxx.ZIP
+                               | recommended for creating subset libraries.
+                               | Shareware ($35) by Tom Hanlin.
+PBC22B.ZIP     179640  04-26-93  PBClone 2.2 library (2 of 2) for MS BASICs:
+                               | QB, PDS, VB-DOS. Over 610 routines of all
+                               | descriptions. LIBMATxx.ZIP or LIBWIZxx.ZIP
+                               | recommended for creating subset libraries.
+                               | Shareware ($35) by Tom Hanlin.
+PBC30A.ZIP     283021  11-05-94  PBClone 3.0 library (1 of 2) for MS BASICs.
+                               | This archive contains the demo programs and
+                               | core libraries. Shareware by Tom Hanlin.
+PBC30B.ZIP      77144  11-12-94  PBClone 3.0 library (2 of 2) for MS BASICs.
+                               | This archive Contains the BASIC part of the
+                               | source code. Shareware by Tom Hanlin.
+PBFUN.ZIP        7001  10-14-93  PowerBASIC time,date and other FUNctions
+PBVDEMO.ZIP     30383  02-10-94  Demo OF PB/VISION(tm) for PowerBASIC 3.0.
+                               | This file is a slide-show presentation of
+                               | PB/VISION(tm) PROFESSIONAL, a bundled version
+                               | of the PB/VISION(tm) Interface Library and
+                               | PB/WORKSHOP(tm) Visual Designer. ATTENTION
+                               | SYSOPS: A complete shareware evaluation
+                               | version of PB/VISION(tm) is available.
+                               | Details are enclosed.
+PBVL110.ZIP    156969  11-10-94  PB/VISION(tm) LITE v1.10 for PowerBASIC 3.0.
+                               | Create graphical and text 3D windows with
+                               | working control icons. Fully event-driven,
+                               | multi-threading, mouse aware design with as
+                               | little as 30K of overhead. Includes
+                               | PowerBASIC 3.0 compatible library, examples,
+                               | documentation, an extensive tutorial, and a
+                               | hypertext reference manual that can be
+                               | accessed while in the PowerBASIC IDE. Now
+                               | overseas compatible! <ASP>
+PBXDEMO.ZIP    996031  12-11-94  PowerBasic libraries
+PERCNT.ZIP      16353  09-08-93  PERCNT.VBX - Visual basic custom control that
+                               | displays a percentage bar. Makes status
+                               | reporting very simple. 3-D effects, fonts and
+                               | colors are all user-definable.
+PORTAL.ZIP      10736  03-26-93  LapLink type program in QB - Source Only
+QB2PB.ZIP       20008  06-21-93  Converts QuickBASIC code to PowerBASIC code.
+QBATB501.ZIP   260225  02-06-93  QB ASM Toolbox for all BASIC programmers
+                               | v5.01 - Very powerful and nice!
+QBFX.ZIP       609533  05-24-93  Video and audio routines for QB4.X.
+QBMENU10.ZIP    21934  03-01-93  Source code and executable for a menu system
+                               | for QB4.X.
+QBN_VOL2.ZIP   304018  10-26-93  Good source for QuickBASIC source code for
+                               | virtually any application.
+QBN_VOL3.ZIP   216239  07-03-93  Good source for QuickBASIC source code for
+                               | virtually any application.
+QBS-0101.ZIP    76042  04-06-93  QBasic info 1 of 2
+QBS-0102.ZIP   120832  03-24-93  QBasic info 2 of 2
+QBS-0103.ZIP   184756  05-01-93   The QuickBASIC Scrapbook Volume 1, Issue 3
+                               | Published By Quantum Software
+QBSER320.ZIP    32521  09-07-93  QBserial Version 3.20; Communications library
+                               | for QuickBASIC 4.x, Basic Compiler 7.x, VBDOS
+                               | 1.x, and FOSSIL drivers. Allows programs to
+                               | access Comm ports at rates up to 115200 baud.
+                               | COM1-4 and non-standard addresses supported,
+                               | on IRQ's 1-15. Interrupt driven, CTS/RTS &
+                               | XON/XOFF flow control. Full DTR and RTS
+                               | control, and more. Comes with sample code.
+                               | Very easy to add to your program.
+QDSP11.ZIP      81004  09-12-93  Utility that makes it easy to write doors in
+                               | Quickbasic. Great for those little utilities.
+S3BAS11.ZIP    195845  05-31-93  Microsoft's text files on using BASIC for bit
+                               | manipulations.
+SHLSRT2.ZIP      4409  09-27-94  ASIC Shell sort demo program with src code.
+SVGAQB10.ZIP   192013  06-11-93  Super VGA graphics library for QB4.X, PDS
+                               | software developers.
+TYPETOP.ZIP     33849  09-17-93  QB45 EXE,SRC to display text file top
+UNDO.ZIP        32457  02-06-93  Keystroke saver utility auto determines
+                               | extension and executes proper un-lzh/zip/arj
+                               | command, public domain w/ qb45 source code.
+VB-DBASE.ZIP   670207  07-06-93  Multiuser, relational database add-in for
+                               | Visual Basic 2.0. Will work with Visual Basic
+                               | 2.0 - Primer Edition. From Britain's PCPlus
+                               | Magazine, 6/93, Issue 81. By Evesham Micros
+                               | in Britain (0386) 765500. Help file disk and
+                               | primer version of manual 10 Pounds.
+VB2DOC.ZIP      18749  12-09-93  See your Visual Basic code in an orderly,
+                               | formatted manner.
+VBDRT1.ZIP     200059  05-25-93  VISUAL BASIC FOR DOS RUNTIME MODULE v.1.00
+                               | Microsoft's Visual Basic Version 1 runtime
+                               | module (VBDRT10E.EXE) is distributed freely
+                               | to support many freeware and shareware
+                               | programs for DOS.
+VBFLL105.ZIP     6924  07-08-93  VB Fastload
+VBPRIMER.ZIP   586614  07-03-93  Visual Basic 2.0 - Primer Edition Full design
+                               | capability of VB 2.0 with three limitations:
+                               | (1) no on disk help; (2) only one Form per
+                               | project; (3) projects created can be run only
+                               | by the interpreter. From Britain's PCPlus
+                               | Magazine, 3/93 Issue 78
+WINAPI.ZIP      53312  12-09-93  Information for Visual Basic programmers,
+                               | direct from Micro$oft.
+WORM.ZIP         3174  07-03-93  Worm crawling at random over computer screen.
+                               | Contains program in both GW Basic and, for
+                               | comparison, Visual Basic 2.0 (with full
+                               | comments).
+_FE10.ZIP       85353  06-30-93  Font Editor src code and library for QB4.X.
+                               | this in only 3 passes! Major Upgrade Release!
+                               | capitalized, and improves source code! All
+                

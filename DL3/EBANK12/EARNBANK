@@ -1,0 +1,12 @@
+echo off
+rem. Prodoor door script for EARNED K BYTE BANK program
+
+c:
+cd \pcb\earnbank
+earnbank earnbank.cnf %PCBDRIVE%%PCBDIR%
+
+%PCBDRIVE%
+cd %PCBDIR%
+if exist event.bat event
+
+board

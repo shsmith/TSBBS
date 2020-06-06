@@ -1,0 +1,7 @@
+
+Call VXFIX1.EXE immediately after running HSLINK.EXE.  This program will
+read the DSZLOG file, if any, and replace it with a new file that
+contains only successful transfer entries.  All entries for aborted
+files will be removed from the log.  This program may fix a bug in the
+way Vision/X handles hslink transfers.  Use at your own risk.  Source
+code included. Freeware by Samuel H. Smith.

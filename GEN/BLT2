@@ -1,0 +1,118 @@
+@X0F                   ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                   º Tool Shop System Configuration º
+                   ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½@X03
+  Office Workstation          ş  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»  ÚÄÄÄÄÄÄÄÄÄ¿
+  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»   ÆÄÄ¶ 88/10        ÇÄÄ´ v.32bis ³
+  º 486DX50 (16 MEGS RAM) º   ³  ÈÍÍÍNodeÍ1ÍÍÍÍÍ¼  ÀÄÄÄÄÄÄÄÄÄÙ
+  º LOCAL BUS             ÌÄÄÄµ  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»  ÚÄÄÄÄÄÄÄÄÄ¿
+  º            ÚÄÄÄÄÄÄÄÄ¿ º   ÆÄÄ¶ 286/12       ÇÄÄ´ HST9600 ³
+  º            ³ IDE    ³ º   ³  ÈÍÍÍNodeÍ2ÍÍÍÍÍ¼  ÀÄÄÄÄÄÄÄÄÄÙ
+  º            ³ 210MEG ³ º   ³  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»  ÚÄÄÄÄÄÄÄÄÄ¿
+  º            ÀÄÄÄÄÄÄÄÄÙ º   ÆÄÄ¶ 286/12 70MEG ÇÄÄ´ v.32bis ³
+  ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍNodeÍ7Í¼   ³  ÈÍÍÍNodeÍ3ÍÍÍÍÍ¼  ÀÄÄÄÄÄÄÄÄÄÙ
+                              ³  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»  ÚÄÄÄÄÄÄÄÄÄ¿  (213)389-5300
+  Dedicated Server            ÆÄÄ¶ 386SX/25 TAPEÇÄÄ´ v.34    ³
+  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»   ³  ÈÍÍÍNodeÍ4ÍÍÍÍÍ¼  ÀÄÄÄÄÄÄÄÄÄÙ
+  º 386DX20 (8 MEGS RAM)  º   ³  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»  ÚÄÄÄÄÄÄÄÄÄ¿
+  º ÚÄÄÄÄÄÄÄÄ¿ ÚÄÄÄÄÄÄÄÄ¿ º   ÆÄÄ¶ 386SX/25     ÇÄÄ´ v.34    ³
+  º ³        ³ ³        ³ º   ³  º ESDI 660MEG  º  ÀÄÄÄÄÄÄÄÄÄÙ
+  º ³ SCSI-1 ³ ³ SCSI-2 ³ ÌÄÄÄµ  ÈÍÍÍNodeÍ5ÍÍÍÍÍ¼
+  º ³ 670MEG ³ ³ 1.9GIG ³ º   ³  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»  ÚÄÄÄÄÄÄÄÄÄ¿
+  º ÀÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÙ º   ÆÄÄ¶ 386SX/25     ÇÄÄ´ v.32bis ³
+  ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ0Í¼   ş  ÈÍÍÍNodeÍ6ÍÍÍÍÍ¼  ÀÄÄÄÄÄÄÄÄÄÙ
+
+The system has been in continuous operation since April 1, 1987.
+All Tool Shop lines support 9600 baud or higher.
+Total system disk storage capacity is now 3,319,310,336.
+
+@X0E                         ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                         º Software Versions º
+                         ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+@X03                  MS-DOS . . . . . . . . . . . . v6.2
+                  PKZIP. . . . . . . . . . . . . v2.04G
+                  POWERlan . . . . . . . . . . . v2.20
+                  POWERsave. . . . . . . . . . . v3.0G
+                  PCBoard. . . . . . . . . . . . v15.1/10
+                  QEMM . . . . . . . . . . . . . v7.04
+                  RoseMail . . . . . . . . . . . v2.10á
+
+@X0B                       ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                       º Dedicated File Server º
+                       ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+
+@X03   386DX/20 with 8meg RAM and 1.2meg floppy disk
+   Adaptec AHA1542C bus mastering SCSI-2 controller
+   Logix 512k VGA display adaptor, SuperCom monochrome VGA monitor
+   Maxtor 670meg SCSI fixed disk
+   Seagate ST11900N 1900meg SCSI-2 fixed disk
+   WD8013 Ethernet Network Card (16 bit, 10mbps)
+   SPS250 Uninterruptable Power Source
+
+@X0E                         ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                         º Office Workstation º
+                         ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+
+@X03   486DX/50 with 16meg RAM, 1.2meg and 1.44 meg floppy disks
+   Local bus IDE controller and 210meg drive
+   Local bus TE4000 VGA display adaptor, AAmazing VGA monitor
+   WD8013 Ethernet Network Card (16 bit, 10mbps)
+
+@X0A                       ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                       º The Free Line (node 1) º
+                       ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+@X03
+   Phone: (213) xxx-xxxx
+   8088/10 XT with 640k, 2 serial ports, 1 parallel port, 2 360k floppies
+   Hercules mono adapter, Samsung mono monitor
+   Western Digital WD8003 Ethernet Network Card (8 bit, 10mbps)
+   Zoom v.32bis 14400 modem (internal)
+
+@X0E                       ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                       º Pay Line (HST node 2) º
+                       ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+
+@X03   Phone: (213) xxx-xxxx
+   286/12 with 640k, 1 serial port, 1.2meg floppy disk
+   CT&T NE-2 (NE2000) Ethernet Network Card (16 bit, 10mbps)
+   Hercules mono adaptor, Samsung mono monitor
+   US Robotics Courier HST 9600 baud modem
+
+@X0E                   ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                   º Pay Lines (v.32bis nodes 3-6) º
+                   ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+@X03
+   Phone: (213) 389-5300 (five lines in ROTARY)
+   286/12 with 640k, 1 serial port, 1.2meg floppy disk (node 3)
+   386SX/25 with 640k, 1 serial port, 1.44meg floppy disk (nodes 4-6)
+   Archive FT150 (DC600A) tape drive and EV811 controller (node 4)
+   Forval internal v32bis 14400 modem (line 5)
+   Hercules mono adaptor, Samsung mono monitor
+   Intel Satisfaction Modem/400E internal v32bis 14400 modem (node 6)
+   Micropolis 660meg 1568 ESDI fixed disk (node 5)
+   MiniScribe 6085 70meg fixed disk (node 3)
+   Practical Peripherals external v32bis 14400 modem (node 4)
+   SPS400 Uninterruptable Power Source
+   Supra external v32bis 14400 modem (node 3)
+   WD8013 Ethernet Network Card (16 bit, 10mbps)
+
+@X0D                           ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                           º Leftover Parts º
+                           ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+@X03
+   1meg 16 bit 2-wait-state XMS on a RAM card
+   Adaptec AHA1542B bus mastering SCSI-1 controller
+   Archive 60meg tape drive and controller
+   DTC AT FD/HD 1:1 RLL Controller
+   Everex EV2027 Ethernet Network Card (16 bit, 10mbps)
+   Four Everex EV2026 Ethernet Network Cards (8 bit, 10mbps)
+   Generic internal 2400 bps modem
+   Hayes-V Series V.42 9600 baud modem
+   LANtastic NOS Software version 4.0
+   MiniScribe 3085 Fixed Disk (bad servo head)
+   Paradise EGA-480 EGA Adapter
+   Perstor PS180 RLL Controller (not in use)
+   Seagate ST4144R Fixed Disk (heads crashed)
+   Three LANtastic 2mbps Network Cards
+   Two Seagate ST225 Fixed Disks (20meg)
+   US Robotics Courier 2400 modem
+   <and a bunch of other stuff...>

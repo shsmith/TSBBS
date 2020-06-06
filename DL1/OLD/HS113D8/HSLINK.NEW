@@ -1,0 +1,233 @@
+
+HS/Link Revision History (in reverse order)
+-------------------------------------------
+
+NOTE: THIS IS A BETA TEST VERSION!  THE CURRENT RELEASE VERSION IS 1.12!
+
+28-Mar-93
+   Completed the new reference manual, HSLINK.DOC.
+
+   This should be the "final beta" prior to official release of this
+   version.  Please test this version and report and last minute
+   problems to the author as soon as possible!  Thanks!
+
+   Posted as public beta 1.13D8 under filename HS113D8.ZIP.
+
+16-Mar-93
+   Corrected -CP option to prevent clearing lines below the status display,
+   and to properly position the "HS/Link finished!" message.
+
+05-Mar-93
+   Inserted delays to possibly solve timing problems with some internal
+   modems on higher speed motherboards.
+
+23-Feb-93
+   Posted as public beta 1.13D6 under filename HS113D6.ZIP.
+
+15-Feb-93
+   Added -CP option to control the position of the status display.  The
+   default is -CP2, which causes HSLINK to leave the top 2 lines untouched.
+   Use a setting of -CP0 to move HSLINK's display UP so that the bottom two
+   lines will be untouched.  This may solve problems with some BBS softwares
+   that attempt to protect the bottom two lines of the screen.
+
+   Added logic to allow the link to continue in CHAT mode when all file
+   transfers are completed.  The link will terminate when CHAT is manually
+   terminated with ESC or when 30 seconds of idle time elapse.
+
+11-Feb-93
+   Removed logic to redirect IRQ2 to IRQ9 on AT-class machines with dual
+   interrupt controllers.  It appears that some users are able to run a COM
+   port on IRQ2.
+
+   Added -NE option to control the number of repeated errors that will abort
+   a file transfer.  The default is to abort at 20 consequtive errors, but
+   some users may wish to set this to a higher or lower number.
+
+   Added a "page number" display in HSCONFIG so you can tell more easily
+   which page of options you are working on.
+
+05-Feb-93
+   Posted as public beta 1.13D4 under filename HS113D4.ZIP.
+
+03-Feb-93
+   Corrected an error in the -NB option that caused a program crash when the
+   @filelist feature was used.
+
+31-Dec-92
+   Posted as public beta 1.13D2 under filename HS113D2.ZIP.
+
+29-Dec-92
+   Removed the 'lost THRE' warning message, as this condition appears to be
+   'normal' for certain modem types and when running under OS/2.
+
+27-Dec-92
+   The date stamp in HSERR logs was not reporting the proper month.
+
+23-Dec-92
+   Added logic to automatically disengage "minimal blocks" mode if any data
+   errors are detected.
+
+20-Dec-92
+   Added diagnostic error for lost THRE interrupts.
+
+   Added logic to prevent false 'lost THRE' sequence with internal modems
+   that delay THRE interrupts rather than asserting flow control.  This may
+   solve compatibility problems with some internal modems.
+
+18-Dec-92
+   Added a date and time stamp to most HSERR error log entries.
+
+11-Dec-92
+   Added logic to cause hslink to assume an outgoing file from an unspecified
+   directory will be located in the directory of the previously specified
+   outgoing file.  For example:
+        hslink c:\dir1\file1 file2 file3
+   means the same as
+        hslink c:\dir1\file1 c:\dir1\file2 c:\dir1\file3
+
+29-Nov-92
+   Posted as public beta 1.13D0 under filename HS113D0.ZIP.
+
+21-Nov-92
+   Changed batch status display logic to prevent the values jumping up and
+   down between blocks in a bidirectional transfer with ACK enabled.
+
+20-Nov-92
+   Internal changes in comms driver.  May improve performance under some
+   circumstances.
+
+   Changed FOSSIL implementation to take advantage of block read/write
+   functions.  This should make quite an improvement in FHSLINK performance
+   running with a FOSSIL driver.
+
+18-Nov-92
+   I just discovered that changing the PIC register in a DOS session under
+   Windows also changes the UART IER and MCR registers.  I don't fully
+   understand this, but suspect it is a flaw or quirk in Windows'
+   virtualization logic.  Because of this I now initialize the PIC before the
+   UART and deinit the UART after restoring the original PIC on shutdown.
+   (1.13‡C9)
+
+18-Nov-92
+   The initial handshake would sometimes fail of the -HX -NM options were in
+   effect.
+
+   Some early HS113C8.ZIP postings incorrectly identify themselves as version
+   1.13‡C8 rather than 1.13·C8.
+
+   Posted as public beta 1.13C8 under filename HS113C8.ZIP.
+
+15-Nov-92
+   Added some additional information to the error logfile.
+
+14-Nov-92
+   Some alphas posted yesterday and today will abort or act strangely when
+   the command line length exceeds about 70 characters.  This has been
+   corrected.
+
+13-Nov-92
+   Internal changes in comms driver.
+
+   The repeated incoming block 'R' indication was not clearing properly
+   during error recovery, resulting inefficient recovery sequences.
+
+   Added a check for
+        SET HSERR=path\logfile
+   to enable a new error logging facility.  When enabled, most screen
+   information and error messages are logged to the specified logfile.
+
+   Added logic to warn the user when an invalid registration code is entered,
+   rather than triggering the tamper detection logic.
+
+09-Nov-92
+   Internal changes in comms driver.
+
+   Changed initial handshake logic to default to new alternate XON/XOFF
+   encoding method, instead of first attempting the old method.  This should
+   speed up the initial handshake process and also prevent some occasional
+   handshake failures.  Added -NA option to disable this logic for
+   compatibility with release 1.12 and earlier.
+
+   Further testing under windows indicates that the best results are obtained
+   (at least in some cases) when the following statements are present in your
+   [386enh] section of WINDOWS.INI:
+        Com#Fifo=0
+        Com#Buffer=0
+   where # is the com port being used, usually 1 or 2.  In this mode, the -N5
+   option is not needed on the HS/Link command line running under Windows,
+   and the -FT# option may be used to fine-tune performance.
+
+   Windows users can benefit greatly from TurboComm enhanced windows COMM
+   drivers, available for $47 from Bio Engineering (503)482-2744.
+
+06-Nov-92
+   Internal changes in forval-specific interrupt handling and the -FT16
+   through -FT255 option.
+
+31-Oct-92
+   Posted as public beta 1.13C6 under filename HS113C6.ZIP.
+
+   The slow handshake function was not being asserted properly when file
+   buffering was disabled via the -NB option.
+
+   Removed some of the usage help text to reduce memory requirements.
+
+27-Oct-92
+   Due to a number of unexplained problems in code produced by the new
+   Borland C++ 3.1 compiler, I am going back to the Turbo C++ 1.0 compiler.
+
+23-Oct-92
+   The most reliable operation under Microsoft Windows seems to occur when
+   the -N5 option is used, even if the com port actually does have the
+   NS16550AN attached.
+
+22-Oct-92
+   Added -I4 option to give up idle time under Windows, OS/2, DOS 5 and other
+   environments that support the "int 2fh/ax=1680h" idle call.
+
+19-Oct-92
+   Added logic to explicitly enable the cascade interrupt when a high IRQ of
+   8 and up is being used.
+
+12-Oct-92
+   Beta C4 does not work reliably on some systems.  If you experience
+   problems with beta C4, please go back to beta C0 until the next public
+   beta (C6) becomes available.
+
+   Some ALPHA C5 postings are unreliable.
+
+   Additional changes to make the forval-specific code work.
+
+08-Oct-92
+   Added logic to force a special COMM driver mode when -FT16 and higher are
+   specified.  In this mode attempts will be made to perform multiple
+   character i/o per interrupt service, even when the UART appears to be an
+   8250 or 16540.  This logic may improve the performance with some internal
+   modems, such as the Forval, but may cause the transfer to fail with
+   others.  Use with caution.
+
+07-Oct-92
+   Beta C4 sometimes reports 'not enough memory for hslink' in the settings
+   window when there is in fact plenty of memory for hslink operation.
+
+   See WHATSNEW.120 for a complete list of changes between version 1.12 and
+   this beta version.
+
+14-May-92
+   Official release of version 1.12 as HS112.ZIP.
+
+13-May-92
+   Official release of HS/Link 1.10 as HSLINK11.ZIP. See WHATSNEW.110 for a
+   complete list of changes between version 1.0 and version 1.1.
+
+14-Jan-92
+   Official release of HS/Link 1.00 as HSLINK10.ZIP.
+
+17-Oct-91
+   Initial posting of HS/Link beta as HSLK10B.ZIP.
+
+July-87
+   Initial protocol design and prototype development began but was never made
+   functional enough for public testing.
+

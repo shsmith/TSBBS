@@ -1,0 +1,25 @@
+
+This archive contains a pre-release version of the RBBS Gateway for PCB/ProDOOR.
+
+Quick install
+-------------
+1. make the directory \PROD
+
+2. extract this archive (RBBPRO10.ARC) into \PROD
+
+3. extract the prodoor beta system (PROD25B.ARC) into \PROD
+    -- note:  the files 'prod25.cnf' and 'prodoor' should NOT
+       be extacted because the ones in GTHPRO10.ARC are
+       pre-installed for you.
+    (must be beta #26 or later)
+
+4. move the file PROD.BAT to your RBBS system directory.  Rename this
+   if you want.
+
+5. read RBBPRO10.DOC for more details on installation of the gateway
+   read PROD2512.DOC for more details on standard prodoor feature installation
+
+6. put dsz.com and other drivers into \PROD.
+
+--Samuel H. Smith, The Tool Shop, (602) 279-2673
+

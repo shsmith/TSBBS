@@ -1,0 +1,10 @@
+HS/Link External Protocol Driver RELEASE v1.12
+Compiled: 7:05 pm, Thursday, May 14, 1992 
+HS/Link is a new high speed, single and bi-
+directional file transfer protocol with many
+advanced features.  It is EASY to set up and
+runs very fast with all kinds of modems.
+Version 1.10 adds batch status display and
+many other features and options.
+Version 1.12 corrects the false ERRORLEVEL 2
+exit code bug in version 1.10.

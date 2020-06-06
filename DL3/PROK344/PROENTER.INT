@@ -1,0 +1,70 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *  NOTICE: ALL MODIFIED VERSIONS OF THIS PROGRAM _MUST_ BE DISTRIBUTED
+ *          WITH SOURCE CODE.  I STRICTLY FORBID THE USE OF ANY NON-
+ *          PUBLIC INFORMATION IN MODIFICATIONS.  FOR EXAMPLE, YOU
+ *          CANNOT USE CDC PROVIDED INFORMATION FOR PCBOARD 14.5
+ *          COMPATIBILITY, SINCE SUCH A VERSION CANNOT BE RELEASED IN
+ *          SOURCE CODE.
+ *)
+
+(*
+ * PCB ProDOOR enter message module for ProMail unit (3-1-89)
+ *
+ *)
+
+type
+   message_entry_modes = (new_message, 
+                          reply_message, 
+                          reply_originator,
+                          comment_message,
+                          duplicate_message);
+   
+procedure save_message(mode: message_entry_modes);
+procedure show_margins;
+procedure show_line_number(n: integer);
+procedure continue_entry;
+procedure edit_line;
+
+procedure insert_line(contents: string);
+   {open a new line at the cursor}
+
+procedure insert_text;
+   {insert a line}
+
+procedure delete_line;
+   {delete the line at the cursor}
+
+procedure delete_text;
+   {delete a line}
+
+procedure quote_from_original;
+
+procedure display_original;
+   {display original message with optional quoting}
+
+procedure count_lines;
+
+procedure enter_message(mode: message_entry_modes);
+
+
+(*****************
+function lock_msgfile: boolean;
+procedure save_index;
+procedure save_text(mode: message_entry_modes);
+procedure unlock_msgfile;
+procedure list_message;
+procedure enter_header(mode: message_entry_modes);
+******************)
+
+const
+   default_comment_subject: string40 = '';
+

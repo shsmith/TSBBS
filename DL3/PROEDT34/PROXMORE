@@ -1,0 +1,10 @@
+; PROXMORE - ProDoor command translation for MORE?
+;            and PRESS ENTER TO CONTINUE prompts.
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+0,N,NO
+0,Y,YES
+0,C,NS

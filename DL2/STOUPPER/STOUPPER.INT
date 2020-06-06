@@ -1,0 +1,3 @@
+procedure stoupper(var st: string);
+function upstring(st: string): string;
+

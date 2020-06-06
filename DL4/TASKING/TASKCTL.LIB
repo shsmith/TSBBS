@@ -1,0 +1,58 @@
+
+--
+-- TASKCTL - Tasking Control Package Specification
+--
+-- This package provides a set of control functions for the tasking
+-- package.
+--
+-- Author: S.H.Smith, 30-Mar-86
+--
+
+with TASKDATA; 
+
+package TASKCTL is
+
+   use TASKDATA;
+
+--
+-- task information
+--
+   function PROCESS_ID return TASK_ID;
+      -- returns the process ID of the caller's task
+      -- or reserved_task if not in a task at all.
+
+   function PROCESS_NAME return string;
+      -- returns the name of the caller's task
+      -- or "unused" if not in a task at all.
+
+   function PROCESS_PRIORITY (id: TASK_ID) return PRIORITIES;
+      -- returns the priority of the specified task
+
+
+--
+-- task control
+--
+   procedure SET_PRIORITY (id: in TASK_ID;
+                           pri: in PRIORITIES);
+      -- set the priority of the specified task
+
+   procedure SUSPEND (id: in TASK_ID);
+      -- suspend execution of the specified task
+
+   procedure SUSPEND;
+      -- the calling task is suspended
+
+   procedure RESUME (id: in TASK_ID);
+      -- resume execution of the specified task
+
+
+
+--
+-- task destruction
+--
+   procedure KILL (id: in TASK_ID);
+      -- terminate and destroy the specified task
+
+
+end TASKCTL;
+

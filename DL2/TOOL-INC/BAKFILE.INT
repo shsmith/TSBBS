@@ -1,0 +1,2 @@
+procedure backup_file(name: anystring);
+

@@ -1,0 +1,6 @@
+{$i \tinc\quelib.dcl}
+procedure init_que( var q: queue_rec);
+function empty_que( var q: queue_rec ): boolean;
+function que_free (var q: queue_rec): integer;
+procedure enque (var q: queue_rec; c: char);
+procedure deque (var q: queue_rec; var c: char);

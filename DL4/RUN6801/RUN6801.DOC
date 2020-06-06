@@ -1,0 +1,12 @@
+
+RUN6801 is an interpreter for motorola 6801 assembly language.  
+It can be used to execute the object code files from the D6801
+compiler.
+
+Full source code is provided (in turbo pascal).
+
+I hereby place this material into the public domain.
+Samuel H. Smith, 31-Dec-86
+
+Inquiries to:  5119 N. 11 ave 332, Phoenix, Az 85013
+

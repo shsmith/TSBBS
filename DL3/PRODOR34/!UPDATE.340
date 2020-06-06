@@ -1,0 +1,50 @@
+<!UPDATE.340>
+
+Release notes for ProDoor 3.40                          03-31-91
+==============================
+
+ProDoor 3.4 is a major release fixing known bugs in ProDoor 3.3, adding
+new features and improving performance.
+
+This version includes a new manual, and requires some changes in data
+and configuration files compared to prodoor 3.3.
+
+Please read !PRODOOR.NEW for details on exactly what's been changed.
+
+
+Installation
+------------
+
+The files supplied in PRODOR34.ZIP may be used to install ProDoor from
+scratch, or to update an existing ProDoor 3.3 system to version 3.4.
+
+The INSTALL program will replace all ProDoor files with the current
+version.  Running INSTALL does *NOT* change your CONFINFO or EXTUSER
+files, but it DOES replace your PROD.CNF file with a new copy.
+
+All file formats of ProDoor 3.4 are still recognized; no file
+conversions are required, though there are new features that will not be
+activated without installation of the new files.
+
+Please run the CONFIG program and verify all the prodoor configuration
+options.  Some of the new options may need to be changed when upgrading
+from ProDoor 3.3 or earlier.
+
+
+Optional Files
+--------------
+
+ProDoor now includes an optional "overlay" version, which requires
+30-40K less RAM during operation.  This version may be needed on some
+multi-tasking systems during the SHELL for archive functions.  The only
+change is the replacement of the normal PRODOOR.EXE file with the
+overlay version of PRODOOR.EXE.  The overlay version of ProDoor 3.4 will
+be posted as PROD34OV.ZIP.
+
+The ProDoor 3.4 documentation has been prepared in Word Perfect 5.1
+format.  If you have Word Perfect, you may prefer to download the WP5
+version of the documentation so you can make a nicer looking manual
+print out.  The Word Perfect version of the prodoor manual will be
+posted as PROD34WP.ZIP.
+
+

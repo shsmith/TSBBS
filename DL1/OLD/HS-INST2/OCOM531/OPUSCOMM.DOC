@@ -1,0 +1,30 @@
+The files in this archive are:
+
+  OpusComm.Com - FOSSIL Level 5 driver.  Can handle 2 serial ports.
+  OpusCom1.Com - FOSSIL Level 5 driver.  Can handle either Com1 or Com2.
+  Ocom_Cfg.Exe - OpusComm configurator.  Run this without parameters to
+                 get a brief summary of what it can do.
+
+OpusComm is a Terminate and Stay Resident (TSR) program that
+implements the functionality of a FOSSIL driver as described in the
+file FOSSIL.DOC included in the FOSSILV5.ARC archive.  To use this
+driver, just run the .Com file corresponding to the number of ports to
+be supported.  If you are only running one comm port, use OpusCom1.
+The Ocom_Cfg program can be used to further configure the FOSSIL driver
+to meet your needs.  This program can ONLY be used with OpusComm drivers,
+and will not work at all with other FOSSIL drivers.
+
+Beginning with Revision 5.30 of OpusComm, there is internal support
+for the 16550A UART chip.  This means that those of you that have the
+chip installed no longer need to run the 16550.EXE program to enable
+its special features.  OpusComm uses the chip in fully buffered mode
+(with more buffering than was allowed with the 16550.EXE program).
+
+The entire FOSSIL revision 5 specification is supported as described
+in the files FOSSIL.CHT and FOSSIL.DOC contained in FOSSILV5.ARC. 
+Previous versions of OpusComm did not support the full FOSSIL
+specification, but versions 5.20 and higher support everything
+described in the FOSSIL documents.
+
+If you have questions and/or comments, please send them via netmail
+to Bob Hartman at 1:132/101 (603-888-8179 - 3/12/24/9600 HST).

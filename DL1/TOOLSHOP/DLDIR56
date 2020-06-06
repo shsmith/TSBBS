@@ -1,0 +1,38 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                              Util-Multi-Tasking
+                        13 files using 1,549,296 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+CACHEWRI.ZIP     1152  10-08-93  Makes Smartdrv's delayed writes reliable with
+                               | DV and DV/X
+COMAVAIL.ZIP    12309  01-05-93  COMAVAIL a simple but essential utility to
+                               | prevent multiple programs attempts to access
+                               | a COM port at the same time, by managing
+                               | atomic lock files.  It is NOT
+                               | DESQview-specific, but is useful with
+                               | DESQview, DESQview/X, TopView, OmniView,
+                               | DoubleDOS, and other multitaskers.
+DVCLOCK2.ZIP     3298  01-05-93  DV-Clock v2.00 is a time of day clock for
+                               | DESQview. It won't run in DOS or Windows.
+                               | DV-Clock uses DESQview timer functions to
+                               | keep itself idle most of the time leaving
+                               | about 99.9 percent CPU's time available for
+                               | other work. - With "C" Source Code.
+DVTODO.ZIP       9502  02-01-93  Todo generator for DV
+DV_VIDBM.ZIP     8509  01-11-93  Desqview video tester
+MRXPOP11.ZIP    31380  02-05-93  Switch between up to 10 tasks
+SLICER.ZIP       3480  03-11-93  time slice release
+TAME331.ZIP    108513  06-12-95  TAME Release 3.31
+                               | Speeds multitasking of DOS 
+                               | applications in Windows, OS/2, 
+                               | DESQview, Double DOS and many more.
+TIM.ZIP        135614  07-21-93  Upgrade VMix287 to 289.
+VMIX287.ZIP    259876  07-10-93  Latest version of VMIX. Multi-tasks all DOS
+                               | machines!!! Bug fixes mostly.
+XCONQBIN.ZIP   539923  02-06-93  Game of Conq for DesqView/X
+XGRASP.ZIP     351400  02-06-93  File Grasp Utility for DesqView/X
+XNEKO.ZIP       84340  02-06-93  Cat runs toward cursor in DesqView/X

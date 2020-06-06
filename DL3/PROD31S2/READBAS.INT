@@ -1,0 +1,41 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+{$i \tinc\readbas.dcl}
+
+procedure openfile(name: string65);
+function endfile: boolean;
+procedure closefile;
+
+procedure getaline(var line: string;
+                  len:      integer);
+        {get any line}                  
+
+procedure getline(var line: string;
+                  len:      integer);
+        {get line, ignore comments}
+
+procedure getstr(var str: string;
+                 len:     integer);
+procedure getstrd(var str: string);
+procedure getint(var i: integer);
+procedure readint(var i: integer);
+procedure readword(var i: word);
+procedure readflag(var f: boolean);
+procedure vgetstr(var str: varstring);
+procedure vgetline(var str: varstring);
+procedure vgetstrd(var str: varstring);
+
+procedure skipstr;
+procedure skipline;
+procedure skiplines(n: integer);
+

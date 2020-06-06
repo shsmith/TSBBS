@@ -1,0 +1,12 @@
+rem. Stripped script file for ProDOOR 2.5 - see PROD2512 for full comments 
+REM. EXAMPLE FOR RBBPROD AND PROD25B #26 OR LATER
+echo OFF
+set DSZLOG=C:\PROD\$door.log
+set DSZPORT=1
+C:
+cd \PROD
+prodoor PROD25.CNF C:\PROD %1
+C:
+cd \PROD
+$door BOARD
+BOARD

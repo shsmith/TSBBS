@@ -1,0 +1,17 @@
+/ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+º  ProTPA V1.0 - A ProDoor Utility ! º
+ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ½
+ Version 1.0á20 09/23/93 (shs)
+ USERS.SYS support for ProDoor BBS
+ Systems. Will create USERS.SYS files
+ for both TPA and NON-TPA doors. Will
+ also read USERS.SYS data and update
+ ALL system files including EXTUSER,
+ USERS, USERS.INF.    Works with ALL
+ versions of ProDoor and ProLogon.
+ PCB14.5 Compatible, You do NOT need
+ PCB anymore to create USERS.SYS!
+ Written by THE PRODOOR EXPRESS (PDX)
+ DEVELOPMENT TEAM !!
+ á20 Possibly corrects the "julian
+ date" and "expired user" bug.

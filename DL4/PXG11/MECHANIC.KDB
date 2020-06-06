@@ -1,0 +1,64 @@
+*** EXPERT MECHANIC *** (Rules from Byte, June 1985)
+Q:Does the engine start?
+YQ:Does the engine stall?
+ YQ:Any air leaks in or around the intake manifold?
+  YC:Check the manifold
+  NQ:Are the valves set too tight?
+   YC:Check the valves
+   NQ:Are the ignition points burned, pitted, or gapped incorrectly?
+    YC:Check the points
+    NQ:Is the idle speed set too slow?
+     YC:Adjust the idle speed
+     NC:Check the carb mixture
+ NQ:Does the engine misfire?
+  YQ:Are the spark plugs fouled, damaged, too hot, too cold, or gapped wrong?
+   YC:Check the plugs
+   NQ:Is the head gasket blown?
+    YC:Change the head gasket
+    NQ:Are the points burned, pitted, or incorrectly gapped?
+     YC:Check the points
+     NQ:Are the valves worn, sticking, or valve springs broken or weak?
+      YC:Check the valves
+      NQ:Is carburation poor due to clogged or loose jets, air leaks, or bad mixture?
+       YC:Check the carburator
+       NC:Check the ignition timing
+  NQ:Does the engine lack power or performance?
+   YQ:Is the ignition timing off?
+    YC:Adjust the timing
+    NQ:Has vacuum advance failed?
+     YC:Fix the vacuum advance
+     NQ:Are the points burned, pitted, sticking or bouncing?
+      YC:Change the points
+      NC:It could be the piston rings
+   NQ:Does the engine idle roughly?
+    YC:Check the fuel volatility
+    NC:Check the cylinder head
+NQ:Does the starter crank the engine?
+ YQ:Are the points burned, pitted, dirty or fail to function?
+  YC:Fix the points
+  NQ:Is the coil output weak, nonexistent?
+   YC:Change the coil
+   NQ:Is the coil resistor burned out or open?
+    YC:Change the coil
+    NQ:Are the spark plugs damaged, dirty, wet, or gapped incorrectly?
+     YC:Change the spark plugs
+     NQ:Is the fuel pump worn, leaking, clogged or inoperative?
+      YC:Change the fuel pump
+      NQ:Is the choke incorrectly set or inoperative?
+       YC:Fix the choke
+       NQ:Is it the carb float, jets or needle valve
+        YC:Fix the carburator
+        NQ:Is the distributor cap, rotor, insulator damaged or wet?
+         YC:Fix the distributor
+         NQ:Are the ignition cables cracked, wet, corroded?
+          YC:Fix the ignition cables
+          NQ:Does ignition switch remain open when key is turned?
+           YC:Replace the ignition switch or battery
+           NC:The problem could be in the fuel
+ NQ:Are the battery terminals loose or corroded?
+  YC:Fix the terminals
+  NQ:Does the starter motor fail to operate when power is applied directly?
+   YC:Replace the starter
+   NQ:Does starter drive gear fail to engage flywheel?
+    YC:Replace the solenoid
+    NC:Replace the battery

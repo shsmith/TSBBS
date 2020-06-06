@@ -1,0 +1,22 @@
+
+DOSMON - DOS Activity Monitor               14-May-86 S.H.Smith
+                                            Public domain material
+
+'DOSMON' is a small resident utility that monitors DOS service activity.
+It intercepts the DOS service interrupt and displays the function
+call number on the screen during DOS calls.
+
+The function number is displayed as two hex digits in the upper right
+corner of the screen.
+
+DOSMON accesses video ram directly to reduce overhead.   It will operate with
+displays that are at either B000 or B800.   For other displays, you will
+get the message:
+   "ERR: CAN'T FIND VIDEO RAM"
+DOSMON won't work if you get this message.
+
+DOSMON does not interfere with DOS functions in any way.
+The overhead for DOSMON is about 3% for programs that use
+a lot of DOS functions.
+
+

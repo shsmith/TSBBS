@@ -1,0 +1,161 @@
+
+
+-----------------------------------------------------------
+--                                                       --
+--                 String Conversions                    --
+--                    Package Body                       --
+--                 28-Jul-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);  pragma warning(on);
+
+@ with TEXT_IO; use TEXT_IO;
+
+with BITOPS;                  -- bit manipulation functions
+with STRLIB;    use STRLIB;   -- string length function
+
+
+package body CONV is
+
+
+   function CONVERT (data: integer) return string is
+      -- convert integer data to a string
+      s: string(6);
+      dat: integer;
+      pos: integer;
+      minus: boolean := false;
+
+   begin
+      if data < 0 then
+         minus := true;
+         dat := -data;
+      else
+         dat := data;
+      end if;
+
+      s := "     0";
+      pos := 6;
+      loop
+         exit when dat = 0;
+         s(pos) := character'val((dat mod 10) + 48);
+         pos := pos - 1;
+         dat := dat / 10;
+      end loop;
+
+      if minus then
+         s(pos) := '-';
+      end if;
+
+      return s;
+   end CONVERT;
+
+
+   function CONVERT (data: float) return string is
+      -- convert floating point data to a string
+   begin
+      return CONVERT (integer(data));
+   end CONVERT;
+
+
+   function hex_conversion (data:   integer;
+                            length: integer) return string is
+      -- convert integer data to a string of a specified length
+      s: string(4);
+      dat: integer;
+      pos: integer;
+      asc: integer;
+   begin
+
+      dat := data;
+      s := "0000";
+      s(0) := character'val(length);
+      pos := length;
+
+      loop
+         exit when dat = 0;
+
+         asc := BITOPS.BIT_AND(dat,15);
+         if asc > 9 then
+            asc := asc + 48 + 7;
+         else
+            asc := asc + 48;
+         end if;
+
+         s(pos) := character'val(asc);
+         pos := pos - 1;
+         dat := BITOPS.SHIFT_RIGHT (dat,4);
+      end loop;
+
+      return s;
+   end hex_conversion;
+
+
+   function HEX (data: integer) return string is
+      -- convert integer data to a hex string
+   begin
+      return hex_conversion(data,4);
+   end HEX;
+
+
+   function HEX (data: byte) return string is
+      -- convert byte data to a hex string
+   begin
+      return hex_conversion(integer(data),2);
+   end HEX;
+
+
+   function UFLOAT (i: integer) return float is
+      -- convert unsigned integer to floating point
+   begin
+      if i in 0..16#7FFF# then
+         return float(i);
+      else
+         return 16#10000.0# + float(i);
+      end if;
+
+@  exception
+@     when others =>
+@        put("UFLOAT exception: i="); put(i); new_line;
+@        return 0.0;
+   end UFLOAT;
+
+
+   function HEX_VALUE (hex: string) return integer is
+      -- convert a hex string into an integer
+      val:   integer;
+      digit: integer;
+   begin
+      val := 0;
+      for i in 1..LENGTH(hex) loop
+         digit := character'pos(UPCASE(hex(i))) - character'pos('0');
+         if digit > 9 then
+            digit := digit - 7;    -- special case for A..F
+         end if;
+         val := BITOPS.SHIFT_LEFT(val,4) + digit;
+      end loop;
+
+      return val;
+   end HEX_VALUE;
+
+
+   function TRIM_LEADING (ch: character;
+                          s:  string) return string is
+      -- remove leading characters 'ch' from a string
+      r: string;
+
+   begin
+      for i in 1..LENGTH(s) loop
+         if s(i) /= ch then
+            return EXTRACT(s,i,LENGTH(s)-i+1);
+         end if;
+      end loop;
+
+      return "";
+   end TRIM_LEADING;
+
+
+end CONV;
+
+

@@ -1,0 +1,31 @@
+
+#
+# makefile for 'A3' compiler
+# using yacc and datalight C
+# s.h.smith, 16-sep-86
+#
+
+# define linkage
+a3.exe: a3.obj a3lex.obj a3sym.obj
+   dlc a3.obj a3lex.obj a3sym.obj
+
+
+# define generic rules
+.y.c :
+   yacc -hi $*
+.c.obj :
+   dlc $*.c -c
+
+
+# define file relationships
+
+a3.c a3.h: a3.y \lib\yypars.c
+
+a3.obj: a3.c a3sym.h
+
+a3lex.obj: a3lex.c a3.h a3sym.h
+
+a3sym.obj: a3sym.c a3sym.h
+
+
+

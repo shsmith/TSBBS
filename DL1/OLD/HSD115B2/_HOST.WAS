@@ -1,0 +1,1485 @@
+;Host Mode script v2.00
+;Modified 3/10/95 by Samuel H. Smith to include HS/Link protocol
+
+;**** THIS FILE BELONGS IN \PROWIN2\ASPECT\HOST\_HOST.WAS
+;**** REMEMBER TO COMPILE BEFORE RUNNING THE FIRST TIME!
+
+;***********************************************************************
+;*                                                                     *
+;* _HOST.WAS                                                           *
+;* Copyright (C) 1992-1994 Datastorm Technologies, Inc.                *
+;* All rights reserved.                                                *
+;*                                                                     *
+;* Purpose: Provides an interface for a remote user to send and        *
+;*          receive files and electronic mail.  Also provides fax      *
+;*          send capability for faxmodems.                             *
+;*                                                                     *
+;* Version: 2.0                                                        *
+;*                                                                     *
+;***********************************************************************
+
+;***********************************************************************
+;*                                                                     *
+;*  WARNING!                                                           *
+;*                                                                     *
+;*  Do not modify this script file unless you have a good under-       *
+;*  standing of the Windows ASPECT language.  If you do modify this    *
+;*  script, PLEASE MAKE A BACKUP before doing so.                      *
+;*                                                                     *
+;***********************************************************************
+
+;***********************************************************************
+;*                                                                     *
+;*   MACRO DEFINITIONS                                                 *
+;*                                                                     *
+;***********************************************************************
+#define FALSE 0         ; Boolean variables
+#define TRUE  1         ;
+
+#define NAMEMAX  48     ; maximum length for user name
+#define PSWDMAX  8      ; maximum user passwrd length
+
+#define DISP 1          ; show characters for input
+#define MASK 0          ; hide characters for password input
+
+#define MODEM_CON    0  ; Connection type is a MODEM
+#define DIRECT_CON   1  ; Connection type is direct cable / no MODEM
+
+#define OPEN_SYSTEM   0 ; anyone can login
+#define CLOSED_SYSTEM 1 ; only users already in the HOST.USR can login
+
+; access_level levels for users
+#define NEWUSER      0  ; new - can't do file xfers
+#define REGUSER      1  ; normal-can do file xfers to upload/download areas
+#define SUPERUSER    2  ; super-can do file xfers to/from any drive/directory
+
+#define FLD_SEP    59   ; Field separator is ACSII 59 (semi-colon)
+
+#define _HOST_INCLUDE_
+
+#define HOSTUSRFILE  "HOST.USR"  ; User data file
+#define HOSTLOGFILE  "HOST.LOG"  ; Log of Host activity
+#define HOSTPRMFILE  "HOST.PRM"  ; Parameter file
+#define HOSTHLPFILE  "HOST.HLP"  ; Help file
+#define HOSTNWSFILE  "HOST.NWS"  ; News file
+#define HOSTNUFILE   "HOST.NUF"  ; New user file
+#define HOSTDNLDFILE "HOST.DNL"  ; Download file list
+
+;Mail Defines
+#define HOSTMSGFILE  "HOST.MSG"  ; Mail message file
+#define HOSTHDRFILE  "HOST.HDR"  ; Mail header file
+#define PUBLIC     0             ; Mail message flags
+#define PRIVATE    1             ;
+#define NEWMAIL    2             ;
+#define DELETED    4             ;
+
+;***********************************************************************
+;*                                                                     *
+;*   GLOBAL VARIABLES                                                  *
+;*                                                                     *
+;***********************************************************************
+
+;PATH VARIABLES
+string hostupload_path, hostdnload_path, hostfax_path
+
+;FILE VARIABLES
+string logfile, parmfile, usrfile, newsfile, hlpfile, dnldfile
+string hdrfile, msgfile, tempfile, nufile, pwhelp_file
+
+;HOST SYSTEM STRINGS
+string welcome_msg,  ontime, offtime, name, msg, pswrd
+string _time, _date, message, searchstr, title
+
+;HOST SYSTEM FLAGS
+integer new_usr_level, connect_type, system_type, goodbye_option
+integer local_logon, jump, sysop, already_running, OKtoChat, chatflag
+integer fNewUserFax, fAnswerFax, OldAnswerMode, distinctive_ring
+
+;PROCOMM PLUS
+integer old_menu, new_menu, tempkey, status, msg_number
+integer meta_status, quick_status
+string action1, action2, action3, action4, action5
+
+;USER RECORD VARIABLES - see USER.WAS for details
+string   LoginName
+integer  Security
+string   Passwrd
+string   UserUploadPath
+string   UserDnloadPath
+integer  fDirectory
+integer  fCallback
+integer  fFaxBack
+string   Note
+string   CallBackNum
+integer  CallNumber
+long     LastCalled
+integer  LastMsgRead
+
+;***********************************************************************
+;*                                                                     *
+;* MAIN                                                                *
+;*                                                                     *
+;* This is the main program loop.                                      *
+;*                                                                     *
+;* Calls: SAVE_PRM, HOSTSETUP, HOSTLOG, WAITFORCALL,  GETUSER,         *
+;*        DISPLAYFILE, CHECKMAIL, HOSTMENU                             *
+;*                                                                     *
+;* Modifies globals: action_status, meta_status, dial_status, name,    *
+;*                   setup_status, jump, local_logon, new_menu, sysop, *
+;*                   connect_type, newsfile, msg, access_level,        *
+;*                   parmfile                                          *
+;*                                                                     *
+;***********************************************************************
+#include "SUBS.WAS"             ;host subroutine library
+#include "MAIL.WAS"             ;host mail routines
+
+proc main                       ;start of script
+
+   if i0 == 999                         ; if HOST.WAX was called from
+      distinctive_ring = TRUE          ; distinctive ring, set flag TRUE
+   else
+      distinctive_ring = FALSE
+   endif
+
+   setup save                          ; save current setup
+
+   set txpace 0                        ; turn off xmit pacing
+
+   set aspect spawn on                 ; allow spawning of scripts
+
+   fetch ASPECT PATH parmfile          ; build a path to the HOST.PRM
+   addfilename parmfile HOSTPRMFILE
+
+   strcpy title $PWTITLEBAR            ; save current title so can restore later
+
+   if not isfile parmfile              ; if the .PRM doesn't exist
+      execute "_HOSTUTL"               ;  run HOSTUTIL.WAS
+   endif
+
+   taskpath $PWTASK pwhelp_file
+   addfilename pwhelp_file "PW2.HLP"
+   set aspect helpfile pwhelp_file     ; set the current help file
+
+   meta_status=$METAKEYS
+   if meta_status                      ; if metakeys are ON
+      set metakeys off                 ;  turn them OFF
+   endif
+
+   quick_status=$QUICKSELECT
+   if quick_status                     ; if quick change line is ON
+      set quickselect off              ;  turn it OFF
+   endif
+
+   fetch actionbar TOP action1         ; store the current action bar
+   fetch actionbar RIGHT action2       ;  names so they can be put
+   fetch actionbar LEFT action3        ;  back later
+   fetch actionbar BOTTOM action4
+   fetch actionbar FLOAT action5
+
+   set actionbar TOP  ""               ; turn all the action bars OFF
+   set actionbar RIGHT ""
+   set actionbar LEFT ""
+   set actionbar BOTTOM ""
+   set actionbar FLOAT ""
+
+   already_running=FALSE               ; initialize the setup flag
+
+   while 1                             ; main/top level loop
+      setjmp 1 jump
+      HostSetup()            ; set system variables and open HOST.PRM
+
+      HostLog("Host mode online.", "")
+      pwtitlebar "PROCOMM PLUS - Host"
+
+      set aspect rxdata off
+
+      OKtoChat = FALSE
+      chatflag = FALSE
+
+      WaitForCall()                 ; wait for carrier and a connect msg
+
+      if local_logon                ; enable/disable menu items
+         enable aspmenu 3           ;  depending on logon type
+      else
+         enable aspmenu 2
+         enable aspmenu 1
+      endif
+
+      enable aspmenu 4
+      menushow new_menu
+
+      distinctive_ring = FALSE      ; reset distinctive ring flag
+
+      if !sysop
+         GetUser()                        ; get the user name and password
+         if success                       ; If a user logged on,
+            if (! $carrier) && (connect_type==MODEM_CON)
+               HostLog("Lost Carrier.", "")
+               loopwhile
+            endif
+
+            msg_number = 0                ; reset the message counter
+            CallNumber++                  ; Update the current users call count
+            LastCalled = $LTIME           ; Update the current users last call time
+
+            if fCallBack && !local_logon  ; start the callback procedure if
+               ProcessCallBack()          ;  the user has callback enabled
+               if ! success
+                  loopwhile
+               endif
+            else
+               strfmt msg "Remote user %s online" name
+               pwtitlebar msg
+               if local_logon
+                  HostLog(name, "logged in locally.")
+               else
+                  HostLog(name, "logged in.")
+               endif
+            endif
+            DisplayFile(newsfile, 23)     ; display the HOST.NWS if it exists
+            CheckMail()                   ; check for new mail
+            HostMenu()                    ; display the main menu
+            if ! success
+               loopwhile
+            endif
+         endif
+      else
+         name = "SYSOP"                   ; local sysop logon
+         security = 2
+         strcpy ontime $time
+         CheckMail()
+         HostMenu()
+      endif
+   endwhile
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* HOSTMENU                                                            *
+;*                                                                     *
+;* This procedure is the main menu for the remote user.                *
+;*                                                                     *
+;*                                                                     *
+;* Calls: HOSTPUTS, HOSTLOG, SETFAILURE, HOSTGETC, DISPLAYFILE,        *
+;*        FILELIST, UPLOAD, DOWNLOAD, CHAT, READMAIL, LEAVEMAIL,       *
+;*        HOSTHANGUP, EXITHOST, HOSTGETYN, SWITCHDIR                   *
+;*                                                                     *
+;* Modifies globals: access_level, connect_type, dnldfile, local_logon,*
+;*                   hlpfile, offtime, ontime, goodbye_option, name,   *
+;*                   action_status, meta_status,  dial_status,         *
+;*                   setup_status                                      *
+;*                                                                     *
+;***********************************************************************
+proc HostMenu
+string key
+
+   set txpace 0
+   while 1
+      OKtoChat = TRUE;
+      HostPutS("`r`n")
+      HostPutS("`r`n<F>iles      <U>pload      <D>ownload")
+      HostPutS("`r`n<H>elp       <T>ime        <C>hat")
+      HostPutS("`r`n<R>ead mail  <L>eave mail  Fax <B>ack")
+      HostPutS("`r`n`r`n<G>oodbye")
+
+      if security==2
+         HostPutS("`r`n`r`n<S>witch directory")
+         HostPutS("`r`n<A>bort (SHUT DOWN host mode)")
+      endif
+
+      HostPutS("`r`n`r`nYour Choice? ")
+
+      if (! $carrier) && (connect_type==MODEM_CON)
+         HostLog("Lost Carrier", "")
+         SetFailure()
+         exitwhile
+      endif
+
+      HostGetC(&key)
+      OKtoChat = FALSE
+      chatflag = FALSE
+      if failure
+         SetFailure()
+         exitwhile
+      endif
+
+      HostPutS(key)
+
+
+      switch key
+;****************
+;* Fax(B)ack    *
+;****************
+         case "B"
+            if (fFaxBack)
+               FaxBack()
+            else
+               HostPutS("`r`n`r`nYou are not authorized FAX access!`r`n`r`n")
+            endif
+         endcase
+
+;****************
+;* F)iles       *
+;****************
+         case "F"
+            if security!=2
+               fetch ASPECT PATH dnldfile
+               addfilename dnldfile HOSTDNLDFILE
+               DisplayFile(dnldfile, 23)
+               if ! success
+                  FileList()
+               endif
+            else
+               FileList()
+            endif
+         endcase
+;****************
+;* U)pload      *
+;****************
+         case "U"
+            if local_logon
+               HostPutS("`r`n`r`nYou can't transfer files during a local logon!`r`n`r`n")
+            else
+               if security==0
+                  HostPutS("`r`n`r`nYou aren't authorized to transfer files!`r`n`r`n")
+               else
+                  Upload()
+               endif
+            endif
+         endcase
+;****************
+;* D)ownload    *
+;****************
+         case "D"
+            if local_logon
+               HostPutS("`r`n`r`nYou can't transfer files during a local logon!`r`n`r`n")
+            else
+               if security==0
+                  HostPutS("`r`n`r`nYou aren't authorized to transfer files!`r`n`r`n")
+               else
+                  Download()
+               endif
+            endif
+         endcase
+;****************
+;* H)elp        *
+;****************
+         case "H"
+            fetch ASPECT PATH hlpfile
+            addfilename hlpfile HOSTHLPFILE
+            DisplayFile(hlpfile, 23)
+            if ! success
+               HostPutS("`r`nHelp not available.`r`n")
+            endif
+         endcase
+;****************
+;* T)ime        *
+;****************
+         case "T"
+            strcpy offtime $time
+            HostPutS("`r`n`r`nOnline at: ")
+            HostPutS(ontime)
+            HostPutS("`r`nIt is now: ")
+            HostPuts(offtime)
+            HostPutS("`r`n`r`n")
+         endcase
+;****************
+;* C)hat        *
+;****************
+         case "C"
+            if local_logon
+               HostPutS("`r`n`r`nYou can't chat during a local logon!`r`n`r`n")
+            else
+               Chat()
+               chatflag = FALSE
+            endif
+         endcase
+;****************
+;* R)ead Mail   *
+;****************
+         case "R"
+            ReadMail()
+            if msg_number != 0
+               LastMsgRead = msg_number   ; Update the current users last msg read
+            endif
+         endcase
+;****************
+;* L)eave Mail  *
+;****************
+         case "L"
+            LeaveMail(0,"", "")
+            if ! success
+               SetFailure()
+               return
+            endif
+         endcase
+;****************
+;* G)oodbye     *
+;****************
+         case "G"                         ;Goodbye
+            UpdateUserStats()
+            strcpy offtime $time
+            HostPutS("`r`n`r`nOnline at: ")
+            HostPutS(ontime)
+            HostPutS("`r`nIt is now: ")
+            HostPuts(offtime)
+            HostPutS("`r`n`r`n")
+
+            if connect_type==MODEM_CON
+               HostHangup()
+            endif
+            if goodbye_option==1
+               clear
+               ExitHost()
+            endif
+            HostLog(name, "logged out.")
+            exitwhile
+         endcase
+;****************
+; A)bort        *
+;****************
+         case "A"
+            if security==2
+               HostPutS("`r`n`r`nAbort Host Mode (Y/N)?")
+               HostGetYN()
+               if success
+                  UpdateUserStats()
+                  HostPutS("`r`nAborting ...`r`n")
+                  HostLog(name, "remote shutdown.")
+                  if connect_type==MODEM_CON
+                     HostPutS("`r`nHangup line (Y/N)?")
+                     HostGetYN()
+                     if success
+                        HostHangup()
+                        ;;set autoanswer off
+                        setup restore
+                     else 
+                        set autoanswer OldAnswerMode
+                     endif
+                  endif
+                  if meta_status
+                     set metakeys on
+                   endif
+                  if quick_status
+                     set quickselect on
+             
+                   endif
+
+                  clear
+                  set actionbar TOP    action1
+                  set actionbar RIGHT  action2
+                  set actionbar LEFT   action3
+                  set actionbar BOTTOM action4
+                  set actionbar FLOAT  action5
+                  pwtitlebar title           ; restore title from start-up
+                  halt
+               endif
+            endif
+         endcase
+;****************
+; S)witch       *
+;****************
+         case "S"
+            if security==2
+               SwitchDir()
+            endif
+         endcase
+;***************
+      endswitch
+   endwhile
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* FILELIST                                                            *
+;*                                                                     *
+;* This procedure displays a file directory for the user like the      *
+;* DOS "DIR" command.                                                  *
+;*                                                                     *
+;* Calls: HOSTPUTS, HOSTGETS, HOSTGETC                                 *
+;*                                                                     *
+;* Modifies globals: access_level, dnload_path,  msg                   *
+;*                                                                     *
+;***********************************************************************
+proc FileList
+string filespec, filepath, key, dirflag="<DIR>"
+integer again=0, linenum=1, maxlen=40
+
+   HostPutS("`r`nEnter FILE SPEC: (Carriage Return = *.*)`r`n> ")
+   HostGetS(&filespec, maxlen, DISP)
+
+   strcmp filespec ""
+   if success
+      filespec="*.*"
+   endif
+
+
+   if security!=2
+
+      strfind filespec ":"                ; don't let regular users look at
+      if success                          ;  another drive
+         strfmt msg "`r`n%s <==Invalid character in filespec!`r`n" filespec
+         HostPutS(msg)
+         SetFailure()
+         return
+      endif
+
+      strfind filespec "\"                ; don't let regular users look at
+      if success                          ;  another path
+         strfmt msg "`r`n%s <==Invalid character in filespec!`r`n" filespec
+         HostPutS(msg)
+         SetFailure()
+         return
+      endif
+
+      if fDirectory
+         strcpy filepath UserDnloadPath
+         addfilename filepath filespec
+      else
+         strcpy filepath hostdnload_path
+         addfilename filepath filespec
+      endif
+
+   else
+      if strfind filespec "\"
+         strcpy filepath filespec
+      else
+         getdir 0 filepath
+         addfilename filepath filespec
+      endif
+   endif
+
+   findfirst filepath "D"
+   if success
+      strfind $FATTR "D"
+      if success
+         strfmt msg "`r`n`r`n %-12s  %8s  %9s  %s`r`n" $FILENAME dirflag $FDATE $FTIME
+      else
+         strfmt msg "`r`n`r`n %-12s  %8ld  %9s  %s`r`n" $FILENAME $FSIZE $FDATE $FTIME
+      endif
+      HostPutS(msg)
+      linenum++
+      again=1
+   else
+      HostPutS("`r`n`r`nNo files found.`r`n")
+   endif
+   while again
+      if linenum==23
+         linenum=1
+         HostPutS("<CR> to continue, <S> to stop")
+         HostGetC(&key)                   ; get user input
+         HostPutS("`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b")
+         strupr key
+         strcmp key "S"                   ; if the user says NO
+
+         if success
+            exitwhile
+         endif
+      endif
+
+      findnext
+      if success
+         strfind $FATTR "D"
+         if success
+            strfmt msg " %-12s  %8s  %9s  %s`r`n" $FILENAME dirflag $FDATE $FTIME
+         else
+            strfmt msg " %-12s  %8ld  %9s  %s`r`n" $FILENAME $FSIZE $FDATE $FTIME
+         endif
+         HostPutS(msg)
+         linenum++
+      else
+         HostPutS("`r`n-End of list.-`r`n")
+         exitwhile
+      endif
+   endwhile
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* UPLOAD                                                              *
+;*                                                                     *
+;* This procedure provides a menu for the remote user to send files    *
+;* to the host system.                                                 *
+;*                                                                     *
+;* Calls: HOSTPUTS, HOSTLOG, SETFAILURE, HOSTGETC, GETFNAME,           *
+;*        ISWILDCARD, TXWAIT                                           *
+;*                                                                     *
+;* Modifies globals: connect_type, status, msg, name                   *
+;*                                                                     *
+;***********************************************************************
+proc upload
+string filename, choice
+string xferbegin = "`r`nBegin your transfer procedure...  (CTRL-X aborts)`r`n"
+integer calledfrom = 0
+
+   while 1
+      HostPutS("`r`n")
+      HostPutS("`r`n<K> Kermit      <X> Xmodem")
+      HostPutS("`r`n<O> 1K-Xmodem   <E> 1K-Xmodem-G")
+      HostPutS("`r`n<Y> Ymodem      <G> Ymodem-G")
+      HostPutS("`r`n<Z> Zmodem      <H> HS/Link")
+      HostPutS("`r`n")
+      HostPutS("`r`nYour choice? ")
+
+      if (! $carrier) && (connect_type==MODEM_CON)
+         HostLog("Lost Carrier", "")
+         SetFailure()
+         exitwhile
+      endif
+      HostGetC(&choice)
+      if failure
+         exitwhile
+      endif
+      HostPutS(choice)
+
+      switch choice 
+;****************
+;* K)ermit      *
+;****************
+         case "K"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile kermit
+         endcase
+;****************
+;* X)modem      *
+;****************
+         case "X"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            IsWildcard(&filename)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile xmodem filename
+         endcase
+;****************
+;* Z)modem      *
+;****************
+         case "Z"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile zmodem
+         endcase
+;****************
+;* Y)modem      *
+;****************
+         case "Y"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile ymodem
+         endcase
+;****************
+;* O) 1K Xmodem *
+;****************
+         case "O"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            IsWildcard(&filename)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile 1kxmodem filename
+         endcase
+;****************
+;* E) 1K XmodemG*
+;****************
+         case "E"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            IsWildcard(&filename)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile 1kxmodemg filename
+         endcase
+;****************
+;* Y)modem-G    *
+;****************
+         case "G"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile ymodemg
+         endcase
+;****************
+;* H)S/Link     *
+;****************
+         case "H"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         getfile "HSLINK"
+         endcase
+;****************
+;* Default      *
+;****************
+         default
+            exitwhile
+         endcase
+      endswitch
+
+      pause 1
+
+      status=$XFERSTATUS
+
+      while status==1
+                                          ;loop here while xfer is going on
+         status=$XFERSTATUS
+         yield
+      endwhile
+
+      if status==2
+         HostPutS("`r`nTRANSFER COMPLETE.`r`n")
+         strfmt msg "uploaded %s successfully." filename
+         HostLog(name, msg)               ;log a sucessful upload
+      elseif status==3
+         ;log a failed upload
+         pause 2
+         rxflush
+         txflush
+         HostPutS("`r`nTRANSFER ABORTED!`r`n`r`n")
+         strfmt msg "failed to upload %s." filename
+         HostLog(name, msg)               ;log a sucessful upload
+      endif
+      exitwhile
+   endwhile
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* DOWNLOAD                                                            *
+;*                                                                     *
+;* This procedure provides a menu for the remote user to receive       *
+;* files.                                                              *
+;*                                                                     *
+;* Calls: HOSTPUTS, HOSTLOG, SETFAILURE, HOSTGETC, GETFNAME,           *
+;*        ISWILDCARD, TXWAIT                                           *
+;*                                                                     *
+;* Modifies globals: connect_type, status, msg, name                   *
+;*                                                                     *
+;***********************************************************************
+proc download
+
+string filename, choice
+string xferbegin = "`r`nBegin your transfer procedure...  (CTRL-X aborts)`r`n"
+integer calledfrom = 1
+
+   while 1
+      HostPutS("`r`n")
+      HostPutS("`r`n<K> Kermit      <X> Xmodem")
+      HostPutS("`r`n<O> 1K-Xmodem   <E> 1K-Xmodem-G")
+      HostPutS("`r`n<Y> Ymodem      <G> Ymodem-G")
+      HostPutS("`r`n<Z> Zmodem      <H> HS/Link")
+      HostPutS("`r`n")
+      HostPutS("`r`nYour choice? ")
+
+      if (! $carrier) && (connect_type==MODEM_CON)
+         HostLog("Lost Carrier", "")
+         SetFailure()
+         exitwhile
+      endif
+
+      HostGetC(&choice)
+      if failure
+         exitwhile
+      endif
+
+      HostPutS(choice)
+
+      switch choice 
+;****************
+;* K)ermit      *
+;****************
+         case "K"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile kermit filename
+         endcase
+;****************
+;* X)modem      *
+;****************
+         case "X"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            IsWildcard(&filename)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile xmodem filename
+         endcase
+;****************
+;* Z)modem      *
+;****************
+         case "Z"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile zmodem filename
+         endcase
+;****************
+;* Y)modem      *
+;****************
+         case "Y"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile ymodem filename
+         endcase
+;****************
+;* O) 1K Xmodem *
+;****************
+         case "O"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            IsWildcard(&filename)
+            if failure
+               exitwhile
+            endif
+
+            HostPutS(xferbegin)
+            txwait()
+         sendfile 1kxmodem filename
+         endcase
+;****************
+;* E) 1K XmodemG*
+;****************
+         case "E"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            IsWildcard(&filename)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile 1kxmodemg filename
+         endcase
+;****************
+;* Y)modem-G    *
+;****************
+         case "G"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile ymodemg filename
+         endcase
+;****************
+;* H)s/Link     *
+;****************
+         case "H"
+            GetFname(&filename, calledfrom)
+            if failure
+               exitwhile
+            endif
+            HostPutS(xferbegin)
+            txwait()
+         sendfile "HSLINK" filename
+         endcase
+;****************
+;* Default      *
+;****************
+         default
+            exitwhile
+         endcase
+      endswitch
+
+      pause 1
+
+      status=$XFERSTATUS
+
+      while status==1
+         ;loop here while xfer is going on
+         yield
+         status=$XFERSTATUS
+      endwhile
+
+      rxflush
+      txflush
+      pause 1
+
+      if status==2
+         HostPutS("`r`nTRANSFER COMPLETE.`r`n")
+         strfmt msg "downloaded %s successfully." filename
+         HostLog(name, msg)               ;log a sucessful download
+      elseif status==3
+         HostPutS("`r`nTRANSFER ABORTED!`r`n`r`n")
+         strfmt msg "failed to download %s." filename
+         HostLog(name, msg)               ;log a sucessful download
+      endif
+      exitwhile
+   endwhile
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* GETFNAME                                                            *
+;*                                                                     *
+;* This procedure validates a filename for upload or download.         *
+;*                                                                     *
+;* Input:  string fname (filename to be validated)                     *
+;*         integer calledfrom (upload or download menu)                *
+;*                                                                     *
+;* Return: Success for vaild filename, Failure on invalid filename     *
+;*                                                                     *
+;*                                                                     *
+;* Notes:  Keeps level 1 users from downloading any file they want.    *
+;*                                                                     *
+;* Calls:  HOSTPUTS, HOSTGETS, SETFAILURE, SETSUCCESS, HOSTGETYN       *                                                     *
+;*                                                                     *
+;* Modifies globals: dnload_path,  access_level, msg                   *
+;*                                                                     *
+;*                                                                     *
+;***********************************************************************
+proc GetFname
+param string fname
+param integer calledfrom
+string filepath
+integer len
+
+
+   if calledfrom==0                       ; user is uploading
+
+      if fDirectory
+         filepath=UserUploadPath
+      else
+         filepath=hostupload_path
+      endif
+   else                                   ; user is downloading
+      if fDirectory
+         filepath=UserDnloadPath
+      else
+         filepath=hostdnload_path
+      endif
+   endif
+
+   HostPutS("`r`n`r`nFile name? ")
+
+   HostGetS(&fname, 20, DISP)             ; get the filename
+   if failure
+      SetFailure()
+      return
+   endif
+
+   strcmp fname ""                        ; make sure user didn't hit
+   if success                             ;  ENTER for the filename
+      SetFailure()
+      return
+   endif
+
+   strlen fname len
+   if len>12
+      HostPutS("`r`nFilename is too long!`r`n`r`n")
+      SetFailure()
+      return
+   endif
+
+   strupr fname                           ; uppercase the filename
+   HostPutS("`r`n")
+
+   strfind fname ":"                      ; don't let regular users upload to
+   if success                             ;  another drive
+      strfmt msg "`r`n%s <==Invalid character in filename!`r`n" fname
+      HostPutS(msg)
+      SetFailure()
+      return
+   endif
+
+   strfind fname "\"                      ; don't let regular users upload to
+   if success                             ;  another path
+      strfmt msg "`r`n%s <==Invalid character in filename!`r`n" fname
+      HostPutS(msg)
+      SetFailure()
+      return
+   endif
+
+   if security!=2
+      if calledfrom == 0
+         set dnldpath filepath
+      else
+         set upldpath filepath
+      endif
+      addfilename filepath fname          ; build a fullpath for the filename
+      fname=filepath
+   else
+      getdir 0 filepath                   ; level 2 users will upload to current
+      if calledfrom == 0                  ;  directory
+         set dnldpath filepath
+      else
+         set upldpath filepath
+      endif
+      addfilename filepath fname          ; the current directory
+      fname=filepath
+   endif
+
+   findfirst fname                        ; find the file to see if it exist
+   if ! success
+      if calledfrom == 1                  ; if user is downloading
+         HostPutS("`r`nFile not found!`r`n")
+         SetFailure()
+         return
+      else
+         SetSuccess()
+         return
+      endif
+   else
+      if calledfrom == 0                  ; user is uploading
+         if security !=2
+            HostPutS("`r`nFile already exists!`r`n")
+            SetFailure()
+            return
+         else
+            HostputS("`r`nFile exists, overwrite? ")
+            HostGetYN()
+            if success
+               HostPutS("`r`n")
+               delfile fname
+               if ! success
+                  HostPutS("`r`n`r`nCan't delete file!`r`n")
+                  SetFailure()
+                  return
+               endif
+               SetSuccess()
+               return
+            else
+               SetFailure()
+               return
+            endif
+            HostPutS("`r`n")
+            SetFailure()
+            return
+         endif
+      endif
+      SetSuccess()
+   endif
+   HostPutS("`r`n")
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* ISWILDCARD                                                          *
+;*                                                                     *
+;* This procedure keeps users from specifying wildcard characters in   *
+;* a filename for transfer protocols that do no support them.          *
+;*                                                                     *
+;* Input:  string fname (filename to validate)                         *
+;*                                                                     *
+;* Return: Success for valid filename, Failure otherwise               *
+;*                                                                     *
+;* Calls:  HOSTPUTS, SETFAILURE, SETSUCCESS                            *
+;*                                                                     *
+;* Modifies globals: none                                              *
+;*                                                                     *
+;***********************************************************************
+proc IsWildcard
+param string fname
+string error = "`r`nNo wildcards allowed!`r`n"
+
+   strfind fname "*"
+   if success
+      HostPutS(error)
+      SetFailure()
+      return
+   endif
+
+   strfind fname "?"
+   if success
+      HostPutS(error)
+      SetFailure()
+      return
+   endif
+
+   SetSuccess()
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* SWITCHDIR                                                           *
+;*                                                                     *
+;* This procedure allows a level 2 user to change the working          *
+;* directory.                                                          *
+;*                                                                     *
+;* Calls: HOSTPUTS, HOSTGETS, ISWILDCARD, HOSTLOG                      *
+;*                                                                     *
+;* Modifies globals: msg, name                                         *
+;*                                                                     *
+;***********************************************************************
+proc SwitchDir
+string filepath, newpath
+
+   getdir 0 filepath
+   strfmt msg "`r`nCurrent directory is %s`r`n" filepath
+   HostPutS(msg)
+   HostPutS("Change to what directory? ")
+   HostGetS(&newpath, 50, DISP)
+   if success
+      IsWildcard(newpath)
+      HostPuts("`r`n")
+      if chdir newpath
+         strfmt msg "Changed directory to %s." newpath
+      else
+         strfmt msg "Error changing to %s !" newpath
+      endif
+      HostPuts(msg)
+      HostPuts("`r`n")
+      HostLog(name, msg)
+   endif
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* HOSTLOG                                                             *
+;*                                                                     *
+;* This procedure puts an activity message into the HOST.LOG file.     *
+;*                                                                     *
+;* Calls: HOSTMSGBOX                                                   *
+;*                                                                     *
+;* Modifies globals: logfile, msg                                      *
+;*                                                                     *
+;***********************************************************************
+proc HostLog
+param string activity1
+param string activity2
+
+   isfile logfile
+   if ! success                       ;if new file put header at top
+      fopen 1 logfile CREATE TEXT
+      if success
+         fputs 1 "  DATE      TIME             ACTIVITY"
+         fputs 1 "--------  ----------   --------------------------------"
+         fclose 1
+      else
+         HostMsgBox("Can't create HOST.LOG file!")
+         return
+      endif
+   endif
+
+   fopen 1 logfile WRITE TEXT
+   if ! success
+      HostMsgBox("Can't open HOST.LOG file!")
+      return
+   endif
+   fseek 1 0 2
+   strfmt msg "%s  %s   %s %s" $DATE $TIME activity1 activity2
+   fputs 1 msg
+   fclose 1
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* PROCESSCALLBACK                                                     *
+;*                                                                     *
+;* Calls a remote site and prompts the user for a password.            *
+;*                                                                     *
+;***********************************************************************
+proc ProcessCallBack
+integer maxcalls, tries = 0
+      
+   pswrd = ""                             ; reset the password to NULL
+   
+   ;dialcreate "PWHOST.DIR"
+   ;dialload   "PWHOST.DIR"   
+   
+   HostPutS("`r`n`r`nHangup now and prepare your")
+   HostPutS("`r`nmodem to answer a data call.`r`n`r`n`r`n")
+   set aspect rxdata off
+   pause 2
+   HostHangup()
+   pause 10
+
+   dialnumber DATA CallBackNum
+   fetch dialdir maxdial maxcalls
+   set dialdir maxdial 4
+   while $DIALING
+   endwhile
+
+   if !$CARRIER
+      HostLog(LoginName, "failed callback connection.")
+      SetFailure()
+      return
+   endif
+
+   pause 5
+   rxflush
+   txflush
+      
+   set dialdir maxdial maxcalls
+   set aspect rxdata on
+   GetUserPswd()  
+   
+   while tries < 3
+      strcmp pswrd Passwrd
+      if success
+         SetSuccess()
+         return
+      else
+         GetUserPswd()  
+         tries++
+      endif
+   endwhile
+   HostPutS("`r`n`r`nPassword incorrect.`r`n")
+   if connect_type==MODEM_CON
+      HostHangup()
+   endif
+   HostLog(LoginName, "failed callback password check.")
+   SetFailure()
+endproc
+
+;***********************************************************************
+;*                                                                     *
+;* FAXBACK                                                             *
+;*                                                                     *
+;* This procedure sends a FAX to a remote site.                        *
+;*                                                                     *
+;***********************************************************************
+proc FaxBack
+
+integer again=0, linenum=1
+string choice, filespec
+string ToName, filename
+integer call_type
+string country, area, number, temp, timestr
+long sendtime
+
+   while 1
+      HostPuts("`r`n`r`n")
+      HostPutS("<L>ist FAX files`r`n")
+      HostPutS("<R>equest Host to send a FAX`r`n")
+      HostPutS("<Q>uit`r`n`r`n? ")
+      HostGetC(&choice)
+      if ! success
+         SetFailure()
+         return
+      endif
+      HostPuts(choice)
+      HostPuts("`r`n")
+      strupr choice
+      switch choice
+         case "L"
+            strcpy filespec hostfax_path
+            addfilename filespec "*.FAX"
+            findfirst filespec
+            if success
+               strfmt msg "`r`n`r`n %-12s  %9s  %s`r`n" $FILENAME $FDATE $FTIME
+               HostPutS(msg)
+               linenum++
+               again=1
+            else
+               HostPutS("`r`n`r`nNo FAX files found.`r`n")
+            endif
+
+            while again
+               if linenum==23
+                  linenum=1
+                  HostPutS("<CR> to continue, <S> to stop")
+                  HostGetC(&choice)  ; get user input
+                  HostPutS("`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b`b")
+                  strupr choice
+                  strcmp choice "S"       ; if the user says NO
+                  if success
+                     exitwhile
+                  endif
+               endif
+
+               findnext
+               if success
+                  strfmt msg " %-12s  %9s  %s`r`n" $FILENAME $FDATE $FTIME
+                  HostPutS(msg)
+                  linenum++
+               else
+                  HostPutS("`r`n-End of FAX list.-`r`n")
+                  exitwhile
+               endif
+            endwhile
+         endcase
+
+         case "R"
+                                          ;Get .FAX file name
+            HostPutS("`r`n`r`nFile name: ")
+            HostGetS(&filespec, 12, DISP)
+            if ! success
+               SetFailure()
+               return
+            endif
+            strcpy filename hostfax_path
+            addfilename filename filespec
+            if not isfile filename
+               HostPuts("`r`nFile not found!`r`n")
+               loopwhile
+            endif
+
+                                          ;Get the receivers name
+            HostPutS("`r`nRecipient's name: ")
+            HostGetS(&ToName, 45, DISP)
+            if ! success
+               SetFailure()
+               return
+            endif
+
+                                          ;Get call type:
+                                          ;  1 - International
+                                          ;  2 - Long Distance
+                                          ;  3 - Local
+                                          ;  4 - Internal
+
+                                          ;International call?
+                                          ; If so, get country code
+                                          ; Get area/city code
+                                          ; Get phone number
+
+            HostPuts("`r`n`r`nSelect call type for recipient's number:`r`n")
+            HostPutS("`t1 - International`r`n")
+            HostPutS("`t2 - Long Distance`r`n")
+            HostPutS("`t3 - Local`r`n")
+            HostPutS("`t4 - Internal`r`n`r`n")
+            HostPutS("Choice :")
+
+            HostGetS(&temp, 1, DISP)
+            if ! success
+               SetFailure()
+               return
+            endif
+
+            HostPuts("`r`n")
+
+            atoi temp call_type
+
+            switch call_type
+               case 1
+                  HostPutS("`r`nCountry Code : ")
+                  HostgetS(&country, 12, DISP)
+                  if ! success
+                     SetFailure()
+                     return
+                  endif
+                  HostPutS("`r`n")
+               case 2
+               case 3
+                  HostPutS("`r`nArea/City Code : ")
+                  HostgetS(&area, 7, DISP)
+                  if ! success
+                     SetFailure()
+                     return
+                  endif
+                  HostPutS("`r`n")
+               case 4
+                  HostPutS("`r`nNumber : ")
+                  HostgetS(&number, 25, DISP)
+                  if ! success
+                     SetFailure()
+                     return
+                  endif
+                  HostPutS("`r`n")
+               endcase
+               default
+                  loopwhile
+               endcase
+            endswitch
+
+                                          ;Create Dialing Directory entry
+            dialadd FAX ToName
+            if ! success
+               strcat ToName "-01"
+               dialadd FAX ToName
+               if ! success
+                  HostLog("Error adding dial entry ", ToName)
+                  loopwhile
+               endif
+            endif
+
+            set dialentry access ToName
+            set dialentry areacode area
+            set dialentry countrycode country
+            set dialentry phonenumber FAX number
+            switch call_type
+               case 1
+                  set dialentry calltype INTL
+               endcase
+               case 2
+                  set dialentry calltype LONGDISTANCE
+               endcase
+               case 3
+                  set dialentry calltype LOCAL
+               endcase
+               case 4
+                  set dialentry calltype INTERNAL
+               endcase
+               default
+                  loopwhile
+               endcase
+            endswitch
+
+            sendtime = $LTIME + 180
+                                          ;FAXSEND command
+
+            faxsend DIALDIR ToName sendtime single filename
+
+                                          ;Remove dialdir entry
+
+            dialdelete FAX entry ToName
+            ltimestring sendtime timestr
+            strfmt temp "`r`nFAX scheduled to be sent at %s`r`n`r`n", timestr
+            HostPutS(temp)
+            ;Done
+         endcase
+
+         case "Q"
+            return
+         endcase
+
+      endswitch
+   endwhile
+
+endproc
+;**** End of HOST.WAS ****

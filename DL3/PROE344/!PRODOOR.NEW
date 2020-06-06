@@ -1,0 +1,209 @@
+$NOMACS$
+
+History of ProDOOR changes (in reverse order)
+---------------------------------------------
+
+18-Nov-92
+   Changed page detection logic to clear the "pager" field after
+   displaying the PROREQ file.  This makes it possible to page someone
+   multiple times from the PROLIVE door.
+
+11-Nov-92
+   Corrected an error in 10-nov postings that caused a 'missing fossil
+   driver' error to be printed when attempting to logon locally.
+
+10-Aug-92
+   Corrected a few reported RUNTIME errors that were uncovered by
+   rangecheck code that was enabled in the previous betas.
+
+04-Aug-92
+   Removed logic to check for upload duplication with alternate file
+   .EXT values.  It appears that folks want to allow this kind of
+   duplication...
+
+28-Jul-92
+   Internal changes to prevent lockup following 'g' command on some machines.
+
+   Enabled stack and rangecheck code- this version will take more RAM, but
+   perhaps it will report a runtime error that will help solve the recent
+   problem of crashing.
+
+17-Jul-92
+   Internal prologon/prodoor/prokit changes to prevent missed events.
+
+   Changes in prodoor/prologon to prevent logons during the 'event
+   window', allowing callers prior to the window to have up to 'window'
+   minutes.
+
+14-Jul-92
+   Changes to allow ansi detect strings during the initial prompt
+   if they do not arrive within the first 6 seconds.
+
+04-Jul-92
+   The QPREFIX environment variable was not working.
+
+01-Jul-92
+   Internal change in bufio unit to prevent endless DOS error [6]
+   retries while reading buffered files.
+
+   Added logic to bypass the "Loading XXXXX - Please wait..." messages
+   if NS is appended to the OPEN or DOOR command.
+
+   Added logic to allow " NS" suffix in PROXxxx command translations to
+   trigger non-stop mode, allowing seamless control flow to other doors.
+
+30-Jun-92
+   Added a check for QPREFIX environment variable to override the
+   message default quote prefix of ">".
+
+19-Jun-92
+   Added support for $$LOGOFF.BAT file during logoff.
+
+28-May-92
+   Internal changes to allow CONFINFO file to be made read/only.
+
+27-May-92
+   Internal ProDoor/ProKit changes to allow operation at 115200 com port
+   speeds.
+
+   Added a check for the environment variable
+        SET NOCD=ON
+   to disable carrier detect monitoring.  This makes it possible to
+   set up an inhouse/direct connect board with 3 wire serial cables.
+
+25-May-92
+   Some corrections in &, |, .AND. and .OR. search processing.
+
+22-May-92
+   Some 21-may postings could not find ANY download files.
+
+21-May-92
+   Added & and | as alternates for .AND. and .OR. in dir searches.
+
+   EXE files are no longer compressed with PKLITE -E; you can compress
+   them yourself if you prefer compressed files.
+
+   Changes in prokit to properly set PCBOARD.SYS 'curconf' and
+   'conference' entries to match USERS file 'curconf' and 'curconfh'
+   entries.  (May solve problems when current conference > 255 on entry
+   to a prokit door).
+
+02-May-92
+   Changed graphics mode logic to speed up file directory listings
+   by converting leading spaces in multi-line file descriptions to
+   ansi cursor positioning codes.
+
+   Possible correction to exec/(f v) problems when SET NOSAVE=ON is not
+   in the environment.
+
+   Hardcoded the option /e:1000 in subshells created by exec/(f v) to
+   deal with the possible problem of command.com truncating the
+   environment to the existing environment variable allocation.
+
+27-Apr-92
+   Added new caller log entry
+        New CONFINFO file created by PROGRAM
+   to identify when ProDoor or a related program needs to create a new
+   CONFINFO file.
+
+   When a new CONFINFO file is created, all conferences of #39 are now
+   flagged as public.
+
+   When a new CONFINFO file is created, all conferences are given the
+   default propack options of "400 eltkwn360".
+
+   (I don't know why, but my CONFINFO file mysteriously dissappeared
+   and had to be re-created - perhaps these changes will help track down
+   what's going wrong)
+
+22-Apr-92
+   Changed 'q y' and 'personal mail scan' during logon and conference entry
+   to no longer report messages FROM the current user.
+
+   Corrected a problem that would occasionally cause a drop to DOS after
+   logoff (broken 21-apr).
+
+21-Apr-92
+   Corrected 'off abnormally' caller log entry when carrier is lost
+   and caller has NOT given the G command.
+
+   Added prokit function
+        procedure auto_detect_ansi;
+   which will enable graphics modes if graphics is currently disabled
+   and the caller's terminal emulation appears to support ansi codes.
+   This function may result in a delay of up to 5 seconds for non-ansi
+   callers.  The delay cannot be reliably reduced because of slow turn-
+   around times with networks (such as PC Pursuit) and some buffered
+   modems.
+
+14-Apr-92
+   Increased maximum download batch size from 10000k to 32000k bytes.
+
+31-Mar-92
+   Changed $DOOR.NAM format during downloads to be the same as that used
+   during uploads- this makes ADDBIDIR/PRODIZ processing possible for
+   bidirectional uploads.  This version finally DOES retrieve
+   FILE_ID.DIZ descriptions for bidirectional uploads.
+
+   Some early 31-mar versions wrote "| (download)" to the $door.nam
+   file, possibly confusing external protocol drivers.
+
+30-Mar-92
+   Changes in upload logging logic to preserve bidirectional upload
+   descriptions found in $DOOR.NAM file (compatibility with PRODIZ and
+   ADDBIDIR utilities).
+
+28-Mar-92
+   Changed upload posting logic to handle DSZLOG entries that do NOT
+   include the path to where the file was stored.
+
+24-Mar-92
+   Added a check for the environment variable
+        SET PCB-G=ON
+   and if present, ProDoor will now call up PCB145/KEY:G to perform the
+   logoff function instead of doing it internally.
+
+23-Mar-92
+   Added the message 'Sorry, file is being updated. Try again later'
+   when repeated attempts fail to open an existing file.  This usually
+   indicates a SHARE violation resulting from concurrent updates in
+   progress over a network.
+
+   Changes to prevent 'Time limit reduced because of a pending event'
+   message from popping up during user input.
+
+21-Mar-92
+   Returned logic to eliminate hangup delay when 'G Q' is used.
+   The 'goodbye after transfer' option now does 'G Q' rather than 'G'.
+   Changed logic to consider carrier loss after 'G' command is issued as
+   a normal logoff rather than an abnormal one.
+
+   Removed 'ctrl-L' from local screen after @CLS@ is expanded.
+
+12-Mar-92
+   Corrected a long-standing bug that prevented prodoor from creating a
+   new CONFINFO file with over 130 conferences when additional
+   conferences had already been allocated with EXTADJ.
+
+09-Mar-92
+   More changes to possibly remove the need for SET NOSAVE=ON setting.
+
+19-Feb-92
+   Added logic to keep the "Time limit reduced because an event is
+   pending" message at the bottom of the screen in visual edit mode.
+
+18-Feb-92
+   Added a check for conference specific PROFREE files in the form
+        PROFREE.nn
+   where nn is the conference number.
+
+   Corrected logic in com port re-initialization that may correct
+   problems on systems needing the SET NOSAVE=ON environment.
+
+12-Feb-92
+   Added a check for security specific PROTRNS files, using the format
+        xxxTRNS
+   where xxx is the user level.  For example,
+        010TRNS
+   would be used in place of PROTRNS for level 10 users.
+

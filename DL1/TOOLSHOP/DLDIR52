@@ -1,0 +1,119 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                                  Util-Memory
+                        24 files using 2,598,150 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+32BDAFIX.ZIP     5092  10-28-94  QEMM-386 7.50 32bit in Windows update This
+                               | will let you use Caviar and other 32bit
+                               | Windows drivers with QEMM 7.xx !!!
+ACC-C205.ZIP   145357  11-25-99  ALL ChargeCard software version 2.05c
+                               | Includes new ACCMenu program for all
+                               | utilities, a software rebooter that disables
+                               | the card, stops the lockups, more. Downloaded
+                               | from The Sound of Music, NY
+AMIPASSW.ZIP     6968  01-21-95  Small utility from Russia which will show
+                               | Ami-Bios Password!
+AUTOCMOS.ZIP     3530  09-22-94  Autocmos 2.1 will automatically repair
+                               | damaged cmos memory data. The program runs
+                               | from the DOS command line, thus allowing
+                               | batch operation.
+BIOS.ZIP         6082  05-14-94  This Program Tells You The Password To Your
+                               | Bios If One Is Put. Did You Ever Put a
+                               | Password On Your Bios And Forgot It Well This
+                               | Program Is For You And It Is Free Of Charge
+                               | Because I Made IT !!!! -=þ=> GLORY RULEZ THE
+                               | SCENE! <=þ=-
+BURNSTAK.ZIP     7469  01-04-94  Burn Stack 1.0. This program was written to
+                               | do a burn-in on the processor stack routines.
+                               | If you are having an intermittent problem
+                               | with your computer, try running this program,
+                               | if it fails, your processor is bad.
+CACHETST.ZIP     3975  06-15-95  CACHE TEST can be used to determine 
+                               | if the internal cache on an Intel 
+                               | processor based system is turned 
+                               | on and if the cache is operating 
+                               | in a Write-Through or Write-Back 
+                               | mode.  This program requires DOS 
+                               | and an SL-Enhanced Intel486(TM) 
+                               | processor or greater.  The program 
+                               | uses certain low-level instructions 
+                               | that may or may not work properly 
+                               | with some protected mode environments.
+                               | For the most accurate results, disable 
+                               | the external (Level 2) system cache.
+CMOS20.ZIP      18053  04-24-95  CMOSSave CMOSRest CMOSChk 2.0
+                               | automatically restore damaged CMOS from
+                               | backup and check that CMOS has not been
+                               | tampered with. MASM/OPTASM source
+                               | included. By Roedy Green of Canadian
+                               | Mind Products.
+CSP.ZIP         75177  06-08-94  An unusual but supposedly very powerful
+                               | CPU/Memory benchmark from Softwin
+                               | Laboratories.
+HIVID!.ZIP      11005  06-03-94  HiVID! v2.03 <ASP> - DOS Memory Expander for
+                               | VGA/EGA systems. The unused graphics memory
+                               | of the VGA/EGA display adapter in text mode
+                               | is used to expand the conventional DOS memory
+                               | by 96kB. No graphic can be used if this mode
+                               | is on. The expansion can be switched on and
+                               | off dynamically from the command line.
+                               | Shareware
+ID_CHIP.ZIP      8522  10-16-94  Chip, BIOS, and Memory identifier for Cyrix.
+MEMMAP20.ZIP    18470  05-18-95  Purpose: To display all allocated memory
+                               | blocks, including memory-resident (TSR)
+                               | programs and their associated environment
+                               | memory blocks. Optionally, also displays
+                               | the the variables in each environment block.
+MM43S.ZIP       12007  08-21-94  þ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ þ
+                               | ³ MemMap (MM) v4.3  -  MM is a program that ³
+                               | ³ will display what programs are resident   ³
+                               | ³ in memory. This program can display both  ³
+                               | ³ lower memory and upper memory. It can     ³
+                               | ³ also display the DOS v4+ sub-segment      ³
+                               | ³ blocks. The full version also displays    ³
+                               | ³ device drivers and the environment. The   ³
+                               | ³ full version costs only œ10.00            ³
+                               | þ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ þ
+MREPORT.ZIP      5812  08-07-94  TSR that continually reports memory usage at
+                               | the top of your PC's screen. This information
+                               | is available during the execution of any
+                               | character based DOS program. Uses 560 bytes
+                               | of memory and may be loaded in high memory if
+                               | desired. hw
+PENT_BUG.ZIP    48667  11-22-94  Detect whether your CPU has the FDIV bug
+                               | recently found in the Pentium. Executables
+                               | included for OS/2 2.x And up, and for DOS,
+                               | plus (the tiny) source code. hw
+QEMM_OPT.ZIP    92655  11-22-94  New patch for Qemm 7.5 Files: 1 Newest:
+                               | 11-22-94 Oldest: 11-22-94
+QPAT2.EXE      370234  12-16-94  Latest Patch file for QEMM 7.5 - don't need
+                               | earlier patch - this has all.
+QPAT3.ZIP     1061912  06-13-95  Quartedeck QEMM 386 7.5 Patch (5/95)
+RAMALYZE.ZIP   143845  03-03-94  ððððððððð RAMalyzer! v2.0 ðððððððððð
+                               | ð Best RAM Diagnostic Available!   ð
+                               | ð     Test Up To 4 Gigabytes!      ð
+                               | ð Rigid Test Ensure RAM Integrity! ð
+                               | ð   Detects Intermittent Errors!   ð
+                               | ð     Locates The Exact Chip!      ð
+                               | ð             -MASS-               ð
+TLB_A252.ZIP   209828  10-24-94  A set of ADVANCED UTILITIES to go with THE
+                               | LAST BYTE MEMORY MANAGER (vers. 2.52)
+                               | Requires the companion standard package,
+                               | TLB-V252.ZIP.
+TLB_V252.ZIP   268683  10-24-94  THE LAST BYTE MEMORY MANAGER (vers. 2.52)
+                               | Loads device drivers, TSRs, and more between
+                               | 640k and 1 meg. Compatible w/DOS 6, Win 3.1,
+                               | & all prot. mode software. Requires 8088 or
+                               | above and a supported shadow ram controller,
+                               | EMS, or R/W ram in the UMA. Registration fee:
+                               | $29.95
+TLB_W252.ZIP     4749  10-09-94  What's new in version 2.52 of THE LAST BYTE
+                               | MEMORY MANAGER.
+TSR-V29.ZIP     32916  08-02-01  TSR utilities 2.9 Turbopower Software
+VMS240.ZIP      37142  04-27-94  VMS40 EMS memory emulator v1.1b <ASP> VMS40
+     
+                               | Softwaretechnik. CIS 73030,1070

@@ -1,0 +1,4 @@
+   procedure dir_scan(mode:  scan_modes);
+
+   procedure check_newer(var dirline: string; lastdate: string6);
+

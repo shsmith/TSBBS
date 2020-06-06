@@ -1,0 +1,70 @@
+PROTRNS replacement for ProDoor 3.4x, last revised November 1, 1992
+
+By:                    Shawn Azhadi
+                        COM2: BBS
+                (619)737-0495/96/97/98/99
+
+This file DOES NOT require registration, donation or even blessing!  
+Use it, if you like it.
+
+PROTRNS replaces original Sam Smith's PROTRNS file distributed with 
+ProDoor 3.x files.  To implement, just copy this file OVER the 
+original PROTRNS which might be found in d:\PROD directory (where d: 
+is the driver letter.)
+
+If you have no idea what this file does, STOP...  This file is NOT FOR 
+YOU.
+
+Due to memory limitation of ProDoor allowance for PROTRNS, you might 
+find yourself in a small "bind" as I did.  I noticed that my DOWNLOAD 
+or UPLOAD batch files were aborting.  This is due to the RAM left in 
+ProDoor to keep track of the DRIVE:\PATH\FILENAME.EXT & when:
+
+a) batch file transfer is issued
+b) more than 1 or 2 files are selected
+c) long path/file names are involved (G:\PCB\MAIN_UPL\FILENAME.EXT)
+
+ ... The system simply gives as much information as it could remember
+ & aborts the rest of the batch transfer.
+
+I must tell you that the above case strictly depends on the available 
+RAM on your system & there is no way that I can assure you of this 
+occurrence.
+
+Solution
+--------
+I simply switched to Sam's OVERLAY version of ProDoor & all my 
+problems went away.  Overlay version of ProDoor can be downloaded from 
+"The ToolShop BBS, Home of ProDoor/HSLINK" or any other quality BBS.
+
+Also, with the amount of RAM left for conventional use under MS DOS 5.00
+using a 286 or higher system, you might find yourself free of any memory
+limitation.  The best way of testing this process is to load PRODOOR
+locally & then (F5) shell to DOS & execute the MEM command.  Make sure
+that there is sufficient amount of memory left for loading DSZ or HSLINK
+(usually about 60k) & the file pathnames.  My rule of thumb is 60k x 3
+or 180k of free RAM.
+
+There are a few places in this file where the name "COM2: BBS" or 
+"COM2: Remote BBS" are mentioned.  Please replace this with your BBS's 
+name.
+
+Should you add or modify this file, please upload it to the above BBS, 
+so we all can have a universal version of PROTRNS.  I call this version
+PROTRNS4.ZIP  Please see that the next version would have a different
+rev. number.
+
+Disclaimer
+----------
+Use at your own risk.  Please make a backup copy or your original PROTRNS
+file.
+
+Credits
+-------
+- To Samuel H. Smith for writing ProDoor & HS/LINK
+  (without Sam, this file simply would not exist)
+
+- To all supporters, contributors & Boosters of ProDoor & ToolShop BBS
+
+- To My family
+

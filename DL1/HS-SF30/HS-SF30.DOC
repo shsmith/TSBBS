@@ -1,0 +1,118 @@
+
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                      IN SPITFIRE BBS VERSION 3.0
+
+     Please refer to the SPITFIRE manual for detailed information on
+     installation of external protocols.  This information was tested
+     with HS/Link betas posted on 11/19/91 and SPITFIRE version 3.0.
+
+     The following installation steps should work for most folks:
+
+     SPITFIRE allows several different external protocols, which must be
+     lettered sequentially starting with A.  If HS/Link is the first
+     external protocol you install, it will be letter A.  If it is the
+     second external protocol, it will be B, and so forth.  In this
+     document we will assume that HS/Link is the first external protocol
+     to be installed.  If you already have other external protocols
+     installed, you will need to change the batch file names
+     accordingly.  Refer to the spitfire manual chapter 18 for more
+     details on this subject.
+
+     Load up spitfire and press ALT-P.
+
+     Check that "<A> External Transfer Protocols" is set to YES.
+
+     Check that "<D> Display Files Path" is set to C:\SF\DISPLAY.
+
+     Check that "<E> External Transfer Path" is set to C:\SF\EXTNOD1. If
+     you change this setting you will have to make changes in the
+     provided batch files.
+
+     Place a copy of HSLINK.EXE into C:\SF\EXTNOD1.  Also copy the
+     supplied SFEXTDNA.BAT and SFEXTUPA.BAT files into the C:\SF\EXTNOD1
+     directory.  Note that these files must be renamed if you already
+     have other external protocols installed.
+
+     Use a text editor to edit or create the file
+     C:\SF\DISPLAY\SFEXTDN.BBS. Insert the following line into this
+     file:
+        <A> HS/Link,BATCH
+
+     Use a text editor to edit or create the file
+     C:\SF\DISPLAY\SFEXTUP.BBS. Insert the following line into this
+     file:
+        <A> HS/Link,BATCH
+
+     This should get you set up in under 10 minutes.
+
+     Note for systems running locked COM ports:
+     We have found that if you use a locked DTE of 9600 or above, you
+     will need to have a NS16550AN UART installed.  Also, for rock solid
+     performance you should add the -HS (Handshake Slow) switch to your
+     'SFEXTDNA.BAT' and 'SFEXTUPA.BAT' batch files.
+
+     You can edit SFEXTDNA.BAT and SFEXTUPA.BAT to include options on
+     the HSLINK command line, but most folks won't need to change
+     anything. If your system can't keep up with the COM port while
+     accessing the disk drive, you may want to add -HS to the command
+     line in each file. If you want to experiment, there are a number of
+     optional parameters you can read about in HSLINK.DOC and
+     HSLINK.NEW.
+
+     Contents of SFEXTDNA.BAT
+     ------------------------
+         REM HS/LINK BATCH DOWNLOAD FOR SPITFIRE 3.0  (SFEXTDNx.BAT)
+         ECHO OFF
+         ECHO EXECUTING EXTERNAL PROTOCOL # 1
+         CD\SF\EXTNOD1
+         HSLINK -P%2 -NU %3 %4 %5 %6 %7 %8 %9
+         IF EXIST %3 ERASE %3
+         IF EXIST %4 ERASE %4
+         IF EXIST %5 ERASE %5
+         IF EXIST %6 ERASE %6
+         IF EXIST %7 ERASE %7
+         IF EXIST %8 ERASE %8
+         IF EXIST %9 ERASE %9
+         CD\SF
+
+     Contents of SFEXTUPA.BAT
+     ------------------------
+         REM HS/LINK BATCH UPLOAD FOR SPITFIRE 3.0  (SFEXTUPx.BAT)
+         ECHO OFF
+         ECHO EXECUTING EXTERNAL PROTOCOL # 1
+         CD\SF\EXTNOD1
+         HSLINK -P%2
+         IF EXIST %3 COPY %3 %4
+         IF EXIST %5 COPY %5 %4
+         IF EXIST %6 COPY %6 %4
+         IF EXIST %7 COPY %7 %4
+         IF EXIST %8 COPY %8 %4
+         IF EXIST %9 COPY %9 %4
+         IF EXIST %3 ERASE %3
+         IF EXIST %5 ERASE %5
+         IF EXIST %6 ERASE %6
+         IF EXIST %7 ERASE %7
+         IF EXIST %8 ERASE %8
+         IF EXIST %9 ERASE %9
+         CD\SF
+     
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with SPITFIRE and with HS/Link.  If all else fails, call up the
+     Tool Shop and ask for help on the Support Conference.  Either I
+     will help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-3772    US Robotics HST 9600    Contributors only
+       (818) 891-1344    Hayes-V series 9600     Contributors only
+       (818) 891-6780    US Robotics 2400        Free to all
+

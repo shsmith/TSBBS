@@ -1,0 +1,46 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *  NOTICE: ALL MODIFIED VERSIONS OF THIS PROGRAM _MUST_ BE DISTRIBUTED
+ *          WITH SOURCE CODE.  I STRICTLY FORBID THE USE OF ANY NON-
+ *          PUBLIC INFORMATION IN MODIFICATIONS.  FOR EXAMPLE, YOU
+ *          CANNOT USE CDC PROVIDED INFORMATION FOR PCBOARD 14.5
+ *          COMPATIBILITY, SINCE SUCH A VERSION CANNOT BE RELEASED IN
+ *          SOURCE CODE.
+ *)
+
+(*
+ * PCB ProDoor visual message entry/edit module for ProMail unit (3-1-89)
+ *
+ *)
+
+const
+   leftmargin = 0;      {4; spaces to skip at left margin}
+   topscreen = 7;       {first screen line for text entry}
+   maxscrlines = 40;    {maximum number of display lines}
+   vismaxlen = 79;      {maximum display line length}
+   viswraplen = 71;     {visual word wrap line length}
+
+   insert_mode: boolean = true;
+
+var
+   statline:    integer;        {line for statue messages}
+   scrlines:    integer;        {number of screen lines for text entry}
+   scrollsiz:   integer;        {number of lines to scroll by}
+   topline:     integer;        {message line number at top of screen}
+   cline:       integer;        {current message line number}
+   ccol:        integer;        {current column number}
+
+   phyline:     array[1..maxscrlines] of string[vismaxlen];
+                                {physical display text}
+
+   pleft:       integer;        {previous value of minutes_left}
+
+procedure visual_edit;

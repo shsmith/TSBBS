@@ -1,0 +1,80 @@
+ 
+                   USING COMMO WITH EXTERNAL HS/LINK
+ 
+                                  
+     Installation: 
+
+     HS/Link comes pre-installed in recent versions of COMMO.  The
+     following instructions are needed only if you wish to modify the
+     installation.
+
+     Please refer to the COMMO manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work if you're familiar with editing the COMMO setup
+     and macro files.
+
+     Copy HSLINK.EXE into your COMMO directory, or into a directory
+     included in your search PATH.
+
+     Use a text editor to modify the file COMMO.SET.  Add the following
+     line to enable HS/Link autodownloading:
+                 {aut=hslink,^bR}       Auto Receive, HS/Link
+
+     Use a text editor to modify the file COMMO.MAC.  Add the following
+     line to the UPLOAD menu section:
+
+ º                   HS/Link              using HSLINK.EXE                    º {goto hsul}
+
+     Remember to include the text beyond column 80!.   Now add this line
+     to the DOWNLOAD menu section:
+
+ º                   HS/Link              using HSLINK.EXE                    º {goto hslink}
+
+     Next, add this line to the table of download protocol macros:
+
+ HS/Link  {:hsul} {call gfnu} {exec HSLINK -p%_por %file} {}        HSLINK.EXE
+
+     Finally, add this line to the table of upload protocol macros:
+
+ HS/Link   {:hslink}  {exec HSLINK -p%_por -u%dldir} {}             HSLINK.EXE
+
+     If you made all the changes correctly, you might have a working
+     installation of HS/Link in COMMO.  Since these edits are a bit
+     tricky, I have included sample COMMO.SET and COMMO.MAC files for
+     you to examine and/or use, but remember the files might need other
+     changes for your specific system and modem configuration.
+
+     To download with HS/LINK, just you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, COMMO will
+     automatically detect HS/Link and will call up the HSLINK.EXE
+     program to handle it.
+
+     If you want to upload to the BBS while downloading, have to be
+     quick to press PGUP before the autodownload sequence is detected.
+     Then cursor down to HS/Link in the menu and hit enter.  Specify the
+     files to upload and press ENTER again.  
+
+I hope these instructions help, but remember, I can't take respons-
+ibility for any damages resulting from these instructions.  If you get
+stuck, it always helps to read the DOC files that come with COMMO and
+with HSLINK.  If all else fails, call up the tool shop and ask for help
+on the main board.  Either I will help you, or somebody else will know
+the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    v.32bis 14400           Contributors only
+  (818) 891-6780    v.32bis 14400           Free to all
+

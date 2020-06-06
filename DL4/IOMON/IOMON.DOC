@@ -1,0 +1,44 @@
+
+IOMON - Disk I/O monitor                    13-May-86 S.H.Smith
+                                            Public domain material
+
+
+'IOMON' is a small resident utility that monitors disk I/O activity.
+It intercepts the disk I/O interrupt and displays I/O status information
+on the screen during I/O wait periods.
+
+The status information is displayed as a single character in the upper
+right corner of the screen.
+
+The following status codes are displayed:
+   I - Initialize function
+   R - Read data
+   W - Write data
+   V - Verify data
+   F - Format tracks
+   * - Other functions (usually special hard disk functions)
+
+IOMON accesses video ram directly to reduce overhead.   It will operate with
+displays that are at either B000 or B800.   For other displays, you will
+get the message:
+   "ERR: CAN'T FIND VIDEO RAM"
+IOMON won't work if you get this message.
+
+IOMON does not interfere with disk I/O in any way.  It should work properly
+with any disk (or ram-disk) that is accessed through the disk services at
+INT 13H.
+
+If a disk error is detected, IOMON will display the hex error code in flashing
+reverse video.  Here is a list of common error codes:
+   01 - Illegal function
+   02 - Address mark not found
+   03 - Write protect error
+   04 - Sector not found
+   08 - DMA overrun
+   09 - Attempt to DMA accross a 64k boundary
+   10 - Bad CRS on disk read
+   20 - Controller failure
+   40 - Seek failure
+   80 - Device timeout (device not ready)
+
+

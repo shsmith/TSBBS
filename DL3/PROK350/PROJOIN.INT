@@ -1,0 +1,2 @@
+procedure display_conference_news;
+procedure join_conference;

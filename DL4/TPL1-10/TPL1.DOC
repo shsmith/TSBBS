@@ -1,0 +1,535 @@
+
+
+                              TPL/1
+
+                THREADED PROGRAMMING LANGUAGE / I
+
+   Copyright 1983, 1989 Samuel H. Smith;  All rights reserved
+
+   Do not distribute modified versions without my permission.
+   Do not remove or alter this notice or any other copyright notice.
+   If you use this in your own program you must distribute source code.
+   Do not use any of this in a commercial product.
+
+
+
+TPL1 consists of a set of primitive functions and a standard dictionary
+of layered functions.  The standard dictionary is stored in the file
+"TPL1DIC.TPL" which is loaded automatically when you enter TPL1.
+
+This is a threaded language that allows the user to extend the core
+functions by defining new commands.  New commands are defined in terms
+of the core functions or other defined functions.
+
+
+
+
+PRIMITIVE (CORE) FUNCTIONS OF TPL1:
+-----------------------------------
+
+
+<lit>
+
+Used by compiler to place literal constants into the definition of a
+compound word. Do not use this word in normal programming.
+
+
+
+" WORD (plfind)         --> pl address
+
+Lookup WORD in the dictionary and leave the dictionary entry address on
+the stack.
+
+
+
+PL-ADDRESS (plprint)
+" WORD (plfind) (plprint)
+
+Print out the definition of a dictionary entry.  PL-ADDRESS is the
+result of a "(plfind)" call.
+
+
+
+(plsize)                --> size of dictionary entry
+
+Returns the size of a dictionary entry. Used to step to the next entry
+in the dictionary after a "(plfind)" or "(plprint)" call.
+
+
+
+VALUE drop
+
+Throws away the value on top of the data stack.
+
+
+
+VALUE dup                --> VALUE VALUE
+
+Duplicates the value on top of the data stack.
+
+
+
+VALUE-1 VALUE-2 swap    --> VALUE-2 VALUE-1
+
+Exchanges the top two values on the data stack.
+
+
+
+VALUE d->c
+
+Moves VALUE from the data stack to the control stack.  This is a way to
+save temporary values.
+
+
+
+c->d                     --> VALUE
+
+Moves VALUE from the control stack to the data stack.  Restores the
+state prior to the last "d->c" call.
+
+
+
+VAL-1 VAL-2 +            --> VAL-3
+
+Adds VAL-1 to VAL-2 leaving the result on the top of the stack.
+
+
+
+VAL-1 VAL-2 -            --> VAL-3
+
+Subtracts VAL-2 from VAL-1 leaving the result on the top of the stack.
+
+
+
+VAL-1 VAL-2 *            --> VAL-3
+
+Multiply VAL-1 by VAL-2 leaving the result on the top of the stack.
+
+
+
+VAL-1 VAL-2 /            --> VAL-3
+
+Divide VAL-1 by VAL-2 leaving the result on the top of the stack.
+
+
+
+ADDRESS @                --> integer contents of ADDRESS
+
+Fetch the integer data at ADDRESS and leave it on the top of the stack.
+ADDRESS is usually the result of a VARIABLE or BUFFER word.
+
+
+
+DATA ADDRESS !
+
+Store the integer DATA at ADDRESS. ADDRESS is usually the result of a
+VARIABLE or BUFFER word.
+
+
+
+VAL-1 VAL-2 <            --> T/F
+
+If VAL-1 is less than VAL-2, TRUE (1) is left on the stack.  Otherwise,
+FALSE (0) is left on the stack.
+
+
+
+VAL-1 VAL-2 U<          --> T/F
+
+If unsigned VAL-1 is less than unsigned VAL-2, TRUE (1) is  left on the
+stack. Otherwise, FALSE (0) is left on the stack.
+
+
+
+/* ..... */
+
+A comment. Everything up to the "*/" (including white space) is ignored.
+
+
+
+" STRING                --> address of temp STRING
+
+Place the address of a literal string on the stack.  Used with
+"(plfind)", "loadfile", etc. requiring a string as argument.
+
+
+
+." any text ... "
+
+Print out literal text.  Everything up to the trailing quote is printed
+out on the standard output.  This is how you send messages to the
+console.
+
+
+
+: NAME 
+    STATEMENTS
+;
+
+Define a new word in the dictionary. This is the basic mechanism of
+extending the language.  Previous versions of NAME are hidden if NAME is
+already in the dictionary.  Everything following NAME is executed
+whenever NAME is used as a word.
+
+
+
+do 
+    STATEMENTS
+T/F while
+
+Do loops are the basic mechanisms of looping in TPL1.  Do loops may be
+nested within a word.  Do loops repeat statements while there is TRUE
+(non-0) on top of the stack.  T/F can be the result of the boolean
+operators ">", "==", etc.
+
+
+
+do 
+    STATEMENTS
+T/F until
+
+Repeat statements until there is TRUE (non-0) on top of the stack. T/F
+can be the result of the boolean operators ">", "==", etc.
+
+
+
+do 
+    ...
+    break
+    ...
+t/f while
+
+The "break" word prematurely breaks out of a "do" loop.  Break puts
+control at the word following the first "while" or "until" that is
+found.  Break is usually used with an "if" statement to allow control
+from the middle of a loop.
+
+
+
+do 
+    ...
+    continue
+    ...
+t/f while
+
+The "continue" word prematurely returns control to the top of the
+current "do" loop, skipping the rest of the loop.  Continue is usually
+used with an "if" statement to allow control from the middle of a loop.
+
+
+
+T/F if
+    TRUE-STATEMENTS
+[else
+    FALSE-STATEMENTS]
+endif
+
+The "if" statement is the basic form of decision control in TPL1. If
+looks at the T/F value on the top of the stack and executes
+TRUE-STATEMENTS if it is TRUE (non-0).  If the value is FALSE (0), the
+first statement following an "else" or "endif" is executed. The "else
+FALSE-STATEMENTS" part is optional.  If statements DO NOT NEST within a
+single word.
+
+
+
+variable NAME
+
+Declares a global integer variable with NAME.  Later use of "NAME"
+results in the address of the variable being left on the stack to be
+used with the "@" or "!" statements.
+
+
+
+SIZE buffer NAME
+
+Allocates a global buffer, SIZE bytes long with NAME. Later use of
+"NAME" results in the address of the buffer being left on the stack.
+The statement
+        2 buffer NAME
+has the same meaning as
+        variable NAME
+in TPL1; that is, variables are pointers to two-byte buffers.
+
+
+
+VALUE constant NAME
+
+Declares a constant.  Later use of "NAME" results in "VALUE" being left
+on the stack.
+
+
+
+VALUE putchar
+VALUE .c
+
+Output the value on the top of stack as a character.  This is a way to
+print any kind of character.
+
+
+
+VALUE I.
+VALUE .
+
+Output the value on the top of stack as an ascii integer.  This is the
+way to print numbers.
+
+
+
+VALUE U.
+
+Output the value on the top of stack as an ascii unsigned integer. This
+is the way to print large numbers.
+
+
+
+getchar                  -> ascii value of next input character
+
+Gets the next input character and places its ascii value on the top of
+the stack.  This is a way to get raw input from the console.
+
+
+
+getint                   -> value of input word as an integer
+
+Gets the next input word, converts it to an integer and leaves the value
+on the top of the stack.  This is a way to get numeric input from the
+console.
+
+
+
+getstr                   --> address of input word in temp
+
+Place the address of an input string on the stack.  Used with
+"loadfile", "typestr", etc. requiring a string as argument.
+
+
+
+NUMBER spaces
+
+Outputs NUMBER spaces to the console.  This is a way of tabbing or
+spacing out the output to the console.
+
+
+
+newline
+
+Starts a new line on the console. Prints RETURN and LINEFEED.
+
+
+
+" FILENAME loadfile
+
+Starts reading input from the file specified by FILENAME.  Input reverts
+back to the console when the end of file is reached. "loadfile" calls do
+not nest.  This is the way to load stored programs.  Programs are
+typically prepared with an outside editor and then loaded with the
+loadfile command.
+
+
+
+exit
+
+Immediately return to the system command level.
+
+
+
+freemem
+
+Places on the stack the approximate amount of free memory.
+
+
+
+.dict
+
+Print a list of words in the dictionary.
+
+
+
+
+STANDARD DICTIONARY FUNCTIONS:
+------------------------------
+
+
+VAL-1 VAL-2 >=          --> T/F
+
+The ">=" relational operator leaves TRUE (non-1) on the stack if VAL-2
+is greater than or equal to VAL-1.  Otherwise FALSE (0) is left on the
+stack.
+
+
+
+VAL-1 VAL-2 >            --> T/F
+
+The ">" relational operator leaves TRUE (non-1) on the stack if VAL-2 is
+greater than VAL-1.  Otherwise FALSE (0) is left on the stack.
+
+
+
+VAL-1 VAL-2 ==          --> T/F
+
+The "==" relational operator leaves TRUE (non-1) on the stack if VAL-2
+is equal to VAL-1.  Otherwise FALSE (0) is left on the stack.
+
+
+
+VAL-1 VAL-2 !=          --> T/F
+
+The "!=" relational operator leaves TRUE (non-1) on the stack if VAL-2
+is not equal to VAL-1.  Otherwise FALSE (0) is left on the stack.
+
+
+
+VAL-1 bool               --> T/F
+
+Converts VAL-1 into a boolean TRUE/FALSE flag.  Leaves TRUE (1) on the
+stack if VAL-1 is non-zero.  Otherwise FALSE (0) is left on the stack.
+
+
+
+VAL-1 VAL-2 and          --> T/F
+
+Leaves TRUE on the stack if both VAL-1 and VAL-2 are TRUE.
+
+
+
+
+VAL-1 VAL-2 or          --> T/F
+
+Leaves TRUE on the stack if either VAL-1 or VAL-2 is TRUE.
+
+
+
+help
+
+The "help" command causes the file "helpfile" to be loaded.  Helpfile
+can be edited to print any kind of useful information.
+
+
+
+cls
+
+Clear screen and home cursor.
+
+
+
+ADDRESS ?
+
+Prints out the integer data at ADDRESS.  Used to print the value of a
+VARIABLE word.
+
+
+
+1+
+
+Adds 1 to the value on the top of the stack.
+
+
+
+1-
+
+Subtracts 1 from the value on the stop of the stack.
+
+
+
+ADDRESS inc
+
+Increments the variable at ADDRESS.  Adds 1 to the contents of a
+VARIABLE word.
+
+
+
+ADDRESS dec
+
+Decrements the variable at ADDRESS.  Subtracts 1 from the contents of a
+VARIABLE word.
+
+
+
+" WORD decode
+
+Decodes the definition of WORD and outputs it to the console.  This is
+how you see how a word is defined.
+
+
+
+dict
+
+Decodes all of the words in the dictionary.
+
+
+
+                               DISCLAIMER
+                               ==========
+
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY
+     LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL
+     DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM,
+     OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+
+                                 LICENSE 
+                                 =======
+   SourceWare: What is it? 
+   -----------------------
+
+   SourceWare is my name for a unique concept in user supported software.
+   Programs distributed under the SourceWare concept always offer source
+   code.
+
+   This package can be freely distributed so long as it is not modified or
+   sold for profit.  If you find that this program is valuable,  you can send
+   me a donation for what you think it is worth.  I suggest about $30.
+
+   Send your voluntary contributions to:
+                 Samuel H. Smith
+                 5119 N. 11 ave 332
+                 Phoenix, AZ 85013
+
+   When you send a contribution, your existing user account on The Tool Shop
+   will be upgraded for extended time and downloading.  You will also be able
+   to download a special "register" program.  The register program allows you
+   to install your own "registration" message seen by callers when opening
+   ProDoor.
+
+
+   Why SourceWare? 
+   ---------------
+
+   Why do I include source code?  Why isn't the donation mandatory?  The
+   value of good software should be self-evident.  The source code is the key
+   to complete understanding of a program.  You can read it to find out how
+   things are done.  You can also change it to suit your needs, so long as
+   you do not distribute the modified version without my consent.
+
+
+   Copyright
+   ---------
+
+   If you modify this program, I would appreciate a copy of the new source
+   code.   I am holding the copyright on the source code, so please don't
+   delete my name from the program files or from the documentation.
+
+                                 SUPPORT
+                                 =======
+
+   I work very hard to produce a software package of the highest quality and
+   functionality.  I try to look into all reported bugs, and will generally
+   fix reported problems within a few days.
+
+   Since this is user supported software under the SourceWare concept, I
+   don't expect you to contribute if you don't like it or if it doesn't meet
+   your needs.
+
+   If you have any questions, bugs, or suggestions, please contact me at:
+
+                        The Tool Shop BBS
+                       (602) 279-2673 (2400) FREE LINE
+                       (602) 264-3969 (HST 9600)
+                       (602) 279-0230 (HAYES 9600)
+
+   The latest version is always available for downloading. 
+
+   Enjoy!     Samuel H. Smith, Author and Sysop of The Tool Shop.
+

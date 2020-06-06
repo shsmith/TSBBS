@@ -1,0 +1,29 @@
+
+
+        Thank you for registering your copy of ProDoor!
+
+        The new REGISTER program allows you to insert your own custom
+        registration message in place of the standard "Courtesy of the
+        Tool Shop" display.
+
+        THIS PROGRAM IS FOR REGISTERED PRODOOR USERS ONLY!
+        DO NOT GIVE IT TO ANYONE ELSE!
+
+        Run this program from your ProDoor directory.
+
+
+
+        Also, for your information:
+
+        ProDoor and ProEdit have an undocumented feature that allows you
+        to completely turn off the "* Via" taglines in new message entry.
+
+        Add the statement
+                SET NOVIA=ON
+        to your PRODOOR batch or AUTOEXEC.BAT file.
+
+
+        This information is not public, so please don't pass it on.
+
+
+                                                    -- Sam

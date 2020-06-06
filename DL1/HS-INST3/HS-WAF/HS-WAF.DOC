@@ -1,0 +1,27 @@
+
+
+
+        
+                   INSTALLING HS/LINK FOR USE WITH WAFFLE 1.64
+        
+        The files in this archive should be added to the end of the files 
+        in the /waffke/extern directory bearing their names.  Then, edit 
+        your /waffle/menus/protocol menu to reflect that you added 
+        HS/LINK.  Copy the HS/LINK program into your /waffle/bin directo-
+        ry or wherever you nomrally keep your protocols.  If that direc-
+        tory is not on the search path, edit the _send and _receive files 
+        to reflect that.
+        
+        Presently, there is no way within Waffle to cope with bidirec-
+        tional transfers, or batch transfers for that matter.  You might 
+        want to use the -NU option to disallow bidirectional transfers, 
+        or if you want to receive uploads anyway, slect an upload direc-
+        tory on the command line, or point to a configruation file you've 
+        created and want to use if HSLINK.EXE is not on your search path.
+        
+        Good luck!
+        
+        -Ian Justman (ianj@ijpc.UUCP)  14 December 1991
+
+
+

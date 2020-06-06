@@ -1,0 +1,105 @@
+
+                              DLP HS/Link
+
+                     Copyright 1993 Samuel H. Smith
+                          All Rights Reserved
+
+
+            A version of the HS/Link File Transfer Protocol
+                              for use with
+                        ProComm Plus for Windows
+
+                    (PRELIMINARY APPLICATION NOTES)
+
+
+HSLINK.DLP is a special version of the HS/Link program which has been
+written specifically for use by ProComm Plus for Windows (PROWIN).
+
+
+                              INSTALLATION
+
+If you are upgrading from a previous version of HSLINK.DLP, you should
+first remove HSLINK.DLP from your PROWIN directory and then load PROWIN.
+This removes internal information from PROWIN's PW.PRM file to prepare
+for installation of the new version of HSLINK.DLP.
+
+Simply place the file HSLINK.DLP in your PROWIN directory, and the
+HSLINK protocol will automatically appear in the protocol menus and will
+work as other protocols do in this environment.
+
+If you wish to set additional HS/Link options, you can create an
+HSLINK.CFG file in your PROWIN directory.
+
+If you wish to include HS/Link in your "host mode" operations, copy the
+supplied HOST.WAS file to your PROWIN\ASPECT directory.
+
+
+
+                               OPERATION
+
+Once HSLINK.DLP is installed in your PROWIN directory, the HS/Link
+protocol will automatically appear in PROWIN's protocol menus.
+Downloads are automatic and require no special attention.
+
+
+
+                              DIFFERENCES
+
+HSLINK.DLP is similar to the standard HSLINK with the following
+exceptions:
+
+*  GIF files are automatically displayed onscreen during file transfer.
+
+*  The command line is automatically provided by PROWIN.  Use the
+   HSCONFIG utility or edit the HSLINK.CFG file to provide command
+   options.
+
+*  The -P, -PB, -PI, -B, -FT, -HC, -HR options are ignored since PROWIN
+   now controls all COM port details.
+
+*  The -NF -NV -CB -CM -CT -CW -CP options are ignored since PROWIN and
+   the Windows Control Panel now control display and colors.
+
+
+
+                                  NOTE
+
+This is a pre-release test version of this program.  Some of the
+following features are not yet fully implemented:
+
+*  The XON/XOFF handshake has not been tested and may not work,
+   depending on how PROWIN's built-in drivers handle XON/XOFF handshake.
+   I recommend you use the -HX -! options in your HSLINK.CFG file until
+   this is resolved in a later test version.
+
+*  This version runs only in "unregistered" mode and cannot be branded.
+
+*  Because this is an early beta version, please keep track of any
+   problems you have, including HSERR log listings, and report them to
+   the author so corrections can be made.  THANKS!
+
+
+              !!!!!!!!!!!!!! BETA TEST VERSION !!!!!!!!!!!!!!!!
+     This version may seem to work, but it has not been fully tested and
+              is not an official release!  You have been warned.
+           PLEASE MAKE FREQUENT BACKUP COPIES OF ALL CRITICAL FILES
+              !!!!!!!!!!!!!! BETA TEST VERSION !!!!!!!!!!!!!!!!
+
+    Beta Testing is a means of getting widespread exposure to unfinished
+    versions of a program during the development process.  The idea is for
+    as many users as possible to "beta test" the program and to make
+    suggestions and report bugs.  This type of widespread testing can lead
+    to a very stable and bug-free finished product (the RELEASE version).
+    Please read HSLINK.NEW to see what has been changed recently.  If you
+    encounter problems or would like to make a suggestion, please read the
+    SUPPORT section of HSLINK.DOC for instructions on how to reach the
+    author.
+
+    HS/Link product support is available by voice at (818) 891-4228
+    between 9am and 6pm pacific time, TUESDAY through SATURDAY.
+
+    To obtain newer beta test versions, please call (818) 891-1344
+    and select the "free downloading" service from the initial "special
+    services menu".  You need not be a registered Tool Shop BBS user to
+    access this special service.
+

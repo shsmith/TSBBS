@@ -1,0 +1,92 @@
+;
+; PROLON.CNF - ProLogon 1.0á configuration file (1-5-90 and later)
+;
+; Com port driver - INTERRUPT or BIOS
+INTERRUPT
+;
+;
+; Option Keywords
+;
+MIN_BAUD 1200           ;lowest baud rate to allow into system
+
+AUTO_RESET_MINUTES 10   ;perform automatic modem reset after specified
+                        ;idle time.  set to 9999 to disable auto reset.
+
+DAILY_TIME_LEVEL 100    ;exclude all security level 100 and higher
+                        ;users from daily time limits.
+
+EXPIRE_DAYS 365         ;number of days before expiration for new users
+
+;COMMON_DIR L:\PROD      ;common directory for display files
+                        ;default is to use current directory
+
+DISPLAY_NEWS BOTH       ;DISPLAY_NEWS ON causes internal display of
+                        ;conference news, but defeats the initial "scan
+                        ;for personal mail" prompt.
+                        ;DISPLAY_NEWS OFF causes prologon to trigger a
+                        ;news display and personal mail scan when
+                        ;ProDoor is first opened.
+                        ;DISPLAY_NEWS BOTH causes internal display of
+                        ;conference news, and also signals ProDoor to
+                        ;perform the "personal mail" scan when first opened.
+
+FORCE_MONITOR OFF       ;FORCE_MONITOR ON causes ProLogon to stay in the
+                        ;Node Monitor display instead of the normal
+                        ;control panel.
+
+RING_COUNT 1            ;controls the number of telephone rings required
+                        ;before the modem is commanded to answer the phone.
+
+COUNT_LOCAL ON          ;set to OFF to disable counting local logins
+                        ;in the total system calls counter.
+
+;
+;
+; Door control lines:  Format of each door control line is:
+;    LEVEL DOORMENU DOORLIST {*}INIT_DEFAULT {*}RET_DEFAULT
+;
+; Where:
+;    LEVEL          is the user's security level for this control line
+;
+;    DOORMENU       is the full path and filename of the door menu
+;    DOORLIST       is the full path and filename of the doors.dat file
+;
+;    INIT_DEFAULT   is the initial default door command after logon.
+;                   begin with '*' to force this option without prompting.
+;                   begin with '**' to force option and prevent user from
+;                   over-riding with command stack.
+;
+;    RET_DEFAULT    is the default door command after return from a door.
+;                   begin with '*' to force this option without prompting.
+;                   begin with '**' to force option and prevent user from
+;                   over-riding with command stack.
+;
+; If no matching security level is found, the LAST door control line will
+; be used.  This allows you to have a "default" door system for most users,
+; and additional special door control lines for specific levels.
+;
+; Examples:
+;    50 c:\pcb\gen\doors c:\pcb\main\doors.dat *1 *G
+;       This door control line applies to security level 50 users.
+;       It displays the c:\pcb\gen\doors door menu, uses the
+;       file c:\pcb\main\doors.dat to control actual doors,
+;       forces the caller initially into door 1.  On return from
+;       door 1, the 'G'oodbye command is forced.
+;
+;    2 L:\pcb\gen\doors2 L:\pcb\main\doors.dat **S 1
+;       forces into system for scripts, disables user over-riding
+;       's' option with command stack, later gives default of door 1
+
+
+; new users - forces into door#15 for registration script, disables user
+;             over-riding '15' option with command stack, later forces
+;             caller offline if not upgraded by door 15.
+2 L:\pcb\gen\doors2 L:\pcb\main\doors.dat **15 *G
+
+; sysop local login - force door 10, later default to door 1
+;120 L:\pcb\gen\doors L:\pcb\main\doors.dat *10 1
+
+; normal users - forces door 1 initially, then defaults to (g)oodbye
+; (since this is the last door control line it applies to all other levels)
+10 L:\pcb\gen\doors L:\pcb\main\doors.dat *1 G
+

@@ -1,0 +1,133 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                         S.H.Smith-Library Source Code
+                         108 files using 500,042 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+TOOL-INC.ZIP   108586  07-29-93  Tool Shop include library.
+                               | Includes about a hundred little utilities tha
+                               | can be included in your Turbo Pascal programs
+                               | All source code. Source and TPU files for
+                               | several library units common to various Tool
+                               | Shop utility programs.  Includes buffered I/O
+                               | console input, full screen display/edit
+                               | handlers, DOS based memory allocation, error
+                               | trap and reportin unit, low level DOS file I/
+                               | functions unit, mini (bios based) CRT
+                               | replacement, text file sharing unit, quick
+                               | text file reading unit, general tools unit
+                               | (based on most of the TOOL-INC libraries),
+                               | interrupt driven communications unit, and
+                               | more.
+TOOL-PAS.ZIP    92719  07-29-93  Tool Shop *.PAS tool sources
+TOOL-USE.ZIP    72515  08-07-93  Tool Shop Library Units.
+TOOLS.ZIP       15358  08-07-93  Top level TOOLS unit
+ADDSUB.ZIP       1503  06-02-89  C-like add and subtract macros
+ANSICOLR.ZIP     3427  01-15-91  Generate ANSI codes for major colors
+ANYSTRIN.ZIP     1470  11-03-92  General string declarations
+APPENDC.ZIP      1398  06-02-89  Append characters and strings
+ATOF.ZIP         1408  06-02-89  Ascii to floating point conversion
+ATOI.ZIP         1821  02-12-92  Ascii to integer conversion
+ATTACH.ZIP       2687  03-01-89  Attach a new handler to an interrupt vector
+BAKFILE.ZIP      1158  03-21-90  Create a backup of a file
+BITMAP.ZIP       1564  01-15-91  Manipulate PCBoard 14 "BitMap" structures
+BLINE.ZIP        1606  05-16-90  .
+BORDER.ZIP       1815  03-01-89  Display window borders in many styles
+BSORT.ZIP        1189  03-01-89  Generic binary sort
+BUFIO.ZIP        3334  07-01-92  Buffered file unit
+BUFTEST.ZIP      1561  07-04-89  Test bufio unit
+BYTEFLAG.ZIP     1362  06-02-89  Manipulate flag bits within a byte variable
+CAPSTR.ZIP       1035  07-08-89  .
+CENTER.ZIP       1173  06-02-89  Center a string
+CHARBIT.ZIP      1970  06-02-89  Character font bit lookup
+CINPUT.ZIP      11019  12-12-92  Simple input handlers
+COPYTIME.ZIP     1097  06-02-89  Copy time/date from one file to another
+CRC16.ZIP        2236  06-02-89  Very fast 16 bit CRC calculation/MASM
+CRC32.ZIP       10113  12-31-89  Very fast 32 bit CRC in MASM, C and Pascal
+DELAY.ZIP        1344  06-02-89  Milisecond delay while giving up time
+DELSPACE.ZIP     1299  05-19-90  Delete spaces from a string
+DISKSPAC.ZIP     1511  01-23-90  Calculate disk free space
+DISPEDIT.ZIP     6027  09-01-92  Display/Edit user interface unit
+DISPLN.ZIP       2378  06-02-89  Display line
+DOSIO.ZIP        2319  06-02-89  Dos low level i/o interface
+DOSMEM.ZIP       2591  02-22-93  Allocate dynamic variables via DOS;saves heap
+DTOF.ZIP         1954  06-02-89  Double to float conversion
+ERRMSG.ZIP       1702  10-08-91  Get text for all TPAS 4.0 error messages
+ERROR.ZIP        1027  06-02-89  General error handler
+ERRTRAP.ZIP      2243  10-08-91  Unit traps errors and explains them
+EXISTS.ZIP       1283  06-02-89  Does a file exist?
+FILEDATE.ZIP     1305  06-02-89  Get file date/time as a real
+FLAGS.ZIP        1492  06-02-89  Manipulate flag bits within a word variable
+FTOA.ZIP         1210  06-02-89  Floating point to ascii conversion
+GETENV.ZIP       1541  06-02-89  Get environment variables
+GETFDAT0.ZIP     1386  06-02-89  Get file date, mm-dd-yy format
+GETFDATE.ZIP     1299  06-02-89  Get file date as a string, yy-mm-dd format
+GETFILE2.ZIP     1735  08-10-92  Expand wildcard file lists, small version
+GETFILE3.ZIP     1924  08-10-92  Expand wildcard file lists, VARSTR version
+GETFILES.ZIP     2177  06-02-89  Expand filelists
+GETKEY.ZIP       1396  06-02-89  Get key, maps extended keys into consts
+GETTIME.ZIP      1394  06-02-89  Get time of day
+GIVETIME.ZIP     1978  11-08-92  Give up extra time under doubledos
+HEAPMEM.ZIP      1265  06-02-89  Conventional heap version of dosmem
+HELPME.ZIP       1900  03-01-89  Popup help unit
+INCDEC.ZIP        787  03-01-89  Increment/decrement macros
+INPUT.ZIP        1831  06-02-89  CTTY-compatible line input
+INT2REAL.ZIP     1042  06-02-89  Unsigned integer to real conversion
+INVIS.ZIP        1209  06-02-89  Is program invisible under doubledos?
+ISWILD.ZIP       1246  06-02-89  Determine if a filespec contains wildcards
+ITOA.ZIP         1115  06-02-89  Integer to ascii conversion
+ITOA1.ZIP        1286  02-12-92  Integer to ascii (no length limit)
+ITOA2.ZIP        1120  06-02-89  Integer to ascii (2 chars) conv
+ITOH.ZIP         1541  05-28-90  Integer to hex conversion
+ITOU.ZIP         1322  06-02-89  Integer to unsigned real conversion
+KEYPRESS.ZIP     1129  06-02-89  Check for keypress without CRT unit
+LJUST.ZIP        1292  06-02-89  Left-justify in writeln macro
+LOCFILE.ZIP      1775  06-02-89  Locate file according to paths
+LOCKS.ZIP        1443  03-01-89  Resource management
+LONGJMP.ZIP      1198  03-01-89  C-like longjump error recovery facility
+LTOR.ZIP         1471  07-29-93  Long integer to real conversion
+MARKTIME.ZIP     1133  06-02-89  Mark current time of day in a variable
+MDOSIO.ZIP       8911  02-22-93  Dos input/output library, small version
+MINICRT.ZIP      5762  10-17-92  CRT unit replacement uses only BIOS calls
+MINIDISP.ZIP     1131  06-02-89  Small/quick display function for TPAS 3.0
+MOVEFILE.ZIP     2169  01-24-91  Move files, copy when needed
+OPENSHAR.ZIP     5152  02-22-93  Open files with network file sharing
+PATTERN.ZIP      2271  05-19-90  Unix style pattern matching (wildcards)
+PLOTLIB.ZIP      3064  01-31-90  Graphics library
+POP2.ZIP         2424  03-01-89  Simplified pop-up window library
+POP3.ZIP         1784  03-01-89  Pop-up window library for tp4
+POPUP.ZIP        3347  03-01-89  Pop up windows/fast display
+PREPHELP.ZIP     2237  03-01-89  Prepare popup help
+PRINTC.ZIP       1105  03-01-89  Fast interface to PRN device
+PULL.ZIP         2863  10-18-89  Simplified pull-down menu system
+QREAD.ZIP        2817  06-02-89  Quick readln
+QTEST.ZIP        1435  06-02-89  Test qread unit
+QUELIB.ZIP       1845  06-02-89  Fifo queue library (inline macros)
+QWRITE.ZIP       1552  07-09-89  Quick write
+READBAS.ZIP      3277  05-28-92  Read BASIC comma-delimited data files
+REGPACK.ZIP       864  03-01-89  Register package declaration
+REMPATH.ZIP      2107  05-27-90  Remove / manipulate filename paths
+REPLSTR.ZIP      1351  02-25-90  String replacement
+REVERSE.ZIP      1098  03-01-89  Reverse order of a string
+RPNCALC.ZIP      2200  03-01-89  Rpn calculator
+STOA.ZIP         1183  07-02-89  Single-float to ascii conversion
+STOF.ZIP         1752  06-02-89  Msbasic "Single" to Turbo "Float/real" conv.
+STOLOWER.ZIP     1438  06-02-89  Map strings to lower case (inline)
+STOUPPER.ZIP     1495  03-02-91  Map string toupper case
+STOZ.ZIP         1808  06-02-89  String<-->zstring conversion
+STRIPSPC.ZIP     1230  05-19-90  Strip spaces from strings
+STRLIB.ZIP       1301  06-02-89  String macro library
+STRUTIL.ZIP      1331  06-02-89  String utility macros
+SYSDATE.ZIP      1230  06-02-89  Get system date/time strings
+SYSDATE0.ZIP     1388  06-02-89  Get system date
+SYSDATE2.ZIP     1490  06-02-89  Get system date in mm-dd-yy format
+SYSDATE3.ZIP     1201  06-02-89  Another way to get the system date
+TOLOWER.ZIP      1094  06-02-89  Map string to lower case; MASM
+TOP.ZIP          2188  03-01-89  Top level menu handler (for PULL.arc)
+TRANSLAT.ZIP     1256  06-02-89  Translate characters in a string
+TREELIB.ZIP      2579  06-02-89  Tree display library
+VARSTR.ZIP       1721  11-21-91  Variable allocation string library
+WILDCARD.ZIP     1488  01-24-91  Wildcard filename matching

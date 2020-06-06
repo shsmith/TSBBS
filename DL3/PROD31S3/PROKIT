@@ -1,0 +1,8 @@
+echo off
+rem pcboard door script for PROKIT demo program
+cd \pro
+prokit prokit.cnf c:\pcb2
+cd \pcb2
+echo on
+if exist event.bat event
+board

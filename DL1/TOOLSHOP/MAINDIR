@@ -1,0 +1,95 @@
+                     QUICK SUMMARY OF MAIN BOARD FILE AREAS 
+ 1-S.H.Smith-HS/Lin 35-Misc-Games and F 57-Util-Networking  77-Uploads M-Z [>30
+ 2-S.H.Smith-Librar 37-Misc-Programs fo 58-Util-OS/2        78-Blocked, Unwante
+ 3-S.H.Smith-ProDoo 38-Misc-Science, En 59-Util-Printer Uti 80-Recent Uploads.
+ 4-S.H.Smith-All Ot 40-Misc-Religious   60-Util-Screen Util 
+ 6-Comm-Terminal Pr 41-Misc-Space/Astro 61-Util-Virus       
+ 7-Comm-Internet an 42-Misc-Text Files  62-Util-ZIP and oth 
+12-Comm-Text, ANSI, 43-Misc-Word Proces 63-Util-All Other U 
+13-Graph-Clip Art   44-Util-CD-ROM Util 64-Win-Applications 
+19-Lang-"C"/Unix Co 45-Util-Batch Utili 65-Win-Printer/Scre 
+20-Lang-"C" Source  46-Util-Debugging & 66-Win-Fonts        
+21-Lang-"ADA" Sourc 47-Util-Hard and Fl 67-Win-Game Program 
+22-Lang-"AI" Source 48-Util-DOS Utiliti 68-Win-Programming  
+23-Lang-"Assembly"  49-Util-File Manage 69-Win-Various Util 
+24-Lang-"Basic" Sou 50-Util-Graphics    70-Win-Wallpaper, I 
+25-Lang-"Forth" Sou 51-Util-Keyboard    71-Win-Winsock and  
+26-Lang-"Pascal" So 52-Util-Memory      72-CPU-Apple & Maci 
+27-Lang-All Other S 53-Util-Menu Progra 73-CPU-Atari, Amiga 
+31-Misc-Encryption  54-Util-Modem Confi 74-CPU-CP/M and Oth 
+33-Misc-Database    55-Util-Mouse       75-CPU-All Other Ma 
+34-Misc-Educational 56-Util-Multi-Taski 76-Uploads A-L [>30 
+ 
+     When you see a File Area you would like to investigate, answer "N" 
+     to the "More:" prompt, then enter the Number of the Area to view it! 
+
+                The Tool Shop - Specializing in Software Tools
+                            [MAIN BOARD FILE AREAS]
+
+   Area                Description                 Files      File Sizes
+  ------  ------------------------------------   --------  ---------------
+     1     S.H.Smith-HS/Link & Tool Shop Utils        64        5,713,818
+     2 ú ú S.H.Smith-Library SourceúCode ú ú ú ú ú ú 108 ú ú ú ú ú500,042
+     3     S.H.Smith-ProDoor/Logon & PCB Utils        79        4,848,405
+     4 ú ú S.H.Smith-All Other Programsú ú ú ú ú ú ú 175 ú ú ú ú2,928,621
+     6     Comm-Terminal Programs                      1           40,577
+     7 ú ú Comm-Internet and World WideúWebú ú ú ú ú ú39 ú ú ú ú8,775,439
+    12     Comm-Text, ANSI, RIP Utilities             60        9,018,092
+    13 ú ú Graph-ClipúArtú ú ú ú ú ú ú ú ú ú ú ú ú ú ú 2 ú ú ú ú ú402,887
+    19     Lang-"C"/Unix Compilers & Utils           142       17,598,431
+    20 ú ú Lang-"C"úSource Codeú ú ú ú ú ú ú ú ú ú ú 330 ú ú ú 31,654,091
+    21     Lang-"ADA" Source Code                     58        1,528,652
+    22 ú ú Lang-"AI" SourceúCode ú ú ú ú ú ú ú ú ú ú ú64 ú ú ú ú2,526,995
+    23     Lang-"Assembly" Source Code               218       10,088,653
+    24 ú ú Lang-"Basic"úSource Codeú ú ú ú ú ú ú ú ú ú66 ú ú ú ú9,441,894
+    25     Lang-"Forth" Source Code                   33        1,761,407
+    26 ú ú Lang-"Pascal" SourceúCode ú ú ú ú ú ú ú ú 178 ú ú ú 14,709,132
+    27     Lang-All Other Source Code                 59        9,723,740
+    31 ú ú Misc-Encryption & Privacy ú ú ú ú ú ú ú ú ú40 ú ú ú ú6,367,406
+    33     Misc-Database                              13        2,358,197
+    34 ú ú Misc-Educationalú ú ú ú ú ú ú ú ú ú ú ú ú ú 7 ú ú ú ú2,584,994
+    35     Misc-Games and Fun Stuff                   26       21,852,203
+    37 ú ú Misc-Programs for Homeú&úFamily ú ú ú ú ú ú67 ú ú ú 15,576,425
+    38     Misc-Science, Engineering, Math            33        5,263,875
+    40 ú ú Misc-Religiousú ú ú ú ú ú ú ú ú ú ú ú ú ú ú37 ú ú ú 10,886,966
+    41     Misc-Space/Astronomy/Mapping                5        1,143,545
+    42 ú ú Misc-Text Files onúAllúSubjects ú ú ú ú ú 263 ú ú ú 19,269,361
+    43     Misc-Word Processing                       19        3,873,242
+    44 ú ú Util-CD-ROM Utilities ú ú ú ú ú ú ú ú ú ú ú21 ú ú ú ú2,085,697
+    45     Util-Batch Utilities                       32        1,241,031
+    46 ú ú Util-Debuggingú&úBenchmarkú ú ú ú ú ú ú ú ú21 ú ú ú ú2,673,089
+    47     Util-Hard and Floppy Disk                  70        4,569,300
+    48 ú ú Util-DOSúUtilitiesú ú ú ú ú ú ú ú ú ú ú ú 119 ú ú ú ú8,719,184
+    49     Util-File Management                       86        9,262,084
+    50 ú ú Util-Graphics ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú34 ú ú ú 10,403,647
+    51     Util-Keyboard                              41        1,308,436
+    52 ú ú Util-Memory ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú24 ú ú ú ú2,598,150
+    53     Util-Menu Programs                         11        3,113,346
+    54 ú ú Util-ModemúConfig & Utility ú ú ú ú ú ú ú ú65 ú ú ú ú3,416,644
+    55     Util-Mouse                                 21        1,978,275
+    56 ú ú Util-Multi-Taskingú ú ú ú ú ú ú ú ú ú ú ú ú13 ú ú ú ú1,549,296
+    57     Util-Networking                            65        9,828,576
+    58 ú ú Util-OS/2 ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú51 ú ú ú 17,380,671
+    59     Util-Printer Utils & Fonts                 51        6,703,500
+    60 ú ú Util-Screen Utils & Fonts ú ú ú ú ú ú ú ú ú58 ú ú ú ú3,409,832
+    61     Util-Virus                                 30       13,860,694
+    62 ú ú Util-ZIPúandúotherúCompressionú ú ú ú ú ú ú96 ú ú ú ú9,723,980
+    63     Util-All Other Utilities                    5          148,880
+    64 ú ú Win-Applicationsú ú ú ú ú ú ú ú ú ú ú ú ú 207 ú ú ú108,531,619
+    65     Win-Printer/Screen Drivers                  6        2,595,313
+    66 ú ú Win-Fonts ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú42 ú ú ú ú4,950,933
+    67     Win-Game Programs                          32       15,299,105
+    68 ú ú Win-Programming Utils ú ú ú ú ú ú ú ú ú ú ú 6 ú ú ú ú1,559,593
+    69     Win-Various Utility Programs               89       25,072,059
+    70 ú ú Win-Wallpaper,úImages and Icons ú ú ú ú ú ú 5 ú ú ú ú1,141,147
+    71     Win-Winsock and Internet Apps              95       34,368,207
+    72 ú ú CPU-Apple & Macintosh ú ú ú ú ú ú ú ú ú ú ú 9 ú ú ú ú1,728,973
+    73     CPU-Atari, Amiga & Other 68000's           62        3,585,022
+    74 ú ú CPU-CP/MúandúOtherú8úbitúMachines ú ú ú ú ú37 ú ú ú ú3,335,610
+    75     CPU-All Other Machine Types                22        1,331,712
+    76 ú ú Uploads A-L [>30údays]ú ú ú ú ú ú ú ú ú ú 751 ú ú ú209,670,376
+    77     Uploads M-Z [>30 days]                    879      313,396,470
+    78 ú ú Blocked,úUnwanted & HackedúFilesú ú ú ú ú ú 2 ú ú ú ú ú ú ú ú0
+    80     Recent Uploads.  Thanks!                1,166      652,709,032
+                                                 --------  ---------------
+                                Overall Totals     6,510    1,713,686,573

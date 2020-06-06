@@ -1,0 +1,27 @@
+
+;
+; Configuration file for UNARCM 9/13/88
+;
+
+post all                        ;post all messages, even if not "echo" messages
+
+rename SYSOP, Host Sysop        ;generic for all hosts
+origin Other Systems
+
+conference Conf36
+
+exclude Origin: The Tool Shop
+exclude Via: The Tool Shop
+exclude STATUS: RECEIVER ONLY      ;exclude private messages
+
+convert MAIN, Conf36
+convert BETA, Conf36
+convert Support, conf36
+convert 1, conf36
+convert 2, conf36
+convert 3, conf36
+convert 4, conf36
+convert 5, conf36
+convert 6, conf36
+convert 7, conf36
+

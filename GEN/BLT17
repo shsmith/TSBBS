@@ -1,0 +1,660 @@
+
+Fly Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    310     FNairFrame           60         58          0          0
+    311     FNairTrCtl           21         21          0          0
+    312     FNairlines          200        200          0          0
+    315     FNforSale           125        122          4          0
+    316     FNgeneral            66         61          0          0
+    314     FNinstruct           29         29          0          0
+    317     FNjobs               32         32          0          0
+    318     FNradioCtl           55         55          0          0
+    319     FNsimulat           122        111          0          0
+    313     FNstories            46         46          0          0
+    321     Guest.upload          0          0          0          0
+                                      ---------  ---------  ---------
+                 TOTALS FOR Fly Net        735          4          0
+
+Job Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    265    *JNadmin           1,135        341          0          0
+    256     JNclAdmin            70         70          0          0
+    257     JNclIntnat          248        248          0          0
+    255     JNclMisc            422        315          0          0
+    258     JNclMulti           401        321          0          0
+    259     JNclProMgt          446        349          0          0
+    260     JNclTech            761        340          0          0
+    266     JNcommon            384        334          1          0
+    261     JNfairness           61         61          0          0
+    264     JNfairs              61         61          0          0
+    262     JNintrview           37         37          0          0
+    267     JNresAdmin           48         48          0          0
+    270     JNresMisc           100        100          0          0
+    268     JNresProMg           81         81          0          0
+    269     JNresTech           180        180          0          0
+    263     JNtips              351        299          0          0
+                                      ---------  ---------  ---------
+                 TOTALS FOR Job Net      3,185          1          0
+
+Local Areas:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+      3     Adult               475         31          8          0
+     38    *Agents               58         33          0          0
+      1    *Boosters            837        261          0          0
+      0     Main Board        8,272        393        949          0
+      2     Support           1,870        438          6         22
+                                      ---------  ---------  ---------
+             TOTALS FOR Local Areas      1,156        963         22
+
+Los Angeles Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    182     LAbuySell         2,110        341         17        209
+    183     LAchat              169        169          2          7
+    181     LAfilmVid            54         53          0          0
+    185     LAweather         2,392        300          0        442
+    180    *MogurAdmin          243        243          0         68
+    184     Multibase             8          6          0          0
+                                      ---------  ---------  ---------
+         TOTALS FOR Los Angeles Net      1,112         19        726
+
+Lucifernet:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    190     ByteBro          32,623        300          0          0
+    191     TheDen              692        300          0          0
+                                      ---------  ---------  ---------
+              TOTALS FOR Lucifernet        600          0          0
+
+Media Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    275     MEactors             19         19          0          0
+    291    *MEadmin             478        335          0         21
+    276     MEagents             27         27          0          2
+    278     MEbrChat            271        270          0          5
+    279     MEbrSales            63         62          1          1
+    280     MEbrSoft             72         72          0          0
+    277     MEbrTVop             87         87          0          0
+    281     MEbuySell           390        339          4          4
+    282     MEcableTV           164        164          0          1
+    283     MEdesktop         4,411        306          0        180
+    284     MEengineer          192        192          0          0
+    285     MEfreelanc           43         43          0          0
+    286     MEgossip             29         29          0          0
+    287     MEgraphics           38         38          0          1
+    288     MEjobMart           115        115          0          0
+    289     MEmidi            2,589        334          0         65
+    290     MEmusician           24         23          0          0
+    292     MEnewsRoom           89         86          0          0
+    294     MEproAudio        2,433        342          0         23
+    295     MEproFilm            51         51          0          0
+    296     MEproPhoto        4,437        300          0        349
+    297     MEproRadio          242        242          1          1
+    298     MEproVideo        1,500        329          0         19
+    299     MEradProd            18         18          0          0
+    300     MEradProg            39         39          0          0
+    301     MEsbe               765        335          0         11
+    302     MEtheater            66         66          0          0
+    303     MEunions             38         38          0          0
+    293     MEvoiceOvr           40         39          0          0
+    304     MEwriters        22,650        297          0      2,800
+                                      ---------  ---------  ---------
+               TOTALS FOR Media Net      4,637          6      3,483
+
+Pet Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    245     PEbirds              25         25          0          0
+    246     PEcats              184        184          0          4
+    247     PEdogs              109        109          0         13
+    248     PEfwFish             34         33          0          0
+    250     PEpets               27         25          0          0
+    249     PEswFish             27         27          0          0
+                                      ---------  ---------  ---------
+                 TOTALS FOR Pet Net        403          0         17
+
+Planet Earth Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+     50     PEaidsAwar          541        325          0          0
+     59     PEallDebat        2,223        340          0          0
+     47     PEchitChat        1,552        336          0          1
+     48     PEecologic          355        303          0          0
+     63     PEeconomic           60         60          0          0
+     66     PEeducatio          164        164          0          0
+     49     PEextinct           155        155          0          0
+     54     PEfamValue          226        226          0          0
+     51     PEhlthCare          134        134          0          0
+     52     PEhlthFood           94         94          0          0
+     56     PEinnerCty           81         81          0          0
+     61     PEnatlNews           76         76          0          0
+     46    *PEnetAdmin        1,091        312          0          0
+     65     PEparentin          180        179          0          0
+     58     PEpolitica          738        332          0          0
+     45    *PEregional            2          2          0          0
+     64     PErelation          126        126          0          0
+     55     PEreligion        1,243        331          0          0
+     53     PEtechnolo          307        307          0          0
+     60     PEtvImpact          212        212          0          0
+     57     PEwldAtWar          412        308          0          0
+     62     PEwrldNews           74         74          0          0
+                                      ---------  ---------  ---------
+        TOTALS FOR Planet Earth Net      4,477          0          1
+
+RF Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    240     RFhamRadio       10,632        300          1      4,350
+    242     RFoldRadio       16,844        300          0      7,164
+    241     RFpacket          6,008        342          0      2,477
+                                      ---------  ---------  ---------
+                  TOTALS FOR RF Net        942          1     13,991
+
+Race Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    354     RAabortion          209        208          0         80
+    355     RAamiga             101         99          0         24
+    351     RAansiArt         1,215        307          0        182
+    352     RAarrlBlts           81         79          0          1
+    353     RAarrlHq            462        324          0         24
+    356     RAastrolog           67         66          0         11
+    358     RAautoFix         2,335        300          0          0
+    357     RAautoSter          146        146          0         85
+    359     RAaviation        7,407        320          0      1,358
+    360     RAbbsAds            117         31          0          0
+    361     RAbbsSoft            12          4          0          0
+    362     RAbeer              212        201          0         18
+    363     RAbicycles           19         19          0          1
+    364     RAboats              28         28          0          0
+    365     RAbooks              22         19          0          0
+    366     RAbrain           6,023        618          0        721
+    417     RAbroker             21         21          0          1
+    367     RAbuySell           165        165          0          0
+    369     RAcarNews            28         28          0          9
+    368     RAcdroms             30         30          0          0
+    430     RAchitChat          389        300          0          0
+    433     RAcollect            42         42          0          0
+    458     RAcom4Sale          152        152          0         14
+    371     RAcompHelp           16         15          2          0
+    370     RAcompress          439        324          0        130
+    372     RAcontests          422        325          0          8
+    373     RAcorelDrw           20         18          0          7
+    374     RAcycles             75         72          0          0
+    376     RAdatabase           17         15          0          1
+    377     RAdebates           333        332          0         42
+    378     RAdesktop           116        116          0          2
+    379     RAdesqView          399        340          0          7
+    403     RAdos             1,463        301          0        124
+    380     RAdragRace          113        111          0          0
+    375     RAdxing              28         27          0          1
+    381     RAebony           1,175        333          0        343
+    382     RAecology           406        300          0         35
+    383     RAeducat          1,162        307          0        158
+    384     RAenviron           288        288          0          0
+    385     RAeuroRace          277        272          0         11
+    386     RAfanClubs           56         56          0         13
+    387     RAfightBel           15         13          0          0
+    388     RAfireEMS         2,030        300          0          0
+    389     RAflghtSim           47         47          0          1
+    350     RAforSale           309        308          0          0
+    390     RAformRace          299        298          0          0
+    391     RAgames              64         64          0          1
+    392     RAgarden             93         91          0          9
+    393     RAgeneolog           42         42          0          2
+    394     RAgoKarts            26         25          0          0
+    395     RAhobbies           472        318          0         88
+    396     RAhorseRac           72         72          0         13
+    401     RAhumor              65         65          1          1
+    397     RAimsaRace          125        123          0          0
+    398     RAindyCars          240        240          0          0
+    399     RAinvest              4          4          0          0
+    400     RAjobs              403        341          0        137
+    402     RAlans               17         16          0          0
+    404     RAmarijuan          100        100          0         67
+    405     RAmealMast        1,109        329          0        126
+    406     RAmedical           140        140          0          6
+    407     RAmenWomen        6,455        346          0        936
+    408     RAmensa              14         11          0          0
+    409     RAmontyPy         3,347        307          0        311
+    410     RAmovies             16         16          0          0
+    459     RAmusic             118        117          0          1
+    411     RAnascar          3,190        300          0          0
+    412     RAnonAuto            41         41          0          0
+    413     RAnorton          5,231        602          0        338
+    415     RAoccult             49         48          0          0
+    416     RAoffRoad           184        184          0          0
+    414     RAos2             1,431        319          0        313
+    434     RAoutlaws            32         32          0          0
+    420     RAparaNorm           90         90          0         40
+    419     RApcAudio            71         71          0          1
+    418     RApcTools            72         72          0         12
+    421     RApets              863        310          0        340
+    422     RAphiloso            33         33          0         19
+    423     RAphoto             122        120          0         56
+    424     RApolice            269        268          0          0
+    425     RApolitics           66         66          0          0
+    426     RAprocess            15         15          0          0
+    427     RAprogram           138        137          0          0
+    429     RAraceTech          355        302          0         42
+    432     RAracing            388        300          0          0
+    435     RArallying           64         62          0          0
+    428     RArcContr           162        162          0          0
+    436     RArecipes           864        321          0          4
+    437     RArecycle           315        315          0        123
+    438     RAreporter          203        203          0          0
+    441     RAsailing            14         13          0          0
+    442     RAscanners        2,709        340          0        466
+    439     RAsccaSolo           57         57          0          0
+    443     RAsciFi              50         50          0         10
+    444     RAscuba              35         35          0          1
+    445     RAshortTrk          100         98          0          0
+    446     RAspaceCom          281        280          1          9
+    440     RAspam               61         61          0         12
+    456     RAsportCar           99         99          0          0
+    447     RAsprint             64         64          0          0
+    448     RAstarTrek          504        319          0          5
+    431    *RAsysops          2,213        300          0          0
+    449     RAteens             164        157          0         11
+    450     RAtheater            50         49          0          7
+    451     RAtruckRac           23         23          0          0
+    452     RAufo               152        152          0          0
+    453     RAunitedK           198        198          0         55
+    454     RAwashDC            798        310          0          3
+    457     RAweather         1,170        345          0         87
+    455     RAwindows           102        102          0          0
+                                      ---------  ---------  ---------
+                TOTALS FOR Race Net     18,217          4      7,064
+
+Rose Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+     43    *GrindAdmin          222        221          0         35
+     40     RoseMail          1,459        300          0          0
+     41     RoseReader        9,651        335          0        222
+     42     UnixUseNet        1,387        346          0         38
+                                      ---------  ---------  ---------
+                TOTALS FOR Rose Net      1,202          0        295
+
+Shark Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    151     Agnostic            753        321          0        218
+    152     JesusSaves        3,418        300          0        615
+    150     West4Sale         5,165        330          2        696
+                                      ---------  ---------  ---------
+               TOTALS FOR Shark Net        951          2      1,529
+
+Sports Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    325     SParchery           283        281          0          0
+    326     SPbaseball           20         20          0          0
+    327     SPbasketba           22         22          0          0
+    328     SPbilliard           16         16          0          0
+    329     SPbowling            12         12          0          0
+    330     SPchess              10         10          0          0
+    331     SPemsNet             10         10          0          0
+    332     SPfishHunt           88         83          0          0
+    333     SPfootball            8          8          0          0
+    334     SPgolf                9          9          0          0
+    335     SPhockey             44         44          0          0
+    336     SPiceSkate           91         91          0          0
+    337     SPrunning            15         15          0          0
+    338     SPskaters           230        230          0          0
+    339     SPsoccer            214        214          0          0
+    340     SPswimming           19         19          0          0
+    341     SPtableTop           56         56          0          0
+    342     SPtennis             50         50          0          0
+    343     SPwrestlin          230        224          0          0
+                                      ---------  ---------  ---------
+              TOTALS FOR Sports Net      1,414          0          0
+
+Throb Net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    214     THadmin           3,992        343          0         93
+    201     THadultIss       14,358        341          0        395
+    200     THansi              436        331          0         22
+    202     THaskJudi           648        327          0        108
+    203     THconStory          677        324          0        284
+    204     THdrRude          1,589        300          0        662
+    205     THfantasy        11,342        319          1        244
+    206     THfetishes        4,389        315          0        148
+    207     THgay             4,158        308          0         62
+    208     THgeneral        12,384        336          0      1,054
+    233     THgifs              288        285          0         66
+    209     THhates          12,557        321          0         21
+    231     THhelp              582        302          0         23
+    210     THjokes           5,384        300          0        166
+    211     THjunkMeet        1,079        311          0         61
+    212     THlesbian         1,140        343          0        336
+    217     THlimbaugh       10,393        328          0      1,142
+    213     THmoderato        1,526        307          0          7
+    215     THporn            6,809        315          0        138
+    216     THrobMail           651        300          0        356
+    232     THromance           880        301          0          3
+    219     THsexHelp         1,289        321          0        291
+    229     THsexTalk         8,939        300          0        230
+    220     THsexToys         2,463        328          0         78
+    228     THshoppe          1,090        344          0        170
+    221     THsingles         3,994        343          0        226
+    218     THsmBDds          6,748        330          0        224
+    234     THstoryCha          966        342          0        162
+    222     THswingers        6,616        295          0        383
+    223     THsysops          2,382        343          0        343
+    224     THtransves        2,848        331          0        323
+    225     THviolets         2,559        342          0         92
+    230     THwitchunt        1,648        308          0         21
+    226     THwomen           1,204        338          0         53
+    227     THwritings        1,296        347          0         47
+                                      ---------  ---------  ---------
+               TOTALS FOR Throb Net     11,269          1      8,034
+
+U'NI-net:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+     95     ANSI-Art          1,870        321          0        304
+     16     ASM               1,038        304          0        198
+    132     Amiga             1,053        322          0        159
+    115     Apogee            1,478        337          0         95
+     96     Astronomy         1,335        309          7        111
+    102     AutoRacing        2,222        327          0        615
+     23     BBS-Ads           2,525        340          0        385
+     17     Basic             1,722        316          0        165
+    105     BrainTease        4,743        313          0        583
+     18     C-Lang            5,404        345          0        455
+    107     CAD                 818        334          0         17
+     25     CD-ROM            3,202        330          0        229
+    106     CMPqwk            2,309        323          0        355
+     87     CamSoft           1,828        331          0        222
+    104     Cars              2,137        342          0        341
+    117     ChitChat        246,236        301          1     71,612
+    120     Comedy            8,835        317          2      2,924
+     83     Commo               568        313          0         55
+     20     Consult           1,506        308          0        910
+    144     CorelDraw            21         21          0          0
+    121     Cuisine           2,234        343          0        194
+      5     DOStips          18,896        342          1      2,636
+    126     DR-Who              855        338          0        233
+    114     DR_DOS            1,169        324          0         57
+     12     DSZ-Omen          1,211        341          0         38
+    145     DVX                 569        310          0         51
+    112     Database            967        308          0        197
+     27     DeskTop             762        346          0        107
+     14     DesqView          6,756        314          0      1,385
+    153     DittoHeads        6,399        304          0        195
+    110     Door-Util         8,465        306          0      6,755
+    119     Ecology             588        310          0        329
+     72     Education         2,134        328          0        310
+     81     Fantasy&SF        4,360        304          0        459
+     93     FastGraph           690        309          0         92
+     22     ForSale          27,624        318         13      3,421
+    154     Gadgets           1,384        300          1        291
+     97     Gambling          1,274        312          0        483
+    108     GameDesign          855        337          0        142
+     70     Genealogy         1,321        320          0        256
+    124     Graphics          1,147        326          0         11
+    125     Guns              7,941        322          0      1,141
+     34     HamRadio          3,505        311          0        871
+     24     HardDisk            231        200          0          0
+      4     Hardware          7,241        328          5      1,135
+     36     Health            3,904        322          0      1,133
+    130     History           1,308        315          0        392
+     80     Home&Gardn        1,268        308          0        257
+    118     HomeBrew            624        310          0         45
+     75     Internatl         8,297        347          0        883
+     21     Investor          1,523        303          0        167
+     85     Jazz              1,189        325          0        267
+    131     Jobs              2,034        310          0        259
+    122     Judaica           1,000        336          0         76
+    155     KidsPlace         2,798        338          0        127
+    111     LA-Talk           2,554        338          2      1,597
+    127     Legal             2,126        342          0        369
+    146     LezBiGay          1,431        301          1          0
+    128     Macintosh           731        312          0         18
+    129     Mainframe           272        272          0        213
+    135     Media               682        322          0        129
+      6     Modeming          4,064        329          1        251
+    116     Motorcycle          926        349          0        171
+    134     Movies           11,622        343          0      3,858
+     73     Music             1,485        344          0        235
+     67     Naturism          2,841        311          0      1,345
+     86     NetNews              74         74          0         16
+     76     NetUsers          6,863        337          8      1,091
+     26     Networks          1,214        303          0        207
+     32     OS2               9,072        345          0        970
+    133     Offline           1,755        347          0        195
+     69     Opinion          25,046        600         55      5,566
+     92     PC-Games          9,651        304          1        549
+    113     PCBSUPTT         23,497        327          0      7,304
+     11     PKware            1,068        327          0        164
+     90     ParaNormal        2,926        308          0        126
+    137     Parents             906        325          0         36
+     19     Pascal            1,321        322          0        149
+     99     Pets              4,163        300          0        624
+    139     Photo             2,330        335          0      1,655
+     74     Politics         58,336        600        295     20,191
+     31     Program          10,432        344          1      2,181
+     15     Qedit             1,746        344          0         26
+     10     Qmodem            1,266        329          0         39
+     44     RIP-Grafix          837        317          0        120
+     79     RNET              1,150        329          0         38
+    123     RadioDrama          534        309          0        146
+     98     Religion         13,408        307          0      1,339
+    142     Rights            5,465        345          0        597
+     82     RoboComm          1,368        330          0        170
+    103     RoboMail          1,890        303          0        206
+     84     RocknRoll         4,376        319          0        358
+     94     SEDIT             1,072        314          0        288
+    148     SHEZ                141        141          0          0
+     88     SLMR-OLX          1,176        329          0         49
+    109     Satellite           725        340          1         92
+     37     Science           7,754        301          0        361
+     30     SharWare          3,851        334          0        285
+    100     SmallBus          1,261        318          0         87
+    140     SoundCard         1,695        321          0         96
+    141     SpeedRead         7,026        324          0      1,017
+    147     Spoilers          1,442        314          0        257
+    143     Spreadsht            94         94          0          0
+     89     StarTrek         17,828        324          0      1,391
+    149     Survivors         2,548        324          0        625
+      7     Sysops            3,302        336          0        632
+     71     Tech              6,214        305          6        854
+    138     TeenClub         17,775        305          0      1,875
+      9     Telix             1,207        348          0        103
+    136    *UNI-Host          5,518        306          0      1,190
+    101    *UNI-Hub               0          0          0          0
+     78     USRModem          2,019        308          0        432
+     39    *UniAdmin         13,507        346          0      4,529
+     33     Unix                996        322          2         67
+     13     V-Buerg             202        193          0          0
+     35     Virus             2,818        329          9        836
+     91     Wildcat           1,727        341          0        112
+      8     Windows          13,499        340          0      2,720
+     28     WordProc          2,318        330          0        192
+     68     Wrestling         3,508        332          0        518
+     29     Writers           6,294        319          0        838
+     77     WrldMarket        1,305        300          5        317
+                                      ---------  ---------  ---------
+                TOTALS FOR U'NI-net     38,400        417    176,142
+
+Usenet:
+   Conf.    Conference      High Msg    Active    Messages   Messages
+     #         Name          Number    Messages    Posted    Imported
+   -----   -------------   ---------  ---------  ---------  ---------
+    196     USantiques       11,679        300          0      3,416
+    195     USautoSp         31,091        300          0      8,749
+    188     USbestiality      3,699        347          0        260
+    189     USbondage         1,297        321          0          0
+    160     UScLang           4,272        300          0          0
+    178     UScableTV         6,856        340          0      2,251
+    197     UScooking        48,653        301          1     10,340
+    161     UScud               237        237          0          0
+    254     USculJapan        2,830        300          0          0
+    175     UScyberpunk      25,736        629          1      7,054
+    170     UScyberspace     13,942        340          0      5,701
+    198     USdrink           8,153        319          0      1,178
+    164     USeffNews            22         22          0          0
+    165     USeffTalk        12,833        312          0      1,802
+    186     USfemale          9,967        300          0      5,866
+    166     USjobsEntr          165        165          0          0
+    167     USjobsOffr      166,725        300          0     18,809
+    168     USmultimed        2,106        300          0          0
+    169     USnewUsers          919        300          0          0
+    171     USos2Apps        71,072        600          0     20,664
+    172     USos2Misc        47,168        600          0      8,833
+    174     USos2network      4,162        338          0        289
+    173     USpcbuucp        14,597        334          0      5,577
+    199     USpetsDog        41,505        315          0        984
+    187     USpictures        2,059        305          0        644
+    273     USrecipes         6,537        322          0      1,209
+    192     USsex.bondage    23,907        300          0          0
+    193     USsex.stories    19,283        300          0          0
+    251     USsex.wanted      5,275        324          2          0
+    252     USsex.wizards     4,499        320          1          0
+    243     USskiing          6,781        303          0         74
+    194     USstories.d       2,200        301          1          0
+    176     UStcDigest        1,447        300          0          0
+    177     UStextile         5,426        310          0         38
+    244     UStravel         26,912        303          0      1,265
+    253     USvegetari       19,634        300          0      3,922
+    179     USvideoRel        8,722        330          0         41
+    163     USwin            31,003        300          0     10,127
+    162     USwinProg        12,138        300          0      2,936
+                                      ---------  ---------  ---------
+                  TOTALS FOR Usenet     12,538          6    122,029
+
+
+                  Overall Summary of Available Message Networks
+
+          Network          Number of      Active      Messages     Messages
+            Name          Conferences    Messages      Posted      Imported
+    --------------------  -----------  -----------  -----------  -----------
+     Fly Net                      11          735            4            0
+     Job Net                      16        3,185            1            0
+     Local Areas                   5        1,156          963           22
+     Los Angeles Net               6        1,112           19          726
+     Lucifernet                    2          600            0            0
+     Media Net                    30        4,637            6        3,483
+     Pet Net                       6          403            0           17
+     Planet Earth Net             22        4,477            0            1
+     RF Net                        3          942            1       13,991
+     Race Net                    110       18,217            4        7,064
+     Rose Net                      4        1,202            0          295
+     Shark Net                     3          951            2        1,529
+     Sports Net                   19        1,414            0            0
+     Throb Net                    35       11,269            1        8,034
+     U'NI-net                    122       38,400          417      176,142
+     Usenet                       39       12,538            6      122,029
+                          -----------  -----------  -----------  -----------
+            GRAND TOTALS         433      101,238        1,424      333,333
+ 
+ 
+RoseMail 2.10 - Network mail scan and insert log.             
+ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+Date       Time      Packet    Mode    Moved  Tagged Skipped  
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+06-07-1996 05:25:39  LEDGE     Scan        0       0       0  
+06-07-1996 05:35:09  LEDGE     Insert    698       0      27  
+06-07-1996 05:37:00  MOGUR     Scan        0       0       0  
+06-10-1996 04:47:26  LEDGE     Scan        0       0       0  
+06-10-1996 04:57:21  LEDGE     Insert    936       0      47  
+06-10-1996 04:59:11  MOGUR     Scan        0       0       0  
+06-12-1996 04:25:05  LEDGE     Scan        0       0       0  
+06-12-1996 05:24:22  MOGUR     Scan        0       0       0  
+06-14-1996 04:24:59  LEDGE     Scan        0       0       0  
+06-14-1996 04:40:36  LEDGE     Insert   1803       0      43  
+06-14-1996 04:40:40  LEDGE     Insert     18       0       0  
+06-14-1996 04:42:31  MOGUR     Scan        0       0       0  
+06-17-1996 04:59:51  LEDGE     Scan        0       0       0  
+06-17-1996 05:10:54  LEDGE     Insert   1060       0      43  
+06-17-1996 05:12:44  MOGUR     Scan        0       0       0  
+06-19-1996 07:26:59  LEDGE     Scan        0       0       0  
+06-19-1996 07:37:28  LEDGE     Insert    880       0      53  
+06-19-1996 07:39:19  MOGUR     Scan        0       0       0  
+06-21-1996 04:39:01  LEDGE     Scan        0       0       0  
+06-21-1996 04:46:57  LEDGE     Insert    487       0      19  
+06-21-1996 04:48:46  MOGUR     Scan        0       0       0  
+06-24-1996 05:21:08  LEDGE     Scan        0       0       0  
+06-24-1996 05:34:08  LEDGE     Insert   1254       0      77  
+06-24-1996 05:35:59  MOGUR     Scan        0       0       0  
+06-28-1996 04:54:24  LEDGE     Scan        1       1       0  
+06-28-1996 05:11:32  LEDGE     Insert   1211       0      54  
+06-28-1996 05:12:57  MOGUR     Scan        0       0       0  
+07-01-1996 04:36:44  LEDGE     Scan        0       0       0  
+07-01-1996 04:44:43  LEDGE     Insert    725       0      49  
+07-01-1996 04:45:34  MOGUR     Scan        0       0       0  
+ 
+----------------------------------------------------------------- 
+DETAILED NETWORK CONNECTION LOG: 
+ 
+Dialing MOGUR [MULTI-NET] at 04:28:05 on 02-03-97
+Connected.
+
+*************************************************************************
+*** Unattended operation started ***
+
+Dialing MOGUR [MULTI-NET] at 04:24:54 on 02-05-97
+
+Dialing MOGUR [MULTI-NET] at 04:26:05 on 02-05-97
+Connected.
+
+*************************************************************************
+*** Unattended operation started ***
+
+Dialing MOGUR [MULTI-NET] at 04:19:45 on 02-07-97
+
+Dialing MOGUR [MULTI-NET] at 04:20:56 on 02-07-97
+Connected.
+
+*************************************************************************
+*** Unattended operation started ***
+
+Dialing MOGUR [MULTI-NET] at 04:21:55 on 02-10-97
+
+Dialing MOGUR [MULTI-NET] at 04:23:06 on 02-10-97
+Connected.
+
+*************************************************************************
+*** Unattended operation started ***
+
+Dialing MOGUR [MULTI-NET] at 04:20:20 on 02-12-97
+
+Dialing MOGUR [MULTI-NET] at 04:21:31 on 02-12-97
+Connected.
+
+*************************************************************************
+*** Unattended operation started ***
+
+Dialing MOGUR [MULTI-NET] at 04:24:51 on 02-14-97
+
+Dialing MOGUR [MULTI-NET] at 04:26:02 on 02-14-97
+Connected.
+
+*************************************************************************
+*** Unattended operation started ***
+
+Dialing MOGUR [MULTI-NET] at 04:21:33 on 02-17-97
+
+Dialing MOGUR [MULTI-NET] at 04:22:44 on 02-17-97
+Connected.

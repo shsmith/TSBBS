@@ -1,0 +1,1 @@
+procedure stolower(var st: string);

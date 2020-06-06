@@ -1,0 +1,337 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                      S.H.Smith-HS/Link & Tool Shop Utils
+                        64 files using 5,713,818 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+TOOLSHOP.EXE  1056425  12-24-95  Complete listing of all Tool Shop files
+                               | Download Count: 1194 Last Download: 06-05-97
+                               |
+TOOLSHOP.ZIP  1053423  12-24-95  Complete listing of all Tool Shop files
+                               | arranged by file area.             *FREE D/L*
+                               | Download Count: 572  Last Download: 05-25-97
+                               |
+TOOLSORT.EXE   916206  12-24-95  Sorted listing of all Tool Shop files
+                               | available in all Tool Shop directories.
+                               | Self-extracting format.            *FREE D/L*
+                               | Download Count: 427  Last Download: 11-24-96
+                               |
+TOOLSORT.ZIP   913204  12-24-95  Sorted listing of all Tool Shop files  *FREE*
+                               | available in all Tool Shop directories.
+                               | Download Count: 210  Last Download: 01-13-97
+                               |
+TTSADULT.ZIP     2571  05-22-94  Application for access to the Adult Areas
+                               | of The Tool Shop BBS.  Can be viewed with
+                               | the B 4 command.                   *FREE D/L*
+                               | Download Count: 235  Last Download: 12-15-96
+                               |
+HSBBSLST.ZIP     8965  12-31-95  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                               | ³ This file contains the Official Listing ³
+                               | ³ of Boards Running the HS/Link File      ³
+                               | ³ Transfer Protocol.                      ³
+                               | ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+                               | ³ This list is updated daily.  Call the   ³
+                               | ³ Tool Shop at (818) 389-5300 for updates ³
+                               | ³ or to add your own board to the list!   ³
+                               | ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                               | All entries must be updated at least once
+                               | each 4 months.                     *FREE D/L*
+                               | Download Count: 1768 Last Download: 01-22-97
+                               |
+HS120.ZIP      147339  04-11-93  HS/Link External Protocol RELEASE v1.20
+                               | As of 12:41 pm, Sunday, April 11, 1993 
+                               | HS/Link is a new high speed, single and bi-
+                               | directional file transfer protocol with many
+                               | advanced features.  It is EASY to set up and
+                               | runs very fast with all kinds of modems.
+                               | Now includes ONLINE CHAT mode.
+                               | FHSLINK.EXE now supports FOSSIL drivers.
+                               | See HS-INST##.ZIP for install instructions.
+                               | Download Count: 2139 Last Download: 01-21-97
+                               |
+HS121C5.ZIP    136893  03-24-95  HS/Link External Protocol BETA TEST As of
+                               | March 24, 1995. HS/Link is a high speed,
+                               | single and Bi- directional file transfer
+                               | protocol with many advanced features. It is
+                               | EASY to set up and runs very fast with all
+                               | kinds of modems. Now includes ONLINE CHAT
+                               | mode. FHSLINK.EXE now supports FOSSIL
+                               | drivers. See HS-INST3.ZIP for install
+                               | instructions. NEW! LOWER REGISTRATION FEE
+                               | $15.00
+                               | Download Count: 617  Last Download: 07-16-97
+                               |
+HS121GC0.ZIP   146836  05-14-94  HS/Link External Protocol BETA v1.21C0
+                               | GERMAN LANGUAGE VERSION
+                               | Beta test version of HS/link corrects problem
+                               | in -MN option and deals better with locking
+                               | modems.
+                               | Download Count: 37   Last Download: 06-19-96
+                               |
+HSLEXE.ZIP     144031  11-17-94  (17:45) Latest daily HSLINK.EXE code
+                               | Download Count: 1591 Last Download: 01-08-97
+                               |
+HSD115B4.ZIP    59015  03-12-95  Windows DLP HS/Link Protocol BETA 1.15B4 As
+                               | of March 12, 1995 This is a special version
+                               | of HS/Link designed for use with ProComm Plus
+                               | 2.0 for Windows in the Windows environment.
+                               | Now includes integrated advanced setup screen
+                               | New lower registration fee $15.00.
+                               | Download Count: 621  Last Download: 07-04-97
+                               |
+HSD115G0.ZIP    52972  07-29-94  Windows DLP HS/Link Protocol BETA v1.15B0
+                               | GERMAN LANGUAGE VERSION
+                               | This is a special version of HS/Link designed
+                               | for use with PROCOMM PLUS FOR WINDOWS 2.0 in
+                               | the windows environment.
+                               | Download Count: 40   Last Download: 10-31-95
+                               |
+DLPEXE.ZIP      58839  03-09-95  (20:04) Latest daily HSLINK.DLP code
+                               | Download Count: 313  Last Download: 12-14-96
+                               |
+HSD114C0.ZIP    58609  05-14-94  Windows DLP HS/Link Protocol BETA v1.14C0
+                               | This is a special version of HS/Link designed
+                               | for use with PROCOMM PLUS FOR WINDOWS 1.X in
+                               | the windows environment.
+                               | Download Count: 555  Last Download: 08-03-96
+                               |
+HSD114G0.ZIP    59367  05-14-94  Windows DLP HS/Link Protocol BETA v1.14GC0
+                               | GERMAN LANGUAGE VERSION
+                               | This is a special version of HS/Link designed
+                               | for use with PROCOMM PLUS FOR WINDOWS in
+                               | the windows environment.
+                               | Download Count: 3    Last Download: 03-09-95
+                               |
+HS-INST3.ZIP   124468  08-25-93  Instructions for HS/Link installation in
+                               | a variety of COMM and BBS programs.  This
+                               | information workS wiTh HS120.ZIP.
+                               | (also download HS120.ZIP or newer)
+                               | All of the remaining HS-????? installation
+                               | tips files are contained inside HS-INST3.ZIP.
+                               | Download Count: 2962 Last Download: 02-12-97
+                               |
+HS-145.ZIP       3009  11-22-91  Install HS/Link in PCBOARD 14.5 (11/90)
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 89   Last Download: 11-14-95
+                               |
+HS-145A.ZIP      2942  10-30-91  Install HS/Link in PCBOARD 14.5a (10/30/91)
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 134  Last Download: 04-25-96
+                               |
+HS-421.ZIP       1219  06-13-92  Optimum command lines to use HS/Link with
+                               | WWIV v4.21
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 35   Last Download: 07-07-96
+                               |
+HS-AU512.ZIP     2025  01-17-92  Install HS/Link in AUNTIE 5.12
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 10   Last Download: 02-27-96
+                               |
+HS-BOY40.ZIP     2052  11-26-91  Install HS/Link in BOYAN 4.01
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 11   Last Download: 02-27-96
+                               |
+HS-BOY50.ZIP     2283  11-26-91  Install HS/Link in BOYAN 5.0
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 45   Last Download: 02-27-96
+                               |
+HS-BOYAN.ZIP     2052  11-05-91  HS/Link with BOYAN
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 13   Last Download: 02-27-96
+                               |
+HS-CEL.ZIP       6897  11-24-91  Use HSLink on Celerity Systems
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 19   Last Download: 10-09-95
+                               |
+HS-COMMO.ZIP     7259  08-25-93  Install HS/Link protocol in {COMMO}
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 48   Last Download: 01-15-96
+                               |
+HS-GAP51.ZIP     5714  01-16-92  Install HS/Link in GAP BBS 5.1-6.2
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 16   Last Download: 10-09-95
+                               |
+HS-GAP63.ZIP     6494  09-07-93  Install HS/Link in GAP BBS 6.3
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 19   Last Download: 10-09-95
+                               |
+HS-GT15.ZIP      2489  10-27-91  Install HS/Link in GT POWER 15.50
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 17   Last Download: 10-09-95
+                               |
+HS-MKML.ZIP      1775  12-12-91  Install HS/Link in MarkMail under GAP bbs
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 11   Last Download: 10-09-95
+                               |
+HS-PB117.ZIP     2485  11-19-91  Install HS/Link protocol in PROBOARD 1.17
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 17   Last Download: 02-20-96
+                               |
+HS-PCPTD.ZIP     2537  10-23-91  Install HS/Link protocol in PROCOMM PLUS/TD
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 177  Last Download: 11-03-96
+                               |
+HS-PROD.ZIP      1294  10-30-91  Install HS/Link in ProDoor 3.43
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 45   Last Download: 10-09-95
+                               |
+HS-PROW.ZIP      3404  09-02-92  Install HS/Link in ProComm Plus/WINDOWS
+                               | This is obsolEte Now that tHere is a
+                               | Windows specific DLP version of hslink.
+                               | (also download HS120.ZIP or newer
+                               |  and PNS52.ZIP or newer)
+                               | Download Count: 184  Last Download: 06-02-96
+                               |
+HS-QMOD.ZIP      2678  10-25-91  Install HS/Link in Qmodem 4.3
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 212  Last Download: 08-03-96
+                               |
+HS-QMP15.ZIP     2850  08-25-93  Install HS/Link in QMODEM PRO 1.x
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 294  Last Download: 11-28-96
+                               |
+HS-R173C.ZIP     3210  12-05-91  Install HS/Link in RBBS-PC 17.3C
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 29   Last Download: 04-16-95
+                               |
+HS-RA.ZIP        1305  11-29-91  Install HS/Link in Remote Access
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 44   Last Download: 08-30-96
+                               |
+HS-RA110.ZIP     2549  12-12-91  Install HS/Link in Remote Access 1.10
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 21   Last Download: 07-11-95
+                               |
+HS-RA111.ZIP     2814  03-21-92  Install HS/Link in Remote Access 1.12
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 58   Last Download: 12-31-95
+                               |
+HS-RC31.ZIP      1155  11-04-91  Install HS/Link in RoboComm 3.1
+                               | Download Count: 35   Last Download: 06-23-96
+                               |
+HS-RENEG.ZIP     2042  08-31-92  HS/Link Setup for Renegade BBS Software
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 76   Last Download: 03-24-96
+                               |
+HS-RYBBS.ZIP     2036  01-16-92  Install HS/Link in Rybbs
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 14   Last Download: 12-08-94
+                               |
+HS-S1154.ZIP     1692  01-21-92  Install HS/Link in SuperBBS 1.15 Gamma4
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 16   Last Download: 11-30-94
+                               |
+HS-SF30.ZIP      3381  11-19-91  Install HS/Link in Spitfire 3.0
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 43   Last Download: 04-22-95
+                               |
+HS-SLBBS.ZIP     3636  11-14-91  Install HS/Link in SearchLight BBS
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 24   Last Download: 10-15-95
+                               |
+HS-TELIX.ZIP     2582  10-23-91  Install HS/Link protocol in TELIX
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 227  Last Download: 04-06-96
+                               |
+HS-TLX32.ZIP     2767  08-25-93  Install HS/Link in TELIX 3.21
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 183  Last Download: 04-06-96
+                               |
+HS-TMATE.ZIP     2808  10-26-91  Install HS/Link in TeleMate
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 103  Last Download: 04-06-96
+                               |
+HS-UB208.ZIP     2430  11-21-91  Install HS/Link in UltraBBS 2.08
+                               | Download Count: 9    Last Download: 11-30-94
+                               |
+HS-VBB54.ZIP     2430  01-25-92  Install HS/Link in Virtual BBS 5.40
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 38   Last Download: 02-09-96
+                               |
+HS-WAF.ZIP       1648  12-14-91  Install HS/Link in Waffle
+                               | (also download HS120.ZIP or newer)
+                               | Download Count: 13   Last Download: 11-30-94
+                               |
+HS-WC215.ZIP     3363  11-29-91  Install HS/Link in Wildcat! version 2.15
+                               | Download Count: 52   Last Download: 11-17-95
+                               |
+HS-WC26.ZIP      4287  08-25-93  Install HS/Link in Wildcat! 2.60
+                               | Download Count: 31   Last Download: 10-28-96
+                               |
+HSLBOY10.ZIP     3632  06-27-92  Boyan 5.0 script to unzip/register the latest
+                               | version of HSLink. Unzips, over- writes older
+                               | file versions, simplifies updating.
+                               | Download Count: 11   Last Download: 12-11-95
+                               |
+HSLK2400.ZIP     6421  05-01-92  HS/Link Installation for 2400 Baud Modems
+                               | This text file explains step by step how to
+                               | install HS/Link with most 2400 baud modems
+                               | (MNP or normal) with Telix and other comm
+                               | programs.  Suggestions wanted!
+                               | Download Count: 73   Last Download: 02-20-96
+                               |
+SCANLOG.ZIP      7289  05-07-93  Utility to scan DSZLOG files and return
+                               | ERRORLEVEL according to command line options.
+                               |  Use in batch files with HS/Link to determine
+                               | results of a transfer.
+                               | Download Count: 132  Last Download: 04-23-97
+                               |
+HSINST.RA         953  11-29-91  Install HS/Link in Remote Access
+                               | Download Count: 15   Last Download: 04-25-95
+                               |
+BBSLIST.ZIP     65059  05-26-94  Automated BBS list door used here
+                               | Download Count: 84   Last Download: 11-27-95
+                               |
+DLOG2LST.ZIP     5296  02-06-92  Filter converts DSZLOG files into file
+                               | lists with specified options.
+                               | Download Count: 39   Last Download: 06-19-96
+                               |
+FAMESAM.ZIP    423305  09-04-93  Scans of cover article about HS/Link in
+                               | Caller's digest magazine
+                               | Download Count: 18   Last Download: 07-05-96
+                               |
+BLDLIST.ZIP      4781  04-08-92  .
+                               | Download Count: 26   Last Download: 08-05-94
+                               |
+HS-WC301.ZIP     3106  03-31-92  .
+                               | Download Count: 53   Last Download: 08-01-95
+                               |
+HS-WC35.ZIP      1788  10-20-92  .
+                               | Download Count: 119  Last Download: 10-28-96
+                               |
+HS-WWIV.ZIP      2339  01-27-92  .
+                               | Download Count: 42   Last Download: 11-24-96
+                               |
+VXFIX1.ZIP       3940  04-05-94  .
+                               | Download Count: 2    Last Download: 08-04-95
+                               |
+MKDLIST.ZIP      6443  02-24-92  .
+                               | Download Count: 36   Last Download: 12-09-95
+                               |
+OCOM531.ZIP     18586  08-31-88  OPUSCOMM fossil driver
+                               | Download Count: 18   Last Download: 06-12-97
+                               |
+OHSLINK3.ZIP    56108  02-08-94  .
+                               | Download Count: 3    Last Download: 11-24-96
+                               |
+HDKINFO.ZIP     27407  05-25-94  HS/Link developer kit information
+                               | Download Count: 80   Last Download: 03-29-96
+                               |
+WWIVHSLK.ZIP     5132  07-11-92  .
+                               | Download Count: 60   Last Download: 11-24-96
+                               |
+PC890802.EXE   107954  08-02-89  Pascal to C translator
+                               | Download Count: 7    Last Download: 06-25-96
+                               |
+DPMI16BI.ZIP    27727  08-21-94  .
+                               | Download Count: 2    Last Download: 05-14-97
+                               |
+IOLOG.ZIP        9477  10-11-94  .
+                               | Download Count: 5    Last Download: 04-27-95
+                               |
+HS-MAX2.ZIP      1160  07-15-94  HS Link discription file for Maximus 2.00
+                               | Download Count: 10   Last Download: 11-30-96
+                               |

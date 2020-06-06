@@ -1,0 +1,65 @@
+                      
+ 
+             USING PCPLUS/TEST DRIVE WITH EXTERNAL HS/LINK
+ 
+                                  
+     Installation: 
+
+     Please refer to the PCPLUS manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work for most folks:
+
+     Copy the provided HS-D.BAT and HS-U.BAT files, as well as
+     HSLINK.EXE into your PCPLUS directory, or into a directory included
+     in your search PATH.
+
+     If you're using a COM port other than COM1 you'll need to edit both
+     HS-D.BAT and HS-U.BAT to change the -P1 to -P2 or whatever port
+     you're using.  Most folks won't need to put anything else on the
+     HSLINK command line, but there are a number of optional parameters
+     you can read about in HSLINK.DOC and HSLINK.NEW.
+
+     Next you need to install the HS/LINK protocol into the PCPLUS
+     protocol menu.
+
+     Load up PCPLUSTD and press ALT-S to get into the SETUP menu.  Then
+     cursor down to the PROTOCOL OPTIONS selection and press ENTER.  In
+     this screen, you press C and then enter HS-U for the upload
+     command, and finally press D and enter HS-D for the download
+     command.  Escape from this menu and choose WRITE OPTIONS TO DISK to
+     save your changes.
+
+     To download with HS/LINK, first you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, you press the PGDN
+     key and select the HS-D protocol from the menu.  When asked for
+     "parameters" just press enter.
+
+     If you want to also upload to the
+     BBS while downloading, you simply press the PGUP key instead of
+     PGDN, select HS-U from the menu, and list the upload filenames you
+     want to have transmitted.
+
+I hope these instructions help, but remember, I can't take
+responsibility for anydamages resulting from these instructions.  If you
+get stuck, it always helps to read the DOC files that come with PCPLUS
+and with HSLINK.  If all else fails, call up the tool shop and ask for
+help on the main board.  Either I will help you, or somebody else will
+know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    Hayes-V series 9600     Contributors only
+  (818) 891-6780    US Robotics 2400        Free to all
+

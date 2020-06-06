@@ -1,0 +1,3 @@
+
+function disk_space(disk: char): longint;
+   {report space on drive in k bytes}

@@ -1,0 +1,2 @@
+procedure abort_program(reason: string);
+procedure usage (error: anystring);

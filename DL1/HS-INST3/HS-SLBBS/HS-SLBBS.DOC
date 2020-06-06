@@ -1,0 +1,60 @@
+Setting up HS/Link with Searchlight BBS
+
+Run CONFIG.EXE or press ALT-F from within SLBBS.  Select the External
+Protocols option.  Select an empty protocol definition.
+The following is an example of what should be entered in the editor.
+
+
+Searchlight BBS External Protocols Setup Menu
+
+
+ 1. Protocol Name ................. HS/Link
+ 2. Protocol Send Command ......... HS-U.BAT %P @C:\FILE.TMP
+ 3. Protocol Receive Command ...... HS-D.BAT %P
+
+Line 1 contains the description you choose to have displayed
+in the XProtocol Menu.
+
+Line 2 defines the batch file to run when a user downloads a file(s).
+The %P passes the com port that is being used.  The @C:\FILE.TMP
+command makes a temporary file called FILE.TMP in the root directory
+containing a list of filenames to transfer.  You can name this anything
+you choose.  If a path is not specified it defaults to the current
+directory (Usually C:\BBS).  This file is referred to in the batch
+files so it must be the same in each.
+
+Line 3 defines the batch file to run when a user uploads a file(s).
+The %P passes the serial port that is being used.
+
+Now copy the HS-U.BAT and HS-D.BAT files into your BBS's root directory.
+These files can be edited and are well documented.  We recommend using
+the alternative command outlined at the end of each of those files.  The
+minimum setup is active in each batch file and should work with any SLBBS
+setup.  We recommend using a batch file to run protocals, because SLBBS
+sometimes confuses commandline switches for meta-characters.  This seems
+to be an intermittant problem depending on your setup.
+
+The bi-directional transfers only work when the Download command is used
+because you cannot request files to be received.  You may want to explain
+to your users that they will need to describe any files they upload
+while downloading AFTER the transfer is completed.  (We wrote a bulletin
+about this and how to setup the protocol.)  You should also tell them that
+if they use the auto-logoff function while doing a bi-directional transfer
+SLBBS will still request a filename for the uploaded file.  Basically this
+means their account will be debited for the time it takes for the dead user
+kill switch.  We'd also like to recommend that you keep the block size 
+at 1024 bytes.  With the larger block size error correction becomes more 
+of an issue and in the event of some type of an abort, the smaller size 
+eliminates a lot of garbage being dumped on the screen and into the bbs.
+
+Note for systems running locked COM ports:
+We have found that if you use a locked DTE of 9600 or above, you will
+need to have a 16550 UART installed.  Also, for rock solid performance
+you should ad the -HS (Handshake Slow) switch to your batch file.
+
+This should get you set up in under 10 minutes.  If you've got any 
+problems, drop a line (Data) to Nachos, (703)385-2187 [9600 v.32]
+or (703)352-0370 [2400 MNP/Lap-M] and yell for Cosmic or St. Stephen.
+
+
+

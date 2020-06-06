@@ -1,0 +1,36 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * dosmem - Dos Memory Management Unit (3-1-89)
+ *
+ * This unit allocates memory via DOS so you don't have to reserve
+ * heap space in advance.
+ *
+ *)
+
+unit DosMem;
+
+interface
+   uses DOS;
+
+   type
+      pointer_rec = record
+         offset:  word;
+         segment: word;
+      end;
+
+   function dos_maxavail: longint;
+   procedure dos_getmem(var ptrvar; size: word);
+   procedure dos_freemem(var ptrvar);
+
+implementation

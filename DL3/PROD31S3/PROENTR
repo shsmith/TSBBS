@@ -1,0 +1,54 @@
+
+ProDoor Message Entry Commands
+------------------------------
+
+(A)bort     Throw away the message and return to reading messages. 
+
+(C)ontinue  Continue message text input from where you left off.
+
+(D)elete    Allows you to delete a line from the message. 
+
+(E)dit      Allows you to change the contents of a line without starting 
+            over.  You specify edits in the form: 
+               OLD;NEW
+            and the first time OLD is seen in the selected line, it will 
+            be changed into NEW. 
+
+(F)ind      Find and display information about the receiver of the
+            current message.  (Sysop only)
+
+(I)nsert    Allows you to put a new line between two existing lines.
+
+(L)ist      List the message as it has been entered.  This also gives 
+            you the line numbers as needed for the (D)elete, (I)nsert 
+            and (E)dit functions. 
+
+(O)riginal  Lets you review the text of the original message you were
+            reading or replying to.  You are also able to QUOTE from
+            the original message with this function.
+
+(Q)uote     Allows you to quote lines (by line number) from the original
+            message.
+
+(S)ave      Saves the message on disk and returns you to reading 
+            messages. 
+
+(V)isual    Activates the full-screen visual editor.  You must be able
+            to accept ANSI codes to use this function.
+
+
+Command stacking in message entry
+---------------------------------
+
+   E 10         ;edit line 10.
+
+   D 10         ;delete line 10.
+
+   I 10         ;insert a line before line 10.
+
+   Q 8 4        ;quote original message starting at line 8 for 4 lines.
+
+   S K          ;save the new message and kill the original.
+
+   S +          ;save the new message and advance to the next one.
+

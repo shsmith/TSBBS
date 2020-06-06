@@ -1,0 +1,20 @@
+                                                                                
+C:\TMP >                DEBUG
+-                       N SUSPEND.COM
+-                       A 100
+7E6F:0100               MOV AX,7B00
+7E6F:0103               INT 16
+7E6F:0105               INT 20
+7E6F:0107               <ENTER>
+-                       RCX
+CX 0000                                                                         
+:                       7
+-                       W
+Writing 0007 bytes                                                              
+-                       N RESUME.COM
+-                       A 100
+7E6F:0100               MOV AX,7B01
+7E6F:0103               <ENTER>
+-                       W
+Writing 0007 bytes                                                              
+-                       Q

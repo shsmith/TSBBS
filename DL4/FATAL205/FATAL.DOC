@@ -1,0 +1,59 @@
+Documentation?
+Read the file "FATAL.ASM".
+Don't like that?
+Well, are you paying for this software?
+((Plus a damm good example of how to write a proper TSR!))
+No, des-sho?
+Well then ask your Nancy Regan to read your Stars, or an all white jury!
+
+....Waszir strikes... again   and   again  ...
+
+So put on happy face!
+
+
+-------
+5th May 1992:
+  FATAL /I  --> default "Re-Boot" system at TIME-OUT LIMIT
+  FATAL /IB --> Re-Boot system at TIME-OUT LIMIT
+
+Waszir's usage of this Program.
+
+AUTOEXEC.BAT
+------------
+Start of Autoexec.Bat
+
+   REM Install FATAL to RETRY on all errors
+   REM FATAL to re-boot on Memory Errors
+   REM FATAL to intercept Interrupts "00", "02" & "06" and re-boot
+   FATAL /IRW 
+   .
+   .
+   .
+   REM End of AUTOEXEC.BAT
+   REM Change FATAL parameter so that at TIME-OUT LIMIT system will RE-Boot
+   REM Without this update, FATAL will RETRY errors FOREVER!
+   FATAL /IBW
+
+-------------
+
+To recover floppy disk errors, please edit FATAL.ASM for floppy errors.
+ie. Change "db '?AAAAAIA" ; 3:FD Default Actions to
+           "db '?RRRRRRR" : 3:FD Default Actions.
+
+or simply "FATAL /IR" to retry forever all non-memory errors.
+
+Please note that timers are different between NETWORK, COMMS, Floppy and
+Hard Disk errors. NETWORK is set to 1.5 seconds, whilst Hard Disk
+is set to 5 seconds.
+
+This values are clearly documented in the FATAL.ASM source code in
+tables, so it is easy to customize your own.
+
+The original program FATAL had many bugs. Many over sights and incorrect
+memory handling. I've tested this program again and again. It runs fine
+with WWIV 4.21 BBS software.
+
+It also solves my problem with CONNER IDE hard disk which return the
+error, "Drive NOT Ready" upon hitting a bad sector.
+
+JDT_Waszir

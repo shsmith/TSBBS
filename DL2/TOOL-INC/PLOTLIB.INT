@@ -1,0 +1,74 @@
+
+(*
+ * plotlib - graphics graph plotting package
+ *
+ *)
+
+const
+   green     = 1;
+   red       = 1;
+   yellow    = 1;
+   mark_x    = 4;        {size of marker}
+   mark_y    = 2;
+   numtics   = 5;        {number of ticks in scales}
+   maxstyle  = 4;
+
+var
+   maxx:    real;      {logical dimensions of screen}
+   minx:    real;
+   maxy:    real;
+   miny:    real;
+   xstep:   real;
+   ystep:   real;
+   nxsteps: integer;
+   nysteps: integer;
+   color:   integer;
+
+var
+   phys_maxx: integer;    {physical dimensions of graphics area}
+   phys_minx: integer;
+   phys_maxy: integer;
+   phys_miny: integer;
+
+var
+   Graph_Driver:  integer;
+   Graph_Mode:    integer;
+   Text_Mode:     word;
+
+const
+   Driver_Path = '';
+
+
+function get_phys_x(vx: real): integer;
+function get_phys_y(vy: real): integer;
+procedure connect(x1,y1,x2,y2: real);
+procedure tick(x1,y1: real);
+
+procedure determinescale (var world_min:     real;
+                          var world_max:     real;
+                          var stepsz:        real;
+                          var stepcnt:       integer;
+                              maxstep:       integer);
+
+procedure marker(x,y: real; style: integer);
+
+procedure labely(y: real);
+procedure ticky(y: real);
+
+procedure labelx(x: real);
+procedure tickx(x: real);
+
+procedure putxscale;
+procedure putyscale;
+
+procedure border;
+
+procedure plot_data(variable_number: integer;
+                    x:               integer;
+                    y:               real);
+
+procedure event(x: integer; note: string);
+
+procedure open_graph;
+procedure close_graph;
+

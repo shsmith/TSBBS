@@ -1,0 +1,456 @@
+
+
+
+
+
+
+
+                                 P r o   P a c k
+
+                 High Performance Conference Maintenance Utility
+                                       by
+                                 Samuel H. Smith
+
+                             Version 3.0 of 03-15-91
+
+                             From The Tool Shop BBS
+                                 (818) 891-6780
+
+                                 Samuel H. Smith
+                                 P. O. Box 4808
+                           Panorama City, CA 91412-4808
+
+
+    ProPack is designed to make it quick and easy to keep your PCBoard v14
+    compatible conference files in top condition.  It is an indispensable
+    utility for systems with many large conferences or "net mail" between
+    boards.
+
+    Some of the high points of ProPack include:
+
+          *    Fast!  Runs 5 to 10 times faster than standard util-
+               ities.  Uses assembly language and advanced buffering.
+
+          *    Detect and automatically delete duplicate messages.
+
+          *    Eliminate multiple network "taglines" to reduce message
+               base chaos.
+
+          *    Option to remove reader "Via" line advertisement lines.
+
+          *    Option to remove IBM and "high-ascii" codes.
+
+          *    Option to automatically delete .BAK file after process-
+               ing is successfully completed.
+
+          *    Purge messages after they reach a specified age.
+
+          *    Automatically limit conference size to a specified
+               number of active messages.
+
+
+    Copyright 1988-1991 Samuel H. Smith; All rights reserved.
+
+    ProPack is NOT public domain software.  You may use, copy and distribute
+    it freely, but you MAY NOT RESELL ProPack.  A modest fee for copying may
+    be charged, not to exceed $3.00 exclusive of the cost of disk, mailer
+    and postage.
+
+    If you like and use ProPack, I request you register the program after a
+    reasonable trial period (about 30-45 days).
+
+    ----------------
+    PCBoard is a registered trademark of Clark Development Company.
+
+
+    ProPack is very small and lightning fast.  It is the fastest way I know
+    of to pack and re-index PCBoard message files.  It can pack a conference
+    with 1000 messages in less than a minute.  The standard PCBPACK program
+    takes many minutes and much disk thrashing to do the same thing.
+
+
+    High speed operation is achieved through advanced buffering techniques
+    and optimized assembly language in critical sections.  
+
+    Speed is not gained through "cutting corners" or lax error checking.  
+
+    ProPack contains extensive error checking and makes every effort to
+    preserve all available data -- even when the message base is already
+    partially corrupt.
+
+
+    ProPack will remove all "killed" messages, and will skip over older 
+    ones to keep the specified number of messages on file.
+
+
+    ProPack has the ability to detect and remove "duplicate" messages. This
+    option will remove any message that exactly duplicates the text, has the
+    same subject, and is from the same person as any other message.  
+
+    This is very useful in conjunction with Qnet, Qmail, and other PCBoard
+    echo/message extensions.  A very fast 32-bit CRC is used to locate the
+    duplicates.
+
+
+    You can use batch files with ProPack.  Since you specify the full message
+    base filename on the command line, it will easily handle your "external"
+    conferences.
+
+
+    ProPack can handle message bases with as many as 15000 messages.   
+    Please limit your "message blocks" to 15 or less when you define   
+    conferences.
+
+
+    ProPack is fully integrated with the ProDoor system.  You can use
+    ProDoor's PROSM utility to automatically generate a batch file for event
+    processing using ProPack.
+
+
+    You can redirect the output of ProPack to generate a summary log file
+    that records status messages for unattended operation.
+
+
+    ProPack has the ability to capture the text of purged messages into
+    a text file for archival purposes.
+
+
+                                      USAGE
+                                      =====
+
+      ProPack  MAILFILE MAXMSGS [/DEHKLRTUVX] [/Nxxx] [/Sfile]
+
+
+                                   PARAMETERS
+                                   ----------
+
+     MAILFILE  Mail file d:\path\name to be packed.
+
+     MAXMSGS   Maximum number of messages to keep, 0=no limit.
+
+
+                                     OPTIONS
+                                     -------
+
+    Options can be combined without additional "/" or space characters.
+
+     /D   Kill any message that has the same exact text, subject and from-
+          user as a previous message.
+
+     /E   Exclude tag-lines and via-lines when checking for duplicate
+          messages.
+
+     /H   Reset "high message number" to last message number.
+
+          Warning: use of this option can lead to the high message number
+          being re-assigned to a different message, causing messages to be
+          "lost" under some netmail or reader software.
+
+     /I   Remove IBM and "high-ascii" codes.  This option changes all ascii
+          codes greater than chr(127) to ".".
+
+     /K   Kill .BAK file after a successful pack.
+     
+     /L   List duplicate message numbers as they are killed.
+
+     /Nxx Kill messages over xxx days old.
+
+     /R   Purge RECEIVED+PRIVATE messages.
+
+     /T   Removes all but the first '* Origin' tagline generated by Qnet,
+          PCRelay, or other netmail systems.
+
+     /Sfn Capture purged message texts into the text file 'fn'.  If this
+          file already exists, the text will be appended.  Otherwise a
+          new file will be created.
+
+     /U   Always keep UN-RECEIVED+ PRIVATE messages regardless of other
+          options.  Keep any message that is PRIVATE but has not been
+          received, even if it is old and would normally be purged.
+
+     /V   Remove '* Via' lines generated by alternate readers such as
+          ProDoor, Qmail, EZ-rdr, RelayMail, etc.
+
+     /W   Preserve the two-line format in "PCRelay:" taglines. The default
+          (when /T is used) is to keep only the first of  the two lines.
+
+     /X   List message texts during packing.  The listing may  include line
+          markers for the "Tear", "Via" and "Tag" line components of a
+          message.  This display is used in debugging to help locate the
+          reason for message duplication.
+
+
+
+
+                                    EXAMPLES
+                                    ========
+
+    ProPack c:\pcb\main\msgs 1000
+
+          Pack the main board, leaving no more than 1000 active messages.
+
+
+    ProPack \pcb\tools\tools 500 /D /L
+
+          Pack the "tools" conference, deleting all duplicates and leaving no
+          more than 500 active messages.
+
+
+    ProPack \pcb\sysops\sysops 14000 /D /R
+
+          Pack the "sysops" conference, deleting all duplicates, all
+          RECEIVED+PRIVATE messages, and leaving no more than 14000 active
+          messages.
+
+
+    ProPack \pcb\ibm\ibm 500 /DLN180T
+
+          Pack the "IBM" conference, deleting and listing all duplicates,
+          leaving no more than 500 active messages, deleting messages over
+          180 days old, and removing multiple "origin" tag lines.  Notice
+          that options can be combined without extra "/" characters or
+          spaces.
+
+
+    ProPack \pcb\ibm\ibm 100 /DLN180T /S\pcb\ibm\ibm.sav
+
+          Pack the "IBM" conference, as in the previous example, but
+          will also save the text of the purged messages in the file
+                \pcb\ibm\ibm.sav
+          for archival purposes.
+
+
+
+
+
+
+
+                                EXAMPLE EVENT.SYS
+                                -----------------
+
+    rem PackAll.BAT generated by ProSM
+    echo off
+    tm "Packall Started" >>PACKALL.LOG
+
+    ProPack C:\PCB\MAIN\MSGS 800 /eltn360k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\TOOLS\TOOLS 250 /eltn180k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\SUPPORT\SUPPORT 800 /eltn360k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\AI\AI 100 /eltn180k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\ST\ST 100 /eltn360k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\IBM\IBM 300 /eltn90k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\PHOTO\PHOTO 100 /eltn180k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\SYSOPS\SYSOPS 100 /eltn180k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\SMARTNET\SMARTNET 100 /eltn90k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\INTRLINK\INTRLINK 100 /eltn90k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\TELIX\TELIX 100 /eltn90k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\QMODEM\QMODEM 100 /eltn90k >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    ProPack C:\PCB\ADA\ADA 1000 /eltk >>PACKALL.LOG
+    if errorlevel 1 goto exit
+
+    :exit
+    echo. >>PACKALL.LOG
+    tm "Packall Ended" >>PACKALL.LOG
+    echo ---------- >>PACKALL.LOG
+
+
+
+
+
+
+
+
+                                 ERROR MESSAGES
+                                 ==============
+
+    Error: Missing command line parameters
+
+          You must always specify the conference file to be packed and the
+          maximum number of messages to store in the conference.  If you
+          leave off either of these parameters you will get this error
+          message along with a summary of the command format and options.
+
+
+    Error: Invalid digit in "MAXMSGS" parameter
+
+          Following the conference file name you must always specify the
+          maximum number of messages to store in the conference.  This error
+          usually indicates that you forgot to include the number of messages
+          and instead entered one of the command options.
+
+
+    Error: Unknown option: ____
+
+          This error means that you are using a command line option that is
+          not recognized by the program.
+
+
+    Error: Cant open index file
+
+          ProPack requires that an index file be present for each message
+          file being packed.  If you are creating a new conference, or if you
+          have lost your index file, please use ProDoor's PROSM program to
+          create a new one.
+
+
+    Error: Cant open message file
+     
+          Please check that you are specifying the proper full path and file
+          name for the conference you with to pack.  This error might also
+          indicate that the message file is in use by another program that
+          requires exclusive access to the same file.  Network systems should
+          insure that all nodes are offline before attempting to pack a
+          conference file.
+
+
+    ProPack Aborted.  Reason: Could not rename _________ to ________
+
+          After packing is completed, ProPack attempts to rename the original
+          message file to 'name.BAK', and then to rename the newly packed
+          file to 'name'.  Rename failure usually indicates that the original
+          file is in use by another program.  Network systems should insure
+          that all nodes are offline before attempting to pack a conference
+          file.
+
+
+
+
+
+
+
+
+    ProPack Aborted.  Reason: Write failure - disk full or bad sector
+
+          This error is reported when DOS reports an error while writing to
+          the new conference file.  It usually indicates that the disk is
+          too full to hold the original message file plus the new file, or
+          that there is a bad sector that prevented the file from being
+          written.  
+
+
+    ProPack Aborted.  Reason: Index too large - decrease index blocks
+
+          Index files should be 64k or smaller.  ProPack loads the entire
+          index into memory for the fastest operation possible.  If you are
+          using very large index files you need to reduce them to 15 or
+          fewer blocks using ProDoor's PROSM utility.
+
+
+    ProPack Aborted.  Reason: Index file overflow - increase index blocks
+
+          Each index file must be allocated large enough to have one entry
+          for each message number between the lowest message and the highest
+          message in a conference.  Index file sizes are *NOT* based on the
+          number of active messages - rather the size is based on the size of
+          the range of valid message numbers.  
+
+
+    ProPack Aborted.  Reason: CRC table overflow - delete .CRC file and rerun
+
+          This error indicates that the .CRC file used for duplicate message
+          detection has grown beyond the limits of the program.  ProPack
+          allocates room for 15000 total messages in the CRC file.  After
+          processing this many messages you may have to manually delete the
+          'name.CRC' file and let ProPack rebuild it from scratch.
+
+     Please note that it is normal for ProPack to leave a .CRC file in the
+     same directory as the message file.  This small file contains informa-
+     tion on present and past messages that makes it possibly to quickly
+     determine if a new message is unique or a duplicate.  
+
+     If you delete the .CRC file it will slow down program operation because
+     it must then look at each and every message to check for duplication.
+
+
+
+                                  ERROR LEVELS
+                                  ============
+
+    ProPack returns with ERRORLEVEL set to 0 after a successful pack.  If any
+    error occurred during the pack ERRORLEVEL will be set to 1.  
+
+
+
+
+
+
+
+                                     SUPPORT
+                                     =======
+
+    I work very hard to produce a software package of the highest quality and
+    functionality.  I try to look into all reported bugs, and will generally
+    fix reported problems within a few days.
+
+    Since this is user supported software under the ShareWare concept, I
+    don't expect you to contribute if you don't like it or if it doesn't meet
+    your needs.
+
+    If you have any questions, bugs, or suggestions, please contact me at the
+    Tool Shop BBS, (818) 891-6780.
+
+    The latest version is always available for downloading.
+
+
+                                     LICENSE
+                                     =======
+
+    This package is NOT public domain software.  You may use, copy and
+    distribute it freely, but you MAY NOT RESELL the program.  A modest fee
+    for copying may be charged, not to exceed $3.00 exclusive of the cost of
+    disk, mailer and postage.
+
+    If you like and use this program, I request you register it for $15
+    after a reasonable trial period (about 30-45 days).
+
+    Please see REGISTER.FRM for additional registration information.
+
+
+    Send your registration check or money order to:
+
+         Samuel H. Smith
+         The Tool Shop
+         P. O. Box 4808
+         Panorama City, CA 91412-4808
+
+
+
+
+                                   DISCLAIMER
+                                   ==========
+
+     IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST
+     PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES
+     ARISING OUT OF YOUR USE OR INABILITY TO USE THE PROGRAM, OR FOR ANY
+     CLAIM BY ANY OTHER PARTY.
+
+
+                                REVISION HISTORY
+                                ================
+
+                      See PROPACK.NEW for complete revision history.
+
+

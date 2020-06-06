@@ -1,0 +1,5 @@
+(**
+procedure appendc(var line: string; c: char);
+procedure appends(var line: string; s: anystring);
+**)
+procedure vappends(var line: varstring; s: anystring);

@@ -1,0 +1,73 @@
+
+                     ProDoor CD-ROM Library Support
+
+ProDoor supports a 'LIB' command for access to a CD-ROM library disk.
+
+
+To install this feature you need these files:
+
+\PROD\LIBDEF
+   -- Library disk definition file.  This file lists the cd-rom
+      directory prefix for each range of disk codes.  Change "E:" to
+      whatever drive letter you use to access the CD-ROM.
+
+   Example:
+      ;prodoor definition file for cd-rom library
+      ;file format:  <hi disk code> <cd-rom prefix for codes upto hicode>
+      ;              no leading or extra spaces allowed.
+      ;                       modified for PC-SIG 4-88 high-sierra format
+      9 E:\001_100\disk000
+      99 E:\001_100\disk00
+      100 E:\001_100\disk0
+      200 E:\101_200\disk0
+      300 E:\201_300\disk0
+      400 E:\301_400\disk0
+      500 E:\401_500\disk0
+      600 E:\501_600\disk0
+      700 E:\601_700\disk0
+      800 E:\701_800\disk0
+      900 E:\801_900\disk0
+      999 E:\901_1000\DISK0
+      1000 E:\901_1000\disk
+
+
+\PROD\PROLIB
+   -- Menu of library disks.  You can either list all library disks
+      here, or make this short and put the library disk table
+      into a DIR file.
+
+  Example:
+         Library disks available on CD-ROM:
+         Disk                Description
+         ----  ------------------------------------------
+         0001  Game Series No 1
+         0002  Spoolers
+         0003  RATBAS
+         0004  DBMS/Modem7
+         0005  PC-FILE Plus Disk 1 of 2
+
+
+\PROD\PROLIB.BAT
+   -- This batch file is called by prodoor to process each library
+      request.  It is called with parameters specifying the subdirectory
+      on the CD-ROM (as listed in the LIBDEF file) and the zipfile to create.
+      You can edit this file to call up PKZIP, PKPAK, etc. to physically
+      access the CD-ROM.
+
+   Example:
+      echo off
+      rem. process library disk request - for ProDOOR 2.9
+      rem.   %1-logfile  %2-subdir on cd-rom  %3-disk on cd-rom  %4-scratchdir
+      pkZIP %4\CD-%3 %2\*.* >%1
+      echo. >>%1 Disk %3 is now stored in CD-%3.ARC for you!
+
+
+\PROD\LIBHELP
+   -- This help message is printed just before PROLIB.BAT is called.  It
+      should explain to the user where to look for the cd-rom library
+      files.
+
+
+The library function can be called up from the prodoor main command
+prompt by typing 'LIB' (for LIBrary disk).
+

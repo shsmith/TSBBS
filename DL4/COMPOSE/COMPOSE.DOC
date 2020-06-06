@@ -1,0 +1,15 @@
+
+Play and Playback
+-----------------
+
+These programs turn your Tandy1000 or PCjr computer into a 4 voice
+electronic piano.  Play will let you play (and record) tunes at the
+keyboard.  Playback will replay a previously recorded tune.
+
+These programs require the presence of an SN76496 sound chip (not
+present in an ordinary IBM PC).
+
+(this is not the real documenatation!)
+
+S.H.Smith, 3-Jul-86
+

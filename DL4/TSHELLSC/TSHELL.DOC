@@ -1,0 +1,324 @@
+
+
+
+                                   TSHELL
+
+
+                      Turbo Pascal Preprocessor Shell
+
+
+                          Version 1.2 (16-Apr-87)
+
+
+
+  
+        Copyright (C) 1987 by Samuel H. Smith;  All Rights Reserved.
+
+
+
+      You may copy and distribute this program freely, provided that:
+         1)   No fee is charged for such copying and distribution, and
+         2)   It is distributed ONLY in its original, unmodified state.
+
+
+          If you like this program, and find it of use, then your 
+          contribution of $10 will be appreciated.  
+
+
+          Please refer all inquiries to:
+               Samuel H. Smith         The Tool Shop BBS, 
+               5119 N. 11th Ave 332    (602) 279-2673
+               Phoenix, AZ 85013
+                            
+
+
+
+    This program allows you to use a number of C-like preprocessor 
+    statements in a Turbo Pascal source file.  It interprets the 
+    statements and passes the processed text on to the Turbo compiler 
+    for further processing.  TSHELL is a preprocessor capable of macro 
+    substitution, conditional compilation, and nested inclusion of 
+    files. 
+
+    The TSHELL program will load TURBO.COM into memory, install the 
+    preprocessor shell, and enter the Turbo main menu.   At this point, 
+    Turbo Pascal can be used as always, except that the new preprocessor 
+    commands can be used in any source file. 
+
+    To start a Turbo Pascal session with the preprocessor shell, enter: 
+       TSHELL
+    on the DOS command line.
+
+    
+    A stand-alone (batch) version of the preprocessor is also available.  
+    A large tshell-turbo source file can be preprocessed and prepared 
+    for compilation with plain-turbo with this command: 
+       TPP file.in >temp
+       TSPLIT temp out
+
+    This reads file.in, preprocesses it and writes the result to 
+    out.pas.   Extra include files, out.P0n will also be generated if 
+    the source is larger than 50k.  This command is useful when you want 
+    to convert a file that uses the TSHELL preprocessor back into a 
+    normal Turbo Pascal source. 
+
+
+    Overview
+
+    The following C preprocessor directives are understood:
+
+       #define NAME STRING    ;replace all instances of NAME with STRING
+                              ;instances of NAME(p1,pn) are also processed
+
+       #undef NAME            ;delete definition of NAME
+    
+       #ifdef NAME            ;compile only if NAME is defined
+    
+       #ifndef NAME           ;compile if NAME is not defined
+    
+       #else                  ;compile otherwise
+    
+       #endif                 ;resume normal compilation
+    
+       #pragma NOEXPAND       ;do not expand #defines in following lines
+    
+       #pragma EXPAND         ;resume #define expansion
+    
+       #pragma LIST           ;list preprocessed lines to screen
+    
+       #pragma NOLIST         ;stop listing
+    
+       #include "file"        ;include specified file (nesting ok)
+
+       #include <file>        ;search TPATH for include file
+
+       #log REST OF LINE      ;places rest of line into the logfile
+
+
+
+    The following special keywords are predefined:
+
+       SYSTEM_DATE            ;the time/date when compile was started
+    
+       LAST_UPDATE            ;last modification time of current file
+    
+       CURRENT_FILE           ;name of current file
+
+       CURRENT_PATH           ;full pathname of current file
+
+
+
+    Note that keyword replacement takes place only when the keyword in 
+    the source is surrounded by delimiters.   A replacement will not 
+    take place if the keyword is preceeded or followed by a number or a 
+    letter.   This preprocessor WILL make replacements within literals 
+    and comments - beware! 
+
+
+
+
+    Preprocessor commands
+    
+    Lines beginning with '#' communicate with the preprocessor.  
+    Indentation is allowed, but there cannot be a space between the '#' 
+    and the command keyword.   These lines have a syntax independent of 
+    the rest of the language; they may appear anywhere and have effect 
+    which lasts until the end of the compilation. 
+    
+
+
+    Token replacement
+
+    A preprocessor line of the form:
+       #define NAME REPLACEMENT
+    causes the preprocessor to replace future instances of NAME with the 
+    given REPLACEMENT string.   Subsequent instances of NAME followed by 
+    a "(", a sequence of characters delimited by commas, and a ")" are 
+    replaced by the REPLACEMENT in the definition.   Each occurance of 
+    "%" followed by a digit is replaced by the corresponding sequence of 
+    characters following NAME.   To define multi-line macros, place a 
+    "\" at the end of each line except the last. 
+
+    For example, the definition:
+       #define STATUS writeln('status: %1=',%1,' %2=',%2,' %3='%3);
+    defines a macro called STATUS, which can be called with 3 actual 
+    parameters.   If this macro is called with this statement: 
+       STATUS(a,index,name);
+    the compiler will see this line of code:
+       writeln('status: a=',a,' index=',index,' name=',name);
+
+    The definition:
+       #define DUMP_TABLE                   \
+          writeln('Contents of %1:'); \
+          for i := 1 to %2 do               \
+             writeln(' %1[',i,'] = ', %1[i])
+    defines a macro called DUMP_TABLE, which can be called with 2 actual 
+    parameters.   If this macro is called with this statement: 
+       DUMP_TABLE(Data_Table, Table_Size);
+    the compiler will see this line of code:
+          writeln('Contents of DataTable:'); 
+          for i := 1 to Table_Size do        
+             writeln(' Data_Table[',i,'] = ', Data_Table[i]);
+
+
+
+    A control line of the form:
+       #undef NAME
+    deletes the definition of NAME.
+
+
+
+    Conditional compilation
+
+    A control line of the form:
+       #ifdef NAME
+    checks whether the NAME is currently defined in the preprocessor; 
+    that is whether it has been the subject of a #define control line.   
+    A control line of the form: 
+       #ifndef NAME
+    checks whether the NAME is currently undefined in the preprocessor. 
+    Both forms are followed by an arbitrary number of lines. 
+
+    #ifdef NAME
+       If NAME has been defined with #define, the following code will 
+       compile as normal.  Otherwise, the following code will be 
+       excluded from the compilation.   Normal compilation resumes with 
+       an #endif statement.   For example: 
+
+           #ifdef FAST_VIDEO
+              fast_display(x,y,'display data');
+           #else
+              gotoxy(x,y);
+              writeln(con,'display data');
+           #endif
+           
+
+    #ifndef NAME
+       Like #ifdef but compiles code if the NAME has NOT been defined.
+
+    #else
+       Used with #ifdef to provide alternative code for cases where
+       the keyword is not defined. 
+
+    #endif
+       Terminates a #ifdef block of code and resumes normal 
+       compilation. 
+
+
+
+    #pragma NOEXPAND
+       This command stops macro expansion.  It is used in cases where 
+       macro expansion is not desired.   This also speeds up compilation 
+       by eliminating the need to scan each line for keywords. 
+
+    #pragma EXPAND
+       This command resumes normal expansion of macros.
+
+
+
+    #pragma LIST
+       This command causes the source code to be listed to the screen 
+       after macro expansion had taken place. 
+
+    #pragma NOLIST
+       This command disables the source listing.
+
+
+
+    #include <file>    or
+    #include "file"
+       This command causes the specified file to be included into the 
+       compilation.   Include files may be nested. When the <file> form 
+       is used, the TPATH environment variable is used to locate the 
+       include file.  Use the DOS set command to define the directories 
+       to be searched. 
+
+
+    #log REST OF LINE
+       This command places REST OF LINE into the compilation logfile.  
+       This logfile records the compiler used, all source filenames and 
+       revision times, and a summary of compilation speed.  This logfile 
+       is used to track the "pedigree" of an object file and can be very 
+       useful in configuration management of large projects. 
+
+
+
+    Predefined keywords
+
+    SYSTEM_DATE
+       This keyword will be replaced with the time and date when the 
+       compile was started.  It has the form:  dd-mmm-yy hh:mm:ss. 
+
+    LAST_UPDATE
+       This keyword will be replaced with the last update date of the 
+       current source file. 
+
+    CURRENT_FILE
+       This keyword will be replaced with the file name of the current 
+       source file. 
+
+    CURRENT_PATH
+       This keyword will be replaced with the full pathname of the 
+       current source file. 
+
+
+
+    Program requirements and limitations
+
+    Version 1.2 of TSHELL works only with Turbo Pascal version 3.01a. 
+    Future releases will work with more versions of Turbo.   Note that 
+    since TPP does not use TURBO.COM, it works with any version of Turbo 
+    Pascal. 
+
+
+    Memory used:  About 50k of RAM, in addition to that normally used by 
+    TURBO.COM. 
+
+    Number of #define's:  100 different keywords can be defined.  (TPP 
+    allows 500 keywords). 
+
+    Maximum keyword length:  Keywords can be up to 30 characters in 
+    length.  Keywords must follow the same conventions as Turbo Pascal 
+    identifiers. 
+
+    Maximum replacement length:  Replacement strings can be up to 70 
+    characters long.   Note that the line length after macro expansion 
+    cannot exceed 128 characters.  This limit is imposed by Turbo 
+    Pascal. 
+
+    Maximum replacement lines:  Replacement strings can be any number of 
+    lines long.  
+
+    #ifdef nesting:  #ifdef and #ifndef statements can be nested up to 
+    10 levels. 
+
+    #include nesting:  #include statements can be nested up to 5 levels. 
+
+
+
+   Changes since version 1.0
+
+   Speed:   Several parts of TSHELL 1.2 have been rewritten in assembly 
+   language for greater speed.  Version 1.2 compiles itself over 3 
+   times faster than Version 1.0 does. 
+
+   Nested includes files:   Include files are now allowed to nest up to 
+   5 levels deeply.  
+
+   Include file search path:   The TPATH environment variable is used 
+   to specify the search paths to be used to locate files included with 
+   the #include <name> form of the include command.   This allows 
+   developers to place all library files into one or more common 
+   include directories and not have to worry about specific paths. 
+
+   Compilation logging:   A compilation log is created for each program 
+   compiled under TSHELL 1.2.  This log records the compiler and shell 
+   used, all source files and revision dates, special programmer 
+   defined log entries, and a summary of compilation speed. 
+
+   Tools:   TSHELL 1.2 includes several additional program development 
+   tools. These include TMAKE, TSPLIT and PEDIGREE.   TMAKE can be used 
+   to automatically determine what programs need recompilation.  TSPLIT 
+   will split up a large turbo source file into smaller parts (needed 
+   when TPP outputs are >60k).   PEDIGREE scans a comfile and reports 
+   the tag lines that it contains. 

@@ -1,0 +1,73 @@
+                      
+ 
+                  USING BOYAN 4.01 WITH EXTERNAL HS/LINK
+ 
+                                  
+     Installation: 
+
+     Please refer to the BOYAN manual for detailed information on
+     installation of external protocols.  The following installation
+     steps should work for most folks:
+
+     Copy HSLINK.EXE into your BOYAN directory.  If you have changed the
+     "path for extrnal protocols" option (ALT-C/D/H) then place
+     HSLINK.EXE into the configured directory instead.
+
+     Next you need to install the HS/LINK protocol into the BOYAN
+     protocol menu.
+
+     Load up BOYAN and press ALT-C to get into the CONFIGURATION menu.  Then
+     press "X" for EXTENDED TRANSFER PROTOCOLS.
+
+     Press "4" to define a new protocol (use any available protocol
+     number if #4 is already in use).
+
+     When prompted for "Protocol Name" enter "HS/Link" and press ENTER.
+     When prompted for "Menu Letter" enter "H" and press ENTER.
+     When prompted for "External File" enter "HSLINK.EXE" and press
+     ENTER.
+     When asked "Prompt for DL-names" enter "NO" and press ENTER.
+     When prompted for "HS/Link Upload" enter "\DC-[%P:HSLINK -P%MD %TF]"
+     When prompted for "HS/Link Download" enter "\DC-[%P:HSLINK -P%MD ]"
+
+     Then press ESCAPE twice to get out of configuration mode.
+
+     You can edit the "HS/Link Upload" and "HS/Link Download" entries to
+     include options on the HSLINK command line, but most folks won't
+     need to change anything.  If you want to experiment, there are a
+     number of optional parameters you can read about in HSLINK.DOC and
+     HSLINK.NEW.
+
+     To download with HS/LINK, first you tell the BBS you're talking to
+     what files you want to download, and that you want to download in
+     the HS/LINK protocol.  On the Tool Shop you can do this with the
+     following command:
+        D H filename filename S
+     for example,
+        D H TOOLSHOP.EXE S
+
+     Once you've got the BBS into downloading mode, Press PGDN and
+     select HS/Link from the menu.  If asked for "PATH:" press ENTER
+     again.
+
+     If you want to also upload to the BBS while downloading, you simply
+     press the PGUP key, select HS/LINK from the menu, and list the
+     upload filenames you want to have transmitted.
+
+I hope these instructions help, but remember, I can't take
+responsibility for anydamages resulting from these instructions.  If you
+get stuck, it always helps to read the DOC files that come with BOYAN
+and with HSLINK.  If all else fails, call up the tool shop and ask for
+help on the main board.  Either I will help you, or somebody else will
+know the answer and give you a hand.
+
+Good luck!
+
+Samuel H. Smith
+Sysop of The Tool Shop
+   Phone number         Modem type                Access
+  --------------    ---------------------   -------------------
+  (818) 891-3772    US Robotics HST 9600    Contributors only
+  (818) 891-1344    Hayes-V series 9600     Contributors only
+  (818) 891-6780    US Robotics 2400        Free to all
+

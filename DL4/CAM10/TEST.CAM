@@ -1,0 +1,295 @@
+
+--
+-- test program for CAM language
+--
+-- 6-may-86 s.h.smith
+--
+
+---------------------------------------------------------------
+--                                                           --
+--              Define some basic actions                    --
+--                                                           --
+---------------------------------------------------------------
+
+--
+-- VARIABLE declaration
+--
+define (integer VARIABLE) as
+(
+   VARIABLE = new label;
+
+   emit "";
+   emit " .data section";
+   emit VARIABLE, " define_word 0";
+   emit " .program section";
+   emit ""
+);
+
+
+--
+-- Variable assignment
+--
+define (VARIABLE = EXPRESSION) as
+(
+   debug;
+   EXPRESSION;
+   emit " store ", VARIABLE
+);
+
+
+--
+-- Expression operators
+--
+define (PAR1 + PAR2) as
+(
+   emit " fetch ", PAR1;
+   emit " add ", PAR2
+);
+
+define (PAR1 - PAR2) as
+(
+   emit " fetch ", PAR1;
+   emit " sub ", PAR2
+);
+
+define (PAR1 * PAR2) as
+(
+   emit " fetch ", PAR1;
+   emit " mult ", PAR2
+);
+
+define (PAR1 / PAR2) as
+(
+   emit " fetch ", PAR1;
+   emit " div ", PAR2
+);
+
+
+--
+-- Variable increment/decrement
+--
+define (VARIABLE + +) as
+(
+   VARIABLE = (VARIABLE + 1)
+);
+
+define (VARIABLE - -) as
+(
+   VARIABLE = (VARIABLE - 1)
+);
+
+
+--
+-- Greater-than predicate
+--
+define (PAR1 > PAR2) as
+(
+   emit " fetch ", PAR1;
+   emit " compare ", PAR2;
+   emit " greater?"
+);
+
+
+--
+-- Less-than predicate
+--
+define (PAR1 < PAR2) as
+(
+   emit " fetch ", PAR2;
+   emit " compare ", PAR1;
+   emit " greater?"
+);
+
+
+--
+-- Equal-to predicate
+--
+define (PAR1 == PAR2) as
+(
+   emit " fetch ", PAR2;
+   emit " compare ", PAR1
+);
+
+
+--
+-- Data output
+--
+define (output VALUE) as
+(
+   emit " output ", VALUE
+);
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--         Define some program control constructs            --
+--                                                           --
+---------------------------------------------------------------
+
+--
+-- if then
+--
+define (if CONDITION then STATEMENT) as
+(
+   declare Label;
+
+   Label = new label;
+
+   emit "";
+   emit ";if then";
+
+   CONDITION;
+   emit " jump_zero ", Label;
+
+   STATEMENT;
+
+   emit "";
+   emit Label, ":"
+);
+
+
+--
+-- if then else
+--
+define (if CONDITION then STATEMENT_IFTRUE else STATEMENT_IFFALSE) as
+(
+   declare Else_label;
+   declare End_label;
+
+   Else_label = new label;
+   End_label = new label;
+
+   emit "";
+   emit ";if then else";
+
+   CONDITION;
+   emit " jump_zero ", Else_label;
+
+   emit "";
+   STATEMENT_IFTRUE;
+   emit " jump ", End_label;
+
+   emit "";
+   emit Else_label, ":";
+   STATEMENT_IFFALSE;
+
+   emit "";
+   emit End_label, ":"
+);
+
+
+--
+-- do-while
+--
+define (while CONDITION do STATEMENT) as
+(
+   declare Top_label;
+   declare End_label;
+
+   Top_label = new label;
+   End_label = new label;
+
+   emit "";
+   emit ";while do";
+   emit Top_label, ":";
+
+   CONDITION;
+   emit " jump_zero ", End_label;
+
+   emit "";
+   STATEMENT;
+   emit " jump ", Top_label;
+
+   emit "";
+   emit End_label, ":"
+);
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--         Define some test drivers                          --
+--                                                           --
+---------------------------------------------------------------
+
+define (test math) as
+(
+   integer I;
+
+   emit ";math test";
+   I = 100;
+   I + +;
+
+   if (I > 100) then (
+      if (I < 102) then (
+         output "math is ok"
+      )
+      else (
+         output "math trouble 1"
+      )
+   )
+   else (
+      output "math trouble 2"
+   )
+);
+
+
+define (do while test) as
+(
+   integer I;
+
+   emit ";do while test";
+   I = 0;
+
+   while (I < 10) do
+   (
+      output "I=";
+      output I;
+      I = (I + 1)
+   )
+);
+
+
+define (test if statement) as
+(
+   if (5 > 4) then (
+      output "if then broken!"
+   )
+);
+
+
+define (test if then statement) as
+(
+   if (100 > 200) then (
+      output "thats funny"
+   )
+   else (
+      output "all ok"
+   )
+);
+
+
+define (test output statement with MESSAGE) as
+(
+   output "Testing, message=";
+   output MESSAGE;
+   output "...end"
+);
+
+
+--
+-- this simple main program uses the if-then element
+--
+begin
+(
+   output "Start program...";
+   test math;
+   do while test;
+   test if statement;
+   test if then statement;
+   test output statement with "A String";
+   output "End program..."
+)
+
+

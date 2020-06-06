@@ -1,0 +1,5 @@
+ProKit version 3.50
+Door developer kit for PCB 14.0-14.5 and
+Turbo Pascal 7.0
+Updated to prevent corruption of PCB 15.x
+format USERNET.XXX files.

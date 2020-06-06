@@ -1,0 +1,527 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+
+=======================================================================
+MiniCrt unit
+------------
+(*
+ * MiniCrt - simplified version of Borland's CRT unit.
+ * Does not EVER do direct video.  The standard crt unit
+ * locks up multi-taskers with its direct video checking before
+ * the user program can turn it off.
+ * (3-1-89)
+ *)
+
+   var
+      stdout:  text;  (* output through dos for ANSI compatibility *)
+
+   function KeyPressed: Boolean;
+   function ReadKey: Char;
+
+   procedure SetScrollPoint(Y2: Byte);
+   procedure FullScreen;
+
+   procedure GotoXY(X,Y: Byte);
+   function WhereX: Byte;
+   function WhereY: Byte;
+
+   procedure ClrScr;
+   procedure ClrEol;
+
+   procedure NormalVideo;
+   procedure LowVideo;
+   procedure ReverseVideo;
+   procedure BlinkVideo;
+
+
+=======================================================================
+BufIO unit
+----------
+(*
+ * Bufio - Buffered File I/O Unit (3-1-89)
+ *
+ * This unit provides both read and write buffering on block oriented
+ * random-access files.  It is optimized for sequential reads or writes,
+ * but will function properly with fully random files.
+ *
+ *)
+
+   type
+      buffered_file = private;
+
+   var
+      berr: boolean;       (* true if buffered read or write fails *)
+
+   procedure bcreate(name:    dos_filename);
+      (* create an empty file; use with bopen to open output files *)
+
+   procedure bopen(var bfd:   buffered_file; (* file variable *)
+                   name:      dos_filename;  (* name of file *)
+                   maxrecn:   word;          (* number of records to buffer *)
+                   recsize:   word);         (* size of each record *)
+      (* open a buffered file *)                 (* sets 'bErr' if not ok *)
+
+   procedure bflush(var bfd:  buffered_file);
+      (* write buffer, force re-read on next access *)
+      
+   procedure bseek(var bfd:   buffered_file;
+                   recn:      word);
+      (* set position of buffered file *)
+   
+   procedure bseekeof(var bfd:   buffered_file);
+      (* set position of buffered file to end-of-file *)
+   
+   function btell(var bfd:    buffered_file): word;
+      (* tell current record number in buffered file *)
+
+   function beof(var bfd:     buffered_file): boolean;
+      (* check for eof on buffered file *)
+
+   procedure bread(var bfd:   buffered_file;
+                   var dest);
+      (* buffered read *)
+   
+   procedure bwrite(var bfd:   buffered_file;
+                    var src);
+      (* buffered write *)
+
+   procedure bclose(var bfd:  buffered_file);
+      (* close a buffered file *)
+
+
+=======================================================================
+MdosIO unit
+-----------
+(*
+ * mdosio - library for interface to DOS v3 file access functions (3-1-89)
+ *
+ *)
+
+   type
+      dos_filename = string[64];
+      dos_handle   = word;
+
+      seek_modes = (seek_start {0},     (* seek relative to start of file *)
+                    seek_cur   {1},     (* seek from current position *)
+                    seek_end   {2});    (* seek from end of file *)
+
+      open_modes = (open_read  {h40},   (* deny_nothing, allow_read *)
+                    open_write {h41},   (* deny_nothing, allow_write *)
+                    open_update{h42});  (* deny_nothing, allow_read+write *)
+
+   const
+      dos_error    = $FFFF; (* file handle after an error *)
+
+   var
+      dos_regs:     registers;
+      dos_name:     dos_filename;
+
+
+   function dos_open(name:      dos_filename;
+                     mode:      open_modes):  dos_handle;
+
+   function dos_create(name:    dos_filename): dos_handle;
+
+   function dos_read( handle:   dos_handle;
+                      var       buffer;
+                      bytes:    word): word;
+
+   procedure dos_write(handle:  dos_handle;
+                       var      buffer;
+                       bytes:   word);
+
+   function dos_write_failed:   boolean;
+
+   procedure dos_lseek(handle:  dos_handle;
+                       offset:  longint;
+                       method:  seek_modes);
+
+   procedure dos_rseek(handle:  dos_handle;
+                       recnum:  word;
+                       recsiz:  word;
+                       method:  seek_modes);
+
+   function dos_tell: longint;
+
+   procedure dos_find_eof(fd:   dos_handle);
+
+   procedure dos_close(handle:  dos_handle);
+
+   procedure dos_unlink(name:   dos_filename);
+
+   function dos_exists(name: dos_filename): boolean;
+
+
+=======================================================================
+DosMem unit
+-----------
+(*
+ * dosmem - Dos Memory Management Unit (3-1-89)
+ *
+ * This unit allocates memory via DOS so you don't have to reserve
+ * heap space in advance.
+ *
+ *)
+
+   function dos_maxavail: longint;
+   procedure dos_getmem(var ptrvar; size: word);
+   procedure dos_freemem(var ptrvar);
+
+
+=======================================================================
+Tools Unit
+----------
+(*
+ * Tools - this unit provides a variety of utility functions
+ *         based on the Tool Shop "TOOL-INC" library.
+ *
+ *)
+
+(* --------------------------------------
+ * various string and character types
+ *)
+
+type
+   filenames  = string[namesizes];
+   anystring  = string[128];
+   longstring = string[255];
+   string2   = string[2];
+   string8   = string[8];
+   string10  = string[10];
+   string12  = string[12];
+   string13  = string[13];
+   string20  = string[20];
+   string25  = string[25];
+   string30  = string[30];
+   string40  = string[40];
+   string65  = string[65];
+   string72  = string[72];
+   string80  = string[80];
+   string160 = string[160];
+   string255 = string[255];
+   char2  = array[1..2] of char;
+   char3  = array[1..3] of char;
+   char4  = array[1..4] of char;
+   char5  = array[1..5] of char;
+   char6  = array[1..6] of char;
+   char7  = array[1..7] of char;
+   char8  = array[1..8] of char;
+   char9  = array[1..9] of char;
+   char10 = array[1..10] of char;
+   char11 = array[1..11] of char;
+   char12 = array[1..12] of char;
+   char13 = array[1..13] of char;
+   char14 = array[1..14] of char;
+   char15 = array[1..15] of char;
+   char16 = array[1..16] of char;
+   char19 = array[1..19] of char;
+   char24 = array[1..24] of char;
+   char25 = array[1..25] of char;
+   char30 = array[1..30] of char;
+   char39 = array[1..39] of char;
+   char40 = array[1..40] of char;
+   char32 = array[1..32] of char;
+   char35 = array[1..35] of char;
+   char45 = array[1..45] of char;
+   char128 = array[1..128] of char;
+
+
+(* --------------------------------------
+ * mult-tasker support
+ *)
+const
+   tasker:  (taskview,                  (* taskview/omniview/topview/desqview *)
+             doubledos,                 (* doubledos *)
+             notasker,                  (* single task *)
+             unknown) = unknown;        (* before first call *)
+
+procedure determine_tasker;     (* determine what multi-tasker is active, if any *)
+
+procedure give_up_time;         (* give up unused time under doubledos *)
+
+procedure delay(ms: longint);
+   (* delay for a specified number of miliseconds;
+      give up time while delaying *)
+
+
+(* --------------------------------------
+ * bit-set support
+ *)
+const
+   maxbit = 40;
+type
+   bitnumber = 0..39;
+   bitmap = record
+      bits:  array[0..4] of byte;       (* bits 0..39 *)
+   end;
+
+procedure setbit(var map: bitmap; bitnum: bitnumber; value: boolean);
+   (* set the specified bit in a bitmap *)
+
+function getbit(map: bitmap; bitnum: bitnumber): boolean;
+   (* return true/false for specified bit in a bitmap *)
+
+
+(* --------------------------------------
+ * byte flag support
+ *)
+
+function getflag(flag: byte; bitval: byte): boolean;
+   (* return true/false for specified is set *)
+
+procedure setflag(var flag: byte; bitval: byte; value: boolean);
+   (* set the specified bit in a flagbyte *)
+
+
+(* --------------------------------------
+ * wildcard and filelist support
+ *)
+
+const
+   maxnumfiles =  200;
+   null =         #0;
+type
+   filearray =    array [1.. maxnumfiles] of varstring;
+var
+   filetable:     filearray;
+   filecount:     integer;
+
+procedure getfiles (pattern:       string65;
+                    var fdir:      filearray;
+                    var num:       integer);
+
+function is_wild(filename: string65): boolean;
+   (* determing if a filespec contains wildcards *)
+
+function wildcard_match (var pattern,
+                         line:               string65): boolean;
+   (* pattern must be upper case; line is not case sensitive;
+      returns true if wildcard pattern matches line *)
+
+
+(* --------------------------------------
+ * filename manipulation utilities
+ *)
+
+function dir_only(name: filenames): filenames;
+   (* return directory portion of a full filename *)
+
+function ext_only(name: filenames): filenames;
+   (* return .EXT portion of a full filename *)
+
+function file_size(name: string65): longint;
+   (* return the actual size of a file *)
+
+function path_only(name: filenames): filenames;
+   (* return directory portion of a filename with trailing "\" *)
+
+function remove_ext(name: filenames): filenames;
+   (* return all except .EXT *)
+
+function remove_path(name: filenames): filenames;
+   (* return all except drive:\directory prefix *)
+
+procedure cons_name(var resu:          filenames;
+                    name1,name2,ext:   filenames);
+   (* construct a full filename based on the given filename
+      parts and extention *)
+
+procedure cons_path(var path: filenames;
+                    dir,name: filenames);
+   (* construct a full pathname based on a directory and filename *)
+
+
+(* --------------------------------------
+ * variable allocation string support
+ *)
+
+type
+   varstring = ^longstring;
+
+(* NOTE: you must pre-initialize all varstring variables to 'nil'
+         before using any procedure in this library *)
+
+procedure releasestr( var str:  varstring);
+   (* release the memory used by a varstring variable.  variable MUST
+      be pre-allocated or the program may crash!!! *)
+
+procedure savestr( var tostr: varstring;
+                   from:      longstring);
+   (* save a regular string in a varstring; new allocation of varstring *)
+
+procedure vappends(var line: varstring; s: anystring);
+   (* append a string to a variable allocation string *)
+
+
+(* --------------------------------------
+ * "basic" format 'single' and 'double' conversions
+ *)
+
+type
+  double    = array[0..7] of byte;
+  single    = array[0..3] of byte;
+
+function dtof(B: double): real;
+   (* convert 8 byte double to real *)
+
+procedure ftod(PasReal: real; var B: double);
+   (* convert real to 8 byte double *)
+
+function dtol(B: double): longint;
+   (* convert 8 byte double to long integer *)
+
+
+function stof(B: single): real;
+   (* convert 4 byte single to real *)
+
+procedure ftos(PasReal: real; var B: single);
+   (* convert real to 4 byte single *)
+
+procedure ltos(l: longint; var B: single);
+
+function stol(s: single): longint;
+
+procedure zeros(var B: single);
+
+procedure incd(var d: double; n: real);
+
+procedure incs(var s: single; n: real);
+
+
+
+(* --------------------------------------
+ * ascii to binary conversions
+ *)
+
+function atof (asc:  anystring): real;
+   (* ascii to float *)
+
+function atoi (asc:  anystring): integer;
+   (* ascii to signed integer *)
+
+function atol (asc:  anystring): longint;
+   (* ascii to long integer *)
+
+function atow (asc:  anystring): word;
+   (* ascii to unsigned integer *)
+
+
+(* --------------------------------------
+ * binary to ascii conversions
+ *)
+
+function ltoa (int: longint): string8;
+   (* long integer to ascii *)
+
+function stoa(s: single): string10;
+   (* "basic" single to ascii *)
+
+function ftoa(f: real; width,dec: integer): string20;
+   (* floating point to ascii *)
+
+function itoa (int: integer): string8;
+   (* integer to ascii *)
+
+function itoh(i: longint): string8;
+   (* integer to hex digits *)
+
+function wtoa (w: word): string8;
+   (* unsigned integer to ascii *)
+
+function strval (i: integer): string2;
+   (* return 2 digits from an integer; leading zero provided
+      if needed; used to build date/time strings *)
+
+
+(* --------------------------------------
+ * real-time clock support
+ *)
+
+function get_mins: integer;
+   (* return time in minutes since midnight *)
+
+function get_time: real;
+   (* return time in seconds since midnight *)
+
+function lget_ms: longint;
+   (* return time in seconds*100 since midnight *)
+
+function lget_time: longint;
+   (* return time in seconds since midnight *)
+
+function system_time: string8;
+   (* return time of day as hh:mm *)
+
+function system_date: string8;
+   (* return current date as mm-dd-yy *)
+
+function system_dd: string2;
+   (* return day of month *)
+
+function system_mm: string2;
+   (* return month number *)
+
+function system_yy: string2;
+   (* return year *)
+
+
+(* --------------------------------------
+ * string formatting and manipulation
+ *)
+
+function ljust(s: string80; w: integer): string80;
+   (* left justify a string *)
+
+function rjust(s: string80; w: integer): string80;
+   (* right justify a string *)
+
+procedure delete_leading_spaces(var line: string);
+procedure delete_trailing_spaces(var line: string);
+   (* remove spaces from front or back of a string *)
+
+procedure replace_string( var line: longstring; oldstr, newstr: string65);
+   (* perform string replacement if possible *)
+
+procedure stoupper(var st: string);
+   (* map a string to upper case *)
+
+
+=======================================================================
+qRead unit
+----------
+(*
+ * QRead - Quick ReadLn Unit for Strings
+ *
+ *)
+
+   procedure qReadLn( var fd: text;       {text file to read from}
+                      var dest: string;   {destination string}
+                      maxlen: word );     {sizeof dest string}
+
+
+=======================================================================
+OpenShare unit
+--------------
+(*
+ * OpenShare - TPAS 5.0 unit for shared text files (3-1-89)
+ *
+ * Use AssignText instead of Assign to create a text file
+ * with full DOS 3.x file sharing (as implemented for binary
+ * files by MDosIO)
+ *
+ *)
+
+   procedure AssignText(var F:  Text; FileName:  dos_filename);
+      (* use instead of Assign() for shared text files *)
+
+

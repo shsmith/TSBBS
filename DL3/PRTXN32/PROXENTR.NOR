@@ -1,0 +1,22 @@
+;
+; PROXENTR - ProDoor command translation definition for MESSAGES ENTRY prompt
+;               For ProDoor 3.2
+;
+; File format is:
+;       level newcommand oldcommand
+;
+; List higher levels first.  Oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+;CONFIG command to change conference autojoin configuration starting
+;with the current conference.
+;
+; Special commands handy in translation:
+;       " rest of line          ;display rest-of-line to user
+;       > rest of line          ;display and LOG rest-of-line
+;       < rest of line          ;LOG rest-of-line but display nothing
+;
+10,F,C    ;forsett/continue
+10,SL,D   ;slette/del linje 
+10,S,Q    ;sitat/quote  
+10,L,S    ;lagre/save melding

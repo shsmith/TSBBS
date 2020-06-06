@@ -1,0 +1,33 @@
+echo OFF
+rem Door script for PRODOOR 3.4 system
+
+rem NOTE: change PRODEBUG= to PRODEBUG=ON to enable prodoor debugging
+set PRODEBUG=
+
+rem NOTE: Each node MUST have a different DSZLOG setting!
+set DSZLOG={sys}\$door.log
+
+rem NOTE: Point EXTUSER and CONFINFO to a common directory for all nodes
+rem       on multi-node systems.
+set EXTUSER={prod}\EXTUSER
+set CONFINFO={prod}\CONFINFO
+
+rem call up pcb145 on return from new style doors
+if exist users.sys goto return145
+if exist door.sys goto return145
+
+{proddev}
+cd {prod}
+prodoor PROD.CNF {sys} %1
+
+{sysdev}
+cd {sys}
+$door {board}
+
+{board}
+
+:return145
+echo  >$door.bat pcb145/key:open;prodoor^M
+echo >>$door.bat door
+$door
+

@@ -1,0 +1,12 @@
+VAR
+   N: INTEGER;
+
+BEGIN
+   FOR N := 1 TO PARAMCOUNT DO
+      WRITE(PARAMSTR(N),' ');
+
+   READLN(N);
+   HALT(N);
+
+END.
+

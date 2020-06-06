@@ -1,0 +1,68 @@
+ ----- FIVE New VARS for ProLON Version 1.31  (One new since 1.3) ------
+
+  NOTE:  Upper and Lower case is NOT important.
+
+         They [should] be in your PROLON.CNF file.  If you like my
+         DEFAULTS, you don't need to add them.  If you DON'T like
+         my defaults, you will need to ADD THEM YOURSELF and set
+         them to your preferences.
+
+  Need MORE info ??  Run the INSTALL program and VIEW the HELP files
+ ------------------------------------------------------------------------
+
+UPDATE_NET OFF    (ON, OFF, Default=OFF)
+  ; For now, you can safely have this OFF.  Used to
+  ; access and update USERNET.XXX every 30 seconds.
+
+SHOW_PLUS OFF     (ON, OFF, Default=OFF)
+  ; Some like the "+" on the blank call-waiting
+  ; screen, and some do not.
+
+NEW_PANEL ON     (ON, OFF, Default=ON)
+  ; Whether or not to use the NEW call-waiting
+  ; screen that shows BBS usage. New Callers,
+  ; Messages, Uploads, downloads, etc.
+  ; PgDn on the Call-Waiting screen will toggle
+  ; between NODE and SYSTEM-WIDE stats.
+  ; To get SYSTEM-WIDE usage stats, all nodes
+  ; must have the same SET USAGE_FILE= file.
+  ; See the SETS for more information.
+
+FORCE_MSG_SCAN ALL  (OFF, ALL, MAIN, Default=MAIN)
+  ; Forces a SCAN MAIN BOARD ONLY or a
+  ; SCAN ALL conferences for messages.
+  ;
+  ; If set to MAIN, the caller will be asked
+  ; if they want to SCAN ALL in addition to
+  ; the SCAN MAIN.
+  ;
+  ; If set to OFF, the caller will get the normal
+  ; "Scan Main Board for Messages" prompt.
+  ;
+  ; If set to ALL or MAIN, the caller will NOT
+  ; even get the prompt - the scan will be FORCED !
+
+FORCE_SCAN_COMMAND N  (N, Y, S, Default=N)
+  ; The "J ?" command to use when FORCE is on.
+  ; ie.    N = J N    Y = J Y   S = J S
+  ;        N=NEW      Y=YOUR    S=STATS
+  ;
+  ; Has the same effect as if the user typed it
+  ; on the command line.
+  ;
+  ; Each of these commands will produce different
+  ; results, you should experiment to see which
+  ; one you prefer the best.
+  ;
+  ; I use the "N" for ALL NEW messages and it seems
+  ; to do the trick... no more "I LEFT A MESSAGE",
+  ; "WHY DIDN'T YOU ANSWER ?"   Heck, I DID !!!
+  ;
+  ; ... or, he left the message in Conference 3,
+  ; and didn't see the response because he never
+  ; went back in, and expects it to be in the Main.
+  ; He'll see it now.... it is FORCED !!
+
+
+
+

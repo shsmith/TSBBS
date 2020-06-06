@@ -1,0 +1,50 @@
+
+;
+; Configuration file for UNARCM 9/13/88
+;
+
+post all                ;post all messages, even if not "echo" messages
+
+;
+; To prevent message duplication, all messages containing your own
+; system identifier will excluded from the ARCM packet.
+; The exclude statement can also be used to exclude unwanted user names
+; or subject matter.  Up to 40 exclude statements are allowed.
+;
+exclude Origin: The Tool Shop      ;exclude tool shop echos
+exclude Via: The Tool Shop         ;exclude tool shop echos
+exclude STATUS: RECEIVER ONLY      ;exclude private messages
+exclude (C)                        ;exclude copyright messages
+exclude Copyright
+
+;
+; Rename the host's SYSOP messages for the proper name of the sysop.
+;
+rename SYSOP, Jeff Woods           ;for ASU ACS as a host
+
+;
+; Each convert line specifies the imported conference name, a comma,
+; and the local conference name in which the messages are to be posted.
+; No conversion is needed if your conference names exactly match those
+; found in the ARCM packet.   Up to 100 convert statements are allowed.
+;
+convert Main,      Host
+convert Events,    Host
+convert Own,       Host
+convert COMPASS,   Host
+convert Micro,     IBM
+convert C-News,    C-SIG
+convert Sysop,     Sysops
+convert Review,    DosTips
+convert Program,   Tools
+convert Off-Beat,  SoapBox
+convert Tech,      IBM
+convert Games,     Media
+convert Writer,    Writers
+convert Want-Ads,  ForSale
+convert Politics,  Soapbox
+convert Business,  Invest
+convert Comm,      Commo
+convert The_C,     C-SIG
+convert ProDoor,   Support
+

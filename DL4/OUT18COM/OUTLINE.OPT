@@ -1,0 +1,12 @@
+{options for OUTLINE v1.8}
+60    {max number of lines to print on a page}
+20    {min number of lines on a page before a new page can be started}
+3     {amount of indentation for each level of subsection nesting in printouts}
+72    {right margin for reformatted print file outputs}
+1     {should section titles be underlined?       1=yes, 0=no}
+1     {should paragraphs of text be reformatted?  1=yes, 0=no}
+1     {should output be divided into pages?       1=yes, 0=no}
+3     {text mode code:                            2=bw80, 3=c80}
+1     {assign dewey decimal numbers to sections?  1=yes 0=no}
+1     {should text be right justified             1=yes, 0=no}
+

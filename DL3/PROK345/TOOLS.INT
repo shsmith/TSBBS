@@ -1,0 +1,249 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * Top level unit for the Tool Shop Tools Library
+ *
+ *)
+
+unit Tools;
+
+interface
+
+   uses Dos, MDosIO, debugs;
+
+const
+   namesizes = 50;      {size of filenames}
+
+type
+   filenames  = string[namesizes];
+   anystring  = string[128];
+   longstring = string[255];
+
+   string2   = string[2];
+   string4   = string[4];
+   string5   = string[5];
+   string6   = string[6];
+   string8   = string[8];
+   string10  = string[10];
+   string12  = string[12];
+   string13  = string[13];
+   string20  = string[20];
+   string25  = string[25];
+   string30  = string[30];
+   string40  = string[40];
+   string65  = string[65];
+   string72  = string[72];
+   string80  = string[80];
+   string160 = string[160];
+   string240 = string[240];
+   string255 = string[255];
+
+   char2  = array[1..2] of char;
+   char3  = array[1..3] of char;
+   char4  = array[1..4] of char;
+   char5  = array[1..5] of char;
+   char6  = array[1..6] of char;
+   char7  = array[1..7] of char;
+   char8  = array[1..8] of char;
+   char9  = array[1..9] of char;
+   char10 = array[1..10] of char;
+   char11 = array[1..11] of char;
+   char12 = array[1..12] of char;
+   char13 = array[1..13] of char;
+   char14 = array[1..14] of char;
+   char15 = array[1..15] of char;
+   char16 = array[1..16] of char;
+   char19 = array[1..19] of char;
+   char24 = array[1..24] of char;
+   char25 = array[1..25] of char;
+   char30 = array[1..30] of char;
+   char39 = array[1..39] of char;
+   char40 = array[1..40] of char;
+   char32 = array[1..32] of char;
+   char35 = array[1..35] of char;
+   char45 = array[1..45] of char;
+   char128 = array[1..128] of char;
+
+procedure determine_tasker;     {determine what multi-tasker is active, if any}
+procedure give_up_time;         {give up unused time under doubledos}
+
+const
+   tasker:  (taskview,                  {taskview/omniview/topview/desqview}
+             doubledos,                 {doubledos}
+             notasker,                  {single task}
+             unknown) = unknown;        {before first call}
+
+function ftoa(f: real; width,dec: integer): string20;
+function atof (asc:           anystring): real;
+function atoi (asc:  anystring): integer;
+function atol (asc:  anystring): longint;
+function atow (asc:  anystring): word;
+function insert_commas(s: anystring): anystring;
+function itoa (int: integer): string8;
+function ltoa (int: longint): string8;
+function wtoa (w: word): string8;
+
+type
+  single    = array[0..3] of byte;
+function stof(B: single): real;
+   {convert 4 byte single to real}
+procedure ftos(PasReal: real; var B: single);
+   {convert real to 4 byte single}
+function stol(s: single): longint;
+procedure incs(var s: single; n: real);
+procedure ltos(l: longint; var B: single);
+procedure zeros(var B: single);
+
+type
+  double    = array[0..7] of byte;
+
+function dtof(B: double): real;
+   {convert 8 byte double to real}
+function dtol(B: double): longint;
+   {convert 8 byte double to long integer}
+procedure ftod(PasReal: real; var B: double);
+   {convert real to 8 byte double}
+procedure incd(var d: double; n: real);
+
+function stoa(s: single): string10;
+
+function dtoa(d: double): string10;
+function itoh(i: longint): string8;   {integer to hex conversion}
+function htoi(h: string8): longint;   {hex to integer conversion}
+
+function i_to_ur(i: integer): real;  {integer to unsigned-real conversion}
+function ur_to_i(v: real): integer;  {unsigned-real to integer conversion}
+
+type
+   long_int = record
+      case integer of
+         1: (b: array[1..4] of byte);
+         2: (lsw: integer;
+             msw: integer);
+   end;
+
+function ltor(long: long_int): real;
+procedure rtol(r: real;
+               var long: long_int);
+
+function remove_path(name: filenames): filenames;
+function path_only(name: filenames): filenames;
+function name_only(name: filenames): filenames;
+function remove_ext(name: filenames): filenames;
+function ext_only(name: filenames): filenames;
+procedure cons_path(var path: filenames;
+                    dir,name: filenames);
+procedure cons_name(var resu:          filenames;
+                    name1,name2,ext:   filenames);
+
+function is_wild(filename: anystring): boolean;
+procedure stoupper(var st: string);
+function upstring(st: string): string;
+
+procedure stolower(var st: string);
+procedure capstr(var s: string);
+function file_size(name: string65): longint;
+function wildcard_match (var pattern,
+                         line:               string65): boolean;
+{pattern must be upper case; line is not case sensitive}
+function strval (i: integer): string2;
+function system_dd: string2;
+function system_mm: string2;
+function system_yy: string2;
+function system_date: string8;   {format: mm-dd-yy}
+function system_time: string8;   {format: hh:mm}
+function get_time: real;
+function lget_time: longint;
+function lget_ms: longint;
+function get_mins: integer;
+procedure delay(ms: longint);
+   (* delay a specified number of miliseconds; give up time while delaying *)
+procedure delete_spaces(var line: string);
+procedure delete_trailing_spaces(var line: string);
+procedure delete_leading_spaces(var line: string);
+procedure replace_string( var line: string; oldstr, newstr: anystring);
+   (* perform string replacement if possible *)
+function get_environment_var(id: string20): anystring;
+function environment_on(id: string20): boolean;
+
+type
+   varstring = ^string;
+
+procedure releasestr( var str:  varstring);
+   (* release the memory used by a varstring variable.  variable MUST
+      be pre-allocated or the program may crash!!! *)
+
+procedure savestr( var tostr: varstring;
+                   from:      string);
+   (* save a regular string in a varstring; new allocation of varstring *)
+
+const
+   maxnumfiles =  200;
+   null =         #0;
+type
+   filearray =    array [1.. maxnumfiles] of varstring;
+var
+   filetable:     filearray;
+   filecount:     integer;
+
+procedure getfiles (pattern:       string65;
+                    var fdir:      filearray;
+                    var num:       integer);
+
+function ljust(s: string80; w: integer): string80;
+function rjust(s: string80; w: integer): string80;
+
+const
+   maxbit = 10000;
+type
+   bitnumber = 0..maxbit-1;
+   bitmap = record
+      bits:  array[0..4] of byte;       {bits 0..39}
+   end;
+
+function getbit(var bmap{: bitmap}; bitnum: bitnumber): boolean;
+   {return true/false for specified bit 0..39 in a bitmap}
+
+procedure setbit(var bmap{: bitmap}; bitnum: bitnumber; value: boolean);
+   {set the specified bit in a bitmap}
+
+function getflag(flag: byte; bitval: byte): boolean;
+   {return true/false for specified is set}
+procedure setflag(var flag: byte; bitval: byte; value: boolean);
+   {set the specified bit in a flagbyte}
+function toggleflag(var flag: byte; bitval: byte): boolean;
+   {toggle the specified bit and return new setting}
+
+procedure vappends(var line: varstring; s: anystring);
+
+function disk_space(disk: char): longint;
+   {report space on drive in k bytes}
+
+procedure qWrite(x,y: integer; s: string);
+
+procedure backup_file(name: anystring);
+
+type
+  BTable = array[#0..#255] of byte;
+
+procedure MakeTable(var SrchSt : string;
+                    var cray : BTable);
+
+function BMsearch(var buffr;
+            bsize : Integer;
+            var table;
+            var SrchSt : string) : integer;
+
+   function cpos(c: char; var s): integer;
+
+implementation

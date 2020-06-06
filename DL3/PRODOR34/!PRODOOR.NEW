@@ -1,0 +1,200 @@
+$NOMACS$
+
+History of ProDOOR changes (in reverse order)
+---------------------------------------------
+
+14-Mar-91
+   Slight change to allow RECYCLE3 to tell the difference between
+   prodoor and prologon without patching prodoor.exe.  Reposted as
+   PROD342.ZIP with a different release date.
+
+13-Mar-91
+   Bugfix release 3.42 as PROD342.ZIP.
+
+10-Jul-91
+   Please note: ProDoor 3.4 and later require RECYCLE3.ZIP -- earlier
+   versions of RECYCLE may not function properly due to the new
+        SET PCBDOOR...
+   variables that are now present in the $door.bat files.
+
+   Corrected logic to allow conference specific display files in
+   conferences which do not have download directory listing files
+   defined.
+
+   Added a test to prevent attempted expansion of @x variables when the
+   two characters following @x are not proper hex digits.  This should
+   prevent unexpected expansion of character sequences that are not
+   really valid @x codes.
+
+   Added a check for the environment variable:
+        SET NOTEAR=ON
+   and if present, the door will no longer insert the "---" tearline
+   before the message tagline.
+
+08-Mar-91
+   Bugfix release 3.41 as PROD341.ZIP.
+
+   Corrected an error in OPEN DOOR logic that totally prevented opening
+   doors that are flagged to require pcboard 14.5 USER.SYS or DOOR.SYS
+   files.
+
+   Corrected OPEN DOOR command to correctly select a door by name when
+   the door name has numbers in it.
+
+   Added command line passing to door files.
+
+   Added logic to insert the following lines prior to executing a door:
+      SET PCBDOOR=open door command parameters
+      SET PCBDRIVE=C:
+      SET PCBDIR=C:\PCB3
+      SET PCBDAT=C:\PCB3\PCBOARD.DAT
+      SET PCBNODE=3
+      SET PCBPORT=1
+   for compatibility with recent pcb145+ betas.
+
+   Additional changes are required in your PRODOOR doorfile for
+   operation with doors using DOORS.SYS or USERS.SYS files.  Use the
+   provided PRODOOR.INS and PRODOOR files.
+
+   The correction involves the replacement of
+      rem call up pcb145 on return from new style doors
+      if exist users.sys pcb145/key:open;prodoor^M
+      if exist door.sys pcb145/key:open;prodoor^M
+
+   with
+      rem call up pcb145 on return from new style doors
+      if exist users.sys goto return145
+      if exist door.sys goto return145
+
+   and the addition of
+      :return145
+      echo  >$door.bat pcb145/key:open;prodoor^M
+      echo >>$door.bat door
+      $door
+
+   to the end of the PRODOOR doorfile.
+
+
+20-Apr-91
+   Some display lines were being split in the middle of @X sequences
+   at about character 200 in the expanded text.  This has been changed
+   to split at 250, fixing some displays that were not processed correctly.
+
+11-Apr-91
+   A "More" prompt was sometimes happening in ANSI displays when the
+   cursor is on the last line of the specified page size.
+
+10-Apr-91
+   Changes in parsing of $DOOR.RES result files to allow ansi codes
+   to be preserved.
+
+02-Apr-91
+   Changed F4(find) function in extended conference configuration to
+   initially clear the conference name.
+
+   Added current conference number to PROUTEST.BAT command line.
+
+   Added "node paging sysop" and "user logging on" status codes for
+   USERNET.DAT.
+
+01-Apr-91
+   Official release of prodoor 3.4.
+
+   Increased heap allocation to prevent runtime error 203 in some cases.
+
+   Added a check for "event scueduled in 1440 minutes" message.
+
+28-Mar-91
+   Increased heap space in normal version by 5k to allow more
+   extensive PROTRNS files.
+
+27-Mar-91
+   Some 26-mar betas had a broken ZIPM function.
+
+   More work on the documentation.
+
+   Prepared first beta of the complete set of release files, posted
+   as PROD34B.ZIP.
+
+   Merged functions of CHKPATH.EXE with PROSM.EXE; CHKPATH.EXE is no
+   longer used.
+
+   ** Note: the environment setting
+        SET OVCRT=ON
+   may be needed under DesqView and other windowing/timeshare systems to
+   prevent screen bleed-through or background lockups.
+
+   Added
+        SET PROTRNS=ON
+   environment setting to assist in development of PROTRNS files.  When
+   present, the program will output all translatable messages surrounded
+   in {...}.  These can be used to determine changes or additions that
+   are possible in the PROTRNS files.
+
+   Added "/ $LASTMSGNO$" after display of current message number.
+
+   Added #, !, -, $ and _ to list of characters that filenames may start
+   with for automatic directory colorization to work properly.
+
+   Added '*' flagging of newer files in file listings.
+
+   Added (CHAT U), (CHAT A) and (CHAT ?) commands to control and report
+   node chat availability status.
+
+   Added @WAIT@ macro, which acts like @MORE@ used to.
+
+   Added a check for $HELPFILE$ on a line by itself.  If present, the
+   remainder of the current display file will be processed as a multi-
+   topic help file with topic and subtopic prompting/searching.
+
+   Added a check for @X codes in DIR files.  When one of these codes is
+   found, the program disables automatic colorization for the remainder
+   of the DIR file, allowing @X codes to take control.
+
+   Added a new help file:
+        PROFV
+   which is active at the (F V) and (VX) prompts.
+
+   Added code that will check for the environment variable
+        SET ECHOFLAG=ON
+   and if found, will creat the file
+        ECHOFLAG
+   in the prodoor directory whenever an "echo" message is saved.  It
+   will be the responsibility of your mailer system to remove this file
+   when mail has been transferred.
+
+   Added explicit (G) option at 10 second countdown for automatic logoff.
+
+   Added logic in (W)rite-user-info function to reject passwords that
+   are listed in the new PROPCAN file.  Passwords that contain parts of
+   the username are also automatically rejected.
+
+   Added logic to allow prodoor to open doors requiring USER.SYS or
+   DOOR.SYS files by means of a call to PCB145 with a /KEY parameter.
+
+   Added logic to allow xx/xx/xx date formats as well as xx-xx-xx.
+
+   Added logic to check for PROTRNS when PROTRNS.LNG is not found.
+
+   Added logic to disconnect a user after repeatedly entering invalid
+   input at any prompt.
+
+   Added logic to expand $ and @ macros in DIR files and in results of
+   (F), (L), (N) and (Z) commands.
+
+   Added logic to flush message file buffers when checking for
+   end-of-messages. This corrects the operation of the 'messages left by
+   alternate node' detection.
+
+   Added logic to help in accessing pcb145-specific doors within prodoor
+   and prologon.  The new logic executes the command
+     pcb145/key:open;doorname^M
+   prior to executing the DOOR.BAT file for doors that require doors.sys
+   or users.sys files.  This in conjunction with some changes in your
+   board.bat file will allow a temporary way of accessing all doors
+   within prodoor.  This method will be replaced with direct file
+   updates in the prodoor 4.0 betas.  See sample PRODOOR and BOARD.BAT
+   files.
+
+   Added logic to honor the "disable uploads XX minutes prior to event"
+   option from pcboard.dat.

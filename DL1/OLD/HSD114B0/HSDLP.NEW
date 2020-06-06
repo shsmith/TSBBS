@@ -1,0 +1,12 @@
+
+DLP HS/Link Revision History (in reverse order)
+-----------------------------------------------
+
+18-May-93
+   Multiple outgoing files are now properly supported.
+
+   Added a check for overflowing COMM buffers and a warning message
+   when the buffer needs to be set larger.
+
+   Rewrote displays to eliminate use of Borland Custom Controls as
+   problems resulted from missing or incorrect BWCC.DLL files.

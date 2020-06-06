@@ -1,0 +1,51 @@
+
+SCREENOP - Screen Operations in Janus/ADA            24-Jul-86, S.H.Smith
+                                                     Public Domain Material
+
+
+This package provides facilities for simple screen manipulation from
+Janus/ADA programs on the IBM PC.  This package is much smaller than
+TEXT_IO, which would otherwise be needed for simple I/O to the screen.
+
+Refer to the SCREENOP package specification, SCREENOP.LIB, for full
+details of calling conventions.   The program SCRTEST is an example
+program that tests the functions of SCREENOP.PKG.
+
+
+
+The screen operations package provides the following functions:
+
+Screen control
+--------------
+   Position cursor -  Move the cursor to a specified x/y location on
+                      the screen.
+
+   Clear screen -     Erase the entire screen and leave the cursor at
+                      the home (1,1) position.
+
+   New line -         Move the cursor down to the start of a new line,
+                      scrolling the screen if needed.
+
+
+Screen output
+-------------
+   Put character -    Put a single character to the screen.
+
+   Put ascii -        Put a single character as specified by an
+                      ascii code.
+
+   Put string -       Put a string of characters to the screen.
+
+   Put line -         Put a string and newline.
+
+
+
+Keyboard
+--------
+   Key pressed -      Return TRUE if a key has been pressed.
+
+   Get character -    Get a single character without echo.
+
+   Get string -       Get a line of input into a string.
+                      With line editing and echo.
+

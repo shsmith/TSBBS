@@ -1,0 +1,10 @@
+To patch OpusComm 5.30 to make the watchdog functionality work
+properly, apply the patches contained in this archive.  There is one
+patch for each of the .COM files in the original OCOM_530.ARC file. 
+To use the patches, run them as follows:
+
+   DEBUG OPUSCOM1.COM < OPUSCOM1.PAT
+   DEBUG OPUSCOMM.COM < OPUSCOMM.PAT
+
+They will patch the correct locations to fix the problem, as well as
+change the version number to 5.31 to avoid confusion.

@@ -1,0 +1,94 @@
+
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                    IN RemoteAccess BBS VERSION 1.11
+
+     Please refer to the RemoteAccess manual for detailed information on
+     installation of external protocols.  This information was tested
+     with HS/Link betas posted on 11/19/91 after 3:45PM and RemoteAccess
+     version 1.11.
+
+     The following installation steps should work for most folks:
+
+     Place a copy of HSLINK.EXE into your main C:\RA directory.
+
+     Run RACONFIG.EXE and cursor over to MISC and press ENTER.
+     Cursor down to PROTOCOLS and press ENTER.
+     Press the INS key to insert a new protocol.
+
+     The definition of the HS/Link should look like this:
+
+     ษออออออออออออออออออออออออออ Protocol configuration อออออออออออออออออออออป
+     บ                                                                       บ
+     บ Protocol Name: HS/Linkฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ      บ
+     บ                                                                       บ
+     บ Key          : H                                                      บ
+     บ Ext ctl file : No                                                     บ
+     บ Batch        : Yes                                                    บ
+     บ Status       : Always available                                       บ
+     บ Log file     : c:\ra\DSZ.LOG                                          บ
+     บ Control file : c:\ra\HSLINK.TMP                                       บ
+     บ                                                                       บ
+     บ DL cmd line  :hslink.exe -P*P -U*0 @hslink.tmp                        บ
+     บ UL cmd line  :hslink.exe -P*P -U*0 @hslink.tmp                        บ
+     บ DL ctl string: @                                                      บ
+     บ UL ctl string:                                                        บ
+     บ DL log keyw. : H                                                      บ
+     บ UL log keyw. : H                                                      บ
+     บ Log name word: 10                                                     บ
+     บ Log desc word: 0                                                      บ
+     บ                                                                       บ
+     ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+     The *P is Remote Access's way of passing the comport number to the
+     protocol. The *0 set's the path of the protocol to the current file
+     area.
+
+     For the program to be able to update file counters and logging
+     statistics, it is imperative that the "Log file" be set to the
+     Opus compatible log filename. If you already have installed external
+     protocols that use this type logging, you need only put in the path to
+     that log file. If this is the first, you need to set a pointer in your
+     Autoexec.bat that points to the path you insert under "Log File" in the
+     external protocol setup. e.g. (Put this in your autoexec.bat if you want
+     to use the example given above: SET DSZLOG=C:\RA\DSZ.LOG
+     The bi-directional transfers only work when the Download command is
+     used because you cannot request files to be received.  You may want
+     to explain to your users that they will need to describe any files
+     they upload while downloading AFTER the transfer is completed.
+
+     Note for systems running locked COM ports:
+     We have found that if you use a locked DTE of 9600 or above, you
+     will need to have a NS16550AN UART installed.  Also, for rock solid
+     performance you should add the -HS (Handshake Slow) switch to your
+     'Download cmd' and 'Upload cmd' configuration lines.
+
+     This should get you set up in under 10 minutes.
+
+     You can edit the 'Download cmd' and 'Upload cmd' configuration
+     lines to include options on the HSLINK command line, but most folks
+     won't need to change anything.  If your system can't keep up with
+     the COM port while accessing the disk drive, you may want to add
+     -HS to both lines.  If you want to experiment, there are a number
+     of optional parameters you can read about in HSLINK.DOC and
+     HSLINK.NEW.
+
+     I hope these instructions help, but remember, I can't take
+     responsibility for any damages resulting from these instructions.
+     If you get stuck, it always helps to read the DOC files that come
+     with RemoteAccess and with HS/Link.  If all else fails, call up the
+     Tool Shop and ask for help on the Support Conference.  Either I
+     will help you, or somebody else will know the answer and give you a
+     hand.
+
+     Good luck!
+
+     Samuel H. Smith
+     Sysop of The Tool Shop
+
+        Phone number         Modem type                Access
+       --------------    ---------------------   -------------------
+       (818) 891-3772    US Robotics HST 9600    Contributors only
+       (818) 891-1344    Hayes-V series 9600     Contributors only
+       (818) 891-6780    US Robotics 2400        Free to all
+
+

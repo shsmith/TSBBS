@@ -1,0 +1,3 @@
+function itoa (int: integer): string8;
+function ltoa (int: longint): string8;
+function wtoa (w: word): string8;

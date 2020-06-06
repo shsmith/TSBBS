@@ -1,0 +1,174 @@
+@CLS@
+                           @X09<<@X0E ProDoor Visual Editor @X09>>@X03
+                           @X09<<@X0E  Q u i c k   H e l p  @X09>>@X03
+
+@X1EÕÍÍÍÍÍÍ<@X4E Cursor Movement @X1E>ÍÍÍÍÍÍÑÍÍÍ<@X4E Delete @X1E>ÍÍÍÍÑÍÍÍÍÍ<@X4E Miscellaneous @X1E>ÍÍÍÍÍ¸
+³ ^S Char left   ^D Char right  ³  ^G Character   ³   ^B Reformat paragraph   ³
+³ ^A Word left   ^F Word right  ³ DEL Char left   ³   ^N Insert a RETURN      ³
+³ ^E Line  up    ^X Line down   ³  ^T Word right  ³   ^O Original msg display ³
+³ ^I Tab cursor  ^P Line end    ³  ^Y Line        ³   ^Q Quote original msg   ³
+ÆÍÍÍÍÍÍÍÍÍ<@X7E@X6E@X5E@X4E Scrolling @X1E>ÍÍÍÍÍÍÍÍÍµ                 ³   ^V Overtype/Insert mode ³
+³ ^C Screen up   ^R Screen down ³  ^J Join lines  ³  ESC Exit to command mode ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ@X00
+
+@X0EHelp topics:  @X09S@X0Eummary  @X0BC@X0Eursor @X0C D@X0Eelete @X0D M@X0Eiscelaneous @X0F MO@X0Edes  @X0CK@X0Eeyboard
+
+~
+:?
+@CLS@
+@X03
+Please type one of the indicated topics for additional help.
+Press @X09<@X0EENTER@X09>@X03 alone to exit the help system.
+~~
+
+:SUMMARY
+@CLS@
+
+The ProDoor Visual Editor provides full-screen visual editing for online
+message entry.  Visual editing requires ANSI terminal emulation.
+
+Visual editing commands are WordStar-like control characters.  If your
+terminal program provides ANSI keyboard emulation you will also be able
+to use the indicated function keys.
+~~
+:CURSOR
+@CLS@
+@X09<<@X0E Cursor Motion @X09>>@X03
+
+Ctrl-S  Move left  1 character     @X09(@X0CLeft arrow key@X09)@X03
+Ctrl-D  Move right 1 character     @X09(@X0CRight arrow key@X09)@X03
+Ctrl-E  Move up    1 line          @X09(@X0CUp arrow key@X09)@X03
+Ctrl-X  Move down  1 line          @X09(@X0CDown arrow key@X09)@X03
+Ctrl-A  Move left  1 word          @X09(@X0CCtrl-Left arrow key@X09)@X03
+Ctrl-F  Move right 1 word          @X09(@X0CCtrl-Right arrow key@X09)@X03
+Ctrl-I  Tab cursor to next tabstop @X09(@X0CTab key@X09)@X03
+Ctrl-P  Move cursor to line end    @X09(@X0CEnd key@X09)@X03
+Ctrl-W  Move cursor to line start  @X09(@X0CHome key@X09)@X03
+
+@X09<<@X0E Scrolling @X09>>@X03
+
+Ctrl-R  Move up a page             @X09(@X0CPgUp key@X09)@X03
+Ctrl-C  Move down a page           @X09(@X0CPgDn key@X09)@X03
+
+~~
+:DELETE
+@CLS@
+@X09<<@X0E Delete @X09>>@X03
+
+Ctrl-G  Delete @X09(@X0Cgobble@X09)@X03 character under cursor
+Ctrl-H  Delete character to the left of the cursor  @X09(@X0CBackspace@X09)@X03
+Ctrl-T  Delete the word following the cursor
+Ctrl-Y  Delete the current line
+Ctrl-J  Join current line with next line
+
+~~
+:MISCELANEOUS
+@CLS@
+@X09<<@X0E Miscellaneous @X09>>@X03
+
+Ctrl-B  Reformat paragraph.  A paragraph ends with the first line that is
+        blank or that has leading spaces.
+
+Ctrl-L  Clear screen and redisplay.
+        This also scrolls the screen so the cursor line is in the middle
+        of the display.
+
+Ctrl-N  Insert a RETURN.  Splits line at the cursor.
+
+Ctrl-O  Review the text of the Original message you were reading or replying.
+        You may also quote selected lines from the original message.
+
+Ctrl-Q  Allows quoting from original message.  Same as Ctrl-O but does not
+        display the original message again.
+
+Ctrl-V  Toggle insert/overtype mode.  @X09(@X0CIns key@X09)@X03
+
+Ctrl-U  Quit visual mode and return to the Message Entry Command prompt.
+
+ESC     Exit visual mode and return to the Message Entry Command prompt.
+
+~~
+:MODES
+@CLS@
+@X09<@X0EInsert Mode versus Overtype Mode@X09>@X03
+--------------------------------
+
+In insert mode, all characters typed are INSERTED before the cursor. The
+ENTER key splits the line and BACKSPACE can re-join lines.
+
+In overtype mode, characters "type over" what was on the screen before.
+Overtype mode also disables the automatic line SPLIT / JOIN available in
+insert mode.  Use ^N@X09(@X0Csplit@X09)@X03 and ^J@X09(@X0Cjoin@X09)@X03 to manually split and join
+lines while in overtype mode.
+
+~~
+:KEYBOARD
+@CLS@
+@X09<@X0EKeyboard emulation@X09>@X03
+------------------
+
+The easiest way to control the cursor in Visual Edit mode is to use your
+cursor keys.  Most popular terminal programs provide some sort of
+keyboard emulation.  Unfortunately, this emulation is either incomplete
+or requires you to go through an involved configuration process.
+
+ProDoor also supports the "Doorway" keyboard mode of Qmodem.
+
+The WordStar* command set was chosen as a control-character command set
+because it can function on virtually any keyboard and with any terminal
+emulation mode.  It also has the advantage of leting you keep your
+fingers on the "home" keys while moving the cursor around.
+
+
+
+Function             Keyboard Codes Recognized       Doorway Codes
+--------             -------------------------       -------------
+
+
+Cursor up . . . . . . . . . . . ^E
+                        or      @X09@X09<@X0E@X0Eesc@X09>@X03 A                 @X09<@X0Enul@X09>@X03 H
+
+Cursor down . . . . . . . . . . ^X
+                        or      @X09<@X0Eesc@X09>@X03 B                 @X09<@X0Enul@X09>@X03 P
+
+Cursor right. . . . . . . . . . ^D
+                        or      @X09<@X0Eesc@X09>@X03 C                 @X09<@X0Enul@X09>@X03 M
+
+Cursor left . . . . . . . . . . ^S
+                        or      @X09<@X0Eesc@X09>@X03 D                 @X09<@X0Enul@X09>@X03 K
+
+Word right. . . . . . . . . . . ^F                      @X09<@X0Enul@X09>@X03 t
+
+Word left . . . . . . . . . . . ^A                      @X09<@X0Enul@X09>@X03 s
+
+Beginning of line . . . . . . . ^W
+                        or      @X09<@X0Eesc@X09>@X03 H                 @X09<@X0Enul@X09>@X03 G
+
+End of line . . . . . . . . . . ^P
+                        or      @X09<@X0Eesc@X09>@X03 K                 @X09<@X0Enul@X09>@X03 O
+                        or      @X09<@X0Eesc@X09>@X03 R
+
+Page up . . . . . . . . . . . . ^R
+                        or      @X09<@X0Eesc@X09>@X03 r                 @X09<@X0Enul@X09>@X03 I
+
+Page down. . . . . . . . . . .  ^C
+                        or      @X09<@X0Eesc@X09>@X03 q                 @X09<@X0Enul@X09>@X03 Q
+
+Insert mode toggle . . . . . .  ^V
+                        or      @X09<@X0Eesc@X09>@X03 n                 @X09<@X0Enul@X09>@X03 R
+
+
+In this table, the symbol @X09<@X0Eesc@X09>@X03 means any one of these character code
+sequences:
+        chr@X09(@X0C27@X09)@X03
+        chr@X09(@X0C27@X09)@X03 [
+        chr@X09(@X0C27@X09)@X03 [ O
+
+The symbol @X09<@X0Enul@X09>@X03 means chr@X09(@X0C0@X09)@X03 or an ascii NUL.  These codes correspond
+directly to the IBM extended scan codes produced by the corresponding
+keyboard keys.  These codes are used if your terminal program supports
+@X0E"Doorway"@X03 mode.
+
+This provides support for a wide variety of keyboard emulations.
+~~
+

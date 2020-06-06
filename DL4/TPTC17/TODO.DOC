@@ -1,0 +1,49 @@
+                   KNOWN PROBLEMS AND PLANNED CHANGES
+                   ==================================
+
+-- Unit interface identifiers should be prefixed with unit name to prevent
+   conflicts with other identical identifiers in another unit.
+
+-- Translate "dot notation" in reference to unit interface sections.
+
+-- Allow overloading of record member identifiers (currently entered as
+   globals in the symbol table, leading to redeclarations if they are
+   used in different global contexts).
+
+-- Nested procedure variable passing.
+
+-- Set operations (general operator overloading? - using techniques
+   developed in earlier ada-tp project).
+
+-- Selection of proper 'with' pointer when two are more with levels
+   are active (may result from symbol table changes when record member
+   identifiers get proper scope rules).
+   
+-- Return statement ordering in functions.
+
+-- More runtime library functions.
+
+-- Translations for binary (untyped, record types) file operations.
+
+-- Detect and translate concat() calls.
+
+-- Detect array-of-character data and use string-like translations.
+
+-- Update documentation to match current program changes.
+
+-- Write a translation guide, giving hints and tips for translating.
+
+-- Detect and escape "%" in string expressions passed to scat, sbld, etc.
+
+-- Work on plvalue to reduce code duplication in initial identifier parse.
+
+
+-- com1..com2 range evaluates to 1 in subscript declaration (eg. wxterm)
+
+-- udisp: datapoint[ch][rec].field[n] >> datapoint[ch][rec]->field[n]
+          address of ...
+          (datapoint is a pointer to an array of arrays of records)
+
+-- unewcal: report_header[ch][line] resolves as char rather than string
+-- detect integer/byte/real in val() translation
+-- detect overloaded abs, sqr, random, blockread/blockwrite

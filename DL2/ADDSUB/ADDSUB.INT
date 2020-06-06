@@ -1,0 +1,10 @@
+procedure iadd(var a: integer; b: integer);
+procedure isub(var a: integer; b: integer);
+procedure imult(var a: integer; b: integer);
+procedure idiv(var a: integer; b: integer);
+procedure radd(var a: real; b: real);
+procedure rsub(var a: real; b: real);
+procedure rmult(var a: real; b: real);
+procedure rdiv(var a: real; b: real);
+procedure rrange(var a: real; b,c: real);
+procedure irange(var a: integer; b,c: integer);

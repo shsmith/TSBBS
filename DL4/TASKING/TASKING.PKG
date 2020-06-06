@@ -1,0 +1,513 @@
+
+--
+-- tasking - Task Management Package
+--
+-- This package provides a simple "co-routine" method of management
+-- of multiple tasks.    For 8086 Janus/ADA 1.5.2
+--
+-- Author: S.H.Smith, 30-Mar-86
+--
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+  pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+@ with SCREENOP; use SCREENOP;
+  with BITOPS;
+
+
+package body TASKING is
+
+   use TASKDATA;
+
+   root_stack:  integer;         -- the stack pointer of the root process
+                                 -- (caller of EXECUTE_TASK)
+
+
+   temp:        integer;         -- a temp static variable used with
+                                 -- inline assembly language
+
+@  pc:          integer;         -- a static variable holding the
+                                 -- task program counter
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                     Private procedures                    --
+--                                                           --
+---------------------------------------------------------------
+
+
+   procedure allocate_stack (id:   in TASK_ID;
+                             size: in integer) is
+
+      -- allocate size*1024 bytes of stack for the specified
+      -- task.  the allocated space must be in the stack segment.
+
+      contiguous: integer;
+      base:       integer;
+
+   begin
+
+      --
+      -- search for a contiguous block of stack that is large
+      -- enough for the task.
+      --
+      base := 0;
+
+      for i in reverse 1..max_stack loop
+
+         if allocation(i) = 0 then
+            if base /= 0 then
+               contiguous := contiguous + 1;
+            else
+               base := i;
+               contiguous := 1;
+            end if;
+
+            exit when contiguous >= size;
+
+         else
+            base := 0;
+         end if;
+      end loop;
+
+
+      if contiguous < size then      -- was a large enough block
+         raise storage_error;        -- not enough storage?
+      end if;
+
+
+      --
+      -- mark the stack blocks as allocated to this task
+      --
+      for i in 1 .. size loop
+         allocation(base-i+1) := integer(id);
+      end loop;
+
+
+      --
+      -- calculate the stack segment offset for the end of the
+      -- new block of stack buffers
+      --
+      task_table(id).stack := BITOPS.SHIFT_LEFT(base,10);
+
+@  exception
+@     when constraint_error =>
+@        PUT_LINE("Constraint error in allocate_stack:");
+@        PUT(contiguous);  put_line(" contiguous");
+@        PUT(size);        put_line(" size");
+@        PUT(base);        put_line(" base");
+@        raise;
+@
+   end allocate_stack;
+
+
+
+
+   procedure find_next_task is
+      -- determine the next task that can be executed
+      -- and make it the curtask.
+   begin
+
+      for i in TASK_ID'first..TASK_ID'last loop
+
+         if curtask = TASK_ID'last then
+            curtask := TASK_ID'first;
+         else
+            curtask := curtask + 1;
+         end if;
+
+         if task_table(curtask).status /= unused then
+            return;
+         end if;
+      end loop;
+
+
+      --
+      -- when the curren task is unused, it indicates that there
+      -- are no active tasks.  raise this exception so the
+      -- root task can handle it.
+      --
+      raise NO_ACTIVE_TASKS;
+
+   end find_next_task;
+
+
+
+   procedure schedule_next_task is
+      -- determine the next task to be executed
+      -- and make it the curtask.
+   begin
+
+      loop
+         -- find an active task
+         find_next_task;
+
+         -- see if it can be executed now
+         if task_table(curtask).skips > 0 then
+            task_table(curtask).skips := task_table(curtask).skips -1;
+         else
+            task_table(curtask).skips := task_table(curtask).prior;
+            exit;
+         end if;
+
+      end loop;
+
+   end schedule_next_task;
+
+
+
+   procedure invalid_return is
+      -- this procedure handles the case of a task falling through
+      -- and returning.  this is a programming error; tasks should
+      -- always be killed.
+   begin
+
+      --
+      -- load the sp of the root process so the exception will go there
+      -- as if we were in EXECUTE_TASK.
+      --
+      asm 16#8b#,16#26#,root_stack'address;        -- mov sp,[root_stack]
+
+      asm 16#068f#,18,0;                           -- pop [display10]
+      asm 16#068f#,16,0;                           -- pop [display9]
+      asm 16#068f#,14,0;                           -- pop [display8]
+      asm 16#068f#,12,0;                           -- pop [display7]
+      asm 16#068f#,10,0;                           -- pop [display6]
+      asm 16#068f#,8,0;                            -- pop [display5]
+      asm 16#068f#,6,0;                            -- pop [display4]
+      asm 16#068f#,4,0;                            -- pop [display3]
+      asm 16#068f#,2,0;                            -- pop [display2]
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+      raise program_error;
+
+   exception
+      when program_error =>  raise;
+
+   end invalid_return;
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                     Task creation                         --
+--                                                           --
+---------------------------------------------------------------
+
+   procedure START (addr:  in CODE_ADDRESS;     -- task entry address
+                    name:  in string;           -- task name
+                    size:  in integer;          -- stack size/1024
+                    prio:  in PRIORITIES;       -- task priority
+                    id:    out TASK_ID) is      -- the new task_id
+
+      -- start a new task located at task address, and return the
+      -- task ID code so that the task may be later identified.
+      -- note that task_table(TASK_ID'last) is never allocated.
+      -- this entry is used as an "invalid" task id.
+
+      new_id: TASK_ID;
+   begin
+
+      for new_id in TASK_ID'first .. TASK_ID'last-1 loop
+
+         if task_table(new_id).status = unused then
+
+            task_table(new_id).status := starting;
+            task_table(new_id).running := false;
+            task_table(new_id).name := name;
+            task_table(new_id).addr := addr;
+            task_table(new_id).prior := prio;
+            task_table(new_id).skips := prio;
+            allocate_stack(new_id,size);
+
+@ POSITION_CURSOR(1,25);
+@ PUT("START, name="); PUT(name);
+@ PUT(" priority="); PUT(prio);
+@ PUT(" stack="); PUT_HEX(task_table(new_id).stack);
+@ PUT(" addr="); PUT_HEX(addr); NEW_LINE;
+
+            id := new_id;
+            return;
+
+         end if;
+
+      end loop;
+
+
+      -- no free task table entries
+      raise TOO_MANY_TASKS;
+
+   end START;
+
+
+   procedure START (addr:  in CODE_ADDRESS;   -- task entry address
+                    name:  in string;         -- task name
+                    prio:  in PRIORITIES) is  -- task priority
+
+      -- start a new task with defaults and throw away the TASK_ID
+      id: TASK_ID;
+   begin
+      START (addr, name, 4, prio, id);
+   end START;
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                      Task time sharing                    --
+--                                                           --
+---------------------------------------------------------------
+
+   procedure GIVE_UP_TIME is
+      -- the calling task wishes to give up some time so that
+      -- other tasks may execute.  this is the only way that control
+      -- is passed from task to task in this implementation of tasking.
+      -- this procedure saves the state of the current task and causes
+      -- control to return from the EXECUTE_TASK procedure.
+   begin
+
+      --
+      -- cannot GIVE_UP_TIME if not already running!  this happens if the
+      -- caller is not in a task at all.
+      --
+      if task_table(curtask).running = false then
+@        raise program_error;
+         return;
+      end if;
+
+
+      --
+      -- save the current tasks stack back into its entry
+      -- in the task table.
+      --
+@     asm 16#068f#,temp'address;                    -- pop [temp]
+@     asm 16#068f#,pc'address;                      -- pop [pc]
+@     asm 16#36ff#,pc'address;                      -- push [pc]
+@     asm 16#36ff#,temp'address;                    -- push [temp]
+
+      asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+      asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+      asm 16#36ff#,2,0;                            -- push [display2]
+      asm 16#36ff#,4,0;                            -- push [display3]
+      asm 16#36ff#,6,0;                            -- push [display4]
+      asm 16#36ff#,8,0;                            -- push [display5]
+      asm 16#36ff#,10,0;                           -- push [display6]
+      asm 16#36ff#,12,0;                           -- push [display7]
+      asm 16#36ff#,14,0;                           -- push [display8]
+      asm 16#36ff#,16,0;                           -- push [display9]
+      asm 16#36ff#,18,0;                           -- push [display10]
+
+      asm 16#89#,16#26#,temp'address;              -- mov [stack],sp
+      task_table(curtask).stack := temp;
+      task_table(curtask).running := false;   -- not running any more
+
+@ POSITION_CURSOR(1,25);
+@ PUT("GIVE_UP_TIME, current="); PUT(task_table(curtask).name);
+@ PUT(" sp="); PUT_HEX(temp);
+@ PUT(" pc="); PUT_HEX(pc); NEW_LINE;
+
+
+      --
+      -- load the sp of the root process so we can return there
+      -- as if we just returned from EXECUTE_TASK.
+      --
+      asm 16#8b#,16#26#,root_stack'address;        -- mov sp,[root_stack]
+      asm 16#068f#,18,0;                           -- pop [display10]
+      asm 16#068f#,16,0;                           -- pop [display9]
+      asm 16#068f#,14,0;                           -- pop [display8]
+      asm 16#068f#,12,0;                           -- pop [display7]
+      asm 16#068f#,10,0;                           -- pop [display6]
+      asm 16#068f#,8,0;                            -- pop [display5]
+      asm 16#068f#,6,0;                            -- pop [display4]
+      asm 16#068f#,4,0;                            -- pop [display3]
+      asm 16#068f#,2,0;                            -- pop [display2]
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+   end GIVE_UP_TIME;
+
+
+
+   procedure GIVE_UP_TIME (ticks: integer) is
+      -- the calling task wishes to give up 'ticks' timeslices so that
+      -- other tasks may execute.
+   begin
+
+      for i in 1..ticks loop
+         GIVE_UP_TIME;
+      end loop;
+
+   end GIVE_UP_TIME;
+
+
+
+   procedure EXECUTE_TASK is
+      -- executes the next eligible task.  returns when that task
+      -- calls GIVE_UP_TIME.   the user main program should call this
+      -- procedure repetitively.
+   begin
+
+      --
+      -- determine the next task and try to execute it
+      --
+      schedule_next_task;
+
+      case task_table(curtask).status is
+
+         --
+         -- when the task is active, re-activate it by reloading
+         -- it's stack pointer
+         --
+         when active =>
+            task_table(curtask).running := true;
+            temp := task_table(curtask).stack;
+
+@ POSITION_CURSOR(1,25);
+@ PUT("EXECUTE_TASK,  active="); PUT(task_table(curtask).name);
+@ PUT(" sp="); PUT_HEX(temp);
+
+            asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+            asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+            asm 16#36ff#,2,0;                            -- push [display2]
+            asm 16#36ff#,4,0;                            -- push [display3]
+            asm 16#36ff#,6,0;                            -- push [display4]
+            asm 16#36ff#,8,0;                            -- push [display5]
+            asm 16#36ff#,10,0;                           -- push [display6]
+            asm 16#36ff#,12,0;                           -- push [display7]
+            asm 16#36ff#,14,0;                           -- push [display8]
+            asm 16#36ff#,16,0;                           -- push [display9]
+            asm 16#36ff#,18,0;                           -- push [display10]
+
+            asm 16#89#,16#26#,root_stack'address;        -- mov [root_stack],sp
+            asm 16#8b#,16#26#,temp'address;              -- mov sp,[stack]
+
+            asm 16#068f#,18,0;                           -- pop [display10]
+            asm 16#068f#,16,0;                           -- pop [display9]
+            asm 16#068f#,14,0;                           -- pop [display8]
+            asm 16#068f#,12,0;                           -- pop [display7]
+            asm 16#068f#,10,0;                           -- pop [display6]
+            asm 16#068f#,8,0;                            -- pop [display5]
+            asm 16#068f#,6,0;                            -- pop [display4]
+            asm 16#068f#,4,0;                            -- pop [display3]
+            asm 16#068f#,2,0;                            -- pop [display2]
+            asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+            asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+         --
+         -- when starting a new task, the new stack must be initialized
+         -- to contain the entry address and 2 bytes of janus/ada
+         -- overhead data.  arrange for invalid_return to be called if
+         -- a task "returns" unexpectedly.
+         --
+         when starting =>
+            task_table(curtask).running := true;
+            task_table(curtask).status := active;
+            temp := task_table(curtask).stack;
+
+@ POSITION_CURSOR(1,25);
+@ PUT("EXECUTE_TASK, started="); PUT(task_table(curtask).name);
+@ PUT(" sp="); PUT_HEX(temp);
+
+            asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+            asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+            asm 16#36ff#,2,0;                            -- push [display2]
+            asm 16#36ff#,4,0;                            -- push [display3]
+            asm 16#36ff#,6,0;                            -- push [display4]
+            asm 16#36ff#,8,0;                            -- push [display5]
+            asm 16#36ff#,10,0;                           -- push [display6]
+            asm 16#36ff#,12,0;                           -- push [display7]
+            asm 16#36ff#,14,0;                           -- push [display8]
+            asm 16#36ff#,16,0;                           -- push [display9]
+            asm 16#36ff#,18,0;                           -- push [display10]
+
+            asm 16#89#,16#26#,root_stack'address;        -- mov [root_stack],sp
+            asm 16#8b#,16#26#,temp'address;              -- mov sp,[stack]
+
+            temp := invalid_return'address;
+            asm 16#ff#,16#36#,temp'address;              -- push invalid_return
+
+            temp := task_table(curtask).addr;
+            asm 16#ff#,16#36#,temp'address;              -- push [start_addr]
+
+            asm 16#ff#,16#36#,16#20#,0;                  -- push [0020]
+                                                         -- janus/ada overhead
+
+
+         --
+         -- no action is taken for suspended tasks
+         --
+         when suspended =>
+            null;
+
+
+         --
+         -- when the curren task is unused, it indicates that there
+         -- are no active tasks.  the exception is raised by
+         -- schedule-nex-task.
+         --
+         when unused =>
+            null;
+
+      end case;
+
+@     asm 16#068f#,temp'address;                    -- pop [temp]
+@     asm 16#068f#,pc'address;                      -- pop [pc]
+@     asm 16#36ff#,pc'address;                      -- push [pc]
+@     asm 16#36ff#,temp'address;                    -- push [temp]
+
+@     PUT(" pc="); PUT_HEX(pc); NEW_LINE;
+
+   end EXECUTE_TASK;
+
+
+
+---------------------------------------------------------------
+--                                                           --
+--                Tasking package initialization             --
+--                                                           --
+---------------------------------------------------------------
+
+begin
+
+   for i in TASK_ID'first .. TASK_ID'last loop
+      task_table(i).status := unused;
+      task_table(i).running := false;
+      task_table(i).name := "unused";
+      task_table(i).prior := 0;
+      task_table(i).skips := 0;
+   end loop;
+
+   curtask := TASK_ID'last;   -- arrange for TASK_ID'first to
+                              -- be the first task executed.
+
+   --
+   -- calculate the highest free 1k stack block
+   --
+   asm 16#89#,16#e0#;              -- mov ax,sp
+   asm 16#88#,16#e0#;              -- mov al,ah
+   asm 16#30#,16#e4#;              -- xor ah,ah
+   asm 16#d0#,16#e8#;              -- shr al,1
+   asm 16#d0#,16#e8#;              -- shr al,1
+   asm 16#a3#,temp'address;        -- mov [temp],ax
+
+   for i in 1..max_stack loop
+      if i < temp then
+         allocation(i) := 0;           -- mark free stack blocks as unallocated
+      else
+         allocation(i) := reserved_task;
+      end if;                          -- mark already used blocks as belonging
+                                       -- to the special reserved task
+   end loop;
+
+
+@ POSITION_CURSOR(1,25);
+@ PUT ("Highest stack block is "); PUT(temp); PUT_LINE("k");
+@ PUT ("GIVE_UP_TIME is at ");     PUT_HEX(GIVE_UP_TIME'address); NEW_LINE;
+@ PUT ("EXECUTE_TASK is at ");     PUT_HEX(EXECUTE_TASK'address); NEW_LINE;
+
+end TASKING;
+
+

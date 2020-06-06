@@ -1,0 +1,93 @@
+TPTC UNIT SYMBOL FILE 1.0
+MARK
+mark
+VOID
+2 0 0 1 0
+RELEASE
+release
+VOID
+2 0 0 1 0
+MSDOS
+msdos
+VOID
+2 0 0 1 1
+INTR
+intr
+VOID
+2 0 0 2 2
+WHEREX
+wherex
+INTEGER
+2 0 0 0 0
+WHEREY
+wherey
+INTEGER
+2 0 0 0 0
+KEYPRESSED
+keypressed
+BOOLEAN
+2 0 0 0 0
+GOTOXY
+gotoxy
+VOID
+2 0 0 2 0
+WINDOW
+window
+VOID
+2 0 0 4 0
+TEXTCOLOR
+textcolor
+VOID
+2 0 0 1 0
+TEXTBACKGROUND
+textbackground
+VOID
+2 0 0 1 0
+CLRSCR
+clrscr
+VOID
+2 0 0 0 0
+CLREOL
+clreol
+VOID
+2 0 0 0 0
+PTR
+ptr
+POINTER
+2 0 0 2 0
+BLOCKREAD
+blockread
+VOID
+2 0 0 4 11
+BLOCKWRITE
+blockwrite
+VOID
+2 0 0 4 11
+FILEPOS
+filepos
+INTEGER
+2 0 0 1 1
+FILESIZE
+filesize
+INTEGER
+2 0 0 1 1
+SIZEOF
+sizeof
+INTEGER
+2 0 0 1 0
+LST
+lst
+TEXT
+6 0 0 -1 0
+CON
+con
+TEXT
+6 0 0 -1 0
+KBD
+kbd
+TEXT
+6 0 0 -1 0
+TP3_INIT
+tp3_init
+VOID
+16 0 0 2 0

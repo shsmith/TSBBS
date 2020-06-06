@@ -1,0 +1,29 @@
+"HOW TO INSTALL HS/LINK WITH WWIV v4.21"
+Compiled by Xanth 1@8370 (WWIVnet)
+June 13, 1992
+
+Place the lastest version of HSLINK.EXE in your main bbs directory.
+
+Create a text file in your main bbs directory called HSLINK.CFG.
+It's contents should be:
+
+-A 
+-S4096
+-W0
+
+
+Put the following command lines in INIT so it looks like:
+
+Description:            HS/Link
+Xfer OK code:           0
+Require MNP/LAPM:       N
+Receive command line:
+HSLINK -P%2 -E%4 -U%3
+Send command line:
+HSLINK -P%2 -E%4 %3
+Receive batch command line:
+HSLINK -P%2 -E%4 -U%3
+Send batch command line:
+HSLINK -P%2 -E%4 @%3
+Bi-directional transfer command line:
+HSLINK -P%2 -E%4 -@ @%3

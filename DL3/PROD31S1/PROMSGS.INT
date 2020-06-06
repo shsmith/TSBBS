@@ -1,0 +1,26 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+procedure popup_prompt(prompt:      string80;
+                       var answer:  string;
+                       maxlen:      integer);
+   {prompt for an input and remove the prompt afterwards}
+
+procedure popup_cmdline(prompt:      string80;
+                        defalt:      string80);
+   {prompt for a command line and remove the prompt afterwards}
+
+procedure force_enter;
+procedure force_enter2;
+procedure wait_for_enter;
+
+function nomore: boolean;

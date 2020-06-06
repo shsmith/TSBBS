@@ -1,0 +1,313 @@
+OUTLINE OLF 3
+Document Outline Processor:  Outline v1.7
+9    0.00 1
+Outline is a documentation tool that will let you create and
+modify documents in a "tree" structured way.   You can use it
+like a word processor that has the powerful ability to manipulate
+whole sections as single lines in a higher level outline.
+ 
+Outline can automatically produce a table of contents, summary,
+structure diagram, and keyword index.
+ 
+Written by Samuel H. Smith, 21-Jan-86 (rev. 02-Oct-86)
+8
+Overview
+5    0.00 1
+Outline deals with "sections" in a document.  Each section has a
+title, a 10 line description, and as many as 10 sub-sections.
+Each sub-section is itself a section, so a document can be nested
+as deeply as you want.  If you move a section from one place to
+another, all of the sub-sections will be moved with it!
+0
+How to enter an outline
+2    0.00 2
+You enter your outline one section at a time.  You fill in the
+details for that section and then go down into the subsections.
+3
+Enter the first section
+9    0.00 2
+Type in the title for the first section.   The you can fill in
+the optional text lines.  These lines will always go with
+the title of this section.   Next, list the titles of
+all of the subsections that give details for this section.
+Don't worry about getting it perfect; you can come back later.
+ 
+When printed, the text lines will be reformatted to fit within
+the printer margins.   Use blank lines (with a single space) to
+force paragraph breaks on the printout.
+0
+Enter the subsections
+5    0.00 2
+Now that you have the section filled in, you will want to
+put in more details for some of the subordinate sections.  You do
+this by putting the cursor on the title of the subsection you
+want to work on.  Then press the PgDn key to go "down" into this
+subordinate sections screen.   Press PgUp to go back up.
+0
+Go back to the top
+3    0.00 2
+Once you have worked your way down to the lowest section of the
+outline, just press PgUp to go back up.  This works one section
+at a time.  You can go up and down by pressing PgUp and PgDn.
+0
+How to print out the outline
+3    0.00 3
+Outlines can be printed in several formats.   When you press the
+F4 key, you will be given a menu of print formats.  Each print
+format is a different way of viewing your outline.
+5
+Print full deails
+6    0.00 3
+This print format will include all detail from your outline.  It 
+will be formatted into sections, and page numbers will be assigned.
+This is the only format that processes include files.   You need to
+run a printout in full detail format to assign page numbers, if you
+plan to run other formats that use them.   If no detail printout
+is desired, it can be printed to the "NUL" file.
+0
+Print outline of document
+0    0.00 3
+0
+Print a table of contents
+0    0.00 3
+0
+Print a section tree
+0    0.00 3
+0
+Print a keyword index
+0    0.00 3
+0
+How to move things around
+5    0.00 4
+One of the most powerful features of an outline processor like
+OUTLINE, is the ability to move things around by just moving
+the titles.   If you move the title of a section, all of the sub-
+ordinate sections will automatically be moved along with it.
+You can also copy and delete sections in this way.
+6
+Mark the sub-section you want to move or copy
+4    0.00 4
+The first step in doing a copy, is to locate the subsection
+that you want to work with.  Put the cursor on the subsection title
+line and press F6.  The word "<mark>" will appear to remind you
+that the line is ready to be moved or copied.
+0
+Put the cursor where you want it to go
+8    0.00 4
+The next step is to move your cursor to the subsection title
+line where you want to move TO.   This can be in ANY section
+except a subsection of the section you want to move!!!   
+ 
+To protect you from moving a section to within itself, Outline
+will not let you go down (PgDn) into a marked section.  If a 
+section were to be moved (or copied) within itself, you would
+get an infinite self-reference!
+0
+And move it
+4    0.00 4
+To move the marked section to where you are, just press F7.  The
+subsection where your cursor WAS will be pushed down to make room.
+Copy works the same way with F8, but the original marked title
+is left alone.
+0
+To delete sub-sections
+5    0.00 4
+You can delete an entire section and all of the subsections
+in it.   You do this by putting the cursor on the subsection
+title line and pressing the F9 key.   The deleted section is
+kept in a special holding area, where it can be retrieved by
+the F2 (undelete) key. 
+0
+Oops...  Un-delete!
+5    0.00 4
+If you delete a section and change your mind, you can
+Un-delete it with the F9 key.   This will undelete, putting
+the recovered section in front of the sub-section under the
+cursor.   Note that you can only un-delete the most recently
+deleted section.
+0
+To move a section from one outline to another
+5    0.00 5
+You can use the delete/undelete feature to move a section from
+one outline to another.   Just delete the section from the
+original outline,  retrieve a different outline, and do an
+un-delete.   Un-delete will insert the section into the new
+outline.
+0
+Summary of special keys
+3    0.00 5
+Outline uses a number of special keys.  These keys are used for
+moving around, editing lines of text, and for getting special
+services.
+3
+Keys for moving around
+5    0.00 5
+The four arrow keys can be used to move the cursor around on the
+screen.  The END key moves to the end of line.  The HOME key moves
+to the start of a line.  The TAB key moves four spaces at a time.
+The PgUp and PgDn keys let you move up and down the levels of
+your outline.  The ENTER key takes you to the next line down.
+0
+Keys for editing lines of text
+5    0.00 5
+The BACKSPACE key moves back and deletes one character.  The DELETE
+key deletes the character under the cursor.  The INSERT key
+will insert a space under the cursor.   Text that you enter will
+overtype the line on the screen.  The CTRL-X key will blank out
+the current line.
+0
+Keys for special services
+9    0.00 5
+The F1 key will give you a help screen that summarizes the keys
+that are available.   The ESC key generally takes you "out" of
+whatever you are into (the PgUp key also does this).  The other
+numbered function keys allow you to MARK(F6), MOVE(F7), COPY(F8)
+and DELETE(F9) whole sections of your outline.   You can save
+your work at any time with the SAVE(F3) key.  Do this often!
+If you mess up, you can undo a delete with UNDELETE(F2).   The
+ESTIMATE(F10) key will allow you to assign an estimate (in hours,
+days, etc.) to the current subsection. 
+0
+How to include outside files
+0    0.00 6
+2
+How to include text files
+8    0.00 6
+Outline will allow you to include the contents of an
+outside text file within the description part of a
+section.   All you have to do is put in a line with
+the form:   @FILENAME     where FILENAME is any legal
+DOS path or file name.  When printing the detail of this
+document, outline will read in this file and put it in 
+context with the proper indentation.   Note that this
+special line must not have any leading or imbedded spaces.
+1
+Example
+2    0.00 6
+Here is an example of an included file:
+@FILES.TXT
+0
+How to include graphics files
+8    0.00 6
+Outline will allow you to include the contents of an
+outside graphics file within the description part of a
+section.   All you have to do is put in a line with
+the form:   &FILENAME     where FILENAME is any legal
+DOS path or file name.  When printing the detail of this
+document, outline will read in this file and format it for a graphic
+(IBM compatible) printer.  Note that this
+special line must not have any leading or imbedded spaces.   
+2
+Example
+2    0.00 6
+Here is an example of an included file:
+&EXAMPLE.GRA
+0
+Graphic file format
+3    0.00 6
+The graphic files are required to be in a special format.  This 
+format is a sirect "binary" image of 16k of memory, starting at
+B800:0000.   
+0
+Printing options
+2    0.00 1
+Printing options can be used in the "text" portion of any
+outline section.
+4
+Normal printer mode
+1    0.00 1
+ .NORMAL switches the printer back to normal characters.
+0
+Small characters mode
+1    0.00 1
+ .SMALL switches the printer into small (condensed) character mode.
+0
+Page number
+1    0.00 1
+ .PAGE n   specifies that the current page number is 'n'.
+0
+Eject
+1    0.00 0
+ .EJECT forces a new page before the next section.
+0
+Program release history
+0    0.00 2
+7
+Version 1.0, 11-Jan-86
+3    0.00 2
+This was the initial release to the public domain.  This first
+version had most of the basic features, but with a primitive user
+interface.
+0
+Version 1.1, 12-Jan-86
+7    0.00 2
+This release added nicer looking screens and faster displays in the
+outline editor.  The parent-section is displayed in the outline
+editor.   The file save/load/print procedures now give a directory
+of files and allow you to pick from the directory.  You can
+include the contents of an outside text file into the text of
+a section.   The print-detail report now reformats text so that
+the right margin is not effected by indentation.
+0
+Version 1.2, 16-Jan-86
+3    0.00 3
+This release changes the function keys so that the editor keys
+are much the same as the main menu keys.   A startup option
+file has been added.  An outline estimate feature has been added.
+3
+Function key changes
+3    0.00 3
+The function keys in the outline editor were changed so that they
+would more closely match the main menu.   F2=load/undelete, 
+F3=save, F4=summary, F5=detail.
+0
+Startup option file
+7    0.00 3
+The file OUTLINE.OPT must be in the default drive when outline is
+started.  This file controls the way outline formats reports
+and how it initializes the video mode.   
+ 
+Example contents of outline.opt:
+ 
+@default.opt
+0
+Using outline to make estimates
+5    0.00 3
+The F10 key will now assign an "estimate" to the current subsection.
+If used, the estimate for a section will automatically become the
+sum of all subsection estimates.   This allows you to make estimates
+(in days, hours, etc.) for your lowest level details, and outline
+will add them all up for you.   
+0
+Version 1.3, 20-Jan-86
+5    0.00 3
+Added search paths for option file (outline.opt) and any outline
+file that is being loaded.   Fixed bug handling "0" estimates at top
+level.  Changed printout estimate format to match the screen format.
+Moved printout procedures to a seperate include file.  Fixed a bug 
+in text reformat that caused some lines to be truncated.
+0
+Version 1.4, 21-Mar-86
+6    0.00 4
+Made print file handlers remove underlining and extra blank lines
+when no subsections are present.  Removed summary from beginning of
+detail printout.  Added graphic picture include files.  Changed 
+printing directory to list only *.SUM,*.PRN.  Added page numbers
+to printout and display.  Changed "summary" format into a "table
+of contents" format.
+0
+Version 1.5, 01-May-86
+3    0.00 4
+Added "tree" format printout.  Added "keyword index" format
+printout.   Added checks to see if the current document has been
+saved or not.   Fixed some bugs related to moving sections around.
+0
+Version 1.7, 02-Oct-86
+6    0.00 4
+Added command line options for -slow (non-dma) displays and
+-mono (monochrome) displays.
+ Added dewey-decimal section numbers.
+ Added right-justification in text blocks.  
+ Text include files can be reformatted if filename ends in .INC.
+ Added print options (.SMALL .NORMAL .PAGE n  .EJECT).
+0

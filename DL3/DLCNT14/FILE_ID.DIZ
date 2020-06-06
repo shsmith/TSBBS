@@ -1,0 +1,13 @@
+FAST PCBoard/ProDoor File Download Counter 1.4
+----------------------------------------------
+Analyze the PCBoard DOWNLOAD.TXT log file and
+update your DIR listing files to include the
+number of times each file has been downloaded.
+Compatible with DOWNLOAD.TXT files trimmed by
+TRIMDL15.ZIP.
+Version 1.4 also indicates files with zero
+downloads to help identify unpopular files.
+----------------------------------------------
+Freeware by Samuel H. Smith and The Tool Shop.
+Includes Pascal Source Code.
+New Tool Shop Phone Number: (213) 851-2127!

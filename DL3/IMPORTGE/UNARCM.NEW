@@ -1,0 +1,43 @@
+
+History of UNARCM changes (in reverse order)
+--------------------------------------------
+
+06-Oct-88
+   Corrected handling of messages in "Main Board".  This area is now
+   referred to as "MAIN".
+
+27-Sep-88
+   Added excluded message headers to status display.  The reason for
+   exclusion is also displayed (EXCLUDED or NOT ECHO).
+
+24-Sep-88
+   Added a check for '*** Part of a conversion' trailer line in Opus
+   messages.  Added a check for Opus lines > 72 characters that have
+   no imbedded spaces.  Improvements in the sample Telix SALT script.
+
+22-Sep-88
+   Opus messages will not be formatted in 40 columns IF the original
+   capture was done with a right margin of 72 or less.  The default 80
+   column opus messages will still be formatted in 40 columns.
+
+21-Sep-88
+   Corrected an error in parsing conference names from ARCM packets.
+   The error was reported as "Conference '' not in CNAMES file".
+
+20-Sep-88
+   Disabled "POST ALL" mode in conjunction with PCBoard 14 message
+   captures.  Added a fourth required parameter, which is documented
+   in UNARCM.DOC.  Source code is no longer available.
+
+18-Sep-88
+   Added partial support for OPUS message formats.
+
+17-Sep-88
+   Many changes and additions.
+   Now able to handle 'R S NS' captures from PCBoard 14.0 (and possibly
+   PCBoard 12.1).
+   Added partial support for RBBS 16 message formats.
+
+11-Sep-88
+   Initial coding and beta release.
+

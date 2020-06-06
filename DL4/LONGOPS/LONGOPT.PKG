@@ -1,0 +1,36 @@
+
+-----------------------------------------------------------
+--                                                       --
+--             Long Integer Operations Test              --
+--                    Package Body                       --
+--                 20-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+  pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+with LONGOPS; use LONGOPS;
+with TEXT_IO; use TEXT_IO;
+
+procedure LONGOPT is
+
+   a,b,c,d: long_integer;
+
+begin
+   a := convert(1);
+   b := convert(10);
+   c := convert(0);
+
+   for i := 1..10 loop
+      d := "*"(b,c);
+      c := "+"(c,d);
+      c := "-"(c,a);
+      put("  c="); put(convert(c),10,0,0);
+      put("  d="); put(convert(d),10,0,0);
+      new_line;
+   end loop;
+
+end LONGOPT;
+
+

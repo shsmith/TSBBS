@@ -1,0 +1,4 @@
+
+function stoa(s: single): string10;
+
+function dtoa(d: double): string10;

@@ -1,0 +1,10 @@
+type
+  double    = array[0..7] of byte;
+
+function dtof(B: double): real;
+   {convert 8 byte double to real}
+function dtol(B: double): longint;
+   {convert 8 byte double to long integer}
+procedure ftod(PasReal: real; var B: double);
+   {convert real to 8 byte double}
+procedure incd(var d: double; n: real);

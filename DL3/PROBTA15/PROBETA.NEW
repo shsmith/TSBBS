@@ -1,0 +1,9 @@
+
+ProKit Beta Distribution Door Revision History (reverse order)
+--------------------------------------------------------------
+
+22-Mar-92
+   Added support for multi-line descriptions using "|" in column 1 for
+   continuation lines.
+
+   Some early 22-mar postings did not work.

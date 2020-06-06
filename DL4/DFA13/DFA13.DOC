@@ -1,0 +1,87 @@
+
+ DFA13 - DOS File Accelerator v1.3         20-Nov-86, S.H.Smith
+                                           Public domain material,
+                                           for personal use only.
+
+ 
+ DFA13 is a small resident utility that can "accelerate" file access in
+ many programs.  
+ 
+ DFA13 predicts when your program will want to read from a file and 
+ reads the data into a buffer before it is asked for.  This is the 
+ opposite of a "cache" type program.  A cache keeps data AFTER it has 
+ been used DFA13 gets data BEFORE it is needed.  
+
+ 
+ DFA13 can speed up Turbo Pascal include file compiles by 10%.  The 
+ JANUS/ADA compiler is speeded up by 25%.  The LOGITECH base Modula/2 
+ compiler is speed up by over 30%.  
+
+ Programs that read and write small blocks can be speeded up by as much 
+ as 40% due to reduced head seeking.  Great for use with "ARC".  
+
+ 
+ When DFA13 is loaded in memory, the DFA13 command will enable and
+ disable file acceleration.  This allows you to turn off the effects
+ of DFA13 for comparison purposes.
+
+
+ DFA13 has been tested on DOS 3.1 with both floppy and hard disks.  This 
+ program should be loaded AFTER multi-tasking utilities.  
+
+ WARNING: This program will not work properly if loaded BEFORE a multi-
+ tasking utility such as DoubleDOS or DESQview!
+
+ WARNING: This program goes between your programs and DOS and had the 
+ potential of causing data loss.  Make sure you have made a backup
+ before you try this program.  Use at your own risk!
+
+
+ Another utility program, DFAMON is also provided.  This program can be
+ run in one side of DoubleDOS, while DFA13 is loaded in the other side.
+ When running, DFAMON lists all of the active input/output files, the
+ amound of data in the acceleration buffer, and the ratio of accelerated
+ to physical reads.
+
+
+ Written by Samuel H. Smith, 24-may-86
+ Assemble with MASM v4.0
+
+
+
+ SPECIAL LOCATIONS
+ =================
+
+ CS OFFSET        DECRIPTION
+ ---------        ----------
+   103            This word sets the size of the buffer area.  Sizes
+                  from 800h to 3000h seem to work best.  The maximum
+                  size is FC00h.  This can be patched with DEBUG.
+
+   105            This word sets the maximum read size that will trigger
+                  buffering on a file.  Smaller read sizes will always
+                  trigger buffering.  Larger sizes indicate that your
+                  program is already buffering and does not need any
+                  help from DFA13.  This can be patched with DEBUG.
+
+
+ 
+ RELEASE HISTORY
+ ===============
+    24-May-86 v1.0    This was the initial release.
+
+    25-May-86 v1.0a   The acceleration counters were added.
+                      A check was added for CTRL-BREAK. in 1.0 DFA10
+                      would go to sleep when CTRL-BREAK was used to
+                      abort a program.  --THIS VERSION HAS TROUBLE WITH
+                      MULTI-PROCESS/SUB-PROCESS AND IS REPORTED TO TRASH
+                      WRITES ON DOS 2.1
+
+    29-may-86 v1.1    Revised for assembly with MASM 4.0
+                      Added enable/disable function.
+
+    21-Nov-86 v1.3    Added additional status accumulators.  Wrote new
+                      DFAMON program to monitor file acceleration status
+                      under DoubleDOS.
+
+

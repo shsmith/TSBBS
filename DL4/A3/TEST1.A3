@@ -1,0 +1,36 @@
+
+--
+-- test program for a3 compiler
+--
+
+pragma list (on);   -- list source while parsing
+pragma trace(off);
+
+package TEST is
+
+   I: integer;
+   F: float;
+   I: integer;  -- should give syntax error (because of redefinition)
+
+   procedure TOP is
+   begin
+      NULL;
+   end TOP;
+
+   procedure MIS is
+   begin
+      NULL;
+   end MATCH;   -- should give identifier mismatch error
+
+   procedure TOP is
+   begin
+      NULL;
+   end TOP;   -- should give error because of redeclaration
+
+   declaration error;  -- should give syntax error
+
+begin -- main block
+   NULL;
+end TEST;
+
+

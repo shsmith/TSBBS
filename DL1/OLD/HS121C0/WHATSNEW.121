@@ -1,0 +1,17 @@
+
+  ==========================================================================
+             SUMMARY OF WHAT'S NEW IN HS/LINK VERSION 1.21
+  ==========================================================================
+
+  HS/Link version 1.21 is a maintenance release which is fully compatible
+  with release 1.20.  Most users do NOT need to upgrade from version 1.20.
+
+  Some modems are known to occasionally go "dead" during a connection.  When
+  this happens, HS/link will soon decide that the link has failed and will
+  abort the transfer.  Since one of the modems in the connection is now
+  "dead", it is possible for HS/link to wait indefinitely for a go-ahead (CTS
+  signal) from the modem to send the final abort sequence.  Version 1.21 adds
+  logic to disregard the CTS flow control signal under these circumstances,
+  allowing HSLINK to exit to DOS rather than continuing to wait for the
+  modem to disconnect.
+

@@ -1,0 +1,69 @@
+@CLS@
+$WHITE$                                                                 page 1
+$GREEN$Current Date & Time: תתתתתתתתת : $YELLOW$@SYSDATE@ ($RED$@SYSTIME@$YELLOW$)$DEFAULT$ p.s.t.
+$BLUE$--------------------------------------------------------
+$GREEN$User תתתתתתתתתתתתתתתתתתתתתתתתת : $RED$$NAME$
+$GREEN$City you are calling from תתתת : $WHITE$@CITY@
+$GREEN$Time Used תתתתתתתתתתתתתתתתתתתת : $YELLOW$@TIMEUSED@ minutes
+$GREEN$Time Remaining תתתתתתתתתתתתתתת : $BLUE$@TIMELEFT@ minutes $RED$($GREEN$left$RED$)
+$GREEN$Active Node # you are on תתתתת : $MAGENTA$$NODE$
+$GREEN$Current Conference תתתתתתתתתתת : $CYAN$@INCONF@
+$GREEN$A system event is scheduled at : $GRAY$3:00 a.m.
+$GREEN$Security level תתתתתתתתתתתתתתת : $MAGENTA$@SECURITY@
+$GREEN$Expire Date תתתתתתתתתתתתתתתתתת : $YELLOW$@EXPDATE@
+$GREEN$Last Call Date תתתתתתתתתתתתתתת : $RED$@LASTDATEON@ $BLUE$($GREEN$@LASTTIMEON@$BLUE$)
+$GREEN$Number of Downloads תתתתתתתתתת : $WHITE$@DLFILES@ (@DLBYTES@ total,
+                                 @DAYBYTES@ today,
+                                 @BYTESLEFT@ remaining)
+$GREEN$Earned K Bytes תתתתתתתתתתתתתתת : $RED$$5W$
+
+
+
+$WHITE$Press any key for next page ...
+@MORE@
+@CLS@
+$WHITE$                                                                 page 2
+$GREEN$Current time:תתתתתתתתתתתתתתתתת : $YELLOW$@SYSDATE@ ($RED$@SYSTIME@$YELLOW$)$DEFAULT$ p.s.t.
+$GREEN$--------------------------------------------------------
+$GREEN$User תתתתתתתתתתתתתתתתתתתתתתתתת : $RED$$NAME$
+$GREEN$City you are calling from תתתת : $WHITE$@CITY@
+
+$GREEN$Total Number of Callers תתתתתת : $BLUE$@NUMCALLS@
+$GREEN$Total Calls (Yours) תתתתתתתתתת : $GRAY$@NUMTIMESON@
+$GREEN$Number of Uploads תתתתתתתתתתתת : $CYAN$@UPFILES@ (@UPBYTES@ total)
+$GREEN$Your Voice phone # תתתתתתתתתתת : $RED$@HOMEPHONE@
+$GREEN$Your Data phone # תתתתתתתתתתתת : $BLUE$@DATAPHONE@
+$GREEN$Last Message read תתתתתתתתתתתת : $YELLOW$$LASTMSGNO$$DEFAULT$
+$GREEN$Last Time & Date Called תתתתתת : $WHITE$@LASTTIMEON@, @LASTDATEON@$DEFAULT$
+
+
+
+
+
+
+
+$WHITE$Press any key for next page ...
+@MORE@
+@CLS@
+$WHITE$                                                                 page 3
+$GREEN$Current time:תתתתתתתתתתתתתתתתת : $YELLOW$@SYSDATE@ ($RED$@SYSTIME@$YELLOW$)$DEFAULT$ p.s.t.
+$GREEN$--------------------------------------------------------
+$GREEN$User תתתתתתתתתתתתתתתתתתתתתתתתת : $RED$$NAME$
+$GREEN$City you are calling from תתתת : $WHITE$@CITY@
+
+$MAGENTA$Conferences Registered ...
+
+$WHITE$Conference 0  [Main Area] $GREEN$= תתתתתתתתתתתתתתתתתתתתתתת $RED$$IFMEMBER-000$
+$WHITE$Conference 2  [ProDoor Support] $GREEN$= תתתתתתתתתתתתתתתתת $RED$$IFMEMBER-002$
+
+$WHITE$Conference 60 [Boosters Support] $GREEN$= תתתתתתתתתתתתתתתת $RED$$IFMEMBER-060$
+                                           (Open DOOR 18 to gain access
+                                            after mailing registration)
+
+$GREEN$Your Play Pen area for the system use is תתתתתתתתת $WHITE$$PLAY$
+$GREEN$Your Scratch file name for $YELLOW$EXTRACTED ARCHIVES$GREEN$ is ת $WHITE$$SCRATCH$
+$GREEN$Your Mail Scratch file via $RED$ZIPM$GREEN$ function will be ת $WHITE$$MAIL$  (free D/L)
+
+$RED$To change your personal information $BLUE$($YELLOW$e.g. Phone #'s$RED$,$YELLOW$ Password$RED$,$YELLOW$ City$RED$,$YELLOW$ etc.$BLUE$)$RED$,
+please use option $YELLOW$[$GREEN$W$YELLOW$]$RED$ from the MAIN MENU.$DEFAULT$
+

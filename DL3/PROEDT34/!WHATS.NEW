@@ -1,0 +1,242 @@
+<!WHATS.NEW>
+                      What's New In ProDoor 3.4?
+                      --------------------------
+
+** Note: the environment setting
+     SET OVCRT=ON
+may be needed under DesqView and other windowing/timeshare systems to prevent
+screen bleed-through or background lockups.
+
+Added
+     SET PROTRNS=ON
+environment setting to assist in development of PROTRNS files.  When present,
+the program will output all translatable messages surrounded in {...}.  These
+can be used to determine changes or additions that are possible in the PROTRNS
+files.
+
+Added "/ $LASTMSGNO$" after display of current message number.
+
+Added #, !, -, $ and _ to list of characters that filenames may start with for
+automatic directory colorization to work properly.
+
+Added '*' flagging of newer files in file listings.
+
+Added (CHAT U), (CHAT A) and (CHAT ?) commands to control and report node chat
+availability status.
+
+Added @WAIT@ macro, which acts like @MORE@ used to.
+
+Added a check for $HELPFILE$ on a line by itself.  If present, the remainder
+of the current display file will be processed as a multi- topic help file with
+topic and subtopic prompting/searching.
+
+Added a check for @X codes in DIR files.  When one of these codes is found,
+the program disables automatic colorization for the remainder of the DIR file,
+allowing @X codes to take control.
+
+Added a new help file:
+     PROFV
+which is active at the (F V) and (VX) prompts.
+
+Added code that will check for the environment variable
+     SET ECHOFLAG=ON
+and if found, will creat the file
+     ECHOFLAG
+in the prodoor directory whenever an "echo" message is saved.  It will be the
+responsibility of your mailer system to remove this file when mail has been
+transferred.
+
+Added explicit (G) option at 10 second countdown for automatic logoff.
+
+Added logic in (W)rite-user-info function to reject passwords that are listed
+in the new PROPCAN file.  Passwords that contain parts of the username
+are also automatically rejected.
+
+Added logic to allow prodoor to open doors requiring USER.SYS or DOOR.SYS
+files by means of a call to PCB145 with a /KEY parameter.
+
+Added logic to allow xx/xx/xx date formats as well as xx-xx-xx.
+
+Added logic to check for PROTRNS when PROTRNS.LNG is not found.
+
+Added logic to disconnect a user after repeatedly entering invalid input at
+any prompt.
+
+Added logic to expand $ and @ macros in DIR files and in results of (F), (L),
+(N) and (Z) commands.
+
+Added logic to flush message file buffers when checking for end-of-messages.
+This corrects the operation of the 'messages left by alternate node'
+detection.
+
+Added logic to help in accessing pcb145-specific doors within prodoor and
+prologon.  The new logic executes the command
+     pcb145/key:open;doorname^M
+prior to executing the DOOR.BAT file for doors that require doors.sys or
+users.sys files.  This in conjunction with some changes in your board.bat file
+will allow a temporary way of accessing all doors within prodoor.  This method
+will be replaced with direct file updates in the prodoor 4.0 betas.  See
+sample PRODOOR and BOARD.BAT files.
+
+Added logic to honor the "disable uploads XX minutes prior to event" option
+from pcboard.dat.
+
+Added logic to periodically update USERNET.DAT file even when the current node
+status has not changed.  This is needed in cases where the USERNET.DAT file is
+erased by PCB145.
+
+Added logic to properly handle the "door directory" entry in pcb145 format
+doors.lst files.
+
+Added logic to recognize NS as autojoin at a read mail prompt when there are
+no more available messages in the current conference.
+
+Added logic to totally disable checks for the NS16550 buffered serial chip.
+Add the environment statement:
+     SET NO16550=ON
+to force the code to act like ProDoor/ProKit 3.1 did.
+
+Added new (PA)ge command in message reader and proedit to set the page length.
+
+Added new (TA)gline command in message reader, allowing users to specify
+alternate message taglines prior to message entry.
+
+Added new CONFIG option to specify the minimum estimated transfer time that
+will trigger a (G) default at the "LAST CHANCE" prompt.
+
+Added new help system that allows selective help with unlimited topics and
+subtopics contained within each help file.  See the new PROHELP for examples
+of the file format.
+
+Added new option in configuration file "Require filenames before batch
+uploads".  When set to YES, this prevents batch uploads without filenames
+being specified in advance.
+
+Added new variables in PROKIT interface:
+     user_changed: boolean;
+     pcbsys_changed: boolean;
+if set to FALSE, the corresponding data file will NOT be updated on exit from
+a door.  This is useful in TPA based doors that do not wish to directly update
+the USERS or PCBOARD.SYS files.
+
+Added support for "unlimited" download bytes when download K limit is set to
+32767k.
+
+Added support for TO: @level@ and TO: @level-level@ security level specific
+messages.
+
+Added support for security-level specific doors.lst files.  For example,
+DOORS30.LST will be used, if present, for level 30 users.
+
+Added the following macros:
+     @BEEP@          Sends an audible tone (control-G) to the speaker.
+     @BPS@           Same as $C$ (connect BPS)
+
+Added the following new PROKIT variables for PCBOARD.DAT (pcbsetup.) fields:
+   read_comment_level:     integer;    {level needed to read comments}
+   read_ro_level:          integer;    {level needed to read R/O except comments}
+   temp_sysop_level:       integer;    {temporary sysop level}
+   high_conf_number:       integer;    {high conference number}
+   is145:                  boolean;    {running under pcboard 14.5?}
+   userinf_path:           varstring;  {path/name of USERS.INF file}
+   editmine_level:         integer;    {security to edit my messages}
+   editany_level:          integer;    {security to edit any message}
+   snoop_level:            integer;    {security to use snoop mode}
+
+Added the following prompts to the (W)rite user info command:
+     Disable Visual Editor Prompt (yes/no)
+     Visual Editor Default (yes/no)
+     Clear Screen Between Messages (yes/no)
+
+Added two new help files:
+     PROMORE         Active at all MORE: prompts.
+     PROJOIN         Active at Join Conference Command prompt.
+
+All ansi decoding is now internal-- you no longer need ANSI.SYS loaded for
+ProDoor/ProLogon operation.
+
+Changed (N)ew files scan to prevent setting the last-date-scanned to a date in
+the future.
+
+Changed (Q)uote function to allow line numbers up to the program limit of 255
+instead of the limit specified by PCBSETUP.
+
+Changed (W)rite-user and F6(update) functions to allow password editing
+without entry of original password or display of new password.
+
+Changed @MORE@ macro to force a "More" prompt instead of "press enter to
+continue".
+
+Changed F6(update user record) function to disable user display of record
+changes.
+
+Changed PRORATIO system to change file and kbyte limits according to specified
+ratio instead of rejecting selected files.
+
+Changed PROUTEST.BAT file to call the new PROUT1.BAT file for each individual
+file uploaded.  The new PROUT1.BAT has specific tests for each type of
+compression and should simplify efforts to detect and prevent bad uploads.
+
+Changed message file locking to allow control characters as well as
+SPACES in the obsolete "LOCKED" field in the message header.
+
+Changed security level checks on MODIFY and RU commands to follow new entries
+in PCBSETUP and PCBOARD.DAT.
+
+Changed visual edit to use entire screen in local mode, regardless of the
+specified (P)age setting.
+
+Changes in "Going off-hook" procedure to time out if the modem does not return
+an "OK" result code after 10 seconds.
+
+Changes in $DISP handler to allow this macro in PROTRNS as well as within text
+files.
+
+Changes in upload/event contention logic to make prodoor's upload logic
+conform with pcb145 and pcb142 standards.
+
+Combined logic of (t)hread/(z)ip searches so they will work together better
+and provide more consistant displays.
+
+Corrected runtime error 201 in PROSM Extended User File Edit function when
+encountering a last-read pointer > 65535.
+
+Corrected runtime error 203 in PROSM Renumber/Arrange Conferences function.
+
+Increased internal stack space by 1k.
+
+Increased maximum length of PROTRNS entries to 255 characters.
+
+Increased maximum number of active download directories to 300.
+
+Increased message limits to 80 columns and 255 lines maximum.
+
+Increased number of conferences to 5000.
+
+Recompiled all units with Turbo Pascal 6.0 compiler.
+
+Recompiled prokit libraries with $O for overlay-capable applications.
+
+Redefined ascii code 127 to function as ^G rather than ^H in visual editor.
+
+Removed "FREEFILE" as a special password.  The standard passwords "FREE" and
+"NOTIME" are now properly ignored, if present.
+
+Removed "wildcards are okay" message when prompting for upload filenames and
+upload filenames are required by the sysop.
+
+Removed case sensitivity in PROSM command line parameters.
+
+Removed support for the obsolete PCBTRAP program.
+
+Removed support for PROUSER file and mail waiting flags.  This feature will
+return with PCB145 compatibility in the prodoor 4.0 betas.
+
+Removed the "Thanks @username@!" and "Upload time credit" displays following
+an aborted upload.
+
+Rewrote screen handlers for quicker displays.
+
+The 'new files' function now updates the last-scanned date to that of the
+newest file seen, rather than the current date.
+

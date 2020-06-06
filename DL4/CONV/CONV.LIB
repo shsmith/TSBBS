@@ -1,0 +1,38 @@
+
+
+-----------------------------------------------------------
+--                                                       --
+--                 String Conversions                    --
+--                Package Specification                  --
+--                 28-Jul-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+
+package CONV is
+
+   function CONVERT (data: integer) return string;
+      -- convert integer data to a decimal string
+
+   function CONVERT (data: float) return string;
+      -- convert floating point data to a decimal string
+
+   function HEX (data: integer) return string;
+      -- convert integer data to a hex string
+
+   function HEX (data: byte) return string;
+      -- convert byte data to a hex string
+
+   function UFLOAT (i: integer) return float;
+      -- convert unsigned integer to floating point
+
+   function HEX_VALUE (hex: string) return integer;
+      -- convert a hex string into an integer
+
+   function TRIM_LEADING (ch: character;
+                          s:  string) return string;
+      -- remove leading characters 'ch' from a string
+
+end CONV;
+
+

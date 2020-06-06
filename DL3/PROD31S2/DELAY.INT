@@ -1,0 +1,2 @@
+procedure delay(ms: longint);
+   (* delay a specified number of miliseconds; give up time while delaying *)

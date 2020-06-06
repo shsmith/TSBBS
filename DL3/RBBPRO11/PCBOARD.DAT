@@ -1,0 +1,134 @@
+*** PCBoard Version 12.1 data file ***
+#
+# pcboard.dat - main configuration file; used by ProDOOR to locate
+#               all other files.  lines with 'nil' are not used and
+#               should not be changed.  lines with # are comments.
+#
+# sysop's first name
+Sysop
+nil
+# sysop function security levels
+0,0,0,0,0,0,0,0,0,0,0,0,0
+nil
+# activity log file
+CALLER
+# directory for activity log file
+C:\PROD
+nil
+nil
+# user registration file (in MAIN directory)
+USERS
+# conference data file (in MAIN directory)
+CNAMES
+# file security file (in MAIN directory)
+FSEC
+nil
+nil
+nil
+nil
+nil
+# doors file (DOORS in GEN directory is the menu, 
+#             DOORS.DAT in MAIN directory is the door control file)
+DOORS
+# news file (in GEN directory)
+NEWS
+nil
+# download activity log pathname (nul to disable logging)
+C:\PROD\DOWNLOAD.LOG
+# main board upload directory
+C:\UPLOAD
+# the GEN directory
+C:\PROD
+# the MAIN directory
+C:\PROD
+nil
+# location of upload directory DIR file (and PRIVATE for /... uploads)
+C:\PROD
+nil
+# list of download directories (up to 255 chars long)
+C:\DOWN1;C:\DOWN2;C:\UPLOAD
+nil
+nil
+# string to place modem offhook
+ATH1
+# com port number
+COM2:
+# top baud rate, used in $B$ macro and for time estimates.  19200 is a
+# special case.  lower values cause PCBOARD.SYS to be used for time estimates.
+2400
+nil
+nil
+nil
+# user security levels required for menu selections (0 = allow all)
+0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0
+nil
+nil
+# number of main board bulletin files
+# bulletin menu is BLT in GEN directory.  bulletin texts are BLT1..BLTn
+# in conference:  xBLT in conference dir, texts are xBLTn
+# 0=bulletins disabled
+1
+# number of conferences (conference specifics are in CNAMES)
+# 0=conferences disabled
+0
+# number of main board file directories
+# DIR1..DIR(n-1) are in GEN directory, DIRn is in specified directory
+3
+nil
+# are main board uploads private? (0 or -1)
+# uploads posted in DIRn if not.  private uploads posted in PRIVATE
+0
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+# node number for SCRATCH file and activity log, 0=none
+0
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+nil
+# minimum K bytes free in upload directory before uploads are allowed
+500
+nil
+nil
+nil
+nil
+nil
+nil
+

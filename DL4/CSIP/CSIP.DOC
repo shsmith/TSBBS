@@ -1,0 +1,38 @@
+
+CSIP is a very simple utility program that causes a continuous CRT
+display of the processor stack and CS:IP registers.  It is useful in
+debugging and tracing code that occasionally crashes or appears to
+"freeze".
+
+When CSIP is resident and enabled, the display has the following format:
+
+        aaaa:bbbb cccc:dddd
+
+where:
+        aaaa is the current stack segment (SS register)
+        bbbb is the current stack pointer (SP register)
+        cccc is the current code segment (CS register)
+        dddd is the current instruction pointer (IP register)
+
+
+Press the SCROLL LOCK key to enable/disable the CSIP status display.
+
+This is public domain material.
+Samuel H. Smith, 12-11-91
+
+Revision history
+----------------
+
+12-11-91
+   Initial coding and release
+
+12-28-91
+   Added logic to determine video segment at runtime (CSIPM no longer
+   needed on MONO display systems).
+
+   Changed display to show the last 5 values of SS:SP CS:IP instead of
+   only a single value.
+
+   Added logic to check SCROLL-LOCK state and to enable the status
+   display only when SCROLL-LOCK is active.
+

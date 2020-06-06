@@ -1,0 +1,28 @@
+;
+; PROMAIN.XLT - ProDoor command translation definition for MAIN command prompt
+;               For ProDoor 3.1
+;
+; File format is:
+;       level oldcommand newcommand
+;
+; List higher levels first.  Oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+
+;convert "S" into "DOOR 15" for all user levels
+;convert "S1" through "S3" into "DOOR 15" through "DOOR 17" for all user levels
+0,S,DOOR 15
+0,S1,DOOR 15
+0,S2,DOOR 16
+0,S3,DOOR 17
+
+;display a message for LIB command
+0,LIB," Sorry, we don't have a CD-ROM!
+
+;
+; Special commands handy in translation:
+;       " rest of line          ;display rest-of-line to user
+;       > rest of line          ;display and LOG rest-of-line
+;       < rest of line          ;LOG rest-of-line but display nothing
+;
+

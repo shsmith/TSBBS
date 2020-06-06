@@ -1,0 +1,6 @@
+
+{$i \tinc\getfile2.dcl}
+
+procedure getfiles (pattern:       filestring;
+                    var fdir:      filearray;
+                    var num:       integer);

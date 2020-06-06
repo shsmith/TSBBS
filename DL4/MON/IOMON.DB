@@ -1,0 +1,358 @@
+f100 500 0
+a100
+;----------------------------------------
+; IOMON - Disk I/O Monitor
+;----------------------------------------
+; This program will terminate and stay resident.  It intercepts the
+; disk I/O interrupt and displays I/O status information on the
+; screen during I/O wait periods.
+;
+; S.H.Smith, 14-may-86
+;
+;
+
+a100
+; startup entry point
+   jmp 2a0       ;install
+
+a103
+; vector for old interrupt
+   db 0,0,0,0
+
+a107
+; segment address for display memory
+; filled in by startup code
+   dw 0
+
+a109
+; interrupt re-entrance flag - don't botch recursive
+; disk I/O requests!
+   db 0
+
+a10a
+; previous 2 screen characters and attributes (under the status display)
+   dw 0
+   dw 0
+
+a10e
+; twiddle display index
+   dw 0
+
+a110
+; twiddle display characters
+   db "Ä\³/"
+
+
+a118
+; a signature in bytes
+   db 0a,0d,'IOMON - Disk I/O monitor display',0a,0d
+   db '$  S.H.Smith, 14-May-86',0a,0d
+   db 1a
+
+
+a160
+; vector to old disk I/O handler
+   pop ax
+   cs:
+   jmp far [103]   ;to old disk I/O handler
+
+
+a170
+;----------------------------------------
+; new disk service interrupt
+;----------------------------------------
+;
+   push ax         ;these registers will be used
+;
+; are we already in a disk I/O interrupt?
+   cs:
+   mov al,[109]
+   cmp al,0
+   jnz 160         ;don't monitor recursive interrupts
+;
+;----------------------------------------
+; we are now intercepting the disk I/O interrupt
+;----------------------------------------
+   pop ax
+   cs:
+   pop [118]       ;get return ip
+   cs:
+   pop [11a]       ;get return cs
+   popf            ;throw away unused flags
+;
+   push ds
+   push es
+   push bx         ;save scratch registers
+   push ax
+;
+   push cs         ;set ds <- cs
+   pop ds
+;
+   mov al,1        ;flag that we are now in a disk I/O interrupt
+   mov [109],al
+;
+;
+;----------------------------------------
+; save the previous display data
+;
+   mov ax,[107]    ;get display segment into es
+   mov es,ax
+;
+   es:
+   mov ax,[9c]     ;save original screen contents
+   mov [10a],ax
+;
+   es:
+   mov ax,[9e]     ;second char
+   mov [10c],ax
+;
+;----------------------------------------
+; display the rotating twiddle character
+;
+   cs:
+   mov bx,[10e]    ;get the current twiddle character
+   mov al,[110+bx]
+;
+   inc bx
+   mov ah,bl       ;advance to next twiddle position
+   and ah,3        ;bx=bx mod 4 to rotate through twiddles
+   mov bl,ah
+   mov [10e],bx    ;save next twiddle index
+;
+   mov ah,0f       ;attribute of twiddle status char
+   es:
+   mov [9c],ax     ;put twiddle status on screen
+;
+;----------------------------------------
+; determine operation status message based on function code
+;
+   pop ax          ;get operation code into ah
+   push ax
+;
+   mov al,49       ;reset disk system = I
+   cmp ah,0
+   jz 200
+;
+   mov al,53       ;status = S
+   cmp ah,1
+   jz 200
+;
+   mov al,52       ;read = R
+   cmp ah,2
+   jz 200
+;
+   mov al,57       ;write = W
+   cmp ah,3
+   jz 200
+;
+   mov al,56       ;verify = V
+   cmp ah,4
+   jz 200
+;
+   mov al,46       ;format = F
+   cmp ah,5
+   jz 200
+;
+; unknown function code, use '*' - this is probably a
+; hard disk function
+;
+   mov al,2a
+   jmp 200
+
+
+a200
+;
+;----------------------------------------
+; display the operation status character
+;
+   mov ah,0f       ;attribute of status char
+   es:
+   mov [9e],ax     ;put status on screen
+;
+;----------------------------------------
+; perform the disk I/O function
+;
+   pop ax
+   pop bx
+   pop es          ;restore initial entry registers
+   pop ds
+;
+   int 13          ;call myself recursively (this call will be
+;                  ;  routed to the real int13 handler
+   pushf
+   push ax
+   push es
+   push ds
+;
+   push cs
+   pop ds
+;
+   jnc 258         ;skip error handler if the operation worked
+;
+;----------------------------------------
+; there was an error; arrange for an error code on screen
+;
+   push ax
+   and ah,0f
+   add ah,30       ;convert low digit to hex
+   mov [10c],ah    ;and replace old screen contents
+;
+   pop ax
+   shr ah,1        ;move down bits for high digit
+   shr ah,1
+   shr ah,1
+   shr ah,1        ;make high byte hex and put on screen
+   and ah,0f
+   add ah,30
+   mov [10a],ah
+;
+   mov al,ff
+   mov [10b],al    ;make the error code 'flash'
+   mov [10d],al
+   jmp 258
+
+
+a258
+;----------------------------------------
+; restore original screen contents
+; or display error code in hex
+;
+   mov ax,[107]    ;get display page into es
+   mov es,ax
+;
+   mov ax,[10a]
+   es:             ;put old data on screen
+   mov [9c],ax     ;first char
+;
+   mov ax,[10c]
+   es:
+   mov [9e],ax     ;second char
+;
+;----------------------------------------
+; flag end of interrupt and return to the caller
+;
+   mov al,0
+   mov [109],al    ;flag that we are no longer in an interrupt
+;
+   pop ds
+   pop es
+   pop ax
+   popf            ;get return flags
+   cs:
+   jmp far [118]    ;jump back to user code
+
+
+a2a0
+;----------------------------------------
+; startup code
+;----------------------------------------
+; determine where the video ram is.  this is done by putting a special
+; character on the screen and then looking for it in the various video
+; ram locations.
+;
+   push cs
+   pop ds
+;
+   mov ah,3         ;get cursor position
+   int 10           ;video bios service
+   push ax
+   push bx
+   push dx          ;save it for later
+;
+   mov dx,0
+   mov ah,2         ;home the cursor
+   int 10
+;
+   mov ah,0a
+   mov al,99        ;display a funny char at cursor
+   mov cx,1
+   int 10
+;
+; move cursor back to original position
+;
+   pop dx
+   pop bx
+   pop ax
+   mov ah,2
+   int 10
+;
+; look for MONO video ram
+;
+   mov dl,99
+   mov ax,b000
+   mov es,ax
+   es:
+   cmp dl,[0]
+   jz 320
+;
+; look for COLOR video ram
+;
+   mov ax,b800
+   mov es,ax
+   es:
+   cmp dl,[0]
+   jz 320
+;
+; couldn't find video ram; display a message and abort
+;
+   mov dx,2e8
+   mov ah,9
+   int 21           ;display error message
+   int 20           ;terminate program
+
+a2e8
+   db "ERROR: Can't find display memory$"
+
+
+a320
+;
+   mov [107],ax     ;set the display page
+;
+;----------------------------------------
+; display the program signon message now that we are sure
+; that we can be installed
+;
+   mov dx,118
+   mov ah,9
+   int 21           ;display signon message
+;
+;
+;----------------------------------------
+; now install new interrupt handler
+;
+   mov ax,0
+   mov es,ax
+;
+; save old disk I/O vector
+;
+   es:
+   mov ax,[4c]
+   mov [103],ax
+;
+   es:
+   mov ax,[4e]
+   mov [105],ax
+;
+; install new vector
+;
+   mov ax,170       ;entry point offset
+   es:
+   mov [4c],ax
+;
+   mov ax,cs        ;this code segment
+   es:
+   mov [4e],ax
+;
+; set last resident code offset
+; and terminate-and-stay-resident
+;
+   mov dx,2a0
+   int 27
+
+
+rcx
+400
+niomon.com
+w
+q
+

@@ -1,0 +1,3 @@
+procedure flag_files;
+procedure autoflag_scratch;
+function flag_warning(quit: boolean): boolean;

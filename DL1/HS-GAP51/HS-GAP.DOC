@@ -1,0 +1,42 @@
+                           ADDING HS/LINK TO GAP BBS
+                    TESTED WITH GAP V5.2B AND HS/LINK V1.0
+
+     ***  This file has changed from the first release of this setup 
+     information.  The -NU was added which was not in the first installation,
+     and more importantly, The old installation would not find the single
+     file uploads (they had to be in a different directory then the batch
+     uploads) and thus they would fail.  Please change to the batch files
+     included here ***
+
+       Since Gap currently does not support Batch protocols other than "D"
+     for DSZ, you will have to set up the HS/Link protocol as letter "D". 
+     To set up HS/Link with GAP you need to do the following:
+
+         1)  Copy EXTSD.BAT & EXTRD.BAT to your GAP Main Directory
+         2)  Make sure HSLINK is in your GAP Directory or in your PATH.
+         3)  Edit your AUTOEXEC.BAT and add the Statement:
+             SET DSZLOG = C:\GAP\DSZ.LOG
+             (you can use any directory or filename you like, but you
+                 must have this statement or batch uploads will not work)
+         4)  Copy the FLISTCNV.EXE to your GAP Directory (or in a PATH)
+         5)  Run GAP, Go into the Configuration under the section marked
+             "File System Options" and add the letter "D" to `External
+             Protocol Letters.'  Make sure the prompt above it `Use
+             External Protocols' is set to "Y".
+
+       As long as you do exactly as above, everything will work.  A few
+     notes about the EXTRD.BAT file.  In the third line below that says
+     -UD:\NEWUP\WORK0 change the NEWUP to your upload and add the "\WORK0"
+     to the end of it, if you don't it will NOT work.  
+
+         EXTRD.BAT
+
+	 @if exist %DSZLOG% del %DSZLOG%
+	 @rem  batch upload
+	 @if "%3" == "" HSLINK -P%1 -E%2 -NU  -UD:\NEWUP\WORK0
+	 @rem  single file upload
+	 @if not "%3" == "" HSLINK -P%1 -E%2 -NU  -UD:\NEWUP
+
+       If you are getting errors during uploading or downloading you
+     may need to add the -HS parameter to the command line.  Check your
+     HS/Link Documentation for more information on this and other options.

@@ -1,0 +1,335 @@
+---------------------------------------------------
+
+Help is available on the following Read Mail topics:
+
+[#] Msg. No  [G] Goodbye [S] Since     [MG] Graphics    [RESET] Pointers
+[+] Ahead    [J] Join    [T] Thread    [MO] Modify *    [RM] Recall
+[-] Back     [K] Kill    [U] UnProt *  [MOVE] *         [RO] Reply Other
+[/] Again    [L] Last    [X] Expert    [NODE]           [RR] Refer #
+[A] Abandon  [M] Mem     [Y] Yours     [NS] NonStop     [RU] Snoop *
+[C] Comment  [N] No      [Z] Zipscan   [QQ] Quicker     [SC] Scan on/off
+[E] Enter    [P] Prot *  [ED] Sysop    [QU] Quit        [TAG] Tag Line
+[F] Find *   [Q] Quick   [HO] Hotkeys  [RE] Reply       [UNK] Unkill *
+
+   [Zipm] Zip mail   [Summary] of Commands   [EXAMPLE] of Commands
+
+   Enter TEXT inside the Square Brackets  IE: node for NODES help file.
+
+~
+:?
+Please type one of the indicated topics for additional help.
+Press <ENTER> alone to exit the help system.
+~~
+:+
+:-
+(+) or (-)  You can change the "default" reading direction by typing "+"
+            or "-".  The prompt tells you which way you are going. 
+            Pressing (Enter) alone advances in the current direction and
+            displays the next message available. 
+~~
+:#
+(#)         You can type any message number and that message will be 
+            displayed. If there is no such message number on file, 
+            ProDOOR will search for the closest message and display that
+            one instead. 
+~~
+:/
+(/)         Redisplay the current message.
+~~
+:A
+(A)bandon   Leave current conference and return to the Main Board.
+            Continue reading messages.
+~~
+:C
+(C)omment   Enter a comment message to the sysop.  You specify the
+            'subject' of the message.  The message will be protected so
+            it is seen only by the sysop.
+~~
+:E
+(E)nter     Enter a new message.  You then specify who the message is to
+            be addressed to, as well as the 'subject' of the message.
+            You can protect the message so it will be seen only be the
+            'receiver'.
+~~
+:ENTER
+(Enter)     Search for the next message.  Notice the prompt message 
+            "(Enter)='+'" or "(Enter)='-'" to tell which direction 
+            (Enter) will take you. 
+~~
+:G
+(G)oodbye   Logs you off the system.  Examples:
+                G          ;logoff
+                G Q        ;quick logoff, bypass closing bulletins
+~~
+:HO
+(HO)tkeys   Enable instant response on most commands.  Eliminates the
+            need to type RETURN to activate most commands.
+            In hotkey mode you should use ";" (not SPACE) to "stack"
+            commands.  The spacebar acts like RETURN in hotkey mode.
+~~
+:J
+(J)oin      Allows you to switch to a different conference.  You may
+            specify either a conference number or a conference name.
+
+            These subfunctions are available:
+               (A)uto-join configuration update
+               (L)ocate conference by keywords
+               (M)ain board
+               (N)ew message status
+               (S)tatus of all conferences        
+               (Y)our mail.  Scan for conferences with new mail for you
+               (+)next higher conference
+               (-)next lower conference
+
+Subtopics: Examples
+
+~
+:J EXAMPLES
+Join command examples:
+
+   J M         ;main board
+   J;+         ;join next available conference
+   J;6         ;join conference 6
+   J TOOLS     ;join tools conference
+   J L LANG    ;locate conferences with 'LANG' in the description
+   J;2;Q       ;quick join, bypassing conference news
+   J S         ;status of all conferences
+   J S +       ;status of conferences after current one
+   J A 20      ;configure autoscan starting with conference 20
+
+~~
+:K
+(K)ill      If the message is either TO or FROM you, this option will
+            appear.  Pressing K will delete the message from the message
+            base. 
+~~
+:L
+(L)ast      Resets the last-read pointer to the current message number.
+            This is useful in conjunction with ARCM to re-capture messages.
+            Example:
+               500 L           ;selects message 500 and resets
+                               ;last-read to point to it.
+~~
+:M
+(M)emorize  Saves current message number.  Use with (RM)recall memory.
+~~
+:MG
+(MG)graphic Toggles ANSI graphics mode off/on.
+~~
+:N
+:NODE
+:NS
+(N)o more   Returns you to the main command prompt.
+
+(NODE)      Displays the list of callers that are online on other nodes
+            in a multi-node system.
+
+(NS)non-stop will enter non-stop message reading or searching.
+            Suspended with ^S, aborted with ^K or end-of-messages.
+~~
+:Q
+:QQ
+:QU
+(Q)uick     Shows you a quick summary of messages available for reading.
+            Includes the first 72 characters of message text.
+
+(QQ)uicker  Shows you a quicker summary of messages available for reading.
+            Does not display any of the message text.
+
+(QU)it      Quit reading messages and return to the ProDOOR command prompt. 
+~~
+:RE
+:RO
+:REPLY
+(RE)ply to  Enter a reply message to SENDER of the currently displayed
+            message. The reply mode allows you to optionally change the
+            subject and to provide "receiver-only" protection.
+
+(RO)ply to  Enter a reply message to RECEIVER of the current message.
+
+(REPLY)     This command allows you to directly to a message from a
+            command line.  Useful when you are reading messages offline
+            through the ARCM function.  The original message number can
+            be stacked.
+~~
+:RESET
+(RESET)     This command allows you to reset the 'last read' message
+            pointer to a specific message number.  Example:
+                RESET 500
+~~
+:RM
+(RM)recall  Returns you to the message memorized with the (M)emory command.
+~~
+:RR
+(RR)efer    Moves you to the 'Refer#' message.
+~~
+:S
+:SC
+(S)ince     Next message since you were last on.
+
+(SC)an      Toggle auto-join and ZIPM access to the current conference.
+~~
+:T
+(T)hread    Search for other messages with the same subject matter. 
+~~
+:TAGLINE
+(TA)g       Allows you to view and optionally alter the message tagline
+            to be used for new message entry.
+~~
+:X
+(X)pert     Selects expert or novice mode.
+~~
+:Y
+:YA
+(Y)our      Search for messages addressed to you.
+
+(YA)        Search for messages addressed to you OR to "all".
+~~
+:Z
+(Z)ip       Search for messages.  Lets you specify a "search keyword".  
+            With zip search in effect, you will see ONLY messages that 
+            contain the keyword either in the header OR the body.  In 
+            color mode, the matching lines are hilighted. 
+~~
+:ZIPM
+(ZIPM)      Zip new mail.  Captures up to 400 new messages in selected
+            conferences and then archives them in $SCRATCH$ for smallest
+            possible download time.  Examples:
+               ZIPM N         ;list new messages by conference before capture
+               ZIPM A         ;archive mail in all conferences
+               ZIPM M 10 14   ;archive mail in main board (M), areas 10 and 14
+               ZIPM TOOLS AI  ;archive TOOLS and AI conferences
+            Use (L)ast-read command to reset your "last read" message
+            pointers.
+            Use (J A)uto-config to select message areas in (ZIPM A)ll.
+~~
+:CO
+(CO)py      Copy the current message into a different conference.
+            This is a Sysop Commands.
+~~
+:ED
+(ED)it      Allows you to edit the current message header without
+            first going into the (MOD)ify function.
+            This is a Sysop Commands.
+~~
+:F
+(F)ind      Find and display information about the sender of the
+            current message.
+            This is a Sysop Commands.
+~~
+:MOVE
+(MOVE)      Move the current message to a different conference.
+            This is the same as (CO)py followed by (K)ill.
+            This is a Sysop Commands.
+~~
+:MO
+(MO)dify    Edit message text and header information.
+            This is a Sysop Commands.
+~~
+:P
+(P)rotect   Change the message protection to 'RECEIVER-ONLY'.
+            This is a Sysop Commands.
+~~
+:U
+(U)nprotect Change the message protection to 'PUBLIC'.
+            This is a Sysop Commands.
+~~
+:UNK
+(UNK)ill    UnKill a message that has been Killed.
+            This is a Sysop Commands.
+~~
+:RU
+(RU)snoop   Toggles read-flagging and user-update to allow reading
+            messages without updating pointers.
+            This is a Sysop Commands.
+~~
+:EXAMPLES
+ProDoor Mail Command Examples
+-----------------------------
+
+   2000 +                    ;read forward from message 2000
+
+   1000 S                    ;skip to message 1000 and then continue
+                              where you left off.
+
+   QQ YA NS                  ;quicker listing of all mail to you or 'all'.
+
+   M 345 RM                  ;save your place, read message 345,
+                              return to where you left off.
+                              
+   Z keyword                 ;scan for messages with keyword in them.
+
+   Z keyword NS              ;non-stop scan for all messages with 
+                              keyword.
+
+   REPLY 4431                ;enter a reply to message 4431.
+
+   J;+                       ;go to next available message area.
+
+   J TOOLS                   ;switch to TOOLS message area.
+
+   J L LANG                  ;locate conferences with 'LANG' in the description.
+
+   ZIPM 1 2 3                ;zip new mail in conferences 1,2 and 3.
+  
+   750 L                     ;reset last-read pointer to message 750.
+~~
+:SUMMARY
+ProDoor Mail Command Summary
+----------------------------
+
+(+) or (-) sets direction.
+(/)redisplay current message.
+(A)bandon conference, return to main message area.
+(B)ulletin listings.
+(C)omment to sysop.
+(E)nter new message.
+(G)oodbye.
+(HO)tkey mode.  Enable instant response on most commands.
+(J)oin a conference, enter new areas.
+(J A)uto-join configuration update.
+(J L)ocate conferences by keyword.
+(J N)ew messages in all conferences.
+(J S)tatus of all conferences.
+(J Y)our mail.  Scan for conferences with new mail addressed to you.
+(J +)join next higher conference.
+(J -)join next lower conference.
+(K)ill current message.
+(L)ast-read pointer reset.
+(M)emorize message number.
+(MG)graphic mode off/on.
+(N)return to main command prompt.
+(NODE) status display.
+(NS)non-stop reading.
+(O)perator page.
+(OPEN) doors.
+(Q)uick mail scan.
+(QQ)uicker mail scan.
+(QU)it to main command prompt.
+(RE)ply to the sender of the current message.
+(RO)reply to receiver of the current message.
+(RR)efer message display.
+(REPLY) to specific messages.
+(RESET) message pointer.
+(RM)recall memory.
+(S)ince last read.
+(SC)an.  Toggle auto-join and (zipm a).
+(T)hread search.
+(TA)gline change.
+(V)iew profile.
+(X)pert toggle.
+(Y)our mail.
+(YA) your mail or mail to "all".
+(Z)ip search message contents.
+(ZIPM) Compress new messages for download.
+
+(CO)py message  \
+(ED)it header    \
+(F)ind user       \
+(MO)dify message   \
+(MOV)e message      \__Sysop
+(P)rotect           /  only
+(U)nprotect        /
+(UNK)ill          /
+(RU)snoop        /
+~~

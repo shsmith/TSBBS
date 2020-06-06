@@ -1,0 +1,263 @@
+
+/* Unit header for: TPTCSYS.C -- Made by TPTC - Translate Pascal to C */
+
+#ifndef TPTCSYS_LOADED  /* prevent multiple loading */
+#define TPTCSYS_LOADED
+
+
+#ifdef IN_TPTCSYS  /* define globals here? */
+#define extern
+#endif
+
+      enum { maxint       = 0x7fff };
+
+
+/*
+ * C language declarations passed directly to TPTCSYS.UNH
+ *
+ */ 
+
+  #undef extern
+
+  #include <stdio.h>
+
+  #ifdef IN_TPTCSYS
+  #define extern
+  #endif
+
+  #define chr(n)          ((char)(n))
+  #define integer         int
+  #define word            unsigned
+  #define longint         long
+  #define real            double
+  #define boolean         int
+  #define false           0
+  #define true            1
+  #define nil             NULL
+  #define STRSIZ 255      /* default string length */
+
+  /* set support */
+  #define __  -2    /* thru .. */
+  #define _E  -1    /* end of set marker */
+
+
+   
+      typedef int /* 0..0xFF */ byte; 
+      typedef byte         shortint; 
+      typedef char         *pointer; 
+      typedef pointer      setrec; 
+     typedef char *string;
+
+      typedef struct text { 
+         char         fname[65]; /* the actual filename */ 
+        FILE     *filevar;      /* C's file variable */
+      } text; 
+
+   
+      extern text         output; 
+      extern text         input; 
+      extern integer      paramcount; 
+      extern word         ioresult; 
+      extern pointer      *tptc_argv; 
+      extern word         dseg; 
+      extern word         sseg; 
+      extern word         cseg; 
+
+
+   /* 
+    * Standard procedures and functions
+    *
+    */ 
+
+   
+extern real  sin(real         n);
+   
+extern real  cos(real         n);
+   
+extern real  tan(real         n);
+   
+extern real  sqr(real         n);
+   
+extern real  sqrt(real         n);
+   
+extern longint trunc(real         r);
+   
+extern real  round(real         r);
+   
+extern real  dint(real         r);
+
+   
+extern integer pred(integer      b);
+   
+extern integer succ(integer      b);
+   
+extern integer ord(char         c);
+   
+extern word  hi(word         w);
+   
+extern word  lo(word         w);
+   
+extern void  inc(byte *       b);
+   
+extern void  dec(byte *       b);
+
+   
+extern longint memavail(void);
+   
+extern longint maxavail(void);
+   
+extern void  dispose(pointer      ptr);
+   
+extern void  pfreemem(pointer      ptr,
+                      integer      size);
+
+   
+extern char * paramstr(integer      n);
+   
+extern char  upcase(char         c);
+   
+extern void  delete(char *       s,
+                    integer      posit,
+                    integer      number);
+   
+extern char * copy(char *       s,
+                  integer      from,
+                  integer      len);
+   
+extern void  val(char *       s,
+                 real *       res,
+                 integer *    code);
+   
+extern void  move(pointer      tomem,
+                  pointer      fmmem,
+                  word         bytes);
+   
+extern void  fillchar(pointer      dest,
+                      integer      size,
+                      char         value);
+   
+extern integer length(char *       s);
+
+
+   /*
+    * These will probably change when binary file translation is implemented
+    *
+    */ 
+
+   
+extern boolean eof(text *       fd);
+   
+extern void  flush(text *       fd);
+   
+extern void  close(text *       fd);
+   
+extern void  assign(text *       fd,
+                    char *       name);
+   
+extern void  reset(text *       fd);
+   
+extern void  rewrite(text *       fd);
+   
+extern void  append(text *       fd);
+   
+extern void  settextbuf(text *       fd,
+                        pointer      buffer,
+                        word         size);
+   
+extern void  seek(text *       fd,
+                  word         rec);
+   
+extern boolean seekeof(text *       fd);
+
+
+
+   /* 
+    * Additional procedures called by translated code 
+    *
+    */ 
+
+  setrec setof(byte element,...);
+        /* construct a set; variable parameter list */ 
+
+   
+extern boolean inset(byte         item,
+                   setrec       theset);
+        /* is an item a member of a set? */ 
+
+   
+extern integer spos(char *       str1,
+                  char *       str2);
+        /* returns the position of a substring within a longer string */ 
+
+   
+extern integer cpos(char         c,
+                  char *       str2);
+        /* returns the position of a character within a string */ 
+
+   
+extern char * ctos(char         c);
+        /* convert a character into a string */ 
+
+
+  string scat(string control, ...);
+        /* concatenate strings according to printf style control and
+       return pointer to the result */ 
+
+  void sbld(string dest,
+            string control, ...);
+        /* build a string according to a control string (works like sprintf
+       with with special handling to allow source and destination
+       variables to be the same) */ 
+
+  int tscanf(text *fd,
+             string control, ...);
+        /* functions like fscanf but allows whole-line reads into
+       string variables */ 
+
+  void tprintf(text *fd,
+               string control, ...);
+        /* functions like fprintf */ 
+
+
+
+   /* The following identfiers are 'builtin' to the translator and
+      should not be defined here.  If any of these are redefined, the
+      corresponding special translation will be disabled. */ 
+
+   /* 
+    *   function Pos(key: string; line: string): integer;
+    *   procedure Chr(i: integer): char;
+    *   procedure Str(v: real; dest: string);
+    *   procedure Exit;
+    *
+    *   var 
+    *      Mem:    array[0..$FFFF:0..$FFFF] of byte;
+    *      MemW:   array[0..$FFFF:0..$FFFF] of word;
+    *      Port:   array[0..$1000] of byte; {i/o ports}
+    *      PortW:  array[0..$1000] of word;
+    *   type
+    *      string = array[1..255] of char;
+    *
+    */ 
+
+
+  /*
+   * rename some tp4 identifiers that conflict with tc1.0 identifiers
+   */
+  #define intr    Pintr
+  #define getdate Pgetdate
+  #define gettime Pgettime
+  #define setdate Psetdate
+  #define settime Psettime
+  #define keep    Pkeep
+
+
+/*
+ * Implementation of support procedures
+ *
+ */ 
+
+
+extern void  tptcsys_init(int argc, char **argv);
+#undef extern
+#endif

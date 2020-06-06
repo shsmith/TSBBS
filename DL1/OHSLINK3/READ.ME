@@ -1,0 +1,24 @@
+OS/2 Version of HSLINK.
+
+0) When unziping the zip, be sure to preserve directory structure.
+1) Requires C Set/2 from IBM
+2) Two make files: hslink.mak -> creates standalone hslink.exe
+                   hsllib.mak -> creates library version of hslink
+   Note: each make file calls a support make file in the hdk subdir.
+3) Directory structure
+        ...\hslink     -> main source, headers, makes
+        ...\hslink\hdk -> engine source, headers, makes (called by above makes)
+4) To compile:  nmake hslink.mak  (current dir must be ...\hslink)
+
+Changes:
+
+1) Main change was comms driver - see os2comm.c
+2) Only line mode supported (not full screen).
+3) One new command line option: -HAn  where n is an open file handle to a com port
+   This version will use an opened file handle from the parent process if it
+   passes it. If not passed, os2comm.c will open a new file handle.  On exit,
+   this file handle is closed only if it was not passed on the command line.
+4) See the readme.hdk file in the hdk dir for a partial list of some of the
+   changes made to hdk.  One recent change was a bug in os 2.1, where it no
+   longer supports a write(fh,0,0) to set file length (a DOS trick). chsize()
+   was used instead in hsbuf.c to provide a more portable solution.

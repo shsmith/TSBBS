@@ -1,0 +1,154 @@
+
+
+                           << ProDoor Visual Editor >>
+                         <<  H u r t i g   H j e l p  >>
+
+
+
+ÕÍÍÍÍÍÍ<  Flytte Mark›r  >ÍÍÍÍÍÍÑÍÍÍ< Slette >ÍÍÍÍÑÍÍ< Andre funksjoner >ÍÍÍÍ¸
+³ ^S Tegn venstre ^D Tegn h›yre ³  ^G Bokstav     ³ ^B Reformat paragraf     ³
+³ ^A Ord venstre  ^F Ord h›yre  ³ DEL Tegn venstre³ ^N Sett inn RETURN       ³
+³ ^E Linje opp   ^X Linje ned   ³  ^T Ord h›yre   ³ ^O Vise original melding ³
+³ ^I Tabulator   ^P Linje slutt ³  ^Y Linje       ³ ^Q Sit‚r original meld.  ³
+ÆÍÍÍÍÍÍÍÍÍ<  Rulling  >ÍÍÍÍÍÍÍÍÍµ  ^J Sl† sammen  ³ ^V Overskriv/Insett mode ³
+³ ^C Skjerm opp  ^R Skjerm ned  ³     linjer      ³ ESC G† til kommando mode ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+                         [Flere detaljer p† neste side]
+
+
+
+
+ProDoor Visuell Editor gir deg full-skjerms editering mens du skriver
+meldinger p† BBSen. Visuell editering krever at du har ANSI terminal emulering.
+
+Visuell editerings kommandoer er WordStar-lignende kontroll karakterer.
+Hvis ditt terminal program har ANSI terminal emulering kan du ogs† bruke
+de viste funksjons taster.
+
+
+<< Flytte Mark›r >>
+
+Ctrl-S  Flytte 1 bokstav til venstre (Venstre pil)
+Ctrl-D  Flytte 1 bokstav til h›yre   (H›yre pil)
+Ctrl-E  Flytte opp 1 linje           (Pil opp)
+Ctrl-X  Flytte ned 1 linje           (Pil ned)
+Ctrl-A  Flytte venstre 1 ord
+Ctrl-F  Flytte h›yre 1 ord
+Ctrl-I  Tabulere til neste tabulator stop   (Tabulator tast)
+Ctrl-P  Flytte mark›r til slutten p† linjen (End tast)
+
+
+<< Rulling >>
+
+Ctrl-R  Flytte opp en side         (PgUp tast)
+Ctrl-C  Flytte ned en side         (PgDn tast)
+
+
+<< Slette >>
+
+Ctrl-G  Slette bokstav under mark›r
+Ctrl-H  Slette bokstav til venstre for mark›r (Backspace)
+Ctrl-T  Slette ord etter mark›r
+Ctrl-Y  Slette linje under mark›r
+Ctrl-J  Sl† sammen neste linje med denne
+
+
+<< Andre funksjoner >>
+
+Ctrl-B  Reformater paragraf.  En paragraf ender ved en blank linje eller
+        som har en ledende blank.
+
+Ctrl-L  Blanker skjermen og viser p† nytt  (Home tast)
+        Dette ruller ogs† skjermen slik at mark›ren st†r midt p† skjermen.
+
+Ctrl-N  Setter inn en RETURN.  Splitter linjen ved mark›ren.
+
+Ctrl-O  Se p† teksten i original meldingen som du svarer p†.
+        Du kan ogs† Sit‚re (Quote) valgte linjer fra original meldingen.
+
+Ctrl-Q  Sit‚r (Quote) tekst fra original meldingen. Samme som Ctrl-O men
+        viser ikke original meldingen p† nytt.
+
+Ctrl-V  Velge innsett/overskriv mode (Ins tast)
+
+Ctrl-U  G† ut av Visuell edit mode og tilbake til kommando promptet.
+
+ESC     Avslutt Visuell mode og tilbake til kommando promptet.
+
+
+                 [Tillegs funksjoner og tips p† neste side]
+
+
+
+Insett Mode i forhold til Overskriv Mode
+----------------------------------------
+
+I insett mode, blir alle bokstaver satt inn foran mark›ren. ENTER tasten
+splitter en linje og BACKSPACE tasten setter sammen linjen igjen.
+
+I overskriv mode, blir bokstaver skrevet over det som var p† skjermen f›r.
+I overskriv mode virker heller ikke den automatiske linje splitt/sette  
+sammen linjen igjen som i Innsett mode.
+Du m† da bruke ^N (splitte) og ^J (sette sammen) for † splitte eller sette 
+sammen en linje igjen n†r du er i overskriv mode.
+
+
+
+Tastatur emulering
+------------------
+
+Den letteste m†ten † flytte mark›ren p† i Visuell Edit mode er † bruke 
+pil tastene.  De fleste popul‘re terminal programmer har en eller annen 
+slags tastatur emulering.  Uheldigvis, denne emuleringen er enten ukomplett
+eller du m† g† igjennom en komplisert konfigurerings prosess.
+
+WordStar kommando settet er valgt som en kontroll karakter kommand set 
+pga. at det virker p† bortimot alle tastaturer og med alle terminal
+emulerings moder. Det har ogs† den fordelen at det lar deg holde fingrene
+p† "home" tastene mens du flytter mark›ren omkring.
+
+
+
+Funksjon                   Tastatur koder som kan brukes.
+--------                   ------------------------------
+
+Pil opp . . . . . . . . . . . . ^E
+                     eller      <esc> A
+
+Pil ned . . . . . . . . . . . . ^X
+                     eller      <esc> B
+
+Pil h›yre . . . . . . . . . . . ^D
+                     eller      <esc> C
+
+Pil venstre . . . . . . . . . . ^S
+                     eller      <esc> D
+
+Vise skjerm, home tast  . . . . ^L
+                     eller      <esc> H
+
+Slutten p† linjen . . . . . . . ^P
+                     eller      <esc> K
+                     eller      <esc> R
+
+Side opp  . . . . . . . . . . . ^R
+                     eller      <esc> r
+
+Side ned . . . . . . . . . . .  ^C
+                     eller      <esc> q
+
+Insett mode bryter . . . . . .  ^V
+                     eller      <esc> n
+
+
+I denne listen, betyr symbolet <esc> hvilket som helst av disse karakter
+kode sekvensene:
+        chr(27)
+        chr(27) [
+        chr(27) [ O
+
+Dette supporterer ganske mange tastatur emuleringer.
+

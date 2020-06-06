@@ -1,0 +1,48 @@
+
+                The Tool Shop - Specializing in Software Tools
+                            [MAIN BOARD FILE AREAS]
+
+   Area                Description                 Files      File Sizes
+  ------  ------------------------------------   --------  ---------------
+     1     S.H.Smith-HS/Link & Tool Shop Utils        64        5,713,818
+     2 ú ú S.H.Smith-Library SourceúCode ú ú ú ú ú ú 108 ú ú ú ú ú500,042
+     3     S.H.Smith-ProDoor/Logon & PCB Utils        79        4,848,405
+     4 ú ú S.H.Smith-All Other Programsú ú ú ú ú ú ú 175 ú ú ú ú2,928,621
+     6     Comm-Terminal Programs                      1           40,577
+     7 ú ú Comm-Internet and World WideúWebú ú ú ú ú ú39 ú ú ú ú8,775,439
+    12     Comm-Text, ANSI, RIP Utilities             60        9,018,092
+    13 ú ú Graph-ClipúArtú ú ú ú ú ú ú ú ú ú ú ú ú ú ú 2 ú ú ú ú ú402,887
+    19     Lang-"C"/Unix Compilers & Utils           142       17,598,431
+    20 ú ú Lang-"C"úSource Codeú ú ú ú ú ú ú ú ú ú ú 330 ú ú ú 31,654,091
+    21     Lang-"ADA" Source Code                     58        1,528,652
+    22 ú ú Lang-"AI" SourceúCode ú ú ú ú ú ú ú ú ú ú ú64 ú ú ú ú2,526,995
+    23     Lang-"Assembly" Source Code               218       10,088,653
+    24 ú ú Lang-"Basic"úSource Codeú ú ú ú ú ú ú ú ú ú66 ú ú ú ú9,441,894
+    25     Lang-"Forth" Source Code                   33        1,761,407
+    26 ú ú Lang-"Pascal" SourceúCode ú ú ú ú ú ú ú ú 178 ú ú ú 14,709,132
+    27     Lang-All Other Source Code                 59        9,723,740
+    31 ú ú Misc-Encryption & Privacy ú ú ú ú ú ú ú ú ú40 ú ú ú ú6,367,406
+    34     Misc-Educational                            7        2,584,994
+    42 ú ú Misc-Text Files onúAllúSubjects ú ú ú ú ú 263 ú ú ú 19,269,361
+    45     Util-Batch Utilities                       32        1,241,031
+    46 ú ú Util-Debuggingú&úBenchmarkú ú ú ú ú ú ú ú ú21 ú ú ú ú2,673,089
+    47     Util-Hard and Floppy Disk                  70        4,569,300
+    48 ú ú Util-DOSúUtilitiesú ú ú ú ú ú ú ú ú ú ú ú 119 ú ú ú ú8,719,184
+    49     Util-File Management                       86        9,262,084
+    52 ú ú Util-Memory ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú24 ú ú ú ú2,598,150
+    57     Util-Networking                            65        9,828,576
+    58 ú ú Util-OS/2 ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú51 ú ú ú 17,380,671
+    59     Util-Printer Utils & Fonts                 51        6,703,500
+    61 ú ú Util-Virusú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú ú30 ú ú ú 13,860,694
+    62     Util-ZIP and other Compression             96        9,723,980
+    63 ú ú Util-AllúOtherúUtilitiesú ú ú ú ú ú ú ú ú ú 5 ú ú ú ú ú148,880
+    71     Win-Winsock and Internet Apps               5        1,296,093
+    72 ú ú CPU-Apple & Macintosh ú ú ú ú ú ú ú ú ú ú ú 9 ú ú ú ú1,728,973
+    73     CPU-Atari, Amiga & Other 68000's           62        3,585,022
+    74 ú ú CPU-CP/MúandúOtherú8úbitúMachines ú ú ú ú ú37 ú ú ú ú3,335,610
+    75     CPU-All Other Machine Types                22        1,331,712
+    77 ú ú Uploads M-Z [>30údays]ú ú ú ú ú ú ú ú ú ú ú 1 ú ú ú ú ú808,194
+    78     Blocked, Unwanted & Hacked Files            2                0
+    80 ú ú RecentúUploads. úThanks!ú ú ú ú ú ú ú ú 1,319 ú ú ú706,745,934
+                                                 --------  ---------------
+                                Overall Totals     4,093      965,023,314

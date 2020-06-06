@@ -1,0 +1,30 @@
+; PROXMAIN - ProDoor command translation definition for MAIN command prompt
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+30,SEL,EXEC-SEL.BAT
+105,BBS,DISP-F:\LISTBBS\BBSLIST /
+0,O,DISP-F:\PRODOOR\SLEEP A C
+0,?,DISP-F:\PRODOOR\PROMENU
+0,TOD,DISP-F:\PRODOOR\TCALLS /
+0,USERS,DISP-H:\BULLET\BLT9 /
+0,BARD,EXEC-BLDLIST.BAT $N$
+0,TIME,EXEC-PROBANK.BAT
+0,QWK,DISP-F:\PRODOOR\NOTYET /
+0,REP,DISP-F:\PRODOOR\NOTYET /
+0,CAP,ZIPM
+0,LIB,HELP
+0,NEW,N U S
+0,ALL,N A S
+0,WHO,NODE
+0,WH,NODE
+0,BYE,G Q
+0,BY,G Q
+0,GB,G Q
+0,V,DISP-F:\PRODOOR\STATS.TXT /
+0,S,V
+0,MAIL,J Y
+0,C,A C
+0,HO,EXEC-HSCOPE.BAT

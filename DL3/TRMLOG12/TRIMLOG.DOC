@@ -1,0 +1,68 @@
+
+                        TRIMLOG 1.2 (TRMLOG12)
+                 PCBoard Caller Log "Trimmer" Utility
+
+
+                 This program is provided courtesy of:
+                         The Tool Shop PCBoard
+                              Phoenix, Az
+                            (602) 279-2673
+
+        Written by: Samuel H. Smith, 15-Jun-87 (rev. 03-Oct-87)
+                        Public Domain Material
+
+
+This program is used to limit the growth of the PCBoard caller log file.
+Unattended, this file will grow to be extremely large.   It will remove all
+log entries that are older than a given number of days.   When run as an 
+EVENT, it can automatically limit the caller log to, say, the last 3 weeks.
+
+
+Usage:  trimlog DAYS INFILE OUTFILE
+
+DAYS    is the number of days of log data to retain
+INFILE  is the input file, usually /pcb/main/caller
+OUTFILE is the new file to write, cannot be the same as INFILE
+
+
+
+Example usage in EVENT.SYS
+
+    trimlog 21 \pcb\main\caller \pcb\main\caller.tmp
+    if errorlevel 1 goto no_disk_space
+    del \pcb\main\caller
+    ren \pcb\main\caller.tmp caller
+    :no_disk_space
+
+This sequence will trim the caller log to the last 3 weeks (21 days) and
+will replace the caller log only if nothing goes wrong.
+
+
+ * Revision history:
+ *   28-Jul-87 1.1  Added support for PCBoard 12.0 format caller log entries.
+ *                  Still support 11.8 and(probably) earlier versions.
+ *                  (THIS VERSION DOES *NOT* WORK ON PCB 12.0!)
+ *
+ *   03-Oct-87 1.2  Corrected for proper operation on PCB 12.0
+ *
+
+
+DISCLAIMER
+==========
+
+This software is completely FREE.   I ask only for your comments, 
+suggestions and bug reports.   If you modify this program, I would 
+appreciate a copy of the new source code.   Please don't delete my name 
+from the program. 
+
+I cannot be responsible for any damages resulting from the use or mis-
+use of this program!    
+
+If you have any questions, bugs, or suggestions, please contact me at 
+The Tool Shop,  (602) 279-2673.   The latest version is always 
+available for downloading. 
+
+Enjoy!     Samuel H. Smith
+           Sysop,  The Tool Shop.
+
+

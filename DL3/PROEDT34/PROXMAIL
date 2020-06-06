@@ -1,0 +1,9 @@
+; PROXMAIL - ProDoor command translation for READ MAIL command prompt
+; format is:
+;       level oldcommand newcommand
+; list higher levels first.  oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+0,JNEXT,J +
+0,LAST,R S 999999-
+0,SNOOP,RU

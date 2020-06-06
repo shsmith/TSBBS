@@ -1,0 +1,40 @@
+
+                           ADDING HS/LINK TO MARKMAIL
+            TESTED WITH MARKMAIL FOR GAP V1.05 AND HS/LINK V1.0áD2
+
+         1)  Make sure HSLINK is in your PATH.
+         2)  Run MMSM, Go into the Configuration under the section marked
+             "Protocols" and add the following for HS/Link
+
+    12/08/91                 MarkMail System Manager              4:42 pm
+       About    Config    Users    Quit
+    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+    ³  Macros:  #F# - Filename of Packet  #P# - Com Port    Page 1 of 5  ³
+    ³           #S# - Computer/Modem Speed  #N# - Node Number            ³
+    ³           #C# - Modem/User 'Connect' Speed                         ³
+    ³                                                                    ³
+    ³  1 Letter: H    Name: HS-Link                    ARQ Req?: N       ³
+    ³    Send Command Line: HSLINK -P#P# -! -NT -NV -NU #F#              ³
+    ³    Recv Command Line: HSLINK -P#P# -! -NT -NV                      ³
+    ³                                                                    ³
+    ³  2 Letter: Y    Name: YmodemG                    ARQ Req?: Y       ³
+    ³    Send Command Line: DSZ sb #F#                                   ³
+    ³    Recv Command Line: DSZ rb                                       ³
+    ³                                                                    ³
+    ³  3 Letter: Z    Name: Zmodem                     ARQ Req?: N       ³
+    ³    Send Command Line: DSZ sz #F#                                   ³
+    ³    Recv Command Line: DSZ rz #F#                                   ³
+    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+       As long as you do exactly as above, everything will work.  A few
+     notes about the Send Command line.  In the line (shown above) that
+     says -NU  this will stop simultainous uploads.  As soon as Mark makes
+     a few cahanges to allow bi-directional file transfers change this
+     to "-U."  <-Period is NOT optional.
+
+       If you are getting errors during uploading or downloading you
+     may need to add the -HS parameter to the command line.  Check your
+     HS/Link Documentation for more information on this and other options.
+
+     Instructions from Carl Curling, @ Locksoft BBS. (714) 766-8219.
+

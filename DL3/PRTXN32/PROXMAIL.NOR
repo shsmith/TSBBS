@@ -1,0 +1,39 @@
+;
+; PROMAIL.XLT - ProDoor command translation definition for READ MAIL prompt
+;               For ProDoor 3.1
+;
+; File format is:
+;       level oldcommand newcommand
+;
+; List higher levels first.  Oldcommand is translated into newcommand
+; if userlevel is >= level on first matching entry.
+;
+;CONFIG command to change conference autojoin configuration starting
+;with the current conference.
+;0,CONFIG,J A .
+;
+; Special commands handy in translation:
+;       " rest of line          ;display rest-of-line to user
+;       > rest of line          ;display and LOG rest-of-line
+;       < rest of line          ;LOG rest-of-line but display nothing
+;
+10,DA,YA                  ;dine meldinger og meldinger til alle
+10,DI,Y                   ;dine meldinger
+10,HA,G                   ;logge av, goodbye
+10,HHU,QQ                 ;hurtigere s›k i meldingshodet
+10,HU,Q                   ;hurtigs›k i meldinger, en linje tekst
+10,K,C                    ;kommentar til sysop
+10,LM,RM                  ;lese merket melding
+10,LR,RR                  ;lese referanse til melding
+10,PE,L                   ;sette peker til sist leste melding
+10,R,O                    ;rope p† sysop, operator page
+10,S,E                    ;skrive melding
+10,SK,SC                  ;sl† av og p† medlemskap i conf., scan
+10,SL,K                   ;slette melding
+10,SO,RO                  ;svar p† melding til mottaker
+10,SV,RE                  ;svare p† melding, reply
+10,SVAR,REPLY             ;svare p† melding direkte
+110,KO,CO                 ;kopiere melding til annen conf (bare sysop)
+110,EN,MO                 ;modifisere skrevet melding (bare sysop)
+110,FLY,MOV               ;flytte melding til annen konferanse
+110,RED,UNK               ;redde melding, UNKILL

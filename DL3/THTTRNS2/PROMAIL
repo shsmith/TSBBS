@@ -1,0 +1,335 @@
+@X09---------------------------------------------------
+
+@X0EHelp is available on the following Read Mail topics:@X03
+
+@X09[@X0C#@X09]@X0E Msg. No  @X09[@X0CG@X09]@X0E Goodbye @X09[@X0CS@X09]@X0E Since     @X09[@X0CMG@X09]@X0E Graphics    @X09[@X0CRESET@X09]@X0E Pointers
+@X09[@X0C+@X09]@X0E Ahead    @X09[@X0CJ@X09]@X0E Join    @X09[@X0CT@X09]@X0E Thread    @X09[@X0CMO@X09]@X0E Modify *    @X09[@X0CRM@X09]@X0E Recall
+@X09[@X0C-@X09]@X0E Back     @X09[@X0CK@X09]@X0E Kill    @X09[@X0CU@X09]@X0E UnProt *  @X09[@X0CMOVE@X09]@X0E *         @X09[@X0CRO@X09]@X0E Reply Other
+@X09[@X0C/@X09]@X0E Again    @X09[@X0CL@X09]@X0E Last    @X09[@X0CX@X09]@X0E Expert    @X09[@X0CNODE@X09]@X0E           @X09[@X0CRR@X09]@X0E Refer #
+@X09[@X0CA@X09]@X0E Abandon  @X09[@X0CM@X09]@X0E Mem     @X09[@X0CY@X09]@X0E Yours     @X09[@X0CNS@X09]@X0E NonStop     @X09[@X0CRU@X09]@X0E Snoop *
+@X09[@X0CC@X09]@X0E Comment  @X09[@X0CN@X09]@X0E No      @X09[@X0CZ@X09]@X0E Zipscan   @X09[@X0CQQ@X09]@X0E Quicker     @X09[@X0CSC@X09]@X0E Scan on/off
+@X09[@X0CE@X09]@X0E Enter    @X09[@X0CP@X09]@X0E Prot *  @X09[@X0CED@X09]@X0E Sysop    @X09[@X0CQU@X09]@X0E Quit        @X09[@X0CTAG@X09]@X0E Tag Line
+@X09[@X0CF@X09]@X0E Find *   @X09[@X0CQ@X09]@X0E Quick   @X09[@X0CHO@X09]@X0E Hotkeys  @X09[@X0CRE@X09]@X0E Reply       @X09[@X0CUNK@X09]@X0E Unkill *
+
+   @X09[@X0CZipm@X09]@X0E Zip mail   @X09[@X0CSummary@X09]@X0E of Commands   @X09[@X0CEXAMPLE@X09]@X0E of Commands
+
+   Enter TEXT inside the Square Brackets  IE: node for NODES help file.
+
+~
+:?
+@X03Please type one of the indicated topics for additional help.
+Press @X09<@X0EENTER@X09>@X03 alone to exit the help system.
+~~
+:+
+:-
+@X09(@X0E+@X09)@X03 or @X09(@X0E-@X09)@X03  You can change the "default" reading direction by typing "+"
+            or "-".  The prompt tells you which way you are going. 
+            Pressing @X09(@X0EEnter@X09)@X03 alone advances in the current direction and
+            displays the next message available. 
+~~
+:#
+@X09(@X0E#@X09)@X03         You can type any message number and that message will be 
+            displayed. If there is no such message number on file, 
+            ProDOOR will search for the closest message and display that
+            one instead. 
+~~
+:/
+@X09(@X0E/@X09)@X03         Redisplay the current message.
+~~
+:A
+@X09(@X0EA@X09)@X03bandon   Leave current conference and return to the Main Board.
+            Continue reading messages.
+~~
+:C
+@X09(@X0EC@X09)@X03omment   Enter a comment message to the sysop.  You specify the
+            'subject' of the message.  The message will be protected so
+            it is seen only by the sysop.
+~~
+:E
+@X09(@X0EE@X09)@X03nter     Enter a new message.  You then specify who the message is to
+            be addressed to, as well as the 'subject' of the message.
+            You can protect the message so it will be seen only be the
+            'receiver'.
+~~
+:ENTER
+@X09(@X0EEnter@X09)@X03     Search for the next message.  Notice the prompt message 
+            "@X09(@X0EEnter@X09)@X03='+'" or "@X09(@X0EEnter@X09)@X03='-'" to tell which direction 
+            @X09(@X0EEnter@X09)@X03 will take you. 
+~~
+:G
+@X09(@X0EG@X09)@X03oodbye   Logs you off the system.  Examples:
+                G          ;logoff
+                G Q        ;quick logoff, bypass closing bulletins
+~~
+:HO
+@X09(@X0EHO@X09)@X03tkeys   Enable instant response on most commands.  Eliminates the
+            need to type RETURN to activate most commands.
+            In hotkey mode you should use ";" @X09(@X0Enot SPACE@X09)@X03 to "stack"
+            commands.  The spacebar acts like RETURN in hotkey mode.
+~~
+:J
+@X09(@X0EJ@X09)@X03oin      Allows you to switch to a different conference.  You may
+            specify either a conference number or a conference name.
+
+            These subfunctions are available:
+               @X09(@X0EA@X09)@X03uto-join configuration update
+               @X09(@X0EL@X09)@X03ocate conference by keywords
+               @X09(@X0EM@X09)@X03ain board
+               @X09(@X0EN@X09)@X03ew message status
+               @X09(@X0ES@X09)@X03tatus of all conferences        
+               @X09(@X0EY@X09)@X03our mail.  Scan for conferences with new mail for you
+               @X09(@X0E+@X09)@X03next higher conference
+               @X09(@X0E-@X09)@X03next lower conference
+
+@X0ESubtopics: Examples@X03
+
+~
+:J EXAMPLES
+@X0EJoin command examples:@X03
+
+   J M         ;main board
+   J;+         ;join next available conference
+   J;6         ;join conference 6
+   J TOOLS     ;join tools conference
+   J L LANG    ;locate conferences with 'LANG' in the description
+   J;2;Q       ;quick join, bypassing conference news
+   J S         ;status of all conferences
+   J S +       ;status of conferences after current one
+   J A 20      ;configure autoscan starting with conference 20
+
+~~
+:K
+@X09(@X0EK@X09)@X03ill      If the message is either TO or FROM you, this option will
+            appear.  Pressing K will delete the message from the message
+            base. 
+~~
+:L
+@X09(@X0EL@X09)@X03ast      Resets the last-read pointer to the current message number.
+            This is useful in conjunction with ARCM to re-capture messages.
+            Example:
+               500 L           ;selects message 500 and resets
+                               ;last-read to point to it.
+~~
+:M
+@X09(@X0EM@X09)@X03emorize  Saves current message number.  Use with @X09(@X0ERM@X09)@X03recall memory.
+~~
+:MG
+@X09(@X0EMG@X09)@X03graphic Toggles ANSI graphics mode off/on.
+~~
+:N
+:NODE
+:NS
+@X09(@X0EN@X09)@X03o more   Returns you to the main command prompt.
+
+@X09(@X0ENODE@X09)@X03      Displays the list of callers that are online on other nodes
+            in a multi-node system.
+
+@X09(@X0ENS@X09)@X03non-stop will enter non-stop message reading or searching.
+            Suspended with ^S, aborted with ^K or end-of-messages.
+~~
+:Q
+:QQ
+:QU
+@X09(@X0EQ@X09)@X03uick     Shows you a quick summary of messages available for reading.
+            Includes the first 72 characters of message text.
+
+@X09(@X0EQQ@X09)@X03uicker  Shows you a quicker summary of messages available for reading.
+            Does not display any of the message text.
+
+@X09(@X0EQU@X09)@X03it      Quit reading messages and return to the ProDOOR command prompt. 
+~~
+:RE
+:RO
+:REPLY
+@X09(@X0ERE@X09)@X03ply to  Enter a reply message to SENDER of the currently displayed
+            message. The reply mode allows you to optionally change the
+            subject and to provide "receiver-only" protection.
+
+@X09(@X0ERO@X09)@X03ply to  Enter a reply message to RECEIVER of the current message.
+
+@X09(@X0EREPLY@X09)@X03     This command allows you to directly to a message from a
+            command line.  Useful when you are reading messages offline
+            through the ARCM function.  The original message number can
+            be stacked.
+~~
+:RESET
+@X09(@X0ERESET@X09)@X03     This command allows you to reset the 'last read' message
+            pointer to a specific message number.  Example:
+                RESET 500
+~~
+:RM
+@X09(@X0ERM@X09)@X03recall  Returns you to the message memorized with the @X09(@X0EM@X09)@X03emory command.
+~~
+:RR
+@X09(@X0ERR@X09)@X03efer    Moves you to the 'Refer#' message.
+~~
+:S
+:SC
+@X09(@X0ES@X09)@X03ince     Next message since you were last on.
+
+@X09(@X0ESC@X09)@X03an      Toggle auto-join and ZIPM access to the current conference.
+~~
+:T
+@X09(@X0ET@X09)@X03hread    Search for other messages with the same subject matter. 
+~~
+:TAGLINE
+@X09(@X0ETA@X09)@X03g       Allows you to view and optionally alter the message tagline
+            to be used for new message entry.
+~~
+:X
+@X09(@X0EX@X09)@X03pert     Selects expert or novice mode.
+~~
+:Y
+:YA
+@X09(@X0EY@X09)@X03our      Search for messages addressed to you.
+
+@X09(@X0EYA@X09)@X03        Search for messages addressed to you OR to "all".
+~~
+:Z
+@X09(@X0EZ@X09)@X03ip       Search for messages.  Lets you specify a "search keyword".  
+            With zip search in effect, you will see ONLY messages that 
+            contain the keyword either in the header OR the body.  In 
+            color mode, the matching lines are hilighted. 
+~~
+:ZIPM
+@X09(@X0EZIPM@X09)@X03      Zip new mail.  Captures up to 400 new messages in selected
+            conferences and then archives them in $SCRATCH$ for smallest
+            possible download time.  Examples:
+               ZIPM N         ;list new messages by conference before capture
+               ZIPM A         ;archive mail in all conferences
+               ZIPM M 10 14   ;archive mail in main board @X09(@X0EM@X09)@X03, areas 10 and 14
+               ZIPM TOOLS AI  ;archive TOOLS and AI conferences
+            Use @X09(@X0EL@X09)@X03ast-read command to reset your "last read" message
+            pointers.
+            Use @X09(@X0EJ A@X09)@X03uto-config to select message areas in @X09(@X0EZIPM A@X09)@X03ll.
+~~
+:CO
+@X09(@X0ECO@X09)@X03py      Copy the current message into a different conference.
+            This is a Sysop Commands.
+~~
+:ED
+@X09(@X0EED@X09)@X03it      Allows you to edit the current message header without
+            first going into the @X09(@X0EMOD@X09)@X03ify function.
+            This is a Sysop Commands.
+~~
+:F
+@X09(@X0EF@X09)@X03ind      Find and display information about the sender of the
+            current message.
+            This is a Sysop Commands.
+~~
+:MOVE
+@X09(@X0EMOVE@X09)@X03      Move the current message to a different conference.
+            This is the same as @X09(@X0ECO@X09)@X03py followed by @X09(@X0EK@X09)@X03ill.
+            This is a Sysop Commands.
+~~
+:MO
+@X09(@X0EMO@X09)@X03dify    Edit message text and header information.
+            This is a Sysop Commands.
+~~
+:P
+@X09(@X0EP@X09)@X03rotect   Change the message protection to 'RECEIVER-ONLY'.
+            This is a Sysop Commands.
+~~
+:U
+@X09(@X0EU@X09)@X03nprotect Change the message protection to 'PUBLIC'.
+            This is a Sysop Commands.
+~~
+:UNK
+@X09(@X0EUNK@X09)@X03ill    UnKill a message that has been Killed.
+            This is a Sysop Commands.
+~~
+:RU
+@X09(@X0ERU@X09)@X03snoop   Toggles read-flagging and user-update to allow reading
+            messages without updating pointers.
+            This is a Sysop Commands.
+~~
+:EXAMPLES
+@X0EProDoor Mail Command Examples
+@X09-----------------------------@X03
+
+   2000 +                    ;read forward from message 2000
+
+   1000 S                    ;skip to message 1000 and then continue
+                              where you left off.
+
+   QQ YA NS                  ;quicker listing of all mail to you or 'all'.
+
+   M 345 RM                  ;save your place, read message 345,
+                              return to where you left off.
+                              
+   Z keyword                 ;scan for messages with keyword in them.
+
+   Z keyword NS              ;non-stop scan for all messages with 
+                              keyword.
+
+   REPLY 4431                ;enter a reply to message 4431.
+
+   J;+                       ;go to next available message area.
+
+   J TOOLS                   ;switch to TOOLS message area.
+
+   J L LANG                  ;locate conferences with 'LANG' in the description.
+
+   ZIPM 1 2 3                ;zip new mail in conferences 1,2 and 3.
+  
+   750 L                     ;reset last-read pointer to message 750.
+~~
+:SUMMARY
+@X0EProDoor Mail Command Summary
+@X09----------------------------@X03
+
+@X09(@X0E+@X09)@X03 or @X09(@X0E-@X09)@X03 sets direction.
+@X09(@X0E/@X09)@X03redisplay current message.
+@X09(@X0EA@X09)@X03bandon conference, return to main message area.
+@X09(@X0EB@X09)@X03ulletin listings.
+@X09(@X0EC@X09)@X03omment to sysop.
+@X09(@X0EE@X09)@X03nter new message.
+@X09(@X0EG@X09)@X03oodbye.
+@X09(@X0EHO@X09)@X03tkey mode.  Enable instant response on most commands.
+@X09(@X0EJ@X09)@X03oin a conference, enter new areas.
+@X09(@X0EJ A@X09)@X03uto-join configuration update.
+@X09(@X0EJ L@X09)@X03ocate conferences by keyword.
+@X09(@X0EJ N@X09)@X03ew messages in all conferences.
+@X09(@X0EJ S@X09)@X03tatus of all conferences.
+@X09(@X0EJ Y@X09)@X03our mail.  Scan for conferences with new mail addressed to you.
+@X09(@X0EJ +@X09)@X03join next higher conference.
+@X09(@X0EJ -@X09)@X03join next lower conference.
+@X09(@X0EK@X09)@X03ill current message.
+@X09(@X0EL@X09)@X03ast-read pointer reset.
+@X09(@X0EM@X09)@X03emorize message number.
+@X09(@X0EMG@X09)@X03graphic mode off/on.
+@X09(@X0EN@X09)@X03return to main command prompt.
+@X09(@X0ENODE@X09)@X03 status display.
+@X09(@X0ENS@X09)@X03non-stop reading.
+@X09(@X0EO@X09)@X03perator page.
+@X09(@X0EOPEN@X09)@X03 doors.
+@X09(@X0EQ@X09)@X03uick mail scan.
+@X09(@X0EQQ@X09)@X03uicker mail scan.
+@X09(@X0EQU@X09)@X03it to main command prompt.
+@X09(@X0ERE@X09)@X03ply to the sender of the current message.
+@X09(@X0ERO@X09)@X03reply to receiver of the current message.
+@X09(@X0ERR@X09)@X03efer message display.
+@X09(@X0EREPLY@X09)@X03 to specific messages.
+@X09(@X0ERESET@X09)@X03 message pointer.
+@X09(@X0ERM@X09)@X03recall memory.
+@X09(@X0ES@X09)@X03ince last read.
+@X09(@X0ESC@X09)@X03an.  Toggle auto-join and @X09(@X0Ezipm a@X09)@X03.
+@X09(@X0ET@X09)@X03hread search.
+@X09(@X0ETA@X09)@X03gline change.
+@X09(@X0EV@X09)@X03iew profile.
+@X09(@X0EX@X09)@X03pert toggle.
+@X09(@X0EY@X09)@X03our mail.
+@X09(@X0EYA@X09)@X03 your mail or mail to "all".
+@X09(@X0EZ@X09)@X03ip search message contents.
+@X09(@X0EZIPM@X09)@X03 Compress new messages for download.
+
+@X09(@X0ECO@X09)@X03py message  \
+@X09(@X0EED@X09)@X03it header    \
+@X09(@X0EF@X09)@X03ind user       \
+@X09(@X0EMO@X09)@X03dify message   \
+@X09(@X0EMOV@X09)@X03e message      \__@X0CSysop@X03
+@X09(@X0EP@X09)@X03rotect           /  @X0Conly@X03
+@X09(@X0EU@X09)@X03nprotect        /
+@X09(@X0EUNK@X09)@X03ill          /
+@X09(@X0ERU@X09)@X03snoop        /
+~~

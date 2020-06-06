@@ -1,0 +1,3 @@
+HS/LINK                            :High Speed Link (HS/LINK),HSLINK.EXE -P%COM -HX -NU -! @C:\RYBBS\%NAME2,HS/LINK
+HS/LINK Batch                      :New High Speed Link (HS/LINK),HSLINK.EXE -P%COM -HX -NU -! @C:\RYBBS\%MULTFILE,HS/LINK Batch
+HS/LINK Bidirectional              :U/L & D/L Simultaneously (HS/LINK),HSLINK.EXE -P%COM -U%PATH -HX -HS -! @C:\RYBBS\%MULTFILE,HS/LINK U/L & D/L

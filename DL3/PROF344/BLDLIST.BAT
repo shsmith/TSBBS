@@ -1,0 +1,123 @@
+@echo off
+proecho %1 ~Please be patient, this takes awhile..
+proecho %1 ~Deleting old BARDFILE.ZIP..
+del h:\uploads\bardfile.zip
+if exist h:\uploads\bardfile.zip goto error
+proecho %1 ~Copying Main Board Directories to TEMP directory..
+pcbcopy E:\BBS\DIRS\4DOS E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ASP E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\AUTHOR E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR1 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR3 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR4 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR5 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR6 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR7 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR8 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR9 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR10 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR11 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR12 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR13 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR15 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR16 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR17 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR18 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR19 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR20 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR21 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR23 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR24 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR25 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR26 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR31 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR32 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR33 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR34 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR35 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR36 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR37 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR38 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR39 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR40 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR41 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR42 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR43 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR46 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR47 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR48 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR49 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR50 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR51 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR60 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR61 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR62 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR64 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR66 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR70 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR72 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR73 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\DIR74 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\DIR80 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\PBASIC E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\QBASIC E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\UPLOADS E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\MUSIC04 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC05 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC06 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC07 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\MUSIC08 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC09 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC010 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC011 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\MUSIC012 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\MUSIC013 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\OFFLINE E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\SPEAK1 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\SPEAKUP E:\PRODOOR\TEMP
+proecho %1 ~Copying Adult Directories to TEMP directory..
+pcbcopy E:\BBS\DIRS\ADULT E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT1 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT2 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\ADULT3 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT4 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT5 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT6 E:\PRODOOR\TEMP
+proecho %1 .
+pcbcopy E:\BBS\DIRS\ADULT7 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT8 E:\PRODOOR\TEMP
+pcbcopy E:\BBS\DIRS\ADULT9 E:\PRODOOR\TEMP
+pcbcopy H:\BULLET\BLT4 E:\PRODOOR\TEMP\MEMBER.FRM
+pcbcopy H:\BULLET\ADULT.FRM E:\PRODOOR\TEMP
+pcbcopy H:\BULLET\BLT1 E:\PRODOOR\TEMP\RULES.LST
+pcbcopy H:\BULLET\BLT6 E:\PRODOOR\TEMP\ORDER.FRM
+proecho %1 .
+cls
+proecho %1 ~Creating BARDFILE.ZIP...
+zip -! h:\uploads\bardfile e:\prodoor\temp\*.* -m
+echo FL bardfile.zip > e:\prolon%pcbnode%\$door.cmd
+proecho %1 ~~Done..
+proecho %1 ~BARDFILE.ZIP has been flagged for you..~
+goto end
+
+:error
+proecho %1 ~~Error!  BARDFILE.ZIP being downloaded on another node
+proecho %1 ~Cannot delete, try again later..~~
+
+:end

@@ -1,0 +1,37 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+(*
+ * PCB ProDOOR module to log off (goodbye function)      (3-1-89)
+ *
+ * Updates PCBoard USERs file and logs user off without
+ * recycling PCBoard first.
+ *
+ *)
+
+unit ProBye;
+
+interface
+   uses
+     Tools,
+     MdosIO,
+     BufIO,
+     ProData,
+     ProUtil,
+     ProUtil2,
+     ProScan,
+     ProRoot;
+
+   procedure logoff_log_entry(tused: integer);
+   procedure good_bye;
+
+implementation

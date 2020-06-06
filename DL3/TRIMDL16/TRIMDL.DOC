@@ -1,0 +1,87 @@
+
+                                TRIM DL
+                 PCBoard Download Log "Trimmer" Utility
+                  Copyright 1987-1994 Samuel H. Smith
+
+                 This program is provided courtesy of:
+                       Samuel H. Smith
+                       The Tool Shop
+                       P. O. Box 4808
+                       Panorama City, CA 91412-4808
+
+                         The Tool Shop BBS
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    V.32bis (subscriber lines)
+                  (818) 891-6780    V.32bis (free line)
+
+
+
+This program is used to limit the growth of the PCBoard DOWNLOAD.TXT log
+file.  Unattended, this file will grow to be extremely large.
+
+This utility compresses your DOWNLOAD.TXT file by "trimming" out
+multiple download entries for the same file.  It also removes listings
+for files that have been deleted from the system and reports files that
+have never been downloaded.
+
+Usage:  cd \pcb\main
+        trimdl trimdl.cnf
+        del download.bak
+        ren download.txt download.bak
+        ren download.new download.txt
+
+The file TRIMDL.CNF must list your upload and all download directories.
+You can use your DLPATH.LST file as-is in place of TRIMDL.CNF.  If a
+file is found that does not exist in any of these directories it will be
+purged from the DOWNLOAD.NEW file which is created.
+
+
+  
+SAMPLE OUTPUT
+=============
+
+The 'UNPOP' report lists files that have been uploaded but never
+downloaded.  When sorted by date, this file can act as a guide in
+deciding which files to purge.
+
+1990-06-11,07:50 STORM60.ZIP   ED LUCAS
+1990-06-28,13:57 VOCSOUN$.ZIP  GARY KARNIK
+1990-07-13,12:42 WORDMSTR.ZIP  DAVID QUINTIERI
+1989-08-14,05:15 ALLDIRS.ZIP    UNKNOWN
+1989-06-14,16:16 APLUNZIP.ZIP   UNKNOWN
+1990-02-27,23:30 PRORD102.ZIP  CHARLES YATES
+1987-06-01,23:58 PROTDH.ZIP     UNKNOWN
+1989-12-15,06:00 QD2.ZIP       GLENN ALLEN
+
+
+REVISION HISTORY
+================
+
+10-May-87 version 1.0
+   Initial coding (not released to public)
+
+19-Sep-88 version 1.1
+   Initial public release.  Recoded internal data structure as a
+   tree to speed operation, added UNPOP and DUPS reports.
+
+17-Mar-89 version 1.2
+   Added a config file that lists download directories, and the ability
+   to remove obsolete information for files that no longer exist.
+
+24-Apr-91 version 1.3
+   Removed DUPS report and tracking of multiple uploads on the same
+   filename.  Changed internal data structures for better utilization of
+   memory to allow trimming of much larger DOWNLOAD.TXT files than
+   before.  Hashing is now used internally to speed up filename
+   matching.
+
+11-Jul-92 version 1.4
+   More tweaking to allow still larger download.txt files to be
+   processed.
+
+02-Feb-04 version 1.5
+   Compiled in protected mode to allow much greater download.txt sizes
+   and up to 100000 different files.  Needs a VCPI provider to run
+   (works nicely in a dos session under Windows 3.1).

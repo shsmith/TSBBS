@@ -1,0 +1,99 @@
+                             ImportGE
+                                 
+            An extension to Sam Smith's UNARCM utility
+                                 
+                     By Jerry Shifrin, SYSOP
+                                 
+         East Coast Forth Board, 703-442-8695, McLean, VA
+                                 
+
+This is a fairly minor mod to Sam's UNARCM utility. Briefly, it
+adds the ability to import messages from a GEnie conference into
+your PCBoard message bases. I developed it to allow the Forth BBS
+network (CFB-Net) to exchange messages with the GEnie Forth
+RoundTable (sponsored by the Forth Interest Group). I'd suggest
+you obtain permission from the appropriate conference SYSOP
+before doing likewise on other GEnie conferences.
+
+With respect to messages, GEnie has RoundTables, Categories, and
+Topics. This program assumes that your capture file is from a
+single RoundTable. Each Category is mapped to a PCBoard
+conference. Within a conference there may be a number of Topics
+-- these are used as the subject fields of PCBoard messages. All
+messages are left to "ALL" (since GEnie messages don't have a
+"To" field).
+
+The only difference between this and UNARCM is in the config file
+(UNARCM.CNF) CONVERT statement. Here you must associate a GEnie
+category number with one of your PCBoard conferences. E.g.
+
+     CONVERT 1, GEnie
+
+where 1 is GEnie category #1 ("Introduction to FIG ON-line" in
+the Forth RoundTable) and "GEnie" is the name of my GEnie
+conference to which these messages are mapped. You must include
+an entry for every GEnie category.
+
+Please refer to the original UNARCM documentation for additional
+information and license restrictions.
+
+ImportGE expects 3 or 4 parameters:
+
+  1. name of your configuration file (refer to the UNARCM docs
+     for information).
+  
+  2. PCBoard directory
+  
+  3. Capture file
+  
+  4. Optional "debug" switch
+
+For example:
+
+  importge importge.cnf d:\pcb genie.log debug
+
+The supplied IG.BAT file may be used if you edit it to supply the
+first two parameters.
+
+The debug switch, if enabled, causes additional information about
+message processing to be displayed.
+
+Please feel free to leave any questions or comments on the ECFB
+Main conference. I also check in to Salt Air periodically.
+
+Have fun!
+
+
+Problems
+--------
+
+UNARCM normally splits long lines (more than 72 characters) into
+two shorter lines of about 40 characters each, mostly on a work
+boundary. ImportGE allows lines up to 80 characters in length.
+This seems to work okay with PCBoard, but ProDoor will truncate
+the longer lines.
+
+The program occasionally gets confused by varying end-of-message
+indicators and will sometimes jam two messages together or
+perhaps write total gibberish (I got one message jam and one
+gibberish in 230 messages).
+
+GEnie messages may exceed the PCBoard limit of 100 lines,
+especially when many 80 characters lines are split in two. This
+program truncates messages after 100 lines.
+
+This utility is specifically for GEnie capture files. Sam's
+UNARCM would accept input from a variety of sources, but I found
+that there would be too many ambiguities if GEnie were included.
+
+No source code! See Sam Smith if you want it.
+
+
+Let the user beware!
+--------------------
+I make no warranties with respect to this software (nor does
+anyone else!). Use it at your own risk. It worked on my system,
+but may not for you.
+
+All rights returned to Samuel H. Smith.
+

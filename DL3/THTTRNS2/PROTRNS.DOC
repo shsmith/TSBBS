@@ -1,0 +1,80 @@
+
+This is a modified protrns for ProLogon 1.3+ and ProDoor 3.5+
+I have done alot of work on this PROTRNS it is 99.9%
+done with PCB 14.5 color codes but there are some things
+that will not take the @x codes so for these I have used 
+asci codes.
+
+I have in the protrns some $DISP-$ to display the Login
+screens I have included these with the protrns files
+I am also using the PROANS to display my welcome screen.
+
+This should be one of the most complete Protrns file
+available on any BBS.
+
+You will also have to set the  FORCE_MSG_SCAN TO "MAIN"
+also the FORCE_SCAN_COMMAND TO "N" and the DISPLAY_NEWS TO "OFF"
+for the login $DISP-$ TO pause the screen so the user can read
+his or her stats.
+
+Have included a PROLON.CNF for reference.
+
+FORCE_MSG_SCAN MAIN     ; Forces a MAIN ONLY or ALL cnf scan for msgs.    
+                        ; VALUES -->  OFF, ALL, or MAIN                   
+                        ; Default if missing or commented out--> OFF      
+                        ; If OFF, the caller will be asked at login.      
+                        ; If ALL or MAIN, no asking, it is FORCED         
+                        ; If ALL, ALL conferences will be scanned.        
+                        ; If MAIN, caller can OVER-RIDE and get ALL cnfs. 
+                        ; Editors Choice --> MAIN                         
+
+FORCE_SCAN_COMMAND N    ; "J ?" command to use when force is on           
+                        ; VALUES -->  N, Y, S                             
+                        ; ie.    N = J N    Y = J Y   S = J S             
+                        ; Editors Choice --> N  (see all NEW msgs)        
+                        ; Each of these commands will produce different   
+                        ; results, you should experiment to see which     
+                        ; is best for you.                                
+                        ; Note: If FORCE_MSG_SCAN is NOT active,          
+                        ;       this line will have NO effect.            
+
+DISPLAY_NEWS OFF        ;DISPLAY_NEWS ON causes internal display of
+                        ;conference news, but defeats the initial "scan
+                        ;for personal mail" prompt.
+                        ;DISPLAY_NEWS OFF causes prologon to trigger a
+                        ;news display and personal mail scan when
+                        ;ProDoor is first opened.
+                        ;DISPLAY_NEWS BOTH causes internal display of
+                        ;conference news, and also signals ProDoor to
+                        ;perform the "personal mail" scan when first opened.
+
+
+Files that I have included with this set are
+" PROTRNS.ZIP " " PROTRNS.ZIP "  " PROANS " " CHAT.PCB "
+
+
+"PROTRNS.ZIP "
+
+This is for Prolon.exe put this in the same dir as the
+prolon.exe file also the HTLOGON, HTLOGON2, SPECIAL and PROANS
+file in this sub.
+
+
+
+" PROTRNS.ZIP "
+
+This one is for the ProDoor sub and should be placed in the directory
+that you have your ProDoor.exe file, I have also included another
+$DISP-$ file for the ProDoor Protrns file it will display when the
+Sysop is not available for chat "CHAT.PCB" this will display.
+
+
+All display screens where created with PCBEDIT from Clark Development.
+
+If you have never had any experence with PROTRNS these files will
+give you a real good idea how it works.
+
+
+SYSPAGE.TRN
+Have also included a protrns file for the SYSPAGE door from THP
+

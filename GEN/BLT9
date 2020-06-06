@@ -1,0 +1,304 @@
+
+@X0F
+            Calls 15s1d - Call Analyzer For PCBoard v14.x and v15.x
+@X03            Period covered:  From 00-00-00 00:00 to 00-00-00 00:00
+
+                     @X0C-= @X0ESystem Statistics for 1 days@X0C =-
+
+
+@MORE@
+                            @X0C-= @X0EFile Transfers@X0C =-
+
+@X0A  Downloads Completed.... @X0F      0@X0A         Uploads Completed...... @X0F      0
+@X0A    Different Files...... @X0F      0@X0A           Bad Uploads Deleted.. @X0F      0
+@X0A    Downloads Aborted.... @X0F      0@X0A           Uploads Aborted...... @X0F      0
+@X0A    Free Downloads....... @X0F      0@X0A           Uploads Rejected..... @X0F      0
+@X0A    File not found....... @X0F      0@X0A           Duplicate Rejected... @X0F      0
+@X0A    File Attachments..... @X0F      0@X0A         Upload Credits issued.. @X0F      0
+@X0A    Attachment missing... @X0F      0@X0A           Upload Time Credit... @X0F   0:00
+@X0A  VIEW Executed.......... @X0F      0@X0A           Upload Byte Credit... @X0F      0k.
+@X0A    Members Extracted.... @X0F      0@X0A         TEST Executed.......... @X0F      0
+@X0A    Members Viewed....... @X0F      0@X0A         REPACK Executed........ @X0F      0
+@X0A    Error Viewing File... @X0F      0@X0A         ASCII transfer Attempt. @X0F      0
+@X0A  LIB Executed........... @X0F      0
+
+@MORE@
+                          @X0C-= @X0ESecurity Statistics@X0C =-
+
+@X0A  Automatic Lockouts..... @X0F      0@X0A         Security Violations.... @X0F      0
+@X0A  Trashcan Names......... @X0F      0@X0A         Incorrect Password......@X0F      0
+@X0A  Excessive Passwords.... @X0F      0@X0A         Password Failures...... @X0F      0
+@X0A  Excessive Command Errs. @X0F      0@X0A         Remote Password Failure @X0F      0
+@X0A  Refused Registration... @X0F      0@X0A         Non-Registered Users... @X0F      0
+@X0A  Time Limit Expired..... @X0F      0@X0A         Not Registered in Conf. @X0F      0
+@X0A  Keyboard Timeouts...... @X0F      0@X0A         Dropped Carrier........ @X0F      0
+@X0A  Insufficient D/L Time.. @X0F      0@X0A         Dropped Carrier in Door @X0F      0
+@X0A  Insufficient Bytes/File @X0F      0@X0A         Hungup after Upload.... @X0F      0
+@X0A  File Ratio Exceeded.... @X0F      0@X0A         Door Selected UnAvail.. @X0F      0
+@X0A  Byte Ratio Exceeded.... @X0F      0@X0A         Event Time Clash....... @X0F      0
+@X0A  Closed Board/Node...... @X0F      0@X0A         Typo Errors............ @X0F      0
+@X0A  Multi-Node Login....... @X0F      0@X0A         System Errors.......... @X0F      0
+@X0A  Attempted Alias Logon.. @X0F      0@X0A         Missing Files.......... @X0F      0
+@X0A  No Bulletins Available. @X0F      0@X0A         No Doors Available..... @X0F      0
+@X0A  No Directories Avail... @X0F      0@X0A         No Conferences Avail... @X0F      0
+@X0A  No News Available...... @X0F      0@X0A         Missing Level in PWRD.. @X0F      0
+@X0A  Automatic Disconnects.. @X0F      0@X0A         USERS/NDX out of synch. @X0F      0
+
+@MORE@
+                          @X0C-= @X0EMessage Statistics@X0C =-
+
+@X0A  Messages Left.......... @X0F      0@X0A         MailDoor Messages...... @X0F      0
+@X0A         Via PCBoard..... @X0F    0.0%@X0A               Via Mail Doors.. @X0F    0.0%
+@X0A    Comments Left........ @X0F      0@X0A           Net MAIL Messages.... @X0F      0
+@X0A         Via COMMENT..... @X0F    0.0%@X0A               Via Mail Import. @X0F    0.0%
+@X0A    Return Receipts...... @X0F      0@X0A           Net MAIL Executed.... @X0F      0
+@X0A    Messages Moved....... @X0F      0@X0A              Messages Exported. @X0F      0
+@X0A    Messages Copied...... @X0F      0@X0A           Mail Packets DLed.... @X0F      0
+@X0A    Messages Restored.... @X0F      0@X0A                        Aborted. @X0F      0
+@X0A    Messages Deleted..... @X0F      0@X0A           Reply Packets Uled... @X0F      0
+@X0A  Message Entry Aborted.. @X0F      0@X0A                        Aborted. @X0F      0
+@X0A  Message(s) inserted.... @X0F      0@X0A           Message Rejected..... @X0F      0
+@X0A  Message Insert Failed.. @X0F      0@X0A         No Room for text....... @X0F      0
+@X0A  Message Extraction Err. @X0F      0@X0A         Message Base Packed.... @X0F      0
+@X0A  File Attachments....... @X0F      0@X0A         Attachment missing..... @X0F      0
+
+@MORE@
+                           @X0C-= @X0ESysop Statistics@X0C =-
+
+@X0A  Sysop Local Sessions... @X0F      0@X0A         Node Chats Initiated... @X0F      0
+@X0A  Sysop Remote Sessions.. @X0F      0@X0A         Node Chat Time (min)... @X0F      0
+@X0A  Remote DOS Time (min).. @X0F      0@X0A         Sysop Chats Initiated.. @X0F      0
+@X0A  Remote Drops to DOS.... @X0F      0@X0A         Sysop Chat Time (min).. @X0F      0
+@X0A  SHELL Executed......... @X0F      0@X0A         Sysop Paged............ @X0F      0
+@X0A  Text Files Viewed...... @X0F      0@X0A         Sysop Paged after Hours @X0F      0
+@X0A  Caller log Viewed...... @X0F      0@X0A         Temporary Sysop Priv... @X0F      0
+@X0A  User File Viewed....... @X0F      0@X0A         Node Forced to recycle. @X0F      0
+@X0A  USERNET forced to DOS.. @X0F      0@X0A         Node Forced to DOS..... @X0F      0
+@X0A  USERNET forced logoff.. @X0F      0@X0A         Node Forced to logoff.. @X0F      0
+
+@MORE@
+                            @X0C-= @X0EUser Statistics@X0C =-
+
+@X0A  Protocol Changes....... @X0F      0@X0A         Expert mode Toggled.... @X0F      0
+@X0A  User Record Updates.... @X0F      0@X0A         Graphic Mode Toggled... @X0F      0
+@X0A  Language Changes....... @X0F      0@X0A         ANSI Mode Toggled...... @X0F      0
+@X0A  Alias Changes.......... @X0F      0@X0A         RIPScript Mode Toggled. @X0F      0
+@X0A  Name Changes........... @X0F      0@X0A         Page Length Changed.... @X0F      0
+
+@MORE@
+                            @X0C-= @X0EGraphics Modes@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                           @X0C-= @X0ELogoff Statistics@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                              @X0C-= @X0EBaud Rates@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                          @X0C-= @X0ELanguages Selected@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                   @X0C-= @X0ENumber of Calls by Security Level@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                            @X0C-= @X0ELast Called In@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                     @X0C-= @X0EHours Used by Security Level@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                             @X0C-= @X0EConnect Types@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                    @X0C-= @X0EAverage Percent of Hourly Usage@X0C =-
+
+@X0A       00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+@X0A100%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 95%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 90%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 85%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 80%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 75%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 70%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 65%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 60%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 55%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 50%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 45%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 40%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 35%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 30%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 25%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 20%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 15%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A 10%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A  5%@X0F ³ @X09 ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú  ú 
+@X0A       00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+@X0EPeak: @X0C ** ** ** ** ** **                                                      
+
+@MORE@
+                    @X0C-= @X0EAverage Percent of Daily Usage@X0C =-
+
+@X0A       _MON_  |  _TUE_  |  _WED_  |  _THU_  |  _FRI_  |  _SAT_  |  _SUN_  
+@X0A100%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 95%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 90%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 85%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 80%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 75%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 70%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 65%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 60%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 55%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 50%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 45%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 40%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 35%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 30%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 25%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 20%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 15%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A 10%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A  5%@X0F ³ @X09  ú         ú         ú         ú         ú         ú         ú       
+@X0A       _MON_  |  _TUE_  |  _WED_  |  _THU_  |  _FRI_  |  _SAT_  |  _SUN_  
+
+@MORE@
+                       @X0C-= @X0ETop 15 Conferences Joined@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                   @X0C-= @X0ETime Spent in Top 15 Conferences@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                  @X0C-= @X0ETop 15 Conferences Downloaded from@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                    @X0C-= @X0ETop 15 Conferences Uploaded to@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                    @X0C-= @X0ETop 15 Conference Files Scanned@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@Main Board
+
+                     @X0C-= @X0EMain Board Conference Report@X0C =-
+
+@X0A  Conference Joined...... @X0F      0@X0A         Time Spent in Conf..... @X0F   0:00
+@X0A  Messages Left.......... @X0F      0@X0A         Files Uploaded......... @X0F      0
+@X0A  Files Scanned.......... @X0F      0@X0A         Files Downloaded....... @X0F      0
+
+@MORE@Boosters
+
+                      @X0C-= @X0EBoosters Conference Report@X0C =-
+
+@X0A  Conference Joined...... @X0F      0@X0A         Time Spent in Conf..... @X0F   0:00
+@X0A  Messages Left.......... @X0F      0@X0A         Files Uploaded......... @X0F      0
+@X0A  Files Scanned.......... @X0F      0@X0A         Files Downloaded....... @X0F      0
+
+@MORE@Support
+
+                       @X0C-= @X0ESupport Conference Report@X0C =-
+
+@X0A  Conference Joined...... @X0F      0@X0A         Time Spent in Conf..... @X0F   0:00
+@X0A  Messages Left.......... @X0F      0@X0A         Files Uploaded......... @X0F      0
+@X0A  Files Scanned.......... @X0F      0@X0A         Files Downloaded....... @X0F      0
+
+@MORE@Adult
+
+                        @X0C-= @X0EAdult Conference Report@X0C =-
+
+@X0A  Conference Joined...... @X0F      0@X0A         Time Spent in Conf..... @X0F   0:00
+@X0A  Messages Left.......... @X0F      0@X0A         Files Uploaded......... @X0F      0
+@X0A  Files Scanned.......... @X0F      0@X0A         Files Downloaded....... @X0F      0
+
+@MORE@
+                    @X0C-= @X0ETop 15 Conference Messages Left@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                       @X0C-= @X0ETop 15 User Messages Left@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                          @X0C-= @X0ETop 15 User Uploads@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                       @X0C-= @X0ETop 15 Callers Hanging Up@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                         @X0C-= @X0ETop 15 Bulletins Read@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                      @X0C-= @X0ETime Spent in Top 15 Doors@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                          @X0C-= @X0ETop 15 Doors Opened@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                     @X0C-= @X0EProtocol Usage (Downloading)@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+               @X0C-= @X0EAverage Protocol Efficiency (Downloading)@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                      @X0C-= @X0EProtocol Usage (Uploading)@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                @X0C-= @X0EAverage Protocol Efficiency (Uploading)@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                      @X0C-= @X0ETop 5 Batch Transfer Sizes@X0C =-
+
+@X07                                  **NONE**
+
+@MORE@
+                   @X0C-= @X0EFiles Downloaded 5 or More Times@X0C =-
+
+@X07                                  **NONE**
+
+
+@MORE@@X07

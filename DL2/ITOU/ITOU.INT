@@ -1,0 +1,2 @@
+function i_to_ur(i: integer): real;  {integer to unsigned-real conversion}
+function ur_to_i(v: real): integer;  {unsigned-real to integer conversion}

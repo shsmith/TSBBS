@@ -1,0 +1,75 @@
+---------------------------------------------------
+
+  Help is available on the following Join Conference topics:
+
+       [+] Plus      [A] Abandon   [N] New
+       [-] Minus     [L] Locate    [S] Status
+       [#] Number    [M] Main      [Y] Your
+    
+           [Summary]     [Examples]
+
+Enter text inside the Square Brackets ie: M for help on MAIN
+
+
+
+~
+:?
+Please type one of the indicated topics for additional help.
+Press <ENTER> alone to exit the help system.
+~~
+:+
+:-
+(+)     Advance to next higher conference number.
+(-)     Go back to next lower conference number.
+~~
+:#
+        You may specify any conference number.
+        Full conference names can also be used to select conferences.
+~~
+:A
+(A)uto-join configuration update
+~~
+:L
+(L)ocate conference by keywords
+~~
+:M
+(M)ain board
+~~
+:N
+(N)ew message status
+~~
+:S
+(S)tatus of all conferences
+~~
+:Y
+(Y)our mail.  Scan for conferences with new mail for you
+~~
+:EXAMPLES
+Join command examples:
+
+   J M         ;main board
+   J;+         ;join next available conference
+   J;6         ;join conference 6
+   J TOOLS     ;join tools conference
+   J L LANG    ;locate conferences with 'LANG' in the description
+   J;2;Q       ;quick join, bypassing conference news
+   J S         ;status of all conferences
+   J S +       ;status of conferences after current one
+   J A 20      ;configure autoscan starting with conference 20
+
+~~
+:SUMMARY
+The Join command allows you to switch to a different conference.  You
+may specify either a conference number or a conference name.
+
+These subfunctions are available:
+   (A)uto-join configuration update
+   (L)ocate conference by keywords
+   (M)ain board
+   (N)ew message status
+   (S)tatus of all conferences
+   (Y)our mail.  Scan for conferences with new mail for you
+   (+)next higher conference
+   (-)next lower conference
+~~
+

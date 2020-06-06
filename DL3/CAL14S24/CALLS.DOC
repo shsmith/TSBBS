@@ -1,0 +1,506 @@
+
+                             CALLS.EXE
+
+              Call analyzer for PCBoard versions 11.7 
+  (updated for PCBoard 11.8 and PCB/ProDOOR, S.H.Smith, 07/05/87)
+          (updated for PCBoard 14.x, S.H.Smith, 01-17-91)
+
+
+     Note:  Warren Lauzon is no longer supporting this program 
+               (since he's completely rewriting it)
+        So, please don't bother him with support questions.
+
+              If you need help with it, contact me at
+                         Samuel H. Smith,
+                       Sysop, The Tool Shop
+
+                   Phone number         Modem type
+                  --------------    ---------------------
+                  (818) 891-3772    US Robotics HST 9600
+                  (818) 891-1344    Four v.32bis 14400 lines
+                  (818) 891-6780    Hayes-V series 9600 (free line)
+
+
+                 CHANGE HISTORY (in reverse order)
+                 =================================
+
+Added logic to strip the leading 'CONNECT' or 'CARRIER' from the connect
+types report.
+
+Added logic to count opening chat doors as a "node chat".
+
+Added logic to count all (Local) connect types as sysop local sessions.
+
+Added SUBTITLE option to allow a variable subtitle to be included in
+each report.
+
+Added PEAK AUTO option to automatically report the top 6 hours as the
+peak hours of the day.
+
+Version 14s24 29-Oct-92 S.H.Smith
+-----------------------------------------------------------------------
+
+
+Corrected an error that would cause a lockup on OPENED DOOR log entries
+that contain "\" as part of the doorname.
+
+Version 14s23 09-Jan-92 S.H.Smith
+-----------------------------------------------------------------------
+
+
+The "security level" reports were generating duplicate entries for some
+security levels.  You will have to delete CALLS.SAV and let CALLS
+rebuild it.
+
+Version 14s22 08-Dec-91 S.H.Smith
+-----------------------------------------------------------------------
+
+
+Changed to accept new format of "new user registration" and "caller
+security level" enerated by pcboard 14.5.
+
+Version 14s21 17-Jan-91 S.H.Smith
+-----------------------------------------------------------------------
+
+
+Added new report code 'R' to report "Minutes Used by Security Level".
+Renamed report code 'O' to "Number of Calls by Security Level".
+
+Version 14s20 13-Apr-90 S.H.Smith
+-----------------------------------------------------------------------
+
+
+The "Free Download" and "Connect Type" reports were being interchanged
+in the .SAV file; this has been corrected, but old .SAV files must be
+rebuilt before these reports will be correct.
+
+Added new EVENTMODE option to control how event time is reported.  The
+options are:
+
+        EVENTMODE OFF   ;this option disables calculation of event
+                        ;duration
+
+        EVENTMODE BUSY  ;this mode calculates event duration and
+                        ;accounts for it as 'busy' time (i.e. the system
+                        ;was in use during this time)
+
+        EVENTMODE IDLE  ;this mode calculates event duration and
+                        ;accounts for it as 'idle' time (i.e. the system
+                        ;was NOT in use during this time)
+
+Changed "event duration" reported to average minutes per event instead
+of total minutes for all events.
+
+Added 29 new protocol codes:
+        0 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * + - < > / [ ] { } ` ~
+
+Added a counter of MarkMail messages left on the system.
+Corrected an error in baud rate calculation when baud rates included "E".
+
+
+Version 14s19 16-Feb-90 S.H.Smith
+-----------------------------------------------------------------------
+
+
+Added reports for ProDoor's "Free Download" feature.  This report is
+enabled with report code "Q".  Use the MAXFREE option to control the
+maximum number of filenames to be reported.
+
+Moved samples configuration files to a sub-archive.
+
+Version 14s18 13-Jan-90 S.H.Smith
+-----------------------------------------------------------------------
+
+
+Dates after 12-31-89 were not correctly calculated.
+
+Added reports for ProLogon's new "Connect type" and "Security level"
+caller log entries.
+
+Version 14s17 04-Jan-90 S.H.Smith
+-----------------------------------------------------------------------
+
+
+See CALLS.DOC for an explanation of the files included in CAL14S16.ZIP.
+
+Deleted all command line parameters and created a new configuration file
+format to control reporting.  See CALLS.CNF for example file format.
+
+Corrected processing of 'NUL' input file option.
+
+Corrected reporting of download efficiency on "G" protocols.
+
+Changed efficiency tables to allow up to 150% in report.
+
+Added libraries to allow shared reading of caller log files.
+
+Added new config file options to control number of entries in conference,
+bulletin, doors, and batchSize reports.
+
+Added new config file option to redefine protocol names in report.
+
+Added new config file option to specify alternate CALLS.SAV file name.
+
+Added calculation of time spend processing scheduled events.
+
+Version 14s16 02-Aug-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Corrected logic for determination of first and last log entry dates
+on multi-node reports.
+
+Version 14s15 24-Jul-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Changed message formats to support ProDoor 3.1 betas as of 7-12-89.
+Added support for new ProLogon baud rate information.
+
+Added support for multi-node reporting.  Append /N to caller file name,
+where N is the highest node number.  The program will then sequentially
+scan the caller files and combine them for a single report.
+
+Version 14s14 13-Jul-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Changed message formats to support ProDoor 3.0 betas as of 4-9-89.
+Added support for 38400 bps connect speeds.
+
+Version 14s13 09-Apr-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Corrected the handling of empty caller logs.  This makes it possible to
+generate multiple reports from the same caller log by re-running the
+calls program with 'NUL' in place of the caller log filename.
+Eliminated the use of Borland's CRT unit.  Ansi codes are now used to
+control the local display.
+
+Usage:
+-----
+
+calls CALLERS-FILE OUTPUT-FILE REPORT-LIST MIN-DOWNLOAD PEAK-HOURS
+
+CALLERS-FILE is your pcboard CALLER file.  Use "NUL" to repeat previous data.
+OUTPUT-FILE  defaults to BLT99
+REPORT-LIST  defaults to ANBCDEFGHIJKLM
+MIN-DOWNLOAD defaults to 2
+
+PEAK-HOURS   defaults to YNNNNNNNNNNNNNNNNYYYYYYY
+                        {0         1         2   }
+                        {012345678901234567890123}
+
+The legal REPORT-LIST letters are:
+   A: system statistics            B: graphic modes
+   C: baud rates                   D: hourly usage
+   E: conferences joined           F: bulletins read
+   G: doors opened                 H: download protocols
+   I: download efficiency          J: upload protocols
+   K: upload efficiency            L: batch sizes
+   M: files downloaded             N: security statistics
+                                   Z: insert a blank line
+
+Examples:
+
+  calls \pcb\main\caller \gen\blt3
+            ;uses default report list, min-download and peak-hours.
+
+  calls \pcb\main\caller \gen\blt3 ABCEFG 4 NNNNNNNNYYYYYYYYYNNNNNNN
+            ;to specify peak hours you MUST also include 
+            ;the report-list and min-download paremeters.
+
+  calls nul \gen\blt-usage D
+  calls nul \gen\blt-files M
+            ;repeat previous report date in different formats or to
+            ;alternate output files
+
+
+Sample EVENT.SYS lines for two node systems:
+-------------------------------------------
+
+rem Update NODE 1 caller log database
+cd \pcb1
+type \pcb\main\daycal1 >>\pcb\main\caller1
+if exist calls.sav     calls \pcb\main\daycal1 \pcb\gen\BLT3 ANBCDEFGHIJKLM 3 NNNNNNNNNNNNNNNNYYYYYYNN
+if not exist calls.sav calls \pcb\main\caller1 \pcb\gen\BLT3 ANBCDEFGHIJKLM 3 NNNNNNNNNNNNNNNNYYYYYYNN
+copy \pcb\main\daycal1 \pcb\main\yester1
+copy \pcb\main\newcal1 \pcb\main\daycal1
+
+rem Update NODE 2 caller log database
+cd \pcb2
+type \pcb\main\daycal2 >>\pcb\main\caller2
+if exist calls.sav     calls \pcb\main\daycal2 \pcb\gen\BLT4 ANBCDEFGHIJKLM 3 NNNNNNNNNNNNNNNNYYYYYYNN
+if not exist calls.sav calls \pcb\main\caller2 \pcb\gen\BLT4 ANBCDEFGHIJKLM 3 NNNNNNNNNNNNNNNNYYYYYYNN
+copy \pcb\main\daycal2 \pcb\main\yester2
+copy \pcb\main\newcal2 \pcb\main\daycal2
+
+rem Create top uploaders/downloaders bulletin
+cd \pcb
+topusr main\users gen\blt5 20 4 120
+
+Version 14s12 12-Mar-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Changes to allow 'ZIP' to be used instead of 'ARC'.
+Fixed some reports where 100.0% exceeded the margins.
+Corrected display of 'last caller log entry' on screen.
+
+Version 14s11 27-Feb-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Rewrote file scanning procedures to sequentially access the caller log.
+This makes it possible to report from log files that have been partially
+corrupted by a text editor or another program failure.  Added a report
+of messages entered via the Qmail door.
+
+Version 14s10 31-Jan-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Several statistics were double counting.  Improved format of hourly
+utilization graphic.  Added new statistic for CD-ROM library access.
+Slight speedup.
+
+Version 14s9 29-Jan-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Corrected an error that prevented the report from counting callers with
+'NEW' in their city name!  Uploads are no longer included in the list of
+files downloaded.
+
+Version 14s8 10-Jan-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Removed case sensitivity on most caller log entries.
+
+Version 14s7 05-Jan-89 S.H.Smith
+-----------------------------------------------------------------------
+
+Added color output files.
+Added support for 4800 baud connections.
+Corrected formatting in bar graphs for items with 100%.
+
+Version 14s6 31-Dec-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Removed ARC-specific terminology.  Updated for similar changes in
+ProDoor betas dated after 10-9-88.
+
+Version 14s4 10-Oct-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Added a report of "Free Downloads" for compatibility with 9/30
+prodoor betas.
+Added a "Peak Hours" command line parameter.
+Deleted "Time Distribution" report because it was so slow and inaccurate.
+
+Version 14s3 10-03-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Updated for new conference joined and bulletin read log formats.
+Added a check for empty caller log files.
+
+Version 14s2 24-Sep-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Updated protocol letters for PCBoard 14 compatibility.
+
+Version 14s1 20-Sep-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Updated new user registration for new PCB 14 message format.
+
+Version 12s21 22-Jul-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Added support for node chat.
+
+Version 12s20 22-Jun-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Added a new data file CALLS.DIR, and a new graph of Time Usage by Activity.
+Create the file CALLS.DIR in the current directory.  List all your download
+and upload directories in this file (one directory per line).   CALLS will
+use this to search for each file that has been downloaded or uploaded.  The
+files must be located to determine file size, which is used to calculate the
+minutes spent downloading and uploading.  File sizes are determined only the
+first time a file is seen.
+
+Version 12s19 12-Jun-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Changed ARCM message counter to a long integer to prevent overflows.
+
+Version 12s17 10-May-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Added support for ProDoor's new ARC Mail feature.
+
+Version 12s16 16-Apr-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Added checks for 24:xx instead of 00:xx in some caller log entries.
+Should prevent some runtime errors.
+
+Version 12s15 12-Mar-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Recompiled with stack and range check enabled - slower, but safer.
+
+Version 12s14 11-Feb-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Improved bulletin activity report formatting.
+Made changes to allow caller logs with over 32000 entries.  Changed graphics
+to allow > 100% (for MNP modems in efficiency reporting).
+
+Version 12s13 11-Feb-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Made the 'remote dos time' statistic work properly (broken ever since
+PCB 12.)   Added entries in protocol table for all letters of
+the aplhabet.
+
+Version 12s12 19-Jan-88 S.H.Smith
+-----------------------------------------------------------------------
+
+
+Added the ability to store an internal summary of your caller log. 
+This makes it possible to add small daily caller logs and produce 
+the full report without keeping the whole caller log on file.  It 
+also reduces time spent scanning the log file. 
+
+Each time CALLS is run, it looks for CALLS.SAV in the default 
+directory.  If it is present, it loads this "saved summary" into 
+memory and adds the specified caller file to it.  After the report 
+is generated, CALLS.SAV is updated to include the new data.   Here 
+is a recommended EVENT.SYS sequence: 
+
+     1. cd \pcb
+     2. calls main\daycal gen\blt3 zzAzNBCDEFGHIJKLM 2
+     3. type main\daycal >>main\caller
+     4. del main\daycal
+
+Use PCBSETUP to change the caller log filename from the usual 
+'caller' to 'daycal' - this will be your "daily caller log".   
+
+Line 2 runs the caller log report on the daily log and generates 
+BLT3.  Line 3 adds the daily caller log to the end of the 
+"historical" caller log.  Line 4 deletes the daily log (pcboard 
+will make a new one for you).   
+
+If you are short on disk space, you don't even need to keep the 
+'main\caller' - just delete it.  The information in CALLS.SAV will 
+be enough to generate the full caller log report. 
+
+If for some reason you want to start over with a fresh log, just 
+delete 'calls.sav' and calls.exe will create a new one for you.   
+
+If you don't want to take advantage of this 'daily caller log' 
+feature, just add the line 
+   del calls.sav
+before the 'calls \pcb\main ...' line in your event.sys - without 
+the .sav file, it will act just like it used to. 
+
+Note: if you run CALLS twice on the same caller log, the 
+information will be added to CALLS.SAV twice!  So, either make a 
+backup copy of CALLS.SAV, or always delete daycal when you run 
+calls. 
+
+Version 12s11 16-Jan-88 S.H.Smith
+-----------------------------------------------------------------------
+
+Moved security related statistics to a new report (code 'N'). Added 
+a fourth parameter to specify the minimum number of downloads 
+needed to include a file in the files-downloaded report. 
+
+Version 12s10 31-Dec-87 S.H.Smith
+-----------------------------------------------------------------------
+
+Sorted entries in system statistics report.  Added reporting of 
+Archive test runs, archive extract runs and re-arc runs. 
+
+Version 12s9 27-Dec-87 S.H.Smith
+-----------------------------------------------------------------------
+
+Added a third command-line parameter to specify the reports to 
+generate. This lists the specific report sections to produce and 
+the order in which they will appear.   
+
+If, for example, you wanted to produce only the hourly usage (D), 
+bulletins read (F), and system statistics (A) reports (in that 
+order), the command line would be: 
+   calls \pcb\main\caller \pcb\gen\blt3 DFA
+
+-----------------------------------------------------------------------
+
+Version 12s7 21-Dec-87
+Version 12s6 29-Nov-87
+Version 12s5 20-Nov-87
+Version 12s4 07-Nov-87
+Version 12s3 12-Oct-87
+Version 12s1 10-Oct-87
+
+
+
+                      ORIGINAL DOCUMENTATION
+                      ======================
+
+
+Phoenix Arizona                                  Feb 23, 1987
+
+     This documentation covers version 11.8 of CALLS118.COM, a 
+call analyzer for PCBoard 11.8. 
+     It was written in Turbo Pascal, and is in it's 7th update 
+with this version.  Previous versions had various names and 
+version numbers such as "pcbcalls", "calls5b" etc.  From now on, 
+it will carry the same version number as PCBoard.  If any 
+revisions are made or required, it will have a letter suffix. (ie 
+117b). 
+     This version contains only minor mods to include changes made 
+in going from 11.6 to 11.7.  The Imodem and Gmodem protocols have 
+been added, some minor cleanup was done on the displays, and the 
+error file, BLT99.DOC has been eliminated as redundant and of not 
+much value. 
+
+OPERATION
+
+     This version works pretty much the same as all previous 
+versions with the exception that the error file "BLT99.DOC" has 
+been eliminated. 
+     The program is very easy to run, requiring only access to the 
+callers file.  This can be done in one of two ways: If you run it 
+from your 'MAIN' dir, you can just type CALLS118 and it will 
+default to an input file name of "CALLERS" and an called 
+"CALLFILE.DOC". 
+     It will also support command line parameters, so you can use 
+it in a batch file or in your "EVENT.SYS" file, as I do. The .COM 
+file should be in your \PCB dir, though this is not required.  
+Below is a sample of part of my .SYS file: 
+
+  calls117 d:\pcb\main\callers e:\pcb\gen\blt10
+
+Both parameters should be specified: the first one tells it where 
+to find the file (d:\pcb\main\callers) and the name of the callers 
+file.  The second tells it where to put the output file, in this 
+case I am sending it to Drive D with the name "BLT10". 
+
+There are a couple of things that make for better operation: 
+  1.  Do not mix callers logs of pcboard 10.0 and 11.7.  I have
+heard of no problems mixing 11.6, 11.7 and 11.8.
+  2.  For proper operation, your clock and date MUST be correct; if 
+the programs finds that your log begins in 1987 and ends in 1980, 
+it will usually abort.  If not, the numbers will be totally wrong 
+in most cases. 
+  It is recommended, though not required, that you start a new 
+callers log if you are new to this program.  It is most accurate 
+when the log begins with "New callers log initiated "etc. 
+
+     Please give it a try and let me know what you think of it, as 
+the only way I can put in needed changes is with feedback from the 
+users.  You can leave any comments at my board (Phoenix Techline) 
+at 602 936-3058 (1200-9600), 24 hours. 
+
+     I have included the source code in this version so that it may 
+be customized if you desire.  If you make any major changes or 
+improvements, please upload them to my board at 602 936 3058. 
+
+                          Warren Lauzon
+    

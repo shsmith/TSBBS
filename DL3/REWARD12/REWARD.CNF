@@ -1,0 +1,35 @@
+REWARD.HDR
+REWARD.TLR
+\PCB\GEN\BLT99
+REWARD.LOG
+\PCB\MAIN\USERS
+50
+2
+10 11
+50 51
+
+----------------------------------
+Reward Configuration File Format:
+
+line 1 = Report header text file name (NUL if none)
+
+line 2 = Report trailer text file name (NUL if none)
+
+line 3 = Report bulletin output file name (NUL if none)
+
+line 4 = Reward activity log output file name (NUL if none)
+
+line 5 = Full pathname of USERS file
+
+line 6 = Number of users to reward
+
+line 7 = Number of security level table entries
+
+line 8 = First security table entry
+
+Security table entries are in the format
+   NORMAL BONUS
+where
+   NORMAL is the normal user level and
+   BONUS is the level assigned to reward a top uploader.
+

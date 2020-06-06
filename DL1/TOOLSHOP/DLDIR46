@@ -1,0 +1,116 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                          Util-Debugging & Benchmark
+                        21 files using 2,673,089 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+1001FILE.ZIP   788551  01-10-93  A whole bunch of little commands and debug
+                               | scripts. No documentation enclosed, so use at
+                               | your own risk.
+1SGATHTX.ZIP   265925  01-13-94  Specifications/Trouble shoot Seagate hard
+                               | drives. Written in Hypertext. Use HHV20.ZIP
+                               | to read. Files: 14 Newest: 1/13/94
+486BOOK.ZIP    320319  04-28-93  .
+486TEST2.ZIP   124834  04-23-94  Tests 486 motherboards and system components.
+                               | Computational loads on the processor, and
+                               | numeric processor (if present) exceed by
+                               | several orders of magnitude the use a
+                               | computer would receive in a commercial
+                               | environment in a 24 hour period.  This
+                               | program tests all of the system's resources
+                               | including the BIOS, CPU, NDP, CACHE, RAM,
+                               | EXTENDED MEMORY and DISPLAY MEMORY.  Once
+                               | started the shareware version of 486TEST (TM)
+                               | will run for 100 passes.  A short test cycle
+                               | of 2 passes can be started by using a command
+                               | line switch of /2 when starting the program.
+                               | The 2 pass test is for demonstration purposes
+                               | and has NO diagnostic value.  Registered
+                               | copies will run for up to one week.
+                               | Registered copies also test both hard disks
+                               | and floppy disks.                         hw
+AMISE270.ZIP   314817  07-26-94  AMIsetup 2.70 - External Setup (new AMI BIOS
+                               | required). If you ever considered your
+                               | built-in setup as incomprehensible, boring,
+                               | inconvenient or incomplete, you have been
+                               | waiting for AMIsetup. AMIsetup can save your
+                               | configuration on disk and restore it. You can
+                               | even change setup options missing in your
+                               | BIOS! AMIsetup cracks your password,
+                               | auto-detects hard disks, runs in batch mode &
+                               | much more.
+ASBENC.ZIP      20511  02-24-93  SCSI benchmark test program requires ASPI
+                               | support. Includes C source code.
+CINFO20.ZIP    135310  08-11-93  Diagnostic utility for your PC. Provides
+                               | detailed information on over 30 items.
+CKCOMIRQ.ZIP     3266  01-10-93  check for irq conflicts
+CPUMEM.ZIP      17852  08-02-93  How to determine cpu type and memory of your
+                               | system. For programmers.
+CT50.ZIP        60403  06-10-93  Tests disk cache efficiency.
+DISINF10.ZIP    25733  07-27-93  DiskInf v1.0 If you want an interesting
+                               | little utility that will allow you to get
+                               | vital information about your HD then take the
+                               | time to download this. This little utility
+                               | will report many facts that are both
+                               | interesting and very exciting. If will give
+                               | you info. about your OS including Windows,
+                               | DOS, OS/2, and DoubleSpace. This program is
+                               | 100% FREEWARE
+DOS6PREP.ZIP   100888  06-22-93  Addin for Checkit Pro to handle DOS 6
+                               | DoubleSpace volumes
+GLB05.ZIP       81467  03-24-93  Gateway 2000 Local Bus Flash BIOS Update.
+IFP1P157.ZIP   114398  06-26-93  INFOPLUS 1.57, system information Display 21
+                               | pages of information about different aspects
+                               | of your computer. This 6/26/93 version adds
+                               | DBLSPACE information, and full information
+                               | about DOS 6.
+INFO158A.ZIP    98102  09-17-93  INFOPLUS 1.58 alpha, system information
+                               | Display 21 pages of information about
+                               | different aspects of your computer. This
+                               | 9/17/93 version is the last.
+JPRDY.ZIP       51502  08-20-93  Jeopardy Detector, v 1.00 - A diagnostic
+                               | program which monitors disk caches for
+                               | periods when the disk structure is in
+                               | jeopardy. Many disk caches produce periods
+                               | when directories point to files which have
+                               | not yet been allocated in the File Allocation
+                               | Table on the disk. If a crash occurs during
+                               | these jeopardy periods, cross-linked files
+                               | can result. See the READ.ME file for
+                               | instructions. From PC-Kwik Corporation.
+PCM108.ZIP      33657  01-16-93  POST CODE MASTER consists of a software,
+                               | hardware product. The software is this
+                               | program guiding you through a database of the
+                               | POST and beep codes generated by various BIOS
+                               | manufacturers. - Handy!.
+PVIEW12.ZIP    140631  03-09-93  Analyze, view and edit the basic components
+                               | of a system, including the system memory,
+                               | system interrupts, device drivers, and
+                               | installed disk drive sectors and file
+                               | contents. PROVIEW will allow you to view
+                               | system elements in HEX, ASCII or disassembled
+                               | code format. Full searching and editing
+                               | functions are included. hw
+SNOOP330.ZIP   163059  05-11-95  SNOOPER v3.30 <ASP> - System info utility. 
+                               | Shows CPU/NDP, CPU speed, DOS, BIOS, memory, 
+                               | disks, video, CD-ROM, env, kbd, sound cards, 
+                               | ports, IDE model, CMOS info, disk cache, 
+                               | Stacker, FILES & BUFFERS, IRQs, DMA, modems, 
+                               | mice, port IRQs. Lets you edit CMOS, CONFIG, 
+                               | & AUTOEXEC. Network and benchmark screens, 
+                               | detects 1100 MicroChannel cards. New version 
+                               | adds Auto-Logging feature, a few bug fixes. 
+                               | Ideal for tech support, HW inventory, etc.
+SYSCHK35.ZIP    71243  01-04-93  SYSCHK System Checkout for your personal
+                               | computer that provides valuable information
+                               | about devices installed in your system.
+TRAP306.ZIP     44967  01-17-93  TRAP a resident DOS programmer utility
+                               | allowing you to trace any interrupt!. TRAP
+                               | allows you to display contents of the CPU
+                               | registers BEFORE entering and/or AFTER
+                               | exiting the interrupt handler. Version 3.6
+                               | PUBLIC DOMAIN
+TSTIF121.ZIP    15973  02-05-93  Test hardware equiptment from batch file

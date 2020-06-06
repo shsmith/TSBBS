@@ -1,0 +1,86 @@
+
+                   ProDoor 2.5 Library Support (PROLIB25)
+
+                     Copyright (c) 1988 Samuel H. Smith
+                            ALL RIGHTS RESERVED
+
+
+ProDOOR Library function                                
+------------------------
+
+ProDOOR now supports a 'lib' command for access to a CD-ROM library disk.
+The INSTALL program will do most of the installation for you.
+
+
+To install this feature you need these additional files:
+
+\pcb\prod\LIBDEF
+   -- library disk definition file.  this file lists the cd-rom
+      directory prefix for each range of disk codes.
+
+   example:
+      9 \1-100\disk00
+      99 \1-100\disk0
+      100 \1-100\disk
+      200 \101-200\disk
+      300 \201-300\disk
+      400 \302-400\disk
+      500 \401-500\disk
+      600 \501-600\disk
+      700 \601-700\disk
+      800 \701-800\disk
+      900 \801-900\disk
+
+
+\pcb\prod\PROLIB or PROLIBg
+   -- menu of library disks.  you can either list all library disks
+      here, or make this short and put the library disk table
+      into a DIR file.
+
+  example:
+         Library disks available on CD-ROM:
+         Disk                Description
+         ----  ------------------------------------------
+         0001  Game Series No 1
+         0002  Spoolers
+         0003  RATBAS
+         0004  DBMS/Modem7
+         0005  PC-FILE Plus Disk 1 of 2
+
+
+\pcb\prod\proclib.bat
+   -- this batch file is called by prodoor to process each library
+      request.  it is called with the first parameter specifying the
+      arc file to create, and the second parameter giving the directory
+      as listed in the LIBDEF file.   you can edit this file to call
+      up PKARC, ARCA, ARC520, etc. to physically access the CD-ROM.
+
+   example:
+      rem. process library disk request - for ProDOOR 2.5 beta 31
+      proctree E:%3 xcopy >C:\PRO\arctree.bat
+      command/c C:\PRO\arctree nul
+      C:
+      cd C:\ARC
+      if exist CD-DISK.ARC del CD-DISK.ARC
+      arca CD-DISK.ARC {playdir}\*.* >%1 /d
+      echo. >>%1
+      echo Thank you for waiting! >>%1
+      echo Disk %4 is now stored in CD-DISK.ARC for you! >>%1
+      echo. >>%1
+
+
+\pcb\prod\PROTREE.EXE
+   -- this is a utility called by proclib.bat to scan for subdirectories
+      on the CD-ROM and produce a command sequence to process them.
+
+
+\pcb\prod\LIBHELP or LIBHELPg
+   -- this help message is printed just before proclib.bat is called.  it
+      should explain to the user where to look for the cd-rom library
+      files.  the default file says to look in 'scratch.arc', but you can
+      change proclib.bat and this message file to use any other filename.
+
+
+The library function can be called up from the prodoor main command
+prompt by typing 'LIB' (for LIBrary disk).
+

@@ -1,0 +1,47 @@
+
+type
+   dos_filename = string[64];
+   dos_handle   = word;
+
+const
+   dos_error = $FFFF;
+
+   open_read    = $40;   {deny_nothing, allow_read}
+   open_write   = $41;   {deny_nothing, allow_write}
+   open_update  = $42;   {deny_nothing, allow_read+write}
+
+   seek_start   = 0;
+   seek_cur     = 1;
+   seek_end     = 2;
+
+var
+   dos_regs:     registers;
+   dos_name:     dos_filename;
+
+procedure dos_call;
+
+function dos_open(name:    dos_filename;
+                  mode:    integer):  dos_handle;
+
+function dos_create(name:    dos_filename): dos_handle;
+
+function dos_read( handle:  dos_handle;
+                   var      buffer;
+                   bytes:   word): word;
+
+procedure dos_write(handle:  dos_handle;
+                    var buffer;
+                    bytes:   word);
+
+procedure dos_lseek(handle:  dos_handle;
+                    offset:  longint;
+                    method:  integer);
+
+function dos_tell: longint;
+
+procedure dos_find_eof(fd: dos_handle);
+
+procedure dos_close(handle:  dos_handle);
+
+procedure dos_unlink(name:    dos_filename);
+

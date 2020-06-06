@@ -1,0 +1,57 @@
+
+(*
+ * Copyright 1987, 1989 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *)
+
+const
+   event_now = false;
+   event_possible = true;
+
+procedure fill_chars( var dest; 
+                      source:    anystring;
+                      size:      integer);
+procedure lfill_chars( var dest;
+                       source:    anystring;
+                       size:      integer);
+   {fill_chars with leading space on source}
+
+procedure save_name_list;
+procedure load_name_list;
+
+procedure save_pointers(name: filenames);
+procedure load_pointers(name: filenames);
+
+procedure prepare_word_wrap(var par: string; var pos: integer; len: integer);
+
+procedure print_text(s: anystring);
+procedure make_raw_log_entry(entry: anystring);
+procedure make_log_entry (entry: anystring; echo: boolean);
+
+function download_k_allowed: word;
+
+procedure get_infocount(path:       filenames;
+                        reclen:     longint;
+                        var count:  integer);
+
+procedure get_dirn(n:         integer;
+                   var name:  filenames;
+                   var descr: anystring);
+function dir_count: integer;
+
+function minutes_before_event: integer;
+function event_run_needed(possible: boolean): boolean;
+
+function time_used: integer;
+function minutes_left: integer;
+procedure check_time_left;
+procedure display_time(used: boolean);
+procedure display_time_left;
+procedure adjust_time_allowed(addseconds: longint);
+

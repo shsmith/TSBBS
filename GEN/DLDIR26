@@ -1,0 +1,871 @@
+
+                The Tool Shop - Specializing in Software Tools
+
+                           Lang-"Pascal" Source Code
+                       178 files using 14,709,132 bytes
+
+ File Name      Size     Date                  File Description
+============  =======  ========  =============================================
+
+3DLIB25.ZIP    326337  01-17-96  3D Graphic objects library V2.5 for Turbo Pas
+                               | Download Count: 3    Last Download: 08-30-96
+                               |
+3DSTARS.ZIP     17844  11-15-93  3-Dimensional Stars Routines for Turbo Pasca
+                               | Download Count: 20   Last Download: 09-21-96
+                               |
+3PTPAS.ZIP       8563  12-21-92  Pascal Source To Find Circle On 3 Points.
+                               | Download Count: 5    Last Download: 01-17-95
+                               |
+A2P150.ZIP      11268  01-02-94  Utility To Convert Ascii Text Screen File To
+                               | TURBO PASCAL Gotoxy + Write Format V1.5 - In-
+                               | Cludes Source.
+                               | Download Count: 11   Last Download: 02-01-96
+                               |
+ABOUTBOX.ZIP    56558  05-22-93  TPW unit for about box with 'hidden' credit
+                               | scrolling screen, like the big boys use. From
+                               | the Jun 15, '93 issue of PC Mag.
+                               | Download Count: 17   Last Download: 06-03-95
+                               |
+ADDCOL.ZIP      11127  07-14-93  ADDCOL- Free DOS utility: adds a column of
+                               | numbers in a text file v1.00, 7/14/93. (c)
+                               | 1993 by David Daniel Anderson - Reign Ware.
+                               | ADDCOL simply adds a column of numbers in a
+                               | text file. W/ PASCAL source.
+                               | Download Count: 9    Last Download: 01-02-95
+                               |
+ADLIBPAS.ZIP     3027  12-31-93  Turbo Pascal unit to program the Adlib card.
+                               | Download Count: 6    Last Download: 06-03-95
+                               |
+ANIVGA11.ZIP   315013  09-03-92  TPUs for Pascal 6.0 to create animation! Full
+                               | source code & examples inCluded!
+                               | Download Count: 25   Last Download: 04-30-96
+                               |
+ASC2PAS.ZIP      7357  09-01-92  Converte sources em Assembler para Pascal.
+                               | Download Count: 5    Last Download: 12-01-94
+                               |
+ASYNC203.ZIP   101348  02-05-94  Async Communications Library v2.03 for Turbo
+                               | Pascal - Includes ASM language
+                               | subroutines/source.
+                               | Download Count: 15   Last Download: 02-19-97
+                               |
+ASYNCTPU.ZIP    14186  08-26-91  A recompilation of the T Burns classic COM
+                               | routines for TP 5.5 users, has MULTITASKing
+                               | parts defined, plug and play, will coexist
+                               | with DV...
+                               | Download Count: 13   Last Download: 12-09-96
+                               |
+AUTODOX2.ZIP    57160  07-18-92  A tool to assist in documentation of Pascal
+                               | source code.
+                               | Download Count: 10   Last Download: 12-07-94
+                               |
+BARMENU.ZIP      2382  09-13-91  Turbo Pascal Bounce Bar Menu (Oop)
+                               | programming units for Turbo Pascal 6.0 US
+                               | Pascal
+                               | Download Count: 8    Last Download: 05-26-96
+                               |
+BBSKIT20.ZIP    59629  04-29-92  BBKit v2.0c - Newest version straight from
+                               | author! Pascal routines to help construct a
+                               | BBS from scratch! Supports baud rates up to
+                               | 115,200 baud! Best software I've ever seen
+                               | for this purpose. Could be used to write a
+                               | terminal too!
+                               | Download Count: 23   Last Download: 11-23-96
+                               |
+BIGARRAY.ZIP     2541  02-10-93  An object that simulates a huge array and a
+                               | test program. Direct from the Borland BBS
+                               | Pascal source
+                               | Download Count: 5    Last Download: 11-06-95
+                               |
+BLOWPAS.ZIP     34122  08-19-95  Blowfish (Turbo) Pascal implementation of the
+                               | Blowfish encryption algorithm as described in
+                               | Dr Dobb's magazine of April 1994. Including
+                               | sources of the unit, an programming example
+                               | and the original C version, written by Bruce
+                               | Schneier, the author of the algorithm along
+                               | with ASM source code and the *.OBJ modules.
+                               | Download Count: 10   Last Download: 08-26-96
+                               |
+BOI200P.ZIP     83634  12-15-92  BBS Onliner Interface - Create your own door
+                               | programs with the Turbo Pascal source code by
+                               | A. Mead
+                               | Download Count: 18   Last Download: 11-23-96
+                               |
+BP70LIB.ZIP     97558  03-26-93  *** BP70LIB DEMO *** A library of Borland 7.0
+                               | routines, includes commented interface source
+                               | code for all units, and source and exe code
+                               | for a demo program to demonstrate the use of
+                               | the library.
+                               | Download Count: 14   Last Download: 11-22-96
+                               |
+BP7BUGS1.ZIP    15113  01-09-93  Unofficial Turbo/Borland Pascal 7.0 bug list
+                               | Download Count: 7    Last Download: 01-01-95
+                               |
+BP7SB100.ZIP    28419  03-15-93  Source beautifier for Turbo/Borland Pascal
+                               | 7.0
+                               | Download Count: 6    Last Download: 06-14-95
+                               |
+BTV200.ZIP     100786  12-18-93  Btv.pas is an object oriented Turbo Pascal
+                               | 6.0,7.0 programming interface for Novell's
+                               | Btrieve database manager. BTV.PAS works with
+                               | DOS, MS Windows, and DOS protected mode
+                               | programs. Btv.pas supports all Btrieve
+                               | functions through V5.15. New to Btv.pas 2.0
+                               | is support for extended operations.
+                               | Download Count: 4    Last Download: 12-30-93
+                               |
+C2PAS091.ZIP    17075  03-03-93  C2Pas 0.91. Converts "C" source to "Pascal"
+                               | source. "cheapware". Much improved speed and
+                               | output. By Lb Neal
+                               | Download Count: 16   Last Download: 12-26-95
+                               |
+CADSTOP.ZIP      5911  02-28-93  TURBO PASCAL Code To Block The Ctrl-alt-del
+                               | (reboot) Key Combination.
+                               | Download Count: 6    Last Download: 12-15-95
+                               |
+CMDLG7.ZIP      26038  12-10-92  Borland Pascal 7.0 Win 3x Common Dialog Code
+                               | That Simplifies Adding Common Dialogs To Your
+                               | Windows Pascal Programs.
+                               | Download Count: 2    Last Download: 03-20-94
+                               |
+CMSUNIT.ZIP      7382  07-29-92  Turbo Pascal source for interfaceing
+                               | SoundBlaster's CMS chip.
+                               | Download Count: 10   Last Download: 02-10-96
+                               |
+COMBOX.ZIP       5908  12-25-92  Combinations of Turbo Vision input routines
+                               | Download Count: 7    Last Download: 01-26-94
+                               |
+CPASDEMO.ZIP     3237  06-11-91  Sample demonstrating a very limited way to
+                               | link C and Pascal Direct from the Borland BBS
+                               | Download Count: 5    Last Download: 11-25-94
+                               |
+CRC_101.ZIP      8796  10-07-92  CRC_CALC v1.01 - Self check a files 32 bit
+                               | CRC to prevent viruses and hacking in Turbo
+                               | Pascal. Easy to use. Complete PD source. Fix
+                               | to version 1.00 which had a problem with
+                               | compiling in TP 5.5 or below. Also fixed
+                               | WRITEXEC.PAS by removing an unneeded {$I HEX}
+                               | that had been inadvertedly left in during
+                               | debugging.
+                               | Download Count: 13   Last Download: 04-05-94
+                               |
+CRC_CALC.ZIP     8288  10-06-92  Calculate 32-bit CRC's in your TURBO PASCAL
+                               | programs to prevent virus infection or
+                               | hacking. Easy to use. Complete PD source.
+                               | Download Count: 14   Last Download: 01-02-95
+                               |
+CURSMAKR.ZIP    43498  05-30-91  CursorMakerDeluxe v1.1 - w/TP source code
+                               | make your own cursor for your TP programs
+                               | Download Count: 9    Last Download: 01-01-95
+                               |
+DATE2FIL.ZIP     6044  06-18-92  Small utility for reporting date to screen or
+                               | file with pascal source
+                               | Download Count: 4    Last Download: 06-01-96
+                               |
+DDUTIL20.ZIP     8466  05-15-91  DoubleDos utilities unit v2.0 for Turbo
+                               | Pascal v6.0.
+                               | Download Count: 3    Last Download: 06-23-94
+                               |
+DEB2ASM.ZIP      8646  12-31-93  Pascal pgm changes debug 'u' captures to .ASM
+                               | Download Count: 2    Last Download: 04-05-94
+                               |
+DESIGN60.ZIP    63037  12-31-93  Turbo Pascal Database "CASE" tool.
+                               | Interactively build your TP database
+                               | source-code, then compile for complete
+                               | Download Count: 4    Last Download: 04-29-95
+                               |
+DESQ10.ZIP       6200  12-31-93  Turbo Pascal code to interface DesqView
+                               | Download Count: 2    Last Download: 04-05-94
+                               |
+DIGIKIT.ZIP     11917  07-15-92  Developers kit for making a pascal program
+                               | digiboard compatible.
+                               | Download Count: 14   Last Download: 03-19-97
+                               |
+DISK13.ZIP      10637  12-31-93  Turbo Pascal 5+ unit to Read/Write disk
+                               | sectors, and format floppies.
+                               | Download Count: 4    Last Download: 04-04-96
+                               |
+DISKINF3.ZIP     5670  12-22-93  Absolute disk reads and writes on harddrives
+                               | larger than 32M Direct from the Borland BBS
+                               | Download Count: 5    Last Download: 02-11-95
+                               |
+DLLMAKER.ZIP    11019  01-29-92  Assemble Turbo Pascal for Windows Units into
+                               | a DLL.
+                               | Download Count: 1    Last Download: 05-25-94
+                               |
+DRAWBMP.ZIP      3064  12-31-91  Turbo Pascal source to draw BMP Picts
+                               | Download Count: 9    Last Download: 11-22-96
+                               |
+DVINTF.ZIP       1302  12-31-93  TPascal bindings for basic DESQview calls
+                               | Download Count: 0
+                               |
+EASY_3D.ARJ     32502  02-28-94  _ _ _ __ __ (_ /_) (_ (___) __ / \ (_ / ) __)
+                               | ___) __/ PASCAL source file showing the very
+                               | basic 3D rotations calculus using matrices.
+                               | Including a cute "delay vector" effect. For
+                               | beginners...
+                               | Download Count: 12   Last Download: 08-07-97
+                               |
+ECO30603.ZIP   728690  08-09-93  Eco Library II Release 3.0 V 6.03 Pascal Port
+                               | #3 Complete Edition All Pascal source
+                               | included. Without .ASM but .OBJ included for
+                               | recompiling.
+                               | Download Count: 3    Last Download: 12-23-94
+                               |
+EEPROM.ZIP      19996  06-16-92  Simple EEPROM burner in PASCAL source
+                               | Download Count: 1    Last Download: 08-07-97
+                               |
+EEV100R1.ZIP    39273  02-02-92  Expression Evaluation Toolkit for Turbo
+                               | Pascal v1.0 Public Domain, no royalities for
+                               | use. Complete source. Evaluate math, ect
+                               | expressions with infix, postfix, etc..
+                               | Download Count: 8    Last Download: 12-09-96
+                               |
+EKEYS11B.ZIP     2745  11-21-91  Enable F11 & F12 for ANSI, Turbo Pascal
+                               | Download Count: 4    Last Download: 12-09-96
+                               |
+EMSARRAY.ZIP    11805  11-01-92  Turbo Pascal 6 code for creating arrays in
+                               | EMS.
+                               | Download Count: 2    Last Download: 01-07-94
+                               |
+EXECWS.ZIP      18854  02-11-93  Turbo Pascal unit that provides a DOS shell,
+                               | swapping the main application out of memory.
+                               | Output of the DOS sub-process is then routed
+                               | to a specified window on the screen
+                               | Download Count: 10   Last Download: 11-03-95
+                               |
+EXECWSWP.ZIP    20055  10-23-91  A Patch of the TurboPower EXECWSWP routines,
+                               | so your spawned program CAN return an error
+                               | code to the parent. Also has the EMS-detect
+                               | routines defined and working ...
+                               | Download Count: 4    Last Download: 09-08-93
+                               |
+EXTEND7.ZIP      3021  11-30-93  Extends the number of available file handles
+                               | in BP/TP 7.0 Direct from the Borland BBS
+                               | Download Count: 2    Last Download: 02-17-94
+                               |
+EZDPMI.ZIP       7158  08-10-93  EZDPMI 1.01 by Julian M. Bucknall. A simple
+                               | Pascal unit that encapsulates all the common
+                               | DPMI requirements for protected mode and
+                               | Windows programs .
+                               | Download Count: 5    Last Download: 12-06-95
+                               |
+FILESELE.ZIP    14469  12-19-92  Use This Overlay Utility In Your PASCAL And C
+                               | Applications To Select File Name From A
+                               | Directory, Or Enter New File Name. Search
+                               | Mask, Directory Sort, Os Shell Included.
+                               | Mouse Support And Screen Save/restore
+                               | Functions Available!
+                               | Download Count: 8    Last Download: 04-04-96
+                               |
+FLXHDR.ZIP       3144  10-21-92  TP header object for window headers that uses
+                               | FlexWrite for multicolor header text;
+                               | Download Count: 8    Last Download: 07-05-94
+                               |
+FLXKEY10.ZIP    53098  11-06-93  TP Unit to create encrypted registration Key
+                               | files
+                               | Download Count: 14   Last Download: 12-15-95
+                               |
+FMANAGE.ZIP      2702  10-11-92  Basic file handling routines for Turbo Pascal
+                               | Download Count: 2    Last Download: 02-24-95
+                               |
+GENOVR.ZIP       2802  08-18-91  General overlay support unit for Turbo Pascal
+                               | Download Count: 1    Last Download: 12-09-96
+                               |
+GNOMS102.ZIP   100479  09-27-93  GNOMES v1.02- Free DOS utility: random
+                               | tagline displayer. (c) 1993 [09/27/93] by
+                               | David Daniel Anderson - Reign Ware. GNOMES
+                               | displays a line of text, chosen randomly from
+                               | a file. Presents user with random gnomes
+                               | (taglines, jokes, quotes, etc). Continuous or
+                               | single gnome mode. W/ 4000+ gnomes. W/ Pascal
+                               | source. cursor fix.
+                               | Download Count: 3    Last Download: 12-15-95
+                               |
+GTPAS_1.ZIP    496235  01-28-93  VGA-Toolbox pascal rel. 5.0 - 7.0
+                               | Download Count: 11   Last Download: 12-15-95
+                               |
+GTPAS_2.ZIP   1475864  01-28-93  Source und weitere Treiber zu GTPAS_1
+                               | Download Count: 8    Last Download: 11-24-95
+                               |
+HITSYS.ZIP      27398  06-23-93  HITSYS v0.10 of 06.08.93 Creates USERS.SYS on
+                               | the fly from the DOS level. Freeware - Full
+                               | Source Code Included.
+                               | Download Count: 15   Last Download: 03-19-96
+                               |
+HOB100.ZIP      26618  09-09-91  Create object tree from Turbo Pascal or Quick
+                               | Pascal sources. List with several Pascal
+                               | source.
+                               | Download Count: 4    Last Download: 04-15-94
+                               |
+HPGLVU10.ZIP    73591  04-22-91  Viewer for HPGL files, with Turbo Pascal 5
+                               | src
+                               | Download Count: 4    Last Download: 11-15-95
+                               |
+HUGECOLL.ZIP     5410  12-31-93  Implement Huge Collection in TurboPascal for
+                               | Windows
+                               | Download Count: 2    Last Download: 11-03-95
+                               |
+IBMCOM33.ZIP     8896  10-18-93  *** Turbo Pascal 6.0/7.0 *** Communications
+                               | port interrupt driver for the IBM-PC. VER 3.3
+                               | handles all low-level i/o through the serial
+                               | port. Donated to the public domain by Wayne
+                               | E. Conrad. Updated to BASM, remote string
+                               | editing and new version assigned by B.
+                               | Walker.
+                               | Download Count: 25   Last Download: 08-30-96
+                               |
+IDOOR20.ZIP    217692  06-27-93  -- INSTA-DOOR [TEXT] v2.0 -- A DOOR
+                               | PROGRAMMING LIBRARY for BASIC COMPILERS
+                               | (QUICKBASIC, BASIC PDS, VISUAL BASIC / DOS).
+                               | FEATURES: Seven DROP FILES supported, Split
+                               | Screen Chat, Text/ANSI/AVATAR 0,0+
+                               | emulations, Codes in Ansis, Drop the DTR (for
+                               | CALL BACK VERIFIERS), Read & Write PCBOARD
+                               | user files, POPUP MENUS, DIALOG BOXES, Color
+                               | Codes, SAVING & RESTORING of local & remote
+                               | screens, Code Optimizer, Non- standard IRQ's
+                               | & Port Addresses, FOSSIL support, COM 1 - 4,
+                               | with 300-115200 baud rates,
+                               | WINDOWS/OS2/DESQVIEW Time Slicing, ANSI
+                               | MUSIC, Remote Terminal Detection, NETWORK
+                               | Detection, MULTI-NODE support, and much much
+                               | more! [By: M&J Alliance Software
+                               | 1-602-937-3796]
+                               | Download Count: 6    Last Download: 12-15-95
+                               |
+IFP1S157.ZIP   117632  06-26-93  Source Code for InfoPlus v1.57 excellant
+                               | system analysis Program
+                               | Download Count: 15   Last Download: 09-01-95
+                               |
+INTRFC62.ZIP    51918  06-14-91  Turbo Pascal 6.0 TPU file dumper, with source
+                               | Download Count: 3    Last Download: 09-08-94
+                               |
+IO5150.PAS       8757  12-19-93  COMM port driver
+                               | Download Count: 3    Last Download: 12-15-95
+                               |
+JDBTREE.ZIP     17493  06-07-91  DB trees in Tpascal.. Useing seek and block
+                               | read/write.. Source.
+                               | Download Count: 5    Last Download: 02-24-95
+                               |
+LANTAS.ZIP      28095  01-15-92  Turbo Pascal Source for Lantastic Netbios
+                               | int.
+                               | Download Count: 4    Last Download: 11-03-95
+                               |
+LASTLOOK.ZIP    25482  08-31-93  Tells wHat Compiler switches were used to
+                               | compile a program written in Borland Pascal
+                               | 7.0.
+                               | Download Count: 6    Last Download: 12-11-93
+                               |
+LZH-PAS.ZIP      7423  12-31-93  LZHUF algorithm in TURBO PASCAL. Use to add
+                               | LZHUFF compression to your programs.
+                               | Performance lies between PKARC and PKZIP.
+                               | Resonably fast, but could be improved with a
+                               | little assembler code.
+                               | Download Count: 11   Last Download: 12-15-95
+                               |
+LZHUTP6.ZIP     17195  12-14-91  LZH Compression in Turbo Pascal 6.0. OOP
+                               | Download Count: 7    Last Download: 06-01-94
+                               |
+LZW4P14.ZIP     29751  07-12-94  NAME: LZW Data Compression Library for Pascal
+                               | KEYS: LZW DATA COMPRESSION LIBRARY COMPRESS
+                               | FILE: LZW4P14.ZIP VER: 1.4 DATE: June 94
+                               | REG$: MarshallSoft Computing, Inc. --- $45.00
+                               | DSCR: LZW4P is a data compression library for
+                               | Turbo Pascal programmers which uses the LZW
+                               | algorithm as published in research papers by
+                               | Lempel, Ziv, and Welch. The LZW algorithm is
+                               | probably the best generic compression
+                               | algorithm known today.
+                               | Download Count: 9    Last Download: 12-15-95
+                               |
+MINEHLP1.ZIP    17672  04-26-92  Helper for Minesweeper game; Pascal source
+                               | Download Count: 3    Last Download: 12-15-95
+                               |
+MKERR101.ZIP    12222  08-04-91  MkErr: Error device for Turbo Pascal 6.0
+                               | Download Count: 0
+                               |
+MKMSG102.ZIP   191588  11-19-93  Mythical Kingdom Message Access Source v.
+                               | 1.02 - SAmple Pascal source code for
+                               | accessing various types of message bases.
+                               | Download Count: 4    Last Download: 08-30-96
+                               |
+MKMSGSRC.ZIP    70444  09-19-92  TP Source to access *.Msg, Hudson, and Squish
+                               | (BBS) message base formats. Code is object
+                               | oriented and very flexible
+                               | Download Count: 12   Last Download: 12-15-95
+                               |
+MODEMX.ZIP      11005  01-22-93  TPW example of xmodem protocol
+                               | Download Count: 5    Last Download: 12-11-93
+                               |
+MUSICPAS.ZIP     2810  06-24-91  Music for Pascal
+                               | Download Count: 4    Last Download: 06-01-96
+                               |
+NEWER.ZIP        4697  12-04-91  Compare file dates in batch files. Returns
+                               | errorlevel if compared file is same date,
+                               | older or newer. Pascal source included.
+                               | source included.
+                               | Download Count: 0
+                               |
+NGDUMP.ZIP       6834  06-11-91  Dump Norton Guides databases to text - TP src
+                               | Download Count: 4    Last Download: 04-05-94
+                               |
+NMSOURCE.ZIP   219506  10-13-91  Turbo Pascal source code for Net/Mail 5.0.
+                               | Released into the public domain by Mark
+                               | Findlay with the hope that someone else would
+                               | take over the project.
+                               | Download Count: 8    Last Download: 12-15-95
+                               |
+OPHPCK.ZIP       7460  11-20-92  A Picklist Derivative That Implements A
+                               | Single Column Picklist With Horizontal
+                               | Scrolling. (PASCAL Source Only)
+                               | Download Count: 4    Last Download: 04-04-96
+                               |
+P-ROBO31.ZIP   291595  06-23-93  P-ROBOTS, A game for PASCAL programmers.
+                               | Battle robots programmed by others in a fight
+                               | with flying missiles, shields, cloaks, and
+                               | bombs. Ideal for the PASCAL "pro" or beginner
+                               | alike. Includes new "IDE" or Integrated
+                               | Development Environment.
+                               | Download Count: 14   Last Download: 06-24-96
+                               |
+PASCDLLS.ZIP    58546  07-16-93  Paper on creating both Pascal and C
+                               | Interfaces to one DLL
+                               | Download Count: 2    Last Download: 02-08-94
+                               |
+PASWIZ14.ZIP    68337  05-26-93  Pascal Wizard's Library v1.4 for Turbo Pascal
+                               | & Quick Pascal. BCD math, mouse, kbd,
+                               | Download Count: 17   Last Download: 12-09-96
+                               |
+PAVT150.ZIP    231145  07-10-93  PAvatar 1.50 - Add Avatar, ANSI, & VT-52
+                               | emulations to your Turbo/Borland Pascal
+                               | programs. Now 30-40% faster, fixes bugs, adds
+                               | ANSI music and AdLib sound support.
+                               | Registration is only $12!
+                               | Download Count: 2    Last Download: 12-15-95
+                               |
+PCHART.ZIP      32769  05-05-91  Bar And Pie Charts For Windows 3.0 Includes
+                               | Source For Turbo Pascal For Windows.
+                               | Download Count: 3    Last Download: 06-29-96
+                               |
+PEXTND.ZIP       1955  12-21-92  TP unit for extending the file handle table
+                               | of a DOS protected mode application written
+                               | using Borland Pascal 7.0; 12/21/92.
+                               | Download Count: 11   Last Download: 01-26-94
+                               |
+PLIFE.ZIP       21282  05-02-91  Life For Windows 3.0. Includes The Source
+                               | Code Written For Turbo Pascal For Windows,
+                               | Originally As A Demo.
+                               | Download Count: 1    Last Download: 01-21-94
+                               |
+POPTXT.ZIP      57501  07-04-92  Popup help text routines for you Turbo Pascal
+                               | routines. Source and samples.
+                               | Download Count: 3    Last Download: 12-15-95
+                               |
+PRALOC.ZIP       2339  10-16-92  TP unit with routines to preallocate data and
+                               | index file space for fixed/variable length
+                               | record file blocks; 10/16/92.
+                               | Download Count: 11   Last Download: 08-28-93
+                               |
+PROT024S.ZIP   176885  09-16-93  X,Y,Zmodem TPU's for Turbo Pascal
+                               | Programmers.
+                               | Download Count: 11   Last Download: 08-30-96
+                               |
+PROT100.ZIP     38078  03-20-93  Modem protocol program with pascal source
+                               | Download Count: 6    Last Download: 08-30-96
+                               |
+PROTENG.ZIP    122034  07-16-92  Protocol engine source inPascal
+                               | Download Count: 7    Last Download: 08-30-96
+                               |
+PSDSM103.ZIP     4876  01-27-93  Get more than 64 kb heap in Turbo Pascal 6
+                               | Download Count: 3    Last Download: 09-29-95
+                               |
+PSLST100.ZIP     6629  01-08-93  List functions for Turbo Pascal 6
+                               | Download Count: 1    Last Download: 01-03-94
+                               |
+PSPPD100.ZIP    25779  01-08-93  Database functions for Turbo Pascal 6
+                               | Download Count: 3    Last Download: 03-26-95
+                               |
+PSSTK101.ZIP     5873  01-08-93  Stack functions for Turbo Pascal 6
+                               | Download Count: 2    Last Download: 12-13-94
+                               |
+PSSTR102.ZIP    12122  01-08-93  String/keyboard functions for Turbo Pascal 6
+                               | Download Count: 1    Last Download: 01-02-94
+                               |
+PSXMH103.ZIP     8905  01-27-93  XMS heap control for Turbo Pascal 6
+                               | Download Count: 2    Last Download: 01-09-94
+                               |
+PULL5XC.ZIP    134557  11-06-93  Pull down menus for TP5.5
+                               | Download Count: 5    Last Download: 12-09-96
+                               |
+P_PASCAL.ZIP   102308  02-06-93  ISO Pascal to P-Code translator and
+                               | interpretor
+                               | Download Count: 3    Last Download: 03-05-96
+                               |
+RDATE120.ZIP    14540  10-20-93  REDATE! v1.20- Free DOS utility: file
+                               | redater. (c) 1993 [10/20/93] by David Daniel
+                               | Anderson - Reign Ware. W/ Pascal source. New:
+                               | non-current dir processing ability.
+                               | Download Count: 6    Last Download: 03-26-95
+                               |
+REGIST.ZIP     101617  05-18-93  Registration key unit for Turbo Pascal
+                               | Download Count: 6    Last Download: 12-15-95
+                               |
+REGISTTP.ZIP   100892  05-18-93  Pascal library for hooking registration keys
+                               | into your new applications.
+                               | Download Count: 6    Last Download: 07-28-96
+                               |
+RKPLS301.ZIP   232642  08-09-93  RkPlus(tm) 3.01 Enhanced Registration Key Uni
+                               | for Turbo Pascal(tm) 5.0, 5.5 & 6.0; Turbo
+                               | Pascal(tm) 1.0 & 1.5 for Windows(tm) and
+                               | Borland Pascal(tm) 7.0 (DOS Real, DPMI
+                               | Protected & Windows modes). Supports multiple
+                               | registration levels, limited use demo keys,
+                               | custom encoding functions and direct EXE
+                               | branding. (c) 1991-93 Serious Cybernetics
+                               | Download Count: 11   Last Download: 09-01-96
+                               |
+SCRMGR.ZIP       4109  11-04-92  Low-level script mgr engine for developing
+                               | script languages in comm programs and similar
+                               | constructs; supports branching via JUMP and
+                               | GOSUB/RETURN logic, etc.; this is the core
+                               | logic of OzCIS' script processor;
+                               | Download Count: 20   Last Download: 06-01-94
+                               |
+SEBHASH.ZIP     12919  10-05-91  Turbo Pascal Source & Executable of a
+                               | Practical working model of Sebesta's String
+                               | hashing algorithm. ALSO includes a random
+                               | Download Count: 12   Last Download: 12-09-96
+                               |
+SELFMOD.ZIP      2800  10-22-91  Turbo Pascal source to make routines
+                               | self-modifying.
+                               | Download Count: 9    Last Download: 12-09-96
+                               |
+SERNUM.ZIP       1866  05-07-93  Read/Write floppy disk serial numbers in
+                               | Turbo Pascal source code.
+                               | Download Count: 8    Last Download: 12-09-96
+                               |
+SFTM.ZIP        10123  02-01-93  System File Table Monitor v1.30 Written by
+                               | Craig R. Clark in Turbo Pascal. Will list in
+                               | real-time all files opened on your system.
+                               | Compatible with Lantastic, Desqview, Windows
+                               | 3.x, MS-DOS 5.0. Runs in your current text
+                               | mode, has clock on screen, plus supports
+                               | QEMM's additional FILES table. On a machine
+                               | running a Lantastic Redirector, it will also
+                               | report the machine name.
+                               | Download Count: 12   Last Download: 07-02-95
+                               |
+SHOLDT.ZIP       4469  10-19-92  Debugging tool that can be plugged into any
+                               | BP7 protected-mode pgm to allow you to view
+                               | the current LDT (local descriptor table) and
+                               | to dump the contents of selectors to a hex
+                               | view window and disk file; requires BP7 and
+                               | protected mode; 10/19/92.
+                               | Download Count: 8    Last Download: 03-31-93
+                               |
+SHOWBMP2.ZIP    41492  03-28-93  Turbo Pascal unit to display 64k, 256 color
+                               | Download Count: 2    Last Download: 08-27-94
+                               |
+SLTPU60A.ZIP    94383  07-09-92  search light program library for turbopascal
+                               | Download Count: 4    Last Download: 11-22-96
+                               |
+SNPD21.ZIP      65666  01-06-94  StaNdArd Printer-Pascal (SNAP-P) D2.1 <ASP> A
+                               | Pascal with Objects pretty printer for DOS.
+                               | Adjusts margins and capitalization to give a
+                               | standard look to your source code. Make
+                               | imported code readable, cut development
+                               | costs. Simple, non-intrusive installation,
+                               | menu driven and completely safe to use. An
+                               | optional table lookup gives control over the
+                               | looks of names such as "cmCancel" and
+                               | "mfYesButton". A Turbo Vision(R) application.
+                               | Download Count: 6    Last Download: 05-17-94
+                               |
+SOFTDB.ZIP      26251  07-01-93  SOFTWARE DATABASE, version 1.00. A quick,
+                               | easy way to catalog your favorite software
+                               | programs, written by yours truly. Includes
+                               | Turbo Pascal source code. Coded 6/17/93
+                               | Download Count: 6    Last Download: 02-24-95
+                               |
+SORCPAK1.ZIP  1466838  01-21-94  ú ú ù -[1/3]- ù ú ù GRUMPY's SOURCE PACK
+                               | COLLECTION If you EVER wanted to make Demos,
+                               | Intros, or Loaders, well Piazon this IS it
+                               | !!! My personal collection of Source Code in
+                               | Assembly\Pascal - CoOl ShIt like Starz, Barz,
+                               | Scrollers, Mod Players, WormHoles - 2too much
+                               | to list - EVERYTHING you need - it's ALL here
+                               | - = U N I T E D C O U R I E R S = -
+                               | Download Count: 11   Last Download: 08-07-97
+                               |
+SORTKIT1.ZIP    11648  09-16-91  Sort objects sources for Turbo Pascal 6
+                               | Download Count: 2    Last Download: 01-10-94
+                               |
+SPO110.ZIP     113447  04-17-93  Sally Peep Hole Optimizer v1.10 - Unit
+                               | OPtimizer for TP7/BP7 - allows 086-486
+                               | specufuc code to be gebnretaed as well as
+                               | hard encoding of FPu instructions..
+                               | Download Count: 10   Last Download: 10-28-93
+                               |
+SPRITPAS.ZIP     1680  09-12-92  Sprite VGA Routinues in PAScal
+                               | Download Count: 9    Last Download: 08-23-95
+                               |
+STRLIST.ZIP     18817  03-11-92  Compile strings into Turbo Pascal .OBJ files
+                               | Download Count: 2    Last Download: 12-09-96
+                               |
+STROP110.ZIP    28859  09-07-91  String optimizer for Turbo Pascal. Shareware
+                               | from Brazil. Manual written in portuguese.
+                               | Download Count: 2    Last Download: 12-09-96
+                               |
+SWAG.ZIP        61175  05-29-93  SWAG READER v1.0 SWAG (Sourceware Archival+
+                               | Group) file reader. EXE needed to read SWAG
+                               | packets. SWAG packets are available in
+                               | separate archives. (SWAGABC,SWAGDEF,SWAGG-M,
+                               | SWAGN-R,SWAGS-Z). You WILL need this program
+                               | to read these files.
+                               | Download Count: 7    Last Download: 08-30-96
+                               |
+SWAG9311.ZIP   523729  11-26-93  SWAG File SWAG9311 from the SourceWare
+                               | Archival Group. ALL new snippets since last
+                               | release THROUGH 11/27/93, PLUS updated
+                               | version of READER.EXE v2.5 and DOC files.
+                               | SWAG (SourceWare Archival Group) is a
+                               | collection of source code and program
+                               | examples for the PASCAL language. Over 56
+                               | catagories covering every aspect of PASCAL.
+                               | One of the MOST complete PASCAL reference
+                               | libraries available. This is ONLY the update.
+                               | Get ALLSWAGS.ZIP for ALL SWAGS.
+                               | Download Count: 4    Last Download: 08-30-96
+                               |
+SWAGABC.ZIP    103198  05-29-93  SWAG Packet SWAGABC, Containing material from
+                               | 'A' to 'C'. SWAG (SourceWare Archival Group)
+                               | is a collection of source code and program
+                               | examples for the PASCAL language. There are
+                               | 56 catagories covering every aspect of PASCAL
+                               | You will need the READER.EXE from SWAG.ZIP to
+                               | read this material.
+                               | Download Count: 8    Last Download: 12-06-96
+                               |
+SWAGDEF.ZIP    191772  05-29-93  SWAG Packet SWAGDEF - Containing material fro
+                               | 'D' to 'F'. SWAG (SourceWare Archival Group)
+                               | is a collection of source code and program
+                               | examples for the PASCAL language. There are
+                               | 56 catagories covering every aspect of PASCAL
+                               | You will need the READER.EXE from SWAG.ZIP to
+                               | read this material.
+                               | Download Count: 7    Last Download: 12-06-96
+                               |
+SWAGG_M.ZIP    146451  05-29-93  SWAG Packet SWAGG-M Containing material from
+                               | 'G' to 'M'. SWAG (SourceWare Archival Group)
+                               | is a collection of source code and program
+                               | examples for the PASCAL language. There are
+                               | 56 catagories covering every aspec of PASCAL.
+                               | You will need the READER.EXE from SWAG.ZIP to
+                               | read this material.
+                               | Download Count: 7    Last Download: 12-06-96
+                               |
+SWAGN_R.ZIP     94973  05-29-93  SWAG Packet SWAGN-R Containing material from
+                               | 'N' to 'R'. SWAG (SourceWare Archival Group)
+                               | is a collection of source code and program
+                               | examples for the PASCAL language. There are
+                               | 56 catagories covering every aspec of PASCAL.
+                               | read this material.
+                               | Download Count: 7    Last Download: 12-06-96
+                               |
+SWAGS_Z.ZIP    145728  05-29-93  SWAG Packet SWAGS-Z Containing material from
+                               | 'S' to 'Z'. SWAG (SourceWare Archival Group)
+                               | is a collection of source code and program
+                               | examples for the PASCAL language. There are
+                               | 56 catagories covering every aspec of PASCAL.
+                               | You will need the READER.EXE from SWAG.ZIP to
+                               | read this material.
+                               | Download CouNt: 5    Last Download: 02-25-95
+                               | Download Count: 8    Last Download: 12-06-96
+                               |
+SWAPC130.ZIP    19635  12-30-93  SWAP/Check v1.3 swapper.dat monitor. Does
+                               | Download Count: 1    Last Download: 02-10-94
+                               |
+SYST55.ZIP      35010  11-06-93  Replacement for TP 5.5 System unit from Eagl
+                               | Performance Software
+                               | Download Count: 2    Last Download: 12-09-96
+                               |
+TAN_SND.ZIP     12318  07-28-91  Pascal source for Tandy 3 voice sound.
+                               | Download Count: 1    Last Download: 08-17-93
+                               |
+TAN_SND2.ZIP    12222  11-11-91  TP source for 3 voice sound on Tandy 1000.
+                               | Update/bug fix for TAN_SND.ZIP
+                               | Download Count: 1    Last Download: 08-17-93
+                               |
+TCSEL003.ZIP    70320  12-13-92  Snippets from the Pascal echo. Contains
+                               | several usefule functions and a FAQ.
+                               | Download Count: 1    Last Download: 01-07-94
+                               |
+TDL410.ZIP      82413  11-27-93  Numerous TPU units for TurboPascal. This is a
+                               | very complete library for all TurboPascal
+                               | Programmers.
+                               | Download Count: 9    Last Download: 01-03-95
+                               |
+THRASH10.ZIP    14624  07-17-92  Converts text files to weird extended
+                               | characters. Like FREAK, except this is NOT
+                               | CRIPPLED, PUBLIC DOMAIN. Includes pascal
+                               | source code.
+                               | Download Count: 6    Last Download: 04-04-96
+                               |
+TI01.ZIP        66703  01-13-93  HyperSource utility for Turbo Pascal 6
+                               | Download Count: 2    Last Download: 02-24-95
+                               |
+TJOOP11.ZIP     11084  05-20-91  Stack, Queue & double list OBJECTS for
+                               | TPascal
+                               | Download Count: 2    Last Download: 01-10-94
+                               |
+TOT11.ZIP      437678  09-02-93  Programming tools for Turbo Pascal <ASP>
+                               | Download Count: 4    Last Download: 12-13-94
+                               |
+TOT110.ZIP     478264  01-19-93  TechnoJock's Object Toolkit v1.1 1993 Update!
+                               | Download Count: 18   Last Download: 11-04-94
+                               |
+TOT_1.ZIP      188665  12-31-93  Technojock's Object Toolkit for Turbo Pascal
+                               | part 1/2
+                               | Download Count: 3    Last Download: 12-13-94
+                               |
+TOT_2.ZIP      323463  12-31-93  Technojock's Object Toolkit for Turbo Pascal
+                               | Part 2/2
+                               | Download Count: 3    Last Download: 12-13-94
+                               |
+TPAPI.ZIP      112030  03-02-92  Novell NetWare API functions now available in
+                               | Turbo Pascal 6.0 Units - Get all Network
+                               | information and statistics U want in your own
+                               | programs! Very powerful tool.
+                               | Download Count: 9    Last Download: 11-03-95
+                               |
+TPFAST40.ZIP    69794  11-18-91  V4.0 Fast ASM routines for Turbo Pascal. Over
+                               | 100 optimized routines for video, data
+                               | handling, etc. Shareware, $45.00.
+                               | Download Count: 4    Last Download: 12-13-94
+                               |
+TPFORT17.ZIP    20142  08-25-91  Pascal to Fortran aid
+                               | Download Count: 2    Last Download: 10-18-93
+                               |
+TPFZM100.ZIP    21574  04-11-91  Turbo Pascal unit for Zmodem CRC-32 support.
+                               | Download Count: 4    Last Download: 02-11-96
+                               |
+TPLZH026.ZIP    21533  08-05-93  LZH compression engine for inclusion in your
+                               | own programs. Pascal source.
+                               | Download Count: 12   Last Download: 04-06-96
+                               |
+TPNETBIO.ZIP    17443  10-21-91  Turbo Pascal program for implementation of
+                               | netbios calls.
+                               | Download Count: 4    Last Download: 11-03-95
+                               |
+TPREAL2.ZIP     10399  03-26-92  Improved 'real' routines for Turbo Pascal
+                               | Download Count: 1    Last Download: 01-03-94
+                               |
+TPSBK100.ZIP    87083  07-28-91  SoundBlaster Toolkit for Turbo Pascal. Allows
+                               | you to use many of the SoundBlaster functions
+                               | using Turbo Pascal, including playing .CMF
+                               | files.
+                               | Download Count: 11   Last Download: 12-09-96
+                               |
+TPU60B.ZIP     123694  04-18-91  Turbo Pascal TPU Dis-assembler for TP 6.0
+                               | Download Count: 11   Last Download: 04-04-96
+                               |
+TPWPXENG.ZIP    32900  07-22-91  Paradox Engine 2.0 under Turbo Pascal For
+                               | Windows
+                               | Download Count: 3    Last Download: 09-29-95
+                               |
+TRIDV300.ZIP    71183  02-27-93  TriDoor: Turbo Pascal BBS door pgmr's toolkit
+                               | Download Count: 3    Last Download: 10-25-95
+                               |
+TSPA3260.ZIP   101949  02-24-93  Prof. Timo Salmi's TPU collection of nearly
+                               | 200 useful Turbo Pascal 6.0 routines for
+                               | text-mode programs.
+                               | Download Count: 6    Last Download: 04-04-96
+                               |
+TSRSRC33.ZIP    68690  01-08-92  Pascal and Assembly source code for the
+                               | utilities in TSRCOM33.ZIP
+                               | Download Count: 6    Last Download: 08-30-96
+                               |
+TTT51.ZIP      171592  09-02-93  Programming tools for Turbo Pascal <ASP>
+                               | Download Count: 1    Last Download: 11-26-93
+                               |
+TTT510.ZIP     199076  01-19-93  Technojocks Turbo Toolkit - 1993 Update.
+                               | Download Count: 20   Last Download: 01-07-94
+                               |
+TTTDEM.ZIP      59711  01-19-93  Turbo Techno Jocks 1/3
+                               | Download Count: 1    Last Download: 12-29-93
+                               |
+TTTDEM51.ZIP    61410  01-10-94  Turbo Technojocks Toolkit v5.1 for TP and
+                               | BP4OS2 Demo Programs
+                               | Download Count: 9    Last Download: 03-19-94
+                               |
+TTTDOC.ZIP      44104  01-19-93  Turbo Techno Jocks 2/3
+                               | Download Count: 0
+                               |
+TTTSRC.ZIP      81014  01-19-93  Turbo Techno Jocks 3/3
+                               | Download Count: 1    Last Download: 03-08-94
+                               |
+TTTSRC51.ZIP    98914  01-10-94  Turbo Technojocks Toolkit v5.1 for BP and
+                               | BP4OS2 Source Excellent Pascal Tool kit
+                               | Download Count: 10   Last Download: 03-19-94
+                               |
+TVG103.ZIP      38120  08-22-92  Turbo Vision for Turbo\Borland Pascal in
+                               | graphic mode
+                               | Download Count: 2    Last Download: 06-05-93
+                               |
+TVLIFE.ZIP      29610  03-05-92  LIFE cellular automata, written in Turbo
+                               | Pascal 6 turbo vision w/src
+                               | Download Count: 1    Last Download: 01-21-94
+                               |
+TWI20.ZIP      129388  01-01-93  The Text Windowing Interface (TWI) v2.0 is a
+                               | Borland Pascal 7.0 Toolkit designed for an
+                               | author to easily produce a consistant, easy
+                               | to use interface. TWI includes windowing and
+                               | pull down menuing procedures to produce a
+                               | very complete interface for your programs. If
+                               | you don't like Borland's Turbo Vision or you
+                               | can't program in OOP, use TWI! ($15)
+                               | Download Count: 4    Last Download: 01-11-96
+                               |
+TWVIEW88.ZIP   138065  07-09-91  mapping util. for the game trade wars
+                               | includes sorce code
+                               | Download Count: 3    Last Download: 03-21-94
+                               |
+UNIT6DIS.ZIP    40642  04-28-93  Disassemble TPascal 6.0 Units!
+                               | Download Count: 7    Last Download: 07-28-96
+                               |
+UNITRE12.ZIP    12402  02-09-93  Display tree of TP/BP unit dependencies
+                               | Download Count: 4    Last Download: 02-08-94
+                               |
+UPCONV22.ZIP    69197  09-06-91  Source Code Case Converter For All Versions
+                               | Of TURBO PASCAL. Keeps Case Conventions In
+                               | Order.
+                               | Download Count: 3    Last Download: 01-17-95
+                               |
+U_HEAP.ZIP       4388  01-18-92  Routine for TP6.0 to extend the heap into
+                               | Download Count: 2    Last Download: 02-20-94
+                               |
+VIRTMEM.ZIP     29404  02-12-94  Virtual Memory System for Turbo Pascal
+                               | Download Count: 4    Last Download: 12-09-96
+                               |
+WCTUNIT3.ZIP    27415  05-25-92  Collection of Turbo Pascal units with sources
+                               | Download Count: 6    Last Download: 04-04-96
+                               |
+WCTUNITS.ZIP    21849  08-06-91  Collection of Turbo Pascal units with sources
+                               | Download Count: 4    Last Download: 12-13-94
+                               |
+WINCOMM.ZIP      1722  11-10-91  COM routine interface code for TP/Win
+                               | Download Count: 5    Last Download: 05-16-95
+                               |
+XMSLIBR1.ZIP    18981  08-11-91  XMS 2.0 API implementation for TurboPascal
+                               | 6.0
+                               | Download Count: 4    Last Download: 12-09-96
+                               |
+ZIP2OBJ.ZIP     39128  11-12-91  Imploded .ZIP -> .OBJ -> Turbo Pascal explode
+                               | usage. A clean and fast hash method.
+                               | seems to be approx 80% efficient in space
+                               | random alpha chars. The Sebesta algorithm
+                               | specified length and width text files of
+                               | Download Count: 4    Last Download: 12-09-96
+                               |
+         
+             

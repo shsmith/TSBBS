@@ -1,0 +1,41 @@
+
+#
+# makefile for 'ADA' compiler
+# using yacc and datalight C
+# s.h.smith, 18-sep-86
+#
+
+
+# define object files
+O = ada.obj adalex.obj adasym.obj adatree.obj
+
+# define linkage
+ada.exe: $O
+   dlc $O -g
+   mapfix ada.map
+   mapsym ada.map
+
+
+# define generic rules
+.y.c :
+   yacc -thi $*
+.c.obj :
+   dlc $*.c -c
+
+
+# define file relationships
+
+ada.c ada.h: ada.y \lib\yypars.c
+
+ada.obj: ada.c adasym.h
+
+adalex.obj: adalex.c ada.h adasym.h adatree.h
+
+adasym.obj: adasym.c ada.h adasym.h adatree.h
+
+adatree.obj: adatree.c adatree.h
+
+
+
+
+

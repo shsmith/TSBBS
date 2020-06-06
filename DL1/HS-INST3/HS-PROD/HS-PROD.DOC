@@ -1,0 +1,27 @@
+
+ 
+                  INSTALLING HS/LINK EXTERNAL PROTOCOL
+                 IN PRODOOR 3.43 (BETAS DATED 10/30/91)
+ 
+                                  
+     Please refer to the PRODOOR manual and change history for detailed
+     information on installation of external protocols.  The following
+     installation steps should work for most folks:
+
+
+     To install HS/Link in ProDoor, add the following lines to the end
+     of your PROD.CNF file:
+
+     ;
+     98 H 0 T 50 HS/Link (Bi-directional)
+     hslink -p$N$ -e$C$ -u$PLAY$ $@$ -a
+     ;
+     98 H 0 R 0 HS/Link
+     hslink -p$N$ -e$C$ -u$PLAY$
+     ;
+
+     This creates the 'H' protocol, which can be used with the (U)pload
+     command for uploading only, or with the (D)ownload command for
+     downloading only or simultaneous uploading and downloading.
+
+

@@ -1,0 +1,7 @@
+echo off
+rem pcboard door script for WHO UPLOADED THAT FILE door program
+cd \pcb\door
+prowho prowho.cnf c:\pcb
+cd \pcb
+if exist event.bat event
+board

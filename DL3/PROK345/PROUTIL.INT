@@ -1,0 +1,97 @@
+
+(*
+ * Copyright 1987, 1991 Samuel H. Smith;  All rights reserved
+ *
+ * This is a component of the ProDoor System.
+ * Do not distribute modified versions without my permission.
+ * Do not remove or alter this notice or any other copyright notice.
+ * If you use this in your own program you must distribute source code.
+ * Do not use any of this in a commercial product.
+ *
+ *  NOTICE: ALL MODIFIED VERSIONS OF THIS PROGRAM _MUST_ BE DISTRIBUTED
+ *          WITH SOURCE CODE.  I STRICTLY FORBID THE USE OF ANY NON-
+ *          PUBLIC INFORMATION IN MODIFICATIONS.  FOR EXAMPLE, YOU
+ *          CANNOT USE CDC PROVIDED INFORMATION FOR PCBOARD 14.5
+ *          COMPATIBILITY, SINCE SUCH A VERSION CANNOT BE RELEASED IN
+ *          SOURCE CODE.
+ *)
+
+function expert: boolean;
+
+procedure not_understood;
+procedure not_available(what: anystring);
+procedure file_not_found (name: anystring);
+procedure file_missing(where: integer);
+
+procedure keypause;
+
+function pro_command: anystring;
+function pro_title: anystring;
+function pro_code: char;
+function pro_files: integer;
+function pro_mode: transfer_modes;
+
+function estimated_time(size: longint): real;
+
+procedure open_capture;
+procedure close_capture;
+procedure flush_capture;
+
+procedure clean_playpen;
+procedure clean_scratch;
+
+procedure disp_margin(left,width: integer);
+
+function expdate(yymmdd: string8): string8;     {convert to mm-dd-yy}
+function mmddyy_to_yymmdd(mmddyy: string8): string8;
+function yymmdd_to_mmddyy(yymmdd: string8): string8;
+
+function todays_date_mmddyy: string8;
+function todays_date_yymmdd: string8;
+
+function dtok(d: double): string8;
+function stok(s: single): string8;
+
+procedure check_command_line(var command: string);
+
+procedure disconnect_warning(left: integer);
+procedure check_disconnect_warning;
+
+function file_is_new(name: dos_filename): boolean;
+
+procedure abort_program(reason: string);
+procedure usage (error: anystring);
+
+procedure get_dos_name(handle: dos_handle);
+
+procedure check_write(handle:  dos_handle;
+                      var      buffer;
+                      bytes:   word);
+
+function check_open(name:     dos_filename;
+                    mode:     open_modes;
+                    code:     integer):  dos_handle;
+
+procedure check_read( handle:   dos_handle;
+                      var       buffer;
+                      bytes:    word);
+
+procedure get_file_record(name:  dos_filename;
+                          recn:  word;
+                          var buffer;
+                          recsz: word);
+
+procedure put_fd_record(fd:    dos_handle;
+                        recn:  word;
+                        var buffer;
+                        recsz: word);
+
+procedure put_file_record(name:  dos_filename;
+                          recn:  word;
+                          var buffer;
+                          recsz: word);
+
+function within_time_range(st,en: anystring): boolean;
+
+procedure dampen(limit: integer);
+

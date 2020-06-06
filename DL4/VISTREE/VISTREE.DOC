@@ -1,0 +1,70 @@
+
+                 VISTREE - Visual Directory Tree
+
+                        5-Apr-86 S.H.Smith
+
+This program will display your directory layout as a visual "tree"
+structure.   VisTree does not use the "partial tree" format found
+in most other programs of this kind.
+
+This program may be freely used and copied, provided it is never
+sold or otherwise used for profit.
+
+
+Operation
+---------
+
+To get a visual tree listing of the current directory, simply enter:
+   VISTREE
+
+To send this to your printer:
+   VISTREE >PRN
+
+If your printer does not support the IBM line drawing graphics:
+   VISTREE -G >PRN
+
+To include all ordinary files in the tree listing:
+   VISTREE -A
+
+To include file dates in the listing:
+   VISTREE -D
+
+To list dates of newest files in listing:
+   VISTREE -N
+
+To list dates of oldest files in listing:
+   VISTREE -O
+
+You can also specify the directories to be listed:
+   VISTREE C:\PROJECTS
+   VISTREE B:\MYDIR C:\DATA
+   VISTREE C:\ -A >PRN
+
+Vistree will give you a brief command summary when you enter:
+   VISTREE -?
+
+
+Sample output
+-------------
+
+         здDEMO\
+         Ё       здBUSINESS\
+         цдDOCS\дедHOME\
+         Ё       цдPD\
+         Ё       юдPROGS\
+         цдDOS\
+     C:\дедGAMES\
+         Ё          здADA\дбдPLANS\
+         Ё          Ё      юдSAMPLES\
+         Ё          цдEZS\
+         цдPROJECT\дедOUTLINE\
+         Ё          Ё         здCOM\
+         Ё          цдPASCAL\дедDOC\
+         Ё          Ё         юдSOURCES\
+         Ё          юдVISTREE\
+         Ё       здARC\
+         Ё       цдLIGHT\
+         юдUTIL\дедQMODEM\
+                 цдSK\
+                 юдTURBO\
+

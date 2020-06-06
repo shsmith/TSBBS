@@ -1,0 +1,11 @@
+INTERRUPT
+promesg.txt
+MG
+
+----------------------------------
+ProMessage Configuration File Format:
+
+line 1 = Driver type (INTERRUPT, BIOS, PCBTRAP)
+line 2 = Display Message Filename
+line 3 = Action after message (G, C, MG or MC)
+

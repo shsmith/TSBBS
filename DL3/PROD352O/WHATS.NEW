@@ -1,0 +1,268 @@
+
+            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+            ³          Forbes Development Company          ³
+            ³                                              ³
+            ³   New ProDOOR/ProLON Enhancements/Features   ³
+            ³           Copyright  1992, 1993              ³
+            ³            All Rights Reserved               ³
+            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+Installation:  <-- Do it RIGHT or, EXPECT problems.
+-------------
+  Before we start, the INSTALL.EXE will work for ANY and ALL
+  versions of the new releases.  ProDoor, ProLON, even the
+  Overlay versions of ProDoor if thats what you grabbed.
+
+  The program will automatically detect what needs to be
+  installed and then adjust its menus accordingly.
+
+  Ok, lets install the INSTALL program...
+
+  Put ALL of the new files (including the INSTALL files) in one
+  new clean/empty directory. Call it NEWSTUFF, or PATS, or ANYTHING,
+  it don't matter.... just make sure that ALL the NEW stuff gets put
+  into that one new directory.  We don't wanna blow any files before
+  we've had a chance to check this stuff out..... right??
+
+  Unless you wanna be "ULTRA-SAFE", don't worry about backups of
+  your existing files.  The INSTALL program will do that for you.
+
+  Ok now, get into the new directory, type INSTALL program and,
+  "Follow Your Nose".  Hopefully, it'll all make sense to you.
+
+
+  Good Luck, and Enjoy.
+  <Pat>
+
+
+Preface:  <-- IMPORTANT !!   There is a TON of info in INSTALL.EXE
+--------
+  First of all, you should spend a LOT of time in the INSTALL.EXE
+  program.  Not installing the upgrade... that'll only take a FEW
+  minutes at most.   Hit the HELP functions in INSTALL.  There is
+  a TON of info in there.... all about the changes, how to use
+  them, what they do, and don't do, etc.
+
+  There is a HELP screen (usually a LOT of help screenS) on every
+  item, on every menu, and every conceivable place I could put one
+  in the Install program.  Help yes... but actually, more of a
+  "Documentaion" feature rather than help.  Install the upgrade,
+  get it running, then flip back into INSTALL to hit the HELP
+  screens.  There is a WEALTH of information in there!!
+
+  I won't say anything about the SECOND release except, it will
+  follow the 1st release within 30 days and... it will be a MAJOR
+  upgrade.  Features?  Too Confidential.  If I told you, I'd have
+  to kill you.
+
+
+  Now for the 1.31/3.51 changes:
+  ------------------------------
+  This was my PUNCH-LIST of changes made to ProDOOR.  The list
+  is NOT all-inclusive... heck, it's a FREE upgrade so I didn't
+  spend a lot of time making it pretty, or complete.
+
+  One thing I did do (and now regret), is that I changed a few
+  internal prompts.  Means some of your translations may no longer
+  work.  I can only think of two off the top of my head and they
+  were both associated with the "Visual Editor".  I think I changed
+  them to say "Full Screen" editor.  Can't remember for sure...
+
+
+  New ProDOOR command:  <-- New since 3.50
+  --------------------
+  Ever wanted to get on a node and not let everyone know
+  you were on ??  Type SILENT once in ProDoor and bingo,
+  you ain't there !!  Type NODE to confirm it.
+
+  NOTE:  This is security-level sensitive... only those
+  with security level = 100 or higher can use it.
+  However, as a sysop, you can type it on the command
+  line for ANY caller, regardless of their security
+  level.
+
+  New ProDoor/ProLogon F Keys.  <-- New since 3.5/1.3
+  ---------------------------
+  I really missed the F1 for Temp-Sysop privledges.
+  Also missed the Right/Left arrows for temporarily changing
+  a caller's security level too.  I don't miss them now !!
+  Yep, they be here!!
+
+  You can use these keys from ProLon or ProDoor.  Nice
+  in ProLogon to qwikly force a caller into another
+  door.
+
+  NOTE:  Unless you hit the F1 for Temp-Sysop, the
+  caller's security will return to normal if they
+  exit to a door, and then return to ProDoor.
+  (Security reasons...)
+
+
+ProDoor V3.51 Changes/Fixes                           Type    Status
+---------------------------------------------------  -------  -------
+  -   New command: SILENT... no one knows you're on    New    (done)
+  -   F1 - Temp Sysop Privledges...................    New    (done)
+  -   Right/Left Arrow Keys - Temp Raise/Lower Sec.    New    (done)
+  -   More logging of errors/exceptions............    New    (done)
+  -   If STRICT ON, dump if more than 10 errors....    New    (done)
+  -   Missing UB DB R+ R- Y+ Y- from valid commands  **BUG**  (done)
+
+ProDoor V3.50 Changes/Fixes                           Type    Status
+---------------------------------------------------  -------  -------
+  -   Setup/Installation program...................    New    (done)
+  -   colors being reset on each line in msg base..  **???**  (done)
+  -   range error on ANSIs in msg>max length.......  **BUG**  (done)
+  -   range error on L/Z search if filename>8 char.  **BUG**  (done)
+  -   Bug in DISP- handler.........................  **BUG**  (done)
+  -   fix colorizing of DIRS on scans and locates..  **BUG**  (done)
+  -   allow strict command interpetation...........    New    (done)
+        setable "display error msg" or ignore......    New    (done)
+        setable log error to caller log............    New    (done)
+  -   Pass security level to $$LOGOFF.BAT as %1....    New
+  -   Document changes with Announcement...........    New
+  -   Upload ascii text in message.................  **BUG**   ????
+  -   INSERT key not working during visual edit....  **BUG**  (done)
+  -   Setable EXT check on uploads.................    New
+  -   security level to override dup upload........    New    (done)
+  -   security level to see idle time..............    New    (done)
+  -   setable [FLOW] display.......................    New    (done)
+  -   security level to see 1st msg line on Q......    New    (done)
+  -   level required to see idle time in chat......    New    (done)
+  -   monitor  calls...............................    New    (done)
+         - new callers.............................    New    (done)
+         - msgs....................................    New    (done)
+         - uploads.................................    New    (done)
+         - dnloads.................................    New    (done)
+  -   New LogEXEC- Logs EXEC- usage to caller log..    New    (done)
+  -   New LogDISP- Logs DISP- usage to caller log..    New    (done)
+  -   New @LUSER  (Upper/Lower case Caller Name....    New    (done)
+  -   New @HOTKEYS, YES or NO......................    New    (done)
+  -   New @CHATPAGE, YES or NO.....................    New    (done)
+  -   New @EARNBYTES, Earned DL Bytes..............    New    (done)
+  -   New @LOGOFF, Will force auto-logoff..........    New    (done)
+  -   Allow DISP- in Shift F Macros keys...........    New    (done)
+  -   Allow LOGDISP- in Shift F Macros keys........    New    (done)
+  -   Allow EXEC- in Shift F Macros keys...........    New    (done)
+  -   Allow LOGEXEC- in Shift F Macros keys........    New    (done)
+
+
+:---- New Sets  ------------------------
+These are the DEFAULTS for the new SETS.  With the exception of the
+first one (usage file), NONE are required UNLESS you don't like my
+defaults.  If you have the PRE-Release 3.5/1.3 version, you can
+now remove ALL but this first one.
+
+NOTE:  Upper/Lower case is NOT important BUT... WATCH THE SPACING!!
+       There is NO SPACE between the "=" signs and the values!!
+
+set usage_file=prostats.dat   ; BBS usage data file
+                              ; This one is REQUIRED if you have
+                              ; multi-node and want to track usage
+                              ; for ALL nodes.
+                              ;
+set show_flow=OFF             ; eliminates the word [FLOW]
+set see_idle=100              ; level required to see idle time
+set see_msgline=100           ; level required to see 1st line in Q
+set upload_dups=100           ; level to duplicate existing upload
+set strict_commands=ON        ; strict interpetation of commands
+set show_errors=ON            ; show error, or ignore with no msg
+set log_command_errors=ON     ; log command errs to caller log
+set allow_disp=OFF            ; totally disable DISP in displays
+set max_disp_loc=30           ; ignore any DISP- past column 30
+set save_missing_desc=ON      ; no more lost upload descriptions
+:---------------------------------------------------
+
+Notes:
+------
+  1.  You'll note that there are some really "needed" features
+      that are MISSING - such as DOOR.SYS, USERS.SYS, and a "few"
+      (actually not so few) more necessities.
+
+      Not to fear... they are coming soon.   We wanted to get this
+      first release out as qwikly as possible and there was NOT
+      enough time to get everything coded and THROUGHLY tested.
+
+
+
+
+ProLON V1.31 Changes/Fixes                            Type    Status
+---------------------------------------------------  -------  -------
+  -   F1 - Temp Sysop Privledges... NEW SINCE 1.3..    New    (done)
+  -   Right/Left Arrow Keys - Temp Raise/Lower Sec.    New    (done)
+  -   Date/Time put back on call-waiting screen....    New    (done)
+  -   Added PROMPT when FORCE is on................    New    (done)
+  -   Skipping first keyword in PROLON.CNF.........    New    (done)
+
+ProLON V1.30 Changes/Fixes                            Type    Status
+---------------------------------------------------  -------  -------
+  -   Setup/Installation program...................    New    (done)
+  -   Pass security level to $$LOGON.BAT as %1.....    New    (done)
+  -   Force Message Scan...........................    New    (done)
+  -     -  Scan ALL conferences....................    New    (done)
+        -  Scan MAIN only..........................    New    (done)
+        -  Scan Selected Conferences...............    New      ??
+        -  Command to use on force scan (Y/N/S)....    New    (done)
+  -   Allow entry of KEYWORD at Services Menu......    New    (done)
+  -   Get rid of the node update in prowait........    New    (done)
+  -   Remove node update on modem reset............    New    (done)
+  -   Change propanel screen for new stuff.........    New    (done)
+  -   Add usage stats for BBS......................    New    (done)
+       - monitor:  calls...........................    New    (done)
+           new callers.............................    New    (done)
+           msgs....................................    New    (done)
+           uploads.................................    New    (done)
+           dnloads.................................    New    (done)
+       - read usage file, create if missing........    New    (done)
+       - update key to zero usage stats............    New    (done)
+       - toggle key from node to bbs stats.........    New    (done)
+  -   setable "+" on blank screen..................    New    (done)
+  -   New @LUSER   (Upper/Lower case Caller Name...    New    (done)
+  -   New @HOTKEYS , YES or NO.....................    New    (done)
+  -   New @CHATPAGE , YES or NO....................    New    (done)
+  -   New @EARNBYTES , Earned DL Bytes.............    New    (done)
+  -   New @LOGOFF , Will force auto-logoff.........    New    (done)
+  -   Allow DISP- in Shift F Macros keys...........    New    (done)
+  -   Allow LOGDISP- in Shift F Macros keys........    New    (done)
+  -   Allow EXEC- in Shift F Macros keys...........    New    (done)
+  -   Allow LOGEXEC- in Shift F Macros keys........    New    (done)
+  -   $$LOGON.BAT not creating a PCBOARD.SYS ??....  **???**  (done)
+  -   PROANS displaying even if Automenu not on....  **???**  (done)
+  -   Screen coming back on at Modem Reset.(E0)....  **???**  (done)
+
+
+;  New for Prolon.CNF ------------------------------------------------
+UPDATE_NET OFF          ; update usernet file every 30 sec at propanel
+SHOW_PLUS OFF           ; show "+" plus sign on blank screen
+NEW_PANEL ON            ; ON, default OFF, use the new call-waiting scr
+FORCE_MSG_SCAN MAIN     ; MAIN, ALL, default OFF,  forces msg scan
+FORCE_SCAN_COMMAND N    ; N,Y,S "J" command when force (J N, J Y, etc)
+:----------------------------------------------------------------------
+
+:---- New Sets  ------------------------
+These are the DEFAULTS for the new SETS.  With the exception of the
+first one (usage file), NONE are required UNLESS you don't like my
+defaults.  If you have the PRE-Release 3.5/1.3 version, you can
+now remove ALL but this first one.
+
+NOTE:  Upper/Lower case is NOT important BUT... WATCH THE SPACING!!
+       There is NO SPACE between the "=" signs and the values!!
+
+set usage_file=prostats.dat   ; BBS usage data file
+                              ; This one is REQUIRED if you have
+                              ; multi-node and want to track usage
+                              ; for ALL nodes.
+                              ;
+set show_flow=OFF             ; eliminates the word [FLOW]
+set see_idle=100              ; level required to see idle time
+set see_msgline=100           ; level required to see 1st line in Q
+set upload_dups=100           ; level to duplicate existing upload
+set strict_commands=ON        ; strict interpetation of commands
+set show_errors=ON            ; show error, or ignore with no msg
+set log_command_errors=ON     ; log command errs to caller log
+set allow_disp=OFF            ; totally disable DISP in displays
+set max_disp_loc=30           ; ignore any DISP- past column 30
+set save_missing_desc=ON      ; no more lost upload descriptions
+:---------------------------------------------------
+

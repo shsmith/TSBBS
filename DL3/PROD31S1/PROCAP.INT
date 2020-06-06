@@ -1,0 +1,4 @@
+procedure open_mail_capture;
+procedure buffer_mail_capture;
+procedure close_mail_capture;
+procedure capture_current_message;

@@ -1,0 +1,6 @@
+procedure log_onoff(what: string30; state: boolean);
+procedure expert_toggle;
+procedure mode_toggle;
+procedure snoop_toggle;
+procedure hotkey_toggle;
+procedure scan_toggle;

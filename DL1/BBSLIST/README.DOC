@@ -1,0 +1,96 @@
+
+                       BBS LIST MAINTENANCE DOOR
+                  FOR PCBOARD 14+ AND PRODOOR SYSTEMS
+
+                      (PRELIMINARY DOCUMENTATION)
+
+                     COPYRIGHT 1993 SAMUEL H. SMITH
+                          ALL RIGHTS RESERVED
+
+BBSLIST is a DOOR program for PCBoard and ProDoor/ProLogon systems.  It
+is used to allow your users to build and update a listing of bulletin
+board systems.  The listing can be purged automatically to remove
+entries not recently updated.
+
+
+                                 FILES
+                                 -----
+
+BBSLIST	
+        This is the door script for BBSLIST.  This door needs
+        PCBOARD.SYS only.  Edit this file to specify the directory where
+        BBSLIST has been installed.
+
+BBSLIST.CFG
+        Configuration file. See internal comments for details.
+
+BBSLIST.EXE
+	This is the main BBSLIST program.
+
+BBSLIST.INT
+        This is the introductory text message given to users on entry to
+        the door.
+
+EVENT.BAT
+        This batch file can be called in your event to sort and update
+        the current listing, and to purge older entries.
+
+UPDATE.BAT
+        Similar to EVENT.BAT but used interactively during the day to
+        post recent entries.
+
+BBSLIST.DAT
+        This is the BBSLIST database.  This is a text file with fixed
+        positions in each line.  If you are careful, you can edit this
+        in a text editor, but be sure you don't change the spacing!
+
+QSORT.EXE
+        The sample batch files call QSORT to sort the BBSLIST data file.
+        You can obtain this program from most boards.
+
+
+                               OPERATION
+                               ---------
+
+Door operation is fully automatic, and should require no manual work
+from the sysop.  If you desire to modify existing entries, I find it
+easiest to use a text editor (such as Qedit) to directly edit the
+BBSLIST.DAT file.  This allows you to edit text and erase unwanted
+entries as needed.  Just be careful to keep the INSERT mode turned OFF
+so you don't change the spacing of fields.
+
+When you login to the door with a userlevel of 110 or higher, it will
+prompt you to "select user name".  This allows the sysop to access and
+edit entries from any user on the system, and to entry multiple entries
+under different names.
+
+
+                                SUPPORT
+                                -------
+
+Sorry, no time to document this any further!  Use at your own risk.
+Perhaps I will write a proper instruction for this door if there is any
+interest shown in it.
+
+Samuel Smith
+(818) 891-4228 (voice- 9am-6pm tues-sat)
+
+
+                            REVISION HISTORY
+                            ----------------
+7/13/93
+        Initial version, written for my own use to maintain the HS/Link
+        bbs list.
+
+8/3/93
+        Corrected logic to properly create a new BBSLIST.DAT file the
+        first time the door is used.
+
+8/17/93
+        Changed the minimum "sysop" level from 111 to 110.
+        Added a way for users to delete existing entries from the list.
+
+8/19/93
+        Added logic to automatically post a Main Board message to users
+        when a listing entry is purged due to age.
+

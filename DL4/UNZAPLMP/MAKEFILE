@@ -1,0 +1,19 @@
+
+# This file is for use with the DEMCO Electonics MAKE program
+
+all:     unzip strip
+
+strip strip.root setargv.root
+@link 2/start strip setargv keep=strip
+
+strip.root strip.c
+@compile strip.c keep=$
+
+unzip unzip.root crc32.root
+@link 2/start unzip crc32 keep=unzip
+
+unzip.root unzip.c crc32.h local.h
+@compile unzip.c keep=$
+
+crc32.root crc32.c
+@compile crc32.c keep=$

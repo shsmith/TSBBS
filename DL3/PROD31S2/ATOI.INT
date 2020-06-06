@@ -1,0 +1,3 @@
+function atoi (asc:  anystring): integer;
+function atol (asc:  anystring): longint;
+function atow (asc:  anystring): word;

@@ -1,0 +1,126 @@
+   ษออออออออออออป
+   บ Setup File บ
+   ศออออออออออออผ
+
+  The Setup File is processed at startup and may be edited with the Internal
+  Editor (which you are doing right now!).  Use the arrow keys, PgUp, PgDn,
+  etc., to edit the items marked with an "*" to get started.
+
+  Keep items within the curly braces (use INS, DEL as needed).
+
+  See COMMO.DOC for details and descriptions of all items.
+
+   ษออออออออออออออออออออป
+   บ Terminal and Modem บ
+   ศออออออออออออออออออออผ
+
+*{ddp=2400,8n1,1,A,0}   Default Dialing Parameters, set when you dial
+                        (speed,format,port,terminal,delay).  These are
+                        also the current settings when you start the
+                        program.
+
+ {min=yes}              Send Modem Init String (yes/no)
+
+*{set _modini,~~AT S0=0 S7=180 E0 Q0 V1 X4 &C1 &D2 |~}
+                        Modem Initialization String (see COMMO.DOC)
+
+ {sfc=yes}              Software (XON/XOFF) Flow Control (yes/no)
+ {hfc=no}               Hardware (RTS/CTS) Flow Control (yes/no)
+ {dex=no}               Drop DTR and RTS at program exit (yes/no)
+
+ {aut=zmodem,^xB00}     Auto Receive, Zmodem    ( Up to eight )
+ {aut=mpt,^v^h^vMPt}    Auto Receive, MPt       (  of these   )
+ {aut=hslink,^bR}       Auto Receive, HS/Link
+
+ {com=1,3f8,4}          Com1 port address/IRQ     See COMMO.DOC
+ {com=2,2f8,3}          Com2 port address/IRQ      for details
+ {com=3,3e8,4}          Com3 port address/IRQ
+ {com=4,2e8,3}          Com4 port address/IRQ
+
+   ษอออออออออออออออออป
+   บ Paths and Files บ
+   ศอออออออออออออออออผ
+
+*{set uldir,c:\commo}               Path to find uploads (no "\" at end)
+*{set dldir,c:\commo}               Path to place downloads (no "\" at end)
+*{set _uselog,c:\commo\commo.log}   Pathname for Usage Log file
+
+*{cap=c:\commo\commo.cap}           Pathname for Capture File
+*{scr=c:\commo\commo.scr}           Pathname for Screen Image file
+
+   ษอออออออออป
+   บ Dialing บ
+   ศอออออออออผ
+
+ {abd=no}               AutoBaud Detect on (yes/no)
+ {cdm=yes}              Clear dialing marks when saving directory (yes/no)
+
+ {set _dialpf,ATDT }    Default Dialing Prefix
+ {set _dialsf, |}       Default Dialing Suffix
+
+ {dct=45}               Dialing cycle time limit (seconds)
+ {idt=2}                Delay between dialing attempts (seconds)
+
+ {set _dialsr,CONNECT}                       Dialing success response(s)
+ {set _dialfr,BUSY,NO CARRIER,NO DIALTONE}   Dialing failure response(s)
+
+   ษออออออออออออออป
+   บ ASCII Upload บ
+   ศออออออออออออออผ
+
+ {ebl=yes}              Expand blank lines (yes/no)
+ {slf=yes}              Strip outgoing linefeeds (yes/no)
+ {pac=}                 ASCII Upload pacing character
+
+   ษอออออออออออออออป
+   บ Miscellaneous บ
+   ศอออออออออออออออผ
+
+ {mac=}                 Startup macro label
+ {edd=no}               Enter Dialing Directory (yes/no)
+ {loc=no}               Local Echo on (yes/no)
+ {sts=yes}              Status Line on (yes/no)
+ {sig=no}               Signal Lights on (yes/no)
+ {cpf=no}               Capture File open (yes/no)
+ {cpm=screen}           Capture Mode (screen/filter/raw)
+ {tek=no}               Test for enhanced keyboard (yes/no)
+ {tsn=yes}              Display time of day with System Name (yes/no)
+
+   ษออออออออป
+   บ Sounds บ
+   ศออออออออผ
+
+ {snd=yes}              Master Sound on (yes/no)
+ {dca=yes}              Dialing connection alarm (yes/no)
+ {afa=no}               ASCII Upload finished alarm (yes/no)
+ {ers=yes}              Make sounds on errors/warnings (yes/no)
+ {rng=3}                Maximum number of alarm rings (0-999)
+
+   ษอออออออออออออออออออออป
+   บ Video and Chat Mode บ
+   ศอออออออออออออออออออออผ
+
+ {sbs=10}               Scrollback Buffer size in kilobytes (0-64)
+ {adn=no}               Auto-detect number of rows and columns (yes/no)
+ {ucw=16}               Number of lines in upper Chat Mode window
+ {swe=no}               Send when Enter is pressed in Chat Mode (yes/no)
+ {sfi=no}               Speech Friendly Interface (yes/no)
+ {bsc=no}               Use BIOS for Terminal Screen scrolling (yes/no)
+ {sno=no}               Snow checking on CGA adapter (yes/no)
+
+   ษออออออออป
+   บ Colors บ
+   ศออออออออผ
+
+    Press F7 to display the color chart.
+    Then press any key to return to editing.
+
+ {ema=no}               Enable mono attributes (yes/no)
+                            (See COMMO.DOC)
+ {tsc=07}               Terminal screen colors
+ {fwt=1e}               File window text colors
+ {fwb=70}               File window border colors
+ {fws=4f}               File window selector bar colors
+ {swt=70}               Small window text colors
+ {swb=17}               Small window border colors
+ {slc=17}               Status line colors

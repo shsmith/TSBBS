@@ -1,0 +1,101 @@
+
+   This archive should contain the following files:
+
+        FILE_ID.DIZ   - The "Description In Zip" description for this
+                        archive.
+
+        DESC.SDI      - Single line description for this archive.
+
+        WHATSNEW.120  - List of changes since version 1.12.
+
+        REGISTER.FRM  - Fill out this form and mail in to register HSLINK.
+
+        HSLINK.DOC    - The complete documentation for HS/Link, ready to
+                        print.  Formatted 61 lines/page with form feeds.
+
+        HSLINK.EXE    - The main HSLINK program, ALL YOU NEED to run HSLINK.
+
+        HSLINK.NEW    - Recent changes in HSLINK are documented here.
+
+        HSCONFIG.EXE  - The HSLINK Configuration Manager, helps make config
+                        files if you chose to use them.  Has online help,
+                        and is pretty easy to figure out.
+
+        COMMENTS.TXT  - Comments from a few HSLINK users.
+
+        DISTRIB.DOC   - A current list of HS/Link distributors.
+
+        CONTENTS.TXT  - This file.
+
+        FHSLINK.DOC   - Special documentation for FOSSIL version of HS/Link
+
+        FHSLINK.EXE   - The FOSSIL version of HS/Link.
+
+        BLTS.ZIP      - bulletins describing HS/Link.  Sysops can place
+                        these files in their bulletins section.
+
+    Please verify that this archive contains the original and correct
+    contents as distributed by Samuel H. Smith.  When you run PKUNZIP -V
+    on this archive you should see the following report:
+
+PKUNZIP (R)    FAST!    Extract Utility    Version 1.1    03-15-90
+Copr. 1989-1990 PKWARE Inc. All Rights Reserved. PKUNZIP/h for help
+PKUNZIP Reg. U.S. Pat. and Tm. Off.
+
+Searching ZIP: HSLINK.ZIP
+
+ Length  Method   Size  Ratio   Date    Time   CRC-32  Attr  Name
+ ------  ------   ----- -----   ----    ----   ------  ----  ----
+    381  Implode    358   7%  03-28-93  14:26  61350115 --w  FILE_ID.DIZ
+     47  Stored      47   0%  09-29-92  19:42  d3b25cff --w  DESC.SDI
+   5297  Implode   2053  62%  12-23-92  10:43  2d561302 --w  REGISTER.FRM
+ 101770  Implode  29523  71%  03-28-93  21:17  cc7bece7 --w  HSLINK.DOC
+  33793  Stored   33793   0%  03-28-93  14:25  f07b9546 --w  HSLINK.EXE
+   8722  Implode   3699  58%  03-28-93  14:24  c699b29a --w  HSLINK.NEW
+  24857  Stored   24857   0%  02-23-93  15:39  f7aa9a61 --w  HSCONFIG.EXE
+   6238  Implode   2838  55%  05-13-92  17:34  e3100c5b --w  COMMENTS.TXT
+   2631  Implode   1481  44%  12-29-92  23:23  6fa20200 --w  DISTRIB.DOC
+   4385  Implode   1910  57%  03-28-93  21:17  80bdd941 --w  CONTENTS.TXT
+   1336  Implode    839  38%  12-29-92  23:25  8f2f24f7 --w  BETA.DOC
+   2286  Implode   1254  46%  10-31-92  12:47  24869ed5 --w  FHSLINK.DOC
+  32347  Stored   32347   0%  03-28-93  14:25  1d00b72f --w  FHSLINK.EXE
+  10685  Implode   3968  63%  02-18-93  16:56  2ae34c42 --w  WHATSNEW.120
+   3039  Implode    760  75%  02-03-93  17:06  029d6bac --w  SURVEY.DOC
+   4772  Stored    4772   0%  03-28-93  14:21  1ee64fb2 --w  BLTS.ZIP
+ ------          ------  ---                                 -------
+ 242586          144499  41%                                      16
+
+    If your copy shows a different CRC or file length, insist on a
+    legitimate copy and report the source of the bogus/pirated copy to
+    Samuel H. Smith on The Tool Shop.
+
+    When you run PKUNZIP -T on this archive you should see the following
+    report:
+
+PKUNZIP (R)    FAST!    Extract Utility    Version 1.1    03-15-90
+Copr. 1989-1990 PKWARE Inc. All Rights Reserved. PKUNZIP/h for help
+PKUNZIP Reg. U.S. Pat. and Tm. Off.
+
+Searching ZIP: HSLINK.ZIP
+Testing: FILE_ID.DIZ   OK -AV
+Testing: DESC.SDI      OK -AV
+Testing: REGISTER.FRM  OK -AV
+Testing: HSLINK.DOC    OK -AV
+Testing: HSLINK.EXE    OK -AV
+Testing: HSLINK.NEW    OK -AV
+Testing: HSCONFIG.EXE  OK -AV
+Testing: COMMENTS.TXT  OK -AV
+Testing: DISTRIB.DOC   OK -AV
+Testing: CONTENTS.TXT  OK -AV
+Testing: BETA.DOC      OK -AV
+Testing: FHSLINK.DOC   OK -AV
+Testing: FHSLINK.EXE   OK -AV
+Testing: WHATSNEW.120  OK -AV
+Testing: SURVEY.DOC    OK -AV
+Testing: BLTS.ZIP      OK -AV
+
+Authentic files Verified!   # XOC363   Samuel H. Smith - (818) 891-6780
+
+    Do not use a patched or modified version of this program!  I cannot
+    assume liability for the safety or performance of patched code.
+

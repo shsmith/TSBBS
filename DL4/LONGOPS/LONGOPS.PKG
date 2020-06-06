@@ -1,0 +1,193 @@
+
+-----------------------------------------------------------
+--                                                       --
+--               Long Integer Operations                 --
+--                    Package Body                       --
+--                 19-Aug-86 S.H.Smith                   --
+--                                                       --
+-----------------------------------------------------------
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+  pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+
+package body LONGOPS is
+
+   p1,p2:   long_integer;
+   res:     long_integer;
+      -- static variables for communication with ASM statements
+
+
+-----------------------------------------------------------
+--                                                       --
+--                     Conversions                       --
+--                                                       --
+-----------------------------------------------------------
+
+   function CONVERT(l: LONG_INTEGER) return float is
+   begin
+      p1 := l;
+      if p1.loword < 0 then
+         p1.hiword := p1.hiword + 1;
+      end if;
+
+      return float(p1.hiword) * 16#1_0000.0# + float(p1.loword);
+   end CONVERT;
+
+
+   function CONVERT(i: integer) return LONG_INTEGER is
+   begin
+      res.loword := i;
+      if i < 0 then
+         res.hiword := -1;
+      else
+         res.hiword := 0;
+      end if;
+      return res;
+   end CONVERT;
+
+
+   function CONVERT(f: float) return LONG_INTEGER is
+      t: float;
+   begin
+      t := f / 16#1_0000.0#;
+      null;
+      return res;
+   end CONVERT;
+
+
+
+
+-----------------------------------------------------------
+--                                                       --
+--                    Math Operators                     --
+--                                                       --
+-----------------------------------------------------------
+
+   function "+"(l,m: LONG_INTEGER) return LONG_INTEGER is
+   begin
+      p1 := l;
+      p2 := m;
+
+      asm 16#a1#,p1.loword'address;         -- mov ax,[p1.lo]
+      asm 16#603#,p2.loword'address;        -- add ax,[p2.lo]
+      asm 16#a3#,res.loword'address;        -- mov [res.lo],ax
+      asm 16#a1#,p1.hiword'address;         -- mov ax,[p1.hi]
+      asm 16#613#,p2.hiword'address;        -- adc ax,[p2.hi]
+      asm 16#a3#,res.hiword'address;        -- mov [res.hi],ax
+
+      return res;
+   end "+";
+
+
+   function "-"(l,m: LONG_INTEGER) return LONG_INTEGER is
+   begin
+      p1 := l;
+      p2 := m;
+
+      asm 16#a1#,p1.loword'address;         -- mov ax,[p1.lo]
+      asm 16#62b#,p2.loword'address;        -- sub ax,[p2.lo]
+      asm 16#a3#,res.loword'address;        -- mov [res.lo],ax
+      asm 16#a1#,p1.hiword'address;         -- mov ax,[p1.hi]
+      asm 16#61b#,p2.hiword'address;        -- sbb ax,[p2.hi]
+      asm 16#a3#,res.hiword'address;        -- mov [res.hi],ax
+
+      return res;
+   end "-";
+
+
+   function "*"(l,m: LONG_INTEGER) return LONG_INTEGER is
+   begin
+      p1 := l;
+      p2 := m;
+
+      if ((p1.hiword /= 0) and then (p1.hiword /= -1)) or
+         ((p2.hiword /= 0) and then (p2.hiword /= -1)) then
+         raise numeric_error;
+      end if;
+
+      asm 16#a1#,p1.loword'address;         -- mov ax,[p1.lo]
+      asm 16#e8b#,p2.loword'address;        -- mov cx,[p2.lo]
+      asm 16#e9f7#;                         -- imul cx
+      asm 16#a3#,res.loword'address;        -- mov [res.lo],ax
+      asm 16#e89#,res.hiword'address;       -- mov [res.hi],cx
+
+      return res;
+   end "*";
+
+
+   function "/"(l,m: LONG_INTEGER) return LONG_INTEGER is
+   begin
+      p1 := l;
+      p2 := m;
+
+      if ((p2.hiword /= 0) and then (p2.hiword /= -1)) or
+          (p2.loword = 0) then
+         raise numeric_error;
+      end if;
+
+      asm 16#a1#,p1.loword'address;         -- mov ax,[p1.lo]
+      asm 16#168b#,p1.hiword'address;       -- mov dx,[p1.hi]
+      asm 16#e8b#,p2.loword'address;        -- mov cx,[p2.lo]
+      asm 16#f9f7#;                         -- idiv cx
+      asm 16#a3#,res.loword'address;        -- mov [res.lo],ax  ;quotient
+      asm 16#1689#,p1.loword'address;       -- mov [p1.lo],dx   ;remainder
+
+      res.hiword := 0;
+      return res;
+   end "/";
+
+
+
+-----------------------------------------------------------
+--                                                       --
+--                 Relational Operators                  --
+--                                                       --
+-----------------------------------------------------------
+
+   function "="(l,m: LONG_INTEGER) return boolean is
+   begin
+      if l.hiword /= m.hiword then
+         return false;
+      else
+         return l.loword = m.loword;
+      end if;
+   end "=";
+
+
+   function ">"(l,m: LONG_INTEGER) return boolean is
+   begin
+      res := "-"(l,m);   -- res := l - m
+      return res.hiword >= 0;
+   end ">";
+
+
+   function "<"(l,m: LONG_INTEGER) return boolean is
+   begin
+      return ">"(m,l);
+   end "<";
+
+
+   function "<="(l,m: LONG_INTEGER) return boolean is
+   begin
+      if ">"(m,l) then
+         return true;
+      else
+         return "="(l,m);
+      end if;
+   end "<=";
+
+
+   function ">="(l,m: LONG_INTEGER) return boolean is
+   begin
+      if ">"(l,m) then
+         return true;
+      else
+         return "="(l,m);
+      end if;
+   end ">=";
+
+end LONGOPS;
+
+
+

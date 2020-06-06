@@ -1,0 +1,117 @@
+
+                                HSTRESET
+
+           A solution to the "reset" problem with HST modems
+         A quick way to place hayes compatible modems off-hook
+
+This is a small program that will reset your HST modem.  It can be used
+in your BOARD.BAT file to prevent PCBoard from getting into an endless
+"modem reset error" loop when the phone is ringing.
+
+HSTRESET is very simple.  It places the modem off-hook and then returns
+to the BBS.  It knows about the two messages that the HST can generate,
+and will handle them automatically.
+
+HSTRESET is also useful in your AUTOEXEC file to place your BBS modems
+off-hook while the system is booting up and going through the
+initialization prior to loading up the BBS software.
+
+
+USAGE
+=====
+
+HSTRESET port
+
+For example,
+        HSTRESET 1
+for COM1, and
+        HSTRESET 2
+for COM2.
+
+'port' may be 1 through 8.
+
+To use non-standard COM ports, add SET statements before calling
+hstreset.  For example, to reset a com port at 338 hex (824 decimal) and
+irq 4, the statements
+        SET COMIRQ=4
+        SET COMBASE=824
+        HSTRESET 1
+
+
+INSTALLATION
+============
+
+First, you need to use PCBSETUP to change tell PCBoard to drop to DOS
+after each caller.  This will give HSTRESET a chance to do it's work.
+
+Next, pkace a copy of HSTRESET.EXE in your pcboard system directory (or
+any other directory listed in PATH).
+
+Finally, edit your board.bat file.  Here is the one I use:
+
+   1.    @echo off
+   2.    if exist event.bat rename event.bat event.sys
+   3.    if exist remote.bat rename remote.bat remote.sys
+   4.    if exist door.bat del door.bat
+   5.    if exist endpcb del endpcb
+   6.    pcboard
+   7.    if exist door.bat door
+   8.    if exist remote.bat remote
+   9.    if exist event.bat event
+   10.   if exist endpcb goto end
+   11.   board
+   12.   :end
+   13.   del endpcb
+   14.   hstreset 1              <<-- "hstreset 2" for com2
+   15.   if errorlevel 1 board
+   16.   echo Type BOARD to restart PCBoard
+
+Notice that I added lines 14 and 15 to a "standard" board.bat file. Line
+14 calls up HSTRESET to reset COM1:. Line 15 checks to see if you really
+want to drop to DOS.  If you pressed (escape) while in HSTRESET, the
+batch file will fall through to line 16 and drop to dos.  Otherwise, it
+will recycle the board.
+
+
+
+DISCLAIMER
+==========
+
+This is a free program.  Use it at your own risk.
+
+
+
+RELEASE HISTORY
+===============
+
+21-Feb-88 1.0
+   Initial coding and release.
+
+22-Mar-92 2.0
+   Recompiled with newer ProKit libraries to allow use of COMBASE and
+   COMIRQ environment variables for non-standard COM ports.
+
+23-Mar-92 2.1
+   Added logic to initialize the COM port speed (to 1200 baud), which is
+   often required with non-standard COM ports.
+
+
+If you have any questions, bugs, or suggestions, here is how to contact me:
+
+Mailing address...
+        Samuel H. Smith
+        P.O. Box 4808
+        Panorama City, CA 91412-4808
+
+The Tool Shop BBS...
+         Phone number         Modem type
+        --------------    ---------------------
+        (818) 891-3772    US Robotics HST 9600
+        (818) 891-1344    Hayes-V series 9600
+        (818) 891-6780    US Robotics 2400 (free line)
+
+The latest version is always available for downloading.
+
+Enjoy!     Samuel H. Smith
+           Author and Sysop of The Tool Shop.
+   

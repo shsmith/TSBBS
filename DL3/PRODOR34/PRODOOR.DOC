@@ -1,0 +1,4415 @@
+
+
+
+
+
+
+
+
+
+
+                                       Pro Door
+
+                            "The Enhanced Everything Door"
+
+
+
+                      A Multi-Protocol Batch file Transfer DOOR
+                          with Extended Archive Manipulation
+                           and Enhanced Message Base Access
+
+
+                                Version 3.4, 01-Apr-91
+
+                                     PRODOR34.ZIP
+
+                      For use with PCBoard Versions 14.0 - 14.5
+
+
+
+
+                       Copyright (C) 1987-1991 Samuel H. Smith;
+                                 ALL RIGHTS RESERVED
+
+
+
+                        See READ.ME for important information.
+
+             See !UPDATE.340 for information on updating prior versions.
+
+              See !WHATS.NEW for a listing of changes since version 3.2.
+
+
+
+                            This program is supported by:
+
+                                   Samuel H. Smith
+                                  The Tool Shop BBS
+                                    P. O. Box 4808
+                             Panorama City, CA 91412-4808
+
+                        Phone number         Modem type
+                       --------------    ---------------------
+                       (818) 891-3772    US Robotics HST 9600
+                       (818) 891-1344    Hayes-V series 9600
+                       (818) 891-6780    US Robotics 2400 (free line)
+
+
+
+
+
+     _____________
+     PCBoard is a registered trademark of Clark Development Company
+
+
+
+
+
+                                   WHY USE ProDoor?
+
+     Even though PCBoard 14.5 has duplicated many of ProDoor's unique features,
+     there are still a number of features that make ProDoor worth consideration. 
+
+     Here are some of the features that are still unique to ProDoor 3.4:
+
+     o    Automatic FILE and BYTE upload/download ratios.  ProDoor's ratio
+          system works automatically and immediately, eliminating the need for a
+          batch update or an outside program to adjust ratios.
+
+     o    Command translation files.  ProDoor allows the system operator to
+          redefine all commands, and to include new commands into the system by
+          means of command translation files.  These command translations can be
+          security level, language and/or conference specific, allowing total
+          sysop control.
+
+     o    Enhanced help system.  ProDoor now includes a very flexible help
+          system that allows you to put multiple topics and subtopics into a
+          single help file, greatly reducing the number of help files needed,
+          and at the same time allowing for more detailed and informative online
+          help for users.  As always, it is possible to have multiple help
+          files, providing simplified information for beginning users and/or
+          detailed information for experts.
+
+     o    Virtually all text files that can be displayed are automatically
+          available in security level, language and/or conference specific
+          versions, allowing the sysop great flexibility.
+
+     o    Simplified user interface.  ProDoor has an intelligent user interface
+          that can provide the user with meaningful defaults in most instances,
+          instead of relying on the user to provide the exact command syntax. 
+          For instance, when reading messages the default automatically changes
+          from reading messages to joining the next conference when the end of a
+          conference is reached.  This, combined with ProDoor's command
+          translation feature allows the sysop to address specific trouble spots
+          with new commands or prompts to help novice users.
+
+     o    Partial file downloads.  ProDoor has the ability to split up large
+          zipfiles into smaller parts that can then be downloaded.  This feature
+          allows users with insufficient time for download of large files to
+          still receive the file in two or more parts, or to receive only the
+          parts that are of interest.  ProDoor can also convert compressed files
+          from one compression format to another, allowing non-ibm users to
+          access files without multiple compression formats being posted online.
+
+     o    Upload duplication control.  ProDoor's PRODUP file allows the sysop to
+          prevent duplicated uploads between conferences even when the users are
+          not normally able to download without being in the proper conference.
+
+     o    Conference control.  ProDoor's JOIN command is quite flexible and has
+          subfunctions to allow a direct text-search of the conference menu to
+          allow users to locate the desired conference on large systems.  The
+          JOIN command also has a specific command translation file, allowing
+          the J command to act differently from different conferences and for
+          different user security levels.  This makes it possible to devise a
+          "tree" or other non-linear structure on your conferences.
+
+                                          2
+
+
+
+
+
+                                 OVERVIEW OF FEATURES
+
+     o    Instant installation with interactive install program.
+
+     o    Command translation facility allows the sysop to redefine all major
+          commands according to user security levels and current language.
+
+     o    Quick file location system, eliminates time consuming disk accesses
+          radically speeding download file searches on large networks and CD-ROM
+          systems.
+
+     o    Output message translation system can be used to change any prompt or
+          message in ProDoor, and to support alternate language operation.
+
+     o    New automatic File or Byte ratio system.  Allows total sysop control
+          over byte and/or file ratios by security level.   Automatically checks
+          for proper ratios before each download request -- no more need for
+          event based ratio checks and multiple security levels.
+
+     o    New PRODUP file prevents upload duplication between conferences.
+
+     o    File display system allows sysop defined alternate display files for
+          each security level.  New macro system allows direct control over
+          color displays without the need for ANSI codes.
+
+     o    New DSZ-compatible non standard COM ports COM3 through COM8.
+
+     o    Enhanced file manipulation and transfer. Batch file transfers are
+          fully and safely supported.  All uploads are tested to eliminate bad
+          archives.  Wildcards are supported.  Files may be flagged for download
+          at any prompt and later downloaded in a single batch. 
+
+     o    Extended zipfile/archive manipulation. Users can view archive text
+          files online, download partial archives, test archive validity, and
+          repack to convert formats.  Multiple compression formats are supported
+          and all archive calls are external for sysop customization.
+
+     o    Enhanced message base facilities.  Full-screen "Visual Edit" is
+          available for message entry.  Automatic quotations from original
+          messages.  ZipM command zips all new mail for downloading.  Keyword
+          search through an entire message base.  Simplified command formats. 
+          Auto-join for automatic multi-conference reading.
+
+     o    Enhanced sysop features.  Full control of time charges by function. 
+          Interactive configuration program.  Continuous status display (even
+          during file transfers), many sysop function keys, file input in CHAT
+          mode.  Complete session logging.
+
+     o    Automatic support for EGA/VGA 43+ line display modes.
+
+
+
+
+
+
+
+
+
+                                          3
+
+
+
+
+
+                                  TABLE OF CONTENTS
+
+          FEATURES . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
+                     COMMAND SET . . . . . . . . . . . . . . . . . . . . . .   5
+                     ENHANCED FILE MANIPULATION AND TRANSFER . . . . . . . .   5
+                     EXTENDED ARCHIVE/ZIPFILE MANIPULATION . . . . . . . . .   5
+                     ENHANCED MESSAGE BASE FACILITIES  . . . . . . . . . . .   6
+                     ENHANCED SYSOP FEATURES . . . . . . . . . . . . . . . .   6
+          INSTALLATION . . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+                     The install program does the following chores for you .   8
+          CUSTOMIZATION  . . . . . . . . . . . . . . . . . . . . . . . . . .   9
+                     MESSAGE FILES . . . . . . . . . . . . . . . . . . . . .   9
+                     MESSAGE FILE MACROS (@ and $ VARIABLES) . . . . . . .    11
+                     ONLINE HELP SYSTEM  . . . . . . . . . . . . . . . . .    13
+                     ARCHIVE FUNCTION BATCH FILES  . . . . . . . . . . . .    15
+                     ARCHIVE FUNCTION PROGRAMS . . . . . . . . . . . . . .    16
+                     PROX* - COMMAND TRANSLATION . . . . . . . . . . . . .    17
+                     PROTRNS - OUTPUT/DISPLAY TRANSLATION  . . . . . . . .    18
+                     ENVIRONMENT VARIABLES . . . . . . . . . . . . . . . .    19
+                     PROFREE - FREE DOWNLOADS  . . . . . . . . . . . . . .    21
+                     PRODUP - PREVENT DUPLICATE UPLOADS  . . . . . . . . .    21
+                     PROPCAN - PASSWORD TRASHCAN . . . . . . . . . . . . .    21
+                     $DOOR.CMD - INITIAL COMMAND LINE  . . . . . . . . . .    21
+                     PRORATIO - FILE AND BYTE RATIOS . . . . . . . . . . .    22
+          PROSM - SYSTEM MANAGER (CONFIGURATION EDITOR)  . . . . . . . . .    23
+                     EDIT CONFIGURATION FILE . . . . . . . . . . . . . . .    25
+                     EDIT CONFERENCE DEFINITIONS . . . . . . . . . . . . .    32
+                     EDIT EXTENDED USER DATA . . . . . . . . . . . . . . .    37
+                     INSERT GROUP CONFERENCE . . . . . . . . . . . . . . .    39
+                     REMOVE GROUP CONFERENCE . . . . . . . . . . . . . . .    40
+                     ARRANGE/RENUMBER CONFERENCES  . . . . . . . . . . . .    41
+          SUPPORTING PROGRAMS  . . . . . . . . . . . . . . . . . . . . . .    43
+                     PRODOOR.EXE . . . . . . . . . . . . . . . . . . . . .    43
+                     PROSM.EXE . . . . . . . . . . . . . . . . . . . . . .    43
+                     BLDLIST.EXE . . . . . . . . . . . . . . . . . . . . .    43
+                     PROECHO.COM . . . . . . . . . . . . . . . . . . . . .    44
+                     PRONS.COM . . . . . . . . . . . . . . . . . . . . . .    44
+                     EXTADJ.EXE  . . . . . . . . . . . . . . . . . . . . .    45
+                     PROEDIT.EXE . . . . . . . . . . . . . . . . . . . . .    45
+                     PROKIT.EXE  . . . . . . . . . . . . . . . . . . . . .    45
+          ProDoor COMMAND REFERENCE  . . . . . . . . . . . . . . . . . . .    46
+                     ProDoor MAIN MENU COMMANDS  . . . . . . . . . . . . .    46
+                     ProDoor JOIN CONFERENCE COMMANDS  . . . . . . . . . .    52
+                     ProDoor READ MAIL COMMANDS  . . . . . . . . . . . . .    53
+                     ProDoor MESSAGE ENTRY COMMANDS  . . . . . . . . . . .    58
+                     ProDoor VISUAL EDITOR COMMANDS  . . . . . . . . . . .    59
+                     ProDoor "MORE" PROMPT COMMANDS  . . . . . . . . . . .    62
+          ERROR CODES  . . . . . . . . . . . . . . . . . . . . . . . . . .    63
+          LICENSE  . . . . . . . . . . . . . . . . . . . . . . . . . . . .    64
+          DISCLAIMER . . . . . . . . . . . . . . . . . . . . . . . . . . .    65
+          SUPPORT  . . . . . . . . . . . . . . . . . . . . . . . . . . . .    65
+          CREDITS  . . . . . . . . . . . . . . . . . . . . . . . . . . . .    66
+          INDEX  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    67
+
+
+
+
+
+                                          4
+
+
+
+
+
+                                       FEATURES
+     COMMAND SET
+
+     ProDoor enhances and/or changes many of PCBoard's commands.  See the
+     command reference at the end of this document for a complete description of
+     all online commands.
+
+
+     ENHANCED FILE MANIPULATION AND TRANSFER
+
+     +    User may flag files for later download at any "More?" prompt.
+
+     +    Command stacking can be used after the "N" at any "More" prompt.
+
+     +    Upload test procedure can be configured to automatically convert files
+          to the default format before posting in upload directory.
+
+     +    Supports up to 100 different file transfer protocols.  Protocols are
+          defined in a configuration file - they are not hard coded.
+
+     +    Fully supports both BATCH and single-file protocols,  send and
+          receive.  File duplication is prevented, even with batch upload
+          protocols.  Full file security is provided through FSEC, UPSEC and
+          PRODUP files.
+
+     +    Automatically supports "bi-directional" protocols that allow user
+          uploading during file downloads.
+
+     +    Wildcard filename specifications are allowed for all commands.
+
+     +    Upload descriptions are accepted before the file transfer begins
+          (except for wildcard/batch uploads, which are accepted AFTER the
+          transfer, when the filenames are known.)
+
+     +    Automatic selection of (L)ocate or (Z)ip search.  The search will
+          always work - if the user enters 'wildcards' or a keyword.
+
+
+     EXTENDED ARCHIVE/ZIPFILE MANIPULATION
+
+     +    Users can view zipfile text files online.
+
+     +    Partial (SCRATCH) archives can be created and downloaded.
+
+     +    Archives can be tested for validity before downloading.
+
+     +    A REPACK command converts between all supported archive formats.
+
+     +    All archive functions are external, allowing sysop selection of
+          archive format to be used.
+
+     +    Default configuration supports ZIP, ARC, PAK, ZOO and LZH file
+          compression formats.
+
+
+
+
+
+                                          5
+
+
+
+
+
+     ENHANCED MESSAGE BASE FACILITIES
+
+     +    Full-screen "Visual Edit" is available for remote and local message
+          entry.  Supports the ANSI-BBS and DOORWAY code set for cursor motion
+          and function key decoding.  No more "line editing"!
+
+     +    The original message is always available for display and automatic
+          quotation during new message entry.
+
+     +    The Visual Editor includes a powerful Paragraph Reformat command and
+          automatic full-paragraph reformat during text insertion.
+
+     +    Message subjects may contain mixed upper/lower case.
+
+     +    ZIPM command zips new mail in selected conferences for downloading and
+          offline reading.
+
+     +    Optional display of sender's CITY and LAST LOGON DATE in all message
+          headers.
+
+     +    Optional sysop-only display of sender's SECURITY LEVEL in all message
+          headers.
+
+     +    Keyword search through an entire message base.
+
+     +    Reduced clutter in message displays.  Message headers are shortened or
+          omitted when possible.
+
+     +    Simplified command formats.  More forgiving; does not require exact
+          message numbers.
+
+
+     ENHANCED SYSOP FEATURES
+
+     +    New command translation facility allows the sysop to redefine all
+          major commands according to user security levels and current language.
+
+     +    New system of quick file location, eliminates time consuming disk
+          accesses radically speeding download file searches on large networks
+          and CD-ROM systems.
+
+     +    New output message translation system can be used to change any prompt
+          or message in ProDoor, and to support alternate language operation.
+
+     +    Complete session logging.
+          Everything the user sees can be captured in a session log.  This is
+          enabled by adding
+                     SET PRODEBUG=ON
+          to the door script; output will be logged to DEBUG.OUT.
+
+     +    Operation under DoubleDOS, TaskView or DesqView is fully supported. 
+          The door will give up idle time to speed the other partition.  If
+          screen bleedthrough or background lockups occur, you may need to add
+          the environment statement
+                     SET OVCRT=ON
+          before executing the door.
+
+
+                                          6
+
+
+
+
+     +    Automatic network file sharing is implemented on all system files. 
+          The door has been tested under LanTastic, Novell, NTNX and other true 
+          networks.
+
+     +    Sysop function keys are supported:
+                     F2  . . . Lockout current user
+                     F3  . . . Toggle printer logging
+                     F4  . . . Toggle operator page bell
+                     F5  . . . Shell to DOS while caller is online
+                     F6  . . . Online user record update
+                     F7  . . . Toggle alarm beeps
+                     F8  . . . Force immediate logoff and hangup
+                     F9  . . . Toggle local display
+                     F10 . . . Chat with user
+                     ALT-B . . Debug/display memory and overlay information
+                     ALT-I . . File input during message entry and CHAT
+                     ALT-F . . File capture of all displays
+                     ALT-M . . Node status display
+                     ALT-N . . Sysop on-next
+                     ALT-P . . Print complete session
+                     ALT-X . . Sysop dos-exit next
+                     UP  . . .   Increase online time
+                     DOWN  . . Decrease online time
+                     PgUp  . . Display comments from user file
+                     PgDn  . . Display phone numbers, expiration and password
+                     HOME  . . Sysop help message, listing available functions
+          SHIFT/ . . F1..F10 . Sysop macro keys defined in PCBSETUP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          7
+
+
+
+
+
+                                     INSTALLATION
+
+     The INSTALL program will automatically install ProDoor in most standard
+     PCBoard systems.   It will add to your PCBoard files and will customize the
+     ProDoor setup files.
+
+     +    Make a "TEMP" directory to work from.  All files will start here and
+          will be copied into their final locations.
+
+     +    Extract these archives into the TEMP directory:
+
+          PRODOR34.ZIP . . . . (main DOOR program and supporting files)
+          RECYCLE.ZIP  . . . . (if you want "door stacking")
+          ZIPTV21.ZIP  . . . . (for zipfile text viewing)
+          PKZ110.EXE . . . . . (default archive utilities)
+          DSZ0525.ZIP  . . . . (Ymodem, Zmodem - or newer) 
+          WXFR0417.ZIP . . . . (Window Xmodem)   \___optional protocols
+          PCKERM21.ZIP . . . . (Super Kermit)    /
+
+
+     +    Type 'INSTALL' and answer the questions.
+
+
+     The install program does the following chores for you:
+
+     +    Creates directories for ProDoor (door directory, playpen, and
+          duplicate upload holding directory).
+
+     +    Edits the PRODOOR door script file (sets dirs, port).
+
+     +    Edits the PROD.CNF configuration file (sets dirs).
+
+     +    Adds ProDoor entry to \PCB\MAIN\DOORS.DAT.
+
+     +    Adds ProDoor entry to \PCB\GEN\DOORS and DOORSg.
+
+     +    Installs the required files in ProDoor's door directory.
+
+     +    Installs the protocol drivers in a directory listed in PATH.
+
+     +    Optionally edits and installs CD-ROM related files.
+
+     +    Optionally installs additional nodes for multi-node systems.
+
+     +    Creates the file INSTALL.LOG, which is a complete record of your
+          installation session.  
+                     IMPORTANT:  PLEASE INCLUDE A COPY OF THE
+                     INSTALL.LOG FILE WITH ANY PROBLEM REPORTS
+                     TO THE TOOL SHOP.
+
+
+
+
+
+
+
+
+
+                                          8
+
+
+
+
+
+                                    CUSTOMIZATION
+
+     MESSAGE FILES
+
+     Message text files can be edited to give ProDoor a personalized look.
+
+     All display files can refer to special "macros" that are possibly different
+     for each caller.  ProDoor supports both PCBoard-compatible @ macros as well
+     as it's own unique $ macros.  See the next section for a complete listing
+     of supported macros.
+
+
+     ProDoor looks for several variations on each message file.  
+
+     +    In GRAPHICS mode, ProDoor appends "G" to the file name.  
+
+     +    When an alternate language is selected, ProDoor appends ".LNG" to the
+          file name.  
+
+     +    ProDoor also checks for ".nnn" files, where nnn is the current
+          conference number.
+
+     +    ProDoor substitutes the first three letters of a filename with the
+          user's security level, and if found, uses this file as a security-
+          level specific version of the display file.  This substitution works
+          in conjunction with the G and .LNG or .NNN tails listed earlier.
+
+
+     EXAMPLES OF LEGAL MESSAGE FILE NAMES:
+
+     PROMENU . . . . . . . . . main menu, non graphic
+
+     PROMENUG  . . . . . . . . graphic version of main menu
+
+     PROMENU.25  . . . . . . . non-graphic menu when in conference 25
+
+     PROMENU.FRE . . . . . . . french version of non-graphic main menu
+
+     PROMENUG.FRE  . . . . . . French version of graphic main menu
+
+     PROMENUG.12 . . . . . . . graphic main menu when in conference 12
+
+     PROMENU.0 . . . . . . . . non-graphic main menu when in the 
+           . . . . . . . . . . "Main Board" area.
+
+     015MENU           . . . . PROMENU for users at security level 15.
+
+
+
+
+
+
+
+
+
+
+
+
+                                          9
+
+
+
+
+
+     This file name convention applies to all of the following message files:
+
+     PROARCM         This file defines the message display after the ZIPM
+                     command is used to compress mail for downloading.
+
+     PROCHAT         This is displayed when sysop chat mode is initiated.  It
+                     might say "Hello, this is..."
+
+     PROCLOS         This is the signoff message, which is printed each time the
+                     door closes and reloads PCBoard.
+
+     PRODLM          This file is printed prior to DOWNLOAD operations and can
+                     be used to give user instructions.
+
+     PROENTR         This is the help file for message entry in the read mail
+                     section.
+
+     PROFV           This is the help for the (F V) and (VX) functions prompt.
+
+
+     PROHELP         This is the main prompt Help file.  It is printed when the
+                     caller uses the (H)elp option.
+
+     PROLIB, LIBDEF, LIBHELP
+                     These files control the CD-ROM (LIB)rary function. See
+                     LIBRARY.DOC for details.
+
+     PROMAIL         This is the help file for the (R)ead mail function. Remove
+                     this file to disable the mail section..
+
+     PROMENU         This is the main command menu message, displayed before the
+                     "Command?" prompt when in Novice mode.
+
+     PROMORE         This is the help file for all "More?" prompts.
+
+     PRONEW          This is the "new user" message for ProDoor.  It is
+                     displayed to the caller the very first time the door is
+                     opened. The user will only see this file *one* time.
+
+     PROREAD         These files provide the novice mode "menu" display at the
+                     Mail Command prompt.
+
+     PROSTRT         This is the Welcome message printed each time the door is
+                     opened.
+
+     PROULM          This file is printed to the user prior to file UPLOAD
+                     operations and may be used to give uploading guidelines or
+                     instructions.
+
+     PROVIS          This is the help file for the Visual Editor (message
+                     entry).
+
+     PRODUMP         This text file is printed when the sysop uses F8(dump) to
+                     bump a user from the system.
+
+     PROREQ          This text file is printed when a NODE CHAT request is
+                     received from another node.  
+
+                                          10
+
+
+
+
+
+     MESSAGE FILE MACROS (@ and $ VARIABLES)
+
+     All display files can refer to special "macros" that are possibly different
+     for each caller.  ProDoor supports both PCBoard-compatible @ macros as well
+     as it's own unique $ macros.  
+
+          MACRO                MEANING
+
+          $2$                  used in PROTRNS
+          $3$                  used in PROTRNS
+          $4$                  used in PROTRNS
+          $5W$                 used in PROTRNS
+          $6W$                 used in PROTRNS
+          $7L$                 used in PROTRNS
+          $8S$                 used in PROTRNS
+          $@$                  file list pathname for dsz
+          $B$                  modem open baud rate
+          $BLUE$               the color blue
+          $C$                  connect bps
+          $CLREOL$             clear to end of line
+          $CONF$               conference number with mail waiting
+          $CONFNUM$            current conference number
+          $CYAN$               the color cyan
+          $DEFAULT$            the default color
+          $DISP-fname$         display specified text file
+          $FIRST$              callers first name
+          $HELPFILE$           interpret remainder of file as a multi-topic HELP
+                               file
+          $GRAY$               the color gray
+          $GREEN$              the color green
+          $IFMEMBER-nn$        YES or NO is the caller a member of specified
+                               conference number
+          $LASTMSGNO$          high message number
+          $MAGENTA$            the color magenta
+          $MAIL$               mail file name
+          $MSGCOUNT$           active message count
+          $N$                  port number 0=local, 1..4
+          $NAME$               callers full name =- @USER@
+          $NO$                 literally "NO"
+          $NODE$               current node number
+          $NOMACS$             disable macros for remainder of display
+          $NONSTOP$            display the rest of the file non-stop
+          $PLAY$               playpen directory
+          $R$                  result filename for batches
+          $RED$                the color red
+          $SCRATCH$            scratch file name
+          $SYSOP$              sysop name
+          $TIME$               minutes left
+          $WHITE$              the color white
+          $YELLOW$             the color yellow
+          $YES$                literally "YES"
+          @BEEP@               beep speaker, control-g
+          @BOARDNAME@          the name of your BBS
+          @BPS@                estimated connect bps
+          @BYTELIMIT@          bytes allowed from PWRD file
+          @BYTESLEFT@          remaining bytes available for download for that
+                               day
+
+                                          11
+
+
+
+
+          @CITY@               city and state of caller (all caps)
+          @CLS@                clear screen
+          @DATAPHONE@          caller's business/data phone number
+          @DAYBYTES@           bytes downloaded so far that day
+          @DLBYTES@            total bytes downloaded - all calls
+          @DLFILES@            total files downloaded - all calls
+          @EVENT@              time of next scheduled event
+          @EXPDATE@            subscription expiration date
+          @FIRST@              first name of the user (first letter capitalized)
+          @HOMEPHONE@          caller voice phone number
+          @INCONF@             conference the caller is currently in
+          @LASTDATEON@         last date on (mm-dd-yy format)
+          @LASTTIMEON@         last time on (hh:mm format)
+          @MORE@               force a "MORE" prompt
+          @NUMCALLS@           total number of callers in system
+          @NUMTIMESON@         umber of times on system
+          @SECURITY@           users current security level including conf. add.
+          @SYSDATE@            host date in (mm-dd-yy format)
+          @SYSTIME@            host system in (hh:mm format)
+          @TIMELEFT@           time remaining that call incl. all credits, etc.
+          @TIMELIMIT@          time allowed from PWRD file
+          @TIMEUSED@           minutes used since logon
+          @UPBYTES@            total bytes uploaded - all calls
+          @UPFILES@            total files uploaded - all calls
+          @USER@               complete name of the caller (first & last - all
+                               caps)
+          @WAIT@               force a "press enter to continue" prompt
+          @X                   pcboard 14.5-compatible color codes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          12
+
+
+
+
+
+     ONLINE HELP SYSTEM
+
+     ProDoor now contains a powerful online help system.  This system allows a
+     single help file to contain a number of different help topics, which can be
+     selectively displayed by the user.  This system eliminates the need for a
+     large number of different help files, and makes it possible to branch to
+     sub-topics for further explanation following each help topic displayed.
+
+
+     The online help system is active with the following display files:
+
+     PROENTR         This is the help file for message entry in the read mail
+                     section.
+
+     PROFV           This is the help for the (F V) and (VX) functions prompt.
+
+     PROHELP         This is the main prompt Help file.  It is printed when the
+                     caller uses the (H)elp option.
+
+     PROMAIL         This is the help file for the (R)ead mail function. Remove
+                     this file to disable the mail section..
+
+     PROMORE         This is the help file for all "More?" prompts.
+
+     PROREAD         These files provide the novice mode "menu" display at the
+                     Mail Command prompt.
+
+     PROVIS          This is the help file for the Visual Editor (message
+                     entry).
+
+
+
+     HELP FILE FORMAT
+
+     Help files begin with an initial display to the user, followed by one or
+     more additional help topics and or subtopics.
+
+     The last line of the initial display text must contain only "~".  This
+     indicates to the help system that the user should be prompted to specify
+     the topic or subtopic for additional help.
+
+     Each topic of subtopic begins with one or more "keywords", which are
+     matched by the user entered topic string.  Keywords begin with ":" and must
+     be entirely upper case.  You may include more than one keyword in each
+     topic block.  Following the keywords is a block of display text, which will
+     be displayed to the caller.
+
+     If the caller is to be prompted for additional subtopics, the topic block
+     should end with a line containing a single "~".  If there are no additional
+     subtopics, the block should end with a line containing a double "~~".
+
+
+
+
+
+
+
+
+                                          13
+
+
+
+
+
+     Sample help file (PROENTR):
+
+          ---------------------------------------------------
+
+          Help is available on the following Message Entry topics:
+
+
+          [A] Abort        [E] Edit        [L] List      [S] Save
+          [C] Continue     [F] Find *      [O] Original  [V] Visual
+          [D] Delete       [I] Insert      [Q] Quote
+
+                        [Summary]       [Examples]
+
+          Enter in the text inside the square brackets ie: F for FIND
+
+          ~
+          :?
+          Please type one of the indicated topics for additional help.
+          Press <ENTER> alone to exit the help system.
+          ~~
+          :A
+          (A)bort     Throw away the message and return to reading messages. 
+          ~~
+          :C
+          (C)ontinue  Continue message text input from where you left off.
+          ~~
+          :D
+          (D)elete    Allows you to delete a line from the message. 
+          ~~
+
+
+     You can activate the online help system in any text file by including the
+     line
+          $HELPFILE$
+     at the top of the file.  This allows you to create interactive multi-topic
+     bulletins and menus.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          14
+
+
+
+
+
+     ARCHIVE FUNCTION BATCH FILES
+
+     The archive functions LIB, TEST and REPACK all call batch files to perform
+     the actual manipulation.  These files should not need any modification for
+     a normal installation.
+
+     PROARCM.BAT
+          Called by archive mail function to compress the text mail capture into
+          an archive for download.
+
+     PROLIB.BAT
+          Called to process the LIBrary request function.
+
+     PROUTEST.BAT
+          Called to test new uploads.  This file is also called after downloads
+          to check for bi-directional uploads.
+
+     PROUT1.BAT
+          Repeatedly called by PROUTEST.BAT for each individual file in an
+          upload batch.  This file is responsible for verifying correctness of
+          upload files, and for converting from alternate compression formats.
+
+     PRO-P.BAT
+          Called by (REPACK) command to convert archive files from one format to
+          another.
+
+     PRO-T.BAT
+          Called by (TEST) command to test an archive file for validity.
+
+     PRO-R.BAT
+          Initially called by (F V)iew and later by the (R)elist command to list
+          member files in an archive.  This is where you install ARCTV, ZIPTV,
+          LZHTV, etc. for interactive text viewing.
+
+     PRO-V.BAT
+          Called by (V)iew subfunction of (F V) to extract a text member from an
+          archive file so it can be displayed by ProDoor.
+
+     PRO-X.BAT
+          Called by (X)tract subfunction of (F V) to extract a member file from
+          one archive file to a "scratch" file for downloading.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          15
+
+
+
+
+
+     ARCHIVE FUNCTION PROGRAMS
+
+     The standard archive function batch files support a variety of compressed
+     file formats.  Because of this, you will need a number of different
+     programs to make this feature fully operational.  If any of these programs
+     are missing, ProDoor will automatically generate an error message to help
+     you pinpoint which program is needed.   If you prefer to support only 1
+     file format on your system, see the alternate version of these files posted
+     as PROZIP.ZIP on the Tool Shop.
+
+           Program      Found in               Function
+          ----------  ------------  --------------------------
+
+          TESTFILE    TESTFILE.ZIP  Determine packed file type 
+          ARCTV.EXE   ARCTV30.ZIP   Text View for .ARC files
+          LZHTV.EXE   LZHTV12.ZIP   Text View for .LZH files
+          ZIPTV.EXE   ZIPTV21.ZIP   Text View for .ZIP files
+          LHARC.EXE   LHARC114.COM  Archive program for .LZH files
+          PAK.EXE     PAK210.EXE    Archive program for .PAK files
+          PKPAKJR.EXE PK161.EXE     Pack program for .ARC files
+          PKZIP.EXE   PKZ110.EXE    Pack program for .ZIP files
+          PKUNPAK.EXE PK161.EXE     Unpack program for .ARC files
+          PKUNZIP.EXE PKZ110.EXE    Unpack program for .ZIP files
+          PROXTRA.EXE PROXTRA.ZIP   Move between .ARC files
+          PROXZIP.EXE PROXZIP.ZIP   Move between .ZIP files
+          TOZIP.EXE   ZIPKIT6.ZIP   Convert files to .ZIP format
+          ZIPDS.EXE   ZIPDS11.ZIP   Check for truncated .ZIP files
+          STRIPZIP    STRIPZIP.ZIP  Remove comments from .ZIP files
+          ZOO.EXE     ZOO201.ZIP    Program for .ZOO files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          16
+
+
+
+
+
+     PROX* - COMMAND TRANSLATION
+
+     ProDoor allows the sysop to translate user input before it is processed by
+     ProDoor.  This means you can define new command words as replacements for
+     existing commands.  This function works according to user security level,
+     making it possible to change the operation of the system for users of
+     different levels.  This file is also language-specific so you can set up
+     different command sets for each language you support.
+
+
+     Command translation is active at the following prompts:
+
+     Translation File  . . . . Active prompt
+
+          PROXMAIN . . . . . . Main Command prompt
+          PROXMORE . . . . . . "More?" and "press enter to continue" prompts
+          PROXMAIL . . . . . . Read Mail Command
+          PROXFILE . . . . . . File Directories
+          PROXENTR . . . . . . Message Entry Command
+          PROXJOIN . . . . . . Join Conference Command
+
+
+     Example file format
+          ;
+          ; PROXMAIN - ProDoor command translation definition 
+          ; for MAIN command prompt
+          ;
+          ; format is:
+          ;       level oldcommand newcommand
+          ; list higher levels first.  oldcommand is translated into newcommand
+          ; if userlevel is >= level on first matching entry.
+          ;
+          0,S,DOOR        ;translate "S" into "DOOR menu" for all user levels
+          0,LIB,?         ;disable this command
+          0,UPGRADE,DOOR 13
+          0,HELP,DISP-M:\PROD\PROHELP     ;display 'PROHELP' file when 'HELP'
+                                          ;command is used.
+          0,WHO,NODE                      ;list who's on the system
+          0,WH,NODE
+          0,SELECT,J A                    ;select conferences
+          0,SE,J A
+          0,V,DISP-U:\PCB\GEN\STATS.TXT /
+          0,NEW,N S U
+          0,ALL,N S A
+          ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          17
+
+
+
+
+
+     PROTRNS - OUTPUT/DISPLAY TRANSLATION
+
+     ProDoor's "output translation" system allows you to specify any list of
+     arbitrary messages, and the replacement text to be output to the user
+     instead.  These translations are controlled by the file PROTRNS for the
+     default language, and by the file PROTRNS.LNG for operation in language
+     "LNG".  (This is the way PCBoard selects PCBTEXT files).  If the PROTRNS
+     file is missing, no output translation will take place.
+
+     The format of the PROTRNS file is
+
+             ORIGINAL MESSAGE TEXT 1
+             REPLACEMENT MESSAGE TEXT 1
+             ORIGINAL MESSAGE TEXT 2
+             REPLACEMENT MESSAGE TEXT 2
+             ORIGINAL MESSAGE TEXT 3
+             REPLACEMENT MESSAGE TEXT 3
+             ...
+
+     Each translation takes two lines: the first line specifies the ORIGINAL
+     text to look for, and the second line specifies the REPLACEMENT text that
+     will be output to the user.
+
+     ProDoor checks for the LAST translations FIRST, then works backward to the
+     start of the translation list.  It stops when a translation takes place
+     (you can't translate translations, in other words).
+
+     Translations work only on exactly matching strings, which are output as a
+     single unit.  The best way to determine the exact text for a translation is
+     to activate ProDoor in "translation assist" mode.  To do this, execute the
+     statement
+             SET PROTRNS=ON
+     immediately prior to running ProDoor.  When this environment statement is
+     present, the door will output (enclosed in {...}) all text strings that can
+     be translated, exactly as they must appear in the translation file.
+
+
+     The sample PROTRNS file includes the following translations:
+
+     [@INCONF@] Command?
+     @INCONF@ ($CONFNUM$) Command?
+     [@INCONF@] Mail Command:
+     @INCONF@ ($CONFNUM$) Mail Command:
+
+     These two translations change the main prompts from
+             [CONFERENCE] Command?
+     to instead say
+             CONFERENCE (CONFERENCE-NUMBER) Command?
+
+     As you can see, all of the @...@ and $...$ variables are active during
+     message translation.
+
+
+
+
+
+
+
+                                          18
+
+
+
+
+
+     ENVIRONMENT VARIABLES
+
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+          *                        NOTE                           *
+          *  MANY SYSTEMS HAVE VERY LIMITED ENVIRONMENT SPACE.    *
+          *  IF YOU GET THE MESSAGE "OUT OF ENVIRONMENT SPACE"    *
+          *  ON ANY OF THESE SET COMMANDS, YOU CAN CORRECT THE    *
+          *  PROBLEM BY ADDING THIS LINE TO YOUR CONFIG.SYS       *
+          *  FILE:                                                *
+          *          SHELL = C:\COMMAND.COM C:\ /E:500 /P         *
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+     ProDoor recognizes the following SET commands when placed in your PRODOOR
+     script, BOARD.BAT or AUTOEXEC.BAT files:
+
+     SET CONFINFO=C:\PROD\CONFINFO
+          This setting allows ProDoor and ProEdit to specify the file location
+          for the conference definitions.  This is needed on network systems
+          where multiple 'CNAMES' files are used.  You need to assign a
+          different CONFINFO file for each different CNAMES file on your
+          network.  Without this environment variable setting ProDoor defaults
+          to the file 'CONFINFO' in the ProDoor directory.
+
+     SET EXTUSER=C:\PROD\EXTUSER
+          This setting allows ProDoor and ProEdit to specify the file location
+          for the extended conference pointers.  This is needed on network
+          systems to insure that all nodes share a common EXTUSER file. Without
+          this environment variable setting ProDoor defaults to the file
+          'EXTUSER' in the Pro-Door directory.
+
+     SET DSZLOG=C:\PCB1\$DOOR.LOG
+          This setting allows ProDoor to take advantage of DSZ's logfile data in
+          recording the results of a file transfer.  This file *MUST* be located
+          in the node's 'system' directory (where the PCBOARD.DAT file is). 
+          When $DOOR.LOG is not present after a transfer, ProDoor will attempt
+          to simulate the missing data, but will not be able to determine
+          individual file CPS ratings or abort/valid status.
+
+     SET TAGLINE=text added to tagline
+          Adds the specified text to the "Via ProDoor" line during message
+          entry.
+
+     SET OVCRT=ON
+          This environment enables a special CRT update mode that works best
+          with TaskView or OmniView systems.  NOTE: PLEASE USE THIS ENVIRONMENT
+          VARIABLE IF YOU GET "SCREEN BLEEDING" OR "BACKGROUND LOCKUPS" ON
+          MULTI-TASKING SYSTEMS.
+
+     SET EDITOR=program
+          This environment specifies the program to be used as the text editor
+          for configuration files while in PROSM.  The default editor is 'Q'.
+
+     SET CAPFILE=filename
+          This setting controls the name of the file generated by the ALT-F
+          (file out) and SET PRODEBUG=ON functions.  The default file name of
+          DEBUGxx.OUT is changed to the specified name.
+
+                                          19
+
+
+
+
+
+     SET PRODEBUG=ON
+          Enables total session logging to the file DEBUG.OUT.  Use this to
+          record door activity for later review.
+
+     SET PROTRNS=ON
+          Enables a special display to assist in creation of PROTRNS output
+          translation files.  When present, this causes ProDoor to output all
+          translatable messages enclosed in {...} prior to the actual
+          translation.
+
+     SET ECHOFLAG=ON
+          Causes ProDoor to create the file 'ECHOFLAG' in the ProDoor directory
+          whenever a user enters an "ECHO" message.  Network mail programs can
+          then check for the presence of this file to determine if a mail run is
+          required.
+
+     SET COMBASE=nnnn
+          Sets the base I/O address (in DECIMAL) for non-standard COM ports. 
+          Use this in conjunction with the COMIRQ environment variable.
+
+     SET COMIRQ=n
+          Sets the IRQ level for non-standard COM ports.  Use this in
+          conjunction with the COMBASE environment variable.
+
+     SET COMSPEC=C:\COMMAND.COM
+          This environment variable specifies the location and name of your
+          current COMMAND.COM and is used when nested batch files are required.
+
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+          *                        NOTE                           *
+          *  THE 'COMSPEC' ENVIRONMENT MUST SPECIFY A .COM        *
+          *  FILE!  IF COMSPEC SPECIFIES A .SLV OR .PRG (OR       *
+          *  ANYTHING BUT .COM) FILE IT WILL PREVENT ProDoor      *
+          *  FROM USING %COMSPEC% TO RUN NESTED BATCH FILES.      *
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+     SET PATH=C:\DOS;C:\UTIL;C:\...
+          The PATH environment variable is used to locate many of the programs
+          called up by ProDoor.  Please insure that your archive utilities and
+          protocol driver programs are present in a directory listed in your
+          PATH environment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          20
+
+
+
+
+
+     PROFREE - FREE DOWNLOADS
+
+     You can allow specified files to be "free" downloads for all your users.
+     The free files should be listed in the data file PROFREE. You can list any
+     number of filespecs, one per line.  Wildcards are allowed.  If a directory
+     is specified, the wildcard will apply only to that directory.  Otherwise
+     wildcards apply to all download directories.
+
+     Free downloads are not charged as downloads in the user record.  Daily byte
+     counts are not used or adjusted.  Use this feature only on files that are
+     truly 'free' to the user.  Normal time limits still apply, so think of free
+     downloads as working like reading mail or scanning dir listings.
+
+     Sample PROFREE file contents:
+        PKZ101.EXE
+        TOOLM*.ZIP
+        TOOLSHOP.ZIP
+        F:\FREE\*.*
+
+
+     PRODUP - PREVENT DUPLICATE UPLOADS
+
+     ProDoor now checks the optional PRODUP data file for a list of directories
+     to scan during upload duplication checking.  This file has the same format
+     as the DLPATH file.  Include in the PRODUP file all directories that the
+     caller may not be able to download from, but which contain files that may
+     duplicate new uploads.  For example, you may wish to include all of your
+     conference specific upload and download areas in this file, thus preventing
+     duplicate uploads between one conference and another.
+
+
+     PROPCAN - PASSWORD TRASHCAN
+
+     The PROPCAN file is consulted when a caller attempts to change password
+     using the (W)rite-user-info command.  The PROPCAN file contains a list of
+     "trashcan" passwords, one per line, that may not be used by callers as a
+     password.
+
+     Example PROPCAN file:
+
+          PASSWORD
+          NONE
+          JUNK
+          TEST
+          NEW
+          PW
+
+
+     $DOOR.CMD - INITIAL COMMAND LINE
+
+     You can pass an initial command line to ProDoor from outside programs by
+     means of the $DOOR.CMD file.  When ProDoor is loaded into memory, if the
+     $DOOR.CMD file is present in the pcb system directory, ProDoor will load
+     the first line and execute it as though it was typed by the user, but
+     without a menu or command line display.  This feature can be used by other
+     applications to customize the operation of ProDoor or to automatically
+     activate ProDoor features when needed.
+
+                                          21
+
+
+
+
+
+     PRORATIO - FILE AND BYTE RATIOS
+
+     ProDoor's ratio system works automatically and immediately, eliminating the
+     need for a batch update or an outside program to adjust ratios.  The
+     PRORATIO file defines for each security level, the required ratio of
+     download:upload files and bytes and also determines how to process users
+     who have not yet uploaded to the system.
+
+          ;
+          ; PRORATIO - ProDoor upload/download ratio control file
+          ; For use with ProDoor 3.4
+          ;
+          ; Line format:
+          ;    LEVEL  FILERATIO BYTERATIO FREEFILES FREEBYTES
+          ;
+          ; If not specified, FREEFILES defaults to 1 and FREEBYTES defaults to
+          100000
+          ;
+          ;
+          ; Examples:
+          ;   70  5.5 0   ;level 70 may D/L 5.5 files for each file uploaded
+          ;   60  0 250   ;level 60 may D/L 250 bytes for each byte uploaded
+          ;   99  0 0     ;level 99 users are excluded from all ratios
+          ;   80  40 10   ;level 80 may D/L 40 files for each file uploaded,
+                          ;up to 10 bytes downloaded for each byte uploaded.
+
+          ;   40  10 0 5 0
+                          ;level 40 requires a file U/L for each 10 downloads,
+                          ;and users are initially credited with 5 free uploads
+                          ;(allowing 50 free download files before uploading is
+                          ; required)
+
+          ;
+          ; Any number of security levels may be specified.  If no matching
+          ; level is found, the last level listed in the file is used as the
+          ; default.
+          ;
+
+          10 60 0         ;normal users
+          11 60 0
+          50 60 0
+          51 60 0
+          60 60 0
+
+          70 9000 9000          ;boosters and all other users
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          22
+
+
+
+
+
+                    PROSM - SYSTEM MANAGER (CONFIGURATION EDITOR)
+
+     The ProDoor System Manager, PROSM.EXE, is an interactive configuration
+     utility for use with ProDoor.  It allows you to view and modify the
+     contents of ProDoor's PROD.CNF, CONFINFO and EXTUSER data files.
+
+     The INSTALL procedure creates a CONFIG.BAT batch file for you.  Use the
+     CONFIG command to run the System Manager.
+
+
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+          *                     IMPORTANT                         *
+          *                                                       * 
+          *  ProDoor'S "CONFINFO" DATA FILE TAKES THE PLACE       * 
+          *  OF YOUR NORMAL "CNAMES" DATA FOR CONFERENCE          * 
+          *  DEFINITION.  PLEASE DO NOT USE PCBSETUP TO ALTER     * 
+          *  CONFERENCE DEFINITIONS!  USE PROSM'S CONFERENCE      * 
+          *  DEFINITION FUNCTION INSTEAD.  WHEN YOU ARE           * 
+          *  FINISHED, THE F10 [UPDATE CNAMES] FUNCTION KEY       * 
+          *  TO UPDATE THE CNAMES FILE WITH CONFINFO CHANGES.     * 
+          *                                                       * 
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+     The System Manager has eight main functions:
+
+
+     A - EDIT CONFIGURATION FILE
+
+     The Edit Configuration File function allows you to view and modify the
+     contents of ProDoor's PROD.CNF file.
+
+
+     B - EDIT CONFERENCE DEFINITIONS
+
+     The Edit Conference Definition function is an editor for the CONFINFO file. 
+     It allows you to maintain ProDoor and ProEdit conference information for
+     ALL message areas available through the door.  Use this selection to define
+     "extended" conferences not available from PCBoard.
+
+     This function also has the ability to update your CNAMES file with any
+     changes in definitions of conferences.
+
+
+     C - EDIT EXTENDED USER DATA
+
+     The Edit Extended User Data function is an editor for the EXTUSER file. It
+     allows you to maintain conference registration and message pointers for
+     ProDoor users.  It displays door usage count, last date in door and allows
+     editing of "earned K bytes" record.
+
+
+     D - Generate ProPack Batch File
+
+     The Generate ProPack Batch File function reads your conference
+     configuration data and automatically generates a batch file, PACKALL.BAT,
+     which can be used in an event to pack all of your conference message files.
+
+                                          23
+
+
+
+
+
+     E - INSERT GROUP CONFERENCE
+
+     The Insert Group Conference function allows you to automatically register
+     users in a conference according to a range of security levels.
+
+
+     F - REMOVE GROUP CONFERENCE
+
+     The Remove Group Conference function allows you to automatically remove
+     users from a conference according to a range of security levels.
+
+
+     G - PACK EXTENDED USER FILE
+
+     The Pack Extended User File function updates your USERS and EXTUSER data
+     files to include only currently registered users.  The EXTUSER file is
+     reordered to follow the order in USERS, speeding the some other functions
+     of this program.
+
+
+     H - MOVE/ARRANGE/DELETE CONFERENCES
+
+     The Arrange/Renumber Conferences function allows you to alter the order of
+     your conferences, and to completely delete conferences from the CONFINFO
+     file.  The function changes the conference numbers and updates your
+     CONFINFO, USERS and EXTUSER data files accordingly.  CNAMES is not updated
+     so renumbering conference numbers less than 40 is not recommended.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          24
+
+
+
+
+
+                               EDIT CONFIGURATION FILE
+
+     The Edit Configuration File function allows you to view and modify the
+     contents of ProDoor's PROD.CNF file.
+
+     Use the PGUP and PGDN keys to change pages.  Press ESC to return to the
+     System Manager main menu.
+
+
+     GENERAL CONFIGURATION
+
+     Held (dup) upload listing . . . . C:\PCB\ADMIN\HELD
+          This is the filename of the "listing" file for descriptions of "held"
+          uploads.
+
+     Held (dup) upload directory . . . C:\PCB\HOLD
+          This is the file directory where "HELD" uploads will be stored.   An
+          upload is "HELD" for sysop review if it's name duplicates another
+          file, conflicts with UPSEC, or contains an invalid character.
+
+     Transfer "PLAYPEN" directory. . . I:\PLAY
+          The playpen directory is used to hold uploads, and possibly downloads
+          that are in-progress.  In network systems, the node number is
+          automatically appended to the end of the directory name.
+
+     Directory for SCRATCH.ZIP . . . . I:\SCR
+          This is the directory used to hold the SCRATCH zipfile, used by the
+          zipfile extract,  REPACK, and ZIPM functions.  Specify a large RAMDISK
+          for fastest operation.  THIS MUST NOT BE THE SAME AS THE 'PLAYPEN'!!!
+
+     Scratch zipfile name prefix . . . TOOLS
+          This is used to build the  SCRATCH zipfile filename.  Change this to
+          identify your board.  The Tool Shop uses 'TOOLS', for example.
+
+     Mail zipfile name prefix. . . . . TOOLM
+          This is used to build the ZIPM zipfile filename.  Change this to
+          identify your board.  The Tool Shop uses 'TOOLM', for example. THIS
+          MUST NOT BE THE SAME AS THE 'SCRATCH ZIPFILE PREFIX'!!!
+
+          ** * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+          *   THE 'SCRATCH ZIPFILE NAME PREFIX' AND 'MAIL          * 
+          *   ZIPFILE PREFIX' SETTINGS *MUST* BE DIFFERENT!        * 
+          *   IF THEY ARE THE SAME, ProDoor WILL SELECT SCRATCH    * 
+          *   FILES TWICE SINCE IT LOOKS FOR BOTH NAMES.           * 
+          ** * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+     Max messages per ZIPM run . . . . 500
+          This entry controls the maximum number of messages that the Zip Mail
+          function will handle in a single run.  Use it to prevent the resulting
+          scratch file from being too large.
+
+          ** * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+          *   PLEASE INSURE THAT YOU HAVE SUFFICIENT DISK SPACE    * 
+          *   FOR THE NUMBER OF ZIPM MESSAGES YOU SELECT!  PLAN    * 
+          *   ON EACH MESSAGE TAKING ABOUT 1K OF DISK SPACE.       * 
+          ** * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+                                          25
+
+
+
+
+
+     PROGRAM OPTIONS
+
+     This panel controls program features that are new to version 3.4, or which
+     were previously controlled by environment variables.
+
+
+     Insert "Uploaded by:" for all uploads?
+          This option enables the placement of "Uploaded by: USER NAME" into the
+          upload directory for each file uploaded.
+
+
+     Insert blank line after all uploads?
+          This option controls the insertion of a blank line after each upload
+          entry in the upload directory.  
+
+          NOTE: As of 4/25/90 this feature should not be used if you intend
+          to use PCBFILER to sort your upload directory.  As of this date,
+          the PCBFILER program cannot handle blank lines in a DIR listing
+          and will corrupt the file if you attempt to SORT or to update a
+          file with a defined sort order.
+
+
+     Expand macros in message texts?
+          This option controls the @ and $ macros within message texts.  This
+          feature gives you control over messages that would otherwise reveal
+          system information.  It is used in conjunction with netmail or reader
+          programs that do not provide adequate security to prevent the use of
+          these macros.  This feature allows you to disable macros in the
+          message base, while still keeping the feature in other sysop-defined
+          text files.
+
+
+     Display users CITY in message headers?
+          This option causes ProDoor to access the USERS file for each message
+          to retrieve the message writer's CITY and LAST ON date so it can be
+          displayed with the message.  If a sysop is reading mail, this feature
+          also causes the message writer's SECURITY LEVEL to be shown in the
+          message header.  If you disable this option it will prevent accessing
+          the users file, which will speed up message reading on some systems.
+
+
+     Require filenames before batch uploads?
+          This option, if set to YES, requires that users specify upload
+          filenames in advance with protocols that are capable of automatically
+          determining filenames.  Use this option to force users to check for
+          duplicate uploads in advance of actually uploading to the system.
+
+
+     Transfer time estimate for (G) default... 30
+          Specifies the minimum transfer time estimate (in minutes) that will
+          trigger an automatic goodbye after the transfer.  Shorter transfers
+          will default to remain in the door and longer transfers will default
+          to automatic goodbye.  The user may still override the default, if
+          desired.  NOTE: This is new to ProDoor 3.4 and may require manual
+          entry during an upgrade from previous versions.
+
+
+
+                                          26
+
+
+
+
+
+     ARCHIVE MANIPULATION COMMANDS
+
+     Because of the recent conflicts over archive file format standards, ProDoor
+     no longer has a hard-coded internal handler for archive file manipulation. 
+     Instead, calls are made to outside commands to process archives.  This
+     configuration panel allows you to specify the commands (and hence the
+     archive file format) that are to be used.
+
+     Please note that the archive commands are loaded "on top of" ProDoor and
+     will require additional memory.  Because of this, I recommend that you use
+     the "small" version of any archive utility (PKPAKJR, for example).
+
+     Files listing command . . . . . . . . . PRO-R $N$ $TIME$ $R$ 
+
+          Command used to get a listing of files contained inside an archive
+          file.  The default is to call PRO-R.BAT, which includes support for
+          several common compression formats.
+
+     Type files to console command . . . . . PRO-V $R$
+          This command is used to view specified text files within an archive.
+          The command must direct the text files into the file specified by the
+          "result file" macro $R$.
+
+     Extract from file to file command . . . PRO-X $R$
+          This command must extract the specified component files from one
+          archive and place them into another, possibly creating a new archive
+          in the process.
+
+     RePack archive command. . . . . . . . . PRO-P $R$
+          This command is used by the REPACK command.  The standard batch file,
+          PRO-P.BAT has the ability to convert among the various formats which
+          are supported.
+
+     Test archive integrity command. . . . . PRO-T $R$
+          Command used to test the validity of an archive file.
+
+     Test failure message suffix . . . . . . has errors!
+          If this message appears in the result file generated by the test
+          archive command, the specified archive file will be deleted.  The full
+          archive file name must be at the beginning of the line for this
+          feature to work.
+
+          ** * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+          *   ProDoor DETECTS CORRUPTED UPLOAD FILES BY LOOKING    * 
+          *   FOR THE 'TEST FAILURE MESSAGE SUFFIX' MESSAGE IN     * 
+          *   THE TEST RESULT LOG.  IF YOUR TEST RESULT LOG DOES   * 
+          *   NOT PRODUCE THE *EXACT* ERROR MESSAGE YOU HAVE       * 
+          *   CONFIGURED, THE BAD FILE WILL NOT BE DETECTED.       * 
+          ** * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+
+
+
+
+
+
+                                          27
+
+
+
+
+
+     EXTENDED SECURITY CONFIGURATION
+
+     The ProDoor Extended Security Configuration panel allows you to control
+     access to all door functions.
+
+
+     Function -
+          This entry identifies the function letter being configured.  The
+          "spare" entries are reserved for future commands.  Notice that
+          "single" and "batch" upload/download functions have different entries. 
+          This allows you to restrict batch functions by  security level, if
+          desired.
+
+
+     Security Level -
+          This is the minimum security level required for a user to use the
+          specified function.
+
+
+     Time Factor -
+          This entry controls how time is "charged" for the use of each
+          function.  A time factor of 1.0 is the normal "real time" charge rate. 
+          Factors < 1 give the caller more time when using the function. 
+          Factors > 1 give the caller less time.  Examples:
+
+
+          Time factor                          Meaning
+          -----------          -----------------------------------------
+              1.0              Normal time, as in PCBoard
+
+              0.0              The clock is "stopped" in this function
+
+             -1.0              The user gets extended time equal to the time 
+                               spent in this function.
+
+              2.0              The user is charged "double" for time spent in
+                               this function.
+
+
+     Byte Factor -
+          This entry applies only to upload and download functions.  It controls
+          how the function updates the caller's "Download Bytes Available"
+          record.  A value of 1.0 charges the user directly for each byte
+          transferred.  A factor or 0 does not charge.  A factor  of -1 gives
+          back 1 byte for each byte transferred.   Generally speaking, use 1.0
+          for downloads and at least -1 for uploads.  I  use this feature to
+          implement a byte-based upload/download  ratio.  With the upload
+          factors set at -5, the callers can  download 5 bytes for each byte
+          uploaded.  This, coupled with  ProDoor's ability to carry "earned
+          bytes" forward from call to  call, allows you to better reward your
+          best callers.
+
+
+
+
+
+
+
+                                          28
+
+
+
+
+
+     (0) Idle time . . . . . .     2               1.5            1.0 
+
+          This function code is used to control the charge for "idle"  time.  A
+          time factor of 1.5 will charge callers extra for  letting the board
+          sit "idle".
+
+     (1) Download batch. . . .     2               1.0            1.0 
+     (2) Upload batch. . . . .     2               -0.5           -5.0 
+          These function codes apply to protocols that allow more than 1
+          filespec at a time.  NOTICE THAT UPLOADS USE NEGATIVE NUMBERS!
+
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+          *                                                         * 
+          *    THE DEFAULT CONFIGURATION GRANTS A 'BYTE CREDIT'     * 
+          *    OF 5 DOWNLOAD BYTES FOR EACH BYTE UPLOADED.  IF      * 
+          *    YOU DO NOT WANT THIS EXTRA DOWNLOAD CREDIT, YOU      * 
+          *    MUST CHANGE THE 'UPLOAD' AND 'UPLOAD BATCH' BYTE     * 
+          *    FACTORS FROM -5.0 TO 0.0!                            * 
+          *                                                         *
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+     (3) Private message entry     2               1.0            1.0 
+
+          This function code allows you to restrict private message entry  by
+          security level.  It also allows you to have a different time  factor
+          for public versus private message entry.
+
+     (4) Reply message . . . .     2               1.0            1.0 
+
+          This function code allows you to control the time charges for a public
+          message that is in reply to some other message.  This  gives you the
+          ability to differentiate between "new" and "old"  message threads.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          29
+
+
+
+
+
+     EXTENDED PROTOCOL CONFIGURATION
+
+     Protocol
+     Name
+          This entry is the "name" for the protocol.  It is displayed in the
+          protocol menu, and before any transfer in the protocol.
+
+     Menu
+     Code
+          This is the menu letter used to identify the protocol.
+
+     Trans/
+     Recv
+          Enter a "T" here if the protocol "transmits" data to the user  (i.e.
+          download protocols).  Enter a "R" if the protocol  "receives" data
+          from the user (i.e. upload protocols).
+
+     File
+     Specs
+          This entry controls the number of filespecs that are allowed  with the
+          protocol.  There are a few special cases to consider:
+
+                     File
+                     Specs                       Meaning
+                     -----     -------------------------------------------------
+                     1         The protocol is "non batch".  A full filename is
+                               passed to the driver program.
+
+                     0         The protocol is "automatic batch UPLOAD".  Use
+                               this only with batch "receive" (UPLOAD) protocols
+                               that get the filenames from the caller's end of
+                               the transfer.
+
+                     2..50     These numbers allow the user to specify a
+                               variable number of files for download.  A
+                               filespec may  contain wildcards, resulting in up
+                               to 50 files in a given batch. If the protocol
+                               must have the filenames on the command-line, a
+                               value of 2 or 3 is generally the limit. 
+                               Protocols that  don't specify every name may use
+                               values up to 50.   See the Command Line section
+                               for more information on this.
+
+
+     Estimated
+     Efficiency
+          This entry is used to estimate how efficient a given protocol is  at
+          sending or receiving data.  Legal values range from 0.1 to  0.99.
+
+
+
+
+
+
+
+
+
+
+                                          30
+
+
+
+
+
+     Command Line
+          This entry is the "command line" used to call up the protocol driver. 
+          It must be entered exactly as if you were calling up  the driver from
+          a DOS prompt.   There are a few special cases on  the command line:
+
+          Entry                             Meaning
+          -----      -------------------------------------------------
+
+          $B$        This is replaced with the caller's connect speed, or baud
+                     rate.  This is the speed used to open the com port.
+
+          $C$        This is replaced with the caller's actual connect speed,
+                     and is used only for file transfer time estimates.
+
+          $N$        This is replaced with the COM port number in use.
+
+          $NODE$     This is replaced with the current node number and can be
+                     used to build command-lines in multi node systems.
+
+          $TIME$     This is replaced with the number of minutes of time
+                     remaining in the current login.
+
+          $@$        This is replaced with '@c:\pcb\$door.nam', which refers to
+                     a file that will list the names of the individual files to
+                     be transmitted.  This  feature is only valid for DSZ
+                     versions 880423 or  later.  Use this to allow more than 3
+                     filespecs  per transfer. 
+           
+          *.*        Causes ProDoor to copy all of the selected files into the
+                     "playpen" directory prior to  starting the transfer.  The
+                     door then instructs  the protocol driver to send "all"
+                     files from the  playpen.  Use this to allow more than 3 
+                     filespecs on any batch-compatible protocol. Because of all
+                     the disk activity involved in  copying the files, I
+                     recommend you use this  option only if you have a RAM DISK
+                     for your  playpen.
+
+          $PLAY$     This is the playpen directory name.  Use this on the end of
+                     DSZ upload command lines if you want to use the
+                     "destination directory" feature of registered DSZ versions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          31
+
+
+
+
+
+                             EDIT CONFERENCE DEFINITIONS
+
+     The Edit Conference Definition function is an editor for the CONFINFO file. 
+     It allows you to maintain ProDoor and ProEdit conference information for
+     ALL message areas available through the door.  Use this selection to define
+     "extended" conferences not available from PCBoard.
+
+     ProDoor compiles the standard CNAMES data file into a random-access file,
+     CONFINFO, for quicker access and reduced memory requirements. You may
+     define up to 5000 different conferences in this file.
+
+     The PCBoard CNAMES file is accessed ONLY if the CONFINFO file is missing or
+     has been manually deleted.  It is up to you to delete CONFINFO (so ProDoor
+     will re-build it) if you ever change the contents of your CNAMES file.  If
+     the CONFINFO file exists, ProDoor will not automatically recognize changes
+     made in your CNAMES file.
+
+     This function also has the ability to update an existing CNAMES file with
+     any changes in definitions of conferences that were already in the CNAMES
+     file.  It will not extend the CNAMES file.
+
+
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+          *                     IMPORTANT                       *
+          *                                                     *
+          *  ProDoor'S "CONFINFO" DATA FILE TAKES THE PLACE     *
+          *  OF YOUR NORMAL "CNAMES" DATA FOR CONFERENCE        *
+          *  DEFINITION.  PLEASE DO NOT USE PCBSETUP TO ALTER   *
+          *  CONFERENCE DEFINITIONS!  USE PROSM'S CONFERENCE    *
+          *  DEFINITION FUNCTION INSTEAD.  WHEN YOU ARE         *
+          *  FINISHED, THE F10 [UPDATE CNAMES] FUNCTION KEY     *
+          *  TO UPDATE THE CNAMES FILE WITH CONFINFO CHANGES.   *
+          *                                                     *
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+     Network systems may wish to define multiple CONFINFO files.  To do this,
+     you must include the statement
+             SET CONFINFO=drive:\directory\filename
+     in your calling batch file to specify which CONFINFO file is being
+     modified.
+
+
+     ProDoor automatically creates the EXTUSER file with space allocated for up
+     to 90 extended conferences.  If you need more conferences, please download
+     the EXTADJ11.ZIP utility, which can expand the file to a full 5000
+     conferences.  This utility can also be used to reduce the file to it's
+     minimum size (1 extended conference) on small systems.
+
+
+
+
+
+
+
+
+
+
+                                          32
+
+
+
+
+
+     Here is a typical display:
+
+
+                            ProDoor: [Main Board] Message Area             Area:  0
+
+         ีอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+         ณ Area Name. . . . . . . . . . Main Boardฐ                                Û
+         ณ Public Conference. . . . . . Y (Y/N)      Added Security . . . . . .0__ ฐ
+         ณ Auto ReJoin on logon . . . . N (Y/N)      Added Time (minutes) . . .0__ ฐ
+         ณ Echo Mail in Conference. . . N (Y/N/A)    Number of Message Blocks .4__ ฐ
+         ณ Make all Uploads Private . . N (Y/N)                                    ฐ
+         ณ Make all Messages Private. . N (Y/N/A)                                  ฐ
+         ณ                                                                         ฐ
+         ณ ProPack Command Options. . . 800 /eltn360kw_                            ฐ
+         ณ Message File Path Name . . . L:\PCB\MAIN\MSGS_______________            ฐ
+         ณ Conference News Path Name. . L:\PCB\GEN\NEWS________________            ฐ
+         ณ Public Upload DIR File . . . L:\PCB\GEN\UPLOAD______________            ฐ
+         ณ Public Upload Directory. . . V:\UPLOAD\_____________________            ฐ
+         ณ Private Upload DIR File. . . L:\PCB\GEN\PRIVATE_____________            ฐ
+         ณ Private Upload Directory . . V:\PRIVATE\____________________            ฐ
+         ณ                                                                         ฐ
+         ณ                       Menu File                     Listing File        ฐ
+         ณ Doors . . . . . L:\PCB\GEN\DOORS____________  L:\PCB\MAIN\DOORS.DAT____ ฐ
+         ณ Bulletins . . . L:\PCB\GEN\BLT______________  L:\PCB\GEN\BLT.LST_______ ฐ
+         ณ File Areas. . . L:\PCB\GEN\DIR______________  L:\PCB\GEN\DIR.LST_______ ฐ
+         ณ Download Paths. . . (Listing Only). . . . . . L:\PCB\GEN\DLPATH.LST____ ฐ
+         ิอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออOVRอพ
+          F2 [edit]   F3 [edit G]      F4 [find]     F10 [update CNAMES]
+          [Ctrl-]PgUp/PgDn [select]    F8 [global]    F9 [initialize]    ESC [exit]
+
+
+
+     FUNCTION KEYS
+
+     ESC  Exit this screen.
+
+     PgDn Scroll to the next higher conference.
+
+     PgUp Scroll to the next lower conference; selects the last conference when
+          used on conference 0.
+
+     F2   Edit text file.  This function key causes the specified editor program
+          to be called on the specified text file.  If the file is a non-text
+          type (such as BLT.LST, for example) an internal editor will be used. 
+          The edit program is defined by the EDITOR environment variable (the
+          default is Q.EXE).
+
+     F3   Edit graphics file.  This function key calls the specified editor
+          program with the graphics version of the specified text file.
+
+     F4   Find conference.  This function key allows you to search for a
+          conference by conference name.  The search requires the exact
+          conference name (including spaces and upper/lower case).
+
+     F8   Global change.  This function key causes the data in the item under
+          the cursor to be copied to ALL conferences.  Use this with caution.
+
+
+                                          33
+
+
+
+
+     F9   Initialize the current conference with standard defaults.  Use this
+          option to "redefine" an existing conference.  All new values will be
+          based on your "Main Board" definitions and the specified new
+          conference name.
+
+     F10  Update CNAMES file.  This selection reads all conference definitions
+          from the CONFINFO file and updates your standard CNAMES file with the
+          latest information.  This means you should not use PCBSETUP to change
+          CNAMES data -- use this function key instead.
+
+
+     DATA ENTRY
+
+     Area Name. . . . . . . . . . Hardwareฐฐฐ
+          This entry defines the Name of the new conference.  This is the
+          message printed in the Main Menu Command and Mail Command prompts for
+          the conference.  It can also be used with the (J)oin command for
+          direct access to a conference, regardless of the conference number.
+
+     Public Conference. . . . . . Y
+          This entry defines access for unregistered users in the conference. If
+          the setting is 'Y', ProDoor will automatically make a caller a member
+          of the conference during the first access.  When set to 'N' the
+          conference will be available only to a) callers already registered in
+          the conference, and b) callers specifically added to the conference
+          through the Extended User File Edit function.
+
+     Minimum Security to Auto-Register . . 89
+     Maximum Security to Auto-Register . . 99
+          These entries define the range of security levels needed to
+          automatically by registered in a PRIVATE conference.  If the user has
+          the proper security level, he will automatically enrolled into the
+          conference.  This entry has no effect on PUBLIC conferences, which are
+          automatically available to all callers, regardless of security level.
+
+     Make all Uploads Private . . N
+          This entry controls the posting of new uploads to this conference. If
+          set to 'Y', all new uploads will be posted in the private directory. 
+          If set to 'N', uploads will be posted to the public upload directory
+          (unless the caller requests private uploading with a '/' at the start
+          of the description).
+
+     Make ALL Messages Private. . N
+          This entry controls the posting of new messages to this conference. If
+          set to 'Y', all new messages will be flagged as 'RECEIVER ONLY', and
+          must be manually unprotected by the sysop before the public will have
+          access to them.  When set to 'N' the message security is specified by
+          the caller.  When set to 'A' all messages will be forced to PUBLIC.
+
+     Echo Mail in Conference. . . Y
+          This entry controls the "Echo to other systems?" prompt.  If set to
+          'Y' the caller will be asked if a new message is to be echoed, and if
+          the answer is yes, the "(echo)" flag will be set in the new message.
+          If set to 'N' no new message will be given the "(echo)" flag.  If set
+          to 'A', all messages will be given ECHO status.
+
+
+
+
+                                          34
+
+
+
+
+
+     Added Security . . . . . . . 0__
+          This entry allows you to temporarily increase a caller's security
+          level while accessing the conference.
+
+     Added Time (minutes) . . . . 0__
+          This entry allows you to grant extra time to a caller when joining
+          this conference.  The extra time is granted only once per day.  If
+          multiple conferences have 'added time', the caller will be granted up
+          to the highest 'added time' of the conferences he accesses that day.
+
+     Number of Message Blocks . . 4__
+          This entry controls the size of the index file, and therefore the
+          maximum number of consecutive message numbers that may be present in a
+          conference.  Each block allocates 1024 message numbers.  You are
+          allowed up to 32 blocks, but should use 14 or fewer blocks if you are
+          using the ProPack utility to pack the conference files.
+
+     ProPack Command Options. . . 2000 drle___
+          This entry specifies any options you want to use in conjunction with
+          the ProPack utility.  See ProPack documentation for full information
+          on options that are available.   This example will pack the message
+          file, retain 2000 messages, delete duplicate messages, and delete
+          RECEIVED+PRIVATE messages.
+
+     Message File Path Name . . . C:\PCB\HARDWARE\HARDWARE_______ 
+          This entry specifies the full filename of the conference message file. 
+          The message file and the associated index file will be automatically
+          created by ProSM, if needed.
+
+     Conference News Path Name. . C:\PCB\HARDWARE\HNEWS__________
+          This entry specifies the conference news message file.  Depending on
+          your settings, ProDoor can display the file the first time a caller
+          joins a conference during a day.
+
+     Public Upload DIR File . . . C:\PCB\MAIN\DIR14______________ 
+     Public Upload Directory. . . E:\UPLOAD\_____________________ 
+          These entries control the placement and scanning of public uploads
+          while inside this conference.  Since PCBoard's file management
+          utilities do not recognize extended conference, I recommend that you
+          use only existing upload directories for your extended conferences.
+          This will ensure that you will be able to access them for file
+          maintenance.
+
+     Private Upload DIR File. . . C:\PCB\MAIN\PRIVATE____________ 
+     Private Upload Directory . . E:\PRIVATE\____________________ 
+          These entries control the placement of private (or sysop-only) uploads
+          while inside the conference.
+
+
+
+
+
+
+
+
+
+
+
+                                          35
+
+
+
+
+
+                              Menu File                   Listing File
+     Doors . . . . . C:\PCB\GEN\DOORS____________  C:\PCB\MAIN\DOORS.DAT_______ 
+          The doors menu file entry controls the doors menu display while inside
+          this conference.  The listing file controls the actual door programs
+          and associated security controls.
+
+                              Menu File                   Listing File 
+     Bulletins . . . C:\PCB\GEN\BLT______________  C:\PCB\GEN\BLT.LST__________ 
+          The bulletins menu file entry controls the bulletins menu display
+          while inside this conference.  You should use existing files defined
+          for a standard conference so you can use the PCBoard utilities to
+          maintain the listing file.  
+
+                              Menu File                   Listing File 
+     File Areas. . . C:\PCB\GEN\DIR______________  C:\PCB\GEN\DIR.LST__________ 
+          The file areas file entry controls the file areas menu display while
+          inside this conference.  You should use existing files defined for a
+          standard conference so you can use the PCBoard utilities to maintain
+          the listing file.  
+
+     Download Paths. . . . (Listing Only). . . . . C:\PCB\GEN\DLPATH.LST_______ 
+          The download paths entry controls the listing of download directories
+          that are available while inside this conference.  You should use a
+          file defined for a standard conference so you can use the PCBoard
+          utilities to maintain the listing file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          36
+
+
+
+
+
+                               EDIT EXTENDED USER DATA
+
+     The Edit Extended User Data function is an editor for the EXTUSER file. It
+     allows you to maintain conference registration and message pointers for
+     ProDoor users.  It displays door usage count, last date in door and allows
+     editing of "earned K bytes" record.
+
+     ProDoor automatically maintains EXTUSER, the Extended User File.  The file
+     stores message pointers for all extended conferences, as well as conference
+     registration and scan preferences.
+
+     Some network systems require an environment variable to specify the
+     location of the EXTUSER data file to allow sharing by all nodes.  In this
+     case, be sure to include the statement
+             SET EXTUSER=drive:\directory\filename
+     in the calling batch file to specify the proper file path.  This feature
+     may also be used to interface with a future version of the Qmail door.
+
+
+     Here is a typical display:
+
+                              ProDoor: Extended User File Editor
+
+         ีอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+         ณ  User Name:         SAMUEL SMITH                       User Rec: 0      Û
+         ณ  Times in ProDoor:  255                             ExtUser Rec: 0      ฐ
+         ณ  Earned K Bytes:    783ฐฐ                       Last in Door: 12-11-88  ฐ
+         ณ  Security Level:    120                                                 ฐ
+         ณ                                                                         ฐ
+         ณ Cnf Mem- Last ÝCnf Mem- Last ÝCnf Mem- Last ÝCnf Mem- Last ÝCnf Mem- Lasฐ
+         ณ No. ber  Read ÝNo. ber  Read ÝNo. ber  Read ÝNo. ber  Read ÝNo. ber  Reaฐ
+         ณ ฤฤฤฤฤฤฤฤฤฤฤฤฤ Ýฤฤฤฤฤฤฤฤฤฤฤฤฤ Ýฤฤฤฤฤฤฤฤฤฤฤฤฤ Ýฤฤฤฤฤฤฤฤฤฤฤฤฤ Ýฤฤฤฤฤฤฤฤฤฤฤฤฐ
+         ณ 40:  Y  1____ Ý50:  N  0____ Ý60:  N  0____ Ý70:  N  0____ Ý80:  N  0___ฐ
+         ณ 41:  Y  1____ Ý51:  N  0____ Ý61:  N  0____ Ý71:  N  0____ Ý81:  N  0___ฐ
+         ณ 42:  Y  6____ Ý52:  N  0____ Ý62:  N  0____ Ý72:  N  0____ Ý82:  N  0___ฐ
+         ณ 43:  N  0____ Ý53:  N  0____ Ý63:  N  0____ Ý73:  N  0____ Ý83:  N  0___ฐ
+         ณ 44:  N  0____ Ý54:  N  0____ Ý64:  N  0____ Ý74:  N  0____ Ý84:  N  0___ฐ
+         ณ 45:  N  0____ Ý55:  N  0____ Ý65:  N  0____ Ý75:  N  0____ Ý85:  N  0___ฐ
+         ณ 46:  N  0____ Ý56:  N  0____ Ý66:  N  0____ Ý76:  N  0____ Ý86:  N  0___ฐ
+         ณ 47:  N  0____ Ý57:  N  0____ Ý67:  N  0____ Ý77:  N  0____ Ý87:  N  0___ฐ
+         ณ 48:  N  0____ Ý58:  N  0____ Ý68:  N  0____ Ý78:  N  0____ Ý88:  N  0___ฐ
+         ณ 49:  N  0____ Ý59:  N  0____ Ý69:  N  0____ Ý79:  N  0____ Ý89:  N  0___ฐ
+         ิอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+           F1   [next 40]       F2   [prior 40]        F3  [find user]  
+           PgDn [next user]     PgUp [prior user]      ESC [exit]        ProSM 3.4
+
+
+     User Name:         SAMUEL SMITH
+          This display indicates the user record being accessed.  Use the PgDn
+          [next user], PgUp [prior user] and F3 [find user] function keys to
+          select users.  The "scroll bar" at the right margin of the screen
+          shows you your relative position within the users file.  
+
+
+
+
+
+
+                                          37
+
+
+
+
+
+     Times in ProDoor:  255
+     Last in Door: 12-11-88
+          These displays show current information about ProDoor users, but
+          cannot be modified.  If these entries display "NONE" and "NEVER" it
+          indicates that the specified user has not yet been inside ProDoor and
+          that there is no corresponding EXTUSER record.  Because of this, only
+          the base 40 conferences can be edited for these users.
+
+     User Rec: 0
+     ExtUser Rec: 0
+          This displays the PCBoard USERS file record number and the
+          corresponding EXTUSER record number.
+
+     Earned K Bytes:    783
+          This entry records the users total "earned K bytes".  You can position
+          the cursor over this entry and enter a new value if desired.
+
+     Security Level:    120
+          This entry is a quick way to change a user's security level without
+          the need to access PCBSM.
+
+     The extended conference information is presented in tabular form, with five
+     columns, each listing 10 conferences.  This format cannot display all
+     conferences at once.  Use the F1 [next 40 conferences] and F2 [prior 40
+     conferences] function keys to scroll the conference tables left and right,
+     to gain access to the desired conference number.  Each conference table is
+     presented in this format:
+             Cnf  Mem-  Last
+             No.  ber   Read
+             ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+             40:   Y   1____
+             41:   Y   1____
+             42:   Y   6____
+
+     The "Cnf No." entry indicates the conference number being accessed.
+
+     The "Mem-ber" entry controls the user's registration in this conference. If
+     the conference is marked "PUBLIC" you don't need to edit your user
+     conference registration -- ProDoor will do it automatically the first time
+     the caller accesses the conference.   You can change this entry to manually
+     enroll a user in a private conference, or to remove a caller from a non
+     public conference.
+
+     The "Last Read" entry is the user's message pointer for this conference.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          38
+
+
+
+
+
+                               INSERT GROUP CONFERENCE
+
+     The Insert Group Conference function allows you to automatically register
+     users in a conference according to a range of security levels.
+
+
+     Here is a typical display:
+
+                                ProDoor: Insert Group Conference
+
+         ีออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+         ณ                                                                        ณ
+         ณ   Minimum security level:  10_                                         ณ
+         ณ                                                                        ณ
+         ณ   Maximum security level:  10_                                         ณ
+         ณ                                                                        ณ
+         ณ   First conference number: 45_                                         ณ
+         ณ                                                                        ณ
+         ณ   Last conference number:  49_                                         ณ
+         ณ                                                                        ณ
+         ิออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+
+          PgDn [begin]                                 ESC [exit]       ProSM 3.4
+
+
+
+     Minimum security level:  10_
+     Maximum security level:  10_
+          These entries specify the range of security levels to be inserted in
+          the specified conference.
+
+
+     First conference number:  45
+     Last conference number:   49
+          These entries specify the range of conferences to be inserted into the
+          selected user registrations.
+
+
+     Press the PGDN key to begin the Insert Group function.
+     Press the ESC key to cancel the operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          39
+
+
+
+
+
+                               REMOVE GROUP CONFERENCE
+
+     The Remove Group Conference function allows you to automatically remove
+     users from a conference according to a range of security levels.
+
+
+     Here is a typical display:
+
+                            ProDoor: Remove Group Conference
+
+         ีออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+         ณ                                                                        ณ
+         ณ   Minimum security level:  10_                                         ณ
+         ณ                                                                        ณ
+         ณ   Maximum security level:  10_                                         ณ
+         ณ                                                                        ณ
+         ณ   First conference number: 45_                                         ณ
+         ณ                                                                        ณ
+         ณ   Last conference number:  49_                                         ณ
+         ณ                                                                        ณ
+         ิออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+
+          PgDn [begin]                                 ESC [exit]       ProSM 3.4
+
+
+
+     Minimum security level:  10_
+     Maximum security level:  10_
+          These entries specify the range of security levels to be removed from
+          the specified conference.
+
+
+     First conference number:  45
+     Last conference number:   49
+          These entries specify the range of conferences to be removed from the
+          selected user registrations.
+
+
+     Press the PGDN key to begin the Remove Group function.
+     Press the ESC key to cancel the operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          40
+
+
+
+
+
+                             ARRANGE/RENUMBER CONFERENCES
+
+     The Arrange/Renumber Conferences function allows you to specify a new
+     conference number for each and every defined conference.  The program will
+     then update the CNAMES, USERS and EXTUSER files to reflect the new
+     conference arrangement.  CNAMES is not updated so renumbering conference
+     numbers less than 40 is not recommended.
+
+     Please insure that all NODES are offline before using this function.
+
+     Here is a typical display:
+
+
+                          ProDoor: Move/Arrange/Delete Conferences
+                                                                                         
+         ีออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+         ณ                                                                        ณ
+         ณ                                                                        ณ
+         ณ  Old Number          New Number               Conference Name          ณ
+         ณ                                                                        ณ
+         ณ       1                1ฐฐฐ (-1 to DELETE)     Tools                   ณ
+         ณ       2                   2                    Support                 ณ
+         ณ       3                   3                    AI                      ณ
+         ณ       4                   4                    AtariST                 ณ
+         ณ       5                   5                    IBM                     ณ
+         ณ       6                   6                    Photo                   ณ
+         ณ       7                   7                    SN-Sysop                ณ
+         ณ       8                   8                    IN-Admin                ณ
+         ณ       9                   9                    IL-Admin                ณ
+         ณ      10                  10                    Telix                   ณ
+         ณ      11                  11                    Qmodem                  ณ
+         ณ      12                  12                    Ada                     ณ
+         ณ      13                  13                    Pascal                  ณ
+         ณ      14                  14                    C-Lang                  ณ
+         ณ                                                                        ณ
+         ิออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออOVRอพ
+          F10  [begin file updates]                                                      
+          PgDn [next page]       PgUp [prior page]                      ESC [exit]
+
+
+     Old number
+          This display indicates the original conference number assigned to the
+          current conference.
+
+     New number
+          This entry allows you to specify the new conference number to be
+          assigned to this conference when the Conference Arrange function is
+          completed.  To delete a conference, assign it to a new conference
+          number of "-1".  Note that when you delete a conference, all of the
+          following conferences will be renumbered to reflect the change.
+
+
+
+
+
+
+
+
+                                          41
+
+
+
+
+
+     Conference name
+          This indicates the name of the current conference.  The screen shows
+          only 15 conferences at a time, but you can use the Up, Down, PgUp and
+          PgDn keys to scroll through all of the defined conferences.
+
+     When you have finished specifying the new conference arrangement, press the
+     F10 key to begin the file update process.  You will see this warning screen
+     before the file updates begin:
+
+
+                            ProDoor: Move/Arrange/Delete Conferences
+            
+         ีออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+         ณ                                                                        ณ
+         ณ      All NODES must be offline during this process!                    ณ
+         ณ                                                                        ณ
+         ณ                                                                        ณ
+         ณ      THIS IS YOUR LAST CHANCE TO CANCEL THIS PROCEDURE!                ณ
+         ณ      DID YOU MAKE BACKUPS?                                             ณ
+         ณ                                                                        ณ
+         ณ                                                                        ณ
+         ณ      All information in CONFINFO, USERS and EXTUSER files will be      ณ
+         ณ      updated to reflect the new conference arrangement.                ณ
+         ณ                                                                        ณ
+         ณ                                                                        ณ
+         ณ      You MUST update your CNAMES file if you alter any                 ณ
+         ณ      conference numbers less than 40!                                  ณ
+         ณ                                                                        ณ
+         ณ                                                                        ณ
+         ิออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+                                                                                         
+          PgDn [begin]                                                  ESC [exit]
+
+
+     Press the PGDN key to begin the actual file updates.  Press the ESC key to
+     cancel the operation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          42
+
+
+
+
+
+                                 SUPPORTING PROGRAMS
+
+     The ProDoor system includes the following supporting programs:
+
+          PRODOOR.EXE
+          PROSM.EXE
+          BLDLIST.EXE
+          PROECHO.COM
+          PRONS.COM
+
+
+     PRODOOR.EXE
+          This is the main DOOR program.  It should be called only by the
+          PRODOOR door script files.  The overlay version of ProDoor is posted
+          as PROD34OV.ZIP and also uses PRODOOR.OVR.
+
+
+     PROSM.EXE
+          This is the ProDoor System Manager program.  It performs the functions
+          of CONFIG, INSTALL and CHKPATH.
+
+
+     BLDLIST.EXE
+          This program builds file lists for quick file scans in large network
+          systems or systems using slow CD-ROM drives.
+
+          Usage:  BLDLIST dir ... dir [>out]
+
+          You may specify one or more directories to scan.  Subdirectories are
+          automatically included, so
+                     D:\
+          will scan all directories of drive D:, while
+                     D:\DL
+          will scan D:\DL and all subdirectories under D:\DL.
+
+          Example:
+                     BLDLIST C:\DL1 D:\DL2 K:\ >C:\PCB\GEN\DLINFO.DAT
+                     BLTLIST L:\COMM L:\GIF L:\EDIT L:\GRAPH
+                     >>C:\PCB\GEN\DLINFO.DAT
+
+          You can run BLDLIST multiple times, appending the results to a single
+          output listing.
+
+          I recommend you create a batch or EVENT to automatically update this
+          listing file if it refers to directories that are being updated.
+
+          ProDoor versions dated 2-26-90 and later are able to process such a
+          file list when included in a DLPATH.LST file.  For example:
+
+          DLPATH.LST
+          ----------
+
+          U:\UPLOAD\
+          M:\SYSOPS\
+          M:\MAG\
+          @C:\PCB\GEN\DLINFO.DAT
+          M:\DISK\
+
+                                          43
+
+
+
+
+          @C:\PCB\GEN\CR-ROM1.DAT
+
+          When a DLPATH entry starts with '@' it is expected to specify the full
+          filename of a file-listing file created with BLDLIST.  This can be
+          used to speed up searching of slow drives.  You can also use this to
+          reduce network traffic if you list network download directories and
+          place the listing on a local drive.
+
+
+     PROECHO.COM
+          This is a small program that safely echoes messages to the COM ports,
+          and is used mostly in external batch files.
+
+          Usage:   proecho PORT TEXT ...
+                     (use "~" to insert newlines)
+
+          Sets ERRORLEVEL 2 if local mode.
+          Sets ERRORLEVEL 1 if carrier is NOT present.
+          Sets ERRORLEVEL 0 if carrier present.
+
+          Example: proecho 1 ~Testing your uploads.  Please wait...~~
+
+          ProECHO is used in door batch files to send messages to the com port.
+          It will not lock up with 'write fault' in case of carrier loss.   
+
+
+     PRONS.COM
+          This is ProDoor's "no scroll" module.  It is a TSR that freezes the
+          top half of the screen (containing the last few commands and the
+          status lines) during file transfers.
+
+          The first time you run ProNS, it becomes resident and freezes the top
+          half of the screen.   From then on, any program that writes to the
+          screen via DOS or BIOS or ANSI will be restricted to the bottom of the
+          screen.
+
+          The second time you run ProNS, it will be removed from memory,
+          restoring the screen to normal.
+
+          This program works under TaskView and other environments that do not
+          pass DOS or ANSI outputs to BIOS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          44
+
+
+
+
+
+     The following utility programs are available separately for downloading:
+
+          EXTADJ.EXE
+          PROEDIT.EXE
+          PROKIT.EXE
+
+
+     EXTADJ.EXE
+          This program adjusts the size of the EXTUSER file to allow additional
+          extended conferences to be stored.  This is posted as EXTADJ11.ZIP.
+
+
+     PROEDIT.EXE
+          This program is a "local only" version of ProDoor for use by sysops to
+          read and answer mail without logging into the bbs.  This is posted as
+          PROEDT34.ZIP.
+
+
+     PROKIT.EXE
+          This is a door developer kit based on the core libraries of ProDoor. 
+          This is posted as PROKIT34.ZIP.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          45
+
+
+
+
+
+                              ProDoor COMMAND REFERENCE
+
+     ProDoor's Online Commands are divided into the following groups:
+
+          MAIN MENU COMMANDS
+          READ MAIL COMMANDS
+          MESSAGE ENTRY COMMANDS
+          VISUAL EDITOR COMMANDS
+          "MORE" PROMPT COMMANDS
+          JOIN CONFERENCE COMMANDS
+
+
+     ProDoor MAIN MENU COMMANDS
+
+     (A)bandon
+          Leave current conference and return to the Main Board. Continue
+          reading messages.
+
+     (B)ulletin
+          Bulletin listings.  List the bulletins available for viewing and the
+          date they were placed on the system.
+
+     (C)omment
+          Enter a comment message to the sysop.  You specify the 'subject' of
+          the message.  The message will be protected so it is seen only by the
+          sysop.
+
+     (CHAT)
+          Displays the list of callers that are online on other nodes in a
+          multi-node system.
+
+     (CHAT U)
+          Makes you unavailable for chat requests by other nodes.
+
+     (CHAT ?)
+          Reports if you are currently available for chat requests.
+
+     (D)ownload
+          "Downloading" refers to moving files from this system to your system.
+          You can also "stack" (S)tart or (G)oodbye after the last filename to
+          immediately start the transfer. Examples:
+
+               D Z SNOW PLASTIC
+               D file S            ;immediately start download of files
+               D file1 file2 G     ;immediately start d/l of files, goodbye at
+                                   end
+
+     (E)nter
+          Enter a new message.  You then specify who the message is to be
+          addressed to, as well as the 'subject' of the message. You can protect
+          the message so it will be seen only be the 'receiver'.
+
+     (F)ile
+          File directory listings.  Lists the names of the files that are
+          available on the board for downloading to your system.
+
+
+
+                                          46
+
+
+
+
+     (FL)ag
+          Flag file for later download.  All flagged files are automatically
+          selected for download when you use the (D)ownload command. Note:  you
+          will lose your flag list when you use (U)pload, (ZIPM), (TEST) or
+          (REPACK) commands.
+
+          Use (FL U) (file) to UN-flag a specific file.
+          Use (FL U *) to completely clear the flag list.
+
+     (G)oodbye
+          Logs you off the system.  Examples:
+               G         ;logoff
+               G Q       ;quick logoff, bypass closing bulletins
+
+     (H)elp
+          Activates ProDoor's online help system.
+
+     (HO)tkeys
+          Enable instant response on most commands.  Eliminates the need to type
+          RETURN to activate most commands. In hotkey mode you should use ";"
+          (not SPACE) to "stack" commands.  The spacebar acts like RETURN in
+          hotkey mode.
+
+     (J)oin
+          Allows you to switch to a different conference.  You may specify
+          either a conference number or a conference name.
+
+          These subfunctions are available:
+               (A)uto-join configuration update
+               (L)ocate conference by keywords
+               (M)ain board
+               (N)ew message status
+               (S)tatus of all conferences
+               (Y)our mail.  Scan for conferences with new mail for you
+               (+)next higher conference
+               (-)next lower conference
+
+          Join command examples:
+               J M            ;main board
+               J;+            ;join next available conference
+               J;6            ;join conference 6
+               J TOOLS        ;join tools conference
+               J L LANG       ;locate conferences with 'LANG' in the description
+               J;2;Q          ;quick join, bypassing conference news
+               J S            ;status of all conferences
+               J S +          ;status of conferences after current one
+               J A 20         ;configure autoscan starting with conference 20
+
+
+     (L)ocate
+          Locate files (by name).  With this selection, you can scan the file
+          directories for a matching filename.  
+          Examples of valid wildcards: 
+               L *PC     ;Files ending in 'PC'
+               L PC*     ;Files starting with 'PC'
+
+
+          The search keyword may also be of the forms:
+
+                                          47
+
+
+
+
+               first part .AND. second part
+               first part .OR. second part
+
+     (LIB)rary
+          This selection allows access to CD-ROM libraries. The selected CR-ROM
+          disk will automatically be compressed into a zipfile for you to view,
+          manipulate and download.
+
+          Example:  LIB 801
+
+     (M)ode
+          Select graphics or non-graphics display mode.  Turns the ANSI graphics
+          mode on and off.
+
+     (N)ew file  
+          Scan (by date).  Allows you to search the file directory listings for
+          either new files added to the system since the last time you called,
+          or for files added from a date which you specify.  Examples: 
+               N S U
+               N 118087 1 2 3
+               N 3 4
+
+     (NEWS)
+          Repeat conference news message.  Redisplays the system news message. 
+          If you are inside a conference, you will see the conference
+          news/welcome message again.
+
+     (NODE)
+          Displays the list of callers that are online on other nodes in a
+          multi-node system.
+
+     (O)perator
+          This selection allows you to try and page the sysop to come to the
+          computer.
+
+     (DOOR)
+     (OPEN)
+          This selection allows you to open other door programs from within
+          ProDoor.  You may specify either a door number or a door name.
+
+     (P)age
+          Sets the number of lines displayed before stopping with a "More:"
+          prompt.  Setting page length to 0 disables all more prompting.
+
+     (Q)uick
+          Shows you a quick summary of messages available for reading. Includes
+          the first 72 characters of message text.
+
+     (QQ)uicker
+          Shows you a quicker summary of messages available for reading. Does
+          not display any of the message text.
+
+     (QU)it
+          Return to PCBoard.  This selection closes the door and returns you to
+          the main bbs program.
+
+
+     (R)ead
+
+                                          48
+
+
+
+
+          Read and reply-to messages.  This selection allows you to read the
+          messages in the current conference.  Additional help is available at
+          the mail command prompt.  Example: R S
+
+     (REPACK)
+          Re pack zipfile with maximum compression. This selection will re
+          compress a selected zipfile and store the result in $SCRATCH$.   You
+          can specify an alternate format to convert files to a format you can
+          use. Examples:
+               REPACK TPC14.ARC LZH     ;convert .ARC to .LZH format
+               REPACK PRODOR30 ZOO      ;convert .ZIP to .ZOO format
+
+     (REPLY)
+          This command allows you to directly to a message from a command line.
+          Useful when you are reading messages offline through the ZIPM
+          function. The original message number can be stacked.
+
+     (S)can
+          Toggle auto-join and ZIPM access to the current conference.
+
+     (T)able
+          Table of protocols.  This command lists the protocol driver program
+          command lines used to implement the various protocols.  The estimated
+          efficiency of each protocol is included in this report.
+
+     (TEST)
+          Test the validity of a ZIP file.  This command will call up a "test"
+          function to verify that a zipfile is valid before downloading.
+          Example: TEST TPC14
+
+     (U)pload
+          Move files between your system and the board.  Examples:
+               U WINTER
+               U Z RAIN SNOW SUN
+
+     (V)iew
+          View user profile.  Displays the number of times you have used
+          ProDoor, your security level, number of downloads and uploads, number
+          of download bytes "earned" through uploading, and total download bytes
+          available.
+
+     (F V)iew
+          View/extract zipfile contents.  List contents of zipfile and
+          optionally view the text files without downloading.  It is also
+          possible to "extract" parts of a zipfile into $SCRATCH$ for
+          downloading.
+
+     (VX)quick
+          Quick view/extract zipfile contents.  View the text files in an
+          zipfile without downloading.  It is also possible to "extract" parts
+          of a zipfile into $SCRATCH$ for downloading.
+
+
+
+
+
+
+
+
+                                          49
+
+
+
+
+
+          You can take any of these actions on each file contained in the .ZIP
+          file:
+
+          (Enter) or (S)kip
+               Pressing (Enter) alone or typing (S) will skip over the current
+               file and present you with the next file in the archive.
+
+          (V)iew
+               Directly view the contents of the current text file.
+
+          (Q)uit
+               Skip over all the remaining files in the zipfile and return you
+               to the ProDoor command prompt.
+
+     (W)rite
+          Write user database information.  Allows you to change your password,
+          phone numbers, location and user comment.
+
+     (X)pert
+          Selects expert or novice mode.
+
+     (Y)our
+          Search for messages addressed to you.
+
+     (YA)
+          Search for messages addressed to you OR to "all".
+
+     (Z)ippy
+          Keyword DIR scan (by subject).  Allows you to scan the file
+          directories for a matching keyword entry of your choice.  
+          Example: Z SOURCE A
+
+          The search keyword may also be of the forms:
+               first part .AND. second part
+               first part .OR. second part
+
+     (ZIPM)
+          Zip new mail.  Captures up to 400 new messages in selected conferences
+          and then zips them in $SCRATCH$ for smallest possible download time.
+          Examples:
+               ZIPM N         ;list new messages by conference before capture 
+               ZIPM A         ;zip mail in all conferences
+               ZIPM M 10 14   ;zip mail in main board (M), areas 10 and 14 
+               ZIPM TOOLS AI  ;zip TOOLS and AI conferences
+
+          Use (L)ast-read or (RESET) command to reset your "last read" message
+          pointers.
+
+          Use (J A)uto-config or (SC)an commands to select message areas in
+          (ZIPM A)ll.
+
+
+
+
+
+
+
+
+                                          50
+
+
+
+
+
+     ProDoor Main Menu Command Examples
+
+          D Z file1 file2     ;download with (Z)modem protocol
+
+          D file S            ;immediately (s)tart download of files  
+
+          D file1 file2 G     ;immediately start d/l of files, (g)oodbye at end
+
+          F 1 2 3 NS          ;non-stop listing of file directories 1 2 and 3. 
+
+          B;3;11;NS           ;non-stop listing of bulletins 3 and 11.
+
+          J M                 ;main board
+
+          J;6                 ;join conference 6
+
+          J TOOLS             ;join tools conference
+
+          J L LANG            ;locate conferences with 'LANG' in the
+                              description.
+
+          L *PCB* 1 2         ;locate files with 'PCB' in the filename in file
+                              areas 1 and 2. 
+
+          N 120188 U NS       ;non-stop listing of files newer than  12/01/88 in
+                              the upload directory. 
+
+          N;S;A               ;new files (s)ince last time on in all file areas.
+
+          DOOR;3              ;switch to DOOR number 3
+
+          R 2000+ NS          ;non-stop reading forward from msg 2000.
+
+          F;V;file            ;verbose listing of component files within
+                              file.ZIP.  Prompts for text view and extract.
+
+          VX file             ;skips the verbose listing and goes  directly to
+                              text view and extract function. 
+
+          ZIPM A              ;zip new mail in all conferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          51
+
+
+
+
+
+     ProDoor JOIN CONFERENCE COMMANDS
+
+     The Join command allows you to switch to a different conference.  You may
+     specify either a conference number or a conference name.
+
+     (+)
+          Advance to next higher conference number.
+
+     (-)
+          Go back to next lower conference number.
+
+     You may specify any conference number. Full conference names can also be
+     used to select conferences.
+
+     (A)uto-join configuration update
+
+     (L)ocate conference by keywords
+
+     (M)ain board
+
+     (N)ew message status
+
+     (S)tatus of all conferences
+
+     (Y)our mail.  Scan for conferences with new mail for you.
+
+     Join command examples:
+
+          J M            ;main board
+          J;+            ;join next available conference
+          J;6            ;join conference 6
+          J TOOLS        ;join tools conference
+          J L LANG       ;locate conferences with 'LANG' in the description 
+          J;2;Q          ;quick join, bypassing conference news
+          J S            ;status of all conferences
+          J S +          ;status of conferences after current one
+          J A 20         ;configure autoscan starting with conference 20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          52
+
+
+
+
+
+     ProDoor READ MAIL COMMANDS
+
+     (+) or (-)
+          You can change the "default" reading direction by typing "+" or "-".
+          The prompt tells you which way you are going. Pressing (Enter) alone
+          advances in the current direction and displays the next message
+          available.
+
+     (#)
+          You can type any message number and that message will be displayed. If
+          there is no such message number on file, ProDoor will search for the
+          closest message and display that one instead.
+
+     (/)
+          Redisplay the current message.
+
+     (A)bandon
+          Leave current conference and return to the Main Board. Continue
+          reading messages.
+
+     (C)omment
+          Enter a comment message to the sysop.  You specify the 'subject' of
+          the message.  The message will be protected so it is seen only by the
+          sysop.
+
+     (E)nter
+          Enter a new message.  You then specify who the message is to be
+          addressed to, as well as the 'subject' of the message. You can protect
+          the message so it will be seen only be the 'receiver'.
+
+     (Enter)
+          Search for the next message.  Notice the prompt message "(Enter)='+'"
+          or "(Enter)='-'" to tell which direction (Enter) will take you.
+
+     (G)oodbye
+          Logs you off the system.  Examples:
+               G         ;logoff
+               G Q       ;quick logoff, bypass closing bulletins
+
+     (HO)tkeys
+          Enable instant response on most commands.  Eliminates the need to type
+          RETURN to activate most commands. In hotkey mode you should use ";"
+          (not SPACE) to "stack" commands.  The spacebar acts like RETURN in
+          hotkey mode.
+
+     (J)oin
+          Allows you to switch to a different conference.  You may specify
+          either a conference number or a conference name.
+
+          These subfunctions are available:
+               (A)uto-join configuration update
+               (L)ocate conference by keywords
+               (M)ain board
+               (N)ew message status
+               (S)tatus of all conferences
+               (Y)our mail.  Scan for conferences with new mail for you
+               (+) or (-) next higher/lower conference
+
+                                          53
+
+
+
+
+
+          Join command examples:
+               J M            ;main board
+               J;+            ;join next available conference
+               J;6            ;join conference 6
+               J TOOLS        ;join tools conference
+               J L LANG       ;locate conferences with 'LANG' in the description
+                                        J;2;Q          ;quick join, bypassing
+                                                       conference news
+               J S            ;status of all conferences
+               J S +          ;status of conferences after current one
+               J A 20         ;configure autoscan starting with conference 20
+
+     (K)ill
+          If the message is either TO or FROM you, this option will appear.
+          Pressing K will delete the message from the message base.
+
+     (L)ast
+          Resets the last-read pointer to the current message number. This is
+          useful in conjunction with ARCM to re-capture messages. Example: 
+               500 L     ;selects message 500 and resets last-read to point to
+                         it.
+
+     (M)emorize
+          Saves current message number.  Use with (RM)recall memory.
+
+     (MG)graphic
+          Toggles ANSI graphics mode off/on.
+
+     (N)o more
+          Returns you to the main command prompt.
+
+     (NODE)
+          Displays the list of callers that are online on other nodes in a
+          multi-node system.
+
+     (NS)non-stop
+          will enter non-stop message reading or searching. Suspended with ^S,
+          aborted with ^K or end-of-messages.
+
+     (Q)uick
+          Shows you a quick summary of messages available for reading. Includes
+          the first 72 characters of message text.
+
+     (QQ)uicker
+          Shows you a quicker summary of messages available for reading. Does
+          not display any of the message text.
+
+     (QU)it
+          Quit reading messages and return to the ProDoor command prompt. 
+
+     (RE)ply to
+          Enter a reply message to SENDER of the currently displayed message.
+          The reply mode allows you to optionally change the subject and to
+          provide "receiver-only" protection.
+
+     (RO)ply to
+          Enter a reply message to RECEIVER of the current message.
+
+                                          54
+
+
+
+
+     (REPLY)
+          This command allows you to directly to a message from a command line.
+          Useful when you are reading messages offline through the ARCM
+          function. The original message number can be stacked.
+
+     (RESET)
+          This command allows you to reset the 'last read' message pointer to a
+          specific message number.  Example: RESET 500
+
+     (RM)recall
+          Returns you to the message memorized with the (M)emory command.
+
+     (RR)efer
+          Moves you to the 'Refer#' message.
+
+     (S)ince
+          Next message since you were last on.
+
+     (SC)an
+          Toggle auto-join and ZIPM access to the current conference.
+
+     (T)hread
+          Search for other messages with the same subject matter. 
+
+     (TA)gline
+          Allows you to view and optionally alter the message tagline to be used
+          for new message entry.
+
+     (X)pert
+          Selects expert or novice mode.
+
+     (Y)our
+          Search for messages addressed to you.
+
+     (YA)
+          Search for messages addressed to you OR to "all".
+
+     (Z)ip
+          Search for messages.  Lets you specify a "search keyword". With zip
+          search in effect, you will see ONLY messages that contain the keyword
+          either in the header OR the body.  In color mode, the matching lines
+          are highlighted.
+
+     (ZIPM)
+          Zip new mail.  Captures up to 400 new messages in selected conferences
+          and then archives them in $SCRATCH$ for smallest possible download
+          time. Examples:
+
+               ZIPM N         ;list new messages by conference before capture 
+               ZIPM A         ;archive mail in all conferences
+               ZIPM M 10 14   ;archive mail in main board (M), areas 10 and 14 
+               ZIPM TOOLS AI  ;archive TOOLS and AI conferences
+
+          Use (L)ast-read or (RESET) command to reset your "last read" message
+          pointers.
+
+          Use (J A)uto-config to select message areas in (ZIPM A)ll.
+
+
+                                          55
+
+
+
+
+     (CO)py
+          Copy the current message into a different conference. This is a Sysop
+          Command.
+
+     (ED)it
+          Allows you to edit the current message header without first going into
+          the (MOD)ify function. This is a Sysop Command.
+
+     (F)ind
+          Find and display information about the sender of the current message.
+          This is a Sysop Command.
+
+     (MOVE)
+          Move the current message to a different conference. This is the same
+          as (CO)py followed by (K)ill. This is a Sysop Command.
+
+     (MO)dify
+          Edit message text and header information. This is a Sysop Command.
+
+     (P)rotect
+          Change the message protection to 'RECEIVER-ONLY'. This is a Sysop
+          Command.
+
+     (U)nprotect
+          Change the message protection to 'PUBLIC'. This is a Sysop Command.
+
+     (UNK)ill
+          UnKill a message that has been Killed. This is a Sysop Command.
+
+     (RU)snoop
+          Toggles read-flagging and user-update to allow reading messages
+          without updating pointers. This is a Sysop Command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          56
+
+
+
+
+
+     ProDoor Mail Command Examples
+
+          2000 +              ;read forward from message 2000
+
+          1000 S              ;skip to message 1000 and then continue where you
+                              left off.
+
+          QQ YA NS            ;quicker listing of all mail to you or 'all'.
+
+          M 345 RM            ;save your place, read message 345, return to
+                              where you left off.
+      
+          Z keyword           ;scan for messages with keyword in them.
+
+          Z keyword NS        ;non-stop scan for all messages with  keyword.
+
+          REPLY 4431          ;enter a reply to message 4431.
+
+          J;+                 ;go to next available message area.
+
+          J TOOLS             ;switch to TOOLS message area.
+
+          J L LANG            ;locate conferences with 'LANG' in the
+                              description.
+
+          ZIPM 1 2 3          ;zip new mail in conferences 1,2 and 3. 
+      
+          RESET 750           ;reset last-read pointer to message 750.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          57
+
+
+
+
+
+     ProDoor MESSAGE ENTRY COMMANDS
+
+     (A)bort
+          Throw away the message and return to reading messages. 
+
+     (C)ontinue
+          Continue message text input from where you left off.
+
+     (D)elete
+          Allows you to delete a line from the message. 
+
+     (E)dit
+          Allows you to change the contents of a line without starting over. 
+          You specify edits in the form:
+               OLD;NEW
+          and the first time OLD is seen in the selected line, it will be
+          changed into NEW.
+
+     (F)ind
+          Find and display information about the receiver of the current
+          message. (Sysop only)
+
+     (I)nsert
+          Allows you to put a new line between two existing lines.
+
+     (L)ist
+          List the message as it has been entered.  This also gives you the line
+          numbers as needed for the (D)elete, (I)nsert and (E)dit functions.
+
+     (O)riginal
+          Lets you review the text of the original message you were reading or
+          replying to.  You are also able to QUOTE from the original message
+          with this function.
+
+     (Q)uote
+          Allows you to quote lines (by line number) from the original message.
+
+     (S)ave
+          Saves the message on disk and returns you to reading messages.
+
+     (V)isual
+          Activates the full-screen visual editor.  You must be able to accept
+          ANSI codes to use this function.
+
+
+     Examples of ProDoor Message Entry Commands
+
+          E 10           ;edit line 10.
+          D 10           ;delete line 10.
+          I 10           ;insert a line before line 10.
+          Q 8 4          ;quote original message starting at line 8 for 4 lines.
+          S K            ;save the new message and kill the original.
+          S +            ;save the new message and advance to the next one.
+
+
+
+
+
+                                          58
+
+
+
+
+
+     ProDoor VISUAL EDITOR COMMANDS
+
+     The ProDoor Visual Editor provides full-screen visual editing for online
+     message entry.  Visual editing requires ANSI terminal emulation.
+
+     Visual editing commands are WordStar-like control characters.  If your
+     terminal program provides ANSI keyboard emulation you will also be able to
+     use the indicated function keys.
+
+     << Cursor Motion >>
+
+     Ctrl-S  Move left  1 character     (Left arrow key)
+     Ctrl-D  Move right 1 character     (Right arrow key)
+     Ctrl-E  Move up    1 line          (Up arrow key)
+     Ctrl-X  Move down  1 line          (Down arrow key)
+     Ctrl-A  Move left  1 word          (Ctrl-Left arrow key)
+     Ctrl-F  Move right 1 word          (Ctrl-Right arrow key)
+     Ctrl-I  Tab cursor to next tabstop (Tab key)
+     Ctrl-P  Move cursor to line end    (End key)
+     Ctrl-W  Move cursor to line start  (Home key)
+
+     << Scrolling >>
+
+     Ctrl-R  Move up a page             (PgUp key)
+     Ctrl-C  Move down a page           (PgDn key)
+
+
+     << Delete >>
+
+     Ctrl-G  Delete (gobble) character under cursor
+     Ctrl-H  Delete character to the left of the cursor  (Backspace)
+     Ctrl-T  Delete the word following the cursor
+     Ctrl-Y  Delete the current line
+     Ctrl-J  Join current line with next line
+
+
+     << Miscellaneous >>
+
+     Ctrl-B  Reformat paragraph.  A paragraph ends with the first line that is
+     blank or that has leading spaces.
+
+     Ctrl-L  Clear screen and redisplay. This also scrolls the screen so the
+     cursor line is in the middle of the display.
+
+     Ctrl-N  Insert a RETURN.  Splits line at the cursor.
+
+     Ctrl-O  Review the text of the Original message you were reading or
+     replying. You may also quote selected lines from the original message.
+
+     Ctrl-Q  Allows quoting from original message.  Same as Ctrl-O but does not
+     display the original message again.
+
+     Ctrl-V  Toggle insert/overtype mode.  (Ins key)
+
+     Ctrl-U  Quit visual mode and return to the Message Entry Command prompt.
+
+     ESC     Exit visual mode and return to the Message Entry Command prompt.
+
+                                          59
+
+
+
+
+
+     Insert Mode versus Overtype Mode
+
+     In insert mode, all characters typed are INSERTED before the cursor. The
+     ENTER key splits the line and BACKSPACE can re-join lines.
+
+     In overtype mode, characters "type over" what was on the screen before.
+     Overtype mode also disables the automatic line SPLIT / JOIN available in
+     insert mode.  Use ^N(split) and ^J(join) to manually split and join lines
+     while in overtype mode.
+
+
+     Keyboard emulation
+
+     The easiest way to control the cursor in Visual Edit mode is to use your
+     cursor keys.  Most popular terminal programs provide some sort of keyboard
+     emulation.  Unfortunately, this emulation is either incomplete or requires
+     you to go through an involved configuration process.
+
+     ProDoor also supports the "Doorway" keyboard mode of Qmodem.
+
+     The WordStar* command set was chosen as a control-character command set
+     because it can function on virtually any keyboard and with any terminal
+     emulation mode.  It also has the advantage of letting you keep your fingers
+     on the "home" keys while moving the cursor around.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                       60
+
+
+
+
+
+         Function             Keyboard Codes Recognized       Doorway Codes
+         --------             -------------------------       -------------
+
+         Cursor up . . . . . . . . . . . ^E
+                                 or      <esc> A                 <nul> H
+
+         Cursor down . . . . . . . . . . ^X
+                                 or      <esc> B                 <nul> P
+
+         Cursor right. . . . . . . . . . ^D
+                                 or      <esc> C                 <nul> M
+
+         Cursor left . . . . . . . . . . ^S
+                                 or      <esc> D                 <nul> K
+
+         Word right. . . . . . . . . . . ^F                      <nul> t
+
+         Word left . . . . . . . . . . . ^A                      <nul> s
+
+         Beginning of line . . . . . . . ^W
+                                 or      <esc> H                 <nul> G
+
+         End of line . . . . . . . . . . ^P
+                                 or      <esc> K                 <nul> O                         or      <esc> R
+
+         Page up . . . . . . . . . . . . ^R
+                                 or      <esc> r                 <nul> I
+
+         Page down. . . . . . . . . . .  ^C
+                                 or      <esc> q                 <nul> Q
+
+         Insert mode toggle . . . . . .  ^V
+                                 or      <esc> n                 <nul> R
+
+
+         In this table, the symbol <esc> means any one of these character code
+     sequences:
+          chr(27)
+          chr(27) [
+          chr(27) [ O
+
+     The symbol <nul> means chr(0) or an ascii NUL.  These codes correspond
+     directly to the IBM extended scan codes produced by the corresponding
+     keyboard keys.  These codes are used if your terminal program supports
+     "Doorway" mode.
+
+     This provides support for a wide variety of keyboard emulations.
+
+
+
+
+
+
+
+
+
+
+
+                                          61
+
+
+
+
+
+     ProDoor "MORE" PROMPT COMMANDS
+
+     Most "MORE" prompts include the following commands:
+
+          (Y)es   Continue the current display.
+          (NS)    Continue the current display in non-stop mode.
+          (N)o    Stop the current display and return to a menu prompt.
+          (F)lag  Flag a filename for later downloading.
+
+     In addition, most more prompts allow other commands to be specified. For
+     instance, a MORE prompt from the main menu will respond to most main menu
+     commands.  A MORE prompt in the mail reader will respond to most mail
+     reader commands.
+
+     (Y)es
+          Continue the current display. Pressing ENTER also causes the current
+          display to continue.
+
+     (N)o
+          Stop the current display and return to a menu prompt. You can
+          optionally stack the next command after N and it will be immediately
+          executed instead of repeating a menu. Displays can also be canceled
+          with the ^K command.
+
+     (NS)
+          Continue the current display in non-stop mode. Non-stop modes can be
+          canceled with the ^K command.
+
+     (F)lag
+          Flag a filename for later downloading.
+
+     (F U)
+          Unflag specified flags.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          62
+
+
+
+
+
+                                     ERROR CODES
+
+          Error    Class                   Description               
+
+            2     DOS:       File not found
+            3     DOS:       Path not found
+            4     DOS:       Too many open files
+            5     DOS:       File access denied
+            6     DOS:       Bad file handle
+           12     DOS:       Bad file access code
+           15     DOS:       Bad drive number
+           16     DOS:       Can't remove current dir
+          100     I/O:       Disk read error
+          101     I/O:       Disk write error
+          102     I/O:       File not assigned
+          103     I/O:       File not open
+          104     I/O:       File not open for input
+          105     I/O:       File not open for output
+          106     I/O:       Bad numeric format
+          150     CRITICAL:  Disk is write-protected
+          151     CRITICAL:  Unknown unit
+          152     CRITICAL:  Drive not ready
+          153     CRITICAL:  Unknown command
+          154     CRITICAL:  CRC error in data
+          156     CRITICAL:  Disk seek error
+          157     CRITICAL:  Unknown media type
+          158     CRITICAL:  Sector not found
+          159     CRITICAL:  Printer out of paper
+          160     CRITICAL:  Device write fault
+          161     CRITICAL:  Device read fault
+          162     CRITICAL:  Network or Hardware failure
+          200     FATAL:     Division by zero
+          201     FATAL:     Range check
+          202     FATAL:     Stack overflow
+          203     FATAL:     Heap overflow
+          204     FATAL:     Bad pointer operation
+          205     FATAL:     Floating point overflow
+          206     FATAL:     Floating point underflow
+          207     FATAL:     Bad floating point operation
+          208     FATAL:     Overlay Manager not initialized
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            63
+
+
+
+
+
+                                       LICENSE
+
+     SourceWare: What is it?
+
+     SourceWare is my name for a unique concept in user supported software.
+     Programs distributed under the SourceWare concept always offer source code.
+
+     This package can be freely distributed so long as it is not modified or
+     sold for profit.  If you find that this program is valuable,  you can send
+     me a donation for what you think it is worth.  I suggest about $30.
+
+     Send your registrations to:
+                                   Samuel H. Smith
+                                    P. O. Box 4808
+                             Panorama City, CA 91412-4808
+
+     When you send a registration, your existing user account on The Tool Shop
+     will be upgraded for extended time and downloading.  You will also be able
+     to download a special "register" program.  The register program allows you
+     to install your own "registration" message seen by callers when opening
+     ProDoor.
+
+
+     Why SourceWare?
+
+     Why do I include source code?  Why isn't the donation mandatory?  The value
+     of good software should be self-evident.  The source code is the key to
+     complete understanding of a program.  You can read it to find out how
+     things are done.  You can also change it to suit your needs, so long as you
+     do not distribute the modified version without my consent.
+
+
+     Copyright
+
+     If you modify this program, I would appreciate a copy of the new source
+     code.   I am holding the copyright on the source code, so please don't
+     delete my name from the program files or from the documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          64
+
+
+
+
+
+                                      DISCLAIMER
+
+          I make no warranty of any kind, express or implied, including
+          without limitation, any warranties of merchantability and/or
+          fitness for a particular purpose.  I shall not be liable for any
+          damages, whether direct, indirect, special or consequential
+          arising from a failure of this program to operate in the manner
+          desired by the user.  I shall not be liable for any damage to
+          data or property which may be caused directly or indirectly by
+          the use of this program.
+
+          IN NO EVENT WILL I BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING
+          ANY LOST PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR
+          CONSEQUENTIAL DAMAGES ARISING OUT OF YOUR USE OR INABILITY TO USE
+          THE PROGRAM, OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+
+                                       SUPPORT
+
+     I work very hard to produce a software package of the highest quality and
+     functionality.  I try to look into all reported bugs, and will generally
+     fix reported problems within a few days.
+
+     Since this is user supported software under the SourceWare concept, I don't
+     expect you to register if you don't like it or if it doesn't meet your
+     needs.   
+
+     If you have any questions, bugs, or suggestions, please contact me at:
+                         Phone number         Modem type
+                       --------------    ---------------------
+                       (818) 891-3772    US Robotics HST 9600
+                       (818) 891-1344    Hayes-V series 9600
+                       (818) 891-6780    US Robotics 2400 (free line)
+
+     The latest version is always available for downloading.
+
+     Enjoy!
+
+          Samuel H. Smith
+          Author and Sysop of The Tool Shop.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          65
+
+
+
+
+
+                                       CREDITS
+
+     I would like to personally thank all those who contributed in some way to
+     the development of ProDoor.
+
+     I thank Ward Christensen for creating XMODEM, the grandfather of all of
+     today's PC communication protocols.  
+
+     I thank Telenet for offering PC Pursuit, which created the need for the new
+     protocols.
+
+
+     ProDoor makes use of external protocol and driver programs.  I thank the
+     authors of these protocol drivers for their work in advancing the state of
+     the art in PC communications,  and for offering these programs to the
+     public.
+
+     Omen Technology:      Zmodem               (DSZ)
+     Jan A. van der Eijk:  Super Kermit         (PCKERMIT)
+
+
+     ProDoor can be configured to use external archive utility programs for the
+     LIB, TEST, REPACK and ZIPM functions.
+
+     PKWARE:               Zipfile Utilities    (PKZIP, PKUNZIP)
+     Rahul Dhesi:          ZOO Utilities        (ZOO201)
+     NoGate Consulting:    PAK Utilities        (PAK151)
+     Haruyasu Yoshizaki:   LZH Utilities        (LHARC121)
+
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+          *                         IMPORTANT                         *
+          *      THESE UTILITY PROGRAMS ARE SHAREWARE AND REQUIRE     *
+          *      A CONTRIBUTION FOR CONTINUED USE.  THESE PROGRAMS    *
+          *      ARE NEVER BUNDLED WITH ProDoor.  YOU SHOULD OBTAIN   *
+          *      THEM FROM THE AUTHOR OR FROM BBS DOWNLOAD AREAS.     *
+          * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+     I especially thank the many beta testers for all their suggestions, hard
+     work, and long patience during the development cycle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          66
+
+
+
+
+
+                                        INDEX
+
+
+          !update.340  1                     (re)ply to  54
+          !whats.new  1                      (repack)  15, 47, 49
+          (a)bandon  46, 53                  (reply)  49, 55
+          (a)bort  14, 58                    (reset)  50, 55
+          (a)uto-join  47, 52, 53            (rm)recall  54, 55
+          (b)ulletin  46                     (ro)ply to  54
+          (c)omment  46, 53                  (rr)efer  55
+          (c)ontinue  14, 58                 (ru)snoop  56
+          (chat)  46                         (s)ave  58
+          (co)py  56                         (s)can  49
+          (d)elete  14, 58                   (s)ince  51, 55
+          (d)ownload  46, 47                 (s)tatus  47, 52, 53
+          (door)  48                         (sc)an  50, 55
+          (e)dit  58                         (t)able  49
+          (e)nter  46, 53                    (t)hread  55
+          (ed)it  56                         (ta)gline  55
+          (enter)  50, 53                    (test)  15, 47, 49
+          (f u)  62                          (u)nprotect  56
+          (f v)iew  15, 49                   (u)pload  47, 49
+          (f)ile  46                         (unk)ill  56
+          (f)ind  56, 58                     (v)iew  15, 49, 50
+          (f)lag  62                         (v)isual  58
+          (fl)ag  47                         (vx)quick  49
+          (g)oodbye  46, 47, 51, 53          (w)rite  21, 50
+          (h)elp  10, 13, 47                 (x)pert  50, 55
+          (ho)tkeys  47, 53                  (y)es  62
+          (i)nsert  58                       (y)our  47, 50, 52, 53,
+          (j)oin  34, 47, 53                           55
+          (k)ill  54, 56                     (ya)  50, 55
+          (l)ast  50, 54, 55                 (z)ip  5, 55
+          (l)ist  58                         (z)ippy  50
+          (l)ocate  5, 47, 52, 53            (zipm)  47, 50, 55
+          (lib)rary  10, 48                  $door.cmd  21
+          (m)ain board  47, 52, 53           bldlist.exe  43
+          (m)emorize  54                     capfile  19
+          (m)ode  48                         combase  20
+          (mg)graphic  54                    comirq  20
+          (mo)dify  56                       comspec  20
+          (move)  56                         config  19, 23, 43, 50,
+          (n)ew  47, 48, 52, 53                        55
+          (n)o  54, 62                       config.bat  23
+          (news)  48                         confinfo  19, 23, 24, 32,
+          (node)  48, 54                               34, 42
+          (ns)  62                           customization  3, 9
+          (o)perator  48                     debug  6, 7, 20
+          (o)riginal  58                     desqview  6
+          (open)  48                         dos  7, 20, 31, 44, 63
+          (p)age  48                         doubledos  6
+          (p)rotect  56                      dsz  3, 11, 19, 31, 66
+          (q)uick  48, 54                    dszlog  19
+          (q)uote  58                        echoflag  20
+          (qq)uicker  48, 54                 editor  6, 10, 13, 19,
+          (qu)it  48, 54                               23, 32, 33, 37,
+          (r)ead  10, 13, 48                           46, 58, 59
+
+                                          67
+
+
+
+
+               extuser  19,                  proclos  10
+                         23,                 prod  8, 17, 19, 23, 25
+                         24,                 prod.cnf  8, 23, 25
+                         32,                 prodebug  6, 19, 20
+                         37,                 prodlm  10
+                         38,                 prodoor.exe  43
+                         41,                 prodoor.ovr  43
+                         42,                 prodump  10
+                         45                  produp  2, 3, 5, 21
+          fsec  5                            proecho.com  43, 44
+          hotkey  47, 53                     proedit  19, 23, 32, 45
+          install  3, 8, 15, 23,             proentr  10, 13, 14
+                    43, 64                   profree  21
+          kermit  8, 66                      profv  10, 13
+          language  2, 3, 6, 9, 17,          prohelp  10, 13, 17
+                    18                       prolib  10, 15
+          lharc  16                          promail  10, 13
+          lib  10, 15, 17, 48, 66            promenu  9, 10
+          libdef  10                         promore  10, 13
+          libhelp  10                        pronew  10
+          libraries  45, 48                  prons.com  43, 44
+          logfile  19                        propack  23, 33, 35
+          lzh  5, 16, 49, 66                 propcan  21
+          lzhtv  15, 16                      proratio  22
+          macro  3, 7, 11, 27                proread  10, 13
+          msgs  33                           proreq  10
+          network  7, 19, 20, 25,            prosm  19, 23, 32, 35,
+                    32, 37, 43, 44,                    37, 39, 40, 43
+                    63                       prosm.exe  23, 43
+          node  7, 8, 10, 11, 17,            prostrt  10
+                    19, 25, 31, 46,          protocol  1, 8, 20, 30,
+                    48, 54                             31, 49, 51, 66
+          ovcrt  6, 19                       protrns  11, 18, 20
+          pack  16, 23, 24, 35, 49           proulm  10
+          packall  23                        prout1.bat  15
+          path  8, 20, 33, 35, 37,           proutest.bat  15
+                    63                       provis  10, 13
+          pcb  8, 17, 21, 25, 31,            proxentr  17
+                    33, 35, 36, 43,          proxfile  17
+                    44, 51                   proxjoin  17
+          pcboard  1, 2, 5, 8-12,            proxmail  17
+                    18, 19, 23, 28,          proxmain  17
+                    32, 35, 36, 38,          proxmore  17
+                    48                       proxtra  16
+          pcbsetup  7, 23, 32, 34            proxzip  16
+          playpen  8, 11, 25, 31             prozip  16
+          pointers  19, 23, 37, 50,          read.me  1
+                    55, 56                   recycle  8
+          port  8, 11, 31, 44                renumber  24, 41
+          pro-p.bat  15, 27                  repack  3, 5, 15, 25, 27,
+          pro-r.bat  15, 27                            47, 49, 66
+          pro-t.bat  15                      reply  29, 49, 54, 55, 57
+          pro-v.bat  15                      scratch  5, 11, 15, 25,
+          pro-x.bat  15                                49, 50, 55
+          proarcm  10, 15                    script  6, 8, 19, 43
+          proarcm.bat  15                    signoff  10
+          problems  65                       stacking  5, 8
+          prochat  10                        stripzip  16
+
+                                          68
+
+
+
+
+          tagline  19, 55
+          taskview  6, 19, 44
+          testfile  16
+          toolm  21, 25
+          toolshop  21
+          unpack  16
+          upload  2, 3, 5, 8, 10,
+                    15, 21, 22,
+                    25-31, 33-35,
+                    43, 51
+          upsec  5, 25
+          vx  10, 13, 49, 51
+          zipm  3, 6, 10, 25, 47,
+                    49-51, 55, 57,
+                    66
+          ziptv  15, 16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          69
+

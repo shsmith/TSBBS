@@ -1,0 +1,44 @@
+
+--
+-- strlib - string manipulation library
+--
+-- written by s.h.smith, 24-mar-86
+--
+-- This package was written for Janus/ADA to allow compilation
+-- of programs written for other ADA compilers.
+--
+
+package body strlib is
+
+   function str (c: in character) return string is
+      s: string;
+   begin
+      s := " ";
+      s(1) := c;
+      return s;
+   end str;
+
+
+   function length (s: in string) return integer is
+   begin
+      return character'pos(s(0));
+   end length;
+
+
+   function extract (s: in string;
+                     from: in integer;
+                     len: in integer) return string is
+      e: string;
+   begin
+      e(0) := character'val(len);
+      for i in 1..len loop
+         e(i) := s(i+from-1);
+      end loop;
+      return e;
+   end extract;
+
+
+end strlib;
+
+
+

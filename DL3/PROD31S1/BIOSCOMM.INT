@@ -1,0 +1,8 @@
+procedure BIOS_poll_receive;
+function BIOS_carrier_present:  boolean;
+function BIOS_receive_ready: boolean;
+function BIOS_receive_data:  char;
+procedure BIOS_transmit_data(s:    longstring);
+procedure BIOS_init_com(chan: integer);
+procedure BIOS_uninit_com;
+procedure BIOS_flush_com;

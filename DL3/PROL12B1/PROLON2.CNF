@@ -1,0 +1,112 @@
+;
+; PROLON.CNF - ProLogon 1.0á configuration file (1-5-90 and later)
+;
+; Com port driver - INTERRUPT or BIOS
+INTERRUPT
+;
+;
+; Option Keywords
+;
+CHECK_FILE U:\PCB\ORDER\ORDER.LOG
+
+DETECT_ANSI ON          ;automatically detect ansi and set graphics default
+                        ;accordingly (graphics prompt is still active)
+
+AUTO_LOGON_MENU ON      ;provide a prompt for "special services" before the
+                        ;initial graphics or language prompt.  Service numbers
+                        ;correspond to the AUTO_LOGON keywords defined below
+                        ;in the sequence in which they are defined.  Use
+                        ;AUTO_LOGON_MENU ONLY to limit access to ONLY the
+                        ;defined services and bypass the normal BBS logon
+                        ;sequence entirely.
+
+AUTO_LOGON BETA OPEN PROBETA $o$PASSWORD
+AUTO_LOGON ORDER OPEN ORDER $o$PASSWORD
+AUTO_LOGON COMMENT OPEN PROMESG $o$PASSWORD
+AUTO_LOGON DBMAIL OPEN DBMAIL $o$PASSWORD
+AUTO_LOGON PCBOARD OPEN PCBOARD $o$PASSWORD
+                        ;if user says 'ORDER', the command line
+                        ;'OPEN ORDER PASSWORD' will automatically be executed,
+                        ;allowing special direct logons without need for
+                        ;password or user name entry.  these are also selected
+                        ;automatically by the "services" menu.  Assign a unique
+                        ;userlevel to each keyword's user record to simplify
+                        ;branching logic below
+
+SYSTEM_LEVEL 200        ;minimum level for access to "system" function.
+
+;MONITOR_COM 2           ;check for possible laplink connections on COM2
+
+EXPIRE_DAYS 0           ;number of days before expiration for new users
+
+; COMMON_DIR T:\PCB2    ;common directory for display files
+                        ;default is to use current directory
+
+DISPLAY_NEWS OFF        ;DISPLAY_NEWS ON causes internal display of
+                        ;conference news, but defeats the initial "scan
+                        ;for personal mail" prompt.
+                        ;DISPLAY_NEWS OFF causes prologon to trigger a
+                        ;news display when ProDoor is first opened.
+
+FORCE_MONITOR OFF       ;FORCE_MONITOR ON causes ProLogon to stay in the
+                        ;Node Monitor display instead of the normal
+                        ;control panel.
+;
+;
+; Door control lines:  Format of each door control line is:
+;    LEVEL DOORMENU DOORLIST {*}INIT_DEFAULT {*}RET_DEFAULT
+;
+; Where:
+;    LEVEL          is the user's security level for this control line
+;
+;    DOORMENU       is the full path and filename of the door menu
+;    DOORLIST       is the full path and filename of the doors.dat file
+;
+;    INIT_DEFAULT   is the initial default door command after logon.
+;                   begin with '*' to force this option without prompting.
+;                   begin with '**' to force option and prevent user from
+;                   over-riding with command stack.
+;
+;    RET_DEFAULT    is the default door command after return from a door.
+;                   begin with '*' to force this option without prompting.
+;                   begin with '**' to force option and prevent user from
+;                   over-riding with command stack.
+;
+; If no matching security level is found, the LAST door control line will
+; be used.  This allows you to have a "default" door system for most users,
+; and additional special door control lines for specific levels.
+;
+; Examples:
+;    50 c:\pcb\gen\doors c:\pcb\main\doors.dat *1 *G
+;       This door control line applies to security level 50 users.
+;       It displays the c:\pcb\gen\doors door menu, uses the
+;       file c:\pcb\main\doors.dat to control actual doors,
+;       forces the caller initially into door 1.  On return from
+;       door 1, the 'G'oodbye command is forced.
+;
+;    2 U:\pcb\gen\doors2 U:\pcb\main\doors.dat **S 1
+;       forces into system for scripts, disables user over-riding
+;       's' option with command stack, later gives default of door 1
+
+; new users - forces into door#15 for registration script, disables user
+;             over-riding '15' option with command stack, later forces
+;             caller offline if not upgraded by door 15.
+2 U:\pcb\gen\doors2 U:\pcb\main\doors.dat **15 *G
+
+;; private node users are allowed to run order door only
+10 *U:\PCB\GEN\CLOSED U:\pcb\main\doors.dat **ORDER *G
+50 *U:\PCB\GEN\CLOSED U:\pcb\main\doors.dat **ORDER *G
+
+;the special auto-logon users are routed to specific doors
+111 U:\pcb\gen\doors U:\pcb\main\doors.dat **AORDER *G
+112 U:\pcb\gen\doors U:\pcb\main\doors.dat **PROBETA *G
+113 U:\pcb\gen\doors U:\pcb\main\doors.dat **PROMESG *G
+114 U:\pcb\gen\doors U:\pcb\main\doors.dat **DBMAIL *G
+115 U:\pcb\gen\doors U:\pcb\main\doors.dat **RUNPCB *G
+
+120 U:\pcb\gen\doors U:\pcb\main\doors.dat 1 1
+
+; all other users - forces door 1 initially, then defaults to (g)oodbye
+; (since this is the last door control line it applies to all other levels)
+10 U:\pcb\gen\doors U:\pcb\main\doors.dat *1 1
+

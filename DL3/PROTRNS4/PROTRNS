@@ -1,0 +1,174 @@
+(?) for help.
+@X09(@X0C?@X09)@X0F for Assistance.@XFF
+(X) for menu,
+@X09(@X0CX@X09)@X0F for menu,
+(?) for help with commands.
+(?) for Assistance with commands.
+Number of Downloads: @DLFILES@ (@DLBYTES@ total, @DAYBYTES@ today)
+@X0ANumber of Downloads: @X0F@DLFILES@ @X09(@X0E@DLBYTES@ @X0Ftotal, @X0E@DAYBYTES@ @X0Ftoday@X09)@XFF
+Number of Uploads:   @UPFILES@ (@UPBYTES@ total)
+@X0ANumber of Uploads:   @X0F@UPFILES@ @X09(@X0E@UPBYTES@ @X0Ftotal@X09)@XFF
+Use (J +) or (J -) to change conferences.
+Use (J +) or (J -) to change conferences.
+[@INCONF@] Command?
+@X0F@INCONF@ @X09{@X0AConf.#$CONFNUM$, Node#$NODE$@X09}@X0E Command?
+[@INCONF@] Mail Command:
+@X0F@INCONF@ @X09{@X0A$CONFNUM$@X09} @X0CMail@X0F,@X07e@X0EX@X07pert@X0F,@X0EQU@X07it@X0F,@X0E?@X07@X0F=@X07HELP:@XFF
+Earned D/L Bytes:
+@X0AEarned D/L Bytes:@X0F
+D/L Bytes Available:
+@X0AD/L Bytes Available:@X0F
+<HOTKEY>
+@X07°       
+Would you like to register with us:
+Would you like to register with us {No Alias Allowed}:
+You are not registered in Conference $5W$!
+@XFF($5W$) is an invalid conference name.
+($3$) not understood.  Type
+@X09(@X0C$3$@X09)@X0F is not a valid menu option.  Type@XFF
+Use Visual Editor:?
+Use @X0CV@X0Bisual@X0E Editor, @X09(@X0FFULL@X0D Cursor Movement@X09)@X0E,@XFF
+Warning: Name not found in USERS file!
+Warning: This USER does not exist on this BBS!
+Warning: Automatic disconnect in ($5W$) minute
+Warning: Save your stuff $FIRST$!  Automatic disconnect in @X0F(@X8C$5W$@X0F)@X0C minute
+Enter the filename to VIEW:
+Enter the filename to VIEW (.ZIP is assumed):
+Thanks for calling, $FIRST$!
+Thanks for visiting COM2: $FIRST$!
+Do you want ANSI graphics:
+Do you want IBM ANSI graphics (Y QQ NS for yes;quick;non-stop):
+DOOR # to Open:
+COM2: Door # to Open:
+Keyboard Time Expired!
+Keyboard Time Expired, ___$FIRST$,_PLEASE_WAKE_UP___ !!!
+Please wait ...
+Please give me a moment ...
+Viewing contents of $3$
+@X0AWhat do you want to do with this file? @X0C=> @X0F$3$@XFF
+Enter the filename to test:
+Enter the filename to test (.ZIP is assumed):
+Would you like to register with us:
+Have you agreed to these ONE TIME terms & like to register with us:
+Wrong password entered!
+Wrong password entered, (Nervous?)!
+Bulletin:
+Bulletin # to read:
+(R)elist,
+(R)e-Display,
+@INCONF@ Conference Joined.
+@X0FWelcome to @X0E@INCONF@ @X0FConference, @X0A$FIRST$@X0F.@XFF
+Returning to system.
+Returning to COM2:.
+Scanning ...
+@X0FScanning @X09(@X0DThe command @X0E"@X0ARESET@X0E" @X0Dwill reset your message pointer@X09) @X0F...              @XFF
+has 0 new
+has NO new
+Message Killed:
+@X0CMessage Marked Killed till next pack:$DEFAULT$
+New messages left by alternate node.
+NEW MESSAGES were entered by other nodes while you were reading mail.           Use R;S (Read Since) to read them.
+Access Denied - Name in use on another Node!
+Access Denied - Your name is an active caller on another Node!
+Warning: USER is not registered in @INCONF@!
+@X0FWarning: This USER is not registered in this conference @X09(@X0C@INCONF@@X09)@X0F!@XFF
+($3$) duplicates a current board file.
+@X47@X0B($3$) @X0Fis not accepted on this system due to @X0EDUPLICATION @X0Fof the file                   or Sysop Lock!$CLREOL$@XFF
+Uploads Not Accepted on File Format
+You are NOT Authorized to upload the file(s)
+Not enough download bytes remaining!
+@X0FSorry, You don't have enough download @X0DBYTES @X0Fremaining.  Please @X0AUPLOAD @X0Fsomething!@XFF
+Not enough time remaining!
+@X0FSorry, You don't have enough @X0CTIME @X0Fremaining.  Use @X0APROBANK @X0FDoor!@XFF
+(Ctrl-K) aborts
+@X09(@X0ECtrl@X0C-@X0EK@X09) @X0Aaborts
+(+)(-), (A)config, (L)ocate-keyword, (N)ew-mail, (S)tats, (Y)ours-personal
+@X09(@X0C+@X09)(@X0C-@X09)@X0E, @X09(@X0CA@X09)@X0Econfig, @X09(@X0CL@X09)@X0Eocate-keyword, (N)ew-mail, (S)tats, @X09(@X0CY@X09)@X0Eours-personal@XFF
+@X0DActive message numbers are
+@X0FActive message numbers are
+$YELLOW$Message Entry Command? 
+@X0EPlease Select your Choice: 
+V)isual
+@X09(@X0CV@X09)@X0Aisual
+(D)ownload
+@X09(@X0CD@X09)@X0Aownload
+Number: $8S$ / $LASTMSGNO$
+Number: $8S$ @X0E/ @X0FLast Msg. # @X0B$LASTMSGNO$@XFF
+No Caller this Node
+No Caller this Node
+Running a DOOR
+@X0CRunning a Door@XFF
+Available for Chat
+@X0FAvailable for Chat@XFF
+Auto Logoff Pending
+Auto Logoff Pending
+Chat Request Sent
+Chat Request Sent
+Unavailable for Chat
+@X74Unavailable for Chat@X00@XFF
+Transferring a File
+@X0DTransferring a File@XFF
+Entering a Message
+@X0EEntering a Message@XFF
+Chatting with Group
+Chatting with Group
+Drop to DOS Pending
+Drop to DOS Pending
+Chatting with Node
+@X0CChatting with Node@XFF
+Waiting for Node
+@X0CWaiting for Node@XFF
+[ProDoor]
+@X0D[@X09[@X0B$FIRST$ is in @X74ProDoor@X00@X09]@X0D]@X0E
+(Escape)=Exit
+@X09(@X0CEscape@X09)@X0E=@X0FSave@X07
+(Ctrl-Z)=Help
+@X09(@X0CCtrl-Z@X09)@X0E=@X0BHelp@X07
+ÚÄVisual EditorÄ¿
+ÚÄ@X0FVisual Editor@X07Ä¿
+Insert Mode
+@X0EInsert Mode@X07
+Overtype Mode
+@X0DOvertype Mode@X07
+Directory Scan for ($4$) ... (Ctrl-K) aborts
+@X0DOption @X09(@X0CNEW@X09)@X0D will show NEW files in UPLOAD areas, @X09(@X0CALL@X09) @X0Din ALL file areas       @X0FDirectory Scan for ($4$) ... (Ctrl-K) aborts
+Use (J +) or (J -) to change conferences.
+@X0EUse @X09(@X0CJ +@X09) @X0Eor @X09(@X0CJ -@X09) @X0Eto change conferences.
+(F)lag,
+(FL)ag files,
+Node              Status                               Caller
+@X74Node @X70|@X71  Status             Idle Time @X70|@X75 Caller @X70- @X76City & State                    @X00@XFF
+You have requested a batch upload.
+@X74You have requested a batch upload.@X00@XFF
+Press (Enter) now if you want ProDoor to determine filenames automatically.
+@X0CPress @X09(@X0EEnter@X09)@X0C now if you want ProDoor to determine filenames automatically.@XFF
+(You risk file duplication when you skip filename entry)
+@X09(@X0FYou risk file @X0Dduplication@X0F when you skip filename entry@X09)@XFF
+Topic:
+COM2: BBS HELP MENU Topic:
+Last chance!  Automatic logoff in $5W$ seconds.  Abort:
+@X8CLast chance!  @X0FAutomatic logoff in @X0A$5W$@X0F seconds, $FIRST$.  Abort:
+$GREEN$Zip search for ($3$), (Enter)=Continue search, (Z)=Quit search.
+@X0DZip search for @X09(@X0C$3$@X09)@X0F, @X0A(Enter)=Continue search, @X09(@X8CZ@X09)@X0A=Quit search.$DEFAULT$
+Filespec
+@X09(@X0FPress @X0CENTER @X0Fto end@X09) @X0EFilename
+(S)tart, (G)oodbye after transfer, (A)bort, (Enter)='$2$'?
+@X09(@X0FEnter@X09)@X0E or @X09(@X0FS@X09)@X0Etart, @X09(@X0CG@X09)@X0Eoodbye after transfer, @X09(@X0AA@X09)@X0Ebort? (  )[3D@XFF
+View executed on file ($3$)
+@X0FView executed on file @X09(@X0C$3$@X09)$DEFAULT$
+Viewing contents of $3$
+@X0FYou just Viewed the contents of @X09(@X0C$3$@X09)$DEFAULT$
+Member file(s) to extract: (Enter)=none?
+@X0DMember file(s) to extract: @X0A(Enter)=none?@X0F
+Extract member ($3$) from ($4$)
+@X0AExtract member @X09(@X0C$3$@X09) @X0Afrom @X09(@X0E$4$@X09)$DEFAULT$
+$YELLOW$Action: $GREEN$(V)iew text, (X)tract, (R)elist, (Enter)=none? 
+@X0FAction: @X09(@X0DV@X09)@X0Eiew text, E@X09(@X0DX@X09)@X0Etract files, @X09(@X0DR@X09)@X0Eelist, @X0A(Enter)=none? 
+$YELLOW$Abort message entry: $GREEN$(Enter)=no?
+@X8CAbort @X0Fmessage entry? @X0A(Enter)=no?
+$YELLOW$Enter the Text to Scan for: $GREEN$(wildcards are OK) (Enter)=none? 
+$YELLOW$Please enter the text I should look for: $GREEN$(Enter)=none? 
+------------------------------------------------------------------------
+[-------------¬---------------------«---------------------¬------------]
+$YELLOW$Checking ...
+$CLREOL$$YELLOW$Checking 4.5 Giga Bytes ...

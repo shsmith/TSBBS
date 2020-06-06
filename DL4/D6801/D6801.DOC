@@ -1,0 +1,20 @@
+
+D6801 is a compiler for a small "pascal like" language.  It generates
+motorola 6801 assembly language, which can be executed by the
+RUN6801 interpreter.
+
+The code generator and optimization modules are also provided for
+the 8080 and the 6502, although there is no way to execute the object
+code for these machines.
+
+Several sample programs in the "D" language are proveded.
+
+Full source code is provided (in turbo pascal).
+
+
+I hereby place this material into the public domain.
+Samuel H. Smith, 31-Dec-86
+
+Inquiries to:  5119 N. 11 ave 332, Phoenix, Az 85013
+
+

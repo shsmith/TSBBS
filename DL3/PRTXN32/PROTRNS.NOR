@@ -1,0 +1,724 @@
+Can
+Kan
+To:
+Til:
+City: 
+   By: 
+From: 
+  Fra: 
+Subj:
+ Subj:
+Local
+Lokal
+More:
+Mer:
+Scan  
+Sõk 
+$YES$
+JA
+$NO$
+NEI
+Read:
+Lest:
+(0)=none, (Enter)=
+(0)=ingen, (Enter)=
+Number: $8S$
+Nummer: $8S$ av $LASTMSGNO$
+Time
+Tid
+You can
+Du kan
+Transmit 
+Send 
+(Enter)=yes?
+(Enter)=ja?
+(Enter)=no?
+(Enter)=nei?
+(Enter)=none?
+(Enter)=ingen?
+Action:
+Aksjon:
+Normally
+Normalt
+(R)elist,
+(R)liste pÜ ny,
+Last On:
+Sist PÜ:
+(?) for help.
+(?) for hjelp.
+(*)all, 
+(*)alle, 
+LAST CHANCE!
+SISTE SJANSE!
+Enter: 
+Skriv: 
+(Has Replies)
+(Har Svar)
+(X) for menu, 
+(X) for meny, 
+Date
+Dato
+Date: 
+ Dato: 
+(Echo)
+(Ekko)
+Filespec
+Filnavn 
+⁄ƒVisual Editorƒø
+⁄Fullskjerm Editø
+≥ (Ctrl-Z)=Help ≥
+≥ (Ctrl-Z)=Hjelp≥
+≥ Overtype Mode ≥
+≥ Overskriv Mode≥
+¿ƒ(Escape)=ExitƒŸ
+¿ƒ(Escape)=ExitƒŸ
+Insert Mode
+Insett Mode
+'No change'
+'Ingen endring'
+VIEW:
+Se PÜ:
+(Enter)='QUIT'?
+(Enter)='SLUTT'?
+Scanning ...
+Sõker .....
+No messages found!
+Ingen meldinger funnet!
+'Private'.
+'Privat'.
+REPACK
+OMPAKK
+private dir.
+private filkatalog.
+Subject
+Subjekt
+Zip scan from:
+Zip sõk fra:
+ZIPM executed.
+ZIPM utfõrt.
+Entering a Message
+Skriver en Melding
+Event in 
+Event om 
+min. left
+min. igjen
+minutes
+minutter
+Minutes Used: $5W$
+Minutter Brukt: $5W$
+Not found.
+Ikke funnet.
+Error free link: 
+Feilfri link: 
+Error: 
+Feil: 
+Expected: 
+Ventet: 
+Expert Mode
+Ekspert Mode
+Expire Date:    @EXPDATE@
+GÜr ut Dato:    @EXPDATE@
+Drop to DOS Pending
+GÜ til DOS Venter
+Enter group password: 
+Skriv gruppe passord: 
+Not Uploaded:   $3$   
+Ikke Uploaded:  $3$   
+$5W$ messages captured.
+$5W$ meldinger funnet.
+$NAME$ Off
+$NAME$ Av
+Abnormally
+Uforutsett
+(Free download)
+(Fri download)
+(G)oodbye, (S)ystem, (Enter)=
+(G)logge av, (S)ystem, (Enter)=
+$5W$ messages scanned.
+$5W$ meldinger gjennomsõkt.
+(Home)=Help
+(Home)=Hjelp
+(Old;New), (Enter)=
+(Gammel;Ny), (Enter)=
+Security:? 
+Adgangs nivÜ:? 
+(R)eceiver only, 
+(R)bare mottaker, 
+(S)ince or (Enter)=$4$? 
+(S)iden eller (Enter)=$4$? 
+Date as (mmddyy) to search from:
+Dato som (mmddÜÜ) Ü sõke fra:
+Abort message entry:
+Avbryt melding (Y/N):
+Aborted!
+Abrutt!
+Checking 
+Sjekker 
+Checking ... 
+Sjekker ...  
+Message Copy: 
+Melding kopi: 
+Calling from:  
+Ringer fra:  
+New Password (One word!)?
+Nytt Passord (Ett ord!)?
+Okay.
+I orden.
+ready!
+klar!
+receive
+motta
+Receive 
+Motta 
+Searching ...
+Sõker ...
+seconds
+sekunder
+Recent uploads
+Siste uploads
+Refer To
+Referanse Til
+Refer#: $3$
+Refer#: $3$
+Reply to Message:
+Svar til Melding:
+Request Library Disk 
+Anmod om CD ROM Disk 
+Opened DOOR ($3$) at @SYSTIME@
+èpnet DùR ($3$) kl @SYSTIME@
+Operator Paged at @SYSTIME@
+Ropte pÜ Sysop kl @SYSTIME@
+Out of Code in Door
+Ute i eksternt program
+Pack in what format:
+Pakke om i hvilket format:
+Page length:
+Side lengde:
+Password
+Passord
+Caller Number:  @NUMCALLS@
+Ring Nummer:    @NUMCALLS@
+New security level:
+Nytt adgangs nivÜ:
+Next thread: 
+Neste trÜd: 
+No messages found!
+Ingen meldinger funnet!
+No Caller this Node
+Ingen pÜ denne Noden
+Scan [@INCONF@] for personal mail:
+Sõke i [@INCONF@] for personlig post:
+@INCONF@ Conference Joined.
+@INCONF@ konferanse Aktiv. 
+@INCONF@ Conference Abandoned
+@INCONF@ Konferanse Forlatt
+(V)iew text, (X)tract, (R)elist, 
+(V)se pÜ tekst, (X)trekk ut, (R)liste pÜ ny, 
+No personal messages found!
+Ingen personlige meldinger funnet!
+Access Denied - This is a 'Closed' Board!
+Nektet Adgang - Denne Noden er BARE for MEDLEMMER!
+Active message numbers are $5W$-$LASTMSGNO$.
+Aktive meldings nummer er $5W$-$LASTMSGNO$.
+Active Messages:     $MSGCOUNT$
+Aktive Meldinger:    $MSGCOUNT$
+($3$) duplicates a current board file.
+($3$) eksistrerer pÜ basen fra fõr.
+($3$) is an invalid conference name.
+($3$) er et ugyldig konferanse navn.
+($3$) is an invalid filename!
+($3$) er et ugyldig filnavn!
+($3$) not found on disk!
+($3$) ikke funnet pÜ disken!
+($3$) not understood.  Type 
+($3$) ikke forstÜtt.  Skriv 
+($3$) on node ($5W$) wants to CHAT with you!
+($3$) pÜ node ($5W$) õnsker Ü PRATE med deg!
+(A)ll, (U)pload, 
+(A)lle, (U)pload, 
+Subject: 
+Subjekt: 
+(Blank)=abort?
+(Blank)=avbryt?
+(wildcards are OK) 
+(jokertegn tillatt) 
+(Enter) alone to end.
+(Enter) alene for siste.
+Auto Logoff Pending
+Auto Avlogg Venter
+Search keyword:
+Ord Ü sõke etter:
+Security Level: @SECURITY@
+Adgangs nivÜ:   @SECURITY@
+Snoop Mode
+Kikke Mode
+Auto Register: @INCONF@
+Auto Registrer:@INCONF@
+Auto-join configuration update
+Auto konfigurasjon oppdatert
+automatic
+automatisk
+Automatic Disconnect Completed!
+Automatisk Avlogging Fullfõrt!
+Automatically
+Automatisk
+AutoScan [@INCONF@] is
+AutoSõk [@INCONF@] er
+Available for Chat
+Tilgjengelig for Prat
+Back from DOS at @SYSTIME@
+Tilbake fra DOS kl. @SYSTIME@
+Begin description with (/) to make upload 
+Begynn beskrivelsen med (/) for Ü gjõre upload 
+Bulletin Read: @INCONF@ # $5W$
+Bulletin Lest: @INCONF@ # $5W$
+Bulletin: (1-$5W$), 
+Bulletin: (1-$5W$), 
+No flags present.
+Ingen merkede filer.
+No more messages to search.
+Ikke flere meldinger Ü sõke etter.
+No such flag: 
+Ingen slik fil er merket:
+Business or data phone # is
+Kontor eller data telefon er
+Changes NOT saved
+Endringer IKKE lagret
+Changes saved ...
+Endringer lagret ...
+Chat Request Sent
+Anmodning om Ü PRATE sendt
+Chatting
+Prater
+Chatting with Group
+Prater med Gruppe  
+Chatting with Node 
+Prater med Node    
+City and State calling from
+By og Land som du ringer fra
+Graphics Mode
+Grafikk Mode
+Message Left: 
+Melding skrevet: 
+Message number to UnKill:
+Redde meldings nr:
+Message pointers updated.
+Meldings peker oppdatert.
+Comment Left: 
+Kommentar skrevet: 
+Conference(s) to Capture:
+Konferanse(r) Ü hente:
+Connect type: $4$
+Connect type: $4$
+Continue anyway:
+Fortsett likevel (Y/N):
+Delete Line number:
+Slett linje nummer:
+Delete this line:
+Slette denne linjen (Y/N):
+Deleted.
+Slettet.
+Directories: (1-$5W$),
+Filkataloger: (1-$5W$),
+Directory Scan for ($4$) ... (Ctrl-K) aborts
+Sõker i filkatalog for ($4$) ... (Ctrl-K) avbryter
+Directory: (1-$5W$), 
+Filkatalog: (1-$5W$), 
+(V)iew, (D)ownload, (R)elist, 
+(S)e pÜ, (D)ownload, (L)iste pÜ ny, 
+Disk Full! Writing ZIPM capture...
+Disk Full! Skriver ZIPM pakke...
+Do you want ANSI graphics:
+ùnsker du ANSI grafikk: (Y/N)
+DOOR # to Open:
+èpne DùR nr:
+Join Conference Command:
+Join Konferanse Kommando:
+Download Estimate:
+Download Beregnet:
+Earned D/L Bytes:    $5W$k
+Opptjent KB:         $5W$k
+Echo to Other Systems:?
+Ekko til Andre System:?
+Edit Line number:
+Editere Linje nummer:
+Empty files cannot be downloaded!
+En tom fil kan ikke downloades!
+Ending line number:
+Siste linje nummer:
+Scanning Directory $5W$
+Sõker i Filkatalog $5W$
+Scheduled Event ran at 
+Oppsatt Event kjõrte kl.
+Scheduled Event ran at @SYSTIME@
+Oppsatt Event kjõrte kl. @SYSTIME@
+Enter a longer description of the file please!
+Vennligst skriv en lengre beskrivelse!
+Enter Language # to use:
+Hvilket sprÜk nr. vil du bruke:
+Enter password for ($3$) access: 
+Skriv passord for ($3$) tilgang: 
+Enter the DOOR # to Open:
+Skriv DùR nr. du vil èpne:
+Enter the filename to
+Skriv filnavnet til
+Enter the Text to Scan for:
+Skriv teksten for Ü sõke etter:
+Extract member ($3$) from ($4$)
+Trekk ut medlem ($3$) fra ($4$)
+Fatal Error!  Returning to system...
+Kritisk feil!  Returnerer til system...
+File already in the list!
+Filen er allerede i listen!
+File transfer aborted!
+Fil overfõring abrutt!
+File transfer completed.
+Fil overfõring fullfõrt.
+Filename(s) to flag:
+Merke filnavn:
+Filename(s) to UNflag:
+Fjerne merket filnavn:
+Flagged files: 
+Merkede filer: 
+Flags will be lost if you proceed:
+Filmerkingen forsvinner hvis du fortsetter:
+Free download: $3$
+Fri download: $3$
+Header Edit Command:
+Editer Hode kommando:
+High Message Number: $LASTMSGNO$
+Hõy Meldings Nummer: $LASTMSGNO$
+Home or voice phone # is
+Telefon nummer hjemme er
+Hotkey Mode
+Hurtig-tast Mode
+Incorrect password ($3$) for ($4$)
+Feilskrevet password ($3$) for ($4$)
+Input from what file:
+Indata fra hvilken fil:
+Insert before Line number:
+Sett inn foran linje nummer:
+Insufficient disk space for uploading!
+Ikke nok disk plass for upload!
+Languages Available:
+SprÜk tilgjengelige:
+Please wait ...
+Vennligst vent ...
+Posted in @INCONF@
+Lagt inn i @INCONF@
+Press (Enter) to continue:
+Trykk (Enter) for Ü fortsette:
+Processing your request.  Please wait ...
+Utfõrer din anmodning.  Vennligst vent ...
+Protocol:
+Protokoll:
+Quick scan from:
+Hurtig sõk fra:
+Quote from the original message:
+Sitere fra original meldingen:
+Re-enter password to verify
+Skriv passord igjen for kontroll
+Registration Information Saved.
+Registrerings Informasjon Lagret.
+Registration Information Updated.
+Registrerings Informasjon Oppdatert.
+REPACK file ($3$) in $4$ format
+PAKKE om fil ($3$) i $4$ format
+Returning to system.  Please wait ...
+Returnerer til system.  Vennligst vent ...
+Last Call Date: @LASTDATEON@ (@LASTTIMEON@)
+Sist du ringte: @LASTDATEON@ (@LASTTIMEON@)
+Download FILE ratio exceeded!  (D/U=$2$ NEED=$3$)
+Download FIL rate overskredet!  (D/U=$2$ TRENGER=$3$)
+Your records indicate that you have $2$ download FILEs for each upload.
+Din rekord viser at du har $2$ download for hver upload.
+Please upload at least one FILE for each $3$ you download.
+Vennligst upload minst en FIL for hver $3$ du downloader.
+Download BYTE ratio exceeded!  (D/U=$2$ NEED=$3$)
+Download BYTE rate overskredet! (D/U=$2$ TRENGER=$3$)
+Your records indicate that you have $2$ download BYTEs for each upload.
+Din rekord viser at du har $2$ download BITER for hver upload.
+Please upload at least one BYTE for each $3$ you download.
+Vennligst upload minst en BYTE for hver $3$ du downloader.
+Last chance!  Automatic logoff in $5W$ seconds.  Abort:
+Siste sjanse!  Automatisk avlogging om $5W$ sekunder. Avbryt:
+Loading $3$.  Please wait ...
+Henter inn $3$.  Vennligst vent ...
+Lower speeds are allowed between $3$ and $4$.
+Lavere hastighet er tillatt mellom $3$ og $4$.
+Member file(s) to extract:
+Medlem fil(er) Ü trekke ut:
+Member text file(s) to view:
+Medlem tekst fil(er) Ü se pÜ:
+Message Entry Command? 
+Skrive Melding Kommando? 
+Message Killed: @INCONF@ # $5W$
+Slettet melding: @INCONF@ # $5W$
+Message UnKilled: @INCONF@ # $5W$
+Reddet melding: @INCONF@ # $5W$
+Msg#   Ref#     Date  To              From            Subject
+Meld#  Ref#     Dato  Til             Fra             Subjekt
+Network Delay - Message File Busy
+Netverk forsinkelse - Meldings fil opptatt
+New Message Numbers: $5W$
+Nye Meldings nummer: $5W$
+New messages left by alternate node.
+Nye meldinger skrevet pÜ annen node.
+No entry in PWRD file for security level @SECURITY@
+Level @SECURITY@ ikke funnet i PWRD filen
+Node          Status                     Caller
+Node          Status                     Bruker
+Not enough download bytes remaining!
+Du har brukt opp download kvoten i dag!
+Not enough time remaining!
+Du har brukt opp tiden i dag!
+Note: Press <ENTER> to keep original information without change!
+Merk: Trykk <ENTER> for Ü beholde original informasjon uten endring!
+$GREEN$Number of Downloads: @DLFILES@ (@DLBYTES@ total, @DAYBYTES@ today
+$GREEN$Antall downloads:    @DLFILES@ (@DLBYTES@ total, @DAYBYTES@ i dag)
+$YELLOW$(+)(-), (A)config, (L)ocate-keyword, (N)ew-mail, (S)tats, (Y)ours-personal
+$YELLOW$(+)(-), (A)konfig, (L)et-sõkeord, (N)y-post, (S)tats, (D)in-personlig
+Number of Uploads:   @UPFILES@ (@UPBYTES@ total)
+Antall Uploads:      @UPFILES@ (@UPBYTES@ total)
+Password (One word please!)
+Passord (Ett ord takk!)
+Password Failure ($3$)
+Passord Feil angitt ($3$)
+Performing Automatic Logoff ...
+Utfõrer Automatisk avlogg ...
+Please enter a description of ($3$).
+Vennligst angi en beskrivelse av ($3$).
+Please enter a description of this upload.
+Vennlisgt angi en beskrivelse av denne fil.
+Please enter your current password for verification: 
+Vennligst skriv ditt nÜvërende passord for kontroll: 
+Scan  Num      Name      To You   Messages    Read     Number   Messages
+Sõk   Num      Navn      Til Deg  Meldinger   Lest     Nummer   Meldinger
+Sorry, ($3$) is not available at your security level.
+Beklager, ($3$) er ikke tilgjengelig ved ditt adgangs nivÜ.
+Sorry, ($3$) is not available.
+Beklager, ($3$) er ikke tilgjengelig.
+Sorry, insufficient disk space for proper DOOR operation!
+Beklager, ikke nok disk plass for Üpning av DùRer!
+Sorry, minimum supported baud rate is $3$ ...
+Beklager, minste tillatte baud rate er $3$ ...
+Starting line number for quote:
+Linje for Ü starte SITAT fra:
+Status: GROUP PASSWORD
+ Status: GRUPPE PASSORD
+Status: RECEIVER ONLY
+ Status: BARE MOTTAKER
+Sysop has disabled uploads prior to a system event!
+Sysop har stoppet uploads for õyeblikket da en event kommer snart!
+Sysop is not available.
+Sysop er ikke tilgjengelig.
+System Available
+System tilgjengelig
+TEST executed on file ($3$)
+TEST utfõres pÜ filen ($3$)
+Text entry aborted ...
+Skriving av melding abrutt ...
+Thanks $FIRST$!
+Takk $FIRST$!
+Thanks for calling, $FIRST$!
+Takk for at du ringte, $FIRST$!
+$YELLOW$($GREEN$@TIMEUSED@ used, $RED$@TIMELEFT@ left$YELLOW$)
+$YELLOW$($GREEN$@TIMEUSED@ brukt, $RED$@TIMELEFT@ igjen$YELLOW$)
+$YELLOW$($RED$@TIMELEFT@ left$YELLOW$)
+$YELLOW$($RED$@TIMELEFT@ igjen$YELLOW$)
+There are too many new messages!  Get the rest next time.
+Det er for mange nye meldinger!  Hent resten neste gang.
+Time Limit Exceeded!
+Tiden overskredet!
+Time limit reduced because an event is scheduled in $5W$ minutes.
+Tiden redusert da en service event skal utfõres om $5W$ minutter.
+Too ambiguous!  Please specify at least 1 non-wild character.
+Er du morsom!  Vennligst angi minst 1 bokstav + jokertegn.
+Too long!  Only 8 letters, please.
+For lang!  Bare 8 bokstaver, takk.
+Too many files selected!
+For mange filer valgt!
+Total Calls:    @NUMTIMESON@
+Antall ringt:   @NUMTIMESON@
+D/L Bytes Available: @BYTESLEFT@
+D/L Biter Tilgjeng:  @BYTESLEFT@
+Transferring a File
+Overfõrer en fil   
+Type (Ctrl-X) several times to abort.
+Trykk (Ctrl-X) flere ganger for Ü avbryte.
+Type EXIT to return to 
+Skriv EXIT for Ü gÜ tilbake til 
+Unavailable for Chat
+Utilgjengelig for PRAT
+upload dir.
+upload filkatalog.
+Upload Time Credit:  $5W$ minutes
+Upload Tids Kredit:  $5W$ minutter
+Uploaded by: 
+Uploaded av: 
+Uploaded files:
+Uploaded filer:
+Uploads are Private ...
+Uploads er Privat ...
+Uploads Not Accepted on File Format
+Upload Ikke tillatt med fil Format
+Use (J +) or (J -) to change conferences.
+Bruk (J +) eller (J -) for Ü skifte konferanse.
+Use QU for quit!
+Bruk QU for slutt!
+Use Visual Editor:?
+Bruke Fullskjerms editor:?
+View executed on file ($3$)
+Se pÜ innholdet av filen ($3$)
+View member ($3$) from ($4$)
+Se pÜ medlem ($3$) fra filen ($4$)
+Viewing contents of $3$
+Se pÜ innholdet av $3$
+Last Message Read:   $8S$
+Sist leste Melding:  $8S$
+Waiting for Node
+Venter pÜ Node
+What is your first name?
+Hva er ditt Fornavn?
+What is your last name?
+Hva er ditt Etternavn?
+What is your password?
+Hva er ditt passord?
+Wildcards are Okay, $2$ is assumed.
+Jokertegn er tillatt, $2$ er forventet. 
+Would you like to register with us:
+ùnsker du og registrere deg hos oss:
+Wrong password entered!
+Feil passord skrevet!
+You are not registered in Conference $5W$!
+Du er ikke registrert i Konferanse $5W$!
+You have requested a batch upload.
+Du har anmodet om en batch upload.
+Zip search for ($3$), (Enter)=Continue search, (Z)=Quit search.
+Zip sõk for ($3$), (Enter)=Fortsett sõk, (Z)=Avslutt sõk.
+[@INCONF@] Command?
+[@INCONF@] ($CONFNUM$) Kommando?
+[@INCONF@] Mail Command:
+[@INCONF@] ($CONFNUM$) Post Kommando:
+(Enter) or (Y)es, (N)o, (F)lag, (NS)non-stop? 
+(Enter) eller (J)a, (N)ei, (M)erke Fil, (UT)en stopp? 
+(Enter) or (Y)es, (N)o, (NS)non-stop? 
+(Enter) eller (J)a, (N)ei, (UT)en stopp? 
+Bulletins updated since last call:
+Bulletin(er) oppdatert siden sist du ringte:
+@INCONF@ bulletins updated since last call.
+@INCONF@ bulletin(er) oppdatert siden du ringte sist.
+@INCONF@ has $5W$ new messages.
+@INCONF@ har $5W$ nye meldinger.
+@INCONF@ upload dir has $5W$k free
+@INCONF@ upload disk har $5W$k fri
+(D) $3$ Aborted using $4$  T/E=$5W$
+(D) $3$ Abrutt ved bruk av $4$  T/E=$5W$
+(D) $3$ Completed using $4$  T/E=$5W$  CPS=$6W$
+(D) $3$ Fullfõrt ved bruk av $4$  T/E=$5W$  CPS=$6W$
+(D)ate, T(i)me, (E)cho, (T)o, (F)rom, (S)ubject, (P)assword
+(D)ato, T(i)d, (E)kko, (T)il, (F)ra, (S)ubjekt, (P)assord
+(D)el, (E)dit, (H)eader, (I)ns, (L)ist, (Q)uit, (S)ave, (V)isual?
+(D)slett, (E)dit, (H)ode, (I)nsett, (L)iste, (Q)slutt, (S)lagre, (V)isuell?
+(Error correcting modem detected)
+(Feil rettings modem funnet)
+(U) $3$ Aborted using $4$  T/E=$5W$
+(U) $3$ Abrutt ved bruk av $4$  T/E=$5W$
+(U) $3$ Completed using $4$  T/E=$5W$  CPS=$6W$
+(U) $3$ Fullfõrt ved bruk av $4$  T/E=$5W$  CPS=$6W$
+(You risk file duplication when you skip filename entry)
+(Hvis du ikke skriver filnavn her blir det ikke sjekket om filen finnes)
++++ Error +++  Transfer should have taken at least $3$ minutes.
++++ Feil +++  Overfõring skulle ha tatt minst $3$ minutter.
+, $5W$k max per transfer
+, $5W$k maksimum pr. overfõring
+@SYSDATE@ (
+@SYSDATE@ (
+@SYSDATE@ (@SYSTIME@) 
+@SYSDATE@ (@SYSTIME@) 
+A system event is scheduled in $5W$ minutes.
+En ekstern BBS service funksjon skal foregÜ om $5W$ minutter.
+Copy this message to what conference:
+Kopiere denne meldingen til hvilken konferanse:
+Access Denied - Refused to Complete Registration!
+Nektet adgang - Nektet Ü fullfõre Registrering!
+Enter the library disk # to request:
+Skriv CD ROM disk nr. for forespõrsel:
+Error correcting modem required!
+Feil rettings modem pÜkrevet!
+$5W$ files,  $6W$k bytes,  $3$ minutes 
+$5W$ filer,  $6W$k biter,  $3$ minutter
+File moved to off-line holding area for screening by SYSOP.
+Filen flyttet til et eget omrÜde for kontroll av SYSOP.
+Insufficient Download Security for
+Ikke hõyt nok adgang nivÜ for Download av
+Insufficient security for DOOR
+Ikke hõyt nok adgangs nivÜ for DùR
+Invalid file ($3$) deleted!
+Invalid fil ($3$) slettet!
+Invalid upload! (empty file)
+Invalid upload! (tom fil)
+Keep upload inside conference:
+Holde upload innenfor konferanse:
+Keyboard Time Expired!
+Du har sovnet ved tastaturet!
+Reply to what message number:
+Svare pÜ hvilket meldings nummer:
+Alter membership in what conferences:
+Endre medlemskap i hvilken konferanse:
+Registration in [$3$] is$4$.
+Registrering i [$3$] er$4$.
+Warning: USER is not registered in @INCONF@!
+Advarsel: Bruker er ikke registrert i @INCONF@!
+Warning: USER does not have a valid EXTUSER record.
+Advarsel: Brukeren har ingen gyldig EXTUSER rekord.
+Press (Enter) now if you want ProDoor to determine filenames automatically.
+Trykk (Enter) nÜ hvis du vil at ProDoor skal finne filnavnene automatisk.
+Press (ESC) to exit chat mode.  
+Trykk (ESC) for Ü avslutte PRATe mode.  
+Press (Space) to answer page, anything else to ignore.
+Trykk (Space) for Ü svare anrop, ellers en annen tast.
+Sysop back from DOS at @SYSTIME@
+Sysop tilbake fra DOS kl. @SYSTIME@
+Sysop CHAT active at @SYSTIME@
+Sysop PRAT aktiv kl. @SYSTIME@
+Sysop CHAT ended at @SYSTIME@
+Sysop PRAT slutt kl. @SYSTIME@
+Sysop exited to DOS at @SYSTIME@
+Sysop gikk til DOS kl. @SYSTIME@
+Warning: Automatic disconnect in ($5W$) minute
+Advarsel: Automatisk avlogging om ($5W$) minutt
+WARNING: If you continue, the previous ZIPM results may be lost!!
+ADVARSEL: Hvis du fortsetter, will du miste forrige ZIPM resultat!
+Warning: Name not found in USERS file!
+Advarsel: Navn ikke funnet i BRUKER filen!
+Warning: not tested with this version of PCBoard!
+Advarsel: ikke testet med denne versjonen av PCBoard!
+WARNING: Your upload will be ABORTED if not finished in $5W$ minutes!
+ADVARSEL: Din upload vil bli ABRUTT hvis den ikke er ferdig om $5W$ minutter!
+Access Denied - Excessive Password Failures!
+Nektet adgang - Gjentatt Feilskriving av Passord!
+Access Denied - Name in use on another Node!
+Nektet adgang - Navnet er i bruk pÜ en annen Node!
+Access Denied - Real names only! ($NAME$)
+Nektet adgang - Bare virkelige navn! ($NAME$)
+Access Denied - You are Locked Out of the System!
+Nektet adgang - Du er utestengt fra dette Systemet!
+(Enter) or (S)tart, (G)oodbye after transfer, (A)bort?
+(Enter) eller (S)tart, (G)logge av etter overfõring, (A)vbryt?
+(R)e-enter your name or (C)ontinue logon as a new user:
+(R) skriv navnet pÜ nytt eller (C) fortsette som ny bruker:
+A)bort, C)ont, D)el, E)dit, I)ns, L)ist, O)rig, P)rot, Q)uote, S)ave, V)isual
+A)vbryt,F)ortsett,SL)ett,E)dit,I)nsett,L)ist,O)rig,P)rot,S)itat,L)agre,V)isuell
+Adding new name to USER file - Please wait .
+Legger ditt navn til BRUKER filen - vennligst vent .
+Auto        Conference  Messages     New    Last Msg  High Msg   Active
+Auto        Konferanse  Meldinger    Nye    Siste Meld Hõy Meld  Aktive
+Enter up to $5W$ filespecs.  End the list with a blank line.
+Angi opptil $5W$ filnavn.  Avslutt med en blank linje.
+Enter your text. (Enter) alone to end. (72 chars/line, $5W$ lines maximum)
+Skriv din tekst. (Enter) alene til slutt (72 kar/linje, $5W$ linjer maksimum)
+Time limit reduced from ($TIME$) because an event is scheduled in $W5$ minutes.
+Tiden er redusert fra ($TIME$) da en BBS service skal utfõres om $W5$ minutter.
+$5W$ files,  $6W$k bytes,  $2$ minutes,  $3$ cps,  $4$ % efficiency
+$5W$ filer,  $6W$k biter,  $2$ minutter,  $3$ cps,  $4$ % effektivitet

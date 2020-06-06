@@ -1,0 +1,250 @@
+
+--
+-- Screen and keyboard operations package
+-- Janus/ADA specification
+--
+-- Author: S.H.Smith, 25-Jul-86
+--
+
+  pragma arithcheck(off); pragma debug(off); pragma rangecheck(off); pragma warning(off);
+@ pragma arithcheck(on);  pragma debug(on);  pragma rangecheck(on);
+
+with CONV; use CONV;
+
+
+package body SCREENOP is
+
+
+--
+-- static data for DOS and BIOS interface
+--
+
+   tox, toy: byte;
+   stat:     byte;
+   key:      character;
+
+   --
+   -- buffer structure for DOS input string function
+   --
+   type dos_keyboard_buffer is
+        record
+           buffer_limit:  byte;
+           buffer:        string;
+        end record;
+
+   input_buffer:  dos_keyboard_buffer;
+
+
+--
+-- screen control
+--
+
+   procedure POSITION_CURSOR (x:  CURSOR_X;
+                              y:  CURSOR_Y) is
+      -- move the cursor to a position on the screen
+   begin
+
+      tox := byte(x-1);     -- copy cursor location into static
+      toy := byte(y-1);     -- variables for interface to assembly language
+
+      asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+      asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+
+      asm 16#b4#,2;                                -- mov ah,2
+      asm 16#b7#,0;                                -- mov bh,0
+      asm 16#8a#,16#36#,toy'address;               -- mov dh,[toy]
+      asm 16#8a#,16#16#,tox'address;               -- mov dl,[tox]
+      asm 16#cd#,16#10#;                           -- int 10h
+
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+   end POSITION_CURSOR;
+
+
+
+   procedure CLEAR_SCREEN is
+      -- erase the screen and leave the cursor at the home position
+   begin
+
+      POSITION_CURSOR(1,25);
+
+      for i in 1..43 loop
+         NEW_LINE;
+      end loop;
+
+      position_cursor (1,1);
+
+   end CLEAR_SCREEN;
+
+
+
+   procedure NEW_LINE is
+      -- advance to a new line on the screen
+   begin
+
+      PUT_ASCII (13);
+      PUT_ASCII (10);
+
+   end NEW_LINE;
+
+
+
+--
+-- screen output
+--
+
+   procedure PUT_ASCII (ascii:  ASCII_CODE) is
+      -- put a character on the screen, based on ascii code
+   begin
+      stat := byte(ascii);
+
+      asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+      asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+
+      asm 16#b4#,16#02#;                           -- mov ah,02h
+      asm 16#168a#,stat'address;                   -- mov bl,[stat]
+      asm 16#cd#,16#21#;                           -- int 21h
+
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+   end PUT_ASCII;
+
+
+
+   procedure PUT (c: character) is
+      -- put a character on the screen
+   begin
+      PUT_ASCII (character'pos(c));
+   end PUT;
+
+
+
+   procedure PUT (s: string) is
+      -- put a string of characters on the screen (tty write)
+   begin
+
+      for i in 1 .. character'pos(s(0)) loop
+         PUT_ASCII (character'pos(s(i)));
+      end loop;
+
+   end PUT;
+
+
+
+   procedure PUT (i: integer) is
+      -- put an integer
+   begin
+      PUT (CONVERT (i));
+   end PUT;
+
+
+
+   procedure PUT_HEX (i: integer) is
+      -- put an integer as a string of hex digits
+   begin
+      PUT (HEX (i));
+   end PUT_HEX;
+
+
+
+   procedure PUT_HEX (i: byte) is
+      -- put a byte as a string of hex digits
+   begin
+      PUT (HEX (i));
+   end PUT_HEX;
+
+
+
+   procedure PUT (f: float) is
+      -- put a float
+   begin
+      PUT (CONVERT (f));
+   end PUT;
+
+
+
+   procedure PUT_LINE (s: string) is
+      -- put a string and advance to a new line
+   begin
+
+      PUT (s);
+      NEW_LINE;
+
+   end PUT_LINE;
+
+
+
+--
+-- keyboard control
+--
+
+   function KEY_PRESSED return boolean is
+      -- see if a key has been pressed on the console
+   begin
+
+      asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+      asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+
+      asm 16#b4#,16#0b#;                           -- mov ah,0bh
+      asm 16#cd#,16#21#;                           -- int 21h
+      asm 16#a2#,stat'address;                     -- mov [key],al
+
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+      if integer(stat) = 0 then
+         return false;
+      else
+         return true;
+      end if;
+
+   end KEY_PRESSED;
+
+
+
+   procedure GET (c: out character) is
+      -- get the next console key (without echo)
+   begin
+
+      asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+      asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+
+      asm 16#b4#,16#08#;                           -- mov ah,08h
+      asm 16#cd#,16#21#;                           -- int 21h
+      asm 16#a2#,key'address;                      -- mov [key],al
+
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+      c := key;
+
+   end GET;
+
+
+
+   procedure GET (s: in out string) is
+      -- get a line of console input with editing and echo
+   begin
+
+      input_buffer.buffer_limit := byte(80);
+
+      asm 16#50#,16#53#,16#51#,16#52#;             -- push ax,bx,cx,dx
+      asm 16#55#,16#56#,16#57#;                    -- push bp,si,di
+
+      asm 16#b4#,16#0a#;                           -- mov ah,0ah
+      asm 16#ba#,input_buffer'address;             -- mov dx,inbut_buffer
+      asm 16#cd#,16#21#;                           -- int 21h
+
+      asm 16#5f#,16#5e#,16#5d#;                    -- pop di,si,bp
+      asm 16#5a#,16#59#,16#5b#,16#58#;             -- pop dx,cx,bx,ax
+
+      s := input_buffer.buffer;
+
+   end GET;
+
+
+end SCREENOP;
+
+
